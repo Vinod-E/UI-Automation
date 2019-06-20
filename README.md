@@ -1,2 +1,1 @@
-# UI-Automation
-UI-Automation Scripts :coffee:
+# UI-Automation :coffee:
