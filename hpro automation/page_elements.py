@@ -189,7 +189,7 @@ requirement = {
 
 test = {
     'assessment_tab': '//*[@ui-sref="crpo.assessment"]',
-    'assess_advance_search': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/a[2]',
+    'assess_advance_search': '//*[@data-title="Search"]',
     'assessment_name': 'testName',
     'assess_search_button': '//*[@id="mainBodyElement"]/div[3]/section/div/div/advance-search/div/div[3]/div/button[2]',
     'grid_test_name': '//*[@title="{}"]',

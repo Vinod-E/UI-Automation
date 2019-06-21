@@ -4,16 +4,18 @@ import xlrd
 from selenium.common import exceptions
 import test_data_inputpath
 import page_elements
+from datetime import datetime
 
 
 class CreateTest(crpo_login.CrpoLogin):
     def __init__(self):
         super(CreateTest, self).__init__()
+        now = datetime.now()
 
         self.xl_clone_test = []
         self.xl_new_test_name = []
-        self.xl_test_from_date = []
-        self.xl_test_to_date = []
+        self.xl_test_from_date = now.strftime("%d/%m/%Y")
+        self.xl_test_to_date = now.strftime("%d/%m/%Y")
 
         self.grid_test_name = ""
         self.loop_v = ''
@@ -35,10 +37,10 @@ class CreateTest(crpo_login.CrpoLogin):
                 self.xl_clone_test.append(rows[0])
             if rows[1]:
                 self.xl_new_test_name.append(rows[1])
-            if rows[2]:
-                self.xl_test_from_date.append(str(rows[2]))
-            if rows[3]:
-                self.xl_test_to_date.append(str(rows[3]))
+            # if rows[2]:
+            #     self.xl_test_from_date.append(str(rows[2]))
+            # if rows[3]:
+            #     self.xl_test_to_date.append(str(rows[3]))
 
             for j in self.xl_new_test_name:
                 job_name = j
