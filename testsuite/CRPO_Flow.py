@@ -20,7 +20,7 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
         self.ec_configurations_tab()
         self.task_configurations_tab()
         self.job_automation()
-        time.sleep(10)
+        time.sleep(5)
         self.tag_interview_panel()
         self.tag_requirement()
         time.sleep(5)
@@ -37,6 +37,12 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
         time.sleep(5)
         self.req_advance_search()
 
+    def test_creation(self):
+
+        self.test_excel_read()
+        self.test_advance_search()
+        self.clone_test()
+
     def event_creation(self):
 
         self.event_excel_read()
@@ -49,6 +55,7 @@ Object.login()
 if Object.status_of_login == 'administrator':
     Object.job_role_creation()
     Object.requirement_creation()
+    Object.test_creation()
     Object.event_creation()
     Object.output_report()
     Object.over_status()

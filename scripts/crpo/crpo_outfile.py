@@ -26,18 +26,17 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         self.job_status_col = 1
         self.req_usecase_col = 2
         self.req_status_col = 3
-        self.event_usecase_col = 4
-        self.event_status_col = 5
+        self.test_usecase_col = 4
+        self.test_status_col = 5
+        self.event_usecase_col = 6
+        self.event_status_col = 7
 
         index = 0
-        excelheaders = ['Job UseCases', 'Job Status', 'Requirement Usecases', 'Requirement Status', 'Event UseCases',
-                        'Event Status']
+        excelheaders = ['Job UseCases', 'Job Status', 'Requirement Usecases', 'Requirement Status', 'Test UseCases',
+                        'Test Status', 'Event UseCases', 'Event Status']
         for headers in excelheaders:
-            if headers in ['Job Status', 'Job UseCases']:
-                self.ws.write(1, index, headers, self.style0)
-            elif headers in ['Requirement Status', 'Requirement Usecases']:
-                self.ws.write(1, index, headers, self.style0)
-            elif headers in ['Event Status', 'Event UseCases']:
+            if headers in ['Job UseCases', 'Job Status', 'Requirement Usecases', 'Requirement Status', 'Test UseCases',
+                           'Test Status', 'Event UseCases', 'Event Status']:
                 self.ws.write(1, index, headers, self.style0)
             else:
                 self.ws.write(1, index, headers, self.style1)
@@ -197,6 +196,25 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
             self.ws.write(6, self.req_status_col, 'Pass', self.style7)
         else:
             self.ws.write(6, self.req_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+
+        # ------------- Test Use cases -------------------
+        self.ws.write(2, self.test_usecase_col, 'Test advance search', self.style8)
+        self.ws.write(3, self.test_usecase_col, 'Test Clone Creation', self.style8)
+        # --------------------------------------------------------------------------------------------------------------
+
+        if self.ui_test_advance_search == 'Pass':
+            self.Actual_success_cases.append(self.ui_test_advance_search)
+            self.ws.write(2, self.test_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(2, self.test_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+
+        if self.ui_test_clone == 'Pass':
+            self.Actual_success_cases.append(self.ui_test_clone)
+            self.ws.write(3, self.test_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(3, self.test_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
         # ------------- Event Use cases -------------------

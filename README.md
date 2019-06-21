@@ -23,3 +23,14 @@
 
 # ----------
 self.job_name = self.driver.execute_script("prompt('Enter job Role name')")
+
+# --------------
+    Job Creation
+        |
+    Req Creation
+        |
+    Test Creation
+        |
+    Event Creation
+        |
+    Output File

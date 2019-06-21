@@ -4,10 +4,10 @@ from selenium.common import exceptions
 from selenium.webdriver.common.keys import Keys
 import test_data_inputpath
 import page_elements
-import create_requirement
+import create_test
 
 
-class CreateEvent(create_requirement.CreateRequirement):
+class CreateEvent(create_test.CreateTest):
 
     def __init__(self):
         super(CreateEvent, self).__init__()

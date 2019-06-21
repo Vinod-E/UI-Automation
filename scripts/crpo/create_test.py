@@ -5,9 +5,10 @@ from selenium.common import exceptions
 import test_data_inputpath
 import page_elements
 from datetime import datetime
+import create_requirement
 
 
-class CreateTest(crpo_login.CrpoLogin):
+class CreateTest(create_requirement.CreateRequirement):
     def __init__(self):
         super(CreateTest, self).__init__()
         now = datetime.now()
@@ -20,6 +21,9 @@ class CreateTest(crpo_login.CrpoLogin):
         self.grid_test_name = ""
         self.loop_v = ''
         self.test_name_sprint_version = []
+
+        self.ui_test_advance_search = []
+        self.ui_test_clone = []
 
     def login(self):
         self.excel_read()
@@ -46,7 +50,7 @@ class CreateTest(crpo_login.CrpoLogin):
                 job_name = j
                 self.test_name_sprint_version = job_name.format(self.sprint_version)
 
-    def advance_search(self):
+    def test_advance_search(self):
         try:
             self.driver.implicitly_wait(5)
             test_tab = self.driver.find_element_by_xpath(page_elements.test['assessment_tab'])
@@ -61,6 +65,7 @@ class CreateTest(crpo_login.CrpoLogin):
             button.click()
             time.sleep(5)
             print('--------------- Advance search is working --------------------')
+            self.ui_test_advance_search = 'Pass'
 
             # ------------------------------ validating the test name --------------------------------------------------
             try:
@@ -105,6 +110,7 @@ class CreateTest(crpo_login.CrpoLogin):
                 time.sleep(5)
 
                 print('---------------- Clone/Creation of test successfully ----------------')
+                self.ui_test_clone = 'Pass'
 
             except exceptions.ElementNotInteractableException as error:
                 print(error)
@@ -112,10 +118,10 @@ class CreateTest(crpo_login.CrpoLogin):
             print('--------------- failed to create test ---------------------')
 
 
-Object = CreateTest()
-Object.login()
-if Object.status_of_login == 'administrator':
-    Object.test_excel_read()
-    Object.advance_search()
-    Object.clone_test()
-    Object.browser_close()
+# Object = CreateTest()
+# Object.login()
+# if Object.status_of_login == 'administrator':
+#     Object.test_excel_read()
+#     Object.test_advance_search()
+#     Object.clone_test()
+#     Object.browser_close()

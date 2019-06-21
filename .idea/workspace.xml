@@ -6,9 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/vinodkumar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/vinodkumar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/CRPO_Login_Welcome_Page.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/CRPO_Login_Welcome_Page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Job.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/Job.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_requirement.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_requirement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/create_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testdata/.~lock.test_details.xls#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testsuite/CRPO_Flow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="119">
+              <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -30,11 +39,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/crpo/crpo_outfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="205" column="30" selection-start-line="205" selection-start-column="30" selection-end-line="205" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/crpo/create_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state relative-caret-position="-119">
+              <caret line="74" column="81" lean-forward="true" selection-start-line="74" selection-start-column="81" selection-end-line="74" selection-end-column="81" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -43,15 +64,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hpro automation/page_elements.py">
+        <entry file="file://$PROJECT_DIR$/scripts/crpo/create_requirement.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="191" column="55" selection-start-line="191" selection-start-column="55" selection-end-line="191" selection-end-column="55" />
+            <state relative-caret-position="192">
+              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ui_create_event</find>
+      <find>ui_test_advance_search</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,18 +89,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/crpo/create_event.py" />
         <option value="$PROJECT_DIR$/hpro automation/test_data_inputpath.py" />
         <option value="$PROJECT_DIR$/hpro automation/styles.py" />
-        <option value="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" />
-        <option value="$PROJECT_DIR$/testsuite/CRPO_Flow.py" />
         <option value="$PROJECT_DIR$/hpro automation/crpo_login.py" />
         <option value="$PROJECT_DIR$/hpro automation/config.py" />
         <option value="$PROJECT_DIR$/hpro automation/environment_setup.py" />
-        <option value="$PROJECT_DIR$/scripts/crpo/create_requirement.py" />
         <option value="$PROJECT_DIR$/scripts/crpo/create_job_role.py" />
         <option value="$PROJECT_DIR$/hpro automation/page_elements.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/scripts/crpo/create_event.py" />
+        <option value="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" />
         <option value="$PROJECT_DIR$/scripts/crpo/create_test.py" />
+        <option value="$PROJECT_DIR$/scripts/crpo/create_requirement.py" />
+        <option value="$PROJECT_DIR$/testsuite/CRPO_Flow.py" />
       </list>
     </option>
   </component>
@@ -152,7 +183,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.create_test">
+  <component name="RunManager" selected="Python.CRPO_Flow">
     <configuration name="CRPO_Flow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UI Automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -260,11 +291,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.create_test" />
         <item itemvalue="Python.CRPO_Flow" />
+        <item itemvalue="Python.crpo_outfile" />
+        <item itemvalue="Python.create_test" />
         <item itemvalue="Python.environment_setup" />
         <item itemvalue="Python.crpo_login" />
-        <item itemvalue="Python.crpo_outfile" />
       </list>
     </recent_temporary>
   </component>
@@ -290,13 +321,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25408617" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.57355124" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39970282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32986626" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.10995542" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32986626" />
@@ -309,9 +340,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/crpo/create_test.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/scripts/crpo/crpo_outfile.py</url>
+          <line>205</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -338,30 +369,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/crpo/crpo_outfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2915">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/local/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="320" selection-start-line="320" selection-end-line="320" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/crpo/create_event.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -382,26 +393,6 @@
           <caret line="126" column="50" lean-forward="true" selection-start-line="126" selection-start-column="50" selection-end-line="126" selection-end-column="50" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/crpo/create_requirement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testsuite/CRPO_Flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -452,12 +443,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="390">
+            <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/crpo/create_event.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="147" column="32" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/crpo/crpo_outfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="205" column="30" selection-start-line="205" selection-start-column="30" selection-end-line="205" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/crpo/create_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        <state relative-caret-position="-119">
+          <caret line="74" column="81" lean-forward="true" selection-start-line="74" selection-start-column="81" selection-end-line="74" selection-end-column="81" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/crpo/create_requirement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsuite/CRPO_Flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>

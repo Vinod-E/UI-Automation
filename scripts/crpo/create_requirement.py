@@ -153,7 +153,7 @@ class CreateRequirement(create_job_role.CreateJobRole):
 
     def req_configuration_tab(self):
         try:
-            self.driver.implicitly_wait(5)
+            self.driver.implicitly_wait(10)
             config = self.driver.find_element_by_xpath(page_elements.requirement['req_config_tab'])
             config.click()
             print('------------- configuration tab functionality is working -------------------')
