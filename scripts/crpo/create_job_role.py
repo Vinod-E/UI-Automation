@@ -173,7 +173,6 @@ class CreateJobRole(crpo_login.CrpoLogin):
     def create_job_role(self):
 
         try:
-            self.driver.refresh()
             time.sleep(10)
             self.driver.find_element_by_xpath(page_elements.job['job_tab']).click()
             time.sleep(10)
@@ -271,10 +270,10 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
                 time.sleep(2)
                 self.driver.find_element_by_xpath(page_elements.job['job_create_button']).click()
-                time.sleep(10)
                 print('-------------------- Job Edit/update successfully -----------------')
                 self.ui_update_job = 'Pass'
                 self.driver.refresh()
+                time.sleep(10)
 
             except exceptions.ElementNotInteractableException as error:
                 print(error)
@@ -362,6 +361,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
                 self.driver.find_element_by_xpath(page_elements.job['getbyid_menu_selection_process']).click()
                 sp = self.driver.find_element_by_xpath(page_elements.job['getbyid_menu_selectionProcess_text_field'])
                 sp.send_keys(self.xl_selection_process)
+                time.sleep(3)
                 sp.send_keys(Keys.ARROW_DOWN)
                 sp.send_keys(Keys.ENTER)
 
@@ -519,6 +519,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
             except exceptions.WebDriverException as config_message:
                 print('Tag interviewers :: ', config_message)
+                self.driver.refresh()
 
     def ec_configurations_tab(self):
         if self.job_name_breadcumb == self.job_name_sprint_version:

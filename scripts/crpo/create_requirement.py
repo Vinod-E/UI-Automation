@@ -109,8 +109,8 @@ class CreateRequirement(create_job_role.CreateJobRole):
             print(' Requirement created successfully ')
             self.ui_create_requirement = 'Pass'
 
-        except exceptions.WebDriverException as create_job:
-            print create_job
+        except exceptions.WebDriverException as create_req:
+            print create_req
 
         # try:
         #     req_name_from_breadcrumb = self.driver.find_element_by_xpath(
