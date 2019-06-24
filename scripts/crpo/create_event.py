@@ -29,15 +29,19 @@ class CreateEvent(create_test.CreateTest):
         self.xl_task2 = []
         self.xl_task3 = []
         self.xl_task4 = []
+        self.xl_event_test_name = []
+        self.xl_event_test_stage = []
 
         self.event_name_sprint_version = []
         self.job_name_sprint_version = []
         self.req_name_sprint_version = []
+        self.event_test_sprint_version = []
         self.loop_v = []
         self.grid_event_name = []
 
         self.ui_create_event = []
         self.ui_event_task_config = []
+        self.ui_event_test_config = []
 
         workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_event'])
         if self.login_server == 'beta':
@@ -83,6 +87,10 @@ class CreateEvent(create_test.CreateTest):
                 self.xl_task2.append(str(rows[11]))
             if rows[12]:
                 self.xl_task4.append(str(rows[12]))
+            if rows[13]:
+                self.xl_event_test_name.append(str(rows[13]))
+            if rows[14]:
+                self.xl_event_test_stage.append(str(rows[14]))
 
             for j in self.xl_event_name:
                 event_name = j
@@ -95,6 +103,10 @@ class CreateEvent(create_test.CreateTest):
             for l in self.xl_job_name:
                 job_name = l
                 self.job_name_sprint_version = job_name.format(self.sprint_version)
+
+            for v in self.xl_event_test_name:
+                test_name = v
+                self.event_test_sprint_version = test_name.format(self.sprint_version)
 
     def create_event(self):
 
@@ -245,6 +257,43 @@ class CreateEvent(create_test.CreateTest):
                 self.driver.find_element_by_xpath(page_elements.job['activity_task_configuration_save']).click()
                 print('------------------ Event Task configuration done -----------------------')
                 self.ui_event_task_config = 'Pass'
+
+            except exceptions.ElementNotInteractableException as error:
+                print(error)
+
+    def event_test_configure(self):
+
+        if self.grid_event_name == self.event_name_sprint_version:
+
+            try:
+                self.driver.refresh()
+                configure_test = self.driver.find_element_by_xpath(page_elements.event['Event_test_configure'])
+                configure_test.click()
+
+                time.sleep(3)
+                jobrole = self.driver.find_element_by_xpath(page_elements.event['test_jobrole'])
+                jobrole.send_keys(self.job_name_sprint_version)
+                jobrole.send_keys(Keys.ARROW_DOWN)
+                jobrole.send_keys(Keys.ENTER)
+
+                time.sleep(3)
+                stage = self.driver.find_element_by_xpath(page_elements.event['test_stage'])
+                stage.send_keys(self.xl_event_test_stage)
+                stage.send_keys(Keys.ARROW_DOWN)
+                stage.send_keys(Keys.ENTER)
+
+                time.sleep(3)
+                test = self.driver.find_element_by_xpath(page_elements.event['test_name'])
+                test.send_keys(self.event_test_sprint_version)
+                test.send_keys(Keys.ARROW_DOWN)
+                test.send_keys(Keys.ENTER)
+
+                time.sleep(3)
+                active = self.driver.find_element_by_xpath(page_elements.event['test_active'])
+                active.click()
+
+                print('------------------ Event Test configuration has been done -----------------------')
+                self.ui_event_test_config = 'Pass'
 
             except exceptions.ElementNotInteractableException as error:
                 print(error)

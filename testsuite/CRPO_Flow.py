@@ -48,6 +48,7 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
         self.event_excel_read()
         self.create_event()
         self.event_task_configure()
+        self.event_test_configure()
 
 
 Object = CrpoFlow()

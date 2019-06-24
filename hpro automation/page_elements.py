@@ -228,5 +228,10 @@ event = {
     'task_stage_status': '//*[@type="text"][@placeholder="Select Stage And Status"]',
     'task_positive_stage_status': '//*[@type="text"][@placeholder="Select Positive Stage - Status"]',
     'task_negative_stage_status': '//*[@type="text"][@placeholder="Select Negative Stage - Status"]',
+    'Event_test_configure': '//*[@ng-click="vm.configure()"]',
+    'test_jobrole': '//*[@placeholder="Job Role"][@type="text"]',
+    'test_stage': '//*[@placeholder="Stage"][@type="text"]',
+    'test_name': '//*[@placeholder="Test"][@type="text"]',
+    'test_active': '//*[@value="true"][@type="radio"]',
 
 }

@@ -9,7 +9,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 20)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 27)))
         self.Actual_success_cases = []
 
         super(CrpoOutputFile, self).__init__()
@@ -234,6 +234,13 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
             self.ws.write(3, self.event_status_col, 'Pass', self.style7)
         else:
             self.ws.write(3, self.event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+
+        if self.ui_event_test_config == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_test_config)
+            self.ws.write(4, self.event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(4, self.event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
         self.wb_Result.save('/home/vinodkumar/PythonProjects/UI Automation/reports/UI_CRPO_Flow.xls')
