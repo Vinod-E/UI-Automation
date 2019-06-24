@@ -5,12 +5,16 @@ from selenium.webdriver.common.keys import Keys
 import test_data_inputpath
 import page_elements
 import create_test
+from datetime import datetime
 
 
 class CreateEvent(create_test.CreateTest):
 
     def __init__(self):
         super(CreateEvent, self).__init__()
+        now = datetime.now()
+        self.xl_event_from_date = now.strftime("%d/%m/%Y")
+        self.xl_event_to_date = now.strftime("%d/%m/%Y")
 
         self.xl_event_name = []
         self.xl_req_name = []
@@ -37,11 +41,11 @@ class CreateEvent(create_test.CreateTest):
 
         workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_event'])
         if self.login_server == 'beta':
-            self.sheet1 = workbook.sheet_by_index(0)
+            self.event_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'ams':
-            self.sheet1 = workbook.sheet_by_index(0)
+            self.event_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'amsin':
-            self.sheet1 = workbook.sheet_by_index(1)
+            self.event_sheet1 = workbook.sheet_by_index(1)
 
     def login(self):
         self.excel_read()
@@ -49,9 +53,9 @@ class CreateEvent(create_test.CreateTest):
 
     def event_excel_read(self):
         # --------------------------------------Event details-----------------------------------------------------------
-        for i in range(1, self.sheet1.nrows):
+        for i in range(1, self.event_sheet1.nrows):
             number = i  # Counting number of rows
-            rows = self.sheet1.row_values(number)
+            rows = self.event_sheet1.row_values(number)
 
             if rows[0]:
                 self.xl_event_name.append(rows[0])
@@ -130,6 +134,12 @@ class CreateEvent(create_test.CreateTest):
             slot.send_keys(Keys.ARROW_DOWN)
             slot.send_keys(Keys.ENTER)
             time.sleep(3)
+
+            from_date = self.driver.find_element_by_xpath(page_elements.event['from_date'])
+            from_date.send_keys(self.xl_event_from_date)
+
+            to_date = self.driver.find_element_by_xpath(page_elements.event['to_date'])
+            to_date.send_keys(self.xl_event_to_date)
 
             em = self.driver.find_element_by_xpath(page_elements.event['event_manager'])
             em.send_keys(self.xl_em)

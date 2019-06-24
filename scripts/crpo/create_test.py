@@ -12,12 +12,11 @@ class CreateTest(create_requirement.CreateRequirement):
     def __init__(self):
         super(CreateTest, self).__init__()
         now = datetime.now()
-
-        self.xl_clone_test = []
-        self.xl_new_test_name = []
         self.xl_test_from_date = now.strftime("%d/%m/%Y")
         self.xl_test_to_date = now.strftime("%d/%m/%Y")
 
+        self.xl_clone_test = []
+        self.xl_new_test_name = []
         self.grid_test_name = ""
         self.loop_v = ''
         self.test_name_sprint_version = []
@@ -27,11 +26,11 @@ class CreateTest(create_requirement.CreateRequirement):
 
         workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['clone_test'])
         if self.login_server == 'beta':
-            self.sheet1 = workbook.sheet_by_index(0)
+            self.test_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'ams':
-            self.sheet1 = workbook.sheet_by_index(0)
+            self.test_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'amsin':
-            self.sheet1 = workbook.sheet_by_index(1)
+            self.test_sheet1 = workbook.sheet_by_index(1)
 
     def login(self):
         self.excel_read()
@@ -39,9 +38,9 @@ class CreateTest(create_requirement.CreateRequirement):
 
     def test_excel_read(self):
         # --------------------------------------test details------------------------------------------------------------
-        for i in range(1, self.sheet1.nrows):
+        for i in range(1, self.test_sheet1.nrows):
             number = i  # Counting number of rows
-            rows = self.sheet1.row_values(number)
+            rows = self.test_sheet1.row_values(number)
 
             if rows[0]:
                 self.xl_clone_test.append(rows[0])

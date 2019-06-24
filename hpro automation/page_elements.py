@@ -212,6 +212,8 @@ event = {
                            '/div[1]/div[3]/div/div/span/div/div/div[2]/div/button[2]',
     'selection_done': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[2]/div[1]/transcluded-input/div/div/'
                       'div[1]/div[3]/div/div/span/div/div/div[4]/div/a',
+    'from_date': '//*[@placeholder="From"][@type="text"]',
+    'to_date': '//*[@placeholder="To"][@type="text"]',
     'slot': '//*[@placeholder="Slot"][@type="text"]',
     'event_manager': '//*[@placeholder="Event Manager"][@type="text"]',
     'college': '//*[@placeholder="College"][@type="text"]',

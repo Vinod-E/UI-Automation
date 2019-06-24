@@ -72,11 +72,11 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
         workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_job'])
         if self.login_server == 'beta':
-            self.sheet1 = workbook.sheet_by_index(0)
+            self.job_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'ams':
-            self.sheet1 = workbook.sheet_by_index(0)
+            self.job_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'amsin':
-            self.sheet1 = workbook.sheet_by_index(1)
+            self.job_sheet1 = workbook.sheet_by_index(1)
 
     def login(self):
         self.excel_read()
@@ -85,9 +85,9 @@ class CreateJobRole(crpo_login.CrpoLogin):
     def job_excel_read(self):
 
         # --------------------------------------job details-----------------------------------------------------------
-        for i in range(1, self.sheet1.nrows):
+        for i in range(1, self.job_sheet1.nrows):
             number = i  # Counting number of rows
-            rows = self.sheet1.row_values(number)
+            rows = self.job_sheet1.row_values(number)
 
             if rows[0]:
                 self.job_name.append(rows[0])

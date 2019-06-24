@@ -27,6 +27,14 @@ class CreateRequirement(create_job_role.CreateJobRole):
         self.ui_req_config_tab = []
         self.ui_req_duplicity = []
 
+        workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_requirement'])
+        if self.login_server == 'beta':
+            self.req_sheet1 = workbook.sheet_by_index(0)
+        if self.login_server == 'ams':
+            self.req_sheet1 = workbook.sheet_by_index(0)
+        if self.login_server == 'amsin':
+            self.req_sheet1 = workbook.sheet_by_index(1)
+
     def login(self):
         self.excel_read()
         self.crpo_login()
@@ -45,11 +53,9 @@ class CreateRequirement(create_job_role.CreateJobRole):
     def requirement_excel_read(self):
 
         # --------------------------------------requirement details-----------------------------------------------------
-        workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_requirement'])
-        sheet1 = workbook.sheet_by_index(0)
-        for i in range(1, sheet1.nrows):
+        for i in range(1, self.req_sheet1.nrows):
             number = i  # Counting number of rows
-            rows = sheet1.row_values(number)
+            rows = self.req_sheet1.row_values(number)
 
             if rows[0]:
                 self.requirement_name.append(rows[0])
