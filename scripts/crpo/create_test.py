@@ -25,26 +25,28 @@ class CreateTest(create_requirement.CreateRequirement):
         self.ui_test_advance_search = []
         self.ui_test_clone = []
 
+        workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['clone_test'])
+        if self.login_server == 'beta':
+            self.sheet1 = workbook.sheet_by_index(0)
+        if self.login_server == 'ams':
+            self.sheet1 = workbook.sheet_by_index(0)
+        if self.login_server == 'amsin':
+            self.sheet1 = workbook.sheet_by_index(1)
+
     def login(self):
         self.excel_read()
         self.crpo_login()
 
     def test_excel_read(self):
         # --------------------------------------test details------------------------------------------------------------
-        workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['clone_test'])
-        sheet1 = workbook.sheet_by_index(0)
-        for i in range(1, sheet1.nrows):
+        for i in range(1, self.sheet1.nrows):
             number = i  # Counting number of rows
-            rows = sheet1.row_values(number)
+            rows = self.sheet1.row_values(number)
 
             if rows[0]:
                 self.xl_clone_test.append(rows[0])
             if rows[1]:
                 self.xl_new_test_name.append(rows[1])
-            # if rows[2]:
-            #     self.xl_test_from_date.append(str(rows[2]))
-            # if rows[3]:
-            #     self.xl_test_to_date.append(str(rows[3]))
 
             for j in self.xl_new_test_name:
                 job_name = j

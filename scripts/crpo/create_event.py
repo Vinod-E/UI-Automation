@@ -35,17 +35,23 @@ class CreateEvent(create_test.CreateTest):
         self.ui_create_event = []
         self.ui_event_task_config = []
 
+        workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_event'])
+        if self.login_server == 'beta':
+            self.sheet1 = workbook.sheet_by_index(0)
+        if self.login_server == 'ams':
+            self.sheet1 = workbook.sheet_by_index(0)
+        if self.login_server == 'amsin':
+            self.sheet1 = workbook.sheet_by_index(1)
+
     def login(self):
         self.excel_read()
         self.crpo_login()
 
     def event_excel_read(self):
-        # --------------------------------------test details------------------------------------------------------------
-        workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_event'])
-        sheet1 = workbook.sheet_by_index(0)
-        for i in range(1, sheet1.nrows):
+        # --------------------------------------Event details-----------------------------------------------------------
+        for i in range(1, self.sheet1.nrows):
             number = i  # Counting number of rows
-            rows = sheet1.row_values(number)
+            rows = self.sheet1.row_values(number)
 
             if rows[0]:
                 self.xl_event_name.append(rows[0])
