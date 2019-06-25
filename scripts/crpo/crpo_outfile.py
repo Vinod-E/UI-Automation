@@ -219,7 +219,8 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
 
         # ------------- Event Use cases -------------------
         self.ws.write(2, self.event_usecase_col, 'Event creation', self.style8)
-        self.ws.write(3, self.event_usecase_col, 'Event advance search', self.style8)
+        self.ws.write(3, self.event_usecase_col, 'Event task config', self.style8)
+        self.ws.write(4, self.event_usecase_col, 'Event test config', self.style8)
         # --------------------------------------------------------------------------------------------------------------
 
         if self.ui_create_event == 'Pass':

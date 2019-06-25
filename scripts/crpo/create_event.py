@@ -42,6 +42,7 @@ class CreateEvent(create_test.CreateTest):
         self.ui_create_event = []
         self.ui_event_task_config = []
         self.ui_event_test_config = []
+        self.ui_event_owner_config = []
 
         workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_event'])
         if self.login_server == 'beta':
@@ -155,6 +156,7 @@ class CreateEvent(create_test.CreateTest):
 
             em = self.driver.find_element_by_xpath(page_elements.event['event_manager'])
             em.send_keys(self.xl_em)
+            time.sleep(2)
             em.send_keys(Keys.ARROW_DOWN)
             em.send_keys(Keys.ENTER)
             time.sleep(3)
@@ -294,6 +296,45 @@ class CreateEvent(create_test.CreateTest):
 
                 print('------------------ Event Test configuration has been done -----------------------')
                 self.ui_event_test_config = 'Pass'
+
+            except exceptions.ElementNotInteractableException as error:
+                print(error)
+
+    def event_owner_configure(self):
+
+        if self.grid_event_name == self.event_name_sprint_version:
+
+            try:
+                self.driver.refresh()
+                time.sleep(5)
+                owner_tab = self.driver.find_element_by_xpath(page_elements.event['event_owner_tab'])
+                owner_tab.click()
+
+                time.sleep(3)
+                edit_owner = self.driver.find_element_by_xpath(page_elements.event['event_owner_edit'])
+                edit_owner.click()
+
+                time.sleep(3)
+                add_int = self.driver.find_element_by_xpath(page_elements.event['event_interviewer_add'])
+                add_int.click()
+
+                time.sleep(3)
+                custom_users = self.driver.find_element_by_css_selector(page_elements.event['event_custom_users'])
+                custom_users.send_keys(Keys.DOWN)
+                custom_users.click()
+
+                time.sleep(3)
+                role = self.driver.find_element_by_xpath(page_elements.event['role'])
+                role.send_keys('Event AEE')
+                role.send_keys(Keys.ARROW_DOWN)
+                self.driver.find_element_by_xpath(page_elements.event['custom_owner_add'])
+
+                time.sleep(3)
+                update = self.driver.find_element_by_css_selector(page_elements.event['update_owners'])
+                update.click()
+
+                print('------------------ Event Owners has been added -----------------------')
+                self.ui_event_owner_config = 'Pass'
 
             except exceptions.ElementNotInteractableException as error:
                 print(error)
