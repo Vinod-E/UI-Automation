@@ -48,17 +48,17 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
 
         self.event_excel_read()
         self.create_event()
-        # self.event_task_configure()
-        # self.event_test_configure()
-        self.event_owner_configure()
+        self.event_task_configure()
+        self.event_test_configure()
+        # self.event_owner_configure()
 
 
 Object = CrpoFlow()
 Object.login()
 if Object.status_of_login == 'administrator':
     # Object.job_role_creation()
-    # Object.requirement_creation()
-    # Object.test_creation()
+    Object.requirement_creation()
+    Object.test_creation()
     Object.event_creation()
     Object.output_report()
     Object.over_status()
