@@ -1,7 +1,7 @@
 import os
 path = os.getenv("HOME")
 
-generic_input_path = "%s/PythonProjects/UI Automation/" % path
+generic_input_path = "%s/hirepro_automation/UI-Automation/" % path
 
 
 test_data_file = {
@@ -13,5 +13,7 @@ test_data_file = {
 
     'clone_test': generic_input_path + 'testdata/test_details.xls',
 
-    'create_event': generic_input_path + 'testdata/event_details.xls'
+    'create_event': generic_input_path + 'testdata/event_details.xls',
+
+    'output_report': generic_input_path + 'reports/UI_CRPO_Flow.xls'
 }

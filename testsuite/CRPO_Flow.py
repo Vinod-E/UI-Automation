@@ -56,12 +56,20 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
 Object = CrpoFlow()
 Object.login()
 if Object.status_of_login == 'administrator':
-    Object.job_role_creation()
-    Object.requirement_creation()
-    Object.test_creation()
-    Object.event_creation()
-    Object.output_report()
-    Object.over_status()
+
+    # Object.job_role_creation()
+    Object.job_output_report()
+
+    # Object.requirement_creation()
+    Object.requirement_output_report()
+
+    # Object.test_creation()
+    Object.test_output_report()
+
+    # Object.event_creation()
+    Object.event_output_report()
+
+    Object.overall_status()
     Object.browser_close()
 else:
     Object.server_connection_error()

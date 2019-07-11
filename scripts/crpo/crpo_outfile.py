@@ -2,6 +2,7 @@ import xlwt
 import create_event
 from datetime import date
 import styles
+import test_data_inputpath
 
 
 class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
@@ -43,7 +44,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
             index += 1
         print('Excel Headers are printed successfully')
 
-    def output_report(self):
+    def job_output_report(self):
         # --------------------
         # Writing Output Data
         # --------------------
@@ -154,7 +155,9 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         else:
             self.ws.write(14, self.job_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
+        self.wb_Result.save(test_data_inputpath.test_data_file['output_report'])
 
+    def requirement_output_report(self):
         # ------------  Requirement Use cases -------------------
         self.ws.write(2, self.req_usecase_col, 'Requirement creation', self.style8)
         self.ws.write(3, self.req_usecase_col, 'Requirement advance search', self.style8)
@@ -197,7 +200,9 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         else:
             self.ws.write(6, self.req_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
+        self.wb_Result.save(test_data_inputpath.test_data_file['output_report'])
 
+    def test_output_report(self):
         # ------------- Test Use cases -------------------
         self.ws.write(2, self.test_usecase_col, 'Test advance search', self.style8)
         self.ws.write(3, self.test_usecase_col, 'Test Clone Creation', self.style8)
@@ -216,7 +221,9 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         else:
             self.ws.write(3, self.test_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
+        self.wb_Result.save(test_data_inputpath.test_data_file['output_report'])
 
+    def event_output_report(self):
         # ------------- Event Use cases -------------------
         self.ws.write(2, self.event_usecase_col, 'Event creation', self.style8)
         self.ws.write(3, self.event_usecase_col, 'Event task config', self.style8)
@@ -244,9 +251,9 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
             self.ws.write(4, self.event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
-        self.wb_Result.save('/home/vinodkumar/PythonProjects/UI Automation/reports/UI_CRPO_Flow.xls')
+        self.wb_Result.save(test_data_inputpath.test_data_file['output_report'])
 
-    def over_status(self):
+    def overall_status(self):
         self.ws.write(0, 0, 'CRPO USECASES', self.style4)
         if self.Expected_success_cases == self.Actual_success_cases:
             self.ws.write(0, 1, 'Pass', self.style5)
@@ -259,4 +266,4 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         self.ws.write(0, 5, self.date_now, self.style5)
         self.ws.write(0, 6, 'SERVER', self.style4)
         self.ws.write(0, 7, self.login_server, self.style5)
-        self.wb_Result.save('/home/vinodkumar/PythonProjects/UI Automation/reports/UI_CRPO_Flow.xls')
+        self.wb_Result.save(test_data_inputpath.test_data_file['output_report'])
