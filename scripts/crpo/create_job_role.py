@@ -70,7 +70,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
         self.ui_tag_requirement = []
         self.ui_un_tag_requirement = []
 
-        workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_job'])
+        workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_job'])
         if self.login_server == 'beta':
             self.job_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'ams':

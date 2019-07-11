@@ -24,7 +24,7 @@ class CreateTest(create_requirement.CreateRequirement):
         self.ui_test_advance_search = []
         self.ui_test_clone = []
 
-        workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['clone_test'])
+        workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['clone_test'])
         if self.login_server == 'beta':
             self.test_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'ams':

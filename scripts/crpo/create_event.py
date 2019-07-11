@@ -44,7 +44,7 @@ class CreateEvent(create_test.CreateTest):
         self.ui_event_test_config = []
         self.ui_event_owner_config = []
 
-        workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_event'])
+        workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_event'])
         if self.login_server == 'beta':
             self.event_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'ams':

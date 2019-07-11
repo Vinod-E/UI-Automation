@@ -4,7 +4,7 @@ path = os.getenv("HOME")
 generic_input_path = "%s/hirepro_automation/UI-Automation/" % path
 
 
-test_data_file = {
+crpo_test_data_file = {
     'credentials_file': generic_input_path + 'testdata/Login_Details.xls',
 
     'create_job': generic_input_path + 'testdata/Job_details.xls',
