@@ -57,8 +57,8 @@ Object = CrpoFlow()
 Object.login()
 if Object.status_of_login == 'administrator':
 
-    Object.job_role_creation()
-    Object.job_output_report()
+    # Object.job_role_creation()
+    # Object.job_output_report()
 
     Object.requirement_creation()
     Object.requirement_output_report()
