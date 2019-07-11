@@ -155,7 +155,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         else:
             self.ws.write(14, self.job_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
-        self.wb_Result.save(test_data_inputpath.test_data_file['output_report'])
+        self.wb_Result.save(test_data_inputpath.crpo_test_data_file['output_report'])
 
     def requirement_output_report(self):
         # ------------  Requirement Use cases -------------------
@@ -200,7 +200,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         else:
             self.ws.write(6, self.req_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
-        self.wb_Result.save(test_data_inputpath.test_data_file['output_report'])
+        self.wb_Result.save(test_data_inputpath.crpo_test_data_file['output_report'])
 
     def test_output_report(self):
         # ------------- Test Use cases -------------------
@@ -221,7 +221,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         else:
             self.ws.write(3, self.test_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
-        self.wb_Result.save(test_data_inputpath.test_data_file['output_report'])
+        self.wb_Result.save(test_data_inputpath.crpo_test_data_file['output_report'])
 
     def event_output_report(self):
         # ------------- Event Use cases -------------------
@@ -251,7 +251,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
             self.ws.write(4, self.event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
-        self.wb_Result.save(test_data_inputpath.test_data_file['output_report'])
+        self.wb_Result.save(test_data_inputpath.crpo_test_data_file['output_report'])
 
     def overall_status(self):
         self.ws.write(0, 0, 'CRPO USECASES', self.style4)
@@ -266,4 +266,4 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         self.ws.write(0, 5, self.date_now, self.style5)
         self.ws.write(0, 6, 'SERVER', self.style4)
         self.ws.write(0, 7, self.login_server, self.style5)
-        self.wb_Result.save(test_data_inputpath.test_data_file['output_report'])
+        self.wb_Result.save(test_data_inputpath.crpo_test_data_file['output_report'])

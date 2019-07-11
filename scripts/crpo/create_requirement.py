@@ -27,7 +27,7 @@ class CreateRequirement(create_job_role.CreateJobRole):
         self.ui_req_config_tab = []
         self.ui_req_duplicity = []
 
-        workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['create_requirement'])
+        workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_requirement'])
         if self.login_server == 'beta':
             self.req_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'ams':

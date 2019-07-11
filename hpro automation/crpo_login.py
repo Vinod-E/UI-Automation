@@ -30,7 +30,7 @@ class CrpoLogin(environment_setup.Environment):
 
         # --------------------------------------amsin details-----------------------------------------------------------
         if self.login_server == 'amsin':
-            workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['credentials_file'])
+            workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['credentials_file'])
             sheet1 = workbook.sheet_by_index(0)
             for i in range(1, sheet1.nrows):
                 number = i  # Counting number of rows
@@ -45,7 +45,7 @@ class CrpoLogin(environment_setup.Environment):
 
         # ----------------------------------------ams details-----------------------------------------------------------
         if self.login_server == 'beta':
-            workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['credentials_file'])
+            workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['credentials_file'])
             sheet1 = workbook.sheet_by_index(1)
             for j in range(1, sheet1.nrows):
                 number = j  # Counting number of rows
@@ -60,7 +60,7 @@ class CrpoLogin(environment_setup.Environment):
 
         # ----------------------------------------ams details-----------------------------------------------------------
         if self.login_server == 'ams':
-            workbook = xlrd.open_workbook(test_data_inputpath.test_data_file['credentials_file'])
+            workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['credentials_file'])
             sheet1 = workbook.sheet_by_index(1)
             for j in range(1, sheet1.nrows):
                 number = j  # Counting number of rows
