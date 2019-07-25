@@ -234,6 +234,7 @@ event = {
     'test_stage': '//*[@placeholder="Stage"][@type="text"]',
     'test_name': '//*[@placeholder="Test"][@type="text"]',
     'test_active': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/div[2]/div/div[5]/div/label[1]',
+    'test_save': '//*[@ng-click="vm.tagTestToEvent()"]',
 
     'event_owner_tab': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.owners"]',
     'event_owner_edit': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.manageOwners"]',
@@ -244,9 +245,9 @@ event = {
                           'transcluded-input > div > div > div > p > small > a',
     'role': '//*[@placeholder="Role"][@type="text"]',
     'custom_owner_add': '//*[@data-ng-click="vm.moveAllItemsRight();"]',
-    'update_owners': '#mainBodyElement > div.ng-scope.unbranded > div > div:nth-child(3) > div.col-sm-12.'
-                     'no-padding.ng-scope > section > div:nth-child(2) > div > create-update-event-owners > '
-                     'div > div.col-sm-12.no-padding > div > button.btn.btn-success.back_btn.delete_btn'
-
+    'update_owners': '#mainBodyElement > div.ng-scope.unbranded > div > div:nth-child(3) > '
+                     'div.col-sm-12.no-padding.ng-scope > section > div:nth-child(2) > div > '
+                     'create-update-event-owners > div > div.col-sm-12.no-padding > div >'
+                     ' button.btn.btn-primary.back_btn.ng-scope'
 
 }

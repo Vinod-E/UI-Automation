@@ -269,6 +269,7 @@ class CreateEvent(create_test.CreateTest):
 
             try:
                 self.driver.refresh()
+                time.sleep(5)
                 configure_test = self.driver.find_element_by_xpath(page_elements.event['Event_test_configure'])
                 configure_test.click()
 
@@ -294,6 +295,10 @@ class CreateEvent(create_test.CreateTest):
                 active = self.driver.find_element_by_xpath(page_elements.event['test_active'])
                 active.click()
 
+                time.sleep(3)
+                save = self.driver.find_element_by_xpath(page_elements.event['test_save'])
+                save.click()
+
                 print('------------------ Event Test configuration has been done -----------------------')
                 self.ui_event_test_config = 'Pass'
 
@@ -317,13 +322,14 @@ class CreateEvent(create_test.CreateTest):
                 time.sleep(3)
                 add_int = self.driver.find_element_by_xpath(page_elements.event['event_interviewer_add'])
                 add_int.click()
+                add_int.send_keys(Keys.ARROW_DOWN)
 
-                time.sleep(3)
+                time.sleep(5)
                 custom_users = self.driver.find_element_by_css_selector(page_elements.event['event_custom_users'])
                 custom_users.send_keys(Keys.DOWN)
                 custom_users.click()
 
-                time.sleep(3)
+                time.sleep(5)
                 role = self.driver.find_element_by_xpath(page_elements.event['role'])
                 role.send_keys('Event AEE')
                 role.send_keys(Keys.ARROW_DOWN)
@@ -331,6 +337,7 @@ class CreateEvent(create_test.CreateTest):
 
                 time.sleep(3)
                 update = self.driver.find_element_by_css_selector(page_elements.event['update_owners'])
+                update.send_keys(Keys.ARROW_DOWN)
                 update.click()
 
                 print('------------------ Event Owners has been added -----------------------')
