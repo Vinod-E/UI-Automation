@@ -197,7 +197,7 @@ test = {
     'clone_test_action': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[13]/div',
     'from_date': '//*[@placeholder="From"][@type="text"]',
     'to_date': '//*[@placeholder="To"][@type="text"]',
-    'clone/save': '//*[@id="mainBodyElement"]/div[3]/section/div/div/form/div[2]/div[2]/div/button[2]'
+    'clone/save': '//*[@type="submit"]'
 }
 
 event = {
