@@ -33,7 +33,7 @@ class CreateRequirement(create_job_role.CreateJobRole):
         if self.login_server == 'ams':
             self.req_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'amsin':
-            self.req_sheet1 = workbook.sheet_by_index(1)
+            self.req_sheet1 = workbook.sheet_by_index(0)
 
     def login(self):
         self.excel_read()
