@@ -7,9 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_event.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,36 +17,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testsuite/CRPO_Flow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="48" column="31" lean-forward="true" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+            <state relative-caret-position="84">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/crpo/create_event.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="330" column="17" lean-forward="true" selection-start-line="330" selection-start-column="17" selection-end-line="330" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hpro automation/page_elements.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="253" lean-forward="true" selection-start-line="253" selection-end-line="253" />
             </state>
           </provider>
         </entry>
@@ -86,9 +63,9 @@
         <option value="$PROJECT_DIR$/hpro automation/webdriver_wait.py" />
         <option value="$PROJECT_DIR$/scripts/crpo/create_requirement.py" />
         <option value="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" />
-        <option value="$PROJECT_DIR$/testsuite/CRPO_Flow.py" />
         <option value="$PROJECT_DIR$/hpro automation/page_elements.py" />
         <option value="$PROJECT_DIR$/scripts/crpo/create_event.py" />
+        <option value="$PROJECT_DIR$/testsuite/CRPO_Flow.py" />
       </list>
     </option>
   </component>
@@ -104,7 +81,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,10 +114,16 @@
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
               <item name="crpo" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="UI-Automation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UI-Automation" type="462c0819:PsiDirectoryNode" />
+              <item name="testsuite" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,20 +275,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="-4" width="1323" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1920123" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1920123" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47102526" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.47102526" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5111441" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.35809806" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.346211" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32986626" />
@@ -471,29 +452,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testsuite/CRPO_Flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="48" column="31" lean-forward="true" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hpro automation/page_elements.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
+        <state relative-caret-position="730">
           <caret line="253" lean-forward="true" selection-start-line="253" selection-end-line="253" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/crpo/create_event.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="330" column="17" lean-forward="true" selection-start-line="330" selection-start-column="17" selection-end-line="330" selection-end-column="17" />
+        <state relative-caret-position="1582">
+          <caret line="353" column="27" lean-forward="true" selection-start-line="353" selection-start-column="27" selection-end-line="353" selection-end-column="27" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsuite/CRPO_Flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
