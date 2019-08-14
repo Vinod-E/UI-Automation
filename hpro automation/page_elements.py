@@ -120,8 +120,8 @@ job = {
                     '/tr[5]/td[5]/div/button',
     'test_automation_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[2]/table/tbody[3]'
                               '/tr[4]/td[3]/div/button',
-    'ready_schedule_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[2]/table/tbody[4]/'
-                        'tr[9]/td[6]/div/button',
+    'ready_schedule_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[2]/table/'
+                             'tbody[4]/tr[10]/td[7]/div/button',
     'Hopping_save_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[1]/button',
 
     'ec_configure': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div[3]/div/div[1]/div/a',
