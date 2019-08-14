@@ -76,6 +76,7 @@ class CreateRequirement(create_job_role.CreateJobRole):
     def create_requirement(self):
 
         try:
+            self.driver.refresh()
             self.driver.implicitly_wait(5)
             self.driver.find_element_by_xpath(page_elements.requirement['requirement_tab']).click()
             time.sleep(5)
