@@ -10,7 +10,6 @@
       <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/create_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,12 +27,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="147" />
-    <option name="y" value="84" />
-    <option name="width" value="1323" />
-    <option name="height" value="726" />
   </component>
   <component name="ProjectId" id="1PMDG2En2IfwEjepRwpydwZja9i" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

@@ -51,6 +51,8 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
         self.event_task_configure()
         self.event_test_configure()
         self.event_owner_configure()
+        # time.sleep(5)
+        # self.upload_candidates_to_event()
 
 
 Object = CrpoFlow()
