@@ -246,6 +246,9 @@ event = {
     'update_owners': '#mainBodyElement > div.ng-scope.unbranded > div > div:nth-child(3) > '
                      'div.col-sm-12.no-padding.ng-scope > section > div:nth-child(2) > div > '
                      'create-update-event-owners > div > div.col-sm-12.no-padding > div >'
-                     ' button.btn.btn-primary.back_btn.ng-scope'
+                     ' button.btn.btn-primary.back_btn.ng-scope',
+    'Floating_actions': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div[2]'
+                        '/section/div[1]/floating-actions/span/span/i',
+    'event_upload_candidates': '//*[@title="Upload Candidates"]'
 
 }
