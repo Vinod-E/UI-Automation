@@ -50,7 +50,7 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
         self.create_event()
         self.event_task_configure()
         self.event_test_configure()
-        # self.event_owner_configure()
+        self.event_owner_configure()
 
 
 Object = CrpoFlow()
