@@ -239,10 +239,8 @@ event = {
     'event_owner_tab': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.owners"]',
     'event_owner_edit': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.manageOwners"]',
     'event_interviewer_add': '//*[@data-ng-click="vm.moveAllItemsRight();"]',
-    'event_custom_users': '#mainBodyElement > div.ng-scope.unbranded > div > div:nth-child(3) > div.'
-                          'col-sm-12.no-padding.ng-scope > section > div:nth-child(2) > div > '
-                          'create-update-event-owners > div > div.row > div:nth-child(4) > div > '
-                          'transcluded-input > div > div > div > p > small > a',
+    'event_custom_users': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div[2]/section/div[2]/div/'
+                          'create-update-event-owners/div/div[1]/div[4]/div/transcluded-input/div/div/div/p/small/a',
     'role': '//*[@placeholder="Role"][@type="text"]',
     'custom_owner_add': '//*[@data-ng-click="vm.moveAllItemsRight();"]',
     'update_owners': '#mainBodyElement > div.ng-scope.unbranded > div > div:nth-child(3) > '

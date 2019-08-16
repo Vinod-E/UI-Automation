@@ -322,24 +322,28 @@ class CreateEvent(create_test.CreateTest):
                 time.sleep(3)
                 add_int = self.driver.find_element_by_xpath(page_elements.event['event_interviewer_add'])
                 add_int.click()
-                add_int.send_keys(Keys.ARROW_DOWN)
+                time.sleep(3)
+                add_int.send_keys(Keys.END)
 
-                time.sleep(5)
-                custom_users = self.driver.find_element_by_css_selector(page_elements.event['event_custom_users'])
-                custom_users.send_keys(Keys.DOWN)
-                custom_users.click()
+                # time.sleep(3)
+                # custom_users = self.driver.find_element_by_xpath(page_elements.event['event_custom_users'])
+                # custom_users.click()
 
-                time.sleep(5)
-                role = self.driver.find_element_by_xpath(page_elements.event['role'])
-                role.send_keys('Event AEE')
-                role.send_keys(Keys.ARROW_DOWN)
-                self.driver.find_element_by_xpath(page_elements.event['custom_owner_add'])
-
+                # time.sleep(3)
+                # role = self.driver.find_element_by_xpath(page_elements.event['role'])
+                # role.send_keys('Event AEE')
+                # role.send_keys(Keys.ARROW_DOWN)
+                # role.send_keys(Keys.ENTER)
+                # time.sleep(5)
+                # role.send_keys(Keys.END)
+                # self.driver.find_element_by_xpath(page_elements.event['custom_owner_add'])
+                #
                 time.sleep(3)
                 update = self.driver.find_element_by_css_selector(page_elements.event['update_owners'])
                 update.send_keys(Keys.ARROW_DOWN)
                 update.click()
 
+                time.sleep(5)
                 print('------------------ Event Owners has been added -----------------------')
                 self.ui_event_owner_config = 'Pass'
 
