@@ -10,7 +10,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 24)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 25)))
         self.Actual_success_cases = []
 
         super(CrpoOutputFile, self).__init__()
@@ -229,6 +229,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         self.ws.write(3, self.event_usecase_col, 'Event task config', self.style8)
         self.ws.write(4, self.event_usecase_col, 'Event test config', self.style8)
         self.ws.write(5, self.event_usecase_col, 'Event owners config', self.style8)
+        self.ws.write(6, self.event_usecase_col, 'Event upload Candidates', self.style8)
         # --------------------------------------------------------------------------------------------------------------
 
         if self.ui_create_event == 'Pass':
@@ -257,6 +258,13 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
             self.ws.write(5, self.event_status_col, 'Pass', self.style7)
         else:
             self.ws.write(5, self.event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+
+        if self.ui_event_upload_candidate == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_upload_candidate)
+            self.ws.write(6, self.event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(6, self.event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['output_report'])

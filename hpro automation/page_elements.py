@@ -249,6 +249,13 @@ event = {
                      ' button.btn.btn-primary.back_btn.ng-scope',
     'Floating_actions': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div[2]'
                         '/section/div[1]/floating-actions/span/span/i',
-    'event_upload_candidates': '//*[@title="Upload Candidates"]'
-
+    'event_upload_candidates': '//*[@title="Upload Candidates"]',
+    'event_upload_file': '//*[@type="file"][@file-model="vm.uploadedCandidateTemplateFile"]',
+    'Next_Button': '//*[@data-ng-click="vm.gotoNextState()"]',
+    'declare_checkbox': '//*[@type="checkbox"][@ng-click="vm.viewDeclaration();"]',
+    'signature': '//*[@type="text"][@ng-model="vm.signature"]',
+    'Agree': '//*[@type="button"][@data-ng-click="$hide();vm.isAgreement=true;"]',
+    'save_uploads': '//*[@data-ng-click="vm.consolidateCandidateInfo();"]',
+    'upload_candidate_count': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/div[2]/div[2]',
+    'close_pop_details_window': '//*[@type="button"][@ng-click="$hide()"]',
 }
