@@ -43,6 +43,7 @@ class CreateEvent(create_test.CreateTest):
         self.ui_event_task_config = []
         self.ui_event_test_config = []
         self.ui_event_owner_config = []
+        self.ui_event_upload_candidate = []
 
         workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_event'])
         if self.login_server == 'beta':
@@ -357,14 +358,46 @@ class CreateEvent(create_test.CreateTest):
                 self.driver.refresh()
                 time.sleep(5)
                 self.driver.find_element_by_xpath(page_elements.event['Floating_actions']).click()
+                time.sleep(3)
                 self.driver.find_element_by_xpath(page_elements.event['event_upload_candidates']).click()
+                upload_file = self.driver.find_element_by_xpath(page_elements.event['event_upload_file'])
+                upload_file.send_keys(test_data_inputpath.crpo_test_data_file['upload_candidate_file'])
+                time.sleep(10)
+                next_button = self.driver.find_element_by_xpath(page_elements.event['Next_Button'])
+                next_button.click()
+                time.sleep(2)
+                declare = self.driver.find_element_by_xpath(page_elements.event['declare_checkbox'])
+                declare.click()
+                time.sleep(3)
+                signature = self.driver.find_element_by_xpath(page_elements.event['signature'])
+                signature.send_keys(Keys.DOWN)
+                signature.send_keys('AutomationV')
+                agree = self.driver.find_element_by_xpath(page_elements.event['Agree'])
+                agree.click()
+                time.sleep(4)
+                save_uploads = self.driver.find_element_by_xpath(page_elements.event['save_uploads'])
+                save_uploads.click()
+
+                t = self.driver.find_element_by_xpath(page_elements.event['upload_candidate_count'])
+                if t.text == 'Uploaded 1':
+                    self.ui_event_upload_candidate = 'Pass'
+                    print 'Pass'
+                else:
+                    print 'Candidate creation Failed'
+
+                self.driver.find_element_by_xpath(page_elements.event['close_pop_details_window']).click()
+                time.sleep(5.5)
+
             except exceptions.ElementNotInteractableException as error:
                 print(error)
+
 
 # Object = CreateEvent()
 # Object.login()
 # if Object.status_of_login == 'administrator':
-#     Object.event_excel_read()
-#     Object.create_event()
-#     Object.event_task_configure()
-#     Object.browser_close()
+# # #     Object.event_excel_read()
+# # #     Object.create_event()
+# # #     Object.event_task_configure()
+#       time.sleep(6)
+#       Object.upload_candidates_to_event()
+# # #     Object.browser_close()

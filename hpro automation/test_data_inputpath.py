@@ -15,5 +15,7 @@ crpo_test_data_file = {
 
     'create_event': generic_input_path + 'testdata/event_details.xls',
 
+    'upload_candidate_file': generic_input_path + 'testdata/candidateUpload.xls',
+
     'output_report': generic_input_path + 'reports/UI_CRPO_Flow.xls'
 }
