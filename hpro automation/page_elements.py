@@ -258,4 +258,22 @@ event = {
     'save_uploads': '//*[@data-ng-click="vm.consolidateCandidateInfo();"]',
     'upload_candidate_count': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/div[2]/div[2]',
     'close_pop_details_window': '//*[@type="button"][@ng-click="$hide()"]',
+    'View_Applicants': '//*[@title="View Candidates"]',
+    'applicant_advance_search': '//*[@data-title="Search"]',
+    'applicant_name': 'name',
+    'applicant_search_button': '//*[@ng-click="vm.apply();$hide();"]',
+    'applicant_getbyid': '//*[@title="{}"]',
+    'applicant_validate': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[1]/div/div/div[2]/div[1]/p[1]',
+    'applicant_select_checkbox': 'grid_items',
+    'Change_applicant_status': '//*[@data-title="Change Applicant Status"]',
+    'change_stage': '//*[@ng-model="vm.selectedStage"]',
+    'change_status': '//*[@ng-model="vm.selectedStatus"]',
+    'comment': '//*[@ng-model="vm.comments"]',
+    'change_button': '//*[@ng-click="vm.changeCandidateStatus()"]',
+    'current_status': '//*[@title="{}"]',
+    'Event_advance_search': '//*[@data-title="Search"]',
+    'event_names': 'Name',
+    'event_search_button': '//*[@ng-click="vm.apply();$hide();"]',
+    'Click_on_event_name': '//*[@title="Click to view full details"]'
+
 }

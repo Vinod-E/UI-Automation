@@ -31,6 +31,11 @@ class CreateEvent(create_test.CreateTest):
         self.xl_task4 = []
         self.xl_event_test_name = []
         self.xl_event_test_stage = []
+        self.xl_hopping_positive_status = []
+        self.xl_hopping_negative_status = []
+        self.xl_change_applicant_stage = []
+        self.xl_change_applicant_status = []
+        self.xl_change_status_comment = []
 
         self.event_name_sprint_version = []
         self.job_name_sprint_version = []
@@ -44,6 +49,12 @@ class CreateEvent(create_test.CreateTest):
         self.ui_event_test_config = []
         self.ui_event_owner_config = []
         self.ui_event_upload_candidate = []
+        self.ui_event_applicants = []
+        self.ui_event_applicant_search = []
+        self.ui_event_applicant_getby = []
+        self.ui_applicant_current_status = []
+        self.ui_ec_eligible = []
+        self.ui_tag_to_test = []
 
         workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_event'])
         if self.login_server == 'beta':
@@ -93,6 +104,16 @@ class CreateEvent(create_test.CreateTest):
                 self.xl_event_test_name.append(str(rows[13]))
             if rows[14]:
                 self.xl_event_test_stage.append(str(rows[14]))
+            if rows[15]:
+                self.xl_hopping_positive_status.append(str(rows[15]))
+            if rows[16]:
+                self.xl_hopping_negative_status.append(str(rows[16]))
+            if rows[17]:
+                self.xl_change_applicant_stage.append(str(rows[17]))
+            if rows[18]:
+                self.xl_change_applicant_status.append(str(rows[18]))
+            if rows[19]:
+                self.xl_change_status_comment.append(str(rows[19]))
 
             for j in self.xl_event_name:
                 event_name = j
@@ -391,13 +412,107 @@ class CreateEvent(create_test.CreateTest):
             except exceptions.ElementNotInteractableException as error:
                 print(error)
 
+    def view_upload_candidates(self, CandidateName):
+        event_tab = self.driver.find_element_by_xpath(page_elements.event['event_tab'])
+        event_tab.click()
+
+        search = self.driver.find_element_by_xpath(page_elements.event['Event_advance_search'])
+        search.click()
+        self.driver.find_element_by_name(page_elements.event['event_names']).send_keys(self.event_name_sprint_version)
+        self.driver.find_element_by_xpath(page_elements.event['event_search_button']).click()
+        time.sleep(1.2)
+        self.driver.find_element_by_xpath(page_elements.event['Click_on_event_name']).click()
+        time.sleep(1.2)
+
+        if self.grid_event_name == self.event_name_sprint_version:
+
+            try:
+                self.driver.refresh()
+                time.sleep(5)
+                self.driver.find_element_by_xpath(page_elements.event['Floating_actions']).click()
+                time.sleep(2)
+                self.driver.find_element_by_xpath(page_elements.event['View_Applicants']).click()
+                self.ui_event_applicants = 'Pass'
+
+                # --------------------------- Applicant Advance search -------------------
+                time.sleep(2)
+                advance_search = self.driver.find_element_by_xpath(page_elements.event['applicant_advance_search'])
+                advance_search.click()
+                applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
+                applicant_name.send_keys(CandidateName)
+                self.ui_event_applicant_search = 'Pass'
+                time.sleep(2)
+                self.driver.find_element_by_xpath(page_elements.event['applicant_search_button']).click()
+
+                # --------------------------- Applicant Get By Id -------------------
+                time.sleep(3)
+                applicant_getbyid = self.driver.find_element_by_xpath(
+                    page_elements.event['applicant_getbyid'].format(CandidateName))
+                applicant_getbyid.click()
+                self.driver.switch_to.window(self.driver.window_handles[1])
+                time.sleep(2.5)
+
+                applicant_validate = self.driver.find_element_by_xpath(page_elements.event['applicant_validate'])
+                if applicant_validate.text == CandidateName:
+                    self.ui_event_applicant_getby = 'Pass'
+                    print "Applicant validated"
+
+                positive_hopping = self.driver.find_element_by_xpath(
+                    page_elements.event['current_status'].format(self.xl_change_applicant_status))
+                if positive_hopping.text == self.xl_hopping_positive_status:
+                    self.ui_ec_eligible = 'Pass'
+                    self.ui_tag_to_test = 'Pass'
+                    print "EC and Tag to test successfully"
+
+                self.browser_close()
+                time.sleep(3.5)
+
+                # --------------------------- Change Applicant Status -------------------
+                self.driver.switch_to.window(self.driver.window_handles[0])
+                self.driver.find_element_by_name(page_elements.event['applicant_select_checkbox']).click()
+                change_applicant_status = \
+                    self.driver.find_element_by_xpath(page_elements.event['Change_applicant_status'])
+                change_applicant_status.click()
+                time.sleep(1.5)
+                stage = self.driver.find_element_by_xpath(page_elements.event['change_stage'])
+                stage.send_keys(self.xl_change_applicant_stage)
+
+                status = self.driver.find_element_by_xpath(page_elements.event['change_status'])
+                status.send_keys(self.xl_change_applicant_status)
+
+                comment = self.driver.find_element_by_xpath(page_elements.event['comment'])
+                comment.send_keys(self.xl_change_status_comment)
+                time.sleep(1.9)
+                self.driver.find_element_by_xpath(page_elements.event['change_button']).click()
+
+                # --------------------------- Applicant Get By Id -------------------
+                time.sleep(3)
+                applicant_getbyid = self.driver.find_element_by_xpath(
+                    page_elements.event['applicant_getbyid'].format(CandidateName))
+                applicant_getbyid.click()
+                self.driver.switch_to.window(self.driver.window_handles[1])
+                time.sleep(2.5)
+
+                current_status = self.driver.find_element_by_xpath(
+                    page_elements.event['current_status'].format(self.xl_change_applicant_status))
+                if current_status.text == self.xl_change_applicant_status:
+                    self.ui_applicant_current_status = 'Pass'
+                    print "Change applicant status successfully"
+
+                self.browser_close()
+                time.sleep(10)
+            except exceptions.ElementNotInteractableException as error:
+                print(error)
+
 
 # Object = CreateEvent()
 # Object.login()
+# Object.event_excel_read()
 # if Object.status_of_login == 'administrator':
-# # #     Object.event_excel_read()
-# # #     Object.create_event()
-# # #     Object.event_task_configure()
-#       time.sleep(6)
-#       Object.upload_candidates_to_event()
-# # #     Object.browser_close()
+#     # Object.create_event()
+#     # Object.event_task_configure()
+#     # time.sleep(6)
+#     # Object.upload_candidates_to_event()
+#     Object.view_upload_candidates('UIFirst Upload Upload')
+#     Object.driver.switch_to.window(Object.driver.window_handles[0])
+#     Object.browser_close()
