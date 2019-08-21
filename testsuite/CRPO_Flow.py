@@ -44,7 +44,7 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
         self.test_advance_search()
         self.clone_test()
 
-    def event_creation(self):
+    def event_creation(self, ApplicantName):
 
         self.event_excel_read()
         self.create_event()
@@ -52,6 +52,7 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
         self.event_test_configure()
         self.event_owner_configure()
         self.upload_candidates_to_event()
+        self.view_upload_candidates(ApplicantName)
 
 
 Object = CrpoFlow()
@@ -75,7 +76,8 @@ if Object.status_of_login == 'administrator':
     Object.test_output_report()
 
     # ---------- Event creation -----------------
-    Object.event_creation()
+    Object.event_creation('Uisecond Upload Upload')
+    Object.driver.switch_to.window(Object.driver.window_handles[0])
     Object.event_output_report()
     Object.browser_close()
     Object.overall_status()
