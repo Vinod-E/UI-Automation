@@ -6,14 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/create_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testdata/candidateUpload.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/candidateUpload.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testdata/event_details.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/event_details.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.CRPO_Flow">
+  <component name="RunManager" selected="Python.create_event">
     <configuration name="CRPO_Flow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UI Automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.CRPO_Flow" />
         <item itemvalue="Python.create_event" />
+        <item itemvalue="Python.CRPO_Flow" />
         <item itemvalue="Python.create_requirement" />
         <item itemvalue="Python.create_job_role" />
         <item itemvalue="Python.crpo_outfile" />

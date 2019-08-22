@@ -281,6 +281,7 @@ class CreateEvent(create_test.CreateTest):
                 self.driver.find_element_by_xpath(page_elements.job['activity_task_configuration_save']).click()
                 print('------------------ Event Task configuration done -----------------------')
                 self.ui_event_task_config = 'Pass'
+                time.sleep(2.2)
 
             except exceptions.ElementNotInteractableException as error:
                 print(error)
@@ -323,6 +324,7 @@ class CreateEvent(create_test.CreateTest):
 
                 print('------------------ Event Test configuration has been done -----------------------')
                 self.ui_event_test_config = 'Pass'
+                time.sleep(2.2)
 
             except exceptions.ElementNotInteractableException as error:
                 print(error)
@@ -399,12 +401,13 @@ class CreateEvent(create_test.CreateTest):
                 save_uploads = self.driver.find_element_by_xpath(page_elements.event['save_uploads'])
                 save_uploads.click()
 
+                time.sleep(2.9)
                 t = self.driver.find_element_by_xpath(page_elements.event['upload_candidate_count'])
                 if t.text == 'Uploaded 1':
                     self.ui_event_upload_candidate = 'Pass'
-                    print 'Pass'
+                    print '-------------------- Candidate created ---------------------------'
                 else:
-                    print 'Candidate creation Failed'
+                    print '------------------------ Candidate creation Failed ----------------------'
 
                 self.driver.find_element_by_xpath(page_elements.event['close_pop_details_window']).click()
                 time.sleep(5.5)
@@ -416,6 +419,7 @@ class CreateEvent(create_test.CreateTest):
         event_tab = self.driver.find_element_by_xpath(page_elements.event['event_tab'])
         event_tab.click()
 
+        time.sleep(2.22)
         search = self.driver.find_element_by_xpath(page_elements.event['Event_advance_search'])
         search.click()
         self.driver.find_element_by_name(page_elements.event['event_names']).send_keys(self.event_name_sprint_version)
@@ -455,10 +459,10 @@ class CreateEvent(create_test.CreateTest):
                 applicant_validate = self.driver.find_element_by_xpath(page_elements.event['applicant_validate'])
                 if applicant_validate.text == CandidateName:
                     self.ui_event_applicant_getby = 'Pass'
-                    print "Applicant validated"
+                    print "--------------------- Applicant validated ---------------------"
 
                 positive_hopping = self.driver.find_element_by_xpath(
-                    page_elements.event['current_status'].format(self.xl_change_applicant_status))
+                    page_elements.event['current_status'].format(self.xl_hopping_positive_status))
                 if positive_hopping.text == self.xl_hopping_positive_status:
                     self.ui_ec_eligible = 'Pass'
                     self.ui_tag_to_test = 'Pass'
@@ -509,10 +513,10 @@ class CreateEvent(create_test.CreateTest):
 # Object.login()
 # Object.event_excel_read()
 # if Object.status_of_login == 'administrator':
-#     # Object.create_event()
-#     # Object.event_task_configure()
-#     # time.sleep(6)
-#     # Object.upload_candidates_to_event()
-#     Object.view_upload_candidates('UIFirst Upload Upload')
+#     Object.create_event()
+#     Object.event_task_configure()
+#     time.sleep(6)
+#     Object.upload_candidates_to_event()
+#     Object.view_upload_candidates('Uithird Upload Upload')
 #     Object.driver.switch_to.window(Object.driver.window_handles[0])
 #     Object.browser_close()
