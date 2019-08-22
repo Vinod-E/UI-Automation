@@ -10,7 +10,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 31)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 32)))
         self.Actual_success_cases = []
 
         super(CrpoOutputFile, self).__init__()
@@ -31,10 +31,12 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         self.test_status_col = 5
         self.event_usecase_col = 6
         self.event_status_col = 7
+        self.task_usecase_col = 8
+        self.task_status_col = 9
 
         index = 0
         excelheaders = ['Job UseCases', 'Job Status', 'Requirement Usecases', 'Requirement Status', 'Test UseCases',
-                        'Test Status', 'Event UseCases', 'Event Status']
+                        'Test Status', 'Event UseCases', 'Event Status', 'Task Assignment', 'Task Assignment Status']
         for headers in excelheaders:
             if headers in ['Job UseCases', 'Job Status', 'Requirement Usecases', 'Requirement Status', 'Test UseCases',
                            'Test Status', 'Event UseCases', 'Event Status']:
@@ -231,11 +233,12 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         self.ws.write(5, self.event_usecase_col, 'Event owners config', self.style8)
         self.ws.write(6, self.event_usecase_col, 'Event upload Candidates', self.style8)
         self.ws.write(7, self.event_usecase_col, 'Event View Candidates', self.style8)
-        self.ws.write(8, self.event_usecase_col, 'Applicants Advance search', self.style8)
-        self.ws.write(9, self.event_usecase_col, 'Applicant get_by_Id', self.style8)
-        self.ws.write(10, self.event_usecase_col, 'EC with positive status', self.style8)
-        self.ws.write(11, self.event_usecase_col, 'Tag to test', self.style8)
-        self.ws.write(12, self.event_usecase_col, 'Change applicant status', self.style8)
+        self.ws.write(8, self.event_usecase_col, 'Event Advance search', self.style8)
+        self.ws.write(9, self.event_usecase_col, 'Applicants Advance search', self.style8)
+        self.ws.write(10, self.event_usecase_col, 'Applicant get_by_Id', self.style8)
+        self.ws.write(11, self.event_usecase_col, 'EC with positive status', self.style8)
+        self.ws.write(12, self.event_usecase_col, 'Tag to test', self.style8)
+        self.ws.write(13, self.event_usecase_col, 'Change applicant status', self.style8)
 
         # --------------------------------------------------------------------------------------------------------------
 
@@ -281,42 +284,68 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
             self.ws.write(7, self.event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
-        if self.ui_event_applicant_search == 'Pass':
-            self.Actual_success_cases.append(self.ui_event_applicant_search)
+        if self.ui_event_advance_search == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_advance_search)
             self.ws.write(8, self.event_status_col, 'Pass', self.style7)
         else:
             self.ws.write(8, self.event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
-        if self.ui_event_applicant_getby == 'Pass':
-            self.Actual_success_cases.append(self.ui_event_applicant_getby)
+        if self.ui_event_applicant_search == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_applicant_search)
             self.ws.write(9, self.event_status_col, 'Pass', self.style7)
         else:
             self.ws.write(9, self.event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
-        if self.ui_ec_eligible == 'Pass':
-            self.Actual_success_cases.append(self.ui_ec_eligible)
+        if self.ui_event_applicant_getby == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_applicant_getby)
             self.ws.write(10, self.event_status_col, 'Pass', self.style7)
         else:
             self.ws.write(10, self.event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
-        if self.ui_tag_to_test == 'Pass':
-            self.Actual_success_cases.append(self.ui_tag_to_test)
+        if self.ui_ec_eligible == 'Pass':
+            self.Actual_success_cases.append(self.ui_ec_eligible)
             self.ws.write(11, self.event_status_col, 'Pass', self.style7)
         else:
             self.ws.write(11, self.event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
-        if self.ui_applicant_current_status == 'Pass':
-            self.Actual_success_cases.append(self.ui_applicant_current_status)
+        if self.ui_tag_to_test == 'Pass':
+            self.Actual_success_cases.append(self.ui_tag_to_test)
             self.ws.write(12, self.event_status_col, 'Pass', self.style7)
         else:
             self.ws.write(12, self.event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
+        if self.ui_applicant_current_status == 'Pass':
+            self.Actual_success_cases.append(self.ui_applicant_current_status)
+            self.ws.write(13, self.event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(13, self.event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['output_report'])
+
+    def task_assign_output_report(self):
+        # ------------- Event Use cases -------------------
+        self.ws.write(2, self.task_usecase_col, 'Task Assignment', self.style8)
+        self.ws.write(3, self.task_usecase_col, 'Assignment Status', self.style8)
+        self.ws.write(4, self.task_usecase_col, 'Activity Call Back', self.style8)
+        self.ws.write(5, self.task_usecase_col, 'Total Task Count', self.style8)
+        self.ws.write(6, self.task_usecase_col, 'Submitted Task Count', self.style8)
+        self.ws.write(7, self.task_usecase_col, 'Approved Task Count', self.style8)
+        self.ws.write(8, self.task_usecase_col, 'Pending Task Count', self.style8)
+        self.ws.write(9, self.task_usecase_col, 'rejected Task Count', self.style8)
+        # --------------------------------------------------------------------------------------------------------------
+
+        if self.ui_task_candidate_name == 'Pass':
+            self.Actual_success_cases.append(self.ui_task_candidate_name)
+            self.ws.write(2, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(2, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
 
     def overall_status(self):
         self.ws.write(0, 0, 'CRPO USECASES', self.style4)
