@@ -346,6 +346,48 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         else:
             self.ws.write(2, self.task_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
+        if self.ui_a2_assignment == 'Pass':
+            self.Actual_success_cases.append(self.ui_a2_assignment)
+            self.ws.write(3, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(3, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_call_back_status == 'Pass':
+            self.Actual_success_cases.append(self.ui_call_back_status)
+            self.ws.write(4, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(4, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_total_tasks == 'Pass':
+            self.Actual_success_cases.append(self.ui_total_tasks)
+            self.ws.write(5, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(5, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_submitted_tasks == 'Pass':
+            self.Actual_success_cases.append(self.ui_submitted_tasks)
+            self.ws.write(6, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(6, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_approved_tasks == 'Pass':
+            self.Actual_success_cases.append(self.ui_approved_tasks)
+            self.ws.write(7, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(7, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_pending_tasks == 'Pass':
+            self.Actual_success_cases.append(self.ui_pending_tasks)
+            self.ws.write(8, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(8, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_rejected_tasks == 'Pass':
+            self.Actual_success_cases.append(self.ui_rejected_tasks)
+            self.ws.write(9, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(9, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
 
     def overall_status(self):
         self.ws.write(0, 0, 'CRPO USECASES', self.style4)

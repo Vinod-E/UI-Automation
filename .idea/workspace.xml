@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/scripts/crpo/create_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_event.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testdata/candidateUpload.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/candidateUpload.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testdata/event_details.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/event_details.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

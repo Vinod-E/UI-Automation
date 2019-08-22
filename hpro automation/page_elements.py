@@ -279,5 +279,22 @@ event = {
     'candidate_details_floating_actions': '//*[@id="mainBodyElement"]/div[3]/div/div[1]'
                                           '/div[2]/floating-actions/span/span/i',
     'task_candidate_name': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[1]/div/div[1]/div[1]/span',
-    'POFU_App': '//*[@ng-click="vm.invokeOtherApp(value.click)"]'
+    'total_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[5]',
+    'approved_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[4]',
+    'pending_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[2]',
+    'submitted_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[1]',
+    'rejected_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[3]',
+    'more_tabs': '//*[@data-placement="bottom-center"]',
+}
+
+pofu = {
+    'POFU_App': '//*[@ng-click="vm.invokeOtherApp(value.click)"]',
+    'pofu_candidates_tab': '/html/body/div[1]/header[2]/div/div/div[2]/div/ul/li[2]/a',
+    'pofu_candidates_advance_search': '//*[@ng-click="vm.toggleAdvancedSearch()"]',
+    'pofu_candi_text_box': '//*[@ng-model="vm.candidateSearchCriteria.CandidatName"]',
+    'pofu_search_button': '/html/body/div[2]/div/div[1]/section/div/div/di'
+                          'v[1]/div/div/div/div[2]/div[1]/div[2]/div[2]/div/div[1]/form/div/div[3]/div[3]/button',
+    'submit_behalf_of': '//*[@title="Submit Tasks on Behalf of Candidate"]',
+    'task_acceptance': 'testacceprtanceoffer',
+    'submit_task': '//*[@data-ng-click="vm.submitForm(false);"]'
 }
