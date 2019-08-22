@@ -76,7 +76,7 @@ if Object.status_of_login == 'administrator':
     Object.test_output_report()
 
     # ---------- Event creation -----------------
-    Object.event_creation('Uisecond Upload Upload')
+    Object.event_creation('Uithird Upload Upload')
     Object.driver.switch_to.window(Object.driver.window_handles[0])
     Object.event_output_report()
     Object.browser_close()
