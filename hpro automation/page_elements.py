@@ -274,6 +274,10 @@ event = {
     'Event_advance_search': '//*[@data-title="Search"]',
     'event_names': 'Name',
     'event_search_button': '//*[@ng-click="vm.apply();$hide();"]',
-    'Click_on_event_name': '//*[@title="Click to view full details"]'
-
+    'Click_on_event_name': '//*[@title="Click to view full details"]',
+    'manage_task': '//*[@title="Manage Task"]',
+    'candidate_details_floating_actions': '//*[@id="mainBodyElement"]/div[3]/div/div[1]'
+                                          '/div[2]/floating-actions/span/span/i',
+    'task_candidate_name': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[1]/div/div[1]/div[1]/span',
+    'POFU_App': '//*[@ng-click="vm.invokeOtherApp(value.click)"]'
 }
