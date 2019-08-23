@@ -497,7 +497,7 @@ class CreateEvent(create_test.CreateTest):
         if self.grid_event_name == self.event_name_sprint_version:
             try:
                 self.driver.refresh()
-                time.sleep(5)
+                time.sleep(10)
                 self.driver.find_element_by_xpath(page_elements.event['Floating_actions']).click()
                 time.sleep(2)
                 self.driver.find_element_by_xpath(page_elements.event['View_Applicants']).click()
@@ -656,9 +656,6 @@ class CreateEvent(create_test.CreateTest):
         try:
             # --------------------------- Applicant Advance search -------------------
             time.sleep(3.9)
-            advance_search = self.driver.find_element_by_xpath(page_elements.event['applicant_advance_search'])
-            time.sleep(2.5)
-            advance_search.click()
             applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
             applicant_name.clear()
             applicant_name.send_keys(self.Upload_candidateName)
