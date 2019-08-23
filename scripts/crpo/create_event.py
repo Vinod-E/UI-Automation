@@ -37,9 +37,21 @@ class CreateEvent(create_test.CreateTest):
         self.xl_change_applicant_status = []
         self.xl_change_status_comment = []
         self.xl_upload_candidate_name = []
+        self.xl_call_back_status = []
+        self.xl_total_tasks = []
+        self.xl_completed_tasks = []
+        self.xl_pending_tasks = []
+        self.xl_submitted_tasks = []
+        self.xl_rejected_tasks = []
         self.Upload_candidateName = ""
         self.hopping_positive_status = ""
         self.change_applicant_status = ""
+        self.call_back_status = ""
+        self.total_tasks = ""
+        self.completed_tasks = ""
+        self.pending_tasks = ""
+        self.submitted_tasks = ""
+        self.rejected_tasks = ""
 
         self.event_name_sprint_version = []
         self.job_name_sprint_version = []
@@ -61,6 +73,13 @@ class CreateEvent(create_test.CreateTest):
         self.ui_ec_eligible = []
         self.ui_tag_to_test = []
         self.ui_task_candidate_name = []
+        self.ui_call_back_status = []
+        self.ui_total_tasks = []
+        self.ui_approved_tasks = []
+        self.ui_pending_tasks = []
+        self.ui_submitted_tasks = []
+        self.ui_rejected_tasks = []
+        self.ui_a2_assignment = []
 
         workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_event'])
         if self.login_server == 'beta':
@@ -132,6 +151,18 @@ class CreateEvent(create_test.CreateTest):
                 self.xl_change_applicant_status.append(str(rows[18]))
             if rows[19]:
                 self.xl_change_status_comment.append(str(rows[19]))
+            if rows[20]:
+                self.xl_call_back_status.append(str(rows[20]))
+            if rows[21]:
+                self.xl_total_tasks.append(int(rows[21]))
+            if rows[22]:
+                self.xl_completed_tasks.append(int(rows[22]))
+            if rows[23]:
+                self.xl_pending_tasks.append(int(rows[23]))
+            if rows[24]:
+                self.xl_submitted_tasks.append(int(rows[24]))
+            if rows[25]:
+                self.xl_rejected_tasks.append(int(rows[25]))
 
             for j in self.xl_event_name:
                 event_name = j
@@ -153,9 +184,20 @@ class CreateEvent(create_test.CreateTest):
                 self.hopping_positive_status = x
             for y in self.xl_change_applicant_status:
                 self.change_applicant_status = y
+            for z in self.xl_call_back_status:
+                self.call_back_status = z
+            for a in self.xl_total_tasks:
+                self.total_tasks = a
+            for b in self.xl_pending_tasks:
+                self.pending_tasks = b
+            for c in self.xl_completed_tasks:
+                self.completed_tasks = c
+            for d in self.xl_submitted_tasks:
+                self.submitted_tasks = d
+            for e in self.xl_rejected_tasks:
+                self.rejected_tasks = e
 
     def create_event(self):
-
         try:
             time.sleep(5)
             event_tab = self.driver.find_element_by_xpath(page_elements.event['event_tab'])
@@ -230,7 +272,7 @@ class CreateEvent(create_test.CreateTest):
                     page_elements.test['grid_test_name'].format(self.event_name_sprint_version))
                 self.grid_event_name = test_name.text
                 if self.grid_event_name == self.event_name_sprint_version:
-                    print('------------------- Event name is validated ------------------')
+                    print('------------------ Event name is validated ------------------')
             except exceptions.ElementNotInteractableException as e:
                 print(e)
         except exceptions.ElementNotInteractableException as error:
@@ -428,7 +470,7 @@ class CreateEvent(create_test.CreateTest):
                 t = self.driver.find_element_by_xpath(page_elements.event['upload_candidate_count'])
                 if t.text == 'Uploaded 1':
                     self.ui_event_upload_candidate = 'Pass'
-                    print '-------------------- Candidate created ---------------------------'
+                    print '----------------- Candidate created ---------------------------'
                 else:
                     print '------------------------ Candidate creation Failed ----------------------'
 
@@ -452,9 +494,7 @@ class CreateEvent(create_test.CreateTest):
         self.ui_event_advance_search = 'Pass'
         time.sleep(1.2)
 
-        # if self.grid_event_name == self.event_name_sprint_version:
-        if 1==1:
-
+        if self.grid_event_name == self.event_name_sprint_version:
             try:
                 self.driver.refresh()
                 time.sleep(5)
@@ -464,8 +504,9 @@ class CreateEvent(create_test.CreateTest):
                 self.ui_event_applicants = 'Pass'
 
                 # --------------------------- Applicant Advance search -------------------
-                time.sleep(2)
+                time.sleep(2.5)
                 advance_search = self.driver.find_element_by_xpath(page_elements.event['applicant_advance_search'])
+                time.sleep(2)
                 advance_search.click()
                 applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
                 applicant_name.send_keys(self.Upload_candidateName)
@@ -484,14 +525,14 @@ class CreateEvent(create_test.CreateTest):
                 applicant_validate = self.driver.find_element_by_xpath(page_elements.event['applicant_validate'])
                 if applicant_validate.text == self.Upload_candidateName:
                     self.ui_event_applicant_getby = 'Pass'
-                    print "--------------------- Applicant validated ---------------------"
+                    print "------------------ Applicant validated ---------------------"
 
                 positive_hopping = self.driver.find_element_by_xpath(
                     page_elements.event['current_status'].format(self.hopping_positive_status))
                 if positive_hopping.text == self.hopping_positive_status:
                     self.ui_ec_eligible = 'Pass'
                     self.ui_tag_to_test = 'Pass'
-                    print "--------------- EC and Tag to test successfully ---------------"
+                    print "----------------- EC and Tag to test successfully ---------------"
 
                 time.sleep(3.5)
                 self.browser_close()
@@ -522,12 +563,12 @@ class CreateEvent(create_test.CreateTest):
             self.driver.find_element_by_xpath(page_elements.event['change_button']).click()
 
             # --------------------------- Applicant Advance search -------------------
-            time.sleep(2)
+            time.sleep(5)
             advance_search = self.driver.find_element_by_xpath(page_elements.event['applicant_advance_search'])
+            time.sleep(2.3)
             advance_search.click()
             applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
             applicant_name.send_keys(self.Upload_candidateName)
-            self.ui_event_applicant_search = 'Pass'
             time.sleep(2)
             self.driver.find_element_by_xpath(page_elements.event['applicant_search_button']).click()
 
@@ -565,6 +606,117 @@ class CreateEvent(create_test.CreateTest):
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.browser_close()
             self.driver.switch_to.window(self.driver.window_handles[0])
+
+        except exceptions.ElementNotInteractableException as error:
+            print(error)
+
+    def pofu_app(self):
+        try:
+            time.sleep(2.2)
+            more_tabs = self.driver.find_element_by_xpath(page_elements.event['more_tabs'])
+            more_tabs.click()
+            time.sleep(5.5)
+            embrace_tab = self.driver.find_element_by_xpath(page_elements.pofu['POFU_App'])
+            embrace_tab.click()
+
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            self.driver.implicitly_wait(10)
+            pofu_candi_tab = self.driver.find_element_by_xpath(page_elements.pofu['pofu_candidates_tab'])
+            pofu_candi_tab.click()
+
+            time.sleep(5)
+            search = self.driver.find_element_by_xpath(page_elements.pofu['pofu_candidates_advance_search'])
+            search.click()
+
+            name = self.driver.find_element_by_xpath(page_elements.pofu['pofu_candi_text_box'])
+            name.send_keys(self.Upload_candidateName)
+
+            time.sleep(2.2)
+            search_button = self.driver.find_element_by_xpath(page_elements.pofu['pofu_search_button'])
+            search_button.click()
+
+            time.sleep(1.9)
+            behalf = self.driver.find_element_by_xpath(page_elements.pofu['submit_behalf_of'])
+            behalf.click()
+
+            time.sleep(2.5)
+            task_01 = self.driver.find_element_by_name(page_elements.pofu['task_acceptance'])
+            task_01.click()
+
+            submit = self.driver.find_element_by_xpath(page_elements.pofu['submit_task'])
+            submit.click()
+            time.sleep(5)
+
+            self.browser_close()
+            self.driver.switch_to.window(self.driver.window_handles[0])
+        except exceptions.ElementNotInteractableException as error:
+            print(error)
+
+    def candidate_status(self):
+        try:
+            # --------------------------- Applicant Advance search -------------------
+            time.sleep(3.9)
+            advance_search = self.driver.find_element_by_xpath(page_elements.event['applicant_advance_search'])
+            time.sleep(2.5)
+            advance_search.click()
+            applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
+            applicant_name.clear()
+            applicant_name.send_keys(self.Upload_candidateName)
+            time.sleep(2)
+            self.driver.find_element_by_xpath(page_elements.event['applicant_search_button']).click()
+
+            # --------------------------- Applicant Get By Id -------------------
+            time.sleep(3)
+            applicant_getbyid = self.driver.find_element_by_xpath(
+                page_elements.event['applicant_getbyid'].format(self.Upload_candidateName))
+            applicant_getbyid.click()
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            time.sleep(2.5)
+
+            current_status = self.driver.find_element_by_xpath(
+                page_elements.event['current_status'].format(self.call_back_status))
+            if current_status.text == self.call_back_status:
+                self.ui_call_back_status = 'Pass'
+                print "------------------- call back activity successfully -----------------"
+
+            time.sleep(2.5)
+            self.driver.find_element_by_xpath(page_elements.event['candidate_details_floating_actions']).click()
+            time.sleep(2.5)
+            self.driver.find_element_by_xpath(page_elements.event['manage_task']).click()
+
+            self.driver.switch_to.window(self.driver.window_handles[2])
+
+            # ---------------- Total tasks --------------
+            total = self.driver.find_element_by_xpath(page_elements.event['total_tasks'])
+            if str(self.total_tasks) in total.text:
+                self.ui_total_tasks = 'Pass'
+                self.ui_a2_assignment = 'Pass'
+
+            # ---------------- Approved tasks --------------
+            approved = self.driver.find_element_by_xpath(page_elements.event['approved_tasks'])
+            if str(self.completed_tasks) in approved.text:
+                self.ui_approved_tasks = 'Pass'
+
+            # ---------------- Pending tasks --------------
+            pending = self.driver.find_element_by_xpath(page_elements.event['pending_tasks'])
+            if str(self.pending_tasks) in pending.text:
+                self.ui_pending_tasks = 'Pass'
+
+            # ---------------- Submitted tasks --------------
+            submitted = self.driver.find_element_by_xpath(page_elements.event['submitted_tasks'])
+            if str(self.submitted_tasks) in submitted.text:
+                self.ui_submitted_tasks = 'Pass'
+
+            # ---------------- Rejected tasks --------------
+            rejected = self.driver.find_element_by_xpath(page_elements.event['rejected_tasks'])
+            if str(self.rejected_tasks) in rejected.text:
+                self.ui_rejected_tasks = 'Pass'
+
+            self.browser_close()
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            self.browser_close()
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            time.sleep(10)
 
         except exceptions.ElementNotInteractableException as error:
             print(error)

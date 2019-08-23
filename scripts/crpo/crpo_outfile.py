@@ -10,7 +10,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 32)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 40)))
         self.Actual_success_cases = []
 
         super(CrpoOutputFile, self).__init__()
@@ -345,6 +345,48 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
             self.ws.write(2, self.task_status_col, 'Pass', self.style7)
         else:
             self.ws.write(2, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_a2_assignment == 'Pass':
+            self.Actual_success_cases.append(self.ui_a2_assignment)
+            self.ws.write(3, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(3, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_call_back_status == 'Pass':
+            self.Actual_success_cases.append(self.ui_call_back_status)
+            self.ws.write(4, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(4, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_total_tasks == 'Pass':
+            self.Actual_success_cases.append(self.ui_total_tasks)
+            self.ws.write(5, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(5, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_submitted_tasks == 'Pass':
+            self.Actual_success_cases.append(self.ui_submitted_tasks)
+            self.ws.write(6, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(6, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_approved_tasks == 'Pass':
+            self.Actual_success_cases.append(self.ui_approved_tasks)
+            self.ws.write(7, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(7, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_pending_tasks == 'Pass':
+            self.Actual_success_cases.append(self.ui_pending_tasks)
+            self.ws.write(8, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(8, self.task_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_rejected_tasks == 'Pass':
+            self.Actual_success_cases.append(self.ui_rejected_tasks)
+            self.ws.write(9, self.task_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(9, self.task_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
     def overall_status(self):
