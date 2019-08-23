@@ -291,8 +291,9 @@ class CreateEvent(create_test.CreateTest):
                 configure_task = self.driver.find_element_by_xpath(page_elements.event['event_task_configure'])
                 configure_task.click()
 
-                time.sleep(3)
+                time.sleep(2)
                 add_row = self.driver.find_element_by_xpath(page_elements.job['new_task_row'])
+                time.sleep(2.2)
                 add_row.click()
 
                 time.sleep(5)
@@ -635,7 +636,7 @@ class CreateEvent(create_test.CreateTest):
             search_button = self.driver.find_element_by_xpath(page_elements.pofu['pofu_search_button'])
             search_button.click()
 
-            time.sleep(1.9)
+            time.sleep(5.2)
             behalf = self.driver.find_element_by_xpath(page_elements.pofu['submit_behalf_of'])
             behalf.click()
 
