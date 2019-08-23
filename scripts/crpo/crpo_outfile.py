@@ -10,7 +10,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 32)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 40)))
         self.Actual_success_cases = []
 
         super(CrpoOutputFile, self).__init__()

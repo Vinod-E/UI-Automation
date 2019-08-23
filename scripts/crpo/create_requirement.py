@@ -151,7 +151,7 @@ class CreateRequirement(create_job_role.CreateJobRole):
             getbyid = self.driver.find_element_by_xpath(
                 page_elements.requirement['req_name_getbyid'].format(self.requirement_sprint_version))
             getbyid.click()
-            print('------------------- req getbyid functionality is working ---------------')
+            print('----------------- req getbyid functionality is working ---------------')
             self.ui_req_getbyid = 'Pass'
 
             time.sleep(3)
@@ -163,7 +163,7 @@ class CreateRequirement(create_job_role.CreateJobRole):
             self.driver.implicitly_wait(10)
             config = self.driver.find_element_by_xpath(page_elements.requirement['req_config_tab'])
             config.click()
-            print('------------- configuration tab functionality is working -------------------')
+            print('------------------- configuration tab functionality is working -------------------')
             self.ui_req_config_tab = 'Pass'
 
             time.sleep(3)

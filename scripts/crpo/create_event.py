@@ -272,7 +272,7 @@ class CreateEvent(create_test.CreateTest):
                     page_elements.test['grid_test_name'].format(self.event_name_sprint_version))
                 self.grid_event_name = test_name.text
                 if self.grid_event_name == self.event_name_sprint_version:
-                    print('------------------- Event name is validated ------------------')
+                    print('------------------ Event name is validated ------------------')
             except exceptions.ElementNotInteractableException as e:
                 print(e)
         except exceptions.ElementNotInteractableException as error:
@@ -470,7 +470,7 @@ class CreateEvent(create_test.CreateTest):
                 t = self.driver.find_element_by_xpath(page_elements.event['upload_candidate_count'])
                 if t.text == 'Uploaded 1':
                     self.ui_event_upload_candidate = 'Pass'
-                    print '-------------------- Candidate created ---------------------------'
+                    print '----------------- Candidate created ---------------------------'
                 else:
                     print '------------------------ Candidate creation Failed ----------------------'
 
@@ -504,8 +504,9 @@ class CreateEvent(create_test.CreateTest):
                 self.ui_event_applicants = 'Pass'
 
                 # --------------------------- Applicant Advance search -------------------
-                time.sleep(2)
+                time.sleep(2.5)
                 advance_search = self.driver.find_element_by_xpath(page_elements.event['applicant_advance_search'])
+                time.sleep(2)
                 advance_search.click()
                 applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
                 applicant_name.send_keys(self.Upload_candidateName)
@@ -524,14 +525,14 @@ class CreateEvent(create_test.CreateTest):
                 applicant_validate = self.driver.find_element_by_xpath(page_elements.event['applicant_validate'])
                 if applicant_validate.text == self.Upload_candidateName:
                     self.ui_event_applicant_getby = 'Pass'
-                    print "--------------------- Applicant validated ---------------------"
+                    print "------------------ Applicant validated ---------------------"
 
                 positive_hopping = self.driver.find_element_by_xpath(
                     page_elements.event['current_status'].format(self.hopping_positive_status))
                 if positive_hopping.text == self.hopping_positive_status:
                     self.ui_ec_eligible = 'Pass'
                     self.ui_tag_to_test = 'Pass'
-                    print "--------------- EC and Tag to test successfully ---------------"
+                    print "----------------- EC and Tag to test successfully ---------------"
 
                 time.sleep(3.5)
                 self.browser_close()
@@ -562,8 +563,9 @@ class CreateEvent(create_test.CreateTest):
             self.driver.find_element_by_xpath(page_elements.event['change_button']).click()
 
             # --------------------------- Applicant Advance search -------------------
-            time.sleep(2)
+            time.sleep(5)
             advance_search = self.driver.find_element_by_xpath(page_elements.event['applicant_advance_search'])
+            time.sleep(2.3)
             advance_search.click()
             applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
             applicant_name.send_keys(self.Upload_candidateName)
@@ -645,6 +647,7 @@ class CreateEvent(create_test.CreateTest):
             submit.click()
             time.sleep(5)
 
+            self.browser_close()
             self.driver.switch_to.window(self.driver.window_handles[0])
         except exceptions.ElementNotInteractableException as error:
             print(error)
@@ -652,8 +655,9 @@ class CreateEvent(create_test.CreateTest):
     def candidate_status(self):
         try:
             # --------------------------- Applicant Advance search -------------------
-            time.sleep(2)
+            time.sleep(3.9)
             advance_search = self.driver.find_element_by_xpath(page_elements.event['applicant_advance_search'])
+            time.sleep(2.5)
             advance_search.click()
             applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
             applicant_name.clear()
