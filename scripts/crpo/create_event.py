@@ -216,7 +216,7 @@ class CreateEvent(create_test.CreateTest):
             req_name.send_keys(Keys.ARROW_DOWN)
             req_name.send_keys(Keys.ENTER)
 
-            time.sleep(4)
+            time.sleep(6)
             job_name_field = self.driver.find_element_by_xpath(page_elements.event['event_job_name_field'])
             job_name_field.click()
 
@@ -454,7 +454,7 @@ class CreateEvent(create_test.CreateTest):
                 time.sleep(10)
                 next_button = self.driver.find_element_by_xpath(page_elements.event['Next_Button'])
                 next_button.click()
-                time.sleep(2)
+                time.sleep(4)
                 declare = self.driver.find_element_by_xpath(page_elements.event['declare_checkbox'])
                 declare.click()
                 time.sleep(3)
