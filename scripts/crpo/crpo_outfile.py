@@ -39,7 +39,8 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
                         'Test Status', 'Event UseCases', 'Event Status', 'Task Assignment', 'Task Assignment Status']
         for headers in excelheaders:
             if headers in ['Job UseCases', 'Job Status', 'Requirement Usecases', 'Requirement Status', 'Test UseCases',
-                           'Test Status', 'Event UseCases', 'Event Status']:
+                           'Test Status', 'Event UseCases', 'Event Status', 'Task Assignment',
+                           'Task Assignment Status']:
                 self.ws.write(1, index, headers, self.style0)
             else:
                 self.ws.write(1, index, headers, self.style1)
