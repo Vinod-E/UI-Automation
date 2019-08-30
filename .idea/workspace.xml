@@ -7,11 +7,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hpro automation/environment_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/environment_setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/create_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_event.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/crpo_outfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testdata/candidateUpload.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/candidateUpload.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -198,6 +198,11 @@
           <url>file://$PROJECT_DIR$/scripts/crpo/create_test.py</url>
           <line>40</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hpro automation/environment_setup.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
