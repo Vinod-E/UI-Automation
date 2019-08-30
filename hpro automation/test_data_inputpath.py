@@ -17,5 +17,7 @@ crpo_test_data_file = {
 
     'upload_candidate_file': generic_input_path + 'testdata/candidateUpload.xls',
 
+    'old_interview_file': generic_input_path + 'testdata/Old_interview.xls',
+
     'output_report': generic_input_path + 'reports/UI_CRPO_Flow.xls'
 }
