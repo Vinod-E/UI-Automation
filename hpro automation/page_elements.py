@@ -251,6 +251,8 @@ event = {
                         '/section/div[1]/floating-actions/span/span/i',
     'event_upload_candidates': '//*[@title="Upload Candidates"]',
     'event_upload_file': '//*[@type="file"][@file-model="vm.uploadedCandidateTemplateFile"]',
+    'event_interviews': '//*[@title="View Event Interviews"]',
+    'provide_feedback': '//*[@data-title="Provide Interview Feedback"]',
     'Next_Button': '//*[@data-ng-click="vm.gotoNextState()"]',
     'declare_checkbox': '//*[@type="checkbox"][@ng-click="vm.viewDeclaration();"]',
     'signature': '//*[@type="text"][@ng-model="vm.signature"]',
@@ -268,6 +270,10 @@ event = {
     'Change_applicant_status': '//*[@data-title="Change Applicant Status"]',
     'change_stage': '//*[@ng-model="vm.selectedStage"]',
     'change_status': '//*[@ng-model="vm.selectedStatus"]',
+    'Interviewer': '//*[@title="Select Interviewers"]',
+    'Interviewer_selection': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/div[6]/div/div/span/div/div'
+                             '/div[2]/div/button[2]/i[1]',
+    'Interviewer_selection_done': '//*[@ng-click="$hide();"]',
     'comment': '//*[@ng-model="vm.comments"]',
     'change_button': '//*[@ng-click="vm.changeCandidateStatus()"]',
     'current_status': '//*[@title="{}"]',
@@ -297,4 +303,18 @@ pofu = {
     'submit_behalf_of': '//*[@title="Submit Tasks on Behalf of Candidate"]',
     'task_acceptance': 'testacceprtanceoffer',
     'submit_task': '//*[@data-ng-click="vm.submitForm(false);"]'
+}
+
+settings = {
+    'settings_icon': '//*[@id="mainBodyElement"]/div[1]/div/header/div[1]/nav/div/div[3]/a/i',
+    'settings': '//*[@ui-sref="crpo.settings"]',
+    'Interview_module': '//*[@title="Interview Module"]',
+    'new_interview_feedback_form': '//*[@ui-sref="crpo.settings.interview.enableNewInterviewFeedbackForm"]',
+    'on': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[2]/div/ui-view/div/div/div/div[2]/div/label[1]',
+    'off': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[2]/div/ui-view/div/div/div/div[2]/div/label[2]'
+}
+
+feedback = {
+    'maybe': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
+    'save_draft': '//*[@ng-click="vm.saveDraft();"]'
 }
