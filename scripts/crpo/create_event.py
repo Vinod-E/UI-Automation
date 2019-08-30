@@ -683,6 +683,7 @@ class CreateEvent(create_test.CreateTest):
             self.driver.find_element_by_xpath(page_elements.event['manage_task']).click()
 
             self.driver.switch_to.window(self.driver.window_handles[2])
+            time.sleep(5)
 
             # ---------------- Total tasks --------------
             total = self.driver.find_element_by_xpath(page_elements.event['total_tasks'])
@@ -714,7 +715,7 @@ class CreateEvent(create_test.CreateTest):
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.browser_close()
             self.driver.switch_to.window(self.driver.window_handles[0])
-            time.sleep(10)
+            time.sleep(5)
 
         except exceptions.ElementNotInteractableException as error:
             print(error)
