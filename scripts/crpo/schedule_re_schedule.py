@@ -6,12 +6,11 @@ import time
 import xlrd
 import test_data_inputpath
 from selenium.common import exceptions
-from selenium.webdriver.common.keys import Keys
 
 
-class OldInterview(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
+class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
     def __init__(self):
-        super(OldInterview, self).__init__()
+        super(ScheduleReSchedule, self).__init__()
 
         # ---------------------------------- Excel data ----------------------------------------------------------------
         self.xl_event_name_o = []
@@ -22,11 +21,24 @@ class OldInterview(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
         self.xl_password_int1_o = []
         self.xl_username_int2_o = []
         self.xl_password_int2_o = []
-        self.xl_cancel_comment_o = []
+        self.xl_cancel_reschedule_comment_o = []
         self.xl_cancel_request_reason_o = []
         self.xl_cancel_request_comment_o = []
 
         self.event_name_sprint_version_o = []
+
+        self.ui_event_search_o = []
+        self.ui_event_floating_action_o = []
+        self.ui_event_applicant_action_o = []
+        self.ui_applicant_search_o = []
+        self.ui_applicant_schedule_o = []
+
+        self.ui_int1_login_o = []
+        self.ui_event_getby_id_o = []
+        self.ui_event_float_o = []
+        self.ui_event_interviews_o = []
+        self.ui_reschedule_action_o = []
+        self.ui_rescheduled_o = []
 
         # ---------------------------------- which excel sheet data to be proceed --------------------------------------
         workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['old_interview_file'])
@@ -65,7 +77,7 @@ class OldInterview(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
             if rows[7]:
                 self.xl_password_int2_o.append(str(rows[7]))
             if rows[8]:
-                self.xl_cancel_comment_o.append(str(rows[8]))
+                self.xl_cancel_reschedule_comment_o.append(str(rows[8]))
             if rows[9]:
                 self.xl_cancel_request_reason_o.append(str(rows[9]))
             if rows[10]:
@@ -75,52 +87,6 @@ class OldInterview(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
                 event_name = j
                 self.event_name_sprint_version_o = event_name.format(self.sprint_version)
             print self.event_name_sprint_version_o
-
-    def settings_on(self):
-
-        try:
-            self.x_path_element_webdriver_wait(page_elements.settings['settings_icon'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.settings['settings'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.settings['Interview_module'])
-            self.xpath.click()
-
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.settings['new_interview_feedback_form'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.settings['on'])
-            self.xpath.click()
-            print "-------------------- New_interview_feedback_form - On ------------------------"
-
-        except exceptions.NoSuchElementException as error:
-            print error
-
-    def settings_off(self):
-
-        try:
-            self.x_path_element_webdriver_wait(page_elements.settings['settings_icon'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.settings['settings'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.settings['Interview_module'])
-            self.xpath.click()
-
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.settings['new_interview_feedback_form'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.settings['off'])
-            self.xpath.click()
-            print "-------------------- New_interview_feedback_form - Off ------------------------"
-
-        except exceptions.NoSuchElementException as error:
-            print error
 
     def event_applicant_schedule(self):
         try:
@@ -141,6 +107,7 @@ class OldInterview(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
             self.x_path_element_webdriver_wait(page_elements.event['Click_on_event_name'])
             self.xpath.click()
             print "-------------------- Event Details screen ------------------------"
+            self.ui_event_search_o = 'Pass'
 
             # --------------------------------- event floating actions -------------------------------------------------
             self.x_path_element_webdriver_wait(page_elements.event['Floating_actions'])
@@ -150,18 +117,22 @@ class OldInterview(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
             self.x_path_element_webdriver_wait(page_elements.event['View_Applicants'])
             self.xpath.click()
             print "-------------------- Floating action ------------------------"
+            self.ui_event_floating_action_o = 'Pass'
+            self.ui_event_applicant_action_o = 'Pass'
 
             # ------------------------------- Applicant Advance search -------------------------------------------------
+            self.driver.refresh()
             time.sleep(2)
             self.x_path_element_webdriver_wait(page_elements.event['applicant_advance_search'])
             self.xpath.click()
 
-            self.x_path_element_webdriver_wait(page_elements.event['applicant_search_button'])
-            self.xpath.click()
-
             self.name_element_webdriver_wait(page_elements.event['applicant_name'])
             self.name.send_keys(self.event_name_sprint_version_o)
+
+            self.x_path_element_webdriver_wait(page_elements.event['applicant_search_button'])
+            self.xpath.click()
             print "-------------------- Applicant Advance search ------------------------"
+            self.ui_applicant_search_o = 'Pass'
 
             # --------------------------- Change Applicant Status to Schedule ------------------------------------------
             self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
@@ -191,14 +162,29 @@ class OldInterview(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
             self.x_path_element_webdriver_wait(page_elements.event['change_button'])
             self.xpath.click()
             time.sleep(3)
-            print "-------------------- Applicant Schedule to Interview ------------------------"
+            # --------------------------- Applicant Get By Id ----------------------------------------------------------
 
-        except exceptions.NoSuchElementException as error:
+            time.sleep(3)
+            self.x_path_element_webdriver_wait(
+                page_elements.event['applicant_getbyid'].format(self.event_name_sprint_version_o))
+            self.xpath.click()
+            self.driver.switch_to.window(self.driver.window_handles[1])
+
+            current_status = self.driver.find_element_by_xpath(
+                page_elements.event['current_status'].format('Scheduled'))
+            if current_status.text == 'Scheduled':
+                print "-------------------- Applicant Schedule to Interview ------------------------"
+                self.ui_applicant_schedule_o = 'Pass'
+            self.browser_close()
+            self.driver.switch_to.window(self.driver.window_handles[0])
+
+        except exceptions.ElementNotInteractableException as error:
             print error
 
-    def interviewer_login(self):
+    def re_schedule(self):
         try:
             # --------------------------- New tab to login as interviewer ----------------------------------------------
+            time.sleep(2)
             self.driver.execute_script("window.open('about:blank', 'tab2');")
             self.driver.switch_to.window("tab2")
             self.driver.get(config.configs[self.login_server])
@@ -213,7 +199,8 @@ class OldInterview(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
 
             self.x_path_element_webdriver_wait(page_elements.login['login_button'])
             self.xpath.click()
-            print "-------------------- Interviewer Login successfully ------------------------"
+            print "------------------ Interviewer1 Login successfully ------------------------"
+            self.ui_int1_login_o = 'Pass'
 
             # --------------------------------- event details ----------------------------------------------------------
             time.sleep(2)
@@ -232,6 +219,7 @@ class OldInterview(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
             self.x_path_element_webdriver_wait(page_elements.event['Click_on_event_name'])
             self.xpath.click()
             print "-------------------- Event get by Details screen ------------------------"
+            self.ui_event_getby_id_o = 'Pass'
 
             # --------------------------------- event floating actions -------------------------------------------------
             self.x_path_element_webdriver_wait(page_elements.event['Floating_actions'])
@@ -241,79 +229,52 @@ class OldInterview(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
             self.x_path_element_webdriver_wait(page_elements.event['event_interviews'])
             self.xpath.click()
             print "-------------------- Floating action ------------------------"
+            self.ui_event_float_o = 'Pass'
+            self.ui_event_interviews_o = 'Pass'
+
+            # --------------------------------- Re-schedule interview --------------------------------------------------
 
             self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
             self.name.click()
 
-        except exceptions.NoSuchElementException as error:
-            print error
+            self.x_path_element_webdriver_wait(page_elements.event['reschedule'])
+            self.xpath.click()
+            self.ui_reschedule_action_o = 'Pass'
 
-    def cancel_interview(self):
-        try:
-            # --------------------------------- event interviews -------------------------------------------------------
+            time.sleep(5)
+            self.x_path_element_webdriver_wait(page_elements.event['reschedule_comment'])
+            self.xpath.send_keys(self.xl_cancel_reschedule_comment_o)
 
-            self.x_path_element_webdriver_wait(page_elements.feedback['cancel'])
+            self.x_path_element_webdriver_wait(page_elements.event['reschedule_save'])
             self.xpath.click()
 
-        except exceptions.NoSuchElementException as error:
-            print error
+            # --------------------------- Applicant Get By Id ----------------------------------------------------------
 
-    def cancel_interview_request(self):
-        try:
-            # --------------------------------- event interviews -------------------------------------------------------
-
-            self.x_path_element_webdriver_wait(page_elements.feedback['cancel_request'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.feedback['cancel_request_reason'])
-            self.xpath.send_keys(self.xl_cancel_request_reason_o)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-
-            self.x_path_element_webdriver_wait(page_elements.feedback['cancel_request_comment'])
-            self.xpath.send_keys(self.xl_cancel_request_comment_o)
-
-            self.x_path_element_webdriver_wait(page_elements.feedback['cancel_request_save'])
-            self.xpath.click()
-
-        except exceptions.NoSuchElementException as error:
-            print error
-
-    def provide_feedback(self):
-        try:
-            # --------------------------------- event interviews -------------------------------------------------------
-
-            self.x_path_element_webdriver_wait(page_elements.event['provide_feedback'])
-            self.xpath.click()
-            print "-------------------- provide feedback opened ------------------------"
-
-            # --------------------------------- Provide feedback -------------------------------------------------------
             time.sleep(3)
+            self.x_path_element_webdriver_wait(
+                page_elements.event['applicant_getbyid'].format(self.event_name_sprint_version_o))
+            self.xpath.click()
             self.driver.switch_to.window(self.driver.window_handles[2])
 
-            self.x_path_element_webdriver_wait(page_elements.feedback['maybe'])
-            self.xpath.click()
+            current_status = self.driver.find_element_by_xpath(
+                page_elements.event['current_status'].format('Rescheduled'))
+            if current_status.text == 'Rescheduled':
+                print "-------------------- Applicant Re-Schedule successfully -----------------"
+                self.ui_rescheduled_o = 'Pass'
+            self.browser_close()
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            self.browser_close()
+            self.driver.switch_to.window(self.driver.window_handles[0])
 
-            self.x_path_element_webdriver_wait(page_elements.feedback['save_draft'])
-            self.xpath.click()
-            print "-------------------- Save as Draft ------------------------"
-
-        except exceptions.NoSuchElementException as error:
+        except exceptions.ElementNotInteractableException as error:
             print error
 
 
-Object = OldInterview()
-Object.login()
-if Object.status_of_login == 'administrator':
-    Object.old_interview_excel_read()
-    # Object.settings_on()
-    Object.event_applicant_schedule()
-    Object.interviewer_login()
-    # Object.cancel_interview()
-    Object.cancel_interview_request()
-    Object.provide_feedback()
-    # Object.settings_off()
-
+# Object = ScheduleReSchedule()
+# Object.login()
+# if Object.status_of_login == 'administrator':
+#     Object.old_interview_excel_read()
+#     Object.event_applicant_schedule()
+#     Object.re_schedule()
 
 # Object.browser_close()
-
-# ------ Cancel -> Bug has to be fix to be continue ---------------

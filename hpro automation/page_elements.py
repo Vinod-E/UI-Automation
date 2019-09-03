@@ -291,6 +291,15 @@ event = {
     'submitted_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[1]',
     'rejected_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[3]',
     'more_tabs': '//*[@data-placement="bottom-center"]',
+    'reschedule': '//*[@data-title="Reschedule Interview"]',
+    'reschedule_comment': '//*[@ng-model="vm.comments"]',
+    'reschedule_save': '//*[@ng-click="vm.save();"]',
+    'tracking_module': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.tracking"]',
+    'tracking_request': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.tracking.interviewCancelRequest"]',
+    'approve': '//*[@title="Approve Request"]',
+    'request_comment': '//*[@ng-model="data.comments"]',
+    'request_ok': '//*[@ng-click="data.result=true;$hide();"]'
+
 }
 
 pofu = {
@@ -315,6 +324,16 @@ settings = {
 }
 
 feedback = {
+    'more': '//*[@data-trigger="click"]',
+    'cancel_1': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[3]/div/div[2]',
+
+    'cancel': '//*[@data-title="Cancel Interview"]',
+    'cancel_confirm': '//*[@ng-click="vm.cancelInterview();"]',
+    'cancel_request': '//*[@data-title="Cancel Interview Request"]',
+    'cancel_request_reason': '//*[@type="text"][@placeholder="Reason"]',
+    'comment': '//*[@ng-model="vm.comment"]',
+    'cancel_request_save': '//*[@ng-click="vm.cancelInterviewReq();"]',
     'maybe': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
-    'save_draft': '//*[@ng-click="vm.saveDraft();"]'
+    'save_draft': '//*[@ng-click="vm.saveDraft();"]',
+    'Interview_bucket': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[2]/div[2]/select'
 }

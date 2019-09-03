@@ -9,8 +9,8 @@ class Environment(object):
     def __init__(self):
 
         self.prerequisites = raw_input('***** Have you completed your prerequisites?... If Yes Press(Enter) *****')
-        self.login_server = raw_input("Server name ::")
-        login_browser = raw_input("Browser name ::")
+        self.login_server = raw_input("Server name :: ")
+        login_browser = raw_input("Browser name :: ")
         self.sprint_version = raw_input("Enter the current sprint version :: ")
 
         try:
