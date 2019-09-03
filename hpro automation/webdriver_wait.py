@@ -17,7 +17,7 @@ class WebDriverElementWait(environment_setup.Environment):
         try:
             self.xpath = WebDriverWait(self.driver, 30).until(ec.element_to_be_clickable((By.XPATH, element_path)))
 
-        except exceptions.NoSuchElementException as error:
+        except exceptions.ElementNotInteractableException as error:
             print error
 
     def id_element_webdriver_wait(self, element_path):
@@ -25,7 +25,7 @@ class WebDriverElementWait(environment_setup.Environment):
         try:
             self.id = WebDriverWait(self.driver, 30).until(ec.element_to_be_clickable((By.ID, element_path)))
 
-        except exceptions.NoSuchElementException as error:
+        except exceptions.ElementNotInteractableException as error:
             print error
 
     def name_element_webdriver_wait(self, element_path):
@@ -33,6 +33,6 @@ class WebDriverElementWait(environment_setup.Environment):
         try:
             self.name = WebDriverWait(self.driver, 30).until(ec.element_to_be_clickable((By.NAME, element_path)))
 
-        except exceptions.NoSuchElementException as error:
+        except exceptions.ElementNotInteractableException as error:
             print error
 
