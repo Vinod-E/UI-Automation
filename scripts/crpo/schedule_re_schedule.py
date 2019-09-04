@@ -247,8 +247,8 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
             self.xpath.click()
             self.ui_reschedule_action_o = 'Pass'
 
-            self.x_path_element_webdriver_wait(page_elements.event['reschedule_comment'])
             time.sleep(5)
+            self.x_path_element_webdriver_wait(page_elements.event['reschedule_comment'])
             self.xpath.send_keys(self.xl_cancel_reschedule_comment_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['reschedule_save'])

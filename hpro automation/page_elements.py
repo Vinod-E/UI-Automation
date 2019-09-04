@@ -336,5 +336,19 @@ feedback = {
     'cancel_request_save': '//*[@ng-click="vm.cancelInterviewReq();"]',
     'maybe': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
     'save_draft': '//*[@ng-click="vm.saveDraft();"]',
-    'Interview_bucket': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[2]/div[2]/select'
+
+    'rating_1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
+                'accordian-row-table/table/tbody/tr[2]/td/div/div[1]/select',
+    'comment_1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
+                 'accordian-row-table/table/tbody/tr[2]/td/div/div[2]/div/textarea',
+    'rating_2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
+                'accordian-row-table/table/tbody/tr[4]/td/div/div[1]/select',
+    'comment_2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
+                 'accordian-row-table/table/tbody/tr[4]/td/div/div[2]/div/textarea',
+    'overall': '//*[@ng-model="vm.finalTranscript"]',
+    'partial_feedback': '//*[@ng-click="vm.partialSubmitFeedback();"]',
+
+    'feedback_form_validation_agree': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
+    'submit_feedback': '//*[@ng-click="vm.submitFeedback(vm.isUpdateFeedback);"]',
+    'Interview_bucket': '//*[@ng-model="vm.config.selectedEntityType"]'
 }
