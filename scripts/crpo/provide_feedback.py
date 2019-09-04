@@ -3,6 +3,7 @@ import page_elements
 import config
 import time
 from selenium.common import exceptions
+from selenium.webdriver.common.keys import Keys
 
 
 class OldProvideFeedback(cancel_interview.CancelAndRequest):
@@ -13,6 +14,9 @@ class OldProvideFeedback(cancel_interview.CancelAndRequest):
         self.ui_feedback_screen_o = []
         self.ui_saveasdraft_o = []
         self.ui_int1_decision_o = []
+        self.ui_partial_submit_o = []
+        self.ui_partial_submit_bucket_o = []
+        self.ui_submit_feedback_o = []
 
     def login(self):
         self.excel_read()
@@ -100,7 +104,7 @@ class OldProvideFeedback(cancel_interview.CancelAndRequest):
         except exceptions.NoSuchElementException as error:
             print error
 
-    def provide_feedback(self):
+    def save_draft(self):
         try:
             # --------------------------------- event interviews -------------------------------------------------------
             self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
@@ -125,8 +129,105 @@ class OldProvideFeedback(cancel_interview.CancelAndRequest):
             self.ui_feedback_screen_o = 'Pass'
             self.ui_saveasdraft_o = 'Pass'
 
+            time.sleep(1.5)
             self.browser_close()
             self.driver.switch_to.window(self.driver.window_handles[0])
+
+        except exceptions.NoSuchElementException as error:
+            print error
+
+    def partial_feedback(self):
+        try:
+            self.x_path_element_webdriver_wait(page_elements.event['provide_feedback'])
+            self.xpath.click()
+            # --------------------------------- Provide feedback -------------------------------------------------------
+            time.sleep(3)
+            self.driver.switch_to.window(self.driver.window_handles[1])
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['rating_1'])
+            self.xpath.click()
+            self.xpath.send_keys(Keys.ARROW_DOWN)
+            self.xpath.send_keys(Keys.ARROW_DOWN)
+            self.xpath.send_keys(Keys.ENTER)
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['comment_1'])
+            self.xpath.send_keys(self.xl_change_status_comment_o)
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['rating_2'])
+            self.xpath.click()
+            self.xpath.send_keys(Keys.ARROW_DOWN)
+            self.xpath.send_keys(Keys.ENTER)
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['comment_2'])
+            self.xpath.send_keys(self.xl_change_status_comment_o)
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['overall'])
+            self.xpath.send_keys(self.xl_change_status_comment_o)
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['partial_feedback'])
+            self.xpath.click()
+
+            time.sleep(3)
+            self.x_path_element_webdriver_wait(page_elements.feedback['feedback_form_validation_agree'])
+            self.xpath.click()
+            print "-------------------- Partial Feedback submitted ------------------------"
+            self.ui_partial_submit_o = 'Pass'
+
+            time.sleep(5)
+            self.driver.switch_to.window(self.driver.window_handles[0])
+
+        except exceptions.NoSuchElementException as error:
+            print error
+
+    def submit_feedback(self):
+        try:
+            time.sleep(2)
+            self.x_path_element_webdriver_wait(page_elements.feedback['Interview_bucket'])
+            self.xpath.click()
+            self.xpath.send_keys(Keys.ARROW_DOWN)
+            self.xpath.send_keys(Keys.ARROW_DOWN)
+            self.xpath.send_keys(Keys.ARROW_DOWN)
+            self.xpath.send_keys(Keys.ARROW_DOWN)
+            self.xpath.send_keys(Keys.ENTER)
+            print "-------------------- Partial Feedback Bucket ------------------------"
+            self.ui_partial_submit_bucket_o = 'Pass'
+
+            time.sleep(3)
+            self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
+            self.name.click()
+
+            self.x_path_element_webdriver_wait(page_elements.event['provide_feedback'])
+            self.xpath.click()
+
+            # --------------------------------- Provide feedback -------------------------------------------------------
+            time.sleep(3)
+            self.driver.switch_to.window(self.driver.window_handles[1])
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['rating_1'])
+            self.xpath.click()
+            self.xpath.send_keys(Keys.ARROW_DOWN)
+            self.xpath.send_keys(Keys.ARROW_DOWN)
+            self.xpath.send_keys(Keys.ENTER)
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['comment_1'])
+            self.xpath.send_keys(self.xl_change_status_comment_o)
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['rating_2'])
+            self.xpath.click()
+            self.xpath.send_keys(Keys.ARROW_DOWN)
+            self.xpath.send_keys(Keys.ENTER)
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['comment_2'])
+            self.xpath.send_keys(self.xl_change_status_comment_o)
+
+            time.sleep(2)
+            self.x_path_element_webdriver_wait(page_elements.feedback['overall'])
+            self.xpath.send_keys(self.xl_cancel_reschedule_comment_o)
+
+            self.x_path_element_webdriver_wait(page_elements.feedback['submit_feedback'])
+            self.xpath.click()
+            print "-------------------- Submitted Feedback ------------------------"
+            self.ui_submit_feedback_o = 'Pass'
 
         except exceptions.NoSuchElementException as error:
             print error

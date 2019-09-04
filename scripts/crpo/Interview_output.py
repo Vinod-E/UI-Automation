@@ -10,7 +10,7 @@ class InterviewOutputFile(styles.FontColor, provide_feedback.OldProvideFeedback)
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 24)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 28)))
         self.Actual_success_cases = []
 
         super(InterviewOutputFile, self).__init__()
@@ -218,6 +218,9 @@ class InterviewOutputFile(styles.FontColor, provide_feedback.OldProvideFeedback)
         self.ws.write(4, self.PF_usecase_col, 'Provide Feedback screen', self.style8)
         self.ws.write(5, self.PF_usecase_col, 'Decision-MayBe', self.style8)
         self.ws.write(6, self.PF_usecase_col, 'Save Draft', self.style8)
+        self.ws.write(7, self.PF_usecase_col, 'Partial submitted', self.style8)
+        self.ws.write(8, self.PF_usecase_col, 'Partial bucket', self.style8)
+        self.ws.write(9, self.PF_usecase_col, 'Feedback submitted', self.style8)
         # --------------------------------------------------------------------------------------------------------------
 
         if self.ui_int1_login_PF_o == 'Pass':
@@ -249,6 +252,24 @@ class InterviewOutputFile(styles.FontColor, provide_feedback.OldProvideFeedback)
             self.ws.write(6, self.PF_status_col, 'Pass', self.style7)
         else:
             self.ws.write(6, self.PF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_partial_submit_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_partial_submit_o)
+            self.ws.write(7, self.PF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(7, self.PF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_partial_submit_bucket_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_partial_submit_bucket_o)
+            self.ws.write(8, self.PF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(8, self.PF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_submit_feedback_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_submit_feedback_o)
+            self.ws.write(9, self.PF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(9, self.PF_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['interview_output_report'])
 

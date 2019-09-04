@@ -26,7 +26,9 @@ class InterviewFlow(Interview_output.InterviewOutputFile):
     def provide_feedback_flow(self):
         print "***== Interview Flow ==***"
         self.interviewer_login()
-        self.provide_feedback()
+        self.save_draft()
+        self.partial_feedback()
+        self.submit_feedback()
 
 
 Object = InterviewFlow()
