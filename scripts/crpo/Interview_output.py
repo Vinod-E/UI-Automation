@@ -1,16 +1,16 @@
 import xlwt
-import cancel_interview
+import provide_feedback
 from datetime import date
 import styles
 import test_data_inputpath
 
 
-class InterviewOutputFile(styles.FontColor, cancel_interview.CancelAndRequest):
+class InterviewOutputFile(styles.FontColor, provide_feedback.OldProvideFeedback):
 
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 18)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 24)))
         self.Actual_success_cases = []
 
         super(InterviewOutputFile, self).__init__()
@@ -29,11 +29,14 @@ class InterviewOutputFile(styles.FontColor, cancel_interview.CancelAndRequest):
         self.int1_status_col = 3
         self.int2_usecase_col = 4
         self.int2_status_col = 5
+        self.PF_usecase_col = 6
+        self.PF_status_col = 7
 
         index = 0
-        excelheaders = ['Admin', 'Status', 'Interviewer 1', 'Status', 'Interviewer 2', 'Status']
+        excelheaders = ['Admin', 'Status', 'Interviewer 1', 'Status', 'Interviewer 2', 'Status', 'Provide Feedback',
+                        'Status']
         for headers in excelheaders:
-            if headers in ['Admin', 'Status', 'Interviewer 1', 'Status', 'Interviewer 2', 'Status']:
+            if headers in ['Admin', 'Interviewer 1', 'Interviewer 2', 'Provide Feedback', 'Status']:
                 self.ws.write(1, index, headers, self.style0)
             else:
                 self.ws.write(1, index, headers, self.style1)
@@ -51,6 +54,8 @@ class InterviewOutputFile(styles.FontColor, cancel_interview.CancelAndRequest):
         self.ws.write(4, self.admin_usecase_col, 'Event applicant action', self.style8)
         self.ws.write(5, self.admin_usecase_col, 'Event applicant search', self.style8)
         self.ws.write(6, self.admin_usecase_col, 'Schedule', self.style8)
+        self.ws.write(7, self.admin_usecase_col, 'Cancel Request Approved', self.style8)
+
         # --------------------------------------------------------------------------------------------------------------
 
         if self.ui_event_search_o == 'Pass':
@@ -86,6 +91,12 @@ class InterviewOutputFile(styles.FontColor, cancel_interview.CancelAndRequest):
             self.ws.write(6, self.admin_status_col, 'Pass', self.style7)
         else:
             self.ws.write(6, self.admin_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_approve_cancel_request_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_approve_cancel_request_o)
+            self.ws.write(7, self.admin_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(7, self.admin_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['interview_output_report'])
 
@@ -157,7 +168,7 @@ class InterviewOutputFile(styles.FontColor, cancel_interview.CancelAndRequest):
         self.ws.write(3, self.int2_usecase_col, 'Event getby Id', self.style8)
         self.ws.write(4, self.int2_usecase_col, 'Event floating action', self.style8)
         self.ws.write(5, self.int2_usecase_col, 'Event interviews', self.style8)
-        self.ws.write(6, self.int2_usecase_col, 'Cancel Request', self.style8)
+        self.ws.write(6, self.int2_usecase_col, 'Cancel Request Raise', self.style8)
         self.ws.write(7, self.int2_usecase_col, 'Cancel Interview', self.style8)
         # --------------------------------------------------------------------------------------------------------------
 
@@ -197,6 +208,47 @@ class InterviewOutputFile(styles.FontColor, cancel_interview.CancelAndRequest):
             self.ws.write(7, self.int2_status_col, 'Pass', self.style7)
         else:
             self.ws.write(7, self.int2_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        self.wb_Result.save(test_data_inputpath.crpo_test_data_file['interview_output_report'])
+
+    def provide_feedback_output_report(self):
+        # ------------- Test Use cases -------------------
+        self.ws.write(2, self.PF_usecase_col, 'Interviewer Login', self.style8)
+        self.ws.write(3, self.PF_usecase_col, 'Provide Feedback action', self.style8)
+        self.ws.write(4, self.PF_usecase_col, 'Provide Feedback screen', self.style8)
+        self.ws.write(5, self.PF_usecase_col, 'Decision-MayBe', self.style8)
+        self.ws.write(6, self.PF_usecase_col, 'Save Draft', self.style8)
+        # --------------------------------------------------------------------------------------------------------------
+
+        if self.ui_int1_login_PF_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_int1_login_PF_o)
+            self.ws.write(2, self.PF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(2, self.PF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_feedback_action_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_feedback_action_o)
+            self.ws.write(3, self.PF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(3, self.PF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_feedback_screen_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_feedback_screen_o)
+            self.ws.write(4, self.PF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(4, self.PF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_int1_decision_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_int1_decision_o)
+            self.ws.write(5, self.PF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(5, self.PF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_saveasdraft_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_saveasdraft_o)
+            self.ws.write(6, self.PF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(6, self.PF_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['interview_output_report'])
 

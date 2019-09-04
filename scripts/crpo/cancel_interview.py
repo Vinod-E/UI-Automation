@@ -17,10 +17,12 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
         self.ui_event_interviews_int2_o = []
         self.ui_cancel_interview_request_int2_o = []
         self.ui_interview_cancel_int2_o = []
+        self.ui_approve_cancel_request_o = []
 
     def cancel_interview(self):
         try:
             # --------------------------------- event interviews -------------------------------------------------------
+            time.sleep(2)
             self.driver.refresh()
             time.sleep(3)
             self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
@@ -37,6 +39,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
 
             self.x_path_element_webdriver_wait(page_elements.feedback['cancel_confirm'])
             self.xpath.click()
+            time.sleep(2)
 
         except exceptions.ElementNotInteractableException as error:
             print error
@@ -62,12 +65,12 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             print "------------------ Admin Login successfully ------------------------"
 
             # --------------------------------- event details ----------------------------------------------------------
-            time.sleep(2)
+            time.sleep(3)
             self.x_path_element_webdriver_wait(page_elements.event['event_tab'])
             self.xpath.click()
 
-            time.sleep(2)
             self.x_path_element_webdriver_wait(page_elements.event['Event_advance_search'])
+            time.sleep(2)
             self.xpath.click()
 
             self.name_element_webdriver_wait(page_elements.event['event_names'])
@@ -149,7 +152,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             time.sleep(3)
             print "-------------------- Applicant Schedule to Interview ------------------------"
 
-        except exceptions.ElementNotInteractableException as error:
+        except exceptions.NoSuchElementException as error:
             print error
 
     def cancel_interview_request(self):
@@ -184,6 +187,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.name.send_keys(self.event_name_sprint_version_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['event_search_button'])
+            time.sleep(2)
             self.xpath.click()
 
             self.x_path_element_webdriver_wait(page_elements.event['Click_on_event_name'])
@@ -284,6 +288,8 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
 
             self.x_path_element_webdriver_wait(page_elements.event['request_ok'])
             self.xpath.click()
+            self.ui_approve_cancel_request_o = 'Pass'
+            print "-------------------- Interview cancellation request approved ------------------------"
 
             # --------------------------------- event floating actions -------------------------------------------------
             time.sleep(5)
