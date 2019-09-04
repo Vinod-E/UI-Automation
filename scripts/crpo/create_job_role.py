@@ -359,9 +359,9 @@ class CreateJobRole(crpo_login.CrpoLogin):
                 self.driver.find_element_by_xpath(page_elements.job['Floating_actions']).click()
                 time.sleep(5)
                 self.driver.find_element_by_xpath(page_elements.job['getbyid_menu_selection_process']).click()
+                time.sleep(3)
                 sp = self.driver.find_element_by_xpath(page_elements.job['getbyid_menu_selectionProcess_text_field'])
                 sp.send_keys(self.xl_selection_process)
-                time.sleep(3)
                 sp.send_keys(Keys.ARROW_DOWN)
                 sp.send_keys(Keys.ENTER)
 
