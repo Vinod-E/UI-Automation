@@ -10,7 +10,7 @@ class Environment(object):
 
         self.prerequisites = raw_input('***** Have you completed your prerequisites?... If Yes Press(Enter) *****')
         self.login_server = raw_input("Server name :: ")
-        login_browser = raw_input("Browser name :: ")
+        login_browser = 'chrome'
         self.sprint_version = raw_input("Enter the current sprint version :: ")
 
         try:

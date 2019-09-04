@@ -292,6 +292,7 @@ event = {
     'rejected_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[3]',
     'more_tabs': '//*[@data-placement="bottom-center"]',
     'reschedule': '//*[@data-title="Reschedule Interview"]',
+    'reschedule1': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[2]/div/div[2]',
     'reschedule_comment': '//*[@ng-model="vm.comments"]',
     'reschedule_save': '//*[@ng-click="vm.save();"]',
     'tracking_module': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.tracking"]',
