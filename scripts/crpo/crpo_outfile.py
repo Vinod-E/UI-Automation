@@ -404,5 +404,5 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         self.ws.write(0, 6, 'SERVER', self.style4)
         self.ws.write(0, 7, self.login_server, self.style5)
         self.ws.write(0, 8, 'No.of Use Cases', self.style4)
-        self.ws.write(0, 9, self.Actual_success_cases, self.style5)
+        self.ws.write(0, 9, len(self.Actual_success_cases), self.style5)
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['output_report'])
