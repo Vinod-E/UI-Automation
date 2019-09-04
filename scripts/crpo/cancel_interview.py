@@ -16,6 +16,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
         self.ui_event_float_int2_o = []
         self.ui_event_interviews_int2_o = []
         self.ui_cancel_interview_request_int2_o = []
+        self.ui_interview_cancel_int2_o = []
 
     def cancel_interview(self):
         try:
@@ -89,7 +90,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             print "-------------------- Floating action ------------------------"
 
             # ------------------------------- Applicant Advance search -------------------------------------------------
-            time.sleep(2)
+            time.sleep(5)
             self.x_path_element_webdriver_wait(page_elements.event['applicant_advance_search'])
             self.xpath.click()
 
@@ -97,12 +98,13 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.name.send_keys(self.event_name_sprint_version_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['applicant_search_button'])
+            time.sleep(2)
             self.xpath.click()
             print "-------------------- Applicant Advance search ------------------------"
 
             # --------------------------- Applicant Get By Id ----------------------------------------------------------
 
-            time.sleep(3)
+            time.sleep(5)
             self.x_path_element_webdriver_wait(
                 page_elements.event['applicant_getbyid'].format(self.event_name_sprint_version_o))
             self.xpath.click()
@@ -113,6 +115,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             if current_status.text == 'Cancelled':
                 print "-------------------- Interview cancelled successfully -----------------"
                 self.ui_cancel_interview_o = 'Pass'
+            time.sleep(3)
             self.browser_close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
@@ -207,6 +210,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.xpath.click()
 
             self.x_path_element_webdriver_wait(page_elements.feedback['cancel_request_reason'])
+            time.sleep(2)
             self.xpath.send_keys(self.xl_cancel_request_reason_o)
             self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
 
@@ -217,6 +221,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.xpath.click()
             print "-------------------- Interview cancel request raised ------------------------"
             self.ui_cancel_interview_request_int2_o = 'Pass'
+            time.sleep(3)
 
             self.browser_close()
             self.driver.switch_to.window(self.driver.window_handles[0])
@@ -270,11 +275,54 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.x_path_element_webdriver_wait(page_elements.event['tracking_request'])
             self.xpath.click()
 
+            self.x_path_element_webdriver_wait(page_elements.event['approve'])
+            self.xpath.click()
+
             self.x_path_element_webdriver_wait(page_elements.event['request_comment'])
+            time.sleep(2)
             self.xpath.send_keys(self.xl_cancel_request_comment_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['request_ok'])
             self.xpath.click()
+
+            # --------------------------------- event floating actions -------------------------------------------------
+            time.sleep(5)
+            self.x_path_element_webdriver_wait(page_elements.event['Floating_actions'])
+            self.xpath.click()
+
+            self.x_path_element_webdriver_wait(page_elements.event['View_Applicants'])
+            self.xpath.click()
+            print "-------------------- Event Floating action ------------------------"
+
+            # ------------------------------- Applicant Advance search -------------------------------------------------
+            time.sleep(5)
+            self.x_path_element_webdriver_wait(page_elements.event['applicant_advance_search'])
+            self.xpath.click()
+
+            self.name_element_webdriver_wait(page_elements.event['applicant_name'])
+            self.name.send_keys(self.event_name_sprint_version_o)
+
+            self.x_path_element_webdriver_wait(page_elements.event['applicant_search_button'])
+            time.sleep(2)
+            self.xpath.click()
+            print "-------------------- Applicant Advance search ------------------------"
+
+            # --------------------------- Applicant Get By Id ----------------------------------------------------------
+
+            time.sleep(3)
+            self.x_path_element_webdriver_wait(
+                page_elements.event['applicant_getbyid'].format(self.event_name_sprint_version_o))
+            self.xpath.click()
+            self.driver.switch_to.window(self.driver.window_handles[1])
+
+            current_status = self.driver.find_element_by_xpath(
+                page_elements.event['current_status'].format('Cancelled'))
+            if current_status.text == 'Cancelled':
+                print "-------------------- Applicant Schedule to Interview ------------------------"
+                self.ui_interview_cancel_int2_o = 'Pass'
+            time.sleep(5)
+            self.browser_close()
+            self.driver.switch_to.window(self.driver.window_handles[0])
 
         except exceptions.ElementNotInteractableException as error:
             print error

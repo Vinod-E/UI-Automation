@@ -121,8 +121,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
             self.ui_event_applicant_action_o = 'Pass'
 
             # ------------------------------- Applicant Advance search -------------------------------------------------
-            self.driver.refresh()
-            time.sleep(2)
+            time.sleep(5)
             self.x_path_element_webdriver_wait(page_elements.event['applicant_advance_search'])
             self.xpath.click()
 
@@ -130,6 +129,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
             self.name.send_keys(self.event_name_sprint_version_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['applicant_search_button'])
+            time.sleep(2)
             self.xpath.click()
             print "-------------------- Applicant Advance search ------------------------"
             self.ui_applicant_search_o = 'Pass'
@@ -157,11 +157,11 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
             self.xpath.click()
 
             self.x_path_element_webdriver_wait(page_elements.event['comment'])
+            time.sleep(2)
             self.xpath.send_keys(self.xl_change_status_comment_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['change_button'])
             self.xpath.click()
-            time.sleep(3)
             # --------------------------- Applicant Get By Id ----------------------------------------------------------
 
             time.sleep(3)
@@ -175,6 +175,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
             if current_status.text == 'Scheduled':
                 print "-------------------- Applicant Schedule to Interview ------------------------"
                 self.ui_applicant_schedule_o = 'Pass'
+                time.sleep(5)
             self.browser_close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
@@ -214,6 +215,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
             self.name.send_keys(self.event_name_sprint_version_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['event_search_button'])
+            time.sleep(2)
             self.xpath.click()
 
             self.x_path_element_webdriver_wait(page_elements.event['Click_on_event_name'])
@@ -237,12 +239,15 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
             self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
             self.name.click()
 
-            self.x_path_element_webdriver_wait(page_elements.event['reschedule'])
+            self.x_path_element_webdriver_wait(page_elements.feedback['more'])
+            self.xpath.click()
+
+            self.x_path_element_webdriver_wait(page_elements.event['reschedule1'])
             self.xpath.click()
             self.ui_reschedule_action_o = 'Pass'
 
-            time.sleep(5)
             self.x_path_element_webdriver_wait(page_elements.event['reschedule_comment'])
+            time.sleep(5)
             self.xpath.send_keys(self.xl_cancel_reschedule_comment_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['reschedule_save'])
@@ -250,7 +255,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
 
             # --------------------------- Applicant Get By Id ----------------------------------------------------------
 
-            time.sleep(3)
+            time.sleep(5)
             self.x_path_element_webdriver_wait(
                 page_elements.event['applicant_getbyid'].format(self.event_name_sprint_version_o))
             self.xpath.click()
@@ -261,6 +266,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
             if current_status.text == 'Rescheduled':
                 print "-------------------- Applicant Re-Schedule successfully -----------------"
                 self.ui_rescheduled_o = 'Pass'
+            time.sleep(3)
             self.browser_close()
             self.driver.switch_to.window(self.driver.window_handles[0])
             self.browser_close()

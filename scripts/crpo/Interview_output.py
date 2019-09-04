@@ -10,7 +10,7 @@ class InterviewOutputFile(styles.FontColor, cancel_interview.CancelAndRequest):
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 17)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 18)))
         self.Actual_success_cases = []
 
         super(InterviewOutputFile, self).__init__()
@@ -158,6 +158,7 @@ class InterviewOutputFile(styles.FontColor, cancel_interview.CancelAndRequest):
         self.ws.write(4, self.int2_usecase_col, 'Event floating action', self.style8)
         self.ws.write(5, self.int2_usecase_col, 'Event interviews', self.style8)
         self.ws.write(6, self.int2_usecase_col, 'Cancel Request', self.style8)
+        self.ws.write(7, self.int2_usecase_col, 'Cancel Interview', self.style8)
         # --------------------------------------------------------------------------------------------------------------
 
         if self.ui_int2_login_o == 'Pass':
@@ -190,6 +191,12 @@ class InterviewOutputFile(styles.FontColor, cancel_interview.CancelAndRequest):
             self.ws.write(6, self.int2_status_col, 'Pass', self.style7)
         else:
             self.ws.write(6, self.int2_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_interview_cancel_int2_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_interview_cancel_int2_o)
+            self.ws.write(7, self.int2_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(7, self.int2_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['interview_output_report'])
 
