@@ -24,6 +24,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
         self.xl_cancel_reschedule_comment_o = []
         self.xl_cancel_request_reason_o = []
         self.xl_cancel_request_comment_o = []
+        self.xl_update_feedback_comment_o = []
 
         self.event_name_sprint_version_o = []
 
@@ -83,6 +84,8 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
                 self.xl_cancel_request_reason_o.append(str(rows[9]))
             if rows[10]:
                 self.xl_cancel_request_comment_o.append(str(rows[10]))
+            if rows[11]:
+                self.xl_update_feedback_comment_o.append((str(rows[11])))
 
             for j in self.xl_event_name_o:
                 event_name = j
@@ -207,7 +210,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
             self.ui_int1_login_o = 'Pass'
 
             # --------------------------------- event details ----------------------------------------------------------
-            time.sleep(2)
+            time.sleep(5)
             self.x_path_element_webdriver_wait(page_elements.event['event_tab'])
             self.xpath.click()
 

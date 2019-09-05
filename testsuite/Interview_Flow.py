@@ -34,8 +34,9 @@ class InterviewFlow(Interview_output.InterviewOutputFile):
 
     def update_feedback_flow(self):
         print "***== Update Feedback ==***"
-        self.interviewer_login()
-        self.update_feedback_output_report()
+        self.unlock_feedback()
+        self.update_feedback_and_decision_int1()
+        self.update_feedback_and_decision_int2()
 
 
 Object = InterviewFlow()
@@ -53,6 +54,7 @@ if Object.status_of_login == 'administrator':
     Object.provide_feedback_output_report()
 
     Object.update_feedback_flow()
+    Object.update_feedback_output_report()
 
 
 Object.overall_status()

@@ -94,8 +94,9 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             print "-------------------- Floating action ------------------------"
 
             # ------------------------------- Applicant Advance search -------------------------------------------------
-            time.sleep(5)
+            time.sleep(3)
             self.x_path_element_webdriver_wait(page_elements.event['applicant_advance_search'])
+            time.sleep(3)
             self.xpath.click()
 
             self.name_element_webdriver_wait(page_elements.event['applicant_name'])
@@ -299,6 +300,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.xpath.click()
 
             self.x_path_element_webdriver_wait(page_elements.event['View_Applicants'])
+            time.sleep(1.5)
             self.xpath.click()
             print "-------------------- Event Floating action ------------------------"
 

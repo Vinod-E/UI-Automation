@@ -6,15 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/crpo/update_feedback.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hpro automation/styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/styles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/Interview_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/Interview_output.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/cancel_interview.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/cancel_interview.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/provide_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/provide_feedback.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/update_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/update_feedback.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testdata/Old_interview.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/Old_interview.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testsuite/Interview_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/Interview_Flow.py" afterDir="false" />
     </list>
@@ -195,16 +193,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/crpo/provide_feedback.py</url>
-          <line>312</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

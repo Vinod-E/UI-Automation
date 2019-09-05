@@ -353,3 +353,17 @@ feedback = {
     'Interview_bucket': '//*[@ng-model="vm.config.selectedEntityType"]',
     'review_feedback': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
 }
+
+unlock = {
+    'All_my_interviews': '//*[@ng-model="vm.config.selectedDropdownValue"]',
+    'unlock_action': '//*[@data-title="Unlock Interviewer Feedback"]',
+    'all_interviewers': '//*[@ng-model="vm.isAllSelected"]',
+    'unlock_feedback_button': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
+    'comment': '//*[@ng-model="data.comments"]',
+    'ok': '//*[@ng-click="data.result=true;$hide();"]'
+
+}
+
+update = {
+    'shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]'
+}
