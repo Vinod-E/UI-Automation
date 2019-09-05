@@ -31,6 +31,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
         self.ui_event_floating_action_o = []
         self.ui_event_applicant_action_o = []
         self.ui_applicant_search_o = []
+        self.ui_change_applicant_status_action_o = []
         self.ui_applicant_schedule_o = []
 
         self.ui_int1_login_o = []
@@ -163,6 +164,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
 
             self.x_path_element_webdriver_wait(page_elements.event['change_button'])
             self.xpath.click()
+            self.ui_change_applicant_status_action_o = 'Pass'
             # --------------------------- Applicant Get By Id ----------------------------------------------------------
 
             time.sleep(3)
