@@ -24,11 +24,18 @@ class InterviewFlow(Interview_output.InterviewOutputFile):
         self.cancel_request_acceptance()
 
     def provide_feedback_flow(self):
-        print "***== Interview Flow ==***"
+        print "***== Provide Feedback ==***"
         self.interviewer_login()
         self.save_draft()
         self.partial_feedback()
+        self.from_partial_bucket_submit_feedback()
+        self.interviewer2_login()
         self.submit_feedback()
+
+    def update_feedback_flow(self):
+        print "***== Update Feedback ==***"
+        self.interviewer_login()
+        self.update_feedback_output_report()
 
 
 Object = InterviewFlow()
@@ -45,4 +52,8 @@ if Object.status_of_login == 'administrator':
     Object.provide_feedback_flow()
     Object.provide_feedback_output_report()
 
+    Object.update_feedback_flow()
+
+
 Object.overall_status()
+Object.browser_close()

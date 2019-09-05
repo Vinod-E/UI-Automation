@@ -31,6 +31,10 @@ class FontColor(object):
                                   'align: vert centre, horiz centre;')
         self.style8 = xlwt.easyxf('font: name Times New Roman, color-index black, bold off')
 
+        self.style9 = xlwt.easyxf('pattern: pattern solid, fore_colour orange;'
+                                  'font: name Arial, color white, bold on, height 200; '
+                                  'align:wrap on, vert centre, horiz centre;')
+
 # -------
 # colours
 # -------

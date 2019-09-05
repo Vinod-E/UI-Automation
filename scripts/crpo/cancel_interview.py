@@ -18,6 +18,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
         self.ui_cancel_interview_request_int2_o = []
         self.ui_interview_cancel_int2_o = []
         self.ui_approve_cancel_request_o = []
+        self.ui_cancel_interview_request_action_o = []
 
     def cancel_interview(self):
         try:
@@ -224,6 +225,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.x_path_element_webdriver_wait(page_elements.feedback['cancel_request_save'])
             self.xpath.click()
             print "-------------------- Interview cancel request raised ------------------------"
+            self.ui_cancel_interview_request_action_o = 'Pass'
             self.ui_cancel_interview_request_int2_o = 'Pass'
             time.sleep(3)
 
@@ -258,8 +260,8 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.x_path_element_webdriver_wait(page_elements.event['event_tab'])
             self.xpath.click()
 
-            time.sleep(2)
             self.x_path_element_webdriver_wait(page_elements.event['Event_advance_search'])
+            time.sleep(2)
             self.xpath.click()
 
             self.name_element_webdriver_wait(page_elements.event['event_names'])
