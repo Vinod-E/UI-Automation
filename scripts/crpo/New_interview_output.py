@@ -1,16 +1,16 @@
 import xlwt
-import configure_new_feedback
+import New_form_schedule
 from datetime import date
 import styles
 import test_data_inputpath
 
 
-class InterviewOutputFile(styles.FontColor, configure_new_feedback.NewFeedBackForm):
+class InterviewOutputFile(styles.FontColor, New_form_schedule.NewFormSchedule):
 
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 11)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 19)))
         self.Actual_success_cases = []
 
         super(InterviewOutputFile, self).__init__()
@@ -51,15 +51,22 @@ class InterviewOutputFile(styles.FontColor, configure_new_feedback.NewFeedBackFo
         self.ws.write(4, self.config_usecase_col, 'Interview Module', self.style8)
         self.ws.write(5, self.config_usecase_col, 'Enable New Interview Feedback Form', self.style8)
 
-        self.ws.write(6, self.config_usecase_col, 'Job Role', self.style8)
+        self.ws.write(6, self.config_usecase_col, 'Job Role Tab', self.style8)
         self.ws.write(7, self.config_usecase_col, 'Job Search', self.style8)
         self.ws.write(8, self.config_usecase_col, 'Job getbyid', self.style8)
         self.ws.write(9, self.config_usecase_col, 'floating action', self.style8)
         self.ws.write(10, self.config_usecase_col, 'Configure Feedback action', self.style8)
         self.ws.write(11, self.config_usecase_col, 'Interview Stage', self.style8)
         self.ws.write(12, self.config_usecase_col, 'Configured new feedback form', self.style8)
-
         self.ws.write(13, self.config_usecase_col, 'Disable New Interview Feedback Form', self.style8)
+        self.ws.write(14, self.config_usecase_col, 'Event Tab', self.style8)
+        self.ws.write(15, self.config_usecase_col, 'Event Search', self.style8)
+        self.ws.write(16, self.config_usecase_col, 'Event GetbyId', self.style8)
+        self.ws.write(17, self.config_usecase_col, 'Event Floating actions', self.style8)
+        self.ws.write(18, self.config_usecase_col, 'Event applicants', self.style8)
+        self.ws.write(19, self.config_usecase_col, 'Event applicants search', self.style8)
+        self.ws.write(20, self.config_usecase_col, 'Change applicant status', self.style8)
+        self.ws.write(21, self.config_usecase_col, 'Schedule', self.style8)
 
         # --------------------------------------------------------------------------------------------------------------
         if self.ui_settings_icon == 'Pass':
@@ -127,6 +134,54 @@ class InterviewOutputFile(styles.FontColor, configure_new_feedback.NewFeedBackFo
             self.ws.write(13, self.config_status_col, 'Pass', self.style7)
         else:
             self.ws.write(13, self.config_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_event_tab_n == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_tab_n)
+            self.ws.write(14, self.config_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(14, self.config_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_event_search_n == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_search_n)
+            self.ws.write(15, self.config_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(15, self.config_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_event_getbyid_n == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_getbyid_n)
+            self.ws.write(16, self.config_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(16, self.config_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_event_floating_action_n == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_floating_action_n)
+            self.ws.write(17, self.config_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(17, self.config_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_event_applicant_action_n == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_applicant_action_n)
+            self.ws.write(18, self.config_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(18, self.config_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_applicant_search_n == 'Pass':
+            self.Actual_success_cases.append(self.ui_applicant_search_n)
+            self.ws.write(19, self.config_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(19, self.config_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_change_applicant_status_action_n == 'Pass':
+            self.Actual_success_cases.append(self.ui_change_applicant_status_action_n)
+            self.ws.write(20, self.config_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(20, self.config_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_applicant_schedule_n == 'Pass':
+            self.Actual_success_cases.append(self.ui_applicant_schedule_n)
+            self.ws.write(21, self.config_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(21, self.config_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['New_interview_output_report'])
 
