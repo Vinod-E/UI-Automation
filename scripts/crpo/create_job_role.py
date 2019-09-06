@@ -70,6 +70,9 @@ class CreateJobRole(crpo_login.CrpoLogin):
         self.ui_tag_requirement = []
         self.ui_un_tag_requirement = []
 
+        self.ui_jobrole_tab = []
+        self.ui_job_getbyid = []
+
         workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_job'])
         if self.login_server == 'beta':
             self.job_sheet1 = workbook.sheet_by_index(0)
@@ -330,12 +333,13 @@ class CreateJobRole(crpo_login.CrpoLogin):
         try:
             self.driver.find_element_by_xpath(page_elements.job['job_tab']).click()
             time.sleep(5)
+            self.ui_jobrole_tab = 'Pass'
             self.driver.find_element_by_xpath(page_elements.job['job_advance_search']).click()
 
             name = self.driver.find_element_by_name(page_elements.job['job_search_name_field'])
+            time.sleep(3)
             name.click()
             name.send_keys(self.job_name_sprint_version)
-            time.sleep(2)
 
             self.driver.find_element_by_xpath(page_elements.job['job_search_button']).click()
             time.sleep(5)
@@ -344,6 +348,8 @@ class CreateJobRole(crpo_login.CrpoLogin):
             time.sleep(3)
             print('---------------------Advance search is working fine ------------------')
             self.ui_job_advance_search = 'Pass'
+            self.ui_job_getbyid = 'Pass'
+
 
         except exceptions.WebDriverException as search:
             print search

@@ -387,7 +387,7 @@ class InterviewOutputFile(styles.FontColor, update_feedback.UpdateFeedback):
         # --------------------------------------------------------------------------------------------------------------
 
     def overall_status(self):
-        self.ws.write(0, 0, 'Interview Flow USECASES', self.style4)
+        self.ws.write(0, 0, 'Old Interview Flow', self.style4)
         if self.Expected_success_cases == self.Actual_success_cases:
             self.ws.write(0, 1, 'Pass', self.style5)
         else:

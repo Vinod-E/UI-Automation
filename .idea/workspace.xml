@@ -6,15 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reports/UI_New_Interview_Flow.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/crpo/New_interview_output.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/crpo/configure_new_feedback.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/New_Interview_Flow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hpro automation/test_data_inputpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/test_data_inputpath.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/Interview_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/Interview_output.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/cancel_interview.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/cancel_interview.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/update_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/update_feedback.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testdata/Old_interview.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/Old_interview.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testsuite/Interview_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/Interview_Flow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/Settings_New_Old_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/Settings_New_Old_Form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_job_role.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_job_role.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +36,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PMDG2En2IfwEjepRwpydwZja9i" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -52,7 +58,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Interview_Flow">
+  <component name="RunManager" selected="Python.New_Interview_Flow">
     <configuration name="CRPO_Flow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UI Automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,7 +101,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Interview_flow_old" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="New_Interview_Flow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UI Automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -103,11 +109,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts/crpo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testsuite" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/crpo/Interview_flow_old.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testsuite/New_Interview_Flow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,7 +143,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="schedule_re_schedule" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="configure_new_feedback" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UI Automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -149,7 +155,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/crpo/configure_new_feedback.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.New_Interview_Flow" />
+        <item itemvalue="Python.configure_new_feedback" />
         <item itemvalue="Python.Interview_Flow" />
         <item itemvalue="Python.CRPO_Flow" />
         <item itemvalue="Python.Settings_New_Old_Form" />
-        <item itemvalue="Python.schedule_re_schedule" />
-        <item itemvalue="Python.Interview_flow_old" />
       </list>
     </recent_temporary>
   </component>
@@ -193,5 +199,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
