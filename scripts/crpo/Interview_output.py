@@ -10,7 +10,7 @@ class InterviewOutputFile(styles.FontColor, update_feedback.UpdateFeedback):
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 34)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 42)))
         self.Actual_success_cases = []
 
         super(InterviewOutputFile, self).__init__()
@@ -325,18 +325,69 @@ class InterviewOutputFile(styles.FontColor, update_feedback.UpdateFeedback):
     def update_feedback_output_report(self):
         # ------------- Test Use cases -------------------
         self.ws.write(2, self.UF_usecase_col, 'Admin', self.style9)
-        self.ws.write(3, self.UF_usecase_col, 'Unlock Feedback', self.style8)
+        self.ws.write(3, self.UF_usecase_col, 'All interviews', self.style8)
+        self.ws.write(4, self.UF_usecase_col, 'Completed Feedback', self.style8)
+        self.ws.write(5, self.UF_usecase_col, 'Unlock Feedback action', self.style8)
+        self.ws.write(6, self.UF_usecase_col, 'Unlocked Feedback', self.style8)
+        self.ws.write(7, self.UF_usecase_col, 'Interviewer_1', self.style9)
+        self.ws.write(8, self.UF_usecase_col, 'Update decision', self.style8)
+        self.ws.write(9, self.UF_usecase_col, 'Update Feedback', self.style8)
+        self.ws.write(10, self.UF_usecase_col, 'Interviewer_2', self.style8)
+        self.ws.write(11, self.UF_usecase_col, 'Update decision', self.style8)
+        self.ws.write(12, self.UF_usecase_col, 'Update Feedback', self.style8)
 
         # --------------------------------------------------------------------------------------------------------------
-        if self.ui_int1_login_PF_o == 'Pass':
-            self.Actual_success_cases.append(self.ui_int1_login_PF_o)
-            self.ws.write(self.rowsize, self.PF_status_col, 'Pass', self.style7)
+        if self.ui_all_interviews_bucket_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_all_interviews_bucket_o)
+            self.ws.write(self.rowsize, self.UF_status_col, 'Pass', self.style7)
         else:
-            self.ws.write(self.rowsize, self.PF_status_col, 'Fail', self.style3)
+            self.ws.write(self.rowsize, self.UF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_completed_interview_bucket_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_completed_interview_bucket_o)
+            self.ws.write(4, self.UF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(4, self.UF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_unlock_feedback_action_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_unlock_feedback_action_o)
+            self.ws.write(5, self.UF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(5, self.UF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_unlock_feedback_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_unlock_feedback_o)
+            self.ws.write(6, self.UF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(6, self.UF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_update_decision_int1_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_update_decision_int1_o)
+            self.ws.write(8, self.UF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(8, self.UF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_update_feedback_int1_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_update_feedback_int1_o)
+            self.ws.write(9, self.UF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(9, self.UF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_update_decision_int2_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_update_decision_int2_o)
+            self.ws.write(11, self.UF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(11, self.UF_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_update_feedback_int2_o == 'Pass':
+            self.Actual_success_cases.append(self.ui_update_feedback_int2_o)
+            self.ws.write(12, self.UF_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(12, self.UF_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
     def overall_status(self):
-        self.ws.write(0, 0, 'Interview Flow USECASES', self.style4)
+        self.ws.write(0, 0, 'Old Interview Flow', self.style4)
         if self.Expected_success_cases == self.Actual_success_cases:
             self.ws.write(0, 1, 'Pass', self.style5)
         else:

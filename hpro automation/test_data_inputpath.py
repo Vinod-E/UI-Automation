@@ -21,5 +21,7 @@ crpo_test_data_file = {
 
     'output_report': generic_input_path + 'reports/UI_CRPO_Flow.xls',
 
-    'interview_output_report': generic_input_path + 'reports/UI_Interview_Flow.xls'
+    'interview_output_report': generic_input_path + 'reports/UI_Interview_Flow.xls',
+
+    'New_interview_output_report': generic_input_path + 'reports/UI_New_Interview_Flow.xls'
 }

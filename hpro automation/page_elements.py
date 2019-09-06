@@ -77,10 +77,14 @@ job = {
     'getbyid_feedback_from_name_search': '//*[@placeholder="Name like."][@type="text"]',
 
     'getbyid_feedback_from_search_button': '//*[@ng-click="vm.service.templates.search();"][@type="submit"]',
+    'new_getbyid_feedback_from_search_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/'
+                                               'div/div/div[2]/div/div/div[2]/div/div[4]/button',
 
     'getbyid_feedback_form_use': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]'
                                  '/div/div/interview-templates-search/div/accordian-row-table/table/tbody'
                                  '/tr/td[3]/div/span[1]',
+    'new_getbyid_feedback_form_use': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/'
+                                     'div/div[2]/div/div/div[2]/accordian-row-table/table/tbody/tr[3]/td[3]/div/span',
 
     'Resolution_Strategy': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]/div/div/div[1]/div[2]'
                            '/div/table/tbody/tr[1]/td[2]/div/label[2]',
@@ -352,4 +356,18 @@ feedback = {
     'submit_feedback': '//*[@ng-click="vm.submitFeedback(vm.isUpdateFeedback);"]',
     'Interview_bucket': '//*[@ng-model="vm.config.selectedEntityType"]',
     'review_feedback': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
+}
+
+unlock = {
+    'All_my_interviews': '//*[@ng-model="vm.config.selectedDropdownValue"]',
+    'unlock_action': '//*[@data-title="Unlock Interviewer Feedback"]',
+    'all_interviewers': '//*[@ng-model="vm.isAllSelected"]',
+    'unlock_feedback_button': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
+    'comment': '//*[@ng-model="data.comments"]',
+    'ok': '//*[@ng-click="data.result=true;$hide();"]'
+
+}
+
+update = {
+    'shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]'
 }
