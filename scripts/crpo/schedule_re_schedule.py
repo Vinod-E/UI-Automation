@@ -43,13 +43,13 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
         self.ui_rescheduled_o = []
 
         # ---------------------------------- which excel sheet data to be proceed --------------------------------------
-        workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['old_interview_file'])
+        schedule_workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['old_interview_file'])
         if self.login_server == 'beta':
-            self.job_sheet1 = workbook.sheet_by_index(0)
+            self.feedback_sheet1 = schedule_workbook.sheet_by_index(0)
         if self.login_server == 'ams':
-            self.job_sheet1 = workbook.sheet_by_index(0)
+            self.feedback_sheet1 = schedule_workbook.sheet_by_index(0)
         if self.login_server == 'amsin':
-            self.job_sheet1 = workbook.sheet_by_index(1)
+            self.feedback_sheet1 = schedule_workbook.sheet_by_index(1)
 
     def login(self):
         self.excel_read()
@@ -58,9 +58,9 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
     def old_interview_excel_read(self):
 
         # -------------------------------------- interview details -----------------------------------------------------
-        for i in range(1, self.job_sheet1.nrows):
+        for i in range(1, self.feedback_sheet1.nrows):
             number = i  # Counting number of rows
-            rows = self.job_sheet1.row_values(number)
+            rows = self.feedback_sheet1.row_values(number)
 
             if rows[0]:
                 self.xl_event_name_o.append(rows[0])

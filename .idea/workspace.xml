@@ -6,11 +6,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/crpo/New_form_schedule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/crpo/New_Update_Feedback.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/crpo/New_feedback_form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testdata/.~lock.candidateUpload.xls#" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_New_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_New_Interview_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/New_interview_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/New_interview_output.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/configure_new_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/configure_new_feedback.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testdata/candidateUpload.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/candidateUpload.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testsuite/New_Interview_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/New_Interview_Flow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +42,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../API-Automation" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -161,9 +167,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.New_Interview_Flow" />
-        <item itemvalue="Python.configure_new_feedback" />
         <item itemvalue="Python.Interview_Flow" />
         <item itemvalue="Python.CRPO_Flow" />
+        <item itemvalue="Python.configure_new_feedback" />
         <item itemvalue="Python.Settings_New_Old_Form" />
       </list>
     </recent_temporary>
