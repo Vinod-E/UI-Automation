@@ -11,6 +11,8 @@ class NewFeedBackForm(create_job_role.CreateJobRole, Settings_New_Old_Form.Setti
         super(NewFeedBackForm, self).__init__()
         self.job_name_sprint_version = 'Sprint_{}'.format(self.sprint_version)
         self.interview_stage = 'Skill 1 - Tech'
+        self.interview_status = 'Scheduled'
+        self.interview_comment = 'With New Form'
         self.interview_template = 'Bosch'
 
         self.ui_Floating_actions = []

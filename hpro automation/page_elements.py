@@ -371,3 +371,32 @@ unlock = {
 update = {
     'shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]'
 }
+
+new_feedback = {
+    'overall': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]'
+               '/div[2]/div/div/div/div/div[2]/auto-grow-textarea/textarea',
+    'duration': '//*[@ng-model="vm.data.interviewForm.overallSection.duration"]',
+    'save_as_draft': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/button[2]',
+
+    'Q1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]/div[1]/div[1]/div/div[1]/div/select',
+    'Q1_comment': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]/'
+                  'div[1]/div[1]/div/div[2]/div/auto-grow-textarea/textarea',
+    'Q2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]/div[1]/div[2]/div/div[1]/div/select',
+    'Q2_comment': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]/div[1]/div[2]'
+                  '/div/div[2]/div/auto-grow-textarea/textarea',
+    'Q3': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]/div[1]/div[3]/div/div/div/select',
+    'maybe': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/di'
+             'v/section/div[2]/div/div/div/div/div[1]/div/div[3]',
+    'submit_feedback': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/button[1]',
+    
+    'u_Q1_comment': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section/'
+                    'div[1]/div[1]/div/div[2]/div/auto-grow-textarea/textarea',
+    'u_Q2_comment': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section'
+                    '/div[1]/div[2]/div/div[2]/div/auto-grow-textarea/textarea',
+    'shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section'
+                 '/div[2]/div/div/div/div/div[1]/div/div[1]',
+    'u_overall': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section'
+                 '/div[2]/div/div/div/div/div[2]/auto-grow-textarea/textarea',
+    'update_feedback': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/button',
+
+}
