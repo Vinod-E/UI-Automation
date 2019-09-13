@@ -339,6 +339,7 @@ feedback = {
     'comment': '//*[@ng-model="vm.comment"]',
     'cancel_request_save': '//*[@ng-click="vm.cancelInterviewReq();"]',
     'maybe': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
+    'shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
     'save_draft': '//*[@ng-click="vm.saveDraft();"]',
 
     'rating_1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
@@ -399,4 +400,16 @@ new_feedback = {
                  '/div[2]/div/div/div/div/div[2]/auto-grow-textarea/textarea',
     'update_feedback': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/button',
 
+}
+
+live_interview = {
+    'live_interview_action': '//*[@title="Live Schedule Interviews"]',
+    'select_stage': '//*[@ng-model="vm.selectedInterviewStage"]',
+    'candidate_name': '//*[@ng-model="vm.inputCandidateName"]',
+    'search_button': '//*[@ng-click="vm.searchApplicants();"]',
+    'select_search_candidates': '//*[@ng-model="vm.isAllSelected"]',
+    'schedule': '//*[@ng-click="vm.openScheduleMultipleModal();"]',
+    'scheduled': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
+    'details': '//*[@id="mainBodyElement"]/div[3]/div/div/div[2]/accordian-row-table/table/tbody/tr/td[7]',
+    'provide_feedback': '//*[@ng-click="data.onGiveFeedbackClick(rowKey);"]'
 }

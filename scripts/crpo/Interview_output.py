@@ -1,16 +1,16 @@
 import xlwt
-import update_feedback
+import Live_interview
 from datetime import date
 import styles
 import test_data_inputpath
 
 
-class InterviewOutputFile(styles.FontColor, update_feedback.UpdateFeedback):
+class InterviewOutputFile(styles.FontColor, Live_interview.LiveInterview):
 
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 42)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 52)))
         self.Actual_success_cases = []
 
         super(InterviewOutputFile, self).__init__()
@@ -29,11 +29,14 @@ class InterviewOutputFile(styles.FontColor, update_feedback.UpdateFeedback):
         self.PF_status_col = 3
         self.UF_usecase_col = 4
         self.UF_status_col = 5
+        self.live_usecase_col = 6
+        self.live_status_col = 7
 
         index = 0
-        excelheaders = ['Users', 'Status', 'Provide Feedback', 'Status', 'Update Feedback', 'Status']
+        excelheaders = ['Users', 'Status', 'Provide Feedback', 'Status', 'Update Feedback', 'Status', 'Live Interview'
+                        , 'Status']
         for headers in excelheaders:
-            if headers in ['Users', 'Provide Feedback', 'Update Feedback', 'Status']:
+            if headers in ['Users', 'Provide Feedback', 'Update Feedback', 'Live Interview', 'Status']:
                 self.ws.write(1, index, headers, self.style0)
             else:
                 self.ws.write(1, index, headers, self.style1)
@@ -323,7 +326,7 @@ class InterviewOutputFile(styles.FontColor, update_feedback.UpdateFeedback):
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['interview_output_report'])
 
     def update_feedback_output_report(self):
-        # ------------- Test Use cases -------------------
+        # ------------- Update Feedback cases -------------------
         self.ws.write(2, self.UF_usecase_col, 'Admin', self.style9)
         self.ws.write(3, self.UF_usecase_col, 'All interviews', self.style8)
         self.ws.write(4, self.UF_usecase_col, 'Completed Feedback', self.style8)
@@ -332,7 +335,7 @@ class InterviewOutputFile(styles.FontColor, update_feedback.UpdateFeedback):
         self.ws.write(7, self.UF_usecase_col, 'Interviewer_1', self.style9)
         self.ws.write(8, self.UF_usecase_col, 'Update decision', self.style8)
         self.ws.write(9, self.UF_usecase_col, 'Update Feedback', self.style8)
-        self.ws.write(10, self.UF_usecase_col, 'Interviewer_2', self.style8)
+        self.ws.write(10, self.UF_usecase_col, 'Interviewer_2', self.style9)
         self.ws.write(11, self.UF_usecase_col, 'Update decision', self.style8)
         self.ws.write(12, self.UF_usecase_col, 'Update Feedback', self.style8)
 
@@ -385,6 +388,83 @@ class InterviewOutputFile(styles.FontColor, update_feedback.UpdateFeedback):
         else:
             self.ws.write(12, self.UF_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
+        self.wb_Result.save(test_data_inputpath.crpo_test_data_file['interview_output_report'])
+
+    def live_interview_output_report(self):
+        # ------------- Live interview cases -------------------
+        self.ws.write(2, self.live_usecase_col, 'Interviewer_2', self.style9)
+        self.ws.write(3, self.live_usecase_col, 'Event getByid', self.style8)
+        self.ws.write(4, self.live_usecase_col, 'Live interview action', self.style8)
+        self.ws.write(5, self.live_usecase_col, 'Interview stage', self.style8)
+        self.ws.write(6, self.live_usecase_col, 'Advance search', self.style8)
+        self.ws.write(7, self.live_usecase_col, 'Schedule', self.style8)
+        self.ws.write(8, self.live_usecase_col, 'candidate schedule details', self.style8)
+        self.ws.write(9, self.live_usecase_col, 'Provide feedback action', self.style8)
+        self.ws.write(10, self.live_usecase_col, 'Interviewer decision - Shortlist', self.style8)
+        self.ws.write(11, self.live_usecase_col, 'provide feedback screen', self.style8)
+        self.ws.write(12, self.live_usecase_col, 'Submit feedback', self.style8)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_event_getby_id_l == 'Pass':
+            self.Actual_success_cases.append(self.ui_event_getby_id_l)
+            self.ws.write(self.rowsize, self.live_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(self.rowsize, self.live_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_live_interview_action_l == 'Pass':
+            self.Actual_success_cases.append(self.ui_live_interview_action_l)
+            self.ws.write(4, self.live_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(4, self.live_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_live_interview_stage_l == 'Pass':
+            self.Actual_success_cases.append(self.ui_live_interview_stage_l)
+            self.ws.write(5, self.live_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(5, self.live_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_live_interview_advance_search_l == 'Pass':
+            self.Actual_success_cases.append(self.ui_live_interview_advance_search_l)
+            self.ws.write(6, self.live_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(6, self.live_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_live_interview_schedule_l == 'Pass':
+            self.Actual_success_cases.append(self.ui_live_interview_schedule_l)
+            self.ws.write(7, self.live_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(7, self.live_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_live_interview_candidate_details_l == 'Pass':
+            self.Actual_success_cases.append(self.ui_live_interview_candidate_details_l)
+            self.ws.write(8, self.live_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(8, self.live_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_live_interview_PF_action_l == 'Pass':
+            self.Actual_success_cases.append(self.ui_live_interview_PF_action_l)
+            self.ws.write(9, self.live_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(9, self.live_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_live_decision_l == 'Pass':
+            self.Actual_success_cases.append(self.ui_live_decision_l)
+            self.ws.write(10, self.live_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(10, self.live_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_live_feedback_screen_l == 'Pass':
+            self.Actual_success_cases.append(self.ui_live_feedback_screen_l)
+            self.ws.write(11, self.live_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(11, self.live_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_live_submit_feedback_l == 'Pass':
+            self.Actual_success_cases.append(self.ui_live_submit_feedback_l)
+            self.ws.write(12, self.live_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(12, self.live_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        self.wb_Result.save(test_data_inputpath.crpo_test_data_file['interview_output_report'])
 
     def overall_status(self):
         self.ws.write(0, 0, 'Old Interview Flow', self.style4)

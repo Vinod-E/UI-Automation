@@ -8,11 +8,11 @@ class InterviewFlow(Interview_output.InterviewOutputFile):
 
     def login(self):
         self.excel_read()
+        self.old_interview_excel_read()
         self.crpo_login()
 
     def schedule_re_schedule(self):
         print "***== Schedule / Re-Schedule ==***"
-        self.old_interview_excel_read()
         self.event_applicant_schedule()
         self.re_schedule()
 
@@ -38,6 +38,11 @@ class InterviewFlow(Interview_output.InterviewOutputFile):
         self.update_feedback_and_decision_int1()
         self.update_feedback_and_decision_int2()
 
+    def live_interview_feedback(self):
+        self.live_int2_login()
+        self.live_schedule()
+        self.live_provide_feedback()
+
 
 Object = InterviewFlow()
 # --------------- Login ---------------
@@ -56,6 +61,8 @@ if Object.status_of_login == 'administrator':
     Object.update_feedback_flow()
     Object.update_feedback_output_report()
 
+    Object.live_interview_feedback()
+    Object.live_interview_output_report()
 
 Object.overall_status()
 Object.browser_close()
