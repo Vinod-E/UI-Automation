@@ -43,7 +43,7 @@ class CreateEvent(create_test.CreateTest):
         self.xl_pending_tasks = []
         self.xl_submitted_tasks = []
         self.xl_rejected_tasks = []
-        self.Upload_candidateName = ""
+        self.event_name_sprint_version = ""
         self.hopping_positive_status = ""
         self.change_applicant_status = ""
         self.call_back_status = ""
@@ -105,7 +105,7 @@ class CreateEvent(create_test.CreateTest):
             if rows[0]:
                 self.xl_upload_candidate_name.append(rows[0])
             for s in self.xl_upload_candidate_name:
-                self.Upload_candidateName = s
+                self.event_name_sprint_version = s
         # --------------------------------------Event details-----------------------------------------------------------
         for i in range(1, self.event_sheet1.nrows):
             number = i  # Counting number of rows
@@ -464,6 +464,23 @@ class CreateEvent(create_test.CreateTest):
                 agree = self.driver.find_element_by_xpath(page_elements.event['Agree'])
                 agree.click()
                 time.sleep(4)
+                edit = self.driver.find_element_by_xpath(page_elements.event['edit_candidate_details'])
+                edit.click()
+
+                time.sleep(2)
+                name = self.driver.find_element_by_xpath(page_elements.event['upload_candidate_name'])
+                name.clear()
+                name.send_keys(self.event_name_sprint_version)
+
+                time.sleep(2)
+                usn = self.driver.find_element_by_xpath(page_elements.event['upload_candidate_usn'])
+                usn.clear()
+                usn.send_keys(self.event_name_sprint_version)
+
+                save = self.driver.find_element_by_xpath(page_elements.event['details_save'])
+                save.click()
+
+                time.sleep(4)
                 save_uploads = self.driver.find_element_by_xpath(page_elements.event['save_uploads'])
                 save_uploads.click()
 
@@ -510,7 +527,7 @@ class CreateEvent(create_test.CreateTest):
                 time.sleep(2)
                 advance_search.click()
                 applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
-                applicant_name.send_keys(self.Upload_candidateName)
+                applicant_name.send_keys(self.event_name_sprint_version)
                 self.ui_event_applicant_search = 'Pass'
                 time.sleep(2)
                 self.driver.find_element_by_xpath(page_elements.event['applicant_search_button']).click()
@@ -518,13 +535,13 @@ class CreateEvent(create_test.CreateTest):
                 # --------------------------- Applicant Get By Id -------------------
                 time.sleep(3)
                 applicant_getbyid = self.driver.find_element_by_xpath(
-                    page_elements.event['applicant_getbyid'].format(self.Upload_candidateName))
+                    page_elements.event['applicant_getbyid'].format(self.event_name_sprint_version))
                 applicant_getbyid.click()
                 self.driver.switch_to.window(self.driver.window_handles[1])
                 time.sleep(2.5)
 
                 applicant_validate = self.driver.find_element_by_xpath(page_elements.event['applicant_validate'])
-                if applicant_validate.text == self.Upload_candidateName:
+                if applicant_validate.text == self.event_name_sprint_version:
                     self.ui_event_applicant_getby = 'Pass'
                     print "------------------ Applicant validated ---------------------"
 
@@ -569,14 +586,14 @@ class CreateEvent(create_test.CreateTest):
             time.sleep(2.3)
             advance_search.click()
             applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
-            applicant_name.send_keys(self.Upload_candidateName)
+            applicant_name.send_keys(self.event_name_sprint_version)
             time.sleep(2)
             self.driver.find_element_by_xpath(page_elements.event['applicant_search_button']).click()
 
             # --------------------------- Applicant Get By Id -------------------
             time.sleep(3)
             applicant_getbyid = self.driver.find_element_by_xpath(
-                page_elements.event['applicant_getbyid'].format(self.Upload_candidateName))
+                page_elements.event['applicant_getbyid'].format(self.event_name_sprint_version))
             applicant_getbyid.click()
             self.driver.switch_to.window(self.driver.window_handles[1])
             time.sleep(2.5)
@@ -600,7 +617,7 @@ class CreateEvent(create_test.CreateTest):
             self.driver.switch_to.window(self.driver.window_handles[2])
             time.sleep(2.5)
             task_candidate_name = self.driver.find_element_by_xpath(page_elements.event['task_candidate_name'])
-            if self.Upload_candidateName in task_candidate_name.text:
+            if self.event_name_sprint_version in task_candidate_name.text:
                 self.ui_task_candidate_name = 'Pass'
 
             self.browser_close()
@@ -630,7 +647,7 @@ class CreateEvent(create_test.CreateTest):
             search.click()
 
             name = self.driver.find_element_by_xpath(page_elements.pofu['pofu_candi_text_box'])
-            name.send_keys(self.Upload_candidateName)
+            name.send_keys(self.event_name_sprint_version)
 
             time.sleep(2.2)
             search_button = self.driver.find_element_by_xpath(page_elements.pofu['pofu_search_button'])
@@ -659,14 +676,14 @@ class CreateEvent(create_test.CreateTest):
             time.sleep(3.9)
             applicant_name = self.driver.find_element_by_name(page_elements.event['applicant_name'])
             applicant_name.clear()
-            applicant_name.send_keys(self.Upload_candidateName)
+            applicant_name.send_keys(self.event_name_sprint_version)
             time.sleep(2)
             self.driver.find_element_by_xpath(page_elements.event['applicant_search_button']).click()
 
             # --------------------------- Applicant Get By Id -------------------
             time.sleep(3)
             applicant_getbyid = self.driver.find_element_by_xpath(
-                page_elements.event['applicant_getbyid'].format(self.Upload_candidateName))
+                page_elements.event['applicant_getbyid'].format(self.event_name_sprint_version))
             applicant_getbyid.click()
             self.driver.switch_to.window(self.driver.window_handles[1])
             time.sleep(2.5)
