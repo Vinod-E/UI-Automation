@@ -1,5 +1,5 @@
 import xlwt
-import Live_interview
+from scripts.crpo import Live_interview
 from datetime import date
 import styles
 import test_data_inputpath

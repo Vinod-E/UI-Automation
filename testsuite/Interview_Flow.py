@@ -1,4 +1,4 @@
-from scripts.crpo import Interview_output
+from scripts.crpo.Output import Interview_output
 
 
 class InterviewFlow(Interview_output.InterviewOutputFile):

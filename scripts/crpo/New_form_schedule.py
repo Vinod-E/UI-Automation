@@ -28,7 +28,7 @@ class NewFormSchedule(configure_new_feedback.NewFeedBackForm):
             self.ui_event_tab_n = 'Pass'
 
             self.x_path_element_webdriver_wait(page_elements.event['Event_advance_search'])
-            time.sleep(2)
+            time.sleep(5)
             self.xpath.click()
 
             self.name_element_webdriver_wait(page_elements.event['event_names'])

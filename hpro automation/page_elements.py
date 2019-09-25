@@ -258,6 +258,7 @@ event = {
     'edit_candidate_details': '//*[@title="Edit"]',
     'upload_candidate_name': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[5]/div/input',
     'upload_candidate_usn': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[18]/div/input',
+    'upload_candidate_email': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[4]/div/input',
     'details_save': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/button[2]',
     'event_interviews': '//*[@title="View Event Interviews"]',
     'provide_feedback': '//*[@data-title="Provide Interview Feedback"]',
