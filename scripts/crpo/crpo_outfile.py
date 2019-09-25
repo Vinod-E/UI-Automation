@@ -35,11 +35,11 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         self.task_status_col = 5
 
         index = 0
-        excelheaders = ['Job UseCases', 'Status', 'Event UseCases', 'Status', 'Test UseCases',
-                        'Status', 'Requirement Usecases', 'Status', 'Task Assignment', 'Status']
+        excelheaders = ['Job UseCases', 'Status', 'Event UseCases', 'Status', 'TaSK UseCases',
+                        'Status', 'Requirement Usecases', 'Status', 'Test', 'Status']
         for headers in excelheaders:
-            if headers in ['Job UseCases', 'Event UseCases', 'Test UseCases',  'Requirement Usecases',
-                           'Task Assignment', 'Status']:
+            if headers in ['Job UseCases', 'Status', 'Event UseCases', 'Status', 'TaSK UseCases',
+                           'Status', 'Requirement Usecases', 'Status', 'Test', 'Status']:
                 self.ws.write(1, index, headers, self.style0)
             else:
                 self.ws.write(1, index, headers, self.style1)
