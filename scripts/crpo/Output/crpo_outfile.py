@@ -1,5 +1,5 @@
 import xlwt
-import create_event
+from scripts.crpo import create_event
 from datetime import date
 import styles
 import test_data_inputpath
@@ -38,8 +38,7 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         excelheaders = ['Job UseCases', 'Status', 'Event UseCases', 'Status', 'TaSK UseCases',
                         'Status', 'Requirement Usecases', 'Status', 'Test', 'Status']
         for headers in excelheaders:
-            if headers in ['Job UseCases', 'Status', 'Event UseCases', 'Status', 'TaSK UseCases',
-                           'Status', 'Requirement Usecases', 'Status', 'Test', 'Status']:
+            if headers in ['Job UseCases', 'Event UseCases', 'TaSK UseCases', 'Requirement Usecases', 'Test', 'Status']:
                 self.ws.write(1, index, headers, self.style0)
             else:
                 self.ws.write(1, index, headers, self.style1)

@@ -1,4 +1,5 @@
-from scripts.crpo import New_interview_output
+# from scripts.crpo import New_interview_output
+from scripts.crpo.Output import New_interview_output
 
 
 class NewInterviewFlow(New_interview_output.InterviewOutputFile):

@@ -440,7 +440,7 @@ class CreateEvent(create_test.CreateTest):
             except exceptions.ElementNotInteractableException as error:
                 print(error)
 
-    def upload_candidates_to_event(self):
+    def upload_candidates_to_event(self, email_id):
         if self.grid_event_name == self.event_name_sprint_version:
 
             try:
@@ -471,6 +471,11 @@ class CreateEvent(create_test.CreateTest):
                 name = self.driver.find_element_by_xpath(page_elements.event['upload_candidate_name'])
                 name.clear()
                 name.send_keys(self.event_name_sprint_version)
+
+                time.sleep(2)
+                email = self.driver.find_element_by_xpath(page_elements.event['upload_candidate_email'])
+                email.clear()
+                email.send_keys(email_id)
 
                 time.sleep(2)
                 usn = self.driver.find_element_by_xpath(page_elements.event['upload_candidate_usn'])
