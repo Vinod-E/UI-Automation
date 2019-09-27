@@ -15,6 +15,19 @@ login = {
     'wrong_credentials': '//*[@id="mainBodyElement"]/div[1]/div/header/div[3]/div/div'
 }
 
+candidate = {
+    'Candidate_Tab': '//*[@ui-sref="crpo.candidates"]',
+    'candidate_search': '//*[@data-title="Search"]',
+    'candidate_name': 'Name',
+    'Search_button': '//*[@ng-click="vm.apply();$hide();"]',
+    'candidate_select_checkbox': 'grid_items',
+    'More': '//*[@class="fa fa-chevron-down"]',
+    'Tag_candidate_to_event': '//*[@class="fa fa-fw fa-lg fa-tags"]',
+    'Event_name': '//*[@type="text"][@placeholder="Select an Event"]',
+    'Tag_to_event': '//*[@ng-click="vm.ValidateAndTagCandidatesToEvent()"]'
+
+}
+
 job = {
     # --------------------------------------------Job Role--------------------------------------------------------------
     'job_tab': '//*[@ui-sref="crpo.jobRole"]',
@@ -277,6 +290,10 @@ event = {
     'applicant_validate': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[1]/div/div/div[2]/div[1]/p[1]',
     'applicant_select_checkbox': 'grid_items',
     'Change_applicant_status': '//*[@data-title="Change Applicant Status"]',
+    'Compose_Mail': '//*[@data-title="Compose Mail"]',
+    'mail_subject': '//*[@ng-model="vm.subject"]',
+    'mail_content': '//*[@ng-model="html"]',
+    'mail_send': '//*[@type="submit"]',
     'change_stage': '//*[@ng-model="vm.selectedStage"]',
     'change_status': '//*[@ng-model="vm.selectedStatus"]',
     'Interviewer': '//*[@title="Select Interviewers"]',
