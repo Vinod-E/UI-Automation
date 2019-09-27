@@ -76,10 +76,8 @@ class UpdateFeedback(provide_feedback.OldProvideFeedback):
             self.ui_all_interviews_bucket_o = 'Pass'
 
             time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.feedback['Interview_bucket'])
+            self.x_path_element_webdriver_wait(page_elements.feedback['Completed_interviews_bucket'])
             self.xpath.click()
-            self.xpath.send_keys(Keys.ARROW_DOWN)
-            self.xpath.send_keys(Keys.ENTER)
             print "-------------------- Completed Feedback Bucket ------------------------"
             self.ui_completed_interview_bucket_o = 'Pass'
 
@@ -156,10 +154,8 @@ class UpdateFeedback(provide_feedback.OldProvideFeedback):
             print "-------------------- Floating action ------------------------"
 
             time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.feedback['Interview_bucket'])
+            self.x_path_element_webdriver_wait(page_elements.feedback['Completed_interviews_bucket'])
             self.xpath.click()
-            self.xpath.send_keys(Keys.ARROW_DOWN)
-            self.xpath.send_keys(Keys.ENTER)
             print "-------------------- Completed Feedback Bucket ------------------------"
 
             time.sleep(3)
@@ -268,10 +264,8 @@ class UpdateFeedback(provide_feedback.OldProvideFeedback):
             print "-------------------- Floating action ------------------------"
 
             time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.feedback['Interview_bucket'])
+            self.x_path_element_webdriver_wait(page_elements.feedback['Completed_interviews_bucket'])
             self.xpath.click()
-            self.xpath.send_keys(Keys.ARROW_DOWN)
-            self.xpath.send_keys(Keys.ENTER)
             print "-------------------- Completed Feedback Bucket ------------------------"
 
             time.sleep(3)

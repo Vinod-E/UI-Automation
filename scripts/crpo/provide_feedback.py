@@ -187,13 +187,8 @@ class OldProvideFeedback(cancel_interview.CancelAndRequest):
     def from_partial_bucket_submit_feedback(self):
         try:
             time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.feedback['Interview_bucket'])
+            self.x_path_element_webdriver_wait(page_elements.feedback['Partial_interviews_bucket'])
             self.xpath.click()
-            self.xpath.send_keys(Keys.ARROW_DOWN)
-            self.xpath.send_keys(Keys.ARROW_DOWN)
-            self.xpath.send_keys(Keys.ARROW_DOWN)
-            self.xpath.send_keys(Keys.ARROW_DOWN)
-            self.xpath.send_keys(Keys.ENTER)
             print "-------------------- Partial Feedback Bucket ------------------------"
             self.ui_partial_submit_bucket_o = 'Pass'
 

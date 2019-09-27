@@ -361,6 +361,8 @@ feedback = {
     'feedback_form_validation_agree': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
     'submit_feedback': '//*[@ng-click="vm.submitFeedback(vm.isUpdateFeedback);"]',
     'Interview_bucket': '//*[@ng-model="vm.config.selectedEntityType"]',
+    'Completed_interviews_bucket': '//*[@label="Completed"]',
+    'Partial_interviews_bucket': '//*[@label="Partial Submissions"]',
     'review_feedback': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
 }
 
