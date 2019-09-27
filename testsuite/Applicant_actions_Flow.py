@@ -34,6 +34,7 @@ if Actions.status_of_login == 'administrator':
     # ---------- Event Applicants -----------------
     Actions.event_applicant_actions()
     Actions.event_applicant_action_report()
+    Actions.candidate_tab_report()
 
     # --------- Overall test cases status -----------
     Actions.overall_status()

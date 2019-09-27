@@ -120,29 +120,29 @@ class ApplicantActionOutput(styles.FontColor, Applicant_actions.ApplicantActions
         # --------------------
 
         # ------------  candidate tab Use cases -------------------
-        self.ws.write(2, self.Event_usecase_col, 'Candidate Tab', self.style8)
-        self.ws.write(3, self.Event_usecase_col, 'Candidate Advance search', self.style8)
-        self.ws.write(4, self.Event_usecase_col, 'Candidate Actions', self.style9)
-        self.ws.write(5, self.Event_usecase_col, 'Candidate Tag To Event', self.style8)
+        self.ws.write(2, self.Candidate_usecase_col, 'Candidate Tab', self.style8)
+        self.ws.write(3, self.Candidate_usecase_col, 'Candidate Advance search', self.style8)
+        self.ws.write(4, self.Candidate_usecase_col, 'Candidate Actions', self.style9)
+        self.ws.write(5, self.Candidate_usecase_col, 'Candidate Tag To Event', self.style8)
 
         # --------------------------------------------------------------------------------------------------------------
         if self.ui_candidate_tab == 'Pass':
             self.Actual_success_cases.append(self.ui_candidate_tab)
-            self.ws.write(self.rowsize, self.Event_status_col, 'Pass', self.style7)
+            self.ws.write(self.rowsize, self.Candidate_status_col, 'Pass', self.style7)
         else:
-            self.ws.write(self.rowsize, self.Event_status_col, 'Fail', self.style3)
+            self.ws.write(self.rowsize, self.Candidate_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
         if self.ui_candidate_advance_search == 'Pass':
             self.Actual_success_cases.append(self.ui_candidate_advance_search)
-            self.ws.write(3, self.Event_status_col, 'Pass', self.style7)
+            self.ws.write(3, self.Candidate_status_col, 'Pass', self.style7)
         else:
-            self.ws.write(3, self.Event_status_col, 'Fail', self.style3)
+            self.ws.write(3, self.Candidate_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
         if self.ui_tag_to_event == 'Pass':
             self.Actual_success_cases.append(self.ui_tag_to_event)
-            self.ws.write(5, self.Event_status_col, 'Pass', self.style7)
+            self.ws.write(5, self.Candidate_status_col, 'Pass', self.style7)
         else:
-            self.ws.write(5, self.Event_status_col, 'Fail', self.style3)
+            self.ws.write(5, self.Candidate_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['Applicant_action_output_report'])
