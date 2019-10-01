@@ -138,6 +138,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.xpath.send_keys(self.xl_change_applicant_status_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['Interviewer'])
+            time.sleep(2)
             self.xpath.click()
 
             self.x_path_element_webdriver_wait(page_elements.event['Interviewer_selection'])
