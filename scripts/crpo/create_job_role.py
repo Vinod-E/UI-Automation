@@ -232,6 +232,8 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
         # ---------------------------- Checking whether the job created or not -----------------------------------------
         #     if self.driver.find_element_by_xpath(page_elements.job['jobrole_breadcrumbs']).is_displayed():
+
+    def job_verification(self):
         try:
             job_name_from_breadcrumb = self.driver.find_element_by_xpath(page_elements.job['jobrole_breadcrumbs'])
             self.job_name_breadcumb = job_name_from_breadcrumb.text
@@ -248,7 +250,8 @@ class CreateJobRole(crpo_login.CrpoLogin):
         #     print (e2)
 
         if self.job_name_breadcumb == self.job_name_sprint_version:
-            print('Job Created successfully')
+            print('Validated the job and continuing with the '
+                  'configuration for created job :: {}'.format(self.job_name_breadcumb))
             self.ui_job_created = 'Pass'
 
         elif self.job_name_sprint_version == self.job_name_grid_view:
@@ -259,6 +262,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
     def edit_job(self):
 
         self.driver.implicitly_wait(5)
+        self.job_verification()
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
                 self.driver.find_element_by_xpath(page_elements.job['Floating_actions']).click()
@@ -283,6 +287,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
     def tag_requirement(self):
         self.driver.implicitly_wait(5)
+        self.job_verification()
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
                 self.driver.refresh()
@@ -310,6 +315,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
     def un_tag_requirement(self):
         self.driver.implicitly_wait(5)
+        self.job_verification()
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
                 self.driver.refresh()
@@ -350,13 +356,13 @@ class CreateJobRole(crpo_login.CrpoLogin):
             self.ui_job_advance_search = 'Pass'
             self.ui_job_getbyid = 'Pass'
 
-
         except exceptions.WebDriverException as search:
             print search
 
     def selection_process(self):
 
         # ---------------------------------- From Job details screen ---------------------------------------------------
+        self.job_verification()
         if self.job_name_breadcumb == self.job_name_sprint_version:
 
             try:
@@ -412,7 +418,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
                 print(config_message)
 
     def feedback_form(self):
-
+        self.job_verification()
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
                 # -------------------------- Interview stage / feedback form configuration -----------------------------
@@ -496,7 +502,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
                 print(config_message)
 
     def tag_interview_panel(self):
-
+        self.job_verification()
         if self.job_name_breadcumb == self.job_name_sprint_version:
             self.driver.implicitly_wait(5)
             try:
@@ -528,6 +534,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
                 self.driver.refresh()
 
     def ec_configurations_tab(self):
+        self.job_verification()
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
 
@@ -576,6 +583,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
                 print(config_message)
 
     def task_configurations_tab(self):
+        self.job_verification()
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
                 self.driver.refresh()
@@ -622,6 +630,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
     def job_automation(self):
         time.sleep(5)
+        self.job_verification()
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
                 self.driver.refresh()

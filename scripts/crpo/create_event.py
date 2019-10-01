@@ -264,22 +264,25 @@ class CreateEvent(create_test.CreateTest):
             print('Event created successfully')
             self.ui_create_event = 'Pass'
 
-            # ------------------------------ validating the event name -------------------------------------------------
-            try:
-                time.sleep(4)
-
-                test_name = self.driver.find_element_by_xpath(
-                    page_elements.test['grid_test_name'].format(self.event_name_sprint_version))
-                self.grid_event_name = test_name.text
-                if self.grid_event_name == self.event_name_sprint_version:
-                    print('------------------ Event name is validated ------------------')
-            except exceptions.ElementNotInteractableException as e:
-                print(e)
         except exceptions.ElementNotInteractableException as error:
             print(error)
 
-    def event_task_configure(self):
+    def event_verification(self):
+        # ------------------------------ validating the event name -------------------------------------------------
+        try:
+            time.sleep(4)
 
+            test_name = self.driver.find_element_by_xpath(
+                page_elements.test['grid_test_name'].format(self.event_name_sprint_version))
+            self.grid_event_name = test_name.text
+            if self.grid_event_name == self.event_name_sprint_version:
+                print('------------------ Event name is ( {} ) '
+                      'validated ------------------'.format(self.event_name_sprint_version))
+        except exceptions.ElementNotInteractableException as e:
+            print(e)
+
+    def event_task_configure(self):
+        self.event_verification()
         if self.grid_event_name == self.event_name_sprint_version:
 
             try:
@@ -353,7 +356,7 @@ class CreateEvent(create_test.CreateTest):
                 print(error)
 
     def event_test_configure(self):
-
+        self.event_verification()
         if self.grid_event_name == self.event_name_sprint_version:
 
             try:
@@ -396,7 +399,7 @@ class CreateEvent(create_test.CreateTest):
                 print(error)
 
     def event_owner_configure(self):
-
+        self.event_verification()
         if self.grid_event_name == self.event_name_sprint_version:
 
             try:
@@ -441,6 +444,7 @@ class CreateEvent(create_test.CreateTest):
                 print(error)
 
     def upload_candidates_to_event(self, email_id):
+        self.event_verification()
         if self.grid_event_name == self.event_name_sprint_version:
 
             try:
@@ -517,6 +521,7 @@ class CreateEvent(create_test.CreateTest):
         self.ui_event_advance_search = 'Pass'
         time.sleep(1.2)
 
+        self.event_verification()
         if self.grid_event_name == self.event_name_sprint_version:
             try:
                 self.driver.refresh()
@@ -741,16 +746,3 @@ class CreateEvent(create_test.CreateTest):
 
         except exceptions.ElementNotInteractableException as error:
             print(error)
-
-
-# Object = CreateEvent()
-# Object.login()
-# Object.event_excel_read()
-# if Object.status_of_login == 'administrator':
-#     Object.create_event()
-#     Object.event_task_configure()
-#     time.sleep(6)
-#     Object.upload_candidates_to_event()
-#     Object.view_upload_candidates()
-#     Object.driver.switch_to.window(Object.driver.window_handles[0])
-#     Object.browser_close()

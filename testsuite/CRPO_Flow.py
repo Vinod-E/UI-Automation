@@ -50,11 +50,11 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
 
     def event_creation(self):
 
-        self.create_event()
+        # self.create_event()
         time.sleep(5)
-        self.event_task_configure()
-        self.event_test_configure()
-        self.event_owner_configure()
+        # self.event_task_configure()
+        # self.event_test_configure()
+        # self.event_owner_configure()
         self.upload_candidates_to_event(self.New_email_id)
         self.view_upload_candidates()
         self.event_change_applicant_status()
@@ -72,19 +72,19 @@ Object.all_excels()
 if Object.status_of_login == 'administrator':
 
     # ---------- Job creation -----------------
-    Object.job_role_creation()
-    Object.job_output_report()
-    Object.driver.switch_to.window(Object.driver.window_handles[1])
-    Object.driver.close()
-    Object.driver.switch_to.window(Object.driver.window_handles[0])
+    # Object.job_role_creation()
+    # Object.job_output_report()
+    # Object.driver.switch_to.window(Object.driver.window_handles[1])
+    # Object.driver.close()
+    # Object.driver.switch_to.window(Object.driver.window_handles[0])
 
     # ---------- Req creation -----------------
-    Object.requirement_creation()
-    Object.requirement_output_report()
+    # Object.requirement_creation()
+    # Object.requirement_output_report()
 
     # ---------- Test creation -----------------
-    Object.test_creation()
-    Object.test_output_report()
+    # Object.test_creation()
+    # Object.test_output_report()
 
     # ---------- Event creation -----------------
     Object.event_creation()
