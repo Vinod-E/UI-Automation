@@ -59,6 +59,7 @@ class CreateEvent(create_test.CreateTest):
         self.event_test_sprint_version = []
         self.loop_v = []
         self.grid_event_name = []
+        self.validation_check = ''
 
         self.ui_create_event = []
         self.ui_event_task_config = []
@@ -261,8 +262,12 @@ class CreateEvent(create_test.CreateTest):
             create = self.driver.find_element_by_xpath(page_elements.event['create_event_button'])
             create.send_keys(Keys.DOWN)
             create.click()
-            print('Event created successfully')
-            self.ui_create_event = 'Pass'
+            time.sleep(3)
+
+            self.event_verification()
+            if self.validation_check == 'True':
+                print('Event created successfully')
+                self.ui_create_event = 'Pass'
 
         except exceptions.ElementNotInteractableException as error:
             print(error)
@@ -275,15 +280,15 @@ class CreateEvent(create_test.CreateTest):
             test_name = self.driver.find_element_by_xpath(
                 page_elements.test['grid_test_name'].format(self.event_name_sprint_version))
             self.grid_event_name = test_name.text
-            if self.grid_event_name == self.event_name_sprint_version:
-                print('------------------ Event name is ( {} ) '
-                      'validated ------------------'.format(self.event_name_sprint_version))
+            if self.grid_event_name.strip() == self.event_name_sprint_version:
+                self.validation_check = 'True'
+                print('Event name is ( {} ) and it is validated'.format(self.event_name_sprint_version))
         except exceptions.ElementNotInteractableException as e:
             print(e)
 
     def event_task_configure(self):
         self.event_verification()
-        if self.grid_event_name == self.event_name_sprint_version:
+        if self.validation_check == 'True':
 
             try:
                 config_tab = self.driver.find_element_by_xpath(page_elements.event['event_config_tab'])
@@ -357,7 +362,7 @@ class CreateEvent(create_test.CreateTest):
 
     def event_test_configure(self):
         self.event_verification()
-        if self.grid_event_name == self.event_name_sprint_version:
+        if self.validation_check == 'True':
 
             try:
                 self.driver.refresh()
@@ -400,7 +405,7 @@ class CreateEvent(create_test.CreateTest):
 
     def event_owner_configure(self):
         self.event_verification()
-        if self.grid_event_name == self.event_name_sprint_version:
+        if self.validation_check == 'True':
 
             try:
                 self.driver.refresh()
@@ -445,7 +450,7 @@ class CreateEvent(create_test.CreateTest):
 
     def upload_candidates_to_event(self, email_id):
         self.event_verification()
-        if self.grid_event_name == self.event_name_sprint_version:
+        if self.validation_check == 'True':
 
             try:
                 self.driver.refresh()
@@ -522,7 +527,7 @@ class CreateEvent(create_test.CreateTest):
         time.sleep(1.2)
 
         self.event_verification()
-        if self.grid_event_name == self.event_name_sprint_version:
+        if self.validation_check == 'True':
             try:
                 self.driver.refresh()
                 time.sleep(10)
@@ -571,15 +576,15 @@ class CreateEvent(create_test.CreateTest):
     def event_change_applicant_status(self):
         try:
             self.driver.refresh()
-            self.driver.implicitly_wait(5)
+            time.sleep(5)
             # --------------------------- Change Applicant Status -------------------
             self.driver.find_element_by_name(page_elements.event['applicant_select_checkbox']).click()
             time.sleep(2.4)
             change_applicant_status = \
                 self.driver.find_element_by_xpath(page_elements.event['Change_applicant_status'])
             change_applicant_status.click()
-            time.sleep(1.5)
             stage = self.driver.find_element_by_xpath(page_elements.event['change_stage'])
+            time.sleep(1.5)
             stage.send_keys(self.xl_change_applicant_stage)
 
             status = self.driver.find_element_by_xpath(page_elements.event['change_status'])

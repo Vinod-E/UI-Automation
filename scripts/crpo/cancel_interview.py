@@ -29,6 +29,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
             self.name.click()
 
+            self.driver.refresh()
             self.x_path_element_webdriver_wait(page_elements.feedback['more'])
             self.xpath.click()
 

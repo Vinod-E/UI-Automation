@@ -68,7 +68,7 @@ job = {
 
     'getbyid_menu_selectionProcess_text_field': '//*[@type="text"][@placeholder="Selection Process"]',
 
-    'getbyid_menu_selectionProcess_save': '//*[@type="button"][@ng-click="vm.tagSelectionProcess();"]',
+    'getbyid_menu_selectionProcess_save': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/button[2]',
 
     'getbyid_menu_feedback_form': '//*[@title="Configure Feedback Form"]',
 
@@ -137,8 +137,8 @@ job = {
                     '/tr[5]/td[5]/div/button',
     'test_automation_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[2]/table/tbody[3]'
                               '/tr[4]/td[3]/div/button',
-    'ready_schedule_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[2]/table/'
-                             'tbody[4]/tr[10]/td[7]/div/button',
+    'ready_schedule_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/'
+                             'div[2]/table/tbody[4]/tr[10]/td[8]/div/button',
     'Hopping_save_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[1]/button',
 
     'ec_configure': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div[3]/div/div[1]/div/a',
