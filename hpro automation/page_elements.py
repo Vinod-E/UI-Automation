@@ -24,8 +24,13 @@ candidate = {
     'More': '//*[@class="fa fa-chevron-down"]',
     'Tag_candidate_to_event': '//*[@class="fa fa-fw fa-lg fa-tags"]',
     'Event_name': '//*[@type="text"][@placeholder="Select an Event"]',
+    'Job_name': '//*[@type="text"][@placeholder="Select a JobRole"]',
     'Tag_to_event': '//*[@ng-click="vm.ValidateAndTagCandidatesToEvent()"]'
 
+}
+
+candidate_get_by = {
+    'job': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[1]/div/div/div[2]/div[3]/div[1]/p[3]/span[2]'
 }
 
 job = {
@@ -284,16 +289,13 @@ event = {
     'close_pop_details_window': '//*[@type="button"][@ng-click="$hide()"]',
     'View_Applicants': '//*[@title="View Candidates"]',
     'applicant_advance_search': '//*[@data-title="Search"]',
+    'reset_applicant_search': '//*[@ng-click="vm.reset();"]',
     'applicant_name': 'name',
     'applicant_search_button': '//*[@ng-click="vm.apply();$hide();"]',
     'applicant_getbyid': '//*[@title="{}"]',
     'applicant_validate': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[1]/div/div/div[2]/div[1]/p[1]',
     'applicant_select_checkbox': 'grid_items',
     'Change_applicant_status': '//*[@data-title="Change Applicant Status"]',
-    'Compose_Mail': '//*[@data-title="Compose Mail"]',
-    'mail_subject': '//*[@ng-model="vm.subject"]',
-    'mail_content': '//*[@ng-model="html"]',
-    'mail_send': '//*[@type="submit"]',
     'change_stage': '//*[@ng-model="vm.selectedStage"]',
     'change_status': '//*[@ng-model="vm.selectedStatus"]',
     'Interviewer': '//*[@title="Select Interviewers"]',
@@ -436,4 +438,17 @@ live_interview = {
     'scheduled': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
     'details': '//*[@id="mainBodyElement"]/div[3]/div/div/div[2]/accordian-row-table/table/tbody/tr/td[7]',
     'provide_feedback': '//*[@ng-click="data.onGiveFeedbackClick(rowKey);"]'
+}
+
+event_applicant_action = {
+    'Compose_Mail': '//*[@data-title="Compose Mail"]',
+    'mail_subject': '//*[@ng-model="vm.subject"]',
+    'mail_content': '//*[@ng-model="html"]',
+    'mail_send': '//*[@type="submit"]',
+    'Compose_Mail_notifier': '//*[@ng-bind-html="message.text"]',
+    'send_sms': '//*[@data-title="Send SMS"]',
+    'sms_template': '//*[@type="text"][@placeholder="Select Template"]',
+    'send_sms_button': '//*[@ng-click="vm.sendSms()"]',
+    'send_sms_ui_notifier': '//*[@ng-click="stopTimeoutClose(message)"]',
+    'Tag_to_job': '//*[@data-title="Tag Applicant(s) to Job/Test"]'
 }
