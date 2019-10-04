@@ -180,7 +180,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
             self.driver.find_element_by_xpath(page_elements.job['job_tab']).click()
             time.sleep(10)
             self.driver.find_element_by_xpath(page_elements.job['create_job_role']).click()
-            time.sleep(10)
+            time.sleep(5)
             self.driver.find_element_by_xpath(page_elements.job['Job_name'])\
                 .send_keys(self.job_name_sprint_version)
             self.driver.find_element_by_xpath(page_elements.job['upload_job_file']).send_keys(self.file)
@@ -380,7 +380,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
                 try:
                     time.sleep(4)
                     sp_save = self.driver.find_element_by_xpath(page_elements.job['getbyid_menu_selectionProcess_save'])
-                    self.driver.implicitly_wait(5)
+                    sp_save.send_keys(Keys.ARROW_DOWN)
                     sp_save.click()
                     self.selection_process_created = 'Pass'
                     print('----------------------Selection Process configured successfully_01-------------------------')
@@ -396,6 +396,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
         else:
             try:
                 # ------------------------------------ Selection Process -----------------------------------------------
+                self.driver.refresh()
                 self.driver.implicitly_wait(5)
                 self.driver.find_element_by_xpath(page_elements.job['Floating_actions']).click()
                 time.sleep(5)
