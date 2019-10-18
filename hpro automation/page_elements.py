@@ -101,8 +101,8 @@ job = {
     'getbyid_feedback_form_use': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]'
                                  '/div/div/interview-templates-search/div/accordian-row-table/table/tbody'
                                  '/tr/td[3]/div/span[1]',
-    'new_getbyid_feedback_form_use': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/'
-                                     'div/div[2]/div/div/div[2]/accordian-row-table/table/tbody/tr[3]/td[3]/div/span',
+    'new_getbyid_feedback_form_use': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]/div/div/div[2]'
+                                     '/accordian-row-table/table/tbody/tr[1]/td[3]/div/span',
 
     'Resolution_Strategy': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]/div/div/div[1]/div[2]'
                            '/div/table/tbody/tr[1]/td[2]/div/label[2]',
@@ -138,13 +138,13 @@ job = {
     'Hr_Interview_stage_hop': '//*[@title="Set stage and status to hop to"][@data-content="72606"]',
     'hop_stage': '//*[@id="mainBodyElement"]/div[5]/div[2]/select[1]',
     'hop_status': '//*[@id="mainBodyElement"]/div[5]/div[2]/select[2]',
-    'ec_on_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[2]/table/tbody[2]'
-                    '/tr[5]/td[5]/div/button',
+    'ec_on_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[2]/table/tbody[2]/'
+                    'tr[4]/td[5]/div/button',
     'test_automation_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[2]/table/tbody[3]'
                               '/tr[4]/td[3]/div/button',
-    'ready_schedule_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/'
-                             'div[2]/table/tbody[4]/tr[10]/td[8]/div/button',
-    'Hopping_save_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[1]/button',
+    'ready_schedule_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/section/div[2]/table/tbody[4]/'
+                             'tr[9]/td[8]/div/button',
+    'Hopping_save_button': '//*[@ng-click="vm.saveApplicantAutomationConfig();"]',
 
     'ec_configure': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div[3]/div/div[1]/div/a',
     'ec_text_field': '//*[@type="text"][@placeholder="Select Eligibility Criteria"]',
@@ -274,14 +274,14 @@ event = {
     'event_upload_candidates': '//*[@title="Upload Candidates"]',
     'event_upload_file': '//*[@type="file"][@file-model="vm.uploadedCandidateTemplateFile"]',
     'edit_candidate_details': '//*[@title="Edit"]',
-    'upload_candidate_name': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[5]/div/input',
-    'upload_candidate_usn': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[18]/div/input',
-    'upload_candidate_email': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[4]/div/input',
+    'upload_candidate_name': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[1]/div/input',
+    'upload_candidate_usn': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[9]/div/input',
+    'upload_candidate_email': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[3]/div/input',
     'details_save': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/button[2]',
     'event_interviews': '//*[@title="View Event Interviews"]',
     'provide_feedback': '//*[@data-title="Provide Interview Feedback"]',
     'Next_Button': '//*[@data-ng-click="vm.gotoNextState()"]',
-    'declare_checkbox': '//*[@type="checkbox"][@ng-click="vm.viewDeclaration();"]',
+    'declare_checkbox': '//*[@type="checkbox"][@ng-model="vm.isAgreement"]',
     'signature': '//*[@type="text"][@ng-model="vm.signature"]',
     'Agree': '//*[@type="button"][@data-ng-click="$hide();vm.isAgreement=true;"]',
     'save_uploads': '//*[@data-ng-click="vm.consolidateCandidateInfo();"]',
@@ -400,8 +400,8 @@ update = {
 }
 
 new_feedback = {
-    'overall': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]'
-               '/div[2]/div/div/div/div/div[2]/auto-grow-textarea/textarea',
+    'overall': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]/div[3]/div/div/'
+               'div/div/div[3]/auto-grow-textarea/textarea',
     'duration': '//*[@ng-model="vm.data.interviewForm.overallSection.duration"]',
     'save_as_draft': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/button[2]',
 

@@ -13,7 +13,7 @@ class NewFeedBackForm(create_job_role.CreateJobRole, Settings_New_Old_Form.Setti
         self.interview_stage = 'Skill 1 - Tech'
         self.interview_status = 'Scheduled'
         self.interview_comment = 'With New Form'
-        self.interview_template = 'Bosch'
+        self.interview_template = 'UI_Automation'
 
         self.ui_Floating_actions = []
         self.ui_getbyid_menu_feedback_form = []
@@ -59,8 +59,10 @@ class NewFeedBackForm(create_job_role.CreateJobRole, Settings_New_Old_Form.Setti
             self.xpath.send_keys(self.interview_template)
 
             self.x_path_element_webdriver_wait(page_elements.job['new_getbyid_feedback_from_search_button'])
+            time.sleep(2)
             self.xpath.click()
 
+            time.sleep(2)
             self.x_path_element_webdriver_wait(page_elements.job['new_getbyid_feedback_form_use'])
             self.xpath.click()
             self.ui_new_form_configured = 'Pass'
