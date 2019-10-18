@@ -33,6 +33,7 @@ class CandidateActions(Event_Applicant_actions.ApplicantActions):
         self.xpath.click()
 
         self.x_path_element_webdriver_wait(page_elements.candidate['Tag_candidate_to_event'])
+        time.sleep(2)
         self.xpath.click()
 
         time.sleep(2)

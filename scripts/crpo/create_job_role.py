@@ -665,6 +665,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
                 test_automation = self.driver.find_element_by_xpath(page_elements.job['test_automation_button'])
                 test_automation.click()
+                time.sleep(2)
 
                 ec_on = self.driver.find_element_by_xpath(page_elements.job['ec_on_button'])
                 ec_on.click()

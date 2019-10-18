@@ -25,18 +25,18 @@ class CrpoOutputFile(styles.FontColor, create_event.CreateEvent):
         self.size = self.rowsize
         self.job_usecase_col = 0
         self.job_status_col = 1
-        self.req_usecase_col = 6
-        self.req_status_col = 7
-        self.test_usecase_col = 8
-        self.test_status_col = 9
-        self.event_usecase_col = 2
-        self.event_status_col = 3
-        self.task_usecase_col = 4
-        self.task_status_col = 5
+        self.req_usecase_col = 2
+        self.req_status_col = 3
+        self.test_usecase_col = 4
+        self.test_status_col = 5
+        self.event_usecase_col = 6
+        self.event_status_col = 7
+        self.task_usecase_col = 8
+        self.task_status_col = 9
 
         index = 0
-        excelheaders = ['Job UseCases', 'Status', 'Event UseCases', 'Status', 'Task UseCases',
-                        'Status', 'Requirement Usecases', 'Status', 'Test', 'Status']
+        excelheaders = ['Job UseCases', 'Status', 'Requirement Usecases', 'Status', 'Test', 'Status', 'Event UseCases',
+                        'Status', 'Task UseCases', 'Status', ]
         for headers in excelheaders:
             if headers in ['Job UseCases', 'Event UseCases', 'Task UseCases', 'Requirement Usecases', 'Test', 'Status']:
                 self.ws.write(1, index, headers, self.style0)
