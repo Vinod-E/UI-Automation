@@ -400,11 +400,10 @@ update = {
 }
 
 new_feedback = {
-    'overall': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]/div[3]/div/div/'
-               'div/div/div[3]/auto-grow-textarea/textarea',
+    'overall': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]/div[2]/div/div/div/div/div[3]'
+               '/auto-grow-textarea/textarea',
     'duration': '//*[@ng-model="vm.data.interviewForm.overallSection.duration"]',
     'save_as_draft': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/button[2]',
-
     'Q1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]/div[1]/div[1]/div/div[1]/div/select',
     'Q1_comment': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]/'
                   'div[1]/div[1]/div/div[2]/div/auto-grow-textarea/textarea',
@@ -422,8 +421,8 @@ new_feedback = {
                     '/div[1]/div[2]/div/div[2]/div/auto-grow-textarea/textarea',
     'shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section'
                  '/div[2]/div/div/div/div/div[1]/div/div[1]',
-    'u_overall': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section'
-                 '/div[2]/div/div/div/div/div[2]/auto-grow-textarea/textarea',
+    'u_overall': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section/div[2]/div/div/div/div/div[3]/'
+                 'auto-grow-textarea/textarea',
     'update_feedback': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/button',
 
 }

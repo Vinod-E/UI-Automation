@@ -52,7 +52,8 @@ class Settings(webdriver_wait.WebDriverElementWait):
             self.x_path_element_webdriver_wait(page_elements.settings['settings'])
             self.xpath.click()
 
-            time.sleep(3)
+            self.driver.refresh()
+            time.sleep(5)
             self.x_path_element_webdriver_wait(page_elements.settings['Interview_module'])
             self.xpath.click()
 
