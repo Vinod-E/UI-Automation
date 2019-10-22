@@ -8,17 +8,14 @@
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_New_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_New_Interview_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshots/CRPO_Login_Welcome_Page.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/CRPO_Login_Welcome_Page.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshots/CRPO_Tenant_Page.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/CRPO_Tenant_Page.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshots/Job.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/Job.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/Candidate_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/Candidate_actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/Output/crpo_outfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/Output/crpo_outfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/crpo/Settings_New_Old_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/Settings_New_Old_Form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/configure_new_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/configure_new_feedback.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_job_role.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_job_role.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../API-Automation" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -64,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.New_Interview_Flow">
+  <component name="RunManager" selected="Python.Applicant_actions_Flow">
     <configuration name="Applicant_actions_Flow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UI Automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,8 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.New_Interview_Flow" />
         <item itemvalue="Python.Applicant_actions_Flow" />
+        <item itemvalue="Python.New_Interview_Flow" />
         <item itemvalue="Python.Interview_Flow" />
         <item itemvalue="Python.CRPO_Flow" />
         <item itemvalue="Python.Applicant_actions_output" />
@@ -228,14 +225,14 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/crpo/Event_Applicant_actions.py</url>
-          <line>193</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/crpo/configure_new_feedback.py</url>
           <line>57</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/crpo/Event_Applicant_actions.py</url>
+          <line>178</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
