@@ -35,6 +35,8 @@ class ApplicantActionsFlow(Applicant_actions_output.ApplicantActionOutput):
         self.tag_to_job(self.last_version_number)
         self.candidate_get_by_id(self.old_candidate_name)
 
+        self.untag_applicants()
+
 
 Actions = ApplicantActionsFlow()
 # --------------- Login ---------------

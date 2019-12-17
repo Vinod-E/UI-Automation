@@ -137,6 +137,7 @@ class UpdateFeedback(provide_feedback.OldProvideFeedback):
             self.name_element_webdriver_wait(page_elements.event['event_names'])
             self.name.send_keys(self.event_name_sprint_version_o)
 
+            time.sleep(2.5)
             self.x_path_element_webdriver_wait(page_elements.event['event_search_button'])
             self.xpath.click()
 

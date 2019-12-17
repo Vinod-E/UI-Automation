@@ -75,6 +75,7 @@ class NewFormSchedule(configure_new_feedback.NewFeedBackForm):
             self.x_path_element_webdriver_wait(page_elements.event['Change_applicant_status'])
             self.xpath.click()
 
+            time.sleep(2)
             self.x_path_element_webdriver_wait(page_elements.event['change_stage'])
             self.xpath.send_keys(self.interview_stage)
 
@@ -96,6 +97,7 @@ class NewFormSchedule(configure_new_feedback.NewFeedBackForm):
             self.xpath.send_keys(self.interview_comment)
 
             self.x_path_element_webdriver_wait(page_elements.event['change_button'])
+            time.sleep(1.6)
             self.xpath.click()
             self.ui_change_applicant_status_action_n = 'Pass'
             # --------------------------- Applicant Get By Id ----------------------------------------------------------

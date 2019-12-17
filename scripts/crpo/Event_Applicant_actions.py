@@ -22,6 +22,7 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         self.ui_tag_to_event = []
         self.ui_send_sms = []
         self.ui_tag_to_job = []
+        self.ui_untag_applicant = []
 
     def event_advance_search(self):
         # --------------------------------- event details ----------------------------------------------------------
@@ -74,6 +75,7 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         time.sleep(2)
         self.xpath.click()
 
+        time.sleep(2)
         self.x_path_element_webdriver_wait(page_elements.event['change_stage'])
         self.xpath.send_keys('Group Discussion')
 
@@ -139,6 +141,7 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         time.sleep(2)
         self.xpath.click()
         self.x_path_element_webdriver_wait(page_elements.candidate['Job_name'])
+        time.sleep(1.3)
         self.xpath.send_keys('Sprint_{}'.format(self.sprint_version))
         self.xpath.send_keys(Keys.ARROW_DOWN)
         self.xpath.send_keys(Keys.ENTER)
@@ -146,6 +149,7 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         time.sleep(2)
         self.x_path_element_webdriver_wait(page_elements.candidate['Tag_to_event'])
         self.xpath.click()
+        time.sleep(2)
 
     def event_applicant_advance_search(self, candidate_name):
         # ------------------------------- Applicant Advance search -------------------------------------------------
@@ -203,3 +207,15 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         time.sleep(3)
         self.browser_close()
         self.driver.switch_to.window(self.driver.window_handles[0])
+
+    def untag_applicants(self):
+        self.event_applicant_advance_search(self.sprint_version)
+        time.sleep(2)
+        self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
+        self.name.click()
+
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['Untag_applicant'])
+        time.sleep(2)
+        self.xpath.click()
+        self.ui_untag_applicant = 'Pass'
+
