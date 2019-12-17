@@ -151,6 +151,9 @@ class OldProvideFeedback(cancel_interview.CancelAndRequest):
             time.sleep(3)
             self.driver.switch_to.window(self.driver.window_handles[1])
 
+            self.x_path_element_webdriver_wait(page_elements.feedback['maybe'])
+            self.xpath.click()
+            time.sleep(3)
             self.x_path_element_webdriver_wait(page_elements.feedback['rating_1'])
             self.xpath.click()
             self.xpath.send_keys(Keys.ARROW_DOWN)
