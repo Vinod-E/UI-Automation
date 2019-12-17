@@ -39,6 +39,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.x_path_element_webdriver_wait(page_elements.feedback['comment'])
             self.xpath.send_keys(self.xl_cancel_request_comment_o)
 
+            time.sleep(2.5)
             self.x_path_element_webdriver_wait(page_elements.feedback['cancel_confirm'])
             self.xpath.click()
             time.sleep(2)
@@ -132,6 +133,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.x_path_element_webdriver_wait(page_elements.event['Change_applicant_status'])
             self.xpath.click()
 
+            time.sleep(2)
             self.x_path_element_webdriver_wait(page_elements.event['change_stage'])
             self.xpath.send_keys(self.xl_change_applicant_stage_o)
 
@@ -224,6 +226,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
 
             self.x_path_element_webdriver_wait(page_elements.feedback['comment'])
             self.xpath.send_keys(self.xl_cancel_request_comment_o)
+            time.sleep(2.9)
 
             self.x_path_element_webdriver_wait(page_elements.feedback['cancel_request_save'])
             self.xpath.click()
@@ -259,12 +262,12 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             print "------------------ Admin Login successfully ------------------------"
 
             # --------------------------------- event details ----------------------------------------------------------
-            time.sleep(2)
+            time.sleep(4)
             self.x_path_element_webdriver_wait(page_elements.event['event_tab'])
             self.xpath.click()
 
+            time.sleep(3)
             self.x_path_element_webdriver_wait(page_elements.event['Event_advance_search'])
-            time.sleep(2)
             self.xpath.click()
 
             self.name_element_webdriver_wait(page_elements.event['event_names'])

@@ -583,8 +583,9 @@ class CreateEvent(create_test.CreateTest):
             change_applicant_status = \
                 self.driver.find_element_by_xpath(page_elements.event['Change_applicant_status'])
             change_applicant_status.click()
+            time.sleep(2.9)
+
             stage = self.driver.find_element_by_xpath(page_elements.event['change_stage'])
-            time.sleep(1.5)
             stage.send_keys(self.xl_change_applicant_stage)
 
             status = self.driver.find_element_by_xpath(page_elements.event['change_status'])

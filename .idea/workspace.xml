@@ -7,14 +7,15 @@
   <component name="ChangeListManager">
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_New_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_New_Interview_Flow.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/CRPO_Tenant_Page.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/CRPO_Tenant_Page.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/Job.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/Job.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/Event_Applicant_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/Event_Applicant_actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/New_form_schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/New_form_schedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/cancel_interview.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/cancel_interview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/provide_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/provide_feedback.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/update_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/update_feedback.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testsuite/Applicant_actions_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/Applicant_actions_Flow.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,18 +46,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/scripts/crpo/Output" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.Applicant_actions_Flow">
     <configuration name="Applicant_actions_Flow" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -173,6 +162,18 @@
         <item itemvalue="Python.Applicant_actions_output" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />

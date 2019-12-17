@@ -144,11 +144,13 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
 
             self.x_path_element_webdriver_wait(page_elements.event['Change_applicant_status'])
             self.xpath.click()
+            time.sleep(2.9)
 
             self.x_path_element_webdriver_wait(page_elements.event['change_stage'])
             self.xpath.send_keys(self.xl_change_applicant_stage_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['change_status'])
+            time.sleep(2)
             self.xpath.send_keys(self.xl_change_applicant_status_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['Interviewer'])

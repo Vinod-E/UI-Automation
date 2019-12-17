@@ -38,6 +38,7 @@ class OldProvideFeedback(cancel_interview.CancelAndRequest):
             time.sleep(2)
             self.xpath.click()
 
+            time.sleep(2)
             self.x_path_element_webdriver_wait(page_elements.event['change_stage'])
             self.xpath.send_keys(self.xl_change_applicant_stage_o)
 
@@ -84,6 +85,7 @@ class OldProvideFeedback(cancel_interview.CancelAndRequest):
             self.x_path_element_webdriver_wait(page_elements.event['event_tab'])
             self.xpath.click()
 
+            time.sleep(2)
             self.x_path_element_webdriver_wait(page_elements.event['Event_advance_search'])
             self.xpath.click()
 
