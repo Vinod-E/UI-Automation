@@ -9,7 +9,7 @@ class ApplicantActionOutput(styles.FontColor, Candidate_actions.CandidateActions
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 15)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 23)))
         self.Actual_success_cases = []
 
         super(ApplicantActionOutput, self).__init__()
@@ -58,6 +58,14 @@ class ApplicantActionOutput(styles.FontColor, Candidate_actions.CandidateActions
         self.ws.write(12, self.Event_usecase_col, 'Send SMS', self.style8)
         self.ws.write(13, self.Event_usecase_col, 'Tag to Job/Test', self.style8)
         self.ws.write(14, self.Event_usecase_col, 'Untag Applicants', self.style8)
+        self.ws.write(15, self.Event_usecase_col, 'More Actions', self.style8)
+        self.ws.write(16, self.Event_usecase_col, 'Registration Link', self.style8)
+        self.ws.write(17, self.Event_usecase_col, 'Admit Card', self.style8)
+        self.ws.write(18, self.Event_usecase_col, 'Single PDF', self.style8)
+        self.ws.write(19, self.Event_usecase_col, 'Generate Docket', self.style8)
+        self.ws.write(20, self.Event_usecase_col, 'Upload Attachment', self.style8)
+        self.ws.write(21, self.Event_usecase_col, 'BU_Change_Remove', self.style8)
+        self.ws.write(22, self.Event_usecase_col, 'BU_Change_Save', self.style8)
 
         # --------------------------------------------------------------------------------------------------------------
         if self.ui_event_tab == 'Pass':
@@ -126,11 +134,59 @@ class ApplicantActionOutput(styles.FontColor, Candidate_actions.CandidateActions
         else:
             self.ws.write(13, self.Event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
-        if self.ui_untag_applicant == 'pass':
+        if self.ui_untag_applicant == 'Pass':
             self.Actual_success_cases.append(self.ui_untag_applicant)
             self.ws.write(14, self.Event_status_col, 'Pass', self.style7)
         else:
             self.ws.write(14, self.Event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_more_action == 'Pass':
+            self.Actual_success_cases.append(self.ui_more_action)
+            self.ws.write(15, self.Event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(15, self.Event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_send_rl == 'Pass':
+            self.Actual_success_cases.append(self.ui_send_rl)
+            self.ws.write(16, self.Event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(16, self.Event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_send_ac == 'Pass':
+            self.Actual_success_cases.append(self.ui_send_ac)
+            self.ws.write(17, self.Event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(17, self.Event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_single_pdf == 'Pass':
+            self.Actual_success_cases.append(self.ui_single_pdf)
+            self.ws.write(18, self.Event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(18, self.Event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_generate_docket == 'Pass':
+            self.Actual_success_cases.append(self.ui_generate_docket)
+            self.ws.write(19, self.Event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(19, self.Event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_upload_attachment == 'Pass':
+            self.Actual_success_cases.append(self.ui_upload_attachment)
+            self.ws.write(20, self.Event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(20, self.Event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_change_bu_remove == 'Pass':
+            self.Actual_success_cases.append(self.ui_change_bu_remove)
+            self.ws.write(21, self.Event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(21, self.Event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_change_bu_save == 'Pass':
+            self.Actual_success_cases.append(self.ui_change_bu_save)
+            self.ws.write(22, self.Event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(22, self.Event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['Applicant_action_output_report'])

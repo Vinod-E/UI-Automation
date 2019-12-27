@@ -37,6 +37,14 @@ class ApplicantActionsFlow(Applicant_actions_output.ApplicantActionOutput):
 
         self.untag_applicants()
 
+        self.registration_link()
+        self.admit_card()
+        self.single_pdf()
+        self.generate_docket()
+        self.upload_attachment()
+        self.change_bu_remove()
+        self.change_bu_save()
+
 
 Actions = ApplicantActionsFlow()
 # --------------- Login ---------------

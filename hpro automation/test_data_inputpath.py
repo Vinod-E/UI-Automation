@@ -27,3 +27,7 @@ crpo_test_data_file = {
 
     'Applicant_action_output_report': generic_input_path + 'reports/UI_Applicant_Action_Flow.xls'
 }
+
+attachments = {
+    'upload_attachment': generic_input_path + 'testdata/job-description.pdf'
+}

@@ -450,5 +450,17 @@ event_applicant_action = {
     'send_sms_button': '//*[@ng-click="vm.sendSms()"]',
     'send_sms_ui_notifier': '//*[@ng-click="stopTimeoutClose(message)"]',
     'Tag_to_job': '//*[@data-title="Tag Applicant(s) to Job/Test"]',
-    'Untag_applicant': '//*[@data-title="Untag Applicant(s)"]'
+    'Untag_applicant': '//*[@data-title="Untag Applicant(s)"]',
+    'untag_ok': '//*[@ng-click="data.result=true;$hide();"]',
+    'more': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/button',
+    'send_rl': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/div[2]/div[2]/div[6]',
+    'send_ac': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/div[2]/div[2]/div[7]',
+    'single_PDF': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/div[2]/div[2]/div[16]',
+    'generate_docket': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/div[2]/div[2]/div[17]',
+    'upload_attachment': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/div[2]/div[2]/div[19]',
+    'upload_file': '//*[@type="file"]',
+    'save': '//*[@ng-click="vm.save();"]',
+    'change_BU': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/div[2]/div[2]/div[20]',
+    'bu_choose': '//*[@placeholder="Select a Business Unit"]',
+    'remove': '//*[@ng-click="vm.remove();"]'
 }
