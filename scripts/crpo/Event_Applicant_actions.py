@@ -3,6 +3,7 @@ import page_elements
 import time
 from selenium.webdriver.common.keys import Keys
 import webdriver_wait
+import test_data_inputpath
 
 
 class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
@@ -23,6 +24,14 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         self.ui_send_sms = []
         self.ui_tag_to_job = []
         self.ui_untag_applicant = []
+        self.ui_more_action = []
+        self.ui_send_rl = []
+        self.ui_send_ac = []
+        self.ui_single_pdf = []
+        self.ui_generate_docket = []
+        self.ui_upload_attachment = []
+        self.ui_change_bu_remove = []
+        self.ui_change_bu_save = []
 
     def event_advance_search(self):
         # --------------------------------- event details ----------------------------------------------------------
@@ -220,5 +229,119 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         self.x_path_element_webdriver_wait(page_elements.event_applicant_action['Untag_applicant'])
         time.sleep(2)
         self.xpath.click()
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['untag_ok'])
+        self.xpath.click()
         self.ui_untag_applicant = 'Pass'
 
+    def more(self):
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['more'])
+        self.xpath.click()
+        self.ui_more_action = 'Pass'
+
+    def registration_link(self):
+        self.reset_applicant_search()
+        self.event_applicant_advance_search(self.sprint_version)
+
+        self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
+        self.name.click()
+
+        self.more()
+
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['send_rl'])
+        self.xpath.click()
+        time.sleep(1.2)
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['untag_ok'])
+        self.xpath.click()
+        self.ui_send_rl = 'Pass'
+        print('----------------- Registration Link sent ----------------')
+
+    def admit_card(self):
+        self.reset_applicant_search()
+        self.event_applicant_advance_search(self.sprint_version)
+
+        self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
+        self.name.click()
+
+        self.more()
+
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['send_ac'])
+        self.xpath.click()
+        time.sleep(1.2)
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['untag_ok'])
+        self.xpath.click()
+        self.ui_send_ac = 'Pass'
+        print('------------------- Admit Card sent -------------------')
+
+    def single_pdf(self):
+        self.reset_applicant_search()
+        self.event_applicant_advance_search(self.sprint_version)
+
+        self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
+        self.name.click()
+
+        self.more()
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['single_PDF'])
+        self.xpath.click()
+        self.ui_single_pdf = 'Pass'
+        time.sleep(1.2)
+        print('------------------- Single PDF -----------------')
+
+    def generate_docket(self):
+        self.more()
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['generate_docket'])
+        self.xpath.click()
+        self.ui_generate_docket = 'Pass'
+        time.sleep(1.2)
+        print('------------------- Generate Docket -----------------')
+
+    def upload_attachment(self):
+        self.more()
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['upload_attachment'])
+        self.xpath.click()
+        time.sleep(1.2)
+
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['upload_file'])
+        time.sleep(2)
+        self.xpath.send_keys(test_data_inputpath.attachments['upload_attachment'])
+
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['save'])
+        self.xpath.click()
+        self.ui_upload_attachment = 'Pass'
+        time.sleep(2)
+        print('------------------- Upload Attachment -----------------')
+
+    def change_bu_remove(self):
+
+        self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
+        self.name.click()
+
+        self.more()
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['change_BU'])
+        self.xpath.click()
+        time.sleep(2)
+
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['remove'])
+        self.xpath.click()
+        print('------------------- BU Removed -----------------')
+        self.ui_change_bu_remove = 'Pass'
+        time.sleep(3)
+
+    def change_bu_save(self):
+
+        self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
+        self.name.click()
+
+        self.more()
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['change_BU'])
+        self.xpath.click()
+        time.sleep(2)
+
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['change_BU'])
+        self.xpath.send_keys('Technology - Hyderabad (hmviod)')
+        self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
+        time.sleep(1.2)
+
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['save'])
+        self.xpath.click()
+        print('------------------- BU Saved -----------------')
+        self.ui_change_bu_save = 'Pass'
