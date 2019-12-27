@@ -26,6 +26,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             time.sleep(2)
             self.driver.refresh()
             time.sleep(3)
+            self.driver.execute_script("window.scrollTo(0,200);")
             self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
             self.name.click()
 
@@ -81,6 +82,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
 
             self.x_path_element_webdriver_wait(page_elements.event['event_search_button'])
             self.xpath.click()
+            self.driver.execute_script("window.scrollTo(0,200);")
 
             self.x_path_element_webdriver_wait(page_elements.event['Click_on_event_name'])
             self.xpath.click()
@@ -107,6 +109,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.x_path_element_webdriver_wait(page_elements.event['applicant_search_button'])
             time.sleep(2)
             self.xpath.click()
+            self.driver.execute_script("window.scrollTo(0,200);")
             print "-------------------- Applicant Advance search ------------------------"
 
             # --------------------------- Applicant Get By Id ----------------------------------------------------------
@@ -215,6 +218,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             # --------------------------- cancel request raising -------------------------------------------------------
             self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
             self.name.click()
+            self.driver.execute_script("window.scrollTo(0,200);")
 
             self.x_path_element_webdriver_wait(page_elements.feedback['cancel_request'])
             self.xpath.click()
@@ -320,6 +324,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.x_path_element_webdriver_wait(page_elements.event['applicant_search_button'])
             time.sleep(2)
             self.xpath.click()
+            self.driver.execute_script("window.scrollTo(0,200);")
             print "-------------------- Applicant Advance search ------------------------"
 
             # --------------------------- Applicant Get By Id ----------------------------------------------------------

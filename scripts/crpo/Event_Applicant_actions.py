@@ -164,6 +164,8 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         self.x_path_element_webdriver_wait(page_elements.event['applicant_search_button'])
         time.sleep(2)
         self.xpath.click()
+        self.xpath.send_keys(Keys.END)
+
         print "-------------------- Applicant Advance search ------------------------"
         self.ui_applicant_advance_search = 'Pass'
 
@@ -172,9 +174,9 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         self.x_path_element_webdriver_wait(page_elements.event['reset_applicant_search'])
         self.xpath.click()
 
-        time.sleep(3)
-        self.x_path_element_webdriver_wait(page_elements.event['applicant_advance_search'])
-        self.xpath.click()
+        # time.sleep(3)
+        # self.x_path_element_webdriver_wait(page_elements.event['applicant_advance_search'])
+        # self.xpath.click()
 
     def candidate_get_by_id(self, status):
         # --------------------------- Applicant Get By Id ----------------------------------------------------------
@@ -209,6 +211,7 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         self.driver.switch_to.window(self.driver.window_handles[0])
 
     def untag_applicants(self):
+        self.reset_applicant_search()
         self.event_applicant_advance_search(self.sprint_version)
         time.sleep(2)
         self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])

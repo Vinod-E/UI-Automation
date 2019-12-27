@@ -8,7 +8,7 @@ login = {
     'username': "loginName",
     'password': '//*[@type="password"]',
     'login_button': '//*[@ng-click="vm.login()"]',
-    'login_success': '//*[@id="mainBodyElement"]/div[1]/div/header/div[1]/nav/div/div[3]/span',
+    'login_success': '//*[@id="mainBodyElement"]/div[1]/div/header/div[1]/nav/div/div[3]/a/span',
     'tenant_screen_text': '//*[@id="mainBodyElement"]/div[6]/div/div/div[1]/h4',
     'page_cant_be_reached': '//*[@id="main-message"]/h1/span',
     'internet_error': '//*[@id="main-message"]/h1/span',
@@ -17,7 +17,7 @@ login = {
 
 candidate = {
     'Candidate_Tab': '//*[@ui-sref="crpo.candidates"]',
-    'candidate_search': '//*[@data-title="Search"]',
+    'candidate_search': '//*[@data-title="Filters"]',
     'candidate_name': 'Name',
     'Search_button': '//*[@ng-click="vm.apply();$hide();"]',
     'candidate_select_checkbox': 'grid_items',
@@ -98,11 +98,11 @@ job = {
     'new_getbyid_feedback_from_search_button': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/'
                                                'div/div/div[2]/div/div/div[2]/div/div[4]/button',
 
-    'getbyid_feedback_form_use': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]'
-                                 '/div/div/interview-templates-search/div/accordian-row-table/table/tbody'
-                                 '/tr/td[3]/div/span[1]',
-    'new_getbyid_feedback_form_use': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]/div/div/div[2]'
-                                     '/accordian-row-table/table/tbody/tr[1]/td[3]/div/span',
+    'getbyid_feedback_form_use': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]/'
+                                 'div/div/interview-templates-search/div/accordian-row-table/table/'
+                                 'tbody/tr[1]/td[4]/span/div/div/span[1]',
+    'new_getbyid_feedback_form_use': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/'
+                                     'div[2]/div/div/div[2]/accordian-row-table/table/tbody/tr/td[4]/span/div/div/span',
 
     'Resolution_Strategy': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]/div/div/div[1]/div[2]'
                            '/div/table/tbody/tr[1]/td[2]/div/label[2]',
@@ -171,13 +171,13 @@ job = {
     'activity_task_configuration_save': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
     # ------------------------------------------------------------------------------------------------------------------
 
-    'job_advance_search': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div/a[2]',
+    'job_advance_search': '//*[@data-title="Filters"]',
 
     'job_search_name_field': "Name",
 
-    'job_search_button': '//*[@id="mainBodyElement"]/div[3]/section/div/div/advance-search/div/div[3]/div/button[2]',
+    'job_search_button': '//*[@ng-click="vm.apply();$hide();"]',
 
-    'job_getbyid': '//*[@id="req-list-view"]/tr/td[4]/a',
+    'job_getbyid': '//*[@title="{}"]',
 }
 
 requirement = {
@@ -202,18 +202,18 @@ requirement = {
     'req_duplicity_dont_allow': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/div/div[2]/ui-view/div/div[1]'
                                 '/div/div[2]/div/label[2]',
 
-    'req_advance_search': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div/a[2]',
+    'req_advance_search': '//*[@data-title="Filters"]',
     'req_search_name_field': "Name",
     'req_name_getbyid': '//*[@title="{}"]',
-    'req_search_button': '//*[@id="mainBodyElement"]/div[3]/section/div/div/advance-search/div/div[3]/div/button[2]',
+    'req_search_button': '//*[@ng-click="vm.apply();$hide();"]',
 
 }
 
 test = {
     'assessment_tab': '//*[@ui-sref="crpo.assessment"]',
-    'assess_advance_search': '//*[@data-title="Search"]',
+    'assess_advance_search': '//*[@data-title="Filters"]',
     'assessment_name': 'testName',
-    'assess_search_button': '//*[@id="mainBodyElement"]/div[3]/section/div/div/advance-search/div/div[3]/div/button[2]',
+    'assess_search_button': '//*[@ng-click="vm.apply();$hide();"]',
     'grid_test_name': '//*[@title="{}"]',
     'more_actions': '//*[@id="req-list-view"]/tr/td[2]/span[3]',
     'clone_test_action': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[13]/div',
@@ -288,8 +288,8 @@ event = {
     'upload_candidate_count': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/div[2]/div[2]',
     'close_pop_details_window': '//*[@type="button"][@ng-click="$hide()"]',
     'View_Applicants': '//*[@title="View Candidates"]',
-    'applicant_advance_search': '//*[@data-title="Search"]',
-    'reset_applicant_search': '//*[@ng-click="vm.reset();"]',
+    'applicant_advance_search': '//*[@data-title="Filters"]',
+    'reset_applicant_search': '//*[@data-title="Search is applied, click to clear search"]',
     'applicant_name': 'name',
     'applicant_search_button': '//*[@ng-click="vm.apply();$hide();"]',
     'applicant_getbyid': '//*[@title="{}"]',
@@ -305,7 +305,7 @@ event = {
     'comment': '//*[@ng-model="vm.comments"]',
     'change_button': '//*[@ng-click="vm.changeCandidateStatus()"]',
     'current_status': '//*[@title="{}"]',
-    'Event_advance_search': '//*[@data-title="Search"]',
+    'Event_advance_search': '//*[@data-title="Filters"]',
     'event_names': 'Name',
     'event_search_button': '//*[@ng-click="vm.apply();$hide();"]',
     'Click_on_event_name': '//*[@title="Click to view full details"]',
@@ -336,8 +336,8 @@ pofu = {
     'pofu_candidates_tab': '/html/body/div[1]/header[2]/div/div/div[2]/div/ul/li[2]/a',
     'pofu_candidates_advance_search': '//*[@ng-click="vm.toggleAdvancedSearch()"]',
     'pofu_candi_text_box': '//*[@ng-model="vm.candidateSearchCriteria.CandidatName"]',
-    'pofu_search_button': '/html/body/div[2]/div/div[1]/section/div/div/di'
-                          'v[1]/div/div/div/div[2]/div[1]/div[2]/div[2]/div/div[1]/form/div/div[3]/div[3]/button',
+    'pofu_search_button': '/html/body/div[2]/div/div[1]/section/div/div/div[1]/div/div/div/div/'
+                          'div[1]/div[2]/div[2]/div/div[1]/form/div/div[3]/div[3]/button',
     'submit_behalf_of': '//*[@title="Submit Tasks on Behalf of Candidate"]',
     'task_acceptance': 'testacceprtanceoffer',
     'submit_task': '//*[@data-ng-click="vm.submitForm(false);"]'
@@ -449,5 +449,6 @@ event_applicant_action = {
     'sms_template': '//*[@type="text"][@placeholder="Select Template"]',
     'send_sms_button': '//*[@ng-click="vm.sendSms()"]',
     'send_sms_ui_notifier': '//*[@ng-click="stopTimeoutClose(message)"]',
-    'Tag_to_job': '//*[@data-title="Tag Applicant(s) to Job/Test"]'
+    'Tag_to_job': '//*[@data-title="Tag Applicant(s) to Job/Test"]',
+    'Untag_applicant': '//*[@data-title="Untag Applicant(s)"]'
 }
