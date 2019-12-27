@@ -112,7 +112,7 @@ class NewFeedBack(New_form_schedule.NewFormSchedule,
             self.xpath.send_keys('143')
 
             self.x_path_element_webdriver_wait(page_elements.new_feedback['save_as_draft'])
-            time.sleep(2.3)
+            self.driver.execute_script("window.scrollTo(0,-100);")
             self.xpath.click()
             print "-------------------- Save as Draft ------------------------"
             self.ui_int1_feedback_screen_n = 'Pass'
@@ -267,6 +267,7 @@ class NewFeedBack(New_form_schedule.NewFormSchedule,
             self.xpath.send_keys(self.xl_change_status_comment_o)
 
             self.x_path_element_webdriver_wait(page_elements.new_feedback['submit_feedback'])
+            self.driver.execute_script("window.scrollTo(0,-100);")
             self.xpath.click()
             self.ui_int2_feedback_screen_n = 'Pass'
             self.ui_int2_manual_decision = 'Pass'

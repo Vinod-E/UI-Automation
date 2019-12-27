@@ -435,7 +435,7 @@ live_interview = {
     'select_search_candidates': '//*[@ng-model="vm.isAllSelected"]',
     'schedule': '//*[@ng-click="vm.openScheduleMultipleModal();"]',
     'scheduled': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
-    'details': '//*[@id="mainBodyElement"]/div[3]/div/div/div[2]/accordian-row-table/table/tbody/tr/td[7]',
+    'details': '//*[@id="mainBodyElement"]/div[3]/div/div/div[2]/accordian-row-table/table/tbody/tr/td[8]/i',
     'provide_feedback': '//*[@ng-click="data.onGiveFeedbackClick(rowKey);"]'
 }
 
