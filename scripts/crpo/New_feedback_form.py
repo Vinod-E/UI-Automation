@@ -65,6 +65,7 @@ class NewFeedBack(New_form_schedule.NewFormSchedule,
             self.name.send_keys(self.event_name_sprint_version_o)
 
             self.x_path_element_webdriver_wait(page_elements.event['event_search_button'])
+            time.sleep(1.5)
             self.xpath.click()
 
             self.x_path_element_webdriver_wait(page_elements.event['Click_on_event_name'])
@@ -111,6 +112,7 @@ class NewFeedBack(New_form_schedule.NewFormSchedule,
             self.xpath.send_keys('143')
 
             self.x_path_element_webdriver_wait(page_elements.new_feedback['save_as_draft'])
+            time.sleep(2.3)
             self.xpath.click()
             print "-------------------- Save as Draft ------------------------"
             self.ui_int1_feedback_screen_n = 'Pass'

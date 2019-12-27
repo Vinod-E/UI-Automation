@@ -176,7 +176,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
     def create_job_role(self):
 
         try:
-            time.sleep(10)
+            time.sleep(5)
             self.driver.find_element_by_xpath(page_elements.job['job_tab']).click()
             time.sleep(10)
             self.driver.find_element_by_xpath(page_elements.job['create_job_role']).click()
@@ -350,7 +350,9 @@ class CreateJobRole(crpo_login.CrpoLogin):
             self.driver.find_element_by_xpath(page_elements.job['job_search_button']).click()
             time.sleep(5)
 
-            self.driver.find_element_by_xpath(page_elements.job['job_getbyid']).click()
+            job = self.driver.find_element_by_xpath(page_elements.job['job_getbyid'].format
+                                                    (self.job_name_sprint_version))
+            job.click()
             time.sleep(3)
             print('---------------------Advance search is working fine ------------------')
             self.ui_job_advance_search = 'Pass'
@@ -437,8 +439,9 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
                 feedback_01 = self.driver.find_element_by_xpath(page_elements.job['getbyid_feedback_from_name_search'])
                 feedback_01.send_keys(self.xl_interview_template_01)
+                time.sleep(1.4)
                 self.driver.find_element_by_xpath(page_elements.job['getbyid_feedback_from_search_button']).click()
-                time.sleep(4)
+                time.sleep(3)
                 self.driver.find_element_by_xpath(page_elements.job['getbyid_feedback_form_use']).click()
                 self.driver.find_element_by_xpath(page_elements.job['overall_comment_button']).click()
                 time.sleep(2)
@@ -461,8 +464,9 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
                 feedback_02 = self.driver.find_element_by_xpath(page_elements.job['getbyid_feedback_from_name_search'])
                 feedback_02.send_keys(self.xl_interview_template_02)
+                time.sleep(1.5)
                 self.driver.find_element_by_xpath(page_elements.job['getbyid_feedback_from_search_button']).click()
-                time.sleep(4)
+                time.sleep(3)
                 self.driver.find_element_by_xpath(page_elements.job['getbyid_feedback_form_use']).click()
                 self.driver.find_element_by_xpath(page_elements.job['overall_comment_button']).click()
                 time.sleep(2)
@@ -486,8 +490,9 @@ class CreateJobRole(crpo_login.CrpoLogin):
 
                 feedback_03 = self.driver.find_element_by_xpath(page_elements.job['getbyid_feedback_from_name_search'])
                 feedback_03.send_keys(self.xl_interview_template_03)
+                time.sleep(1.5)
                 self.driver.find_element_by_xpath(page_elements.job['getbyid_feedback_from_search_button']).click()
-                time.sleep(4)
+                time.sleep(3)
                 self.driver.find_element_by_xpath(page_elements.job['getbyid_feedback_form_use']).click()
                 self.driver.find_element_by_xpath(page_elements.job['overall_comment_button']).click()
                 time.sleep(2)

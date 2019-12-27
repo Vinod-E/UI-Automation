@@ -6,13 +6,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/vinod.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/vinod.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drivers/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/drivers/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/UI_New_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_New_Interview_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshots/CRPO_Login_Welcome_Page.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/CRPO_Login_Welcome_Page.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshots/CRPO_Tenant_Page.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/CRPO_Tenant_Page.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/provide_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/provide_feedback.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Job.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/Job.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/Event_Applicant_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/Event_Applicant_actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/New_feedback_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/New_feedback_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/New_form_schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/New_form_schedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/Output/Applicant_actions_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/Output/Applicant_actions_output.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/cancel_interview.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/cancel_interview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/configure_new_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/configure_new_feedback.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_job_role.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_job_role.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_requirement.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_requirement.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testdata/Job_details.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/Job_details.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +48,14 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -45,7 +66,7 @@
       <recent name="$PROJECT_DIR$/scripts/crpo/Output" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Interview_Flow">
+  <component name="RunManager" selected="Python.New_Interview_Flow">
     <configuration name="Applicant_actions_Flow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UI Automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -59,27 +80,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testsuite/Applicant_actions_Flow.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Applicant_actions_output" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="UI Automation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts/crpo/Output" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/crpo/Output/Applicant_actions_output.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,13 +151,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="schedule_re_schedule" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="UI Automation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts/crpo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Interview_Flow" />
         <item itemvalue="Python.New_Interview_Flow" />
-        <item itemvalue="Python.Applicant_actions_Flow" />
+        <item itemvalue="Python.Interview_Flow" />
+        <item itemvalue="Python.schedule_re_schedule" />
         <item itemvalue="Python.CRPO_Flow" />
-        <item itemvalue="Python.Applicant_actions_output" />
+        <item itemvalue="Python.Applicant_actions_Flow" />
       </list>
     </recent_temporary>
   </component>
@@ -203,66 +224,63 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1302" height="219" key="GridCell.Tab.0.bottom" timestamp="1576578322111">
+    <state x="383" y="100" width="759" height="593" key="#xdebugger.evaluate" timestamp="1577173906216">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="219" key="GridCell.Tab.0.bottom/41.27.1325.741@41.27.1325.741" timestamp="1576578322111" />
-    <state width="1302" height="219" key="GridCell.Tab.0.center" timestamp="1576578322110">
+    <state x="383" y="100" width="759" height="593" key="#xdebugger.evaluate/41.27.1325.741@41.27.1325.741" timestamp="1577173906216" />
+    <state x="486" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576823213328">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="219" key="GridCell.Tab.0.center/41.27.1325.741@41.27.1325.741" timestamp="1576578322110" />
-    <state width="1302" height="219" key="GridCell.Tab.0.left" timestamp="1576578322108">
+    <state x="486" y="154" width="424" height="484" key="FileChooserDialogImpl/41.27.1325.741@41.27.1325.741" timestamp="1576823213328" />
+    <state width="1302" height="248" key="GridCell.Tab.0.bottom" timestamp="1577441149333">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="219" key="GridCell.Tab.0.left/41.27.1325.741@41.27.1325.741" timestamp="1576578322108" />
-    <state width="1302" height="219" key="GridCell.Tab.0.right" timestamp="1576578322110">
+    <state width="1302" height="248" key="GridCell.Tab.0.bottom/41.27.1325.741@41.27.1325.741" timestamp="1577441149333" />
+    <state width="1302" height="248" key="GridCell.Tab.0.center" timestamp="1577441149332">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="219" key="GridCell.Tab.0.right/41.27.1325.741@41.27.1325.741" timestamp="1576578322110" />
-    <state width="1302" height="219" key="GridCell.Tab.1.bottom" timestamp="1576578313828">
+    <state width="1302" height="248" key="GridCell.Tab.0.center/41.27.1325.741@41.27.1325.741" timestamp="1577441149332" />
+    <state width="1302" height="248" key="GridCell.Tab.0.left" timestamp="1577441149332">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="219" key="GridCell.Tab.1.bottom/41.27.1325.741@41.27.1325.741" timestamp="1576578313828" />
-    <state width="1302" height="219" key="GridCell.Tab.1.center" timestamp="1576578313826">
+    <state width="1302" height="248" key="GridCell.Tab.0.left/41.27.1325.741@41.27.1325.741" timestamp="1577441149332" />
+    <state width="1302" height="248" key="GridCell.Tab.0.right" timestamp="1577441149332">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="219" key="GridCell.Tab.1.center/41.27.1325.741@41.27.1325.741" timestamp="1576578313826" />
-    <state width="1302" height="219" key="GridCell.Tab.1.left" timestamp="1576578313826">
+    <state width="1302" height="248" key="GridCell.Tab.0.right/41.27.1325.741@41.27.1325.741" timestamp="1577441149332" />
+    <state width="1302" height="237" key="GridCell.Tab.1.bottom" timestamp="1577440054466">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="219" key="GridCell.Tab.1.left/41.27.1325.741@41.27.1325.741" timestamp="1576578313826" />
-    <state width="1302" height="219" key="GridCell.Tab.1.right" timestamp="1576578313827">
+    <state width="1302" height="237" key="GridCell.Tab.1.bottom/41.27.1325.741@41.27.1325.741" timestamp="1577440054466" />
+    <state width="1302" height="237" key="GridCell.Tab.1.center" timestamp="1577440054465">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="219" key="GridCell.Tab.1.right/41.27.1325.741@41.27.1325.741" timestamp="1576578313827" />
+    <state width="1302" height="237" key="GridCell.Tab.1.center/41.27.1325.741@41.27.1325.741" timestamp="1577440054465" />
+    <state width="1302" height="237" key="GridCell.Tab.1.left" timestamp="1577440054465">
+      <screen x="41" y="27" width="1325" height="741" />
+    </state>
+    <state width="1302" height="237" key="GridCell.Tab.1.left/41.27.1325.741@41.27.1325.741" timestamp="1577440054465" />
+    <state width="1302" height="237" key="GridCell.Tab.1.right" timestamp="1577440054466">
+      <screen x="41" y="27" width="1325" height="741" />
+    </state>
+    <state width="1302" height="237" key="GridCell.Tab.1.right/41.27.1325.741@41.27.1325.741" timestamp="1577440054466" />
+    <state x="359" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1577428073097">
+      <screen x="41" y="27" width="1325" height="741" />
+    </state>
+    <state x="359" y="224" key="com.intellij.ide.util.TipDialog/41.27.1325.741@41.27.1325.741" timestamp="1577428073097" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/crpo/create_event.py</url>
-          <line>363</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/crpo/create_event.py</url>
-          <line>406</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/crpo/create_event.py</url>
-          <line>451</line>
-          <option name="timeStamp" value="11" />
+          <line>547</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/crpo/configure_new_feedback.py</url>
           <line>57</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/crpo/Event_Applicant_actions.py</url>
-          <line>178</line>
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

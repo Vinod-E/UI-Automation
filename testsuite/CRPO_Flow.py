@@ -36,7 +36,7 @@ class CrpoFlow(crpo_outfile.CrpoOutputFile):
 
     def requirement_creation(self):
 
-        time.sleep(5)
+        time.sleep(3)
         self.create_requirement()
         time.sleep(2)
         self.req_configuration_tab()

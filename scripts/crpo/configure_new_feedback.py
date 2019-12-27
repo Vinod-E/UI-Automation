@@ -61,16 +61,18 @@ class NewFeedBackForm(create_job_role.CreateJobRole, Settings_New_Old_Form.Setti
             self.x_path_element_webdriver_wait(page_elements.job['new_getbyid_feedback_from_search_button'])
             time.sleep(2)
             self.xpath.click()
+            self.driver.execute_script("window.scrollTo(0,100);")
 
             time.sleep(2)
             self.x_path_element_webdriver_wait(page_elements.job['new_getbyid_feedback_form_use'])
             self.xpath.click()
             self.ui_new_form_configured = 'Pass'
             time.sleep(2)
+            print('---------------------New feedback form configured ------------------')
 
         except exceptions.NoSuchElementException as error:
             print error
 
-    def new_from_off(self):
-        time.sleep(3)
-        self.settings_off()
+    # def new_from_off(self):
+    #     time.sleep(3)
+    #     self.settings_off()

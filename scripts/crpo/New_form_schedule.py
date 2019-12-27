@@ -65,6 +65,7 @@ class NewFormSchedule(configure_new_feedback.NewFeedBackForm):
             self.x_path_element_webdriver_wait(page_elements.event['applicant_search_button'])
             time.sleep(2)
             self.xpath.click()
+            self.driver.execute_script("window.scrollTo(0,100);")
             print "-------------------- Applicant Advance search ------------------------"
             self.ui_applicant_search_n = 'Pass'
 

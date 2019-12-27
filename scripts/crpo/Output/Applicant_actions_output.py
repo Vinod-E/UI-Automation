@@ -9,7 +9,7 @@ class ApplicantActionOutput(styles.FontColor, Candidate_actions.CandidateActions
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 14)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 15)))
         self.Actual_success_cases = []
 
         super(ApplicantActionOutput, self).__init__()
@@ -57,6 +57,7 @@ class ApplicantActionOutput(styles.FontColor, Candidate_actions.CandidateActions
         self.ws.write(11, self.Event_usecase_col, 'Compose Mail', self.style8)
         self.ws.write(12, self.Event_usecase_col, 'Send SMS', self.style8)
         self.ws.write(13, self.Event_usecase_col, 'Tag to Job/Test', self.style8)
+        self.ws.write(14, self.Event_usecase_col, 'Untag Applicants', self.style8)
 
         # --------------------------------------------------------------------------------------------------------------
         if self.ui_event_tab == 'Pass':
@@ -124,6 +125,12 @@ class ApplicantActionOutput(styles.FontColor, Candidate_actions.CandidateActions
             self.ws.write(13, self.Event_status_col, 'Pass', self.style7)
         else:
             self.ws.write(13, self.Event_status_col, 'Fail', self.style3)
+        # --------------------------------------------------------------------------------------------------------------
+        if self.ui_untag_applicant == 'pass':
+            self.Actual_success_cases.append(self.ui_untag_applicant)
+            self.ws.write(14, self.Event_status_col, 'Pass', self.style7)
+        else:
+            self.ws.write(14, self.Event_status_col, 'Fail', self.style3)
         # --------------------------------------------------------------------------------------------------------------
 
         self.wb_Result.save(test_data_inputpath.crpo_test_data_file['Applicant_action_output_report'])

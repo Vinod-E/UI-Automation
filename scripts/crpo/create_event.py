@@ -1,11 +1,11 @@
 import time
 import xlrd
-from selenium.common import exceptions
-from selenium.webdriver.common.keys import Keys
 import test_data_inputpath
 import page_elements
 import create_test
 from datetime import datetime
+from selenium.common import exceptions
+from selenium.webdriver.common.keys import Keys
 
 
 class CreateEvent(create_test.CreateTest):
@@ -545,7 +545,10 @@ class CreateEvent(create_test.CreateTest):
                 applicant_name.send_keys(self.event_name_sprint_version)
                 self.ui_event_applicant_search = 'Pass'
                 time.sleep(2)
-                self.driver.find_element_by_xpath(page_elements.event['applicant_search_button']).click()
+                applicant_search = self.driver.find_element_by_xpath(page_elements.event['applicant_search_button'])
+                applicant_search.send_keys(Keys.ARROW_DOWN)
+                applicant_search.send_keys(Keys.ARROW_DOWN)
+                applicant_search.click()
 
                 # --------------------------- Applicant Get By Id -------------------
                 time.sleep(3)
