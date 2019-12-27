@@ -46,6 +46,7 @@ class NewUpdateFeedback(New_feedback_form.NewFeedBack):
         self.xpath.click()
 
         self.x_path_element_webdriver_wait(page_elements.new_feedback['update_feedback'])
+        self.driver.execute_script("window.scrollTo(0,-100);")
         self.xpath.click()
         self.ui_int2_update_feedback = 'Pass'
         self.ui_int2_manual_update_decision = 'Pass'

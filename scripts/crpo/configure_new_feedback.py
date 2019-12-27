@@ -55,6 +55,7 @@ class NewFeedBackForm(create_job_role.CreateJobRole, Settings_New_Old_Form.Setti
             self.xpath.send_keys(Keys.ENTER)
             self.ui_interview_stage = 'Pass'
 
+            time.sleep(1.5)
             self.x_path_element_webdriver_wait(page_elements.job['getbyid_feedback_from_name_search'])
             self.xpath.send_keys(self.interview_template)
 
