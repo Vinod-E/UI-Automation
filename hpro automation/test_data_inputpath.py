@@ -29,5 +29,5 @@ crpo_test_data_file = {
 }
 
 attachments = {
-    'upload_attachment': generic_input_path + 'testdata/job-description.pdf'
+    'attachment': generic_input_path + 'testdata/job-description.pdf'
 }

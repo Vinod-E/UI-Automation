@@ -9,6 +9,7 @@ import test_data_inputpath
 class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait):
     def __init__(self):
         super(ApplicantActions, self).__init__()
+        self.attachment = test_data_inputpath.attachments['attachment']
         self.ui_event_tab = []
         self.ui_event_advance_search = []
         self.ui_event_get_by_id = []
@@ -298,11 +299,11 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         self.more()
         self.x_path_element_webdriver_wait(page_elements.event_applicant_action['upload_attachment'])
         self.xpath.click()
-        time.sleep(1.2)
+        time.sleep(3)
 
         self.x_path_element_webdriver_wait(page_elements.event_applicant_action['upload_file'])
         time.sleep(2)
-        self.xpath.send_keys(test_data_inputpath.attachments['upload_attachment'])
+        self.xpath.send_keys(self.attachment)
 
         self.x_path_element_webdriver_wait(page_elements.event_applicant_action['save'])
         self.xpath.click()
@@ -336,7 +337,7 @@ class ApplicantActions(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWait
         self.xpath.click()
         time.sleep(2)
 
-        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['change_BU'])
+        self.x_path_element_webdriver_wait(page_elements.event_applicant_action['bu_choose_text_box'])
         self.xpath.send_keys('Technology - Hyderabad (hmviod)')
         self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
         time.sleep(1.2)

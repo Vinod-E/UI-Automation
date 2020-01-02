@@ -458,9 +458,9 @@ event_applicant_action = {
     'single_PDF': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/div[2]/div[2]/div[16]',
     'generate_docket': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/div[2]/div[2]/div[17]',
     'upload_attachment': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/div[2]/div[2]/div[19]',
-    'upload_file': '//*[@type="file"]',
+    'upload_file': '//*[@type="file"][@file-model="vm.file"]',
     'save': '//*[@ng-click="vm.save();"]',
     'change_BU': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[1]/div[1]/div[1]/div[2]/div[2]/div[20]',
-    'bu_choose': '//*[@placeholder="Select a Business Unit"]',
+    'bu_choose_text_box': '//*[@type="text"][@placeholder="Select a Business Unit"]',
     'remove': '//*[@ng-click="vm.remove();"]'
 }
