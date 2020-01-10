@@ -69,7 +69,7 @@ Object = CrpoFlow()
 # --------------- Login ---------------
 Object.login()
 Object.all_excels()
-if Object.status_of_login == 'administrator':
+if Object.status_of_login == 'administrator   ':
 
     # ---------- Job creation -----------------
     Object.job_role_creation()

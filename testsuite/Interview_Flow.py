@@ -47,7 +47,7 @@ class InterviewFlow(Interview_output.InterviewOutputFile):
 Object = InterviewFlow()
 # --------------- Login ---------------
 Object.login()
-if Object.status_of_login == 'administrator':
+if Object.status_of_login == 'administrator   ':
 
     Object.schedule_re_schedule()
     Object.cancel_request_cancel()

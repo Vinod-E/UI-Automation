@@ -7,11 +7,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c96152ba-7fa5-4f15-9a4c-8aa6da2d0b22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hpro automation/crpo_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/crpo_login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hpro automation/test_data_inputpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/test_data_inputpath.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Interview_Flow.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshots/CRPO_Login_Welcome_Page.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/CRPO_Login_Welcome_Page.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/Event_Applicant_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/Event_Applicant_actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/CRPO_Tenant_Page.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/CRPO_Tenant_Page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Job.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/Job.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/cancel_interview.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/cancel_interview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/create_job_role.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/create_job_role.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/CRPO_Flow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testsuite/Interview_Flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/Interview_Flow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +58,7 @@
       <recent name="$PROJECT_DIR$/scripts/crpo/Output" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Applicant_actions_Flow">
+  <component name="RunManager" selected="Python.Interview_Flow">
     <configuration name="Applicant_actions_Flow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UI Automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -64,6 +72,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testsuite/Applicant_actions_Flow.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CRPO_Flow" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="UI Automation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testsuite" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testsuite/CRPO_Flow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,34 +164,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="schedule_re_schedule" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="UI Automation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts/crpo" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/crpo/schedule_re_schedule.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Interview_Flow" />
+        <item itemvalue="Python.CRPO_Flow" />
         <item itemvalue="Python.Applicant_actions_Flow" />
         <item itemvalue="Python.Event_Applicant_actions" />
-        <item itemvalue="Python.Interview_Flow" />
         <item itemvalue="Python.New_Interview_Flow" />
-        <item itemvalue="Python.schedule_re_schedule" />
       </list>
     </recent_temporary>
   </component>
@@ -212,56 +220,45 @@
       <screen x="41" y="27" width="1325" height="741" />
     </state>
     <state x="383" y="100" width="759" height="593" key="#xdebugger.evaluate/41.27.1325.741@41.27.1325.741" timestamp="1577173906216" />
-    <state x="486" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1577958662195">
+    <state x="486" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578644959278">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state x="486" y="154" width="424" height="484" key="FileChooserDialogImpl/41.27.1325.741@41.27.1325.741" timestamp="1577958662195" />
-    <state width="1302" height="377" key="GridCell.Tab.0.bottom" timestamp="1577974527953">
+    <state x="486" y="154" width="424" height="484" key="FileChooserDialogImpl/41.27.1325.741@41.27.1325.741" timestamp="1578644959278" />
+    <state width="1302" height="220" key="GridCell.Tab.0.bottom" timestamp="1578582027216">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="377" key="GridCell.Tab.0.bottom/41.27.1325.741@41.27.1325.741" timestamp="1577974527953" />
-    <state width="1302" height="377" key="GridCell.Tab.0.center" timestamp="1577974527953">
+    <state width="1302" height="220" key="GridCell.Tab.0.bottom/41.27.1325.741@41.27.1325.741" timestamp="1578582027216" />
+    <state width="1302" height="220" key="GridCell.Tab.0.center" timestamp="1578582027216">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="377" key="GridCell.Tab.0.center/41.27.1325.741@41.27.1325.741" timestamp="1577974527953" />
-    <state width="1302" height="377" key="GridCell.Tab.0.left" timestamp="1577974527953">
+    <state width="1302" height="220" key="GridCell.Tab.0.center/41.27.1325.741@41.27.1325.741" timestamp="1578582027216" />
+    <state width="1302" height="220" key="GridCell.Tab.0.left" timestamp="1578582027216">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="377" key="GridCell.Tab.0.left/41.27.1325.741@41.27.1325.741" timestamp="1577974527953" />
-    <state width="1302" height="377" key="GridCell.Tab.0.right" timestamp="1577974527953">
+    <state width="1302" height="220" key="GridCell.Tab.0.left/41.27.1325.741@41.27.1325.741" timestamp="1578582027216" />
+    <state width="1302" height="220" key="GridCell.Tab.0.right" timestamp="1578582027216">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="377" key="GridCell.Tab.0.right/41.27.1325.741@41.27.1325.741" timestamp="1577974527953" />
-    <state width="1302" height="237" key="GridCell.Tab.1.bottom" timestamp="1577456976164">
+    <state width="1302" height="220" key="GridCell.Tab.0.right/41.27.1325.741@41.27.1325.741" timestamp="1578582027216" />
+    <state width="1302" height="237" key="GridCell.Tab.1.bottom" timestamp="1578321675360">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="237" key="GridCell.Tab.1.bottom/41.27.1325.741@41.27.1325.741" timestamp="1577456976164" />
-    <state width="1302" height="237" key="GridCell.Tab.1.center" timestamp="1577456976163">
+    <state width="1302" height="237" key="GridCell.Tab.1.bottom/41.27.1325.741@41.27.1325.741" timestamp="1578321675360" />
+    <state width="1302" height="237" key="GridCell.Tab.1.center" timestamp="1578321675360">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="237" key="GridCell.Tab.1.center/41.27.1325.741@41.27.1325.741" timestamp="1577456976163" />
-    <state width="1302" height="237" key="GridCell.Tab.1.left" timestamp="1577456976163">
+    <state width="1302" height="237" key="GridCell.Tab.1.center/41.27.1325.741@41.27.1325.741" timestamp="1578321675360" />
+    <state width="1302" height="237" key="GridCell.Tab.1.left" timestamp="1578321675359">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="237" key="GridCell.Tab.1.left/41.27.1325.741@41.27.1325.741" timestamp="1577456976163" />
-    <state width="1302" height="237" key="GridCell.Tab.1.right" timestamp="1577456976164">
+    <state width="1302" height="237" key="GridCell.Tab.1.left/41.27.1325.741@41.27.1325.741" timestamp="1578321675359" />
+    <state width="1302" height="237" key="GridCell.Tab.1.right" timestamp="1578321675360">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state width="1302" height="237" key="GridCell.Tab.1.right/41.27.1325.741@41.27.1325.741" timestamp="1577456976164" />
-    <state x="359" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1577958651520">
+    <state width="1302" height="237" key="GridCell.Tab.1.right/41.27.1325.741@41.27.1325.741" timestamp="1578321675360" />
+    <state x="359" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1578552324082">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state x="359" y="224" key="com.intellij.ide.util.TipDialog/41.27.1325.741@41.27.1325.741" timestamp="1577958651520" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/crpo/create_event.py</url>
-          <line>547</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="359" y="224" key="com.intellij.ide.util.TipDialog/41.27.1325.741@41.27.1325.741" timestamp="1578552324082" />
   </component>
 </project>

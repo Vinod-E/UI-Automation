@@ -661,7 +661,7 @@ class CreateEvent(create_test.CreateTest):
             pofu_candi_tab = self.driver.find_element_by_xpath(page_elements.pofu['pofu_candidates_tab'])
             pofu_candi_tab.click()
 
-            time.sleep(5)
+            time.sleep(7)
             search = self.driver.find_element_by_xpath(page_elements.pofu['pofu_candidates_advance_search'])
             search.click()
 
