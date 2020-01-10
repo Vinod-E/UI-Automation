@@ -142,6 +142,7 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
             # --------------------------- Change Applicant Status to Schedule ------------------------------------------
             self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
             self.name.click()
+            self.driver.execute_script("window.scrollTo(0,-100);")
 
             self.x_path_element_webdriver_wait(page_elements.event['Change_applicant_status'])
             self.xpath.click()
@@ -247,11 +248,12 @@ class ScheduleReSchedule(crpo_login.CrpoLogin, webdriver_wait.WebDriverElementWa
 
             self.name_element_webdriver_wait(page_elements.event['applicant_select_checkbox'])
             self.name.click()
+            # self.driver.execute_script("window.scrollTo(0,-100);")
 
-            self.x_path_element_webdriver_wait(page_elements.feedback['more'])
-            self.xpath.click()
+            # self.x_path_element_webdriver_wait(page_elements.feedback['more'])
+            # self.xpath.click()
 
-            self.x_path_element_webdriver_wait(page_elements.event['reschedule1'])
+            self.x_path_element_webdriver_wait(page_elements.event['reschedule'])
             self.xpath.click()
             self.ui_reschedule_action_o = 'Pass'
 

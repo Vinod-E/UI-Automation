@@ -8,7 +8,7 @@ login = {
     'username': "loginName",
     'password': '//*[@type="password"]',
     'login_button': '//*[@ng-click="vm.login()"]',
-    'login_success': '//*[@id="mainBodyElement"]/div[1]/div/header/div[1]/nav/div/div[3]/a/span',
+    'login_success': '/html/body/div[1]/div/header/div[1]/nav/div/div[3]/ul/li/a',
     'tenant_screen_text': '//*[@id="mainBodyElement"]/div[6]/div/div/div[1]/h4',
     'page_cant_be_reached': '//*[@id="main-message"]/h1/span',
     'internet_error': '//*[@id="main-message"]/h1/span',

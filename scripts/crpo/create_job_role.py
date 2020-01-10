@@ -548,6 +548,7 @@ class CreateJobRole(crpo_login.CrpoLogin):
                 self.driver.refresh()
                 self.driver.find_element_by_xpath(page_elements.job['configuration_sub_tab']).click()
                 time.sleep(2)
+                self.driver.execute_script("window.scrollTo(0,200);")
                 self.driver.find_element_by_xpath(page_elements.job['ec_configure']).click()
                 time.sleep(5)
                 ec = self.driver.find_element_by_xpath(page_elements.job['ec_text_field'])

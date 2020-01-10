@@ -125,7 +125,8 @@ class CrpoLogin(environment_setup.Environment):
         try:
             login_status = self.driver.find_element_by_xpath(page_elements.login['login_success'])
             self.status_of_login = login_status.text
-            assert self.status_of_login == 'administrator'
+            print (self.status_of_login)
+            assert self.status_of_login == 'administrator   '
             print ("**---------------------- In main screen ------------------------**")
         except exceptions.NoSuchElementException as login_status1:
             print login_status1

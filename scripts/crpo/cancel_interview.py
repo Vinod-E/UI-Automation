@@ -100,7 +100,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             # ------------------------------- Applicant Advance search -------------------------------------------------
             time.sleep(3)
             self.x_path_element_webdriver_wait(page_elements.event['applicant_advance_search'])
-            time.sleep(3)
+            self.driver.execute_script("window.scrollTo(0,-100);")
             self.xpath.click()
 
             self.name_element_webdriver_wait(page_elements.event['applicant_name'])
@@ -190,6 +190,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.xpath.click()
 
             self.x_path_element_webdriver_wait(page_elements.event['Event_advance_search'])
+            time.sleep(2)
             self.xpath.click()
 
             self.name_element_webdriver_wait(page_elements.event['event_names'])
@@ -221,6 +222,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             self.driver.execute_script("window.scrollTo(0,200);")
 
             self.x_path_element_webdriver_wait(page_elements.feedback['cancel_request'])
+            self.driver.execute_script("window.scrollTo(0,-100);")
             self.xpath.click()
 
             self.x_path_element_webdriver_wait(page_elements.feedback['cancel_request_reason'])
@@ -316,6 +318,7 @@ class CancelAndRequest(schedule_re_schedule.ScheduleReSchedule):
             # ------------------------------- Applicant Advance search -------------------------------------------------
             time.sleep(5)
             self.x_path_element_webdriver_wait(page_elements.event['applicant_advance_search'])
+            self.driver.execute_script("window.scrollTo(0,-100);")
             self.xpath.click()
 
             self.name_element_webdriver_wait(page_elements.event['applicant_name'])
