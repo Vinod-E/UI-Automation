@@ -1,11 +1,10 @@
-import os
-path = os.getenv("HOME")
+import config
 
-generic_input_path = "%s/hirepro_automation/UI-Automation/" % path
+generic_input_path = config.common_folder_path
 
 
 crpo_test_data_file = {
-    'credentials_file': generic_input_path + 'testdata/Login_Details.xls',
+    'login_credentials': generic_input_path + 'testdata/Login_Details.xls',
 
     'create_job': generic_input_path + 'testdata/Job_details.xls',
 
@@ -15,11 +14,7 @@ crpo_test_data_file = {
 
     'create_event': generic_input_path + 'testdata/event_details.xls',
 
-    'upload_candidate_file': generic_input_path + 'testdata/candidateUpload.xls',
-
     'old_interview_file': generic_input_path + 'testdata/Old_interview.xls',
-
-    'output_report': generic_input_path + 'reports/UI_CRPO_Flow.xls',
 
     'interview_output_report': generic_input_path + 'reports/UI_Interview_Flow.xls',
 
@@ -29,5 +24,10 @@ crpo_test_data_file = {
 }
 
 attachments = {
-    'attachment': generic_input_path + 'testdata/job-description.pdf'
+    'attachment': generic_input_path + 'testdata/job-description.pdf',
+    'upload_candidates': generic_input_path + 'testdata/candidateUpload.xls'
+}
+
+output = {
+    'output_report': generic_input_path + 'reports/UI_CRPO_Flow.xls',
 }
