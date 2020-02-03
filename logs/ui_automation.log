@@ -1,0 +1,193 @@
+[30/Jan/2020 11:34:38.232 3053 ] ERROR [api_logger:advance_search.py:name_search:54] Message: element click intercepted: Element <button class="btn btn-primary" ng-click="vm.apply();$hide();">...</button> is not clickable at point (1217, 332). Other element would receive the click: <i class="fa fa-chevron-right faded-icons not-phone" ng-show="isRightScrollNeeded()" ng-click="moveRight()" style="position: fixed; font-size: 4em; right: 80px; top: 50%; cursor: pointer; z-index: 999;"></i>
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 11:39:05.544 3053 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[30/Jan/2020 11:39:05.613 3053 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:58] Message: element click intercepted: Element <a class="img_margin_1 btn ng-binding ng-scope" ng-if="!action.isPopOver" a="" ng-bind-html="action.template" title="Submit Tasks on Behalf of Candidate" ng-click="actionClicked(action.id, entity)" ng-style="{'color': '', 'padding' : '0px 2px'}" style="padding: 0px 2px;">...</a> is not clickable at point (326, 495). Other element would receive the click: <div class="modal ng-scope center am-fade" style="overflow-y: auto; z-index: 1050; display: block;">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 11:39:45.380 3053 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[30/Jan/2020 11:39:45.395 3053 ] ERROR [api_logger:change_applicant_status.py:applicant_current_status_validation:63] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 11:57:49.510 3741 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[30/Jan/2020 11:57:49.575 3741 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:58] Message: element click intercepted: Element <a class="img_margin_1 btn ng-binding ng-scope" ng-if="!action.isPopOver" a="" ng-bind-html="action.template" title="Submit Tasks on Behalf of Candidate" ng-click="actionClicked(action.id, entity)" ng-style="{'color': '', 'padding' : '0px 2px'}" style="padding: 0px 2px;">...</a> is not clickable at point (326, 495). Other element would receive the click: <div class="modal ng-scope center am-fade" style="overflow-y: auto; z-index: 1050; display: block;">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 14:07:26.410 4648 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:58] Message: element click intercepted: Element <a href="javascript:void(0);" ng-click="vm.toggleAdvancedSearch()" class="filter-icon-container filterBtn" id="">...</a> is not clickable at point (100, 137). Other element would receive the click: <div block-ui-container="" class="block-ui-container ng-scope">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 14:08:17.934 4849 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:58] Message: element click intercepted: Element <input ng-trim="false" type="radio" name="testacceprtanceoffer" data-ng-model="formControl.Value" data-ng-value="value" data-ng-click="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.click &amp;&amp; vm.executeEvent(formControl.Config.event.click.execute, $index)" data-ng-change="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.change &amp;&amp; vm.executeEvent(formControl.Config.event.change.execute, $index)" data-ng-focus="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.focus &amp;&amp; vm.executeEvent(formControl.Config.event.focus.execute, $index)" data-ng-blur="vm.validate(formControl); formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.blur &amp;&amp; vm.executeEvent(formControl.Config.event.blur.execute, $index)" data-ng-init="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.init &amp;&amp; vm.executeEvent(formControl.Config.event.init.execute, $index)" ng-disabled="formControl.settingsObj.IsReadOnly || formControl.DISABLED" class="ng-pristine ng-untouched ng-valid ng-empty" value="Yes"> is not clickable at point (385, 156). Other element would receive the click: <div block-ui-container="" class="block-ui-container ng-scope">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 14:09:16.789 5045 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:58] Message: element click intercepted: Element <input ng-trim="false" type="radio" name="testacceprtanceoffer" data-ng-model="formControl.Value" data-ng-value="value" data-ng-click="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.click &amp;&amp; vm.executeEvent(formControl.Config.event.click.execute, $index)" data-ng-change="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.change &amp;&amp; vm.executeEvent(formControl.Config.event.change.execute, $index)" data-ng-focus="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.focus &amp;&amp; vm.executeEvent(formControl.Config.event.focus.execute, $index)" data-ng-blur="vm.validate(formControl); formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.blur &amp;&amp; vm.executeEvent(formControl.Config.event.blur.execute, $index)" data-ng-init="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.init &amp;&amp; vm.executeEvent(formControl.Config.event.init.execute, $index)" ng-disabled="formControl.settingsObj.IsReadOnly || formControl.DISABLED" class="ng-pristine ng-untouched ng-valid ng-empty" value="Yes"> is not clickable at point (385, 156). Other element would receive the click: <div block-ui-container="" class="block-ui-container ng-scope">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 14:09:22.627 5045 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'NoneType' object has no attribute 'is_displayed'
+[30/Jan/2020 14:09:22.629 5045 ] ERROR [api_logger:event_applicants.py:applicant_get_by:64] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 14:09:22.639 5045 ] ERROR [api_logger:embrace_app.py:submit_task_verification:117] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 14:10:51.081 5236 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[30/Jan/2020 14:10:51.155 5236 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:59] Message: element click intercepted: Element <a class="img_margin_1 btn ng-binding ng-scope" ng-if="!action.isPopOver" a="" ng-bind-html="action.template" title="Submit Tasks on Behalf of Candidate" ng-click="actionClicked(action.id, entity)" ng-style="{'color': '', 'padding' : '0px 2px'}" style="padding: 0px 2px;">...</a> is not clickable at point (326, 495). Other element would receive the click: <div class="modal ng-scope center am-fade" style="overflow-y: auto; z-index: 1050; display: block;">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 14:11:26.837 5236 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[30/Jan/2020 14:11:26.852 5236 ] ERROR [api_logger:event_applicants.py:applicant_get_by:64] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 14:11:26.858 5236 ] ERROR [api_logger:embrace_app.py:submit_task_verification:118] list index out of range
+[30/Jan/2020 14:17:24.406 5566 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[30/Jan/2020 14:17:24.421 5566 ] ERROR [api_logger:event_applicants.py:applicant_get_by:64] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 14:17:24.427 5566 ] ERROR [api_logger:embrace_app.py:submit_task_verification:119] list index out of range
+[30/Jan/2020 14:30:41.190 6109 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[30/Jan/2020 20:18:21.407 14394 ] ERROR [api_logger:crpo_bussiness_output.py:overall_status:689] [Errno 2] No such file or directory: '/home/vinod/hirepro_automation/UI-AutomationVS/reports/UI_CRPO_Flow.xls'
+[30/Jan/2020 21:54:32.552 2349 ] ERROR [api_logger:advance_search.py:name_search:54] Message: element click intercepted: Element <button class="btn btn-primary" ng-click="vm.apply();$hide();">...</button> is not clickable at point (1217, 332). Other element would receive the click: <i class="fa fa-chevron-right faded-icons not-phone" ng-show="isRightScrollNeeded()" ng-click="moveRight()" style="position: fixed; font-size: 4em; right: 80px; top: 50%; cursor: pointer; z-index: 999;"></i>
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 21:58:00.077 2349 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:70] Message: element click intercepted: Element <li bs-dropdown="" data-animation="am-fade" ng-show="vm.remainingTabs.length > 1" aria-haspopup="true" aria-expanded="false" data-placement="bottom-center" class="ng-scope">...</li> is not clickable at point (975, 31). Other element would receive the click: <div class="growl-message ng-binding" ng-bind-html="message.text">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[30/Jan/2020 21:58:00.158 2349 ] ERROR [api_logger:crpo_bussiness_flow.py:embrace_module:70] Message: invalid session id
+
+[31/Jan/2020 11:07:45.116 2810 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 11:07:45.122 2810 ] ERROR [api_logger:create_requirement.py:create_requirement:73] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 11:07:46.629 2810 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 11:07:46.634 2810 ] ERROR [api_logger:create_requirement.py:requirement_validation:81] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 11:07:47.640 2810 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 11:07:47.645 2810 ] ERROR [api_logger:requirement_config.py:requirement_configuration_tab:50] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 13:20:39.840 7387 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'NoneType' object has no attribute 'is_displayed'
+[31/Jan/2020 13:20:39.842 7387 ] ERROR [api_logger:create_event.py:event_validation:113] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 13:20:41.847 7387 ] ERROR [api_logger:create_event.py:event_validation:113] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 13:20:43.852 7387 ] ERROR [api_logger:create_event.py:event_validation:113] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 13:24:45.704 7602 ] ERROR [api_logger:advance_search.py:name_search:54] Message: element click intercepted: Element <button class="btn btn-primary" ng-click="vm.apply();$hide();">...</button> is not clickable at point (1217, 347). Other element would receive the click: <i class="fa fa-chevron-right faded-icons not-phone" ng-show="isRightScrollNeeded()" ng-click="moveRight()" style="position: fixed; font-size: 4em; right: 80px; top: 50%; cursor: pointer; z-index: 999;"></i>
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 13:28:48.895 7602 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:70] Message: element click intercepted: Element <li bs-dropdown="" data-animation="am-fade" ng-show="vm.remainingTabs.length > 1" aria-haspopup="true" aria-expanded="false" data-placement="bottom-center" class="ng-scope">...</li> is not clickable at point (975, 31). Other element would receive the click: <div class="growl-message ng-binding" ng-bind-html="message.text">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 13:28:48.971 7602 ] ERROR [api_logger:crpo_bussiness_flow.py:embrace_module:70] Message: invalid session id
+
+[31/Jan/2020 14:23:38.299 8721 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[31/Jan/2020 14:23:58.551 8721 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'NoneType' object has no attribute 'is_displayed'
+[31/Jan/2020 14:23:58.554 8721 ] ERROR [api_logger:event_manage_task.py:manage_task_event:43] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 14:23:58.562 8721 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 14:23:58.568 8721 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:70] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 14:23:58.578 8721 ] ERROR [api_logger:crpo_bussiness_flow.py:embrace_module:73] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 14:27:37.038 9064 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 14:27:37.049 9064 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:70] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 14:27:37.054 9064 ] ERROR [api_logger:crpo_bussiness_flow.py:embrace_module:73] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[31/Jan/2020 14:50:58.880 9875 ] ERROR [api_logger:advance_search.py:name_search:54] Message: element click intercepted: Element <button class="btn btn-primary" ng-click="vm.apply();$hide();">...</button> is not clickable at point (1217, 327). Other element would receive the click: <i class="fa fa-chevron-right faded-icons not-phone" ng-show="isRightScrollNeeded()" ng-click="moveRight()" style="position: fixed; font-size: 4em; right: 80px; top: 50%; cursor: pointer; z-index: 999;"></i>
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 08:39:24.223 2394 ] ERROR [api_logger:advance_search.py:name_search:54] Message: element click intercepted: Element <button class="btn btn-primary" ng-click="vm.apply();$hide();">...</button> is not clickable at point (1217, 327). Other element would receive the click: <i class="fa fa-chevron-right faded-icons not-phone" ng-show="isRightScrollNeeded()" ng-click="moveRight()" style="position: fixed; font-size: 4em; right: 80px; top: 50%; cursor: pointer; z-index: 999;"></i>
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 08:52:23.158 2777 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[02/Feb/2020 08:52:58.994 2777 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[02/Feb/2020 08:53:33.259 2777 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[02/Feb/2020 08:53:51.243 2777 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'NoneType' object has no attribute 'is_displayed'
+[02/Feb/2020 08:53:51.247 2777 ] ERROR [api_logger:requirement_config.py:requirement_configuration_tab:50] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 12:22:54.365 2665 ] ERROR [api_logger:advance_search.py:name_search:54] Message: element click intercepted: Element <button class="btn btn-primary" ng-click="vm.apply();$hide();">...</button> is not clickable at point (1217, 327). Other element would receive the click: <i class="fa fa-chevron-right faded-icons not-phone" ng-show="isRightScrollNeeded()" ng-click="moveRight()" style="position: fixed; font-size: 4em; right: 80px; top: 50%; cursor: pointer; z-index: 999;"></i>
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 12:23:20.684 2665 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'NoneType' object has no attribute 'is_displayed'
+[02/Feb/2020 12:23:20.685 2665 ] ERROR [api_logger:create_requirement.py:requirement_validation:82] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 12:23:21.688 2665 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 12:23:21.689 2665 ] ERROR [api_logger:requirement_config.py:requirement_configuration_tab:50] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 12:26:13.087 3075 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'NoneType' object has no attribute 'is_displayed'
+[02/Feb/2020 12:26:13.091 3075 ] ERROR [api_logger:create_requirement.py:requirement_validation:82] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 12:26:14.092 3075 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 12:26:14.093 3075 ] ERROR [api_logger:requirement_config.py:requirement_configuration_tab:50] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 13:16:29.162 5214 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:70] Message: element click intercepted: Element <li bs-dropdown="" data-animation="am-fade" ng-show="vm.remainingTabs.length > 1" aria-haspopup="true" aria-expanded="false" data-placement="bottom-center" class="ng-scope">...</li> is not clickable at point (975, 31). Other element would receive the click: <div class="growl-message ng-binding" ng-bind-html="message.text">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[02/Feb/2020 13:16:29.280 5214 ] ERROR [api_logger:crpo_bussiness_flow.py:embrace_module:70] Message: invalid session id
+
+[03/Feb/2020 16:08:46.466 10436 ] ERROR [api_logger:environment_setup.py:__init__:24] Message: session not created: This version of ChromeDriver only supports Chrome version 80
+
+[03/Feb/2020 16:08:46.479 10436 ] ERROR [api_logger:crpo_login.py:__init__:34] 'BusinessFlow' object has no attribute 'driver'
+[03/Feb/2020 16:08:46.480 10436 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] 'BusinessFlow' object has no attribute 'driver'
+[03/Feb/2020 16:08:46.480 10436 ] ERROR [api_logger:crpo_login.py:login_elements:85] 'str' object has no attribute 'send_keys'
+[03/Feb/2020 16:08:46.480 10436 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'BusinessFlow' object has no attribute 'driver'
+[03/Feb/2020 16:08:46.480 10436 ] ERROR [api_logger:crpo_login.py:crpo_login:108] 'str' object has no attribute 'text'
+[03/Feb/2020 16:08:46.507 10436 ] ERROR [api_logger:crpo_login.py:server_connection_error:121] 'BusinessFlow' object has no attribute 'driver'
+[03/Feb/2020 16:08:46.507 10436 ] ERROR [api_logger:crpo_login.py:internet_not_available:134] 'BusinessFlow' object has no attribute 'driver'
+[03/Feb/2020 16:08:46.507 10436 ] ERROR [api_logger:crpo_bussiness_flow.py:<module>:105] 'BusinessFlow' object has no attribute 'driver'

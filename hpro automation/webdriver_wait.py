@@ -1,8 +1,8 @@
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
-from selenium.common import exceptions
 import environment_setup
+from logger_settings import api_logger
 
 
 class WebDriverElementWait(environment_setup.Environment):
@@ -17,22 +17,21 @@ class WebDriverElementWait(environment_setup.Environment):
         try:
             self.xpath = WebDriverWait(self.driver, 30).until(ec.element_to_be_clickable((By.XPATH, element_path)))
 
-        except exceptions.ElementNotInteractableException as error:
-            print error
+        except Exception as error:
+            api_logger.error(error)
 
     def id_element_webdriver_wait(self, element_path):
 
         try:
             self.id = WebDriverWait(self.driver, 30).until(ec.element_to_be_clickable((By.ID, element_path)))
 
-        except exceptions.ElementNotInteractableException as error:
-            print error
+        except Exception as error:
+            api_logger.error(error)
 
     def name_element_webdriver_wait(self, element_path):
 
         try:
             self.name = WebDriverWait(self.driver, 30).until(ec.element_to_be_clickable((By.NAME, element_path)))
 
-        except exceptions.ElementNotInteractableException as error:
-            print error
-
+        except Exception as error:
+            api_logger.error(error)
