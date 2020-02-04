@@ -20,8 +20,7 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
 
             self.driver.refresh()
             time.sleep(4)
-            self.x_path_element_webdriver_wait(page_elements.tabs['requirement_tab'])
-            self.xpath.click()
+            self.requirement_tab()
 
             time.sleep(3)
             self.x_path_element_webdriver_wait(page_elements.buttons['create'])

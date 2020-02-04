@@ -22,8 +22,7 @@ class CreateEvent(event_excel.EventExcelRead):
 
     def create_event(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.tabs['event_tab'])
-            self.xpath.click()
+            self.event_tab()
 
             time.sleep(5)
             self.x_path_element_webdriver_wait(page_elements.buttons['create'])

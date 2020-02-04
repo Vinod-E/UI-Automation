@@ -75,19 +75,10 @@ if Object.status_of_login.strip() == 'administrator':
 
     try:
         Object.job_creation()
-        print("Job Run completed at:: " + str(datetime.datetime.now()))
-
         Object.requirement_creation()
-        print("Requirement Run completed at:: " + str(datetime.datetime.now()))
-
         Object.assessment_creation()
-        print("Assessment Run completed at:: " + str(datetime.datetime.now()))
-
         Object.event_creation()
-        print("Event Run completed at:: " + str(datetime.datetime.now()))
-
         Object.embrace_module()
-        print("Embrace Run completed at:: " + str(datetime.datetime.now()))
 
         Object.overall_status()
         Object.browser_close()

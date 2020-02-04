@@ -57,8 +57,7 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
                 self.ui_job_advance_search = 'Pass'
 
             time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.job['job_getbyid'].format(self.job_name_sprint_version))
-            self.xpath.click()
+            self.job_getby_details(self.job_name_sprint_version)
 
             time.sleep(3)
             self.driver.close()

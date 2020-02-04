@@ -60,9 +60,7 @@ class RequirementConfig(create_requirement.CreateRequirement):
                 self.ui_req_advance_search = 'Pass'
 
             time.sleep(2)
-            self.x_path_element_webdriver_wait(
-                page_elements.requirement['requirement_getbyid'].format(self.requirement_sprint_version))
-            self.xpath.click()
+            self.requirement_getby_details(self.requirement_sprint_version)
 
             time.sleep(2)
             self.requirement_validation('getbyid')

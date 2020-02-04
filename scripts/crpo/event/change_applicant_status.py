@@ -22,26 +22,10 @@ class ChangeApplicantStatus(event_applicants.EventApplicants):
             self.name.click()
 
             # --------------------------- Change Applicant Status -------------------
-            self.driver.execute_script("window.scrollTo(0,200);")
-            time.sleep(2)
-
-            self.x_path_element_webdriver_wait(page_elements.event_applicant['Change_applicant_status'])
-            self.xpath.click()
+            self.applicant_status_change(self.xl_change_applicant_stage,
+                                         self.xl_change_applicant_status,
+                                         self.xl_change_status_comment)
             self.ui_change_applicant_status_action = 'Pass'
-
-            time.sleep(3)
-            self.x_path_element_webdriver_wait(page_elements.event_applicant['change_stage'])
-            self.xpath.send_keys(self.xl_change_applicant_stage)
-
-            self.x_path_element_webdriver_wait(page_elements.event_applicant['change_status'])
-            self.xpath.send_keys(self.xl_change_applicant_status)
-
-            self.x_path_element_webdriver_wait(page_elements.event_applicant['comment'])
-            self.xpath.send_keys(self.xl_change_status_comment)
-
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['status_change_button'])
-            self.xpath.click()
 
             # --------------------------- Applicant common process -----------------------------------------------------
             self.applicant_get_by()
@@ -62,6 +46,8 @@ class ChangeApplicantStatus(event_applicants.EventApplicants):
                       'movement happened in event :: {}'.format(self.applicant_current_status))
             else:
                 print('Failed to change applicant status <<<---------**')
+                self.image_capture('applicant_status_failed_expected_{}'.format(status))
+                print('<<<----- Image captured please check ----->>>')
             time.sleep(1)
 
         except Exception as error:

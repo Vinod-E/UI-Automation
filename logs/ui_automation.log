@@ -191,3 +191,100 @@ from unknown error: web view not found
 [03/Feb/2020 16:08:46.507 10436 ] ERROR [api_logger:crpo_login.py:server_connection_error:121] 'BusinessFlow' object has no attribute 'driver'
 [03/Feb/2020 16:08:46.507 10436 ] ERROR [api_logger:crpo_login.py:internet_not_available:134] 'BusinessFlow' object has no attribute 'driver'
 [03/Feb/2020 16:08:46.507 10436 ] ERROR [api_logger:crpo_bussiness_flow.py:<module>:105] 'BusinessFlow' object has no attribute 'driver'
+[04/Feb/2020 14:10:53.878 6516 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[04/Feb/2020 14:11:27.653 6516 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[04/Feb/2020 14:12:06.533 6516 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[04/Feb/2020 14:12:08.545 6516 ] ERROR [api_logger:advance_search.py:applicant_name_search:86] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 14:12:08.545 6516 ] ERROR [api_logger:schedule.py:interview_schedule:36] 'applicant_select_checkbox'
+[04/Feb/2020 14:13:21.944 6826 ] ERROR [api_logger:schedule.py:interview_schedule:39] 'applicant_select_checkbox'
+[04/Feb/2020 14:14:40.327 7025 ] ERROR [api_logger:schedule.py:interview_schedule:39] 'applicant_select_checkbox'
+[04/Feb/2020 14:21:20.753 7330 ] ERROR [api_logger:applicant_status_change.py:applicant_schedule_status_change:71] 'status_change_button'
+[04/Feb/2020 15:15:07.087 8370 ] ERROR [api_logger:applicant_status_change.py:applicant_schedule_status_change:71] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 15:31:49.553 9031 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[04/Feb/2020 17:07:47.379 11972 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[04/Feb/2020 17:07:47.396 11972 ] ERROR [api_logger:interviewer_login.py:interviewer_login:33] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 17:11:27.656 12699 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] 'NoneType' object has no attribute 'is_displayed'
+[04/Feb/2020 17:11:27.658 12699 ] ERROR [api_logger:interviewer_login.py:interviewer_login:33] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 17:17:59.009 13055 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] 'NoneType' object has no attribute 'is_displayed'
+[04/Feb/2020 17:17:59.014 13055 ] ERROR [api_logger:interviewer_login.py:interviewer_login:33] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 17:24:41.485 13353 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[04/Feb/2020 17:24:41.502 13353 ] ERROR [api_logger:interviewer_login.py:interviewer_login:33] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 17:33:54.225 13879 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] 'NoneType' object has no attribute 'is_displayed'
+[04/Feb/2020 17:33:54.227 13879 ] ERROR [api_logger:interviewer_login.py:interviewer_login:33] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 17:40:19.021 14177 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] 'NoneType' object has no attribute 'is_displayed'
+[04/Feb/2020 17:40:19.036 14177 ] ERROR [api_logger:interviewer_login.py:interviewer_login:33] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 18:16:13.858 14897 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 18:16:13.858 14897 ] ERROR [api_logger:crpo_login.py:__init__:34] 'str' object has no attribute 'text'
+[04/Feb/2020 18:16:13.861 14897 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 18:16:13.862 14897 ] ERROR [api_logger:crpo_login.py:login_elements:85] 'str' object has no attribute 'send_keys'
+[04/Feb/2020 18:16:13.863 14897 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 18:16:13.863 14897 ] ERROR [api_logger:crpo_login.py:crpo_login:108] 'str' object has no attribute 'text'
+[04/Feb/2020 18:16:13.865 14897 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 18:16:13.865 14897 ] ERROR [api_logger:advance_search.py:advance_search:25] 'str' object has no attribute 'click'
+[04/Feb/2020 18:16:13.867 14897 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 18:16:14.868 14897 ] ERROR [api_logger:advance_search.py:name_search:54] 'str' object has no attribute 'send_keys'
+[04/Feb/2020 18:16:14.872 14897 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 18:16:14.872 14897 ] ERROR [api_logger:getby_details.py:event_getby_details:25] 'str' object has no attribute 'click'
+[04/Feb/2020 18:16:16.878 14897 ] ERROR [api_logger:schedule.py:event_validation:70] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 18:16:16.881 14897 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 18:16:16.882 14897 ] ERROR [api_logger:floating_action.py:floating_action:17] 'str' object has no attribute 'click'
+[04/Feb/2020 18:16:18.886 14897 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[04/Feb/2020 18:16:18.887 14897 ] ERROR [api_logger:schedule.py:interview_schedule:52] 'str' object has no attribute 'click'
+[04/Feb/2020 18:17:52.547 15087 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[04/Feb/2020 18:17:52.561 15087 ] ERROR [api_logger:interviewer_login.py:interviewer_login:33] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+

@@ -18,8 +18,7 @@ class CreateJob(job_excel.JobExcelRead):
 
     def create_job_role(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.tabs['job_tab'])
-            self.xpath.click()
+            self.job_tab()
 
             time.sleep(5)
             self.x_path_element_webdriver_wait(page_elements.buttons['create'])
@@ -67,11 +66,11 @@ class CreateJob(job_excel.JobExcelRead):
 
             time.sleep(5)
             self.driver.execute_script("window.scrollTo(0,-100);")
-            self.driver.save_screenshot(config.image_config['screen_shot'].format('Job_created'))
+            self.image_capture('Job_created')
 
         except Exception as create_job:
             api_logger.error(create_job)
-            self.driver.save_screenshot(config.image_config['screen_shot'].format('Job'))
+            self.image_capture('Job')
 
         self.job_validation('the job')
         if self.job_name_breadcumb == self.job_name_sprint_version:
