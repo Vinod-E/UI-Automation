@@ -13,11 +13,11 @@ class JobExcelRead(common_file.CommonFile):
         # ------------- file reader index -------------------
         workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_job'])
         if self.login_server == 'betaams':
-            self.job_sheet1 = workbook.sheet_by_index(1)
-        if self.login_server == 'ams':
-            self.job_sheet1 = workbook.sheet_by_index(1)
-        if self.login_server == 'amsin':
             self.job_sheet1 = workbook.sheet_by_index(0)
+        if self.login_server == 'ams':
+            self.job_sheet1 = workbook.sheet_by_index(0)
+        if self.login_server == 'amsin':
+            self.job_sheet1 = workbook.sheet_by_index(1)
 
         # --------------- Value initialization ----------------
         self.xl_job_name = []

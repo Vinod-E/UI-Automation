@@ -103,6 +103,22 @@ grid = {
     'check_box': 'grid_items'
 }
 
+change_applicant_status = {
+    'Change_applicant_status': '//*[@data-title="Change Applicant Status"]',
+    'change_stage': '//*[@ng-model="vm.selectedStage"]',
+    'change_status': '//*[@ng-model="vm.selectedStatus"]',
+    'comment': '//*[@ng-model="vm.comments"]',
+    'Interviewer': '//*[@title="Select Interviewers"]',
+    'Interviewer_selection': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/div[6]/div/div/span/div/div'
+                             '/div[2]/div/button[2]/i[1]',
+    'Interviewer_selection_done': '//*[@ng-click="$hide();"]',
+}
+
+getby_details = {
+    'getbyid': '//*[@title="{}"]',
+    'event_getbyid': '//*[@title="Click to view full details"]',
+}
+
 job = {
     'description_box': '//*[@id="mainBodyElement"]/div[3]/section/div/'
                        'basic-job/div/div[2]/div[8]/div/wysiwyg-edit/div/div[2]/iframe',
@@ -216,10 +232,6 @@ event_config = {
 event_applicant = {
     'applicant_getbyid': '//*[@title="{}"]',
     'applicant_validation': '//*[@title="{}"]',
-    'Change_applicant_status': '//*[@data-title="Change Applicant Status"]',
-    'change_stage': '//*[@ng-model="vm.selectedStage"]',
-    'change_status': '//*[@ng-model="vm.selectedStatus"]',
-    'comment': '//*[@ng-model="vm.comments"]',
     'Interviewer': '//*[@title="Select Interviewers"]',
     'task_candidate_name': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[1]/div/div[1]/div[1]/span',
 }

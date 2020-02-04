@@ -1,6 +1,6 @@
-from scripts.crpo.common import task_config
+from scripts.crpo.common import image_capture
 
 
-class CommonFile(task_config.TaskConfig):
+class CommonFile(image_capture.Image):
     def __init__(self):
         super(CommonFile, self).__init__()

@@ -24,8 +24,7 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
             self.name_search(self.event_sprint_version, 'Event')
             self.ui_event_advance_search = 'Pass'
 
-            self.x_path_element_webdriver_wait(page_elements.event_config['click_on_event'])
-            self.xpath.click()
+            self.event_getby_details()
 
         except Exception as error:
             api_logger.error(error)
@@ -65,10 +64,7 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
     def applicant_get_by(self):
         try:
             time.sleep(3)
-            self.x_path_element_webdriver_wait(
-                page_elements.event_applicant['applicant_getbyid'].format(self.event_sprint_version))
-            self.xpath.click()
-
+            self.applicant_getby_details(self.event_sprint_version)
             time.sleep(2)
             self.driver.switch_to.window(self.driver.window_handles[1])
         except Exception as error:

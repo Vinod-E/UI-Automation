@@ -23,13 +23,11 @@ class EmbraceApp(event_manage_task.EventManageTask):
 
     def embrace_app_to_submit_task(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.tabs['more_tabs'])
-            self.xpath.click()
+            self.more_tab()
             self.ui_more_tabs = 'Pass'
 
             time.sleep(3)
-            self.x_path_element_webdriver_wait(page_elements.embrace['embrace_app'])
-            self.xpath.click()
+            self.embrace_tab()
             self.ui_embrace_module = 'Pass'
 
             self.driver.switch_to.window(self.driver.window_handles[1])
@@ -63,7 +61,6 @@ class EmbraceApp(event_manage_task.EventManageTask):
             self.xpath.click()
             self.ui_submit_behalf = 'Pass'
 
-            print("Embrace Run completed at:: " + str(datetime.datetime.now()))
             time.sleep(1.5)
 
         except Exception as error:
