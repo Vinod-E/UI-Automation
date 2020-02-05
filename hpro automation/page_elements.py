@@ -10,7 +10,10 @@ login = {
     'tenant_screen_text': '//*[@id="mainBodyElement"]/div[6]/div/div/div[1]/h4',
     'page_cant_be_reached': '//*[@id="main-message"]/h1/span',
     'internet_error': '//*[@id="main-message"]/h1/span',
-    'wrong_credentials': '//*[@id="mainBodyElement"]/div[1]/div/header/div[3]/div/div'
+    'wrong_credentials': '//*[@id="mainBodyElement"]/div[1]/div/header/div[3]/div/div',
+    'admin_logout': '//*[@id="bs-example-navbar-collapse-1"]/ul/ul/li[7]/a',
+    'int_logout': '//*[@id="bs-example-navbar-collapse-1"]/ul/ul/li[6]/a',
+    'login': '//*[@ng-click="vm.backToLogin()"]'
 }
 
 tabs = {
@@ -91,8 +94,12 @@ floating_actions = {
     'event_upload_candidates': '//*[@title="Upload Candidates"]',
     'View_Applicants': '//*[@title="View Candidates"]',
     'manage_task': '//*[@title="Manage Task"]',
+    'event_interviews': '//*[@title="View Event Interviews"]',
 }
-
+grid_actions = {
+    'reschedule': '//*[@data-title="Reschedule Interview"]',
+    'cancel_interview': '//*[@data-title="Cancel Interview"]',
+}
 advance_search = {
     'search': '//*[@ng-click="vm.showAdvanceSearch();"]',
     'name': 'Name',
@@ -250,4 +257,9 @@ embrace = {
     'pending_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[2]',
     'submitted_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[1]',
     'rejected_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[3]',
+}
+interview = {
+    'comment': '//*[@ng-model="vm.comments"]',
+    'c_comment': '//*[@ng-model="vm.comment"]',
+    'cancel_confirm': '//*[@ng-click="vm.cancelInterview();"]',
 }

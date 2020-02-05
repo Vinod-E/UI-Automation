@@ -1,7 +1,7 @@
-from scripts.crpo.old_interview_flow import re_schedule
+from scripts.crpo.old_interview_flow import cancel_interview_old
 
 
-class OldInterviewFlow(re_schedule.ReSchedule):
+class OldInterviewFlow(cancel_interview_old.CancelInterview):
     def __init__(self):
         super(OldInterviewFlow, self).__init__()
 
@@ -13,6 +13,11 @@ class OldInterviewFlow(re_schedule.ReSchedule):
         self.interview_schedule()
         self.interview_re_schedule()
 
+    def cancel_interviews(self):
+        print("***== Cancel / Cancellation Request ==***")
+        self.cancel_interview()
+
 
 ob = OldInterviewFlow()
 ob.schedule_re_schedule()
+ob.cancel_interviews()

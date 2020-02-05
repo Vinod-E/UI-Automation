@@ -1,10 +1,10 @@
 import time
 import page_elements
 from logger_settings import api_logger
-from scripts.crpo.old_interview_flow import interviewer_login
+from scripts.crpo.old_interview_flow import login
 
 
-class Schedule(interviewer_login.InterviewerLogin):
+class Schedule(login.Login):
     def __init__(self):
         super(Schedule, self).__init__()
 
@@ -26,7 +26,7 @@ class Schedule(interviewer_login.InterviewerLogin):
             self.x_path_element_webdriver_wait(page_elements.floating_actions['View_Applicants'])
             self.xpath.click()
 
-            time.sleep(5)
+            time.sleep(2)
             # --------------------------- Applicant Advance search -----------------------------------------------------
             self.applicant_advance_search()
             self.applicant_name_search(self.event_sprint_version_o, 'Applicant grid')
@@ -42,10 +42,11 @@ class Schedule(interviewer_login.InterviewerLogin):
                                                   self.xl_change_status_comment_o)
 
             self.applicant_getby_details(self.event_sprint_version_o)
-            self.schedule_validation('Scheduled')
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            self.current_status_validation('Scheduled')
 
+            time.sleep(2)
             self.driver.close()
-            time.sleep(1.5)
             self.driver.switch_to.window(self.driver.window_handles[0])
 
         except Exception as error:
@@ -69,9 +70,8 @@ class Schedule(interviewer_login.InterviewerLogin):
         except Exception as e:
             api_logger.error(e)
 
-    def schedule_validation(self, status):
+    def current_status_validation(self, status):
         try:
-            self.driver.switch_to.window(self.driver.window_handles[1])
             self.x_path_element_webdriver_wait(page_elements.event_applicant['applicant_validation'].format(status))
             self.applicant_current_status = self.xpath.text
             if self.applicant_current_status.strip() == status:

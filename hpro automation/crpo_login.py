@@ -107,6 +107,19 @@ class CrpoLogin(webdriver_wait.WebDriverElementWait):
         except Exception as login_status:
             api_logger.error(login_status)
 
+    def crpo_logout(self, pleaseaftersprint116):
+        try:
+            self.x_path_element_webdriver_wait(page_elements.login['login_success'])
+            self.xpath.click()
+            time.sleep(1)
+            self.x_path_element_webdriver_wait(pleaseaftersprint116)
+            self.xpath.click()
+            time.sleep(1)
+            self.x_path_element_webdriver_wait(page_elements.login['login'])
+            self.xpath.click()
+        except Exception as logout_status:
+            api_logger.error(logout_status)
+
     def server_connection_error(self):
         # ----------------------------------------- Server Connection error --------------------------------------------
         try:
