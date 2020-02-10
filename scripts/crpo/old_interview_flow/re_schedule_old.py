@@ -33,7 +33,7 @@ class ReSchedule(schedule_old.Schedule):
             self.xpath.click()
 
             time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.interview['comment'])
+            self.x_path_element_webdriver_wait(page_elements.interview['comments'])
             self.xpath.send_keys(self.xl_cancel_reschedule_comment_o)
 
             self.x_path_element_webdriver_wait(page_elements.buttons['create-save'])

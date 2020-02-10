@@ -22,11 +22,11 @@ class Schedule(login.Login):
             self.event_validation('interview-schedule')
             self.floating_action()
 
-            time.sleep(2)
+            time.sleep(1.5)
             self.x_path_element_webdriver_wait(page_elements.floating_actions['View_Applicants'])
             self.xpath.click()
 
-            time.sleep(2)
+            time.sleep(1.5)
             # --------------------------- Applicant Advance search -----------------------------------------------------
             self.applicant_advance_search()
             self.applicant_name_search(self.event_sprint_version_o, 'Applicant grid')

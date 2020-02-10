@@ -32,6 +32,8 @@ tabs = {
     'event_owner_tab': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.owners"]',
     'more_tabs': '//*[@data-placement="bottom-center"]',
     'embrace_candidate_tab': '/html/body/div[1]/header[2]/div/div/div[2]/div/ul/li[2]/a',
+    'event_tracking': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.tracking"]',
+    'interview_cancel_request': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.tracking.interviewCancelRequest"]',
 }
 
 buttons = {
@@ -62,6 +64,8 @@ buttons = {
                            'create-update-event-owners/div/div[2]/div/button[2]',
     'event_upload_candidate_save': '//*[@data-ng-click="vm.consolidateCandidateInfo();"]',
     'status_change_button': '//*[@ng-click="vm.changeCandidateStatus()"]',
+    'cancel_confirm': '//*[@ng-click="vm.cancelInterview();"]',
+    'cancel_request': '//*[@ng-click="vm.cancelInterviewReq();"]'
 
 }
 
@@ -98,6 +102,7 @@ floating_actions = {
 grid_actions = {
     'reschedule': '//*[@data-title="Reschedule Interview"]',
     'cancel_interview': '//*[@data-title="Cancel Interview"]',
+    'cancel_interview_request': 'cardlist-view-Cancel-Interview Request'
 }
 advance_search = {
     'search': 'cardlist-view-filter',
@@ -258,7 +263,8 @@ embrace = {
     'rejected_tasks': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[3]',
 }
 interview = {
-    'comment': '//*[@ng-model="vm.comments"]',
-    'c_comment': '//*[@ng-model="vm.comment"]',
-    'cancel_confirm': '//*[@ng-click="vm.cancelInterview();"]',
+    'comments': '//*[@ng-model="vm.comments"]',
+    'comment': '//*[@ng-model="vm.comment"]',
+    'approve': '//*[@title="{}"]',
+    'c_r_comment': '//*[@ng-model="data.comments"]',
 }
