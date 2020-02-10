@@ -12,7 +12,7 @@ class ReSchedule(schedule_old.Schedule):
         try:
             # --------------------------- New tab to login as interviewer ---------------------------------------------
             time.sleep(1)
-            self.crpo_logout(page_elements.login['admin_logout'])
+            self.crpo_logout()
             self.login('InterviewerONE', self.xl_username_int1_o, self.xl_password_int1_o)
 
             # ----------------------- Reschedule Process --------------------------------------------------------------
@@ -27,8 +27,7 @@ class ReSchedule(schedule_old.Schedule):
             self.xpath.click()
 
             time.sleep(1)
-            self.name_element_webdriver_wait(page_elements.grid['check_box'])
-            self.name.click()
+            self.check_box()
 
             self.x_path_element_webdriver_wait(page_elements.grid_actions['reschedule'])
             self.xpath.click()

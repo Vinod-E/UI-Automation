@@ -34,7 +34,7 @@ class SelectionProcess(create_job.CreateJob):
                 self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
 
                 try:
-                    time.sleep(4)
+                    time.sleep(3)
                     self.driver.execute_script("window.scrollTo(0,100);")
                     self.x_path_element_webdriver_wait(page_elements.buttons['sp-save'])
                     self.xpath.click()
@@ -65,7 +65,7 @@ class SelectionProcess(create_job.CreateJob):
                 self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
 
                 try:
-                    time.sleep(4)
+                    time.sleep(3)
                     self.driver.execute_script("window.scrollTo(0,100);")
                     self.x_path_element_webdriver_wait(page_elements.buttons['sp-save'])
                     self.xpath.click()

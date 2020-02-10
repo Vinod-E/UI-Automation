@@ -1,4 +1,3 @@
-import datetime
 from logger_settings import api_logger
 from scripts.crpo.output import crpo_bussiness_output
 

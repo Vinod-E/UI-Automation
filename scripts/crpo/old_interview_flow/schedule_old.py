@@ -34,9 +34,7 @@ class Schedule(login.Login):
             # --------------------------- Change Applicant Status to Schedule ------------------------------------------
             self.driver.execute_script("window.scrollTo(0,100);")
             time.sleep(1)
-            self.name_element_webdriver_wait(page_elements.grid['check_box'])
-            self.name.click()
-
+            self.check_box()
             self.applicant_schedule_status_change(self.xl_change_applicant_stage_o,
                                                   self.xl_change_applicant_status_o,
                                                   self.xl_change_status_comment_o)
