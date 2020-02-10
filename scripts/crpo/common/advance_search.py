@@ -18,8 +18,8 @@ class AdvanceSearch(crpo_login.CrpoLogin):
             self.driver.execute_script("window.scrollTo(0,-100);")
             time.sleep(4)
 
-            self.x_path_element_webdriver_wait(page_elements.advance_search['search'])
-            self.xpath.click()
+            self.id_element_webdriver_wait(page_elements.advance_search['search'])
+            self.id.click()
 
         except Exception as search:
             api_logger.error(search)
@@ -30,8 +30,8 @@ class AdvanceSearch(crpo_login.CrpoLogin):
             self.driver.execute_script("window.scrollTo(0,-50);")
             time.sleep(2)
 
-            self.x_path_element_webdriver_wait(page_elements.advance_search['search'])
-            self.xpath.click()
+            self.id_element_webdriver_wait(page_elements.advance_search['search'])
+            self.id.click()
 
         except Exception as search:
             api_logger.error(search)

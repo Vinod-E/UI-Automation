@@ -68,7 +68,8 @@ class ECTaskconfig(selection_process.SelectionProcess):
                                  self.xl_positive_stage_status_job,
                                  self.xl_negative_stage_status_job,
                                  self.xl_A1)
-                self.ui_task_configure = 'Pass'
+                if self.task_configure_success == 'Pass':
+                    self.ui_task_configure = 'Pass'
 
             except Exception as config_message:
                 api_logger.error(config_message)

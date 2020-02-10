@@ -11,8 +11,7 @@ class CancelInterview(re_schedule_old.ReSchedule):
     def cancel_interview(self):
         try:
             time.sleep(2)
-            self.name_element_webdriver_wait(page_elements.grid['check_box'])
-            self.name.click()
+            self.check_box()
 
             self.x_path_element_webdriver_wait(page_elements.grid_actions['cancel_interview'])
             self.xpath.click()
@@ -26,7 +25,7 @@ class CancelInterview(re_schedule_old.ReSchedule):
 
             # --------------------------- New login as Admin ---------------------------------------------
             time.sleep(7)
-            self.crpo_logout(page_elements.login['int_logout'])
+            self.crpo_logout()
             self.login('Admin', self.xl_username, self.xl_password)
             time.sleep(3)
             self.advance_search(page_elements.tabs['event_tab'])

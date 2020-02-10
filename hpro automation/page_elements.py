@@ -11,9 +11,8 @@ login = {
     'page_cant_be_reached': '//*[@id="main-message"]/h1/span',
     'internet_error': '//*[@id="main-message"]/h1/span',
     'wrong_credentials': '//*[@id="mainBodyElement"]/div[1]/div/header/div[3]/div/div',
-    'admin_logout': '//*[@id="bs-example-navbar-collapse-1"]/ul/ul/li[7]/a',
-    'int_logout': '//*[@id="bs-example-navbar-collapse-1"]/ul/ul/li[6]/a',
-    'login': '//*[@ng-click="vm.backToLogin()"]'
+    'logout': 'crpo-settings-logout',
+    'login_back': '//*[@ng-click="vm.backToLogin()"]'
 }
 
 tabs = {
@@ -101,7 +100,7 @@ grid_actions = {
     'cancel_interview': '//*[@data-title="Cancel Interview"]',
 }
 advance_search = {
-    'search': '//*[@ng-click="vm.showAdvanceSearch();"]',
+    'search': 'cardlist-view-filter',
     'name': 'Name',
     'a_name': 'name',
     'assessment_name': 'testName'

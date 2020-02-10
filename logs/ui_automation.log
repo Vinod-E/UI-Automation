@@ -561,3 +561,139 @@ from unknown error: web view not found
 [05/Feb/2020 18:19:24.261 16971 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: element click intercepted: Element <a a="" class="btn-group show_form pointer ng-scope" bs-tooltip="" data-placement="bottom" delay="500" ng-click="vm.showAdvanceSearch();" ng-if="vm.config.isAdvanceSearch">...</a> is not clickable at point (77, 113). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
   (Session info: chrome=79.0.3945.88)
 
+[07/Feb/2020 08:15:10.688 2186 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 08:15:10.704 2186 ] ERROR [api_logger:crpo_login.py:__init__:34] 'str' object has no attribute 'text'
+[07/Feb/2020 08:15:42.351 2186 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[07/Feb/2020 08:15:42.352 2186 ] ERROR [api_logger:crpo_login.py:login_elements:85] 'str' object has no attribute 'send_keys'
+[07/Feb/2020 08:16:13.966 2186 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 08:16:13.966 2186 ] ERROR [api_logger:crpo_login.py:crpo_login:108] 'str' object has no attribute 'text'
+[07/Feb/2020 08:16:45.538 2186 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 08:16:45.539 2186 ] ERROR [api_logger:advance_search.py:advance_search:25] 'str' object has no attribute 'click'
+[07/Feb/2020 08:17:17.147 2186 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[07/Feb/2020 08:17:18.149 2186 ] ERROR [api_logger:advance_search.py:name_search:54] 'str' object has no attribute 'send_keys'
+[07/Feb/2020 08:17:49.729 2186 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 08:17:49.729 2186 ] ERROR [api_logger:getby_details.py:event_getby_details:25] 'str' object has no attribute 'click'
+[07/Feb/2020 08:18:23.392 2186 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 08:18:23.393 2186 ] ERROR [api_logger:schedule_old.py:event_validation:71] 'str' object has no attribute 'text'
+[07/Feb/2020 08:18:55.000 2186 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 08:18:55.001 2186 ] ERROR [api_logger:floating_action.py:floating_action:17] 'str' object has no attribute 'click'
+[07/Feb/2020 08:19:28.560 2186 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 08:19:28.561 2186 ] ERROR [api_logger:schedule_old.py:interview_schedule:53] 'str' object has no attribute 'click'
+[07/Feb/2020 08:20:01.159 2186 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 08:20:01.159 2186 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] 'str' object has no attribute 'click'
+[07/Feb/2020 08:20:32.790 2186 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[07/Feb/2020 08:20:32.791 2186 ] ERROR [api_logger:login.py:login:24] 'str' object has no attribute 'send_keys'
+[07/Feb/2020 08:21:04.354 2186 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 08:21:04.355 2186 ] ERROR [api_logger:advance_search.py:advance_search:25] 'str' object has no attribute 'click'
+[07/Feb/2020 10:32:29.192 5256 ] ERROR [api_logger:create_job.py:create_job_role:72] Message: element click intercepted: Element <a class="btn-group show_form no-padding pointer btn button_radius ng-binding ng-scope" ng-if="!vm.config.isCreateDisabled" style="padding: 0 10px;border-radius:0;margin-left: 5px;" ng-click="vm.create();">...</a> is not clickable at point (848, 114). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:37:25.030 5620 ] ERROR [api_logger:task_config.py:task_config:73] Message: element click intercepted: Element <a a="" class="pointer ng-scope" ng-if="vm.job.GeneralInfo.Status !== 'Open'" id="popover-as-service" data-trigger="hover" data-placement="top" data-content="Cannot configure the task when a event is not open" bs-popover="">...</a> is not clickable at point (1232, 592). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:38:13.084 5620 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 10:38:13.099 5620 ] ERROR [api_logger:old_feedbackform.py:feedback_form:56] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:39:42.111 5620 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: element click intercepted: Element <a a="" ng-if="value.state" ui-sref="crpo.jobRole" style="user-select: none;" class="ng-binding ng-scope" href="#/crpoqa/jobRole/">...</a> is not clickable at point (684, 29). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:40:15.428 5620 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[07/Feb/2020 10:40:16.445 5620 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:40:57.456 5620 ] ERROR [api_logger:requirement_config.py:requirement_configuration_tab:50] Message: element click intercepted: Element <label class="btn btn-default" ng-class="{'btn-danger':vm.flag === true}">...</label> is not clickable at point (1219, 515). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:42:34.633 5620 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 10:43:09.824 5620 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 10:43:31.398 5620 ] ERROR [api_logger:owners_config.py:event_owner_configure:43] Message: element click intercepted: Element <a class="tab-label ng-scope ng-animate ng-enter ng-enter-active" ng-click="vm.active='owners';" ui-sref="crpo.events.manageEvent.eventDetails.owners" ng-if="vm.service.actions.manageEvent..." data-ng-animate="2" href="#/crpoqa/events/manageEvent/3615/eventDetails/owners" style="">Owners</a> is not clickable at point (199, 17). Other element would receive the click: <a a="" ng-if="value.state" ui-sref="crpo.dashboard" style="user-select: none;" class="ng-binding ng-scope" href="#/crpoqa/dashboard/">...</a>
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:43:40.975 5620 ] ERROR [api_logger:upload_candidates.py:upload_candidates_to_event:79] Message: element click intercepted: Element <button class="btn btn-sm btn-default back_btn pull-right ng-scope" data-ng-click="vm.goto...State()" data-ng-if="vm.states.indexOf(vm.allStates.current.name) < 3">Next</button> is not clickable at point (1238, 510). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:44:28.728 5620 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 10:45:04.158 5620 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[07/Feb/2020 10:45:04.173 5620 ] ERROR [api_logger:advance_search.py:applicant_advance_search:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:45:37.411 5620 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[07/Feb/2020 10:45:39.416 5620 ] ERROR [api_logger:advance_search.py:applicant_name_search:86] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:45:42.521 5620 ] ERROR [api_logger:getby_details.py:__common:17] Message: element click intercepted: Element <li title="Sprint_116" ng-repeat="crumb in vm.service.breadcrumbsOptions.breadcrumbs" ng-class="{ active: $last }" class="ng-scope active" style="">...</li> is not clickable at point (122, 84). Other element would receive the click: <div style="width:200px;" class="ellipsis_text ng-binding" title="...">Manage Event Owners</div>
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 10:45:44.529 5620 ] ERROR [api_logger:event_applicants.py:applicant_get_by:71] list index out of range
+[07/Feb/2020 10:46:18.938 5620 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[07/Feb/2020 10:46:21.117 5620 ] ERROR [api_logger:event_applicants.py:event_applicants:62] Message: invalid session id
+
+[07/Feb/2020 10:46:21.119 5620 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: invalid session id
+
+[07/Feb/2020 10:46:21.120 5620 ] ERROR [api_logger:floating_action.py:floating_action:17] Message: invalid session id
+
+[07/Feb/2020 10:46:22.125 5620 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: invalid session id
+
+[07/Feb/2020 10:46:22.128 5620 ] ERROR [api_logger:event_manage_task.py:manage_task_event:45] Message: invalid session id
+
+[07/Feb/2020 10:46:22.136 5620 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: invalid session id
+
+[07/Feb/2020 10:46:22.139 5620 ] ERROR [api_logger:menu_tabs.py:more_tab:43] Message: invalid session id
+
+[07/Feb/2020 10:46:25.144 5620 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: invalid session id
+
+[07/Feb/2020 10:46:25.149 5620 ] ERROR [api_logger:menu_tabs.py:embrace_tab:50] Message: invalid session id
+
+[07/Feb/2020 10:46:25.152 5620 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:67] Message: invalid session id
+
+[07/Feb/2020 10:46:25.155 5620 ] ERROR [api_logger:crpo_bussiness_flow.py:embrace_module:70] Message: invalid session id
+
+[07/Feb/2020 10:46:25.164 5620 ] ERROR [api_logger:crpo_bussiness_flow.py:<module>:87] Message: invalid session id
+
+[07/Feb/2020 12:50:57.088 10394 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 12:50:57.089 10394 ] ERROR [api_logger:crpo_login.py:__init__:34] 'str' object has no attribute 'text'
+[07/Feb/2020 12:50:57.094 10394 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 12:50:57.095 10394 ] ERROR [api_logger:crpo_login.py:login_elements:85] 'str' object has no attribute 'send_keys'
+[07/Feb/2020 12:50:57.098 10394 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 12:50:57.099 10394 ] ERROR [api_logger:crpo_login.py:crpo_login:108] 'str' object has no attribute 'text'
+[07/Feb/2020 12:50:57.146 10394 ] ERROR [api_logger:crpo_login.py:server_connection_error:134] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 12:50:57.148 10394 ] ERROR [api_logger:crpo_login.py:internet_not_available:147] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[07/Feb/2020 12:50:57.150 10394 ] ERROR [api_logger:crpo_bussiness_flow.py:<module>:96] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+

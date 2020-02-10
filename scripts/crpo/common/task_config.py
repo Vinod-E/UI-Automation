@@ -8,6 +8,7 @@ from selenium.webdriver.common.keys import Keys
 class TaskConfig(floating_action.FloatingAction):
     def __init__(self):
         super(TaskConfig, self).__init__()
+        self.task_configure_success = ''
 
     def task_config(self, configure_button, event_or_job, name,
                     assign_stage, positive_stage, negative_stage, activity):
@@ -67,6 +68,7 @@ class TaskConfig(floating_action.FloatingAction):
             self.xpath.click()
 
             print('**-------->>> Task configuration done for {}'.format(name))
+            self.task_configure_success = 'Pass'
             time.sleep(3)
 
         except Exception as config_message:
