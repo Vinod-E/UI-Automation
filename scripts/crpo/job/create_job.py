@@ -1,5 +1,4 @@
 import time
-import config
 import page_elements
 import test_data_inputpath
 from logger_settings import api_logger

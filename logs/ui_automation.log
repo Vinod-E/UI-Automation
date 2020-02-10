@@ -697,3 +697,84 @@ from unknown error: web view not found
 [07/Feb/2020 12:50:57.150 10394 ] ERROR [api_logger:crpo_bussiness_flow.py:<module>:96] Message: chrome not reachable
   (Session info: chrome=79.0.3945.88)
 
+[10/Feb/2020 12:28:35.837 5761 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[10/Feb/2020 12:28:35.851 5761 ] ERROR [api_logger:cancel_interview_request.py:cancel_interview_request:46] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 12:32:40.790 6050 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[10/Feb/2020 12:32:41.808 6050 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 16:19:51.112 6831 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] Message: element click intercepted: Element <a style="display: flex; justify-content: space-between;cursor: pointer;" class="ng-binding">...</a> is not clickable at point (1233, 29). Other element would receive the click: <div class="growl-message ng-binding" ng-bind-html="message.text">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 16:26:32.730 7125 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[10/Feb/2020 16:26:32.761 7125 ] ERROR [api_logger:cancel_request_acceptance.py:cancel_request_validation:56] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 16:27:06.286 7125 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[10/Feb/2020 16:27:06.367 7125 ] ERROR [api_logger:cancel_request_acceptance.py:cancel_request_acceptance:44] Message: element not interactable
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:12:18.200 8080 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: element click intercepted: Element <a a="" class="btn-group show_form pointer ng-scope" id="cardlist-view-filter" bs-tooltip="" data-placement="bottom" delay="500" ng-click="vm.showAdvanceSearch();" ng-if="vm.config.isAdvanceSearch">...</a> is not clickable at point (77, 113). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:13:07.232 8080 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[10/Feb/2020 17:13:07.302 8080 ] ERROR [api_logger:cancel_request_acceptance.py:cancel_request_acceptance:44] Message: element click intercepted: Element <span title="Approve Request" class="span-links ng-scope">...</span> is not clickable at point (1161, 381). Other element would receive the click: <div class="modal ng-scope center am-fade" tabindex="-1" role="dialog" style="z-index: 1050; display: block;">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:15:52.616 8360 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: element click intercepted: Element <a a="" class="btn-group show_form pointer ng-scope" id="cardlist-view-filter" bs-tooltip="" data-placement="bottom" delay="500" ng-click="vm.showAdvanceSearch();" ng-if="vm.config.isAdvanceSearch">...</a> is not clickable at point (77, 113). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:16:57.441 8603 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: element click intercepted: Element <a a="" class="btn-group show_form pointer ng-scope" id="cardlist-view-filter" bs-tooltip="" data-placement="bottom" delay="500" ng-click="vm.showAdvanceSearch();" ng-if="vm.config.isAdvanceSearch">...</a> is not clickable at point (77, 113). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:17:01.304 8603 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] 'NoneType' object has no attribute 'is_displayed'
+[10/Feb/2020 17:17:02.308 8603 ] ERROR [api_logger:advance_search.py:name_search:54] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:17:02.312 8603 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:17:02.315 8603 ] ERROR [api_logger:getby_details.py:event_getby_details:25] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:17:04.319 8603 ] ERROR [api_logger:schedule_old.py:event_validation:69] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:17:05.322 8603 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:17:05.324 8603 ] ERROR [api_logger:cancel_request_acceptance.py:cancel_request_acceptance:45] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:18:42.950 8826 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[10/Feb/2020 17:19:14.702 8826 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[10/Feb/2020 17:19:14.764 8826 ] ERROR [api_logger:cancel_request_acceptance.py:cancel_request_acceptance:45] Message: element not interactable
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:22:55.913 9073 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[10/Feb/2020 17:28:44.060 9409 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'NoneType' object has no attribute 'is_displayed'
+[10/Feb/2020 17:28:46.071 9409 ] ERROR [api_logger:cancel_request_acceptance.py:cancel_request_acceptance:47] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[10/Feb/2020 17:35:59.352 9705 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[10/Feb/2020 17:36:01.384 9705 ] ERROR [api_logger:cancel_request_acceptance.py:cancel_request_acceptance:48] Message: element not interactable
+  (Session info: chrome=79.0.3945.88)
+

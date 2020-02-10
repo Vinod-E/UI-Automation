@@ -7,9 +7,6 @@ class JobExcelRead(common_file.CommonFile):
     def __init__(self):
         super(JobExcelRead, self).__init__()
 
-        # ------------- Login session ------------------------
-        self.crpo_login()
-
         # ------------- file reader index -------------------
         workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_job'])
         if self.login_server == 'betaams':

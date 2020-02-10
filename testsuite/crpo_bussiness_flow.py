@@ -7,6 +7,9 @@ class BusinessFlow(crpo_bussiness_output.CrpoOutputFile):
         self.New_email_id = input("Email ID :: ")
         super(BusinessFlow, self).__init__()
 
+        # ------------- Login session ------------------------
+        self.crpo_login()
+
     def job_creation(self):
         try:
             self.create_job_role()
