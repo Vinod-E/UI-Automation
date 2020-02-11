@@ -65,8 +65,11 @@ buttons = {
     'event_upload_candidate_save': '//*[@data-ng-click="vm.consolidateCandidateInfo();"]',
     'status_change_button': '//*[@ng-click="vm.changeCandidateStatus()"]',
     'cancel_confirm': '//*[@ng-click="vm.cancelInterview();"]',
-    'cancel_request': '//*[@ng-click="vm.cancelInterviewReq();"]'
-
+    'cancel_request': '//*[@ng-click="vm.cancelInterviewReq();"]',
+    'save_draft': '//*[@ng-click="vm.saveDraft();"]',
+    'partial_feedback': '//*[@ng-click="vm.partialSubmitFeedback();"]',
+    'agree': '//*[@ng-click="vm.actionClicked({}{}{});"]',
+    'submit_feedback': '//*[@ng-click="vm.submitFeedback(vm.isUpdateFeedback);"]',
 }
 
 text_fields = {
@@ -100,9 +103,10 @@ floating_actions = {
     'event_interviews': '//*[@title="View Event Interviews"]',
 }
 grid_actions = {
-    'reschedule': '//*[@data-title="Reschedule Interview"]',
-    'cancel_interview': '//*[@data-title="Cancel Interview"]',
-    'cancel_interview_request': 'cardlist-view-Cancel-Interview Request'
+    'reschedule': 'cardlist-view-Reschedule-Interview',
+    'cancel_interview': 'cardlist-view-Cancel-Interview',
+    'cancel_interview_request': 'cardlist-view-Cancel-Interview Request',
+    'provide_feedback': 'cardlist-view-Provide-Interview Feedback'
 }
 advance_search = {
     'search': 'cardlist-view-filter',
@@ -267,4 +271,20 @@ interview = {
     'comment': '//*[@ng-model="vm.comment"]',
     'approve': '//*[@title="{}"]',
     'c_r_comment': '//*[@ng-model="data.comments"]',
+    'maybe': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
+    'rating_1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
+                'accordian-row-table/table/tbody/tr[2]/td/div/div[1]/select',
+    'rating_2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
+                'accordian-row-table/table/tbody/tr[4]/td/div/div[1]/select',
+    'comment_1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
+                 'accordian-row-table/table/tbody/tr[2]/td/div/div[2]/div/textarea',
+    'comment_2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
+                 'accordian-row-table/table/tbody/tr[4]/td/div/div[2]/div/textarea',
+    'overall_comment': '//*[@ng-model="vm.finalTranscript"]',
+    'feedback_form_validation_agree': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
+}
+buckets = {
+    'Partial_interviews': '//*[@label="Partial Submissions"]',
+    'completed_interviews': '//*[@label="Completed"]',
+    'cancel_interviews': '//*[@label="Cancelled"]',
 }

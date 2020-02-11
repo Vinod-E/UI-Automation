@@ -13,7 +13,7 @@ class CancelRequestAcceptance(cancel_interview_request.CancelInterviewRequest):
 
     def cancel_request_acceptance(self):
         try:
-            # ---------------------------- New tab to login as interviewer ---------------------------------------------
+            # ---------------------------- New tab to login as Admin ---------------------------------------------
             time.sleep(7)
             self.crpo_logout()
             self.login('Admin', self.xl_username, self.xl_password)

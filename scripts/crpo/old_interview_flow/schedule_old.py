@@ -38,6 +38,8 @@ class Schedule(login.Login):
             self.applicant_schedule_status_change(self.xl_change_applicant_stage_o,
                                                   self.xl_change_applicant_status_o,
                                                   self.xl_change_status_comment_o)
+            if self.applicant_schedule_statuschange == 'True':
+                print('**-------->>> Interview schedule happened successfully')
 
             self.applicant_getby_details(self.event_sprint_version_o)
             self.driver.switch_to.window(self.driver.window_handles[1])
