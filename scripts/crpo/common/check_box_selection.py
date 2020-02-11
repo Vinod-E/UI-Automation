@@ -11,5 +11,12 @@ class CheckBox(getby_details.GetByDetails):
         try:
             self.name_element_webdriver_wait(page_elements.grid['check_box'])
             self.name.click()
-        except Exception as image_error:
-            api_logger.error(image_error)
+        except Exception as error:
+            api_logger.error(error)
+
+    def all_check_box_unlock(self):
+        try:
+            self.x_path_element_webdriver_wait(page_elements.grid['all'])
+            self.xpath.click()
+        except Exception as error:
+            api_logger.error(error)

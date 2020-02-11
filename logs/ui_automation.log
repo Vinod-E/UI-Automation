@@ -988,3 +988,115 @@ from unknown error: web view not found
 from unknown error: web view not found
   (Session info: chrome=79.0.3945.88)
 
+[11/Feb/2020 16:39:05.968 17485 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[11/Feb/2020 16:39:05.975 17485 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 16:39:17.064 17485 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] 'NoneType' object has no attribute 'is_displayed'
+[11/Feb/2020 16:39:17.069 17485 ] ERROR [api_logger:unlock_feedback.py:unlock_feedback_form:51] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 17:25:03.990 19046 ] ERROR [api_logger:unlock_feedback.py:unlock_feedback_form:57] Message: element click intercepted: Element <button aria-hidden="true" data-dismiss="modal" class="close" type="button" ng-click="$hide();">...</button> is not clickable at point (1279, 89). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 17:26:11.022 19250 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] Message: element click intercepted: Element <a style="display: flex; justify-content: space-between;cursor: pointer;" class="ng-binding">...</a> is not clickable at point (1207, 29). Other element would receive the click: <div class="growl-message ng-binding" ng-bind-html="message.text">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 17:27:34.208 19453 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] Message: element click intercepted: Element <a style="display: flex; justify-content: space-between;cursor: pointer;" class="ng-binding">...</a> is not clickable at point (1207, 29). Other element would receive the click: <div class="growl-message ng-binding" ng-bind-html="message.text">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 17:31:34.961 19898 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] 'NoneType' object has no attribute 'is_displayed'
+[11/Feb/2020 17:31:34.966 19898 ] ERROR [api_logger:provide_feedback.py:provide_feedback:39] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 17:31:34.972 19898 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 17:31:34.975 19898 ] ERROR [api_logger:decision_change.py:decision_change:52] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 17:38:38.525 20118 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[11/Feb/2020 17:38:38.540 20118 ] ERROR [api_logger:provide_feedback.py:provide_feedback:39] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:02:41.235 21262 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:02:41.239 21262 ] ERROR [api_logger:provide_feedback.py:provide_feedback:39] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:02:41.244 21262 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:02:41.248 21262 ] ERROR [api_logger:decision_feedback_updation.py:decision_feedback_update:58] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:09:04.250 21552 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[11/Feb/2020 18:09:04.282 21552 ] ERROR [api_logger:decision_feedback_updation.py:decision_feedback_validation:79] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:50.183 21902 ] ERROR [api_logger:applicant_status_change.py:applicant_schedule_status_change:78] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:50.191 21902 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:50.198 21902 ] ERROR [api_logger:getby_details.py:__common:16] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:50.205 21902 ] ERROR [api_logger:schedule_old.py:interview_schedule:53] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:51.213 21902 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:51.220 21902 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:51.227 21902 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:51.235 21902 ] ERROR [api_logger:login.py:login:24] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:53.744 21902 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:53.749 21902 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:53.752 21902 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:54.760 21902 ] ERROR [api_logger:advance_search.py:name_search:54] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:54.770 21902 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:54.777 21902 ] ERROR [api_logger:getby_details.py:event_getby_details:24] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:56.785 21902 ] ERROR [api_logger:schedule_old.py:event_validation:71] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:56.792 21902 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:14:56.800 21902 ] ERROR [api_logger:floating_action.py:floating_action:17] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[11/Feb/2020 18:21:34.112 22460 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[11/Feb/2020 18:22:59.204 22460 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[11/Feb/2020 18:23:35.627 22460 ] ERROR [api_logger:decision_feedback_updation.py:decision_feedback_validation:77] 'in <string>' requires string as left operand, not list
+[11/Feb/2020 18:29:30.689 22829 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[11/Feb/2020 18:29:30.703 22829 ] ERROR [api_logger:provide_feedback.py:provide_feedback:39] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+

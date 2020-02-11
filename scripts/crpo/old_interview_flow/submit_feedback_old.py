@@ -47,21 +47,25 @@ class SubmittedFeedback(partial_feedback.PartialFeedback):
             self.driver.switch_to.window(self.driver.window_handles[0])
 
             # ---- validation check
-            self.submitted_validation()
+            self.submitted_validation('May be')
             if self.applicant_current_status.strip() == 'May be':
                 print('**-------->>> Feedback submitted successfully')
 
         except Exception as error:
             api_logger.error(error)
 
-    def submitted_validation(self):
+    def submitted_validation(self, status):
         try:
             self.x_path_element_webdriver_wait(page_elements.buckets['completed_interviews'])
             self.xpath.click()
 
             self.applicant_getby_details(self.event_sprint_version_o)
             self.driver.switch_to.window(self.driver.window_handles[1])
-            self.current_status_validation('May be')
+            self.current_status_validation(status)
+
+            time.sleep(1)
+            self.driver.close()
+            self.driver.switch_to.window(self.driver.window_handles[0])
 
         except Exception as error:
             api_logger.error(error)
