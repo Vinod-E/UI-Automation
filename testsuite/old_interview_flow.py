@@ -1,8 +1,8 @@
 import datetime
-from scripts.crpo.old_interview_flow import submit_feedback_old
+from scripts.crpo.old_interview_flow import decision_feedback_updation
 
 
-class OldInterviewFlow(submit_feedback_old.SubmittedFeedback):
+class OldInterviewFlow(decision_feedback_updation.DecisionFeedbackUpdate):
     def __init__(self):
         super(OldInterviewFlow, self).__init__()
 
@@ -27,10 +27,16 @@ class OldInterviewFlow(submit_feedback_old.SubmittedFeedback):
         self.save_as_draft_old()
         self.partial_feedback()
         self.submitted_feedback()
+
+    def unlock_update_feedback(self):
+        print('<<<<<<<<<<<<<<<<<<<<<<< unlock / decision / Feedback >>>>>>>>>>>>>>>>>>>>>>')
+        self.unlock_feedback_form()
+        self.decision_feedback_update()
         print("Run completed at:: " + str(datetime.datetime.now()))
 
 
 ob = OldInterviewFlow()
-ob.schedule_re_schedule()
-ob.cancel_interviews()
-ob.provide_feedback_flow()
+# ob.schedule_re_schedule()
+# ob.cancel_interviews()
+# ob.provide_feedback_flow()
+ob.unlock_update_feedback()

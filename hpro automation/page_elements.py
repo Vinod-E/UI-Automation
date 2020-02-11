@@ -106,7 +106,9 @@ grid_actions = {
     'reschedule': 'cardlist-view-Reschedule-Interview',
     'cancel_interview': 'cardlist-view-Cancel-Interview',
     'cancel_interview_request': 'cardlist-view-Cancel-Interview Request',
-    'provide_feedback': 'cardlist-view-Provide-Interview Feedback'
+    'provide_feedback': 'cardlist-view-Provide-Interview Feedback',
+    'unlock_feedback': 'cardlist-view-Unlock-Interviewer Feedback',
+    'view_feedback': 'cardlist-view-View-Feedback History',
 }
 advance_search = {
     'search': 'cardlist-view-filter',
@@ -115,7 +117,8 @@ advance_search = {
     'assessment_name': 'testName'
 }
 grid = {
-    'check_box': 'grid_items'
+    'check_box': 'grid_items',
+    'all': '//*[@ng-model="vm.isAllSelected"]'
 }
 
 change_applicant_status = {
@@ -272,6 +275,7 @@ interview = {
     'approve': '//*[@title="{}"]',
     'c_r_comment': '//*[@ng-model="data.comments"]',
     'maybe': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
+    'shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
     'rating_1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
                 'accordian-row-table/table/tbody/tr[2]/td/div/div[1]/select',
     'rating_2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
@@ -282,9 +286,14 @@ interview = {
                  'accordian-row-table/table/tbody/tr[4]/td/div/div[2]/div/textarea',
     'overall_comment': '//*[@ng-model="vm.finalTranscript"]',
     'feedback_form_validation_agree': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
+    'updated_decision': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
+                        'accordian-row-table[1]/table/tbody/tr[1]/td[4]/span',
+    'updated_feedback': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
+                        'accordian-row-table[1]/table/tbody/tr[1]/td[3]/span'
 }
 buckets = {
     'Partial_interviews': '//*[@label="Partial Submissions"]',
     'completed_interviews': '//*[@label="Completed"]',
     'cancel_interviews': '//*[@label="Cancelled"]',
+    'all_interviews': '//*[@label="All Interviews"]',
 }
