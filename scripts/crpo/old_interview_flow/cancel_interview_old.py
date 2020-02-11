@@ -13,8 +13,8 @@ class CancelInterview(re_schedule_old.ReSchedule):
             time.sleep(2)
             self.check_box()
 
-            self.x_path_element_webdriver_wait(page_elements.grid_actions['cancel_interview'])
-            self.xpath.click()
+            self.id_element_webdriver_wait(page_elements.grid_actions['cancel_interview'])
+            self.id.click()
 
             self.x_path_element_webdriver_wait(page_elements.interview['comment'])
             self.xpath.send_keys(self.xl_cancel_request_comment_o)
@@ -23,49 +23,24 @@ class CancelInterview(re_schedule_old.ReSchedule):
             self.x_path_element_webdriver_wait(page_elements.buttons['cancel_confirm'])
             self.xpath.click()
 
-            # --------------------------- New login as Admin ---------------------------------------------
-            time.sleep(7)
-            self.crpo_logout()
-            self.login('Admin', self.xl_username, self.xl_password)
-            time.sleep(3)
-            self.advance_search(page_elements.tabs['event_tab'])
-            self.name_search(self.event_sprint_version_o, 'Event')
-            self.event_getby_details()
-            self.event_validation('cancel process')
-            self.floating_action()
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['View_Applicants'])
+            # ------- Validation check -----------------------
+            self.x_path_element_webdriver_wait(page_elements.buckets['cancel_interviews'])
             self.xpath.click()
 
-            time.sleep(1.8)
-            self.applicant_advance_search()
-            self.applicant_name_search(self.event_sprint_version_o, 'Applicant grid')
+            time.sleep(1)
             self.applicant_getby_details(self.event_sprint_version_o)
             self.driver.switch_to.window(self.driver.window_handles[1])
-
-            # ------- Validation check -----------------------
             self.current_status_validation('Cancelled')
             time.sleep(1.2)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
+            # -----logout from interviewer
+            # ---------------------------- New tab to login as Interviewer ---------------------------------------------
+            time.sleep(1)
+            self.crpo_logout()
+            self.login('Admin', self.xl_username, self.xl_password)
+            time.sleep(2.5)
+
         except Exception as cancel:
             api_logger.error(cancel)
-
-    def interview_schedule_again(self):
-        try:
-            self.check_box()
-            self.applicant_schedule_status_change(self.xl_change_applicant_stage_o,
-                                                  self.xl_change_applicant_status_o,
-                                                  self.xl_change_status_comment_o)
-
-            self.applicant_getby_details(self.event_sprint_version_o)
-            self.driver.switch_to.window(self.driver.window_handles[1])
-            self.current_status_validation('Scheduled')
-
-            time.sleep(2)
-            self.driver.close()
-            self.driver.switch_to.window(self.driver.window_handles[0])
-
-        except Exception as error:
-            api_logger.error(error)

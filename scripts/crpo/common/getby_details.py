@@ -1,4 +1,3 @@
-import time
 import page_elements
 from logger_settings import api_logger
 from scripts.crpo.common import menu_tabs

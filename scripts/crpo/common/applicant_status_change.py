@@ -8,6 +8,9 @@ class ChangeStatus(task_config.TaskConfig):
     def __init__(self):
         super(ChangeStatus, self).__init__()
 
+        self.applicant_statuschange = []
+        self.applicant_schedule_statuschange = []
+
     def applicant_status_change(self, stage, status, comment):
         try:
             # --------------------------- Change Applicant Status -------------------
@@ -30,6 +33,8 @@ class ChangeStatus(task_config.TaskConfig):
             time.sleep(1)
             self.x_path_element_webdriver_wait(page_elements.buttons['status_change_button'])
             self.xpath.click()
+
+            self.applicant_statuschange = 'True'
 
         except Exception as e:
             api_logger.error(e)
@@ -66,6 +71,8 @@ class ChangeStatus(task_config.TaskConfig):
 
             self.x_path_element_webdriver_wait(page_elements.buttons['status_change_button'])
             self.xpath.click()
+
+            self.applicant_schedule_statuschange = 'True'
 
         except Exception as e:
             api_logger.error(e)

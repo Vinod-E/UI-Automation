@@ -16,7 +16,7 @@ class AdvanceSearch(crpo_login.CrpoLogin):
             self.x_path_element_webdriver_wait(tab)
             self.xpath.click()
             self.driver.execute_script("window.scrollTo(0,-100);")
-            time.sleep(4)
+            time.sleep(2.5)
 
             self.id_element_webdriver_wait(page_elements.advance_search['search'])
             self.id.click()

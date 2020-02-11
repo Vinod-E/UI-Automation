@@ -29,8 +29,8 @@ class ReSchedule(schedule_old.Schedule):
             time.sleep(1)
             self.check_box()
 
-            self.x_path_element_webdriver_wait(page_elements.grid_actions['reschedule'])
-            self.xpath.click()
+            self.id_element_webdriver_wait(page_elements.grid_actions['reschedule'])
+            self.id.click()
 
             time.sleep(1)
             self.x_path_element_webdriver_wait(page_elements.interview['comments'])
@@ -45,6 +45,8 @@ class ReSchedule(schedule_old.Schedule):
 
             # ------- Validation check -----------------------
             self.current_status_validation('Rescheduled')
+            if self.applicant_current_status.strip() == 'Rescheduled':
+                print('**-------->>> Interview re-schedule happened successfully')
             time.sleep(1.2)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
