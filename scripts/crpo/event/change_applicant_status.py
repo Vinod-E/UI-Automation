@@ -26,6 +26,7 @@ class ChangeApplicantStatus(event_applicants.EventApplicants):
             self.ui_change_applicant_status_action = 'Pass'
 
             # --------------------------- Applicant common process -----------------------------------------------------
+            time.sleep(1.2)
             self.applicant_get_by()
             self.applicant_current_status_validation(self.change_applicant_status)
             self.ui_current_status_validation = 'Pass'

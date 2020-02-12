@@ -9,6 +9,15 @@ class CancelInterviewRequest(cancel_interview_old.CancelInterview):
     def __init__(self):
         super(CancelInterviewRequest, self).__init__()
 
+        self.ui_event_tab_cr = []
+        self.ui_advance_search_cr = []
+        self.ui_event_details_cr = []
+        self.ui_event_validation_cr = []
+        self.ui_floating_action_cr = []
+        self.ui_event_interviews_action_cr = []
+        self.ui_cancel_request_action = []
+        self.ui_cancel_request_raise = []
+
     def cancel_interview_request(self):
         try:
             # ---------------------------- New tab to login as interviewer ---------------------------------------------
@@ -42,6 +51,16 @@ class CancelInterviewRequest(cancel_interview_old.CancelInterview):
             time.sleep(1.5)
             self.x_path_element_webdriver_wait(page_elements.buttons['cancel_request'])
             self.xpath.click()
+
+            # -------------------- output report values ----------------
+            self.ui_event_tab_cr = 'Pass'
+            self.ui_advance_search_cr = 'Pass'
+            self.ui_event_details_cr = 'Pass'
+            self.ui_event_validation_cr = 'Pass'
+            self.ui_floating_action_cr = 'Pass'
+            self.ui_event_interviews_action_cr = 'Pass'
+            self.ui_cancel_request_action = 'Pass'
+            self.ui_cancel_request_raise = 'Pass'
 
         except Exception as cancel_request:
             api_logger.error(cancel_request)

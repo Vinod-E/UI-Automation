@@ -10,6 +10,14 @@ class PartialFeedback(save_draft_old.SaveAsDraft):
         self.draft_validation_check = []
         self.partial_bucket_validation = []
 
+        self.ui_provide_feedback_action_p = []
+        self.ui_partial_submission = []
+        self.ui_draft_validation = []
+
+        self.ui_partial_bucket = []
+        self.ui_provide_feedback_action_p_f = []
+        self.ui_submit_feedback_p_f = []
+
     def partial_feedback(self):
         try:
             self.id_element_webdriver_wait(page_elements.grid_actions['provide_feedback'])
@@ -36,6 +44,14 @@ class PartialFeedback(save_draft_old.SaveAsDraft):
             self.partial_bucket()
             if self.partial_bucket_validation == 'True':
                 print('**-------->>> Feedback submitted from partial bucket successfully')
+
+                # -------------------- output report values ----------------
+                self.ui_provide_feedback_action_p = 'Pass'
+                self.ui_partial_submission = 'Pass'
+                self.ui_draft_validation = 'Pass'
+                self.ui_partial_bucket = 'Pass'
+                self.ui_provide_feedback_action_p_f = 'Pass'
+                self.ui_submit_feedback_p_f = 'Pass'
 
             self.driver.switch_to.window(self.driver.window_handles[0])
 

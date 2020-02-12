@@ -8,6 +8,16 @@ class UnlockFeedbackForm(submit_feedback_old.SubmittedFeedback):
     def __init__(self):
         super(UnlockFeedbackForm, self).__init__()
 
+        self.ui_event_tab_un = []
+        self.ui_advance_search_un = []
+        self.ui_event_details_un = []
+        self.ui_event_validation_un = []
+        self.ui_floating_action_un = []
+        self.ui_event_interviews_action_un = []
+        self.ui_all_interviews_bucket_un = []
+        self.ui_all_completed_bucket_un = []
+        self.ui_unlock_feedback_action = []
+
     def unlock_feedback_form(self):
         try:
             # ---------------------------- New tab to login as Interviewer ---------------------------------------------
@@ -52,6 +62,17 @@ class UnlockFeedbackForm(submit_feedback_old.SubmittedFeedback):
             time.sleep(1.5)
             self.x_path_element_webdriver_wait(page_elements.buttons['done'])
             self.xpath.click()
+
+            # -------------------- output report values ----------------
+            self.ui_event_tab_un = 'Pass'
+            self.ui_advance_search_un = 'Pass'
+            self.ui_event_details_un = 'Pass'
+            self.ui_event_validation_un = 'Pass'
+            self.ui_floating_action_un = 'Pass'
+            self.ui_event_interviews_action_un = 'Pass'
+            self.ui_all_interviews_bucket_un = 'Pass'
+            self.ui_all_completed_bucket_un = 'Pass'
+            self.ui_unlock_feedback_action = 'Pass'
 
         except Exception as error:
             api_logger.error(error)

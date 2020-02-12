@@ -12,6 +12,18 @@ class DecisionFeedbackUpdate(unlock_feedback.UnlockFeedbackForm):
         self.updated_feedback = ''
         self.update_feedback_comment = ''
 
+        self.ui_completed_interviews_bucket_ud = []
+        self.ui_provide_feedback_action_ud = []
+        self.ui_submit_feedback_ud = []
+        self.ui_update_decision = []
+        self.ui_decision_validation = []
+
+        self.ui_completed_interviews_bucket_uf = []
+        self.ui_provide_feedback_action_uf = []
+        self.ui_submit_feedback_uf = []
+        self.ui_update_feedback = []
+        self.ui_feedback_validation = []
+
     def decision_feedback_update(self):
         try:
             # ---------------------------- New tab to login as Interviewer ---------------------------------------------
@@ -55,6 +67,23 @@ class DecisionFeedbackUpdate(unlock_feedback.UnlockFeedbackForm):
             # -------- validation check
             self.decision_feedback_validation()
 
+            time.sleep(1)
+            self.driver.close()
+            self.driver.switch_to.window(self.driver.window_handles[0])
+
+            # -------------------- output report values ----------------
+            if self.updated_decision.strip() == 'Shortlisted':
+                self.ui_completed_interviews_bucket_ud = 'Pass'
+                self.ui_provide_feedback_action_ud = 'Pass'
+                self.ui_submit_feedback_ud = 'Pass'
+                self.ui_update_decision = 'Pass'
+                self.ui_decision_validation = 'Pass'
+            if self.update_feedback_comment in self.updated_feedback.strip():
+                self.ui_completed_interviews_bucket_uf = 'Pass'
+                self.ui_provide_feedback_action_uf = 'Pass'
+                self.ui_submit_feedback_uf = 'Pass'
+                self.ui_update_feedback = 'Pass'
+                self.ui_feedback_validation = 'Pass'
         except Exception as error:
             api_logger.error(error)
 

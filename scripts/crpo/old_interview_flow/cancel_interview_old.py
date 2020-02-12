@@ -8,6 +8,11 @@ class CancelInterview(re_schedule_old.ReSchedule):
     def __init__(self):
         super(CancelInterview, self).__init__()
 
+        self.ui_grid_cancel_action = []
+        self.ui_cancel_interview = []
+        self.ui_candidate_getby_c = []
+        self.ui_applicant_current_status = []
+
     def cancel_interview(self):
         try:
             time.sleep(2)
@@ -30,7 +35,14 @@ class CancelInterview(re_schedule_old.ReSchedule):
             time.sleep(1)
             self.applicant_getby_details(self.event_sprint_version_o)
             self.driver.switch_to.window(self.driver.window_handles[1])
+
             self.current_status_validation('Cancelled')
+            if self.applicant_current_status == 'Cancelled':
+                # -------------------- output report values ----------------
+                self.ui_grid_cancel_action = 'Pass'
+                self.ui_cancel_interview = 'Pass'
+                self.ui_candidate_getby_c = 'Pass'
+                self.ui_applicant_current_status = 'Pass'
             time.sleep(1.2)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])

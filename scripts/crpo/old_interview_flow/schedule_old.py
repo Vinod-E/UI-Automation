@@ -10,8 +10,19 @@ class Schedule(login.Login):
 
         self.applicant_current_status = ''
         self.get_event_name = ''
-        self.ui_applicant_current_status = []
         self.event_validation_check = []
+
+        self.ui_event_tab = []
+        self.ui_advance_search = []
+        self.ui_event_details = []
+        self.ui_event_validation = []
+        self.ui_floating_action = []
+        self.ui_event_applicant_action = []
+        self.ui_applicant_advance_search = []
+        self.ui_change_applicant_status_action = []
+        self.ui_change_applicant_status = []
+        self.ui_candidate_getby = []
+        self.ui_applicant_current_status = []
 
     def interview_schedule(self):
         try:
@@ -41,7 +52,19 @@ class Schedule(login.Login):
             if self.applicant_schedule_statuschange == 'True':
                 print('**-------->>> Interview schedule happened successfully')
 
+                # -------------------- output report values ----------------
+                self.ui_event_tab = 'Pass'
+                self.ui_advance_search = 'Pass'
+                self.ui_event_details = 'Pass'
+                self.ui_event_validation = 'Pass'
+                self.ui_floating_action = 'Pass'
+                self.ui_event_applicant_action = 'Pass'
+                self.ui_applicant_advance_search = 'Pass'
+                self.ui_change_applicant_status_action = 'Pass'
+                self.ui_change_applicant_status = 'Pass'
+
             self.applicant_getby_details(self.event_sprint_version_o)
+            self.ui_candidate_getby = 'Pass'
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.current_status_validation('Scheduled')
 
