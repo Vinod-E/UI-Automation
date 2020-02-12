@@ -15,12 +15,6 @@ crpo_test_data_file = {
     'create_event': generic_input_path + 'testdata/event_details.xls',
 
     'old_interview_file': generic_input_path + 'testdata/Old_interview.xls',
-
-    'interview_output_report': generic_input_path + 'reports/UI_Interview_Flow.xls',
-
-    'New_interview_output_report': generic_input_path + 'reports/UI_New_Interview_Flow.xls',
-
-    'Applicant_action_output_report': generic_input_path + 'reports/UI_Applicant_Action_Flow.xls'
 }
 
 attachments = {
@@ -30,4 +24,7 @@ attachments = {
 
 output = {
     'output_report': generic_input_path + 'reports/UI_CRPO_Flow.xls',
+    'old_int_report': generic_input_path + 'reports/UI_Interview_Flow_old.xls',
+    'new_int_report': generic_input_path + 'reports/UI_Interview_Flow_new.xls',
+    'Applicant_action_output_report': generic_input_path + 'reports/UI_Applicant_Action_Flow.xls'
 }

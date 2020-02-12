@@ -11,6 +11,15 @@ class CancelRequestAcceptance(cancel_interview_request.CancelInterviewRequest):
         self.cancel_reason = ''
         self.reason = ''
 
+        self.ui_event_tab_cr_a = []
+        self.ui_advance_search_cr_a = []
+        self.ui_event_details_cr_a = []
+        self.ui_event_validation_cr_a = []
+        self.ui_tracking_tab = []
+        self.ui_cancel_request_sub_tab = []
+        self.ui_request_validation = []
+        self.ui_approve = []
+
     def cancel_request_acceptance(self):
         try:
             # ---------------------------- New tab to login as Admin ---------------------------------------------
@@ -42,6 +51,17 @@ class CancelRequestAcceptance(cancel_interview_request.CancelInterviewRequest):
 
             self.x_path_element_webdriver_wait(page_elements.buttons['ok'])
             self.xpath.click()
+
+            # -------------------- output report values ----------------
+            if self.cancel_reason.strip() == self.reason:
+                self.ui_event_tab_cr_a = 'Pass'
+                self.ui_advance_search_cr_a = 'Pass'
+                self.ui_event_details_cr_a = 'Pass'
+                self.ui_event_validation_cr_a = 'Pass'
+                self.ui_tracking_tab = 'Pass'
+                self.ui_cancel_request_sub_tab = 'Pass'
+                self.ui_request_validation = 'Pass'
+                self.ui_approve = 'Pass'
 
         except Exception as acceptance_error:
             api_logger.error(acceptance_error)

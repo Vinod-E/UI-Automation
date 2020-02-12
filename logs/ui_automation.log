@@ -1100,3 +1100,30 @@ from unknown error: web view not found
 [11/Feb/2020 18:29:30.703 22829 ] ERROR [api_logger:provide_feedback.py:provide_feedback:39] Message: stale element reference: element is not attached to the page document
   (Session info: chrome=79.0.3945.88)
 
+[12/Feb/2020 12:03:56.773 4250 ] ERROR [api_logger:crpo_login.py:login_elements:85] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[12/Feb/2020 12:03:56.829 4250 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[12/Feb/2020 12:03:56.833 4250 ] ERROR [api_logger:crpo_login.py:crpo_login:108] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[12/Feb/2020 12:03:56.838 4250 ] ERROR [api_logger:crpo_login.py:server_connection_error:134] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[12/Feb/2020 12:03:56.842 4250 ] ERROR [api_logger:crpo_login.py:internet_not_available:147] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[12/Feb/2020 12:03:56.846 4250 ] ERROR [api_logger:crpo_bussiness_flow.py:<module>:98] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[12/Feb/2020 12:11:25.418 4522 ] ERROR [api_logger:getby_details.py:__common:16] Message: element click intercepted: Element <a class="pointer table-main-content ng-binding ng-scope" a="" ng-if="column.actionNeeded &amp;&amp; !column.isPopover" ng-click="actionClicked((column.actionCallBack || 'columnClicked'), entity, $event)" title="Sprint_SSRF">...</a> is not clickable at point (227, 419). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[12/Feb/2020 12:11:27.428 4522 ] ERROR [api_logger:event_applicants.py:applicant_get_by:71] list index out of range
+[12/Feb/2020 12:12:01.792 4522 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[12/Feb/2020 12:12:36.151 4522 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[12/Feb/2020 12:12:36.268 4522 ] ERROR [api_logger:event_manage_task.py:manage_task_event:45] list index out of range

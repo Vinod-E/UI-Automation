@@ -8,6 +8,15 @@ class SaveAsDraft(provide_feedback.ProvideFeedback):
     def __init__(self):
         super(SaveAsDraft, self).__init__()
 
+        self.ui_event_tab_d = []
+        self.ui_advance_search_d = []
+        self.ui_event_details_d = []
+        self.ui_event_validation_d = []
+        self.ui_floating_action_d = []
+        self.ui_event_interviews_action_d = []
+        self.ui_provide_feedback_action_d = []
+        self.ui_save_draft = []
+
     def save_as_draft_old(self):
         try:
             # ---------------------------- New tab to login as Interviewer ---------------------------------------------
@@ -40,6 +49,16 @@ class SaveAsDraft(provide_feedback.ProvideFeedback):
             time.sleep(1)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
+
+            # -------------------- output report values ----------------
+            self.ui_event_tab_d = 'Pass'
+            self.ui_advance_search_d = 'Pass'
+            self.ui_event_details_d = 'Pass'
+            self.ui_event_validation_d = 'Pass'
+            self.ui_floating_action_d = 'Pass'
+            self.ui_event_interviews_action_d = 'Pass'
+            self.ui_provide_feedback_action_d = 'Pass'
+            self.ui_save_draft = 'Pass'
 
         except Exception as error:
             api_logger.error(error)

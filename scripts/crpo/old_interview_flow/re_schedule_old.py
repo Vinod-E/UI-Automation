@@ -8,6 +8,17 @@ class ReSchedule(schedule_old.Schedule):
     def __init__(self):
         super(ReSchedule, self).__init__()
 
+        self.ui_event_tab_r = []
+        self.ui_advance_search_r = []
+        self.ui_event_details_r = []
+        self.ui_event_validation_r = []
+        self.ui_floating_action_r = []
+        self.ui_event_interviews_action = []
+        self.ui_grid_reschedule_action = []
+        self.ui_reschedule = []
+        self.ui_candidate_getby_r = []
+        self.ui_change_applicant_status = []
+
     def interview_re_schedule(self):
         try:
             # --------------------------- New tab to login as interviewer ---------------------------------------------
@@ -47,6 +58,19 @@ class ReSchedule(schedule_old.Schedule):
             self.current_status_validation('Rescheduled')
             if self.applicant_current_status.strip() == 'Rescheduled':
                 print('**-------->>> Interview re-schedule happened successfully')
+
+                # -------------------- output report values ----------------
+                self.ui_event_tab_r = 'Pass'
+                self.ui_advance_search_r = 'Pass'
+                self.ui_event_details_r = 'Pass'
+                self.ui_event_validation_r = 'Pass'
+                self.ui_floating_action_r = 'Pass'
+                self.ui_event_interviews_action = 'Pass'
+                self.ui_grid_reschedule_action = 'Pass'
+                self.ui_reschedule = 'Pass'
+                self.ui_candidate_getby_r = 'Pass'
+                self.ui_change_applicant_status = 'Pass'
+
             time.sleep(1.2)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
