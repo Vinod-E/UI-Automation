@@ -1469,3 +1469,6 @@ from unknown error: web view not found
 [13/Feb/2020 17:31:49.852 16598 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
   (Session info: chrome=79.0.3945.88)
 
+[13/Feb/2020 18:00:09.831 18099 ] ERROR [api_logger:check_box_selection.py:all_check_box_unlock:22] Message: element click intercepted: Element <input type="checkbox" class="chkDelete ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.isAllSelected" ng-change="vm.toggleSelection();"> is not clickable at point (50, 237). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+

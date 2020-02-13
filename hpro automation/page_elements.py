@@ -71,7 +71,8 @@ buttons = {
     'agree': '//*[@ng-click="vm.actionClicked({}{}{});"]',
     'submit_feedback': '//*[@ng-click="vm.submitFeedback(vm.isUpdateFeedback);"]',
     'live_schedule_multiple': '//*[@ng-click="vm.openScheduleMultipleModal();"]',
-    'live_schedule': '//*[@ng-click="vm.scheduleMultiple();$hide()"]'
+    'live_schedule': '//*[@ng-click="vm.scheduleMultiple();$hide()"]',
+    'live_applicant_search': '//*[@ng-click="vm.searchApplicants();"]'
 }
 
 text_fields = {

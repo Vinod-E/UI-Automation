@@ -45,6 +45,13 @@ class SubmitFeedbackInt1(behalf_feedback.BehalfFeedback):
             self.x_path_element_webdriver_wait(page_elements.buckets['select_interview_stage'].format(self.stage2_l))
             self.xpath.click()
 
+            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Candidate Name'))
+            self.xpath.send_keys(self.event_sprint_version_l)
+            time.sleep(0.6)
+            self.x_path_element_webdriver_wait(page_elements.buttons['live_applicant_search'])
+            self.xpath.click()
+
+            time.sleep(0.6)
             self.all_check_box_unlock()
             self.x_path_element_webdriver_wait(page_elements.buttons['live_schedule_multiple'])
             self.xpath.click()
