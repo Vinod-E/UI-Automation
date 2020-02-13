@@ -1,9 +1,9 @@
 import config
 from logger_settings import api_logger
-from scripts.crpo.common import check_box_selection
+from scripts.crpo.common import login
 
 
-class Image(check_box_selection.CheckBox):
+class Image(login.Login):
     def __init__(self):
         super(Image, self).__init__()
 

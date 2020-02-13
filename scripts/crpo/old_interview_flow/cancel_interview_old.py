@@ -52,7 +52,7 @@ class CancelInterview(re_schedule_old.ReSchedule):
             time.sleep(1)
             self.crpo_logout()
             self.login('Admin', self.xl_username, self.xl_password)
-            time.sleep(2.5)
+            time.sleep(3)
 
         except Exception as cancel:
             api_logger.error(cancel)

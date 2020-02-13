@@ -70,6 +70,8 @@ buttons = {
     'partial_feedback': '//*[@ng-click="vm.partialSubmitFeedback();"]',
     'agree': '//*[@ng-click="vm.actionClicked({}{}{});"]',
     'submit_feedback': '//*[@ng-click="vm.submitFeedback(vm.isUpdateFeedback);"]',
+    'live_schedule_multiple': '//*[@ng-click="vm.openScheduleMultipleModal();"]',
+    'live_schedule': '//*[@ng-click="vm.scheduleMultiple();$hide()"]'
 }
 
 text_fields = {
@@ -101,6 +103,7 @@ floating_actions = {
     'View_Applicants': '//*[@title="View Candidates"]',
     'manage_task': '//*[@title="Manage Task"]',
     'event_interviews': '//*[@title="View Event Interviews"]',
+    'live_interview': '//*[@title="Live Schedule Interviews"]'
 }
 grid_actions = {
     'reschedule': 'cardlist-view-Reschedule-Interview',
@@ -136,7 +139,16 @@ getby_details = {
     'getbyid': '//*[@title="{}"]',
     'event_getbyid': '//*[@title="Click to view full details"]',
 }
-
+buckets = {
+    'Partial_interviews': '//*[@label="Partial Submissions"]',
+    'completed_interviews': '//*[@label="Completed"]',
+    'cancel_interviews': '//*[@label="Cancelled"]',
+    'all_interviews': '//*[@label="All Interviews"]',
+    'select_interview_stage': '//*[@label="{}"]'
+}
+title = {
+    'title': '//*[@title="{}"]',
+}
 job = {
     'description_box': '//*[@id="mainBodyElement"]/div[3]/section/div/'
                        'basic-job/div/div[2]/div[8]/div/wysiwyg-edit/div/div[2]/iframe',
@@ -291,9 +303,15 @@ interview = {
     'updated_feedback': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
                         'accordian-row-table[1]/table/tbody/tr[1]/td[3]/span'
 }
-buckets = {
-    'Partial_interviews': '//*[@label="Partial Submissions"]',
-    'completed_interviews': '//*[@label="Completed"]',
-    'cancel_interviews': '//*[@label="Cancelled"]',
-    'all_interviews': '//*[@label="All Interviews"]',
+live_interview = {
+    'validate': '//*[@class="col-sm-8 ellipsis_text ng-binding"]',
+    'int1_select': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/inline-multi-select/label[1]/input',
+    'int2_select': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/inline-multi-select/label[2]/input',
+    'provide_feedback': '//*[@ng-click="data.onGiveFeedbackClick(rowKey);"]',
+    'down': '//*[@class="fa fa-chevron-down"]',
+    'shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
+    'feedback_int1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[4]/div[2]/div[1]/div[1]/'
+                     'inline-multi-select/label[1]/input',
+    'feedback_int2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[4]/div[2]/div[1]/div[1]/'
+                     'inline-multi-select/label[2]/input'
 }
