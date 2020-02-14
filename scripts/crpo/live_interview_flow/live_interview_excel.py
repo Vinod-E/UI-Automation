@@ -30,9 +30,9 @@ class LiveInterviewExcelRead(common_file.CommonFile):
         self.event_sprint_version_l = []
 
         # ------------- Iterate Excel sheet------------------------
-        self.old_interview_excel_read()
+        self.live_interview_excel_read()
 
-    def old_interview_excel_read(self):
+    def live_interview_excel_read(self):
 
         # -------------------------------------- interview details -----------------------------------------------------
         for i in range(1, self.feedback_sheet1.nrows):

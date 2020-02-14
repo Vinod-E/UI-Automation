@@ -1,9 +1,9 @@
 import config
 from logger_settings import api_logger
-from scripts.crpo.common import login
+from scripts.crpo.common import settings
 
 
-class Image(login.Login):
+class Image(settings.Settings):
     def __init__(self):
         super(Image, self).__init__()
 
