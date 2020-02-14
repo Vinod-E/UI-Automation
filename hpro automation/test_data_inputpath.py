@@ -16,6 +16,8 @@ crpo_test_data_file = {
 
     'old_interview_file': generic_input_path + 'testdata/Old_interview.xls',
 
+    'new_interview_file': generic_input_path + 'testdata/New_interview.xls',
+
     'live_interview_file': generic_input_path + 'testdata/Live_interview.xls',
 }
 

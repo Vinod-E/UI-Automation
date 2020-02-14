@@ -14,7 +14,13 @@ login = {
     'logout': 'crpo-settings-logout',
     'login_back': '//*[@ng-click="vm.backToLogin()"]'
 }
-
+setting_modules = {
+    'settings': '//*[@ui-sref="crpo.settings"]',
+    'interview_module': '//*[@title="Interview Module"]',
+    'enable_new_feedback_form': '//*[@ui-sref="crpo.settings.interview.enableNewInterviewFeedbackForm"]',
+    'On': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[2]/div[1]/ui-view/div/div/div/div[2]/div/label[1]',
+    'Off': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[2]/div[1]/ui-view/div/div/div/div[2]/div/label[2]',
+}
 tabs = {
     # ------------------------------------------Event menu tabs --------------------------------------------------------
     'job_tab': '//*[@ui-sref="crpo.jobRole"]',
@@ -45,6 +51,8 @@ buttons = {
     'template-search': '//*[@ng-click="vm.service.templates.search();"]',
     'template_save': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/'
                      'div/div[2]/div/div/div[2]/div/div/button[2]',
+    'new_template_search': '//*[@ng-click="vm.actionClicked({}{}{})"]',
+    'use': '//*[@ng-click="data.actionClicked({}{}{},292)"]',
     'job_ec_save': '//*[@ng-click="vm.saveEcConfig();"]',
     'job_ec_close': '//*[@ng-click="vm.cancel();"]',
     'done': '//*[@ng-click="$hide();"]',
@@ -72,7 +80,9 @@ buttons = {
     'submit_feedback': '//*[@ng-click="vm.submitFeedback(vm.isUpdateFeedback);"]',
     'live_schedule_multiple': '//*[@ng-click="vm.openScheduleMultipleModal();"]',
     'live_schedule': '//*[@ng-click="vm.scheduleMultiple();$hide()"]',
-    'live_applicant_search': '//*[@ng-click="vm.searchApplicants();"]'
+    'live_applicant_search': '//*[@ng-click="vm.searchApplicants();"]',
+    'new_save_draft': '//*[@ng-if="vm.data.configs.isDraftAllowed"]',
+    'new_submit_feedback': '//*[@ng-if="vm.data.configs.isSubmitAllowed"]'
 }
 
 text_fields = {
@@ -315,4 +325,20 @@ live_interview = {
                      'inline-multi-select/label[1]/input',
     'feedback_int2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[4]/div[2]/div[1]/div[1]/'
                      'inline-multi-select/label[2]/input'
+}
+
+new_interview = {
+    'rating1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]'
+               '/div[1]/div[1]/div/div[1]/div/select',
+    'comment1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]'
+                '/div[1]/div[1]/div/div[2]/div/auto-grow-textarea/textarea',
+    'rating2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]'
+               '/div[1]/div[2]/div/div[1]/div/select',
+    'comment2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]'
+                '/div[1]/div[2]/div/div[2]/div/auto-grow-textarea/textarea',
+    'rating3': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]'
+               '/div[1]/div[3]/div/div/div/select',
+    'overall': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]'
+               '/div[2]/div/div/div/div/div[3]/auto-grow-textarea/textarea',
+    'no_interviews': '//*[@data-ng-if="options.title"]'
 }
