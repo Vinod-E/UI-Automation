@@ -15,6 +15,7 @@ class FeedbackConfiguration(job_search.JobSearch):
         self.ui_floating_action_n = []
         self.ui_feedback_form_action_n = []
         self.ui_feedback_form_validation = []
+        self.ui_feedback_form_search = []
 
     def feedback_configuration(self):
         try:
@@ -62,6 +63,7 @@ class FeedbackConfiguration(job_search.JobSearch):
 
             if self.form in self.configure_form:
                 print('**-------->>> Feedback form configure to {} successfully'.format(self.xl_stage_n))
+                self.ui_feedback_form_search = 'Pass'
                 self.ui_feedback_form_validation = 'Pass'
         except Exception as ee:
             api_logger.error(ee)

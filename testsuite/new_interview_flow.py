@@ -15,6 +15,10 @@ class NewInterviewFlow(new_interview_flow_output.NewInterviewOutputFile):
             self.new_feedback_on()
             self.feedback_configuration()
             self.new_feedback_off()
+
+            self.settings_on_off_output_report()
+            self.new_feedback_form_output_report()
+
         except Exception as error:
             api_logger.error(error)
 
@@ -22,6 +26,7 @@ class NewInterviewFlow(new_interview_flow_output.NewInterviewOutputFile):
         try:
             print('<<<<<<<<<<<<<<<<<<<<<<< Schedule with new Feedback >>>>>>>>>>>>>>>>>>>>>>>>')
             self.new_interview_schedule()
+            self.new_form_schedule_output_report()
 
         except Exception as error:
             api_logger.error(error)
@@ -30,8 +35,13 @@ class NewInterviewFlow(new_interview_flow_output.NewInterviewOutputFile):
         try:
             print('<<<<<<<<<<<<<<<<<<<<<<< Save draft and Submit feedback >>>>>>>>>>>>>>>>>>>>>>>>')
             self.save_draft_new()
+            self.new_save_draft_output_report()
+
             self.submit_feedback_int1()
+            self.submit_feedback_one_output_report()
+
             self.submit_feedback_int2()
+            self.submit_feedback_two_output_report()
 
         except Exception as error:
             api_logger.error(error)

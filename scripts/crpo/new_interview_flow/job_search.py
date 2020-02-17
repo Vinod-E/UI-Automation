@@ -10,9 +10,10 @@ class JobSearch(settings_On_Off.Settings):
 
         self.job_name_breadcumb = ''
 
-        self.ui_new_feedback_enable = []
+        self.ui_job_tab = []
         self.ui_job_advance_search_n = []
         self.ui_job_getbyid_n = []
+        self.ui_job_validation_n = []
 
     def job_search(self):
         try:
@@ -34,7 +35,9 @@ class JobSearch(settings_On_Off.Settings):
             self.job_validation('getbyid')
             if self.job_name_breadcumb == self.job_sprint_version_n:
                 print('**-------->>> Job get by name is working')
+                self.ui_job_tab = 'Pass'
                 self.ui_job_getbyid_n = 'Pass'
+                self.ui_job_validation_n = 'Pass'
                 time.sleep(3)
 
         except Exception as error:
