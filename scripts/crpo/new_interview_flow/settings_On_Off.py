@@ -8,6 +8,9 @@ class Settings(new_interview_excel.NewInterviewExcelRead):
     def __init__(self):
         super(Settings, self).__init__()
 
+        self.ui_common_settings = []
+        self.ui_settings = []
+        self.interview_module = []
         self.ui_new_feedback_enable = []
         self.ui_new_feedback_disable = []
 
@@ -20,6 +23,9 @@ class Settings(new_interview_excel.NewInterviewExcelRead):
             self.enable_new_feedback_form(page_elements.setting_modules['On'],
                                           'Enable')
             if self.enable_disable_validation == 'True':
+                self.ui_common_settings = 'Pass'
+                self.ui_settings = 'Pass'
+                self.interview_module = 'Pass'
                 self.ui_new_feedback_enable = 'Pass'
         except Exception as error:
             api_logger.error(error)
@@ -34,6 +40,9 @@ class Settings(new_interview_excel.NewInterviewExcelRead):
             self.enable_new_feedback_form(page_elements.setting_modules['Off'],
                                           'Disable')
             if self.enable_disable_validation == 'True':
+                self.ui_common_settings = 'Pass'
+                self.ui_settings = 'Pass'
+                self.interview_module = 'Pass'
                 self.ui_new_feedback_disable = 'Pass'
         except Exception as error:
             api_logger.error(error)

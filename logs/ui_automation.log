@@ -1801,3 +1801,35 @@ from unknown error: web view not found
 from unknown error: web view not found
   (Session info: chrome=79.0.3945.88)
 
+[17/Feb/2020 14:50:12.203 7285 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[17/Feb/2020 14:50:12.211 7285 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[17/Feb/2020 14:50:12.215 7285 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[17/Feb/2020 14:50:13.222 7285 ] ERROR [api_logger:advance_search.py:name_search:54] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[17/Feb/2020 14:50:15.229 7285 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[17/Feb/2020 14:50:15.233 7285 ] ERROR [api_logger:getby_details.py:__common:16] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[17/Feb/2020 15:36:42.043 8249 ] ERROR [api_logger:feedback_form_configure.py:feedback_configuration:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[17/Feb/2020 16:06:39.641 8822 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:67] Message: element click intercepted: Element <input ng-trim="false" type="radio" name="testacceprtanceoffer" data-ng-model="formControl.Value" data-ng-value="value" data-ng-click="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.click &amp;&amp; vm.executeEvent(formControl.Config.event.click.execute, $index)" data-ng-change="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.change &amp;&amp; vm.executeEvent(formControl.Config.event.change.execute, $index)" data-ng-focus="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.focus &amp;&amp; vm.executeEvent(formControl.Config.event.focus.execute, $index)" data-ng-blur="vm.validate(formControl); formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.blur &amp;&amp; vm.executeEvent(formControl.Config.event.blur.execute, $index)" data-ng-init="formControl.Config &amp;&amp; formControl.Config.event &amp;&amp; formControl.Config.event.init &amp;&amp; vm.executeEvent(formControl.Config.event.init.execute, $index)" ng-disabled="formControl.settingsObj.IsReadOnly || formControl.DISABLED" class="ng-pristine ng-untouched ng-valid ng-empty" value="Yes"> is not clickable at point (385, 156). Other element would receive the click: <div block-ui-container="" class="block-ui-container ng-scope">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[17/Feb/2020 16:07:19.127 8822 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[17/Feb/2020 16:07:19.147 8822 ] ERROR [api_logger:change_applicant_status.py:applicant_current_status_validation:53] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[17/Feb/2020 16:18:32.386 9787 ] ERROR [api_logger:unlock_feedback.py:unlock_feedback_form:78] Message: element click intercepted: Element <button aria-hidden="true" data-dismiss="modal" class="close" type="button" ng-click="$hide();">...</button> is not clickable at point (1279, 89). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
