@@ -39,7 +39,7 @@ class InterviewPanel(job_automation.JobAutomation):
                 time.sleep(1)
                 self.x_path_element_webdriver_wait(page_elements.buttons['save_interviewers_to_panel'])
                 self.xpath.click()
-                time.sleep(3)
+                time.sleep(5)
 
                 # ----------------------------- Validation -------------------------------------------------------------
                 self.x_path_element_webdriver_wait(page_elements.tabs['job_owners'])

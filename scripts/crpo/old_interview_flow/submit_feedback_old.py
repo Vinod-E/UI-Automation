@@ -83,6 +83,7 @@ class SubmittedFeedback(partial_feedback.PartialFeedback):
 
     def submitted_validation(self, status):
         try:
+            time.sleep(2)
             self.x_path_element_webdriver_wait(page_elements.buckets['completed_interviews'])
             self.xpath.click()
 
