@@ -1833,3 +1833,284 @@ from unknown error: web view not found
 [17/Feb/2020 16:18:32.386 9787 ] ERROR [api_logger:unlock_feedback.py:unlock_feedback_form:78] Message: element click intercepted: Element <button aria-hidden="true" data-dismiss="modal" class="close" type="button" ng-click="$hide();">...</button> is not clickable at point (1279, 89). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
   (Session info: chrome=79.0.3945.88)
 
+[19/Feb/2020 15:24:17.248 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:17.268 11151 ] ERROR [api_logger:create_job.py:create_job_role:71] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:17.271 11151 ] ERROR [api_logger:image_capture.py:image_capture:14] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:17.274 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:17.277 11151 ] ERROR [api_logger:create_job.py:job_validation:95] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:17.279 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:17.281 11151 ] ERROR [api_logger:create_job.py:job_validation:95] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:17.283 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:17.285 11151 ] ERROR [api_logger:floating_action.py:floating_action:17] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.291 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.296 11151 ] ERROR [api_logger:selection_process.py:config_selection_process:78] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.301 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.305 11151 ] ERROR [api_logger:create_job.py:job_validation:95] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.310 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.315 11151 ] ERROR [api_logger:create_job.py:job_validation:95] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.319 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.324 11151 ] ERROR [api_logger:create_job.py:job_validation:95] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.328 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.333 11151 ] ERROR [api_logger:create_job.py:job_validation:95] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.340 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.344 11151 ] ERROR [api_logger:create_job.py:job_validation:95] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.351 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.355 11151 ] ERROR [api_logger:create_job.py:job_validation:95] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.360 11151 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.363 11151 ] ERROR [api_logger:create_job.py:job_validation:95] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:24:19.369 11151 ] ERROR [api_logger:create_requirement.py:create_requirement:72] Message: chrome not reachable
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:29:25.003 11617 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: element click intercepted: Element <a a="" ng-if="value.state" ui-sref="crpo.jobRole" style="user-select: none;" class="ng-binding ng-scope" href="#/crpoqa/jobRole/">...</a> is not clickable at point (684, 29). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:29:58.282 11617 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[19/Feb/2020 15:29:59.299 11617 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:31:12.985 11617 ] ERROR [api_logger:advance_search.py:assessment_name_search:70] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:31:48.161 11617 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[19/Feb/2020 15:32:22.996 11617 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[19/Feb/2020 15:32:58.390 11617 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[19/Feb/2020 15:35:55.297 11617 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:67] Message: element click intercepted: Element <a href="javascript:void(0);" ng-click="vm.toggleAdvancedSearch()" class="filter-icon-container filterBtn" id="">...</a> is not clickable at point (96, 126). Other element would receive the click: <div block-ui-container="" class="block-ui-container ng-scope">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:36:34.770 11617 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[19/Feb/2020 15:36:34.800 11617 ] ERROR [api_logger:change_applicant_status.py:applicant_current_status_validation:53] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:36:46.255 11617 ] ERROR [api_logger:embrace_app.py:submit_task_verification:127] Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[3]/div[1]/div/div[5]"}
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:44:35.965 12384 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: element click intercepted: Element <a a="" class="btn-group show_form pointer ng-scope" id="cardlist-view-filter" bs-tooltip="" data-placement="bottom" delay="500" ng-click="vm.showAdvanceSearch();" ng-if="vm.config.isAdvanceSearch">...</a> is not clickable at point (77, 113). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:45:07.571 12384 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[19/Feb/2020 15:45:08.588 12384 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:52:23.309 12770 ] ERROR [api_logger:submit_feedback_live_int1.py:submit_feedback_live_int1:103] Message: element click intercepted: Element <i ng-hide="row.rowOptions.hideExpandToggle" class="fa fa-chevron-down" ng-class="{'fa-chevron-down': !row.rowOptions.isExpanded, 'fa-chevron-up': row.rowOptions.isExpanded}"></i> is not clickable at point (1264, 272). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:52:24.425 12770 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] Message: element click intercepted: Element <a style="display: flex; justify-content: space-between;cursor: pointer;" class="ng-binding">...</a> is not clickable at point (1234, 29). Other element would receive the click: <div class="growl-message ng-binding" ng-bind-html="message.text">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:52:56.008 12770 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[19/Feb/2020 15:52:56.019 12770 ] ERROR [api_logger:login.py:login:24] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 15:53:59.070 12770 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[19/Feb/2020 19:54:16.461 18977 ] ERROR [api_logger:partial_feedback.py:partial_bucket:91] Message: element click intercepted: Element <button class="form-control btn-submit" ng-click="vm.submitFeedback(vm.isUpdateFeedback);" type="submit">...</button> is not clickable at point (1059, 519). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:55:09.860 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[19/Feb/2020 19:55:09.875 18977 ] ERROR [api_logger:provide_feedback.py:provide_feedback:39] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:09.684 18977 ] ERROR [api_logger:getby_details.py:__common:16] Message: element click intercepted: Element <a class="pointer table-main-content ng-binding ng-scope" a="" ng-if="column.actionNeeded &amp;&amp; !column.isPopover" ng-click="actionClicked((column.actionCallBack || 'columnClicked'), entity, $event)" title="Sprint_117_live">...</a> is not clickable at point (373, 235). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:12.466 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'NoneType' object has no attribute 'is_displayed'
+[19/Feb/2020 19:56:12.470 18977 ] ERROR [api_logger:schedule_old.py:current_status_validation:109] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:13.477 18977 ] ERROR [api_logger:submit_feedback_old.py:submitted_validation:98] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:14.485 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:14.487 18977 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:14.489 18977 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:14.491 18977 ] ERROR [api_logger:login.py:login:24] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:16.997 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:17.003 18977 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:17.010 18977 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:18.015 18977 ] ERROR [api_logger:advance_search.py:name_search:54] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:18.018 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:18.021 18977 ] ERROR [api_logger:getby_details.py:event_getby_details:24] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:20.026 18977 ] ERROR [api_logger:schedule_old.py:event_validation:94] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:20.029 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:20.032 18977 ] ERROR [api_logger:floating_action.py:floating_action:17] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:21.537 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:21.540 18977 ] ERROR [api_logger:unlock_feedback.py:unlock_feedback_form:78] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:28.554 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:28.557 18977 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:28.572 18977 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:28.575 18977 ] ERROR [api_logger:login.py:login:24] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:31.078 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:31.080 18977 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:31.081 18977 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:32.083 18977 ] ERROR [api_logger:advance_search.py:name_search:54] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:32.084 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:32.085 18977 ] ERROR [api_logger:getby_details.py:event_getby_details:24] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:34.089 18977 ] ERROR [api_logger:schedule_old.py:event_validation:94] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:34.090 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:34.090 18977 ] ERROR [api_logger:floating_action.py:floating_action:17] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:35.595 18977 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:35.599 18977 ] ERROR [api_logger:decision_feedback_updation.py:decision_feedback_update:88] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[19/Feb/2020 19:56:35.628 18977 ] ERROR [api_logger:old_interview_flow.py:<module>:89] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.88)
+
+[20/Feb/2020 15:53:07.007 7395 ] ERROR [api_logger:environment_setup.py:__init__:24] Message: session not created: This version of ChromeDriver only supports Chrome version 78
+
+[20/Feb/2020 15:53:07.011 7395 ] ERROR [api_logger:crpo_login.py:__init__:34] 'BusinessFlow' object has no attribute 'driver'
+[20/Feb/2020 15:53:07.026 7395 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] 'BusinessFlow' object has no attribute 'driver'
+[20/Feb/2020 15:53:07.027 7395 ] ERROR [api_logger:crpo_login.py:login_elements:85] 'str' object has no attribute 'send_keys'
+[20/Feb/2020 15:53:07.027 7395 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'BusinessFlow' object has no attribute 'driver'
+[20/Feb/2020 15:53:07.027 7395 ] ERROR [api_logger:crpo_login.py:crpo_login:108] 'str' object has no attribute 'text'
+[20/Feb/2020 15:53:07.027 7395 ] ERROR [api_logger:crpo_login.py:server_connection_error:134] 'BusinessFlow' object has no attribute 'driver'
+[20/Feb/2020 15:53:07.027 7395 ] ERROR [api_logger:crpo_login.py:internet_not_available:147] 'BusinessFlow' object has no attribute 'driver'
+[20/Feb/2020 15:53:07.027 7395 ] ERROR [api_logger:crpo_bussiness_flow.py:<module>:98] 'BusinessFlow' object has no attribute 'driver'
