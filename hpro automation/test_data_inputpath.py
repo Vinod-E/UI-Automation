@@ -19,6 +19,8 @@ crpo_test_data_file = {
     'new_interview_file': generic_input_path + 'testdata/New_interview.xls',
 
     'live_interview_file': generic_input_path + 'testdata/Live_interview.xls',
+
+    'applicant_action_file': generic_input_path + 'testdata/Applicants_actions.xls'
 }
 
 attachments = {

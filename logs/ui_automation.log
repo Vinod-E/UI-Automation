@@ -2114,3 +2114,56 @@ from unknown error: web view not found
 [20/Feb/2020 15:53:07.027 7395 ] ERROR [api_logger:crpo_login.py:server_connection_error:134] 'BusinessFlow' object has no attribute 'driver'
 [20/Feb/2020 15:53:07.027 7395 ] ERROR [api_logger:crpo_login.py:internet_not_available:147] 'BusinessFlow' object has no attribute 'driver'
 [20/Feb/2020 15:53:07.027 7395 ] ERROR [api_logger:crpo_bussiness_flow.py:<module>:98] 'BusinessFlow' object has no attribute 'driver'
+[24/Feb/2020 12:45:33.712 4796 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'NoneType' object has no attribute 'is_displayed'
+[24/Feb/2020 12:45:33.717 4796 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 12:45:33.719 4796 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 12:45:34.720 4796 ] ERROR [api_logger:advance_search.py:name_search:54] 'str' object has no attribute 'send_keys'
+[24/Feb/2020 12:45:34.723 4796 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 12:45:34.728 4796 ] ERROR [api_logger:getby_details.py:event_getby_details:24] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 12:45:36.734 4796 ] ERROR [api_logger:event_applicants.py:event_validation:62] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 12:45:36.738 4796 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 12:45:36.741 4796 ] ERROR [api_logger:floating_action.py:floating_action:17] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 12:45:38.246 4796 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 12:45:38.249 4796 ] ERROR [api_logger:event_applicants.py:event_tab_search:43] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 12:46:52.194 4992 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[24/Feb/2020 12:46:52.227 4992 ] ERROR [api_logger:event_applicants.py:event_validation:62] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 14:38:56.023 7287 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[24/Feb/2020 14:39:44.433 7513 ] ERROR [api_logger:applicant_status_change.py:applicant_status_change:40] Message: element click intercepted: Element <button class="btn btn-primary btn-sm" ng-click="vm.changeCandidateStatus()">...</button> is not clickable at point (1264, 431). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[24/Feb/2020 15:38:21.120 9007 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[24/Feb/2020 15:38:21.151 9007 ] ERROR [api_logger:webdriver_functions.py:web_element_text:15] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+

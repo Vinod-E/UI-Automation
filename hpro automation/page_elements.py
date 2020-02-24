@@ -123,6 +123,7 @@ grid_actions = {
     'provide_feedback': 'cardlist-view-Provide-Interview Feedback',
     'unlock_feedback': 'cardlist-view-Unlock-Interviewer Feedback',
     'view_feedback': 'cardlist-view-View-Feedback History',
+    'more_actions': '//*[@id="req-list-view"]/tr/td[2]/span[3]',
 }
 advance_search = {
     'search': 'cardlist-view-filter',
@@ -225,7 +226,6 @@ requirement_validations = {
 
 assessment = {
     'grid_assessment_name': '//*[@title="{}"]',
-    'more_actions': '//*[@id="req-list-view"]/tr/td[2]/span[3]',
 }
 
 assessment_validation = {
