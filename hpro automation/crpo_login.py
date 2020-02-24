@@ -1,5 +1,5 @@
 from logger_settings import api_logger
-import webdriver_wait
+import webdriver_functions
 import page_elements
 import test_data_inputpath
 import xlrd
@@ -7,7 +7,7 @@ import time
 import config
 
 
-class CrpoLogin(webdriver_wait.WebDriverElementWait):
+class CrpoLogin(webdriver_functions.WebdriverFunctions):
     def __init__(self):
         super(CrpoLogin, self).__init__()
 

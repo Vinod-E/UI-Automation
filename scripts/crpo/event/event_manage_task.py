@@ -48,6 +48,7 @@ class EventManageTask(change_applicant_status.ChangeApplicantStatus):
         try:
             self.x_path_element_webdriver_wait(page_elements.event_applicant['task_candidate_name'])
             self.applicant_with_id = self.xpath.text
+            time.sleep(1)
             if self.event_sprint_version in self.applicant_with_id:
                 self.task_validation_check = 'Pass'
                 print('**-------->>> Manage task candidate '

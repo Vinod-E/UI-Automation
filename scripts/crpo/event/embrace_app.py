@@ -48,7 +48,7 @@ class EmbraceApp(event_manage_task.EventManageTask):
             self.xpath.click()
             self.ui_embrace_advance_search = 'Pass'
 
-            time.sleep(2)
+            time.sleep(3.5)
             self.x_path_element_webdriver_wait(page_elements.embrace['submit_behalf_of'])
             self.xpath.click()
 
@@ -117,6 +117,7 @@ class EmbraceApp(event_manage_task.EventManageTask):
             if str(self.rejected_tasks) in rejected.text:
                 self.ui_rejected_tasks = 'Pass'
 
+            time.sleep(1.5)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.driver.close()
