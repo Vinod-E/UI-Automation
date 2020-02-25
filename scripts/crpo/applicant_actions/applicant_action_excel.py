@@ -22,6 +22,7 @@ class ApplicantActionsExcelRead(common_file.CommonFile):
         self.xl_status_a = []
         self.xl_mail_description_a = []
         self.xl_comment_a = []
+        self.xl_sms_template_a = []
 
         self.event_sprint_version_a = []
 
@@ -45,6 +46,8 @@ class ApplicantActionsExcelRead(common_file.CommonFile):
                 self.xl_mail_description_a.append(rows[3])
             if rows[4]:
                 self.xl_comment_a.append(rows[4])
+            if rows[5]:
+                self.xl_sms_template_a.append(rows[5])
 
             for j in self.xl_event_name_a:
                 event_name = j

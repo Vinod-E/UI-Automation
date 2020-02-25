@@ -2167,3 +2167,381 @@ from unknown error: web view not found
 [24/Feb/2020 15:38:21.151 9007 ] ERROR [api_logger:webdriver_functions.py:web_element_text:15] Message: stale element reference: element is not attached to the page document
   (Session info: chrome=80.0.3987.87)
 
+[24/Feb/2020 17:39:36.918 12599 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[24/Feb/2020 17:39:37.952 12599 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 10:48:14.089 3037 ] ERROR [api_logger:advance_search.py:applicant_advance_search:37] Message: element click intercepted: Element <a a="" class="btn-group show_form pointer ng-scope" id="cardlist-view-filter" bs-tooltip="" data-placement="bottom" delay="500" ng-click="vm.showAdvanceSearch();" ng-if="vm.config.isAdvanceSearch">...</a> is not clickable at point (82, 113). Other element would receive the click: <div class="modal-header" style="display: flex;align-items: center;justify-content: space-between;">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 10:48:45.735 3037 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[25/Feb/2020 10:48:46.752 3037 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 10:50:24.258 3288 ] ERROR [api_logger:getby_details.py:__common:16] Message: element click intercepted: Element <a class="pointer table-main-content ng-binding ng-scope" a="" ng-if="column.actionNeeded &amp;&amp; !column.isPopover" ng-click="actionClicked((column.actionCallBack || 'columnClicked'), entity, $event)" title="Sprint_117.1">...</a> is not clickable at point (228, 419). Other element would receive the click: <div class="modal-footer">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 10:52:58.300 3552 ] ERROR [api_logger:getby_details.py:__common:16] Message: element click intercepted: Element <a class="pointer table-main-content ng-binding ng-scope" a="" ng-if="column.actionNeeded &amp;&amp; !column.isPopover" ng-click="actionClicked((column.actionCallBack || 'columnClicked'), entity, $event)" title="Sprint_117.1">...</a> is not clickable at point (228, 419). Other element would receive the click: <div class="modal-footer">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:35:29.932 5200 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 11:35:29.947 5200 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:36] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:36:08.398 5200 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 11:37:47.704 5442 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: element click intercepted: Element <input type="checkbox" name="grid_items" class="chkDelete ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" ng-model="entity.checked" ng-change="itemSelectionChange(entity)" style=""> is not clickable at point (56, 419). Other element would receive the click: <div class="modal-footer">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:38:19.329 5442 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 11:38:19.344 5442 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:43] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:38:33.474 5442 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] 'NoneType' object has no attribute 'is_displayed'
+[25/Feb/2020 11:38:33.476 5442 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:57] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:39:00.738 5706 ] ERROR [api_logger:crpo_login.py:__init__:34] Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:39:00.775 5706 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:39:00.775 5706 ] ERROR [api_logger:crpo_login.py:login_elements:85] 'str' object has no attribute 'send_keys'
+[25/Feb/2020 11:39:00.778 5706 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:39:00.778 5706 ] ERROR [api_logger:crpo_login.py:crpo_login:108] 'str' object has no attribute 'text'
+[25/Feb/2020 11:39:00.781 5706 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:39:00.781 5706 ] ERROR [api_logger:advance_search.py:advance_search:25] 'str' object has no attribute 'click'
+[25/Feb/2020 11:39:00.787 5706 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:39:01.788 5706 ] ERROR [api_logger:advance_search.py:name_search:54] 'str' object has no attribute 'send_keys'
+[25/Feb/2020 11:39:01.790 5706 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:39:01.790 5706 ] ERROR [api_logger:getby_details.py:event_getby_details:24] 'str' object has no attribute 'click'
+[25/Feb/2020 11:39:56.942 5892 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:40:28.537 5892 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 11:40:28.550 5892 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:43] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:40:50.145 5892 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:40:50.163 5892 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:57] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 11:43:44.791 6156 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 11:43:44.808 6156 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:43] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 12:31:38.098 8108 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 12:31:38.114 8108 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:57] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 12:32:53.250 8412 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 13:44:45.361 10113 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 13:44:59.799 10113 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: element click intercepted: Element <input type="checkbox" ng-model="vm.isTestRequaredForTag" ng-change="vm.selectedTest = 0" class="ng-pristine ng-untouched ng-valid ng-empty"> is not clickable at point (260, 293). Other element would receive the click: <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.tamodel" bs-options="item[vm.config.label] for item in vm.data" placeholder="Applicant Owner" bs-typeahead="" ng-change="vm.onTextChange(vm.tamodel);" data-limit="100" template-url="common/directives/taDropdown/taTypeAhead.tpl.html" autocomplete="off">
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:30:59.995 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:30:59.997 11578 ] ERROR [api_logger:applicant_status_change.py:applicant_status_change:40] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:00.003 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:00.006 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:02.012 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:02.017 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.023 11578 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.027 11578 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.032 11578 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.038 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:44] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.043 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.048 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:58] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.053 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.060 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:58] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.064 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.068 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.073 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:03.076 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:05.082 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:05.087 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:05.092 11578 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:05.096 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:44] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:06.102 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:06.107 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:58] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:06.112 11578 ] ERROR [api_logger:event_applicant_actions.py:send_sms:54] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:07.119 11578 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:07.125 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:44] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:07.130 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:07.135 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:58] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:07.140 11578 ] ERROR [api_logger:event_applicant_actions.py:tag_applicants_to_job_test:74] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:08.147 11578 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:08.152 11578 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:08.157 11578 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:08.163 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:44] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:08.167 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:08.173 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:08.178 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:08.183 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:10.190 11578 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:31:10.196 11578 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:32:35.688 11787 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: element click intercepted: Element <input type="checkbox" name="grid_items" class="chkDelete ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" ng-model="entity.checked" ng-change="itemSelectionChange(entity)" style=""> is not clickable at point (56, 419). Other element would receive the click: <div class="modal-footer">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:32:35.861 11787 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:44] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:43:46.478 12462 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 14:43:46.491 12462 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:44:18.061 12462 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 14:44:18.091 12462 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:56:07.008 13070 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 14:56:07.020 13070 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:56:38.642 13070 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 14:56:38.671 13070 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 14:57:12.290 13070 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 14:57:12.305 13070 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:24:07.495 13947 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 15:24:07.509 13947 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:24:18.041 13947 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 15:24:18.063 13947 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:24:30.595 13947 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 15:24:30.609 13947 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:24:42.461 13947 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 15:24:42.469 13947 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:24:53.032 13947 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 15:24:53.065 13947 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:25:05.621 13947 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 15:25:05.633 13947 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:25:12.341 13947 ] ERROR [api_logger:event_applicant_actions.py:manage_task:138] list index out of range
+[25/Feb/2020 15:25:13.346 13947 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:25:13.349 13947 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:25:13.353 13947 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:25:13.359 13947 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:25:14.363 13947 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 15:25:14.366 13947 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 16:02:15.602 15282 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 16:02:15.619 15282 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:58] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 16:02:31.021 15282 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 16:02:31.033 15282 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 16:03:52.906 15521 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 16:03:52.925 15521 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:58] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 16:04:05.465 15521 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 16:04:05.495 15521 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 16:04:16.007 15521 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 16:04:16.011 15521 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 16:04:29.311 15521 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 16:04:29.322 15521 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 16:07:47.507 15819 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 16:07:47.515 15819 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 17:37:08.921 18401 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 17:37:08.935 18401 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 17:37:19.508 18401 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 17:37:19.522 18401 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 17:37:32.095 18401 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 17:37:32.112 18401 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 17:37:43.858 18401 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 17:37:43.871 18401 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 17:37:54.440 18401 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 17:37:54.460 18401 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 17:38:07.016 18401 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 17:38:07.033 18401 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:37] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 18:24:38.486 19063 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: element click intercepted: Element <input type="checkbox" name="grid_items" class="chkDelete ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" ng-model="entity.checked" ng-change="itemSelectionChange(entity)" style=""> is not clickable at point (56, 419). Other element would receive the click: <div class="modal-footer">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 18:24:39.615 19063 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:44] Message: element click intercepted: Element <a a="" class="btn-group show_form pointer ng-scope" id="cardlist-view-Compose-Mail" ng-repeat="action in vm.config.actions | limitTo: (vm.config.actionLimit || 5)" data-title="Compose Mail" bs-tooltip="" data-placement="bottom" delay="500" ng-click="vm.actionClicked(action.id)" ng-show="(action.selectionIndependent &amp;&amp; !vm.config.selectedIds.length) || (action.singleSelect &amp;&amp; vm.config.selectedIds.length === 1) || (action.multiSelect &amp;&amp; vm.config.selectedIds.length)" ng-style="{'margin-right': ($last &amp;&amp; vm.config.actions.length < (vm.config.actionLimit || 5)) ? '5px' : '0'}" style="margin-right: 0px;">...</a> is not clickable at point (372, 79). Other element would receive the click: <div class="modal-header" style="display: flex;align-items: center;justify-content: space-between;">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[25/Feb/2020 19:01:52.534 19932 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[25/Feb/2020 19:01:52.549 19932 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+

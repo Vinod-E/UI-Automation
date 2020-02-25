@@ -1,9 +1,9 @@
 import config
 from logger_settings import api_logger
-from scripts.crpo.common import settings
+from scripts.crpo.common import validations_check
 
 
-class Image(settings.Settings):
+class Image(validations_check.ValidationCheck):
     def __init__(self):
         super(Image, self).__init__()
 

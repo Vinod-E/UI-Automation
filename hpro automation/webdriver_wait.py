@@ -15,7 +15,7 @@ class WebDriverElementWait(environment_setup.Environment):
     def x_path_element_webdriver_wait(self, element_path):
 
         try:
-            self.xpath = WebDriverWait(self.driver, 30).until(ec.element_to_be_clickable((By.XPATH, element_path)))
+            self.xpath = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.XPATH, element_path)))
 
         except Exception as error:
             api_logger.error(error)
@@ -23,7 +23,7 @@ class WebDriverElementWait(environment_setup.Environment):
     def id_element_webdriver_wait(self, element_path):
 
         try:
-            self.id = WebDriverWait(self.driver, 30).until(ec.element_to_be_clickable((By.ID, element_path)))
+            self.id = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, element_path)))
 
         except Exception as error:
             api_logger.error(error)
@@ -31,7 +31,7 @@ class WebDriverElementWait(environment_setup.Environment):
     def name_element_webdriver_wait(self, element_path):
 
         try:
-            self.name = WebDriverWait(self.driver, 30).until(ec.element_to_be_clickable((By.NAME, element_path)))
+            self.name = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.NAME, element_path)))
 
         except Exception as error:
             api_logger.error(error)
