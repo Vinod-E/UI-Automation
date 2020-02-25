@@ -17,8 +17,8 @@ class ChangeStatus(task_config.TaskConfig):
             self.driver.execute_script("window.scrollTo(0,200);")
             time.sleep(2)
 
-            self.x_path_element_webdriver_wait(page_elements.change_applicant_status['Change_applicant_status'])
-            self.xpath.click()
+            self.id_element_webdriver_wait(page_elements.applicant_actions['Change_applicant_status'])
+            self.id.click()
 
             time.sleep(3)
             self.x_path_element_webdriver_wait(page_elements.change_applicant_status['change_stage'])
@@ -44,8 +44,8 @@ class ChangeStatus(task_config.TaskConfig):
             # --------------------------- Change Applicant Status to Schedule ------------------------------------------
             self.driver.execute_script("window.scrollTo(0,-100);")
 
-            self.x_path_element_webdriver_wait(page_elements.change_applicant_status['Change_applicant_status'])
-            self.xpath.click()
+            self.id_element_webdriver_wait(page_elements.applicant_actions['Change_applicant_status'])
+            self.id.click()
             time.sleep(2.9)
 
             self.x_path_element_webdriver_wait(page_elements.change_applicant_status['change_stage'])

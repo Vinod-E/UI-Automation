@@ -47,6 +47,7 @@ buttons = {
     'create': '//*[@ng-click="vm.create();"]',
     'update': '//*[@ng-click="vm.update();"]',
     'create-save': '//*[@ng-click="vm.save();"]',
+    'send_sms': '//*[@ng-click="vm.sendSms()"]',
     'sp-save': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/button[2]',
     'template-search': '//*[@ng-click="vm.service.templates.search();"]',
     'template_save': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/'
@@ -82,7 +83,10 @@ buttons = {
     'live_schedule': '//*[@ng-click="vm.scheduleMultiple();$hide()"]',
     'live_applicant_search': '//*[@ng-click="vm.searchApplicants();"]',
     'new_save_draft': '//*[@ng-if="vm.data.configs.isDraftAllowed"]',
-    'new_submit_feedback': '//*[@ng-if="vm.data.configs.isSubmitAllowed"]'
+    'new_submit_feedback': '//*[@ng-if="vm.data.configs.isSubmitAllowed"]',
+    'tag_applicant_event': '//*[@ng-click="vm.ValidateAndTagCandidatesToEvent()"]',
+    'copy': '//*[@ngclipboard-success="vm.success()"]',
+    'close_pop_details_window': '//*[@ng-click="$hide()"]',
 }
 
 text_fields = {
@@ -116,6 +120,11 @@ floating_actions = {
     'event_interviews': '//*[@title="View Event Interviews"]',
     'live_interview': '//*[@title="Live Schedule Interviews"]'
 }
+grid = {
+    'check_box': 'grid_items',
+    'all': '//*[@ng-model="vm.isAllSelected"]',
+    'test_required': '//*[@ng-model="vm.isTestRequaredForTag"]',
+}
 grid_actions = {
     'reschedule': 'cardlist-view-Reschedule-Interview',
     'cancel_interview': 'cardlist-view-Cancel-Interview',
@@ -123,7 +132,27 @@ grid_actions = {
     'provide_feedback': 'cardlist-view-Provide-Interview Feedback',
     'unlock_feedback': 'cardlist-view-Unlock-Interviewer Feedback',
     'view_feedback': 'cardlist-view-View-Feedback History',
+}
+applicant_actions = {
     'more_actions': '//*[@id="req-list-view"]/tr/td[2]/span[3]',
+    'Change_applicant_status': 'cardlist-view-Change-Applicant Status',
+    'compose_mail': 'cardlist-view-Compose-Mail',
+    'send_sms': 'cardlist-view-Send-SMS',
+    'tag_applicants': 'cardlist-view-Tag-Applicant(s) to Job/Test',
+    'untag_applicants': 'cardlist-view-Untag-Applicant(s)',
+    'registration_link': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[6]/div/div[2]',
+    'send_admit_card': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[7]/div/div[2]',
+    'view_registration_link': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[8]/div/div[2]',
+    'manage_task': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[13]/div/div[2]',
+    'view_test_status': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[14]/div/div[2]',
+    'download_resume': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[15]/div/div[2]',
+    'single_pdf': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[16]/div/div[2]',
+    'docket': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[17]/div/div[2]',
+    'compare_id': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[18]/div/div[2]',
+    'upload_attachment': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[19]/div/div[2]',
+    'change_bu': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[20]/div/div[2]',
+    'applicant_json': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[21]/div/div[2]',
+    'disable/enable_registration_link': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[22]/div/div[2]',
 }
 advance_search = {
     'search': 'cardlist-view-filter',
@@ -131,13 +160,7 @@ advance_search = {
     'a_name': 'name',
     'assessment_name': 'testName'
 }
-grid = {
-    'check_box': 'grid_items',
-    'all': '//*[@ng-model="vm.isAllSelected"]'
-}
-
 change_applicant_status = {
-    'Change_applicant_status': '//*[@data-title="Change Applicant Status"]',
     'change_stage': '//*[@ng-model="vm.selectedStage"]',
     'change_status': '//*[@ng-model="vm.selectedStatus"]',
     'comment': '//*[@ng-model="vm.comments"]',
@@ -146,7 +169,6 @@ change_applicant_status = {
                              '/div[2]/div/button[2]/i[1]',
     'Interviewer_selection_done': '//*[@ng-click="$hide();"]',
 }
-
 getby_details = {
     'getbyid': '//*[@title="{}"]',
     'event_getbyid': '//*[@title="Click to view full details"]',
@@ -160,6 +182,13 @@ buckets = {
 }
 title = {
     'title': '//*[@title="{}"]',
+}
+glowing_messages = {
+    'notifier': '//*[@class="growl-message ng-binding"]',
+    'dismiss': '//*[@data-dismiss="alert"]'
+}
+validations = {
+    'task_candidate_name': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[1]/div/div[1]/div[1]/span',
 }
 job = {
     'description_box': '//*[@id="mainBodyElement"]/div[3]/section/div/'
@@ -275,6 +304,8 @@ event_applicant = {
     'applicant_validation': '//*[@title="{}"]',
     'Interviewer': '//*[@title="Select Interviewers"]',
     'task_candidate_name': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[1]/div/div[1]/div[1]/span',
+    'subject': '//*[@ng-model="vm.subject"]',
+    'description': '//*[@ng-model="html"]',
 }
 
 embrace = {
