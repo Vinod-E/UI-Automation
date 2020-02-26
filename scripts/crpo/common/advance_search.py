@@ -74,6 +74,7 @@ class AdvanceSearch(crpo_login.CrpoLogin):
 
             self.name_element_webdriver_wait(page_elements.advance_search['a_name'])
             time.sleep(2)
+            self.name.clear()
             self.name.send_keys(name)
 
             time.sleep(1.5)

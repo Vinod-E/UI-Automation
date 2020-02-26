@@ -8,6 +8,7 @@ from scripts.crpo.applicant_actions import event_applicants
 class ApplicantActions(event_applicants.ApplicantActions):
     def __init__(self):
         super(ApplicantActions, self).__init__()
+        self._applicant_name = 'Sprint{}'.format(self.sprint_version)
         self.attachment = test_data_inputpath.attachments['attachment']
 
         self.ui_change_applicant_status_action_ae = []
@@ -29,6 +30,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
         self.ui_view_applicant_json_ae = []
         self.ui_disable_registration_link_ae = []
         self.ui_enable_registration_link_ae = []
+        self.ui_re_registration_link_ae = []
 
     def event_change_applicant_status(self):
         try:
@@ -179,13 +181,13 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def manage_task(self):
         try:
-            time.sleep(1)
+            time.sleep(2)
             self.more_actions()
             # ----------------------------- Manage Task ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['manage_task'])
             time.sleep(4)
-            self.manage_task_validation(self.event_sprint_version_a)
             self.driver.switch_to.window(self.driver.window_handles[1])
+            self.manage_task_validation(self.event_sprint_version_a)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
@@ -197,7 +199,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def view_test_status(self):
         try:
-            time.sleep(1)
+            time.sleep(2)
             self.more_actions()
             # ----------------------------- Test status ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['view_test_status'])
@@ -298,7 +300,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
             time.sleep(1)
             self.more_actions()
             # ----------------------------- Change BU ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['change_bu'])
+            self.web_element_click_xpath(page_elements.applicant_actions['change_bu/re_RL'])
             self.web_element_click_xpath(page_elements.buttons['create-save'])
             self.glowing_messages('Applicant updated successfully')
             time.sleep(2)
@@ -331,8 +333,13 @@ class ApplicantActions(event_applicants.ApplicantActions):
             # ----------------------------- Disable RL ---------------------
             time.sleep(1)
             self.web_element_click_xpath(page_elements.applicant_actions['disable/enable_registration_link'])
+
+            time.sleep(2)
+            self.more_actions()
+            self.disable_link_validation()
             # -------------------- output report value ----------------
-            self.ui_disable_registration_link_ae = 'Pass'
+            if self.disable_link_validation_check == 'True':
+                self.ui_disable_registration_link_ae = 'Pass'
         except Exception as e:
             api_logger.error(e)
 
@@ -343,7 +350,51 @@ class ApplicantActions(event_applicants.ApplicantActions):
             # ----------------------------- Enable RL ---------------------
             time.sleep(1)
             self.web_element_click_xpath(page_elements.applicant_actions['disable/enable_registration_link'])
+
+            time.sleep(2)
+            self.more_actions()
+            self.enable_link_validation(self.event_sprint_version_a)
             # -------------------- output report value ----------------
-            self.ui_enable_registration_link_ae = 'Pass'
+            if self.enable_link_validation_check == 'True':
+                self.ui_enable_registration_link_ae = 'Pass'
+        except Exception as e:
+            api_logger.error(e)
+
+    def re_registration_link(self):
+        try:
+            time.sleep(2)
+            self.applicant_name_search(self._applicant_name, 'Applicant grid')
+            self.more_actions()
+            # ----------------------------- Change BU ------------------------------
+            self.web_element_click_xpath(page_elements.applicant_actions['change_bu/re_RL'])
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Reason'),
+                                             self.xl_comment_a)
+            self.web_element_click_xpath(page_elements.buttons['send'])
+            self.glowing_messages('Re-Registration has been enabled for this user')
+            time.sleep(2)
+            self.dismiss_message()
+
+            # -------------------- output report value ----------------
+            if self.message_validation == 'True':
+                self.ui_re_registration_link_ae = 'Pass'
+        except Exception as e:
+            api_logger.error(e)
+
+    def fill_registration(self):
+        try:
+            time.sleep(1)
+            self.more_actions()
+            # ----------------------------- View Registration Link ----------------------------
+            self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
+            self.web_element_click_xpath(page_elements.event_applicant['open_RL_new_tab'])
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            time.sleep(2)
+            self.web_element_click_id(page_elements.microSite['yes'])
+            self.web_element_click_id(page_elements.microSite['declaration'])
+            self.web_element_click_id(page_elements.microSite['submit'])
+            time.sleep(3)
+            self.driver.close()
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            self.web_element_click_xpath(page_elements.buttons['done'])
         except Exception as e:
             api_logger.error(e)

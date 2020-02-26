@@ -118,6 +118,7 @@ class ApplicantActionsOutputFile(styles.FontColor, event_applicant_actions.Appli
             self.ws.write(18, self.ea_sc_col, 'View applicant json', self.style8)
             self.ws.write(19, self.ea_sc_col, 'Disable Registration link', self.style8)
             self.ws.write(20, self.ea_sc_col, 'Enable Registration link', self.style8)
+            self.ws.write(21, self.ea_sc_col, 'Re Registration link', self.style8)
 
             # ----------------------------------------------------------------------------------------------------------
             if self.ui_change_applicant_status_action_ae == 'Pass':
@@ -233,6 +234,12 @@ class ApplicantActionsOutputFile(styles.FontColor, event_applicant_actions.Appli
                 self.ws.write(20, self.ea_st_col, 'Pass', self.style7)
             else:
                 self.ws.write(20, self.ea_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_re_registration_link_ae == 'Pass':
+                self.Actual_success_cases.append(self.ui_re_registration_link_ae)
+                self.ws.write(21, self.ea_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(21, self.ea_st_col, 'Fail', self.style3)
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['Applicant_action_output_report'])
         except Exception as error:
