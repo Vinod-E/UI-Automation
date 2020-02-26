@@ -87,6 +87,7 @@ buttons = {
     'tag_applicant_event': '//*[@ng-click="vm.ValidateAndTagCandidatesToEvent()"]',
     'copy': '//*[@ngclipboard-success="vm.success()"]',
     'close_pop_details_window': '//*[@ng-click="$hide()"]',
+    'send': '//*[@ng-click="vm.send()"]'
 }
 
 text_fields = {
@@ -150,7 +151,7 @@ applicant_actions = {
     'docket': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[17]/div/div[2]',
     'compare_id': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[18]/div/div[2]',
     'upload_attachment': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[19]/div/div[2]',
-    'change_bu': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[20]/div/div[2]',
+    'change_bu/re_RL': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[20]/div/div[2]',
     'applicant_json': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[21]/div/div[2]',
     'disable/enable_registration_link': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[22]/div/div[2]',
 }
@@ -188,7 +189,14 @@ glowing_messages = {
     'dismiss': '//*[@data-dismiss="alert"]'
 }
 validations = {
-    'task_candidate_name': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[1]/div/div[1]/div[1]/span',
+    'task_candidate_name': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[1]/div/div[1]/div[1]/span[1]',
+}
+microSite = {
+    'micro_site_event': 'ddevent',
+    'micro_site_404': '/html/body/div/div[2]/h2',
+    'yes': 'lbl_terms_yes',
+    'declaration': 'declaration',
+    'submit': 'registerbtndiv'
 }
 job = {
     'description_box': '//*[@id="mainBodyElement"]/div[3]/section/div/'
@@ -306,6 +314,7 @@ event_applicant = {
     'task_candidate_name': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[1]/div/div[1]/div[1]/span',
     'subject': '//*[@ng-model="vm.subject"]',
     'description': '//*[@ng-model="html"]',
+    'open_RL_new_tab': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/div[2]/a',
 }
 
 embrace = {
