@@ -39,7 +39,7 @@ class ValidationCheck(settings.Settings):
         self.web_element_click_xpath(page_elements.event_applicant['open_RL_new_tab'])
         self.driver.switch_to.window(self.driver.window_handles[1])
         time.sleep(2)
-        self.web_element_text_id(page_elements.microSite['micro_site_event'])
+        self.web_element_text_xpath(page_elements.microSite['micro_site_event'])
         if self.text_value == event_name:
             self.enable_link_validation_check = 'True'
             print('**-------->>> link is validated by event name :: {}'.format(self.text_value))
@@ -57,10 +57,10 @@ class ValidationCheck(settings.Settings):
         self.web_element_click_xpath(page_elements.event_applicant['open_RL_new_tab'])
         self.driver.switch_to.window(self.driver.window_handles[1])
         time.sleep(2)
-        self.web_element_text_id(page_elements.microSite['micro_site_404'])
-        if self.text_value == "Sorry, we can't find that page!":
+        self.web_element_text_xpath(page_elements.microSite['micro_site_page_closed'])
+        if self.text_value.strip() == "Registration Closed/Expired":
             self.disable_link_validation_check = 'True'
-            print('**-------->>> link is validated by 404 page :: {}'.format("Sorry, we can't find that page!"))
+            print('**-------->>> link is validated by 404 page :: {}'.format("Registration Closed/Expired"))
         else:
             print('Something else is wrong with the link <<<---------**')
         self.driver.close()
