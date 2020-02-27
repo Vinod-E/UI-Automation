@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32cae511-2f14-4e01-9a56-9ed91a6d44ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/embrace/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/rpo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testsuite/crpo/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/vinod.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/vinod.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/UI-Automation" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.applicant_actions_flow">
     <configuration name="applicant_actions_flow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -229,10 +229,10 @@
       <screen x="41" y="27" width="1325" height="741" />
     </state>
     <state width="1302" height="291" key="GridCell.Tab.1.right/41.27.1325.741@41.27.1325.741" timestamp="1582726961712" />
-    <state x="224" y="38" key="SettingsEditor" timestamp="1581060021377">
+    <state x="228" y="27" key="SettingsEditor" timestamp="1582792204956">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state x="224" y="38" key="SettingsEditor/41.27.1325.741@41.27.1325.741" timestamp="1581060021377" />
+    <state x="228" y="27" key="SettingsEditor/41.27.1325.741@41.27.1325.741" timestamp="1582792204956" />
     <state x="547" y="314" width="303" height="164" key="VCS.ChangelistChooser" timestamp="1582626096246">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
@@ -241,10 +241,10 @@
       <screen x="41" y="27" width="1325" height="741" />
     </state>
     <state x="141" y="125" width="1125" height="543" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/41.27.1325.741@41.27.1325.741" timestamp="1580288837053" />
-    <state x="359" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1582791255895">
+    <state x="359" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1582791969837">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
-    <state x="359" y="224" key="com.intellij.ide.util.TipDialog/41.27.1325.741@41.27.1325.741" timestamp="1582791255895" />
+    <state x="359" y="224" key="com.intellij.ide.util.TipDialog/41.27.1325.741@41.27.1325.741" timestamp="1582791969837" />
     <state x="293" y="58" width="800" height="677" key="scopes" timestamp="1582625974694">
       <screen x="41" y="27" width="1325" height="741" />
     </state>
