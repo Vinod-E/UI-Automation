@@ -368,7 +368,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
             time.sleep(2)
             self.more_actions()
-            self.enable_link_validation(self.event_sprint_version_a)
+            self.enable_link_validation('CAMPUS DETAILS')
             # -------------------- output report value ----------------
             if self.enable_link_validation_check == 'True':
                 self.ui_enable_registration_link_ae = 'Pass'

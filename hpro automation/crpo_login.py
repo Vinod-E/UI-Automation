@@ -13,8 +13,8 @@ class CrpoLogin(webdriver_functions.WebdriverFunctions):
 
         self.login_details_file = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['login_credentials'])
         self._xl_tenant = []
-        self._xl_username = []
-        self._xl_password = []
+        self.xl_username = []
+        self.xl_password = []
 
         self.status_of_login = ""
         self.tenant_screen_text = ""
@@ -47,9 +47,9 @@ class CrpoLogin(webdriver_functions.WebdriverFunctions):
                 if rows[0]:
                     self._xl_tenant.append(rows[0])
                 if rows[1]:
-                    self._xl_username.append(rows[1])
+                    self.xl_username.append(rows[1])
                 if rows[2]:
-                    self._xl_password.append(rows[2])
+                    self.xl_password.append(rows[2])
         except Exception as file_error:
             api_logger.error(file_error)
 
@@ -71,9 +71,9 @@ class CrpoLogin(webdriver_functions.WebdriverFunctions):
             self.x_path_element_webdriver_wait(page_elements.login['next_button'])
             self.xpath.click()
             self.name_element_webdriver_wait(page_elements.login['username'])
-            self.name.send_keys(self._xl_username)
+            self.name.send_keys(self.xl_username)
             self.x_path_element_webdriver_wait(page_elements.login['password'])
-            self.xpath.send_keys(self._xl_password)
+            self.xpath.send_keys(self.xl_password)
             self.x_path_element_webdriver_wait(page_elements.login['login_button'])
             self.xpath.click()
 
