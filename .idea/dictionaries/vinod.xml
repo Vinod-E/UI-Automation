@@ -3,14 +3,18 @@
     <words>
       <w>accordian</w>
       <w>amsin</w>
+      <w>argparse</w>
       <w>automations</w>
       <w>betaams</w>
       <w>breadcumb</w>
       <w>candidat</w>
       <w>cardlist</w>
       <w>cconfig</w>
+      <w>certifi</w>
+      <w>chardet</w>
       <w>chromedriver</w>
       <w>crpo</w>
+      <w>dateutil</w>
       <w>ddevent</w>
       <w>dont</w>
       <w>dropdown</w>
@@ -35,6 +39,9 @@
       <w>usecases</w>
       <w>webdriver</w>
       <w>withou</w>
+      <w>xlrd</w>
+      <w>xlsx</w>
+      <w>xlwt</w>
     </words>
   </dictionary>
 </component>
