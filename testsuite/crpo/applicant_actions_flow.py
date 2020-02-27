@@ -33,7 +33,7 @@ class ApplicantActionFlow(applicant_actions_output.ApplicantActionsOutputFile):
             # self.applicant_json()
             # self.disable_registration_link()
             self.enable_registration_link()
-
+            #
             # self.fill_registration()
             # self.re_registration_link()
 

@@ -192,8 +192,8 @@ validations = {
     'task_candidate_name': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[1]/div/div[1]/div[1]/span[1]',
 }
 microSite = {
-    'micro_site_event': 'ddevent',
-    'micro_site_404': '/html/body/div/div[2]/h2',
+    'micro_site_event': '//*[@disable value="{}"]',
+    'micro_site_page_closed': '//*[@id="index_contentdiv"]/div/span',
     'yes': 'lbl_terms_yes',
     'declaration': 'declaration',
     'submit': 'registerbtndiv'
@@ -306,7 +306,6 @@ event_config = {
     'close_pop_details_window': '//*[@type="button"][@ng-click="$hide()"]',
     'click_on_event': '//*[@title="Click to view full details"]',
 }
-
 event_applicant = {
     'applicant_getbyid': '//*[@title="{}"]',
     'applicant_validation': '//*[@title="{}"]',
@@ -315,8 +314,8 @@ event_applicant = {
     'subject': '//*[@ng-model="vm.subject"]',
     'description': '//*[@ng-model="html"]',
     'open_RL_new_tab': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/div[2]/a',
+    'comment': '//*[@ng-model="vm.comments"]',
 }
-
 embrace = {
     'embrace_app': '//*[@ng-click="vm.invokeOtherApp(value.click)"]',
     'candidates_advance_search': '//*[@ng-click="vm.toggleAdvancedSearch()"]',

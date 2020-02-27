@@ -11,7 +11,7 @@ class ApplicantActionsOutputFile(styles.FontColor, event_applicant_actions.Appli
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 26)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 27)))
         self.Actual_success_cases = []
 
         super(ApplicantActionsOutputFile, self).__init__()

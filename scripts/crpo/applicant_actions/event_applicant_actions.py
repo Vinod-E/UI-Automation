@@ -2,6 +2,7 @@ import time
 import page_elements
 import test_data_inputpath
 from logger_settings import api_logger
+from selenium.webdriver.common.keys import Keys
 from scripts.crpo.applicant_actions import event_applicants
 
 
@@ -51,6 +52,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def compose_mail(self):
         try:
+            self.message_validation = ''
             time.sleep(1)
             self.check_box()
             # ----------------------------- Compose Mail ---------------------
@@ -70,6 +72,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def send_sms(self):
         try:
+            self.message_validation = ''
             # ----------------------------- Compose Mail ---------------------
             self.web_element_click_id(page_elements.applicant_actions['send_sms'])
             time.sleep(1)
@@ -89,6 +92,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def tag_applicants_to_job_test(self):
         try:
+            self.message_validation = ''
             # ----------------------------- Tag applicants ---------------------
             self.web_element_click_id(page_elements.applicant_actions['tag_applicants'])
             time.sleep(1)
@@ -113,6 +117,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def untag_applicant(self):
         try:
+            self.message_validation = ''
             self.check_box()
             time.sleep(1)
             # ----------------------------- Untag applicants ---------------------
@@ -130,6 +135,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def registration_link(self):
         try:
+            self.message_validation = ''
             time.sleep(1)
             self.more_actions()
             # ----------------------------- Registration Link ---------------------
@@ -147,6 +153,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def admit_card(self):
         try:
+            self.message_validation = ''
             time.sleep(1)
             self.more_actions()
             # ----------------------------- Admit Card ------------------------------
@@ -164,6 +171,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def view_registration_link(self):
         try:
+            self.message_validation = ''
             time.sleep(1)
             self.more_actions()
             # ----------------------------- View Registration Link ----------------------------
@@ -212,6 +220,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def download_resume(self):
         try:
+            self.message_validation = ''
             time.sleep(1)
             self.more_actions()
             # ----------------------------- Download Resume ------------------------------
@@ -228,6 +237,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def generate_single_pdf(self):
         try:
+            self.message_validation = ''
             time.sleep(1)
             self.more_actions()
             # ----------------------------- Single PDF ------------------------------
@@ -244,6 +254,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def generate_docket(self):
         try:
+            self.message_validation = ''
             time.sleep(1)
             self.more_actions()
             # ----------------------------- Generate Docket ------------------------------
@@ -273,6 +284,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def upload_attachment(self):
         try:
+            self.message_validation = ''
             time.sleep(2)
             self.more_actions()
             # ----------------------------- Upload attachment ------------------------------
@@ -283,6 +295,7 @@ class ApplicantActions(event_applicants.ApplicantActions):
             self.dismiss_message()
             time.sleep(0.5)
             self.web_element_click_xpath(page_elements.buttons['create-save'])
+            self.message_validation = ''
             time.sleep(2)
             self.glowing_messages('Attachment Upload Successfully')
             self.dismiss_message()
@@ -297,10 +310,12 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def change_business_unit(self):
         try:
+            self.message_validation = ''
             time.sleep(1)
             self.more_actions()
             # ----------------------------- Change BU ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['change_bu/re_RL'])
+            time.sleep(1)
             self.web_element_click_xpath(page_elements.buttons['create-save'])
             self.glowing_messages('Applicant updated successfully')
             time.sleep(2)
@@ -362,13 +377,16 @@ class ApplicantActions(event_applicants.ApplicantActions):
 
     def re_registration_link(self):
         try:
+            self.message_validation = ''
             time.sleep(2)
             self.applicant_name_search(self._applicant_name, 'Applicant grid')
             self.more_actions()
             # ----------------------------- Change BU ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['change_bu/re_RL'])
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Reason'),
-                                             self.xl_comment_a)
+                                             self.xl_enable_link_a)
+            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
+            self.web_element_send_keys_xpath(page_elements.event_applicant['comment'], self.xl_comment_a)
             self.web_element_click_xpath(page_elements.buttons['send'])
             self.glowing_messages('Re-Registration has been enabled for this user')
             time.sleep(2)
