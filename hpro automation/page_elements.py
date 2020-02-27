@@ -192,7 +192,7 @@ validations = {
     'task_candidate_name': '//*[@id="mainBodyElement"]/div[3]/div[2]/div[1]/div[1]/div/div[1]/div[1]/span[1]',
 }
 microSite = {
-    'micro_site_event': '//*[@disable value="{}"]',
+    'micro_site_campus_details': '//*[@id="campusform"]/div/div[1]/div/h4',
     'micro_site_page_closed': '//*[@id="index_contentdiv"]/div/span',
     'yes': 'lbl_terms_yes',
     'declaration': 'declaration',

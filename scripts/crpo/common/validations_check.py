@@ -39,7 +39,7 @@ class ValidationCheck(settings.Settings):
         self.web_element_click_xpath(page_elements.event_applicant['open_RL_new_tab'])
         self.driver.switch_to.window(self.driver.window_handles[1])
         time.sleep(2)
-        self.web_element_text_xpath(page_elements.microSite['micro_site_event'])
+        self.web_element_text_xpath(page_elements.microSite['micro_site_campus_details'])
         if self.text_value == event_name:
             self.enable_link_validation_check = 'True'
             print('**-------->>> link is validated by event name :: {}'.format(self.text_value))

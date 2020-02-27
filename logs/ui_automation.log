@@ -2974,3 +2974,237 @@ from disconnected: received Inspector.detached event
 [27/Feb/2020 16:46:16.679 6364 ] ERROR [api_logger:advance_search.py:applicant_name_search:87] Message: stale element reference: element is not attached to the page document
   (Session info: chrome=80.0.3987.87)
 
+[27/Feb/2020 17:10:46.742 6960 ] ERROR [api_logger:embrace_app.py:embrace_app_to_submit_task:67] Message: element click intercepted: Element <a href="javascript:void(0);" ng-click="vm.toggleAdvancedSearch()" class="filter-icon-container filterBtn" id="">...</a> is not clickable at point (100, 137). Other element would receive the click: <div block-ui-container="" class="block-ui-container ng-scope">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:11:04.084 6960 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:11:04.113 6960 ] ERROR [api_logger:change_applicant_status.py:applicant_current_status_validation:53] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:11:16.394 6960 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:11:16.529 6960 ] ERROR [api_logger:embrace_app.py:submit_task_verification:128] list index out of range
+[27/Feb/2020 17:13:41.009 7340 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:13:41.024 7340 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:13:51.592 7340 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[27/Feb/2020 17:13:52.618 7340 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:14:03.174 7340 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:14:03.189 7340 ] ERROR [api_logger:getby_details.py:event_getby_details:24] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:14:15.770 7340 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:14:15.802 7340 ] ERROR [api_logger:schedule_old.py:event_validation:94] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:14:26.318 7340 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:14:26.332 7340 ] ERROR [api_logger:floating_action.py:floating_action:17] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:14:38.370 7340 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:14:38.385 7340 ] ERROR [api_logger:re_schedule_old.py:interview_re_schedule:79] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:14:50.957 7340 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[27/Feb/2020 17:14:50.966 7340 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:15:01.526 7340 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[27/Feb/2020 17:15:01.540 7340 ] ERROR [api_logger:cancel_interview_old.py:cancel_interview:58] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:18:52.558 7668 ] ERROR [api_logger:cancel_interview_old.py:cancel_interview:58] 'OldInterviewFlow' object has no attribute 'xl_username'
+[27/Feb/2020 17:19:03.126 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:19:03.139 7668 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:19:13.693 7668 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[27/Feb/2020 17:19:14.708 7668 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:19:25.232 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:19:25.244 7668 ] ERROR [api_logger:getby_details.py:event_getby_details:24] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:19:37.818 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:19:37.834 7668 ] ERROR [api_logger:schedule_old.py:event_validation:94] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:19:48.351 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:19:48.363 7668 ] ERROR [api_logger:floating_action.py:floating_action:17] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:20:00.420 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:20:00.432 7668 ] ERROR [api_logger:schedule_old.py:interview_schedule:76] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:20:11.984 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:20:11.991 7668 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:20:36.618 7668 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[27/Feb/2020 17:20:36.632 7668 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:20:47.169 7668 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[27/Feb/2020 17:20:47.183 7668 ] ERROR [api_logger:cancel_interview_request.py:cancel_interview_request:66] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:20:56.615 7668 ] ERROR [api_logger:cancel_request_acceptance.py:cancel_request_acceptance:67] 'OldInterviewFlow' object has no attribute 'xl_username'
+[27/Feb/2020 17:21:07.148 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:21:07.161 7668 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:21:17.734 7668 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[27/Feb/2020 17:21:18.750 7668 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:21:29.268 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:21:29.282 7668 ] ERROR [api_logger:getby_details.py:event_getby_details:24] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:21:41.869 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:21:41.899 7668 ] ERROR [api_logger:schedule_old.py:event_validation:94] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:21:52.414 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:21:52.425 7668 ] ERROR [api_logger:floating_action.py:floating_action:17] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:22:04.481 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:22:04.492 7668 ] ERROR [api_logger:schedule_old.py:interview_schedule:76] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:22:16.010 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:22:16.021 7668 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:22:41.197 7668 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[27/Feb/2020 17:22:41.203 7668 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:22:51.758 7668 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[27/Feb/2020 17:22:51.771 7668 ] ERROR [api_logger:provide_feedback.py:provide_feedback:39] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:23:02.337 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:23:02.344 7668 ] ERROR [api_logger:save_draft_old.py:save_as_draft_old:64] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:23:12.898 7668 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[27/Feb/2020 17:23:12.912 7668 ] ERROR [api_logger:partial_feedback.py:partial_feedback:59] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:23:29.788 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:23:29.800 7668 ] ERROR [api_logger:advance_search.py:advance_search:25] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:23:40.370 7668 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[27/Feb/2020 17:23:41.381 7668 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:23:42.517 7668 ] ERROR [api_logger:getby_details.py:event_getby_details:24] Message: element click intercepted: Element <a class="pointer" a="" ng-click="actionClicked('getById',data, $event)" title="Click to view full details">...</a> is not clickable at point (136, 41). Other element would receive the click: <span class="navbar-brand ng-scope" ng-if="!vm.branding.headerURL &amp;&amp; vm.tenantLogo.path" style="min-height: 60px; position: relative; min-width: 100px; display: flex; align-items: center;">...</span>
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:23:55.083 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:24:05.623 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:24:17.820 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:24:17.832 7668 ] ERROR [api_logger:submit_feedback_old.py:submitted_feedback:82] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:24:21.122 7668 ] ERROR [api_logger:unlock_feedback.py:unlock_feedback_form:78] 'OldInterviewFlow' object has no attribute 'xl_username'
+[27/Feb/2020 17:24:38.670 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:24:38.683 7668 ] ERROR [api_logger:crpo_login.py:crpo_logout:121] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:25:03.783 7668 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[27/Feb/2020 17:25:03.792 7668 ] ERROR [api_logger:check_box_selection.py:check_box:15] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:25:14.321 7668 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[27/Feb/2020 17:25:14.334 7668 ] ERROR [api_logger:provide_feedback.py:provide_feedback:39] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:25:24.899 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:25:36.458 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:25:48.021 7668 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 17:26:03.605 7668 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[27/Feb/2020 17:26:03.620 7668 ] ERROR [api_logger:decision_feedback_updation.py:decision_feedback_validation:112] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 17:26:04.771 7668 ] ERROR [api_logger:decision_feedback_updation.py:decision_feedback_update:88] Message: invalid session id
+
+[27/Feb/2020 17:26:04.777 7668 ] ERROR [api_logger:old_interview_flow.py:<module>:89] Message: invalid session id
+
+[27/Feb/2020 18:46:09.610 5874 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 18:46:09.656 5874 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:16] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 18:46:26.389 5874 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[27/Feb/2020 18:46:26.415 5874 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:44] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 18:46:36.931 5874 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[27/Feb/2020 18:46:36.944 5874 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:44] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 18:46:47.460 5874 ] ERROR [api_logger:webdriver_wait.py:id_element_webdriver_wait:29] Message: 
+
+[27/Feb/2020 18:46:47.471 5874 ] ERROR [api_logger:webdriver_functions.py:web_element_click_id:44] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 18:47:13.749 5874 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 18:47:13.765 5874 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:58] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 18:47:13.778 5874 ] ERROR [api_logger:event_applicant_actions.py:re_registration_link:399] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+

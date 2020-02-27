@@ -36,7 +36,7 @@ class EmbraceApp(event_manage_task.EventManageTask):
             self.xpath.click()
             print('**-------->>> Embrace app login')
 
-            time.sleep(5)
+            time.sleep(7)
             self.x_path_element_webdriver_wait(page_elements.embrace['candidates_advance_search'])
             self.xpath.click()
 
@@ -52,7 +52,7 @@ class EmbraceApp(event_manage_task.EventManageTask):
             self.x_path_element_webdriver_wait(page_elements.embrace['submit_behalf_of'])
             self.xpath.click()
 
-            time.sleep(1)
+            time.sleep(3)
             self.name_element_webdriver_wait(page_elements.embrace['task_acceptance'])
             self.name.click()
 
