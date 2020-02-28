@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32cae511-2f14-4e01-9a56-9ed91a6d44ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/vinod.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/vinod.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hpro automation/crpo_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/crpo_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/ui_automation.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ui_automation.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/.~lock.UI_Applicant_Action_Flow.xls#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_CRPO_Flow.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_Interview_Flow_live.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Interview_Flow_live.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_Interview_Flow_new.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Interview_Flow_new.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_Interview_Flow_old.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Interview_Flow_old.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/CRPO_Login_Welcome_Page.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/CRPO_Login_Welcome_Page.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/Job_created.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/Job_created.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/Requirement_created.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/Requirement_created.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/Update_Job.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/Update_Job.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/applicant_actions/event_applicant_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/applicant_actions/event_applicant_actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/common/validations_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/common/validations_check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/event/embrace_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/event/embrace_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testsuite/crpo/applicant_actions_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/crpo/applicant_actions_flow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +32,9 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/UI-Automation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.applicant_actions_flow">
     <configuration name="applicant_actions_flow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -161,11 +143,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.old_interview_flow" />
-      <item itemvalue="Python.live_interview_flow_output" />
-      <item itemvalue="Python.live_interview_flow" />
-      <item itemvalue="Python.new_interview_flow" />
       <item itemvalue="Python.applicant_actions_flow" />
+      <item itemvalue="Python.live_interview_flow" />
+      <item itemvalue="Python.live_interview_flow_output" />
+      <item itemvalue="Python.new_interview_flow" />
+      <item itemvalue="Python.old_interview_flow" />
     </list>
     <recent_temporary>
       <list>
@@ -219,9 +201,10 @@
       <screen x="41" y="27" width="1325" height="741" />
     </state>
     <state x="454" y="267" width="488" height="258" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/41.27.1325.741@41.27.1325.741" timestamp="1578571695604" />
-    <state x="486" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1582794563613">
-      <screen x="41" y="27" width="1325" height="741" />
+    <state x="459" y="125" width="424" height="484" key="FileChooserDialogImpl" timestamp="1582882220496">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="459" y="125" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582882220496" />
     <state x="486" y="154" width="424" height="484" key="FileChooserDialogImpl/41.27.1325.741@41.27.1325.741" timestamp="1582794563613" />
     <state width="1302" height="266" key="GridCell.Tab.0.bottom" timestamp="1582809221955">
       <screen x="41" y="27" width="1325" height="741" />
@@ -259,9 +242,10 @@
       <screen x="41" y="27" width="1325" height="741" />
     </state>
     <state x="286" y="133" width="824" height="526" key="IDE.errors.dialog/41.27.1325.741@41.27.1325.741" timestamp="1582797572865" />
-    <state x="137" y="27" key="SettingsEditor" timestamp="1582801558591">
-      <screen x="41" y="27" width="1325" height="741" />
+    <state x="99" y="0" key="SettingsEditor" timestamp="1582882338114">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="99" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582882338114" />
     <state x="137" y="27" key="SettingsEditor/41.27.1325.741@41.27.1325.741" timestamp="1582801558591" />
     <state x="547" y="314" width="303" height="164" key="VCS.ChangelistChooser" timestamp="1582626096246">
       <screen x="41" y="27" width="1325" height="741" />
@@ -271,9 +255,10 @@
       <screen x="41" y="27" width="1325" height="741" />
     </state>
     <state x="141" y="125" width="1125" height="543" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/41.27.1325.741@41.27.1325.741" timestamp="1580288837053" />
-    <state x="359" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1582806283935">
-      <screen x="41" y="27" width="1325" height="741" />
+    <state x="328" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1582881484399">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="328" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582881484399" />
     <state x="359" y="224" key="com.intellij.ide.util.TipDialog/41.27.1325.741@41.27.1325.741" timestamp="1582806283935" />
     <state x="293" y="58" width="800" height="677" key="scopes" timestamp="1582625974694">
       <screen x="41" y="27" width="1325" height="741" />
