@@ -184,6 +184,9 @@
     </task>
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="161" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582797530462">
       <screen x="41" y="27" width="1325" height="741" />
@@ -242,10 +245,10 @@
       <screen x="41" y="27" width="1325" height="741" />
     </state>
     <state x="286" y="133" width="824" height="526" key="IDE.errors.dialog/41.27.1325.741@41.27.1325.741" timestamp="1582797572865" />
-    <state x="99" y="0" key="SettingsEditor" timestamp="1582882338114">
+    <state x="99" y="0" key="SettingsEditor" timestamp="1582883757993">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="99" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582882338114" />
+    <state x="99" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582883757993" />
     <state x="137" y="27" key="SettingsEditor/41.27.1325.741@41.27.1325.741" timestamp="1582801558591" />
     <state x="547" y="314" width="303" height="164" key="VCS.ChangelistChooser" timestamp="1582626096246">
       <screen x="41" y="27" width="1325" height="741" />
