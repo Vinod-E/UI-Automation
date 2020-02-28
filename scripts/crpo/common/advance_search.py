@@ -9,6 +9,7 @@ class AdvanceSearch(crpo_login.CrpoLogin):
         super(AdvanceSearch, self).__init__()
 
         self.search = []
+        self.job_search = ''
 
     def advance_search(self, tab):
         try:
@@ -85,3 +86,11 @@ class AdvanceSearch(crpo_login.CrpoLogin):
 
         except Exception as search:
             api_logger.error(search)
+
+    def job_applicant_name_search(self, job_name):
+
+        self.web_element_send_keys_name(page_elements.advance_search['job_applicant_name'], job_name)
+        time.sleep(1.5)
+        self.web_element_click_xpath(page_elements.buttons['search'])
+        print('**-------->>> {} advance search is working'.format(job_name))
+        self.job_search = 'True'
