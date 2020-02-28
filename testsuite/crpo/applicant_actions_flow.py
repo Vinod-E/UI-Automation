@@ -45,8 +45,9 @@ class ApplicantActionFlow(applicant_actions_output.ApplicantActionsOutputFile):
     def job_applicant_actions(self):
         try:
             self.job_tab_search()
-
             self.admin_actions_output_report_job()
+
+            self.job_change_applicant_status()
         except Exception as error:
             api_logger.error(error)
 

@@ -138,6 +138,7 @@ grid_actions = {
 applicant_actions = {
     'more_actions': '//*[@id="req-list-view"]/tr/td[2]/span[3]',
     'Change_applicant_status': 'cardlist-view-Change-Applicant Status',
+    'job_Change_applicant_status': 'cardlist-view-Change-Applicant(s) Status',
     'compose_mail': 'cardlist-view-Compose-Mail',
     'send_sms': 'cardlist-view-Send-SMS',
     'tag_applicants': 'cardlist-view-Tag-Applicant(s) to Job/Test',
