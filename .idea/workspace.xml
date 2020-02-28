@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32cae511-2f14-4e01-9a56-9ed91a6d44ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/crpo/applicant_actions/job_applicant_actions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/crpo/applicant_actions/job_applicants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hpro automation/page_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/hpro automation/page_elements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/ui_automation.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ui_automation.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/.~lock.UI_Applicant_Action_Flow.xls#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" beforeDir="false" afterPath="$PROJECT_DIR$/reports/UI_Applicant_Action_Flow.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/applicant_actions/event_applicant_actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/applicant_actions/event_applicant_actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/common/advance_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/common/advance_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crpo/output/applicant_actions_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crpo/output/applicant_actions_output.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testsuite/crpo/applicant_actions_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/crpo/applicant_actions_flow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
