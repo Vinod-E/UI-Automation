@@ -3,15 +3,15 @@ import styles
 from datetime import date
 import test_data_inputpath
 from logger_settings import api_logger
-from scripts.crpo.applicant_actions import event_applicant_actions
+from scripts.crpo.applicant_actions import job_applicant_actions
 
 
-class ApplicantActionsOutputFile(styles.FontColor, event_applicant_actions.ApplicantActions):
+class ApplicantActionsOutputFile(styles.FontColor, job_applicant_actions.JobApplicantActions):
 
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 27)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 34)))
         self.Actual_success_cases = []
 
         super(ApplicantActionsOutputFile, self).__init__()
@@ -91,6 +91,64 @@ class ApplicantActionsOutputFile(styles.FontColor, event_applicant_actions.Appli
                 self.ws.write(8, self.admin_st_col, 'Pass', self.style7)
             else:
                 self.ws.write(8, self.admin_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['Applicant_action_output_report'])
+        except Exception as error:
+            api_logger.error(error)
+
+    def admin_actions_output_report_job(self):
+        try:
+            # ------------------------------ Writing Output Data -------------------------------------------------------
+            self.ws.write(9, self.admin_sc_col, 'Job Tab', self.style8)
+            self.ws.write(10, self.admin_sc_col, 'Job Advance search', self.style8)
+            self.ws.write(11, self.admin_sc_col, 'Job details', self.style8)
+            self.ws.write(12, self.admin_sc_col, 'Job Validation', self.style8)
+            self.ws.write(13, self.admin_sc_col, 'Job Floating actions', self.style8)
+            self.ws.write(14, self.admin_sc_col, 'View job applicant', self.style8)
+            self.ws.write(15, self.admin_sc_col, 'Job Applicant advance search', self.style8)
+
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_job_tab_ja == 'Pass':
+                self.Actual_success_cases.append(self.ui_job_tab_ja)
+                self.ws.write(9, self.admin_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(9, self.admin_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_job_advance_search_ja == 'Pass':
+                self.Actual_success_cases.append(self.ui_job_advance_search_ja)
+                self.ws.write(10, self.admin_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(10, self.admin_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_job_validation_ja == 'Pass':
+                self.Actual_success_cases.append(self.ui_job_validation_ja)
+                self.ws.write(11, self.admin_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(11, self.admin_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_job_get_by == 'Pass':
+                self.Actual_success_cases.append(self.ui_job_get_by)
+                self.ws.write(12, self.admin_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(12, self.admin_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_floating_action_ja == 'Pass':
+                self.Actual_success_cases.append(self.ui_floating_action_ja)
+                self.ws.write(13, self.admin_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(13, self.admin_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_job_applicant_action_ja == 'Pass':
+                self.Actual_success_cases.append(self.ui_job_applicant_action_ja)
+                self.ws.write(14, self.admin_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(14, self.admin_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_applicant_advance_search_ja == 'Pass':
+                self.Actual_success_cases.append(self.ui_applicant_advance_search_ja)
+                self.ws.write(15, self.admin_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(15, self.admin_st_col, 'Fail', self.style3)
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['Applicant_action_output_report'])
         except Exception as error:

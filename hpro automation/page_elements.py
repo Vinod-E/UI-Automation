@@ -117,6 +117,7 @@ floating_actions = {
     'clone_assessment': '//*[@title="Clone Assessment"]',
     'event_upload_candidates': '//*[@title="Upload Candidates"]',
     'View_Applicants': '//*[@title="View Candidates"]',
+    'view_candidates': '//*[@title="View Applicant"]',
     'manage_task': '//*[@title="Manage Task"]',
     'event_interviews': '//*[@title="View Event Interviews"]',
     'live_interview': '//*[@title="Live Schedule Interviews"]'
@@ -159,7 +160,8 @@ advance_search = {
     'search': 'cardlist-view-filter',
     'name': 'Name',
     'a_name': 'name',
-    'assessment_name': 'testName'
+    'assessment_name': 'testName',
+    'job_applicant_name': 'CandidateName'
 }
 change_applicant_status = {
     'change_stage': '//*[@ng-model="vm.selectedStage"]',

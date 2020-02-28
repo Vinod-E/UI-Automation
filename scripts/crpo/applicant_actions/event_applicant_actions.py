@@ -6,9 +6,9 @@ from selenium.webdriver.common.keys import Keys
 from scripts.crpo.applicant_actions import event_applicants
 
 
-class ApplicantActions(event_applicants.ApplicantActions):
+class EventApplicantActions(event_applicants.ApplicantActions):
     def __init__(self):
-        super(ApplicantActions, self).__init__()
+        super(EventApplicantActions, self).__init__()
         self._applicant_name = 'Sprint{}'.format(self.sprint_version)
         self.attachment = test_data_inputpath.attachments['attachment']
 

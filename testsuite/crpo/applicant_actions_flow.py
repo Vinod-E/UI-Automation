@@ -42,12 +42,21 @@ class ApplicantActionFlow(applicant_actions_output.ApplicantActionsOutputFile):
         except Exception as error:
             api_logger.error(error)
 
+    def job_applicant_actions(self):
+        try:
+            self.job_tab_search()
+
+            self.admin_actions_output_report_job()
+        except Exception as error:
+            api_logger.error(error)
+
 
 Object = ApplicantActionFlow()
 if Object.status_of_login.strip() == 'administrator':
 
     try:
-        Object.event_applicant_actions()
+        # Object.event_applicant_actions()
+        Object.job_applicant_actions()
 
         Object.overall_status()
         Object.browser_close()

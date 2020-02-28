@@ -3208,3 +3208,19 @@ from disconnected: received Inspector.detached event
 [27/Feb/2020 18:47:13.778 5874 ] ERROR [api_logger:event_applicant_actions.py:re_registration_link:399] Message: stale element reference: element is not attached to the page document
   (Session info: chrome=80.0.3987.87)
 
+[27/Feb/2020 19:36:01.905 7326 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[27/Feb/2020 19:36:03.922 7326 ] ERROR [api_logger:advance_search.py:applicant_name_search:87] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
+[27/Feb/2020 19:39:43.351 7575 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[27/Feb/2020 19:39:46.548 7575 ] ERROR [api_logger:job_applicants.py:job_tab_search:56] Message: invalid session id
+
+[27/Feb/2020 19:39:46.550 7575 ] ERROR [api_logger:applicant_actions_flow.py:<module>:63] Message: invalid session id
+
+[27/Feb/2020 19:40:36.722 7764 ] ERROR [api_logger:webdriver_wait.py:name_element_webdriver_wait:37] Message: 
+
+[27/Feb/2020 19:40:37.740 7764 ] ERROR [api_logger:advance_search.py:name_search:54] Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.87)
+
