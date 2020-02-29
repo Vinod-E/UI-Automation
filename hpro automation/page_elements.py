@@ -117,6 +117,7 @@ floating_actions = {
     'clone_assessment': '//*[@title="Clone Assessment"]',
     'event_upload_candidates': '//*[@title="Upload Candidates"]',
     'View_Applicants': '//*[@title="View Candidates"]',
+    'view_candidates': '//*[@title="View Applicant"]',
     'manage_task': '//*[@title="Manage Task"]',
     'event_interviews': '//*[@title="View Event Interviews"]',
     'live_interview': '//*[@title="Live Schedule Interviews"]'
@@ -137,6 +138,7 @@ grid_actions = {
 applicant_actions = {
     'more_actions': '//*[@id="req-list-view"]/tr/td[2]/span[3]',
     'Change_applicant_status': 'cardlist-view-Change-Applicant Status',
+    'job_Change_applicant_status': 'cardlist-view-Change-Applicant(s) Status',
     'compose_mail': 'cardlist-view-Compose-Mail',
     'send_sms': 'cardlist-view-Send-SMS',
     'tag_applicants': 'cardlist-view-Tag-Applicant(s) to Job/Test',
@@ -159,7 +161,8 @@ advance_search = {
     'search': 'cardlist-view-filter',
     'name': 'Name',
     'a_name': 'name',
-    'assessment_name': 'testName'
+    'assessment_name': 'testName',
+    'job_applicant_name': 'CandidateName'
 }
 change_applicant_status = {
     'change_stage': '//*[@ng-model="vm.selectedStage"]',
