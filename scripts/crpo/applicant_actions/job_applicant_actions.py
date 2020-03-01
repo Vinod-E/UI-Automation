@@ -23,6 +23,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
 
             # -------------------- output report value ----------------
             if self.message_validation == 'True':
-                self.ui_change_applicant_status_action_ae = 'Pass'
+                self.ui_change_applicant_status_action_ae = 'Pass.........'
         except Exception as e:
             api_logger.error(e)
