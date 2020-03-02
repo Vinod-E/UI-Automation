@@ -9,7 +9,6 @@ from scripts.crpo.applicant_actions import event_applicants
 class EventApplicantActions(event_applicants.ApplicantActions):
     def __init__(self):
         super(EventApplicantActions, self).__init__()
-        self._applicant_name = 'Sprint{}'.format(self.sprint_version)
         self.attachment = test_data_inputpath.attachments['attachment']
 
         self.ui_change_applicant_status_action_ae = []
@@ -189,6 +188,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
 
     def manage_task(self):
         try:
+            self.task_validation_check = ''
             time.sleep(2)
             self.more_actions()
             # ----------------------------- Manage Task ---------------------
