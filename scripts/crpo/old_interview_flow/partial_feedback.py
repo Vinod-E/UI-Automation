@@ -29,7 +29,7 @@ class PartialFeedback(save_draft_old.SaveAsDraft):
             self.x_path_element_webdriver_wait(page_elements.buttons['partial_feedback'])
             self.xpath.click()
 
-            time.sleep(1)
+            time.sleep(2.5)
             self.x_path_element_webdriver_wait(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
             self.xpath.click()
 
@@ -60,7 +60,7 @@ class PartialFeedback(save_draft_old.SaveAsDraft):
 
     def partial_bucket(self):
         try:
-            time.sleep(5)
+            time.sleep(6)
             self.x_path_element_webdriver_wait(page_elements.buckets['Partial_interviews'])
             self.xpath.click()
 

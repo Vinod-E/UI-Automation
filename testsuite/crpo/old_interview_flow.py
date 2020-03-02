@@ -1,4 +1,3 @@
-import datetime
 from logger_settings import api_logger
 from scripts.crpo.output import old_interview_flow_output
 

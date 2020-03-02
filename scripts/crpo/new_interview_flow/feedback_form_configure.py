@@ -21,7 +21,7 @@ class FeedbackConfiguration(job_search.JobSearch):
         try:
 
             # --------- job process
-            self.job_search()
+            self.job_search_new()
             self.floating_action()
 
             self.x_path_element_webdriver_wait(page_elements.floating_actions['feedback_form'])
