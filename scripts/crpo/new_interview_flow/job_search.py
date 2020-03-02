@@ -15,7 +15,7 @@ class JobSearch(settings_On_Off.Settings):
         self.ui_job_getbyid_n = []
         self.ui_job_validation_n = []
 
-    def job_search(self):
+    def job_search_new(self):
         try:
             time.sleep(5)
             self.advance_search(page_elements.tabs['job_tab'])

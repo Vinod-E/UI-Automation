@@ -39,7 +39,7 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
                 self.driver.save_screenshot(config.image_config['screen_shot'].format('Update_Job'))
 
                 # ------------------------ Validation ------------------------------------------------------------------
-                self.job_search()
+                self.job_search_flow()
                 if self.job_name_breadcumb == self.job_name_sprint_version:
                     print('**-------->>> Job Edit/update successfully')
                     self.ui_update_job = 'Pass'
@@ -47,7 +47,7 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
             except Exception as error:
                 api_logger.error(error)
 
-    def job_search(self):
+    def job_search_flow(self):
         try:
             self.advance_search(page_elements.tabs['job_tab'])
 
