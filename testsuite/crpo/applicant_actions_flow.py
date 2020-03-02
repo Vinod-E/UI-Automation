@@ -48,6 +48,16 @@ class ApplicantActionFlow(applicant_actions_output.ApplicantActionsOutputFile):
             self.admin_actions_output_report_job()
 
             self.job_change_applicant_status()
+            self.job_compose_mail()
+            self.job_untag_applicant()
+            self.job_copy_registration_link()
+            self.job_manage_task()
+            self.job_view_test_status()
+            self.job_generate_single_pdf()
+            self.email_mobile_verification_link()
+            self.job_admit_card()
+
+            self.job_applicant_actions_output_report()
         except Exception as error:
             api_logger.error(error)
 
@@ -56,7 +66,7 @@ Object = ApplicantActionFlow()
 if Object.status_of_login.strip() == 'administrator':
 
     try:
-        # Object.event_applicant_actions()
+        Object.event_applicant_actions()
         Object.job_applicant_actions()
 
         Object.overall_status()

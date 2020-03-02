@@ -137,6 +137,11 @@ grid_actions = {
 }
 applicant_actions = {
     'more_actions': '//*[@id="req-list-view"]/tr/td[2]/span[3]',
+    'job_more_actions': '//*[@id="req-list-view"]/tr/td[2]/span[4]/a',
+    'job_test_status': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[1]/div/div[2]',
+    'job_download_resume': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[9]/div/div[2]',
+    'job_single_pdf': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[11]/div/div[2]',
+    'job_send_admit_card': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[5]/div/div[2]',
     'Change_applicant_status': 'cardlist-view-Change-Applicant Status',
     'job_Change_applicant_status': 'cardlist-view-Change-Applicant(s) Status',
     'compose_mail': 'cardlist-view-Compose-Mail',
@@ -146,6 +151,7 @@ applicant_actions = {
     'registration_link': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[6]/div/div[2]',
     'send_admit_card': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[7]/div/div[2]',
     'view_registration_link': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[8]/div/div[2]',
+    'copy_registration_link': 'cardlist-view-Copy-Registration Link',
     'manage_task': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[13]/div/div[2]',
     'view_test_status': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[14]/div/div[2]',
     'download_resume': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[15]/div/div[2]',
