@@ -18,6 +18,9 @@ class JobApplicants(event_applicant_actions.EventApplicantActions):
         self.ui_job_applicant_action_ja = []
         self.ui_applicant_advance_search_ja = []
 
+    def job_more_actions(self):
+        self.web_element_click_xpath(page_elements.applicant_actions['job_more_actions'])
+
     def job_tab_search(self):
         try:
             self.advance_search(page_elements.tabs['job_tab'])
@@ -37,7 +40,7 @@ class JobApplicants(event_applicant_actions.EventApplicantActions):
 
             # --------------------------- Applicant Advance search -----------------------------------------------------
             self.applicant_advance_search()
-            self.job_applicant_name_search(self.event_sprint_version_a)
+            self.job_applicant_name_search(self._applicant_name)
 
             # -------------------- output report values ----------------
             if self.search == 'Pass':

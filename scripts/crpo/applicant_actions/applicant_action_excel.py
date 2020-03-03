@@ -7,6 +7,8 @@ class ApplicantActionsExcelRead(common_file.CommonFile):
     def __init__(self):
         super(ApplicantActionsExcelRead, self).__init__()
 
+        self._applicant_name = 'Sprint{}'.format(self.sprint_version)
+
         # ---------------------------------- file reader index ---------------------------------------------------------
         workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['applicant_action_file'])
         if self.login_server == 'betaams':
@@ -24,6 +26,7 @@ class ApplicantActionsExcelRead(common_file.CommonFile):
         self.xl_comment_a = []
         self.xl_sms_template_a = []
         self.xl_enable_link_a = []
+        self.xl_reason_admit_card_a = []
 
         self.event_sprint_version_a = []
 
@@ -51,6 +54,8 @@ class ApplicantActionsExcelRead(common_file.CommonFile):
                 self.xl_sms_template_a.append(rows[5])
             if rows[6]:
                 self.xl_enable_link_a.append(rows[6])
+            if rows[7]:
+                self.xl_reason_admit_card_a.append(rows[7])
 
             for j in self.xl_event_name_a:
                 event_name = j

@@ -11,7 +11,7 @@ class ApplicantActionsOutputFile(styles.FontColor, job_applicant_actions.JobAppl
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 34)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 43)))
         self.Actual_success_cases = []
 
         super(ApplicantActionsOutputFile, self).__init__()
@@ -28,11 +28,13 @@ class ApplicantActionsOutputFile(styles.FontColor, job_applicant_actions.JobAppl
         self.admin_st_col = 1
         self.ea_sc_col = 2
         self.ea_st_col = 3
+        self.ja_sc_col = 4
+        self.ja_st_col = 5
 
         index = 0
-        excelheaders = ['Admin', 'Status', 'Event Actions', 'Status']
+        excelheaders = ['Admin', 'Status', 'Event Actions', 'Status', 'Job Actions', 'Status']
         for headers in excelheaders:
-            if headers in ['Admin', 'Event Actions', 'Status']:
+            if headers in ['Admin', 'Event Actions', 'Job Actions', 'Status']:
                 self.ws.write(1, index, headers, self.style0)
             else:
                 self.ws.write(1, index, headers, self.style1)
@@ -298,6 +300,77 @@ class ApplicantActionsOutputFile(styles.FontColor, job_applicant_actions.JobAppl
                 self.ws.write(21, self.ea_st_col, 'Pass', self.style7)
             else:
                 self.ws.write(21, self.ea_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['Applicant_action_output_report'])
+        except Exception as error:
+            api_logger.error(error)
+
+    def job_applicant_actions_output_report(self):
+        try:
+            # ------------------------------ Writing Output Data -------------------------------------------------------
+            self.ws.write(2, self.ja_sc_col, 'Change applicant status', self.style8)
+            self.ws.write(3, self.ja_sc_col, 'Compose Mail', self.style8)
+            self.ws.write(4, self.ja_sc_col, 'Untag Applicants', self.style8)
+            self.ws.write(5, self.ja_sc_col, 'Copy Registration Link', self.style8)
+            self.ws.write(6, self.ja_sc_col, 'Manage task', self.style8)
+            self.ws.write(7, self.ja_sc_col, 'View test status', self.style8)
+            self.ws.write(8, self.ja_sc_col, 'Single PDF', self.style8)
+            self.ws.write(9, self.ja_sc_col, 'Email/Mobile verification Link', self.style8)
+            self.ws.write(10, self.ja_sc_col, 'Send admit card', self.style8)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_change_applicant_status_action_aj == 'Pass':
+                self.Actual_success_cases.append(self.ui_change_applicant_status_action_aj)
+                self.ws.write(2, self.ja_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(2, self.ja_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_compose_mail_aj == 'Pass':
+                self.Actual_success_cases.append(self.ui_compose_mail_aj)
+                self.ws.write(3, self.ja_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(3, self.ja_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_untag_applicant_aj == 'Pass':
+                self.Actual_success_cases.append(self.ui_untag_applicant_aj)
+                self.ws.write(4, self.ja_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(4, self.ja_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_view_registration_link_aj == 'Pass':
+                self.Actual_success_cases.append(self.ui_view_registration_link_aj)
+                self.ws.write(5, self.ja_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(5, self.ja_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_manage_task_aj == 'Pass':
+                self.Actual_success_cases.append(self.ui_manage_task_aj)
+                self.ws.write(6, self.ja_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(6, self.ja_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_view_test_status_aj == 'Pass':
+                self.Actual_success_cases.append(self.ui_view_test_status_aj)
+                self.ws.write(7, self.ja_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(7, self.ja_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_single_pdf_aj == 'Pass':
+                self.Actual_success_cases.append(self.ui_single_pdf_aj)
+                self.ws.write(8, self.ja_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(8, self.ja_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_email_mobile_aj == 'Pass':
+                self.Actual_success_cases.append(self.ui_email_mobile_aj)
+                self.ws.write(9, self.ja_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(9, self.ja_st_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_send_admit_card_aj == 'Pass':
+                self.Actual_success_cases.append(self.ui_send_admit_card_aj)
+                self.ws.write(10, self.ja_st_col, 'Pass', self.style7)
+            else:
+                self.ws.write(10, self.ja_st_col, 'Fail', self.style3)
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['Applicant_action_output_report'])
         except Exception as error:

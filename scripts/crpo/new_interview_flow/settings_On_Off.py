@@ -22,6 +22,8 @@ class Settings(new_interview_excel.NewInterviewExcelRead):
             time.sleep(1.5)
             self.enable_new_feedback_form(page_elements.setting_modules['On'],
                                           'Enable')
+            time.sleep(1)
+            self.dismiss_message()
             if self.enable_disable_validation == 'True':
                 self.ui_common_settings = 'Pass'
                 self.ui_settings = 'Pass'
