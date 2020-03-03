@@ -3960,3 +3960,21 @@ from unknown error: web view not found
 [02/Mar/2020 16:54:09.669 18184 ] ERROR [api_logger:old_interview_flow.py:<module>:88] Message: chrome not reachable
   (Session info: chrome=80.0.3987.87)
 
+[03/Mar/2020 17:08:39.185 12209 ] ERROR [api_logger:crpo_login.py:login_elements:85] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[03/Mar/2020 17:08:39.193 12209 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[03/Mar/2020 17:08:39.198 12209 ] ERROR [api_logger:crpo_login.py:crpo_login:108] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[03/Mar/2020 17:08:39.202 12209 ] ERROR [api_logger:crpo_login.py:server_connection_error:134] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[03/Mar/2020 17:08:39.207 12209 ] ERROR [api_logger:crpo_login.py:internet_not_available:147] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[03/Mar/2020 17:08:39.211 12209 ] ERROR [api_logger:applicant_actions_flow.py:<module>:84] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
