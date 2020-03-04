@@ -168,7 +168,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             self.web_element_click_xpath(page_elements.applicant_actions['job_send_admit_card'])
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Reason'),
                                              self.xl_reason_admit_card_a)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
+            self.drop_down_selection()
             self.web_element_send_keys_xpath(page_elements.event_applicant['comment'], self.xl_comment_a)
             self.web_element_click_xpath(page_elements.buttons['send'])
             self.glowing_messages('Admit-Card successfully sent to applicants(s)')

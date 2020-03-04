@@ -4,7 +4,7 @@ import common_login
 from logger_settings import api_logger
 
 
-class AdvanceSearch(common_login.CrpoLogin):
+class AdvanceSearch(common_login.CommonLogin):
     def __init__(self):
         super(AdvanceSearch, self).__init__()
 
