@@ -1,10 +1,10 @@
 import time
 import page_elements
-import crpo_login
+import common_login
 from logger_settings import api_logger
 
 
-class AdvanceSearch(crpo_login.CrpoLogin):
+class AdvanceSearch(common_login.CrpoLogin):
     def __init__(self):
         super(AdvanceSearch, self).__init__()
 
