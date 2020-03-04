@@ -74,13 +74,11 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.message_validation = ''
             # ----------------------------- Compose Mail ---------------------
             self.web_element_click_id(page_elements.applicant_actions['send_sms'])
-            time.sleep(1)
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Select Template'),
                                              self.xl_sms_template_a)
             self.drop_down_selection()
             self.web_element_click_xpath(page_elements.buttons['send_sms'])
             self.glowing_messages('SMS sent successfully')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -193,7 +191,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.more_actions()
             # ----------------------------- Manage Task ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['manage_task'])
-            time.sleep(4)
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.manage_task_validation(self.event_sprint_version_a)
             self.driver.close()
@@ -289,7 +286,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.more_actions()
             # ----------------------------- Upload attachment ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['upload_attachment'])
-            self.driver.find_element_by_xpath(page_elements.file['upload_file']).send_keys(self.attachment)
+            self.web_element_send_keys_xpath(page_elements.file['upload_file'], self.attachment)
             time.sleep(2)
             self.glowing_messages('File uploaded successfully')
             self.dismiss_message()
@@ -385,7 +382,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.web_element_click_xpath(page_elements.applicant_actions['change_bu/re_RL'])
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Reason'),
                                              self.xl_enable_link_a)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
+            self.drop_down_selection()
             self.web_element_send_keys_xpath(page_elements.event_applicant['comment'], self.xl_comment_a)
             self.web_element_click_xpath(page_elements.buttons['send'])
             self.glowing_messages('Re-Registration has been enabled for this user')

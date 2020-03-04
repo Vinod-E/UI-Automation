@@ -7,9 +7,9 @@ import time
 import config
 
 
-class CrpoLogin(webdriver_functions.WebdriverFunctions):
+class CommonLogin(webdriver_functions.WebdriverFunctions):
     def __init__(self):
-        super(CrpoLogin, self).__init__()
+        super(CommonLogin, self).__init__()
 
         self.login_details_file = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['login_credentials'])
         self._xl_tenant = []
