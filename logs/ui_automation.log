@@ -3978,3 +3978,4 @@ from unknown error: web view not found
 [03/Mar/2020 17:08:39.211 12209 ] ERROR [api_logger:applicant_actions_flow.py:<module>:84] Message: chrome not reachable
   (Session info: chrome=80.0.3987.87)
 
+[04/Mar/2020 14:55:57.167 8785 ] ERROR [api_logger:crpo_login.py:embrace_login:185] 

@@ -14,6 +14,13 @@ login = {
     'logout': 'crpo-settings-logout',
     'login_back': '//*[@ng-click="vm.backToLogin()"]'
 }
+embrace_login = {
+    'next_button': '//*[@ng-click="vm.getTenantConfiguration(vm.tenantAlias);$hide();"]',
+    'username': "username",
+    'password': 'new-password',
+    'login_success': '/html/body/div[1]/header[2]/div/div/div[2]/div/div/div[1]/span[1]',
+    'tenant_alias_page': '/html/body/div[5]/div/div/div[1]/h4'
+}
 setting_modules = {
     'settings': '//*[@ui-sref="crpo.settings"]',
     'interview_module': '//*[@title="Interview Module"]',
