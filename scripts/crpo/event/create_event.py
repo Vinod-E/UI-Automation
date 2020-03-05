@@ -24,62 +24,47 @@ class CreateEvent(event_excel.EventExcelRead):
         try:
             self.event_tab()
 
-            time.sleep(5)
-            self.x_path_element_webdriver_wait(page_elements.buttons['create'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['create'])
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("Name"))
-            self.xpath.send_keys(self.event_sprint_version)
-
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("Requirement"))
-            time.sleep(1)
-            self.xpath.send_keys(self.req_name_sprint_version)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.event['job_field'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Search'))
-            self.xpath.send_keys(self.job_name_sprint_version)
-
-            self.x_path_element_webdriver_wait(page_elements.event['job_selection'])
-            self.xpath.click()
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name"),
+                                             self.event_sprint_version)
 
             time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['done'])
-            self.xpath.click()
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Requirement"),
+                                             self.req_name_sprint_version)
+            self.drop_down_selection()
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Slot'))
-            self.xpath.send_keys(self.xl_slot)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
+            self.web_element_click_xpath(page_elements.event['job_field'])
 
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Search"),
+                                             self.job_name_sprint_version)
+
+            self.web_element_click_xpath(page_elements.event['job_selection'])
+            self.web_element_click_xpath(page_elements.buttons['done'])
+
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Slot"),
+                                             self.xl_slot)
+            self.drop_down_selection()
+
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("From"),
+                                             self.event_date)
+
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("To"),
+                                             self.event_date)
+
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Event Manager"),
+                                             self.xl_em)
             time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('From'))
-            self.xpath.send_keys(self.event_date)
+            self.drop_down_selection()
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('To'))
-            self.xpath.send_keys(self.event_date)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("College"),
+                                             self.xl_college)
+            self.drop_down_selection()
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Event Manager'))
-            time.sleep(1)
-            self.xpath.send_keys(self.xl_em)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('College'))
-            self.xpath.send_keys(self.xl_college)
-            time.sleep(1)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.event['ec_enable'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.event['ec_enable'])
 
             self.driver.execute_script("window.scrollTo(0,100);")
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.buttons['event_create'])
-            self.xpath.click()
-            time.sleep(3)
+            self.web_element_click_xpath(page_elements.buttons['event_create'])
 
             # ------------------------------- Validating event ---------------------------------------------------------
             self.event_validation('the event')
@@ -97,9 +82,9 @@ class CreateEvent(event_excel.EventExcelRead):
         try:
             time.sleep(2)
             self.driver.execute_script("window.scrollTo(0,-100);")
-            self.x_path_element_webdriver_wait(
+            self.web_element_text_xpath(
                 page_elements.event_validation['get_event_name'].format(self.event_sprint_version))
-            self.get_event_name = self.xpath.text
+            self.get_event_name = self.text_value
 
             if self.get_event_name.strip() == self.event_sprint_version:
                 self.validation_check = 'True'
@@ -110,7 +95,3 @@ class CreateEvent(event_excel.EventExcelRead):
                 print('Event validation failed Or event creation failed <<<--------**')
         except Exception as e:
             api_logger.error(e)
-
-
-# ob = CreateEvent()
-# ob.create_event()

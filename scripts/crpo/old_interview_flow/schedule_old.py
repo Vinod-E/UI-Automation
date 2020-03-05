@@ -33,18 +33,14 @@ class Schedule(login.Login):
             self.event_validation('interview-schedule')
             self.floating_action()
 
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['View_Applicants'])
-            self.xpath.click()
-
-            time.sleep(1.5)
+            self.web_element_click_xpath(page_elements.floating_actions['View_Applicants'])
             # --------------------------- Applicant Advance search -----------------------------------------------------
             self.applicant_advance_search()
             self.applicant_name_search(self.event_sprint_version_o, 'Applicant grid')
 
             # --------------------------- Change Applicant Status to Schedule ------------------------------------------
             self.driver.execute_script("window.scrollTo(0,100);")
-            time.sleep(1)
+            time.sleep(3)
             self.check_box()
             self.applicant_schedule_status_change(self.xl_change_applicant_stage_o,
                                                   self.xl_change_applicant_status_o,
@@ -80,9 +76,9 @@ class Schedule(login.Login):
         try:
             time.sleep(2)
             self.driver.execute_script("window.scrollTo(0,-100);")
-            self.x_path_element_webdriver_wait(
+            self.web_element_text_xpath(
                 page_elements.event_validation['get_event_name'].format(self.event_sprint_version_o))
-            self.get_event_name = self.xpath.text
+            self.get_event_name = self.text_value
 
             if self.get_event_name.strip() == self.event_sprint_version_o:
                 self.event_validation_check = 'Pass'
@@ -95,8 +91,8 @@ class Schedule(login.Login):
 
     def current_status_validation(self, status):
         try:
-            self.x_path_element_webdriver_wait(page_elements.event_applicant['applicant_validation'].format(status))
-            self.applicant_current_status = self.xpath.text
+            self.web_element_text_xpath(page_elements.event_applicant['applicant_validation'].format(status))
+            self.applicant_current_status = self.text_value
             if self.applicant_current_status.strip() == status:
                 self.ui_applicant_current_status = 'Pass'
                 print('**-------->>> Applicant stage - status '

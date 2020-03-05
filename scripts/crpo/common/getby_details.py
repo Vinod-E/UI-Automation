@@ -9,16 +9,14 @@ class GetByDetails(menu_tabs.MenuTabs):
 
     def __common(self, name):
         try:
-            self.x_path_element_webdriver_wait(page_elements.getby_details['getbyid'].format(name))
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.getby_details['getbyid'].format(name))
             print('**-------->>> Entered into get by details screen')
         except Exception as getby:
             api_logger.error(getby)
 
     def event_getby_details(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.getby_details['event_getbyid'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.getby_details['event_getbyid'])
             print('**-------->>> Entered into get by details screen')
         except Exception as getby:
             api_logger.error(getby)

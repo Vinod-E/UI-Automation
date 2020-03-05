@@ -14,13 +14,11 @@ class AdvanceSearch(common_login.CommonLogin):
     def advance_search(self, tab):
         try:
 
-            self.x_path_element_webdriver_wait(tab)
-            self.xpath.click()
+            self.web_element_click_xpath(tab)
             self.driver.execute_script("window.scrollTo(0,-100);")
             time.sleep(2.5)
 
-            self.id_element_webdriver_wait(page_elements.advance_search['search'])
-            self.id.click()
+            self.web_element_click_id(page_elements.advance_search['search'])
 
         except Exception as search:
             api_logger.error(search)
@@ -30,24 +28,18 @@ class AdvanceSearch(common_login.CommonLogin):
 
             self.driver.execute_script("window.scrollTo(0,-50);")
             time.sleep(2)
-
-            self.id_element_webdriver_wait(page_elements.advance_search['search'])
-            self.id.click()
-
+            self.web_element_click_id(page_elements.advance_search['search'])
         except Exception as search:
             api_logger.error(search)
 
     def name_search(self, name, where_search_is_happening):
         try:
 
-            self.name_element_webdriver_wait(page_elements.advance_search['name'])
-            time.sleep(1)
-            self.name.send_keys(name)
+            self.web_element_send_keys_name(page_elements.advance_search['name'], name)
 
             self.driver.execute_script("window.scrollTo(0,100);")
             time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.buttons['search'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['search'])
             print('**-------->>> {} advance search is working'.format(where_search_is_happening))
             self.search = 'Pass'
 
@@ -57,13 +49,8 @@ class AdvanceSearch(common_login.CommonLogin):
     def assessment_name_search(self, name, where_search_is_happening):
         try:
 
-            self.name_element_webdriver_wait(page_elements.advance_search['assessment_name'])
-            time.sleep(2)
-            self.name.send_keys(name)
-
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.buttons['search'])
-            self.xpath.click()
+            self.web_element_send_keys_name(page_elements.advance_search['assessment_name'], name)
+            self.web_element_click_xpath(page_elements.buttons['search'])
             print('**-------->>> {} advance search is working'.format(where_search_is_happening))
             self.search = 'Pass'
 
@@ -73,14 +60,10 @@ class AdvanceSearch(common_login.CommonLogin):
     def applicant_name_search(self, name, where_search_is_happening):
         try:
 
-            self.name_element_webdriver_wait(page_elements.advance_search['a_name'])
-            time.sleep(2)
-            self.name.clear()
-            self.name.send_keys(name)
+            self.driver.find_element_by_name(page_elements.advance_search['a_name']).clear()
+            self.web_element_send_keys_name(page_elements.advance_search['a_name'], name)
 
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.buttons['search'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['search'])
             print('**-------->>> {} advance search is working'.format(where_search_is_happening))
             self.search = 'Pass'
 
