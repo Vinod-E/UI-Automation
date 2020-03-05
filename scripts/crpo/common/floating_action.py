@@ -10,8 +10,7 @@ class FloatingAction(advance_search.AdvanceSearch):
     def floating_action(self):
         try:
             # ------------------------------------ Selection Process -----------------------------------------------
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['floating_actions'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.floating_actions['floating_actions'])
 
         except Exception as error:
             api_logger.error(error)

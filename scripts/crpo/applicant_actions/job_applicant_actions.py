@@ -28,7 +28,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
             # --------------------------- Change Applicant Status -------------------
             self.job_applicant_status_change(self.xl_stage_a, self.xl_status_a, self.xl_comment_a)
             self.glowing_messages('Applicant status changed successfully for selected Applicant(s)')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -48,7 +47,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
             self.web_element_send_keys_xpath(page_elements.event_applicant['description'], self.xl_mail_description_a)
             self.web_element_click_xpath(page_elements.buttons['clone/save'])
             self.glowing_messages('Mail will be send asynchronously')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -65,7 +63,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
             self.web_element_click_id(page_elements.applicant_actions['untag_applicants'])
             self.web_element_click_xpath(page_elements.buttons['ok'])
             self.glowing_messages('Unable to untag candidate, beacuse candidate is moved in the Event and Job')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -83,7 +80,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
             self.web_element_click_id(page_elements.applicant_actions['copy_registration_link'])
             self.web_element_click_xpath(page_elements.buttons['copy'])
             self.glowing_messages('Registration link copied')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -99,7 +95,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
             self.job_more_actions()
             # ----------------------------- Manage Task ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
-            time.sleep(4)
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.manage_task_validation(self._applicant_name)
             self.driver.close()
@@ -132,7 +127,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
             # ----------------------------- Single PDF ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['job_single_pdf'])
             self.glowing_messages('Your request is being processed, please check the status in Background Task details')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -150,7 +144,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
             self.web_element_click_xpath(page_elements.applicant_actions['single_pdf'])
             self.web_element_click_xpath(page_elements.buttons['ok'])
             self.glowing_messages('Email Sent Successfully')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -172,7 +165,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
             self.web_element_send_keys_xpath(page_elements.event_applicant['comment'], self.xl_comment_a)
             self.web_element_click_xpath(page_elements.buttons['send'])
             self.glowing_messages('Admit-Card successfully sent to applicants(s)')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------

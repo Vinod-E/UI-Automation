@@ -40,7 +40,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             # --------------------------- Change Applicant Status -------------------
             self.applicant_status_change(self.xl_stage_a, self.xl_status_a, self.xl_comment_a)
             self.glowing_messages('Applicant status changed successfully for selected Applicant(s)')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -60,7 +59,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.web_element_send_keys_xpath(page_elements.event_applicant['description'], self.xl_mail_description_a)
             self.web_element_click_xpath(page_elements.buttons['clone/save'])
             self.glowing_messages('Mail will be send asynchronously')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -103,7 +101,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.drop_down_selection()
             self.web_element_click_xpath(page_elements.buttons['tag_applicant_event'])
             self.glowing_messages('All Applicant(s) tagged successfully')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -121,7 +118,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.web_element_click_id(page_elements.applicant_actions['untag_applicants'])
             self.web_element_click_xpath(page_elements.buttons['ok'])
             self.glowing_messages('Unable to untag candidate, beacuse candidate is moved in the Event and Job')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -139,7 +135,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.web_element_click_xpath(page_elements.applicant_actions['registration_link'])
             self.web_element_click_xpath(page_elements.buttons['ok'])
             self.glowing_messages('Registration-Link successfully sent to applicants(s)')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -157,7 +152,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.web_element_click_xpath(page_elements.applicant_actions['send_admit_card'])
             self.web_element_click_xpath(page_elements.buttons['ok'])
             self.glowing_messages('Admit-Card successfully sent to applicants(s)')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -175,7 +169,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
             self.web_element_click_xpath(page_elements.buttons['copy'])
             self.glowing_messages('Registration link copied')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -223,7 +216,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             # ----------------------------- Download Resume ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['download_resume'])
             self.glowing_messages('Resumes Not found')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -257,7 +249,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             # ----------------------------- Generate Docket ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['docket'])
             self.glowing_messages('Your request is being processed, please check the status in Background Task details')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -287,13 +278,11 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             # ----------------------------- Upload attachment ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['upload_attachment'])
             self.web_element_send_keys_xpath(page_elements.file['upload_file'], self.attachment)
-            time.sleep(2)
             self.glowing_messages('File uploaded successfully')
             self.dismiss_message()
             time.sleep(0.5)
             self.web_element_click_xpath(page_elements.buttons['create-save'])
             self.message_validation = ''
-            time.sleep(2)
             self.glowing_messages('Attachment Upload Successfully')
             self.dismiss_message()
             self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
@@ -315,7 +304,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(1)
             self.web_element_click_xpath(page_elements.buttons['create-save'])
             self.glowing_messages('Applicant updated successfully')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -386,7 +374,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.web_element_send_keys_xpath(page_elements.event_applicant['comment'], self.xl_comment_a)
             self.web_element_click_xpath(page_elements.buttons['send'])
             self.glowing_messages('Re-Registration has been enabled for this user')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------

@@ -36,9 +36,7 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
                 time.sleep(2)
                 self.floating_action()
 
-                time.sleep(2)
-                self.x_path_element_webdriver_wait(page_elements.floating_actions['View_Applicants'])
-                self.xpath.click()
+                self.web_element_click_xpath(page_elements.floating_actions['View_Applicants'])
                 self.ui_event_applicants_action = 'Pass'
 
                 # --------------------------- Applicant Advance search -------------------------------------------------
@@ -72,9 +70,9 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
 
     def applicant_event_validation(self,):
         try:
-            self.x_path_element_webdriver_wait(
+            self.web_element_text_xpath(
                 page_elements.event_applicant['applicant_validation'].format(self.event_sprint_version))
-            self.applicant_in_event = self.xpath.text
+            self.applicant_in_event = self.text_value
             if self.applicant_in_event.strip() == self.event_sprint_version:
                 print('**-------->>> Applicant tagged to respected event :: {}'.format(self.applicant_in_event))
             else:
@@ -86,9 +84,9 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
 
     def applicant_hopping_validation(self):
         try:
-            self.x_path_element_webdriver_wait(
+            self.web_element_text_xpath(
                 page_elements.event_applicant['applicant_validation'].format(self.hopping_positive_status))
-            self.applicant_hopping = self.xpath.text
+            self.applicant_hopping = self.text_value
             if self.applicant_hopping == self.hopping_positive_status:
                 print('**-------->>> Applicant movement happened '
                       'through hopping in event :: {}'.format(self.applicant_in_event))
