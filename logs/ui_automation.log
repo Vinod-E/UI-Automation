@@ -47,3 +47,623 @@
 [04/Mar/2020 18:45:28.702 24247 ] ERROR [api_logger:job_applicant_actions.py:job_admit_card:182] Message: stale element reference: element is not attached to the page document
   (Session info: chrome=80.0.3987.87)
 
+[05/Mar/2020 13:46:19.454 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@ui-sref="crpo.jobRole"]"}
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.576 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] 'NoneType' object has no attribute 'click'
+[05/Mar/2020 13:46:21.579 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.581 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.583 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.586 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.588 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.591 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.594 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.603 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.605 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.607 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.611 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.612 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.614 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.616 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.620 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.622 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.623 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.625 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.626 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.629 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.633 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.635 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.637 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.638 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.640 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.642 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.644 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.648 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.649 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.651 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.653 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.654 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.655 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.657 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.658 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.661 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.664 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.665 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.667 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.668 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.670 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.671 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.673 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.674 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.676 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.681 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.683 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.685 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.686 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.688 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.690 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.691 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.693 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.697 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.698 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.700 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.701 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.703 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.703 9848 ] ERROR [api_logger:create_job.py:create_job_role:58] 'str' object has no attribute 'send_keys'
+[05/Mar/2020 13:46:21.705 9848 ] ERROR [api_logger:image_capture.py:image_capture:14] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.706 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.708 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.709 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.713 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.714 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.716 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.717 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.719 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.720 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.722 9848 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: chrome not reachable
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:46:21.722 9848 ] ERROR [api_logger:create_job.py:job_validation:73] 'str' object has no attribute 'text'
+[05/Mar/2020 13:47:12.797 10025 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: 
+
+[05/Mar/2020 13:47:12.857 10025 ] ERROR [api_logger:common_login.py:crpo_login:112] 
+[05/Mar/2020 13:47:25.689 10025 ] ERROR [api_logger:webdriver_functions.py:web_element_send_keys_xpath:119] Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@type="text"][@placeholder="Location"]"}
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:47:36.039 10025 ] ERROR [api_logger:create_job.py:job_validation:73] 'str' object has no attribute 'text'
+[05/Mar/2020 13:49:05.382 10273 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: element click intercepted: Element <a class="btn-group show_form no-padding pointer btn button_radius ng-binding ng-scope" ng-if="!vm.config.isCreateDisabled" style="padding: 0 10px;border-radius:0;margin-left: 5px;" ng-click="vm.create();">...</a> is not clickable at point (901, 59). Other element would receive the click: <iframe ng-src="https://s3-ap-southeast-1.amazonaws.com/all-hirepro-files/accenture/branding_v3/header.html" frameborder="0" scrolling="no" style="width: 100%; height: 100px;" ng-style="{'height':'100px'}" src="https://s3-ap-southeast-1.amazonaws.com/all-hirepro-files/accenture/branding_v3/header.html"></iframe>
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:50:57.071 10587 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: element click intercepted: Element <a class="btn-group show_form no-padding pointer btn button_radius ng-binding ng-scope" ng-if="!vm.config.isCreateDisabled" style="padding: 0 10px;border-radius:0;margin-left: 5px;" ng-click="vm.create();">...</a> is not clickable at point (901, 224). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 13:50:58.249 10587 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: element click intercepted: Element <a class="btn-group show_form no-padding pointer btn button_radius ng-binding ng-scope" ng-if="!vm.config.isCreateDisabled" style="padding: 0 10px;border-radius:0;margin-left: 5px;" ng-click="vm.create();">...</a> is not clickable at point (901, 224). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:03.461 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: element click intercepted: Element <a class="btn-group show_form no-padding pointer btn button_radius ng-binding ng-scope" ng-if="!vm.config.isCreateDisabled" style="padding: 0 10px;border-radius:0;margin-left: 5px;" ng-click="vm.create();">...</a> is not clickable at point (901, 224). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:04.643 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_click_xpath:71] Message: element click intercepted: Element <a class="btn-group show_form no-padding pointer btn button_radius ng-binding ng-scope" ng-if="!vm.config.isCreateDisabled" style="padding: 0 10px;border-radius:0;margin-left: 5px;" ng-click="vm.create();">...</a> is not clickable at point (901, 224). Other element would receive the click: <div class="dw-loading dw-loading-overlay dw-loading-active">...</div>
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.781 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] 'NoneType' object has no attribute 'text'
+[05/Mar/2020 14:19:22.786 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.792 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.795 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.798 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.800 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.803 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.804 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.806 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.809 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.811 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.813 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.815 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.819 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.822 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.824 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.825 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.826 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.828 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.832 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.833 11731 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:22.835 11731 ] ERROR [api_logger:floating_action.py:floating_action:17] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.840 11731 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.843 11731 ] ERROR [api_logger:selection_process.py:config_selection_process:78] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.846 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.850 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.853 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.857 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.860 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.862 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.865 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.868 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.872 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.876 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.878 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.879 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.880 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.882 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.883 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.884 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.886 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.887 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.888 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.889 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.890 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.891 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.892 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.893 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.894 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.895 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.896 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.897 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.897 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.898 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.899 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.900 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.900 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.901 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.902 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.902 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.903 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.904 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.904 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.905 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.906 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.907 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.908 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.908 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.909 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.910 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.910 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.911 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.912 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.913 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.914 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.915 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.916 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.917 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.918 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.919 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.920 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.920 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.922 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.923 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.925 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.926 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.927 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.928 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.929 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.930 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.931 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.932 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.933 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.935 11731 ] ERROR [api_logger:webdriver_functions.py:web_element_text_xpath:23] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:24.938 11731 ] ERROR [api_logger:create_requirement.py:create_requirement:72] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:27.441 11731 ] ERROR [api_logger:webdriver_wait.py:x_path_element_webdriver_wait:21] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+
+[05/Mar/2020 14:19:27.443 11731 ] ERROR [api_logger:create_requirement.py:requirement_validation:81] Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=80.0.3987.87)
+

@@ -1,9 +1,9 @@
 import time
 import page_elements
+import image_capture
 import test_data_inputpath
 from logger_settings import api_logger
 from scripts.crpo.job import job_excel
-from selenium.webdriver.common.keys import Keys
 
 
 class CreateJob(job_excel.JobExcelRead):
@@ -18,58 +18,46 @@ class CreateJob(job_excel.JobExcelRead):
     def create_job_role(self):
         try:
             self.job_tab()
+            self.web_element_click_xpath(page_elements.buttons['create'])
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name"),
+                                             self.job_name_sprint_version)
+            self.web_element_send_keys_xpath(page_elements.file['upload_file'],
+                                             self.job_file)
+            self.web_element_send_keys_xpath(page_elements.job['description_box'],
+                                             self.xl_job_desc)
+            self.web_element_send_keys_xpath(page_elements.job['location'],
+                                             self.xl_job_loc)
+            self.drop_down_selection()
+            self.web_element_send_keys_xpath(page_elements.job['hiring_manager'],
+                                             self.xl_job_hm)
+            self.drop_down_selection()
+            self.web_element_send_keys_xpath(page_elements.job['business_unit'],
+                                             self.xl_job_bu)
+            self.drop_down_selection()
 
-            time.sleep(5)
-            self.x_path_element_webdriver_wait(page_elements.buttons['create'])
-            self.xpath.click()
+            self.driver.find_element_by_name(page_elements.job['openings']).clear()
+            self.web_element_send_keys_name(page_elements.job['openings'],
+                                            self.xl_openings)
+            self.web_element_send_keys_name(page_elements.job['max_applicant'],
+                                            self.xl_openings)
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("Name"))
-            self.xpath.send_keys(self.job_name_sprint_version)
+            self.driver.find_element_by_xpath(page_elements.job['male_diversity']).clear()
+            self.web_element_send_keys_xpath(page_elements.job['male_diversity'],
+                                             self.xl_male_diversity)
 
-            time.sleep(2.4)
-            self.driver.find_element_by_xpath(page_elements.file['upload_file']).send_keys(self.job_file)
+            self.driver.find_element_by_xpath(page_elements.job['female_diversity']).clear()
+            self.web_element_send_keys_xpath(page_elements.job['female_diversity'],
+                                             self.xl_female_diversity)
 
-            self.x_path_element_webdriver_wait(page_elements.job['description_box'])
-            self.xpath.send_keys(self.xl_job_desc)
-
-            self.x_path_element_webdriver_wait(page_elements.job['location'])
-            self.xpath.send_keys(self.xl_job_loc)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-
-            self.x_path_element_webdriver_wait(page_elements.job['hiring_manager'])
-            self.xpath.send_keys(self.xl_job_hm)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-
-            self.x_path_element_webdriver_wait(page_elements.job['business_unit'])
-            self.xpath.send_keys(self.xl_job_bu)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-
-            time.sleep(2)
-            self.name_element_webdriver_wait(page_elements.job['openings'])
-            self.name.clear()
-            self.name.send_keys(self.xl_openings)
-
-            self.name_element_webdriver_wait(page_elements.job['max_applicant'])
-            self.name.send_keys(self.xl_openings)
-
-            self.x_path_element_webdriver_wait(page_elements.job['male_diversity'])
-            self.xpath.clear()
-            self.xpath.send_keys(self.xl_male_diversity)
-
-            self.x_path_element_webdriver_wait(page_elements.job['female_diversity'])
-            self.xpath.clear()
-            self.xpath.send_keys(self.xl_female_diversity)
-
-            self.x_path_element_webdriver_wait(page_elements.buttons['create-save'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['create-save'])
 
             time.sleep(5)
             self.driver.execute_script("window.scrollTo(0,-100);")
-            self.image_capture('Job_created')
+            image_capture.screen_shot(self, 'Job_created')
 
         except Exception as create_job:
             api_logger.error(create_job)
-            self.image_capture('Job')
+            image_capture.screen_shot(self, 'Job')
 
         self.job_validation('the job')
         if self.job_name_breadcumb == self.job_name_sprint_version:
@@ -78,19 +66,10 @@ class CreateJob(job_excel.JobExcelRead):
         else:
             print('**-------->>> Job Created Failed')
 
-        # ----------------------------------- duplicate job name case --------------------------------------------------
-        # duplicate_job = self.driver.find_element_by_xpath('duplicate_job')
-        # if duplicate_job.text == 'Requisition name already exists':
-        #     self.driver.refresh()
-        #     self.create_job_role()
-
-        # ---------------------------- Checking whether the job created or not -----------------------------------------
-        #     if self.driver.find_element_by_xpath(page_elements.job['jobrole_breadcrumbs']).is_displayed():
-
     def job_validation(self, config_name):
         try:
-            self.x_path_element_webdriver_wait(page_elements.job_validations['job_name_breadcumb'])
-            self.job_name_breadcumb = self.xpath.text
+            self.web_element_text_xpath(page_elements.job_validations['job_name_breadcumb'])
+            self.job_name_breadcumb = self.text_value
         except Exception as e1:
             api_logger.error(e1)
 
@@ -100,7 +79,3 @@ class CreateJob(job_excel.JobExcelRead):
                   'with {} to created job :: {}'.format(config_name, self.job_name_breadcumb))
         else:
             print('Job validation failed Or Job creation failed <<<--------**')
-
-
-# ob = CreateJob()
-# ob.create_job_role()
