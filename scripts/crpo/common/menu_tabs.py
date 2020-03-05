@@ -9,42 +9,36 @@ class MenuTabs(applicant_status_change.ChangeStatus):
 
     def event_tab(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.tabs['event_tab'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.tabs['event_tab'])
         except Exception as error:
             api_logger.error(error)
 
     def job_tab(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.tabs['job_tab'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.tabs['job_tab'])
         except Exception as error:
             api_logger.error(error)
 
     def requirement_tab(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.tabs['requirement_tab'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.tabs['requirement_tab'])
         except Exception as error:
             api_logger.error(error)
 
     def assessment_tab(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.tabs['assessment_tab'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.tabs['assessment_tab'])
         except Exception as error:
             api_logger.error(error)
 
     def more_tab(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.tabs['more_tabs'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.tabs['more_tabs'])
         except Exception as error:
             api_logger.error(error)
 
     def embrace_tab(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.tabs['embrace_tab'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.tabs['embrace_tab'])
         except Exception as error:
             api_logger.error(error)
