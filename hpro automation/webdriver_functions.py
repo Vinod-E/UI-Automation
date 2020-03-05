@@ -1,3 +1,4 @@
+import time
 import webdriver_wait
 from logger_settings import api_logger
 from selenium.webdriver.common.keys import Keys
@@ -21,6 +22,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 break
             except Exception as error:
                 api_logger.error(error)
+                time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
         return result
@@ -37,6 +39,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 break
             except Exception as error:
                 api_logger.error(error)
+                time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
         return result
@@ -53,6 +56,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 break
             except Exception as error:
                 api_logger.error(error)
+                time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
         return result
@@ -69,6 +73,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 break
             except Exception as error:
                 api_logger.error(error)
+                time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
         return result
@@ -85,6 +90,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 break
             except Exception as error:
                 api_logger.error(error)
+                time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
         return result
@@ -94,13 +100,14 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
         attempts = 0
         while attempts < 10:
             try:
-                name_click = self.name_element_webdriver_wait(web_element)
+                name_click = self.driver.find_element_by_name(web_element)
                 name_click.click()
 
                 result = True
                 break
             except Exception as error:
                 api_logger.error(error)
+                time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
         return result
@@ -117,6 +124,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 break
             except Exception as error:
                 api_logger.error(error)
+                time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
         return result
@@ -133,6 +141,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 break
             except Exception as error:
                 api_logger.error(error)
+                time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
         return result
@@ -149,6 +158,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 break
             except Exception as error:
                 api_logger.error(error)
+                time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
         return result
