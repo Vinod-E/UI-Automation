@@ -20,57 +20,46 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
         if self.validation_check == 'True':
 
             try:
+                time.sleep(1)
                 self.floating_action()
                 self.ui_event_floating_action = 'Pass'
 
-                time.sleep(2)
-                self.x_path_element_webdriver_wait(page_elements.floating_actions['event_upload_candidates'])
-                self.xpath.click()
+                self.web_element_click_xpath(page_elements.floating_actions['event_upload_candidates'])
                 self.ui_event_upload_candidate_action = 'Pass'
 
                 upload_file = self.driver.find_element_by_xpath(page_elements.file['event_upload_file'])
                 upload_file.send_keys(self.file)
 
-                time.sleep(5)
-                self.x_path_element_webdriver_wait(page_elements.event_config['Next_Button'])
-                self.xpath.click()
+                time.sleep(2)
+                self.web_element_click_xpath(page_elements.event_config['Next_Button'])
 
-                self.x_path_element_webdriver_wait(page_elements.event_config['declare_checkbox'])
-                self.xpath.click()
+                self.web_element_click_xpath(page_elements.event_config['declare_checkbox'])
 
                 self.driver.execute_script("window.scrollTo(0,100);")
-                self.x_path_element_webdriver_wait(page_elements.event_config['signature'])
-                self.xpath.send_keys('AutomationVS')
+                self.web_element_send_keys_xpath(page_elements.event_config['signature'],
+                                                 'AutomationVS')
 
-                time.sleep(1)
-                self.x_path_element_webdriver_wait(page_elements.event_config['Agree'])
-                self.xpath.click()
+                self.web_element_click_xpath(page_elements.event_config['Agree'])
 
-                time.sleep(2)
-                self.x_path_element_webdriver_wait(page_elements.event_config['edit_candidate_details'])
-                self.xpath.click()
+                self.web_element_click_xpath(page_elements.event_config['edit_candidate_details'])
 
-                time.sleep(1)
-                self.x_path_element_webdriver_wait(page_elements.event_config['upload_candidate_name'])
-                self.xpath.clear()
-                self.xpath.send_keys(self.event_sprint_version)
+                time.sleep(0.5)
+                self.driver.find_element_by_xpath(page_elements.event_config['upload_candidate_name']).clear()
+                self.web_element_send_keys_xpath(page_elements.event_config['upload_candidate_name'],
+                                                 self.event_sprint_version)
 
-                time.sleep(1)
-                self.x_path_element_webdriver_wait(page_elements.event_config['upload_candidate_email'])
-                self.xpath.clear()
-                self.xpath.send_keys(email_id)
+                time.sleep(0.5)
+                self.driver.find_element_by_xpath(page_elements.event_config['upload_candidate_email']).clear()
+                self.web_element_send_keys_xpath(page_elements.event_config['upload_candidate_email'], email_id)
 
-                time.sleep(1)
-                self.x_path_element_webdriver_wait(page_elements.event_config['upload_candidate_usn'])
-                self.xpath.clear()
-                self.xpath.send_keys(self.event_sprint_version)
+                time.sleep(0.5)
+                self.driver.find_element_by_xpath(page_elements.event_config['upload_candidate_usn']).clear()
+                self.web_element_send_keys_xpath(page_elements.event_config['upload_candidate_usn'],
+                                                 self.event_sprint_version)
 
-                self.x_path_element_webdriver_wait(page_elements.event_config['details_save'])
-                self.xpath.click()
+                self.web_element_click_xpath(page_elements.event_config['details_save'])
 
-                time.sleep(2)
-                self.x_path_element_webdriver_wait(page_elements.buttons['event_upload_candidate_save'])
-                self.xpath.click()
+                self.web_element_click_xpath(page_elements.buttons['event_upload_candidate_save'])
 
 # -------- Validation check
                 self.upload_candidate_validation()
@@ -80,18 +69,16 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
 
     def upload_candidate_validation(self):
         try:
-            time.sleep(2.9)
-            self.x_path_element_webdriver_wait(page_elements.event_config['upload_candidate_count'])
+            self.web_element_text_xpath(page_elements.event_config['upload_candidate_count'])
 
-            if self.xpath.text == 'Uploaded 1':
+            if self.text_value == 'Uploaded 1':
                 self.ui_event_upload_candidate = 'Pass'
                 print('**-------->>> Candidate uploaded to event successfully')
             else:
                 print('Failed to upload candidate to event <<<--------**')
 
-            self.driver.find_element_by_xpath(page_elements.event_config['close_pop_details_window']).click()
+            self.web_element_click_xpath(page_elements.event_config['close_pop_details_window'])
             self.driver.refresh()
-            time.sleep(3.5)
 
         except Exception as error:
             api_logger.error(error)

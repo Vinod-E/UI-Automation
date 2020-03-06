@@ -18,24 +18,21 @@ class RequirementConfig(create_requirement.CreateRequirement):
 
     def requirement_configuration_tab(self):
         try:
-            time.sleep(1.5)
             self.requirement_validation('duplicity check')
 
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.tabs['req_configuration_tab'])
-            self.xpath.click()
+            time.sleep(0.5)
+            self.web_element_click_xpath(page_elements.tabs['req_configuration_tab'])
             self.ui_req_config_tab = 'Pass'
 
-            self.x_path_element_webdriver_wait(page_elements.tabs['req_duplicity_check'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.tabs['req_duplicity_check'])
             self.ui_req_duplicity_tab = 'Pass'
 
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.buttons['dont_allow'])
-            self.xpath.click()
+            self.web_element_text_xpath(page_elements.buttons['dont_allow'])
+            time.sleep(0.5)
+            self.web_element_click_xpath(page_elements.buttons['dont_allow'])
 
             # ----------------------------------- Validation -----------------------------------------------------------
-            self.dont_allow = self.xpath.text
+            self.dont_allow = self.text_value
             if self.dont_allow == 'Dont Allow':
                 print('**-------->>> Duplicity check configured')
                 self.ui_req_duplicity = 'Pass'
@@ -59,19 +56,14 @@ class RequirementConfig(create_requirement.CreateRequirement):
             if self.search == 'Pass':
                 self.ui_req_advance_search = 'Pass'
 
-            time.sleep(2)
+            time.sleep(1)
             self.requirement_getby_details(self.requirement_sprint_version)
 
-            time.sleep(2)
+            time.sleep(1)
             self.requirement_validation('getbyid')
             if self.req_name_breadcumb == self.requirement_sprint_version:
                 print('**-------->>> Requirement get by name is working')
                 self.ui_req_getbyid = 'Pass'
-                time.sleep(3)
 
         except Exception as search:
             api_logger.error(search)
-
-
-# ob = RequirementConfig()
-# ob.requirement_configuration_tab()

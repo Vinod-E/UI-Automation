@@ -20,14 +20,10 @@ class EventManageTask(change_applicant_status.ChangeApplicantStatus):
             self.floating_action()
             self.ui_candidate_floating_action = 'Pass'
 
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['manage_task'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.floating_actions['manage_task'])
             self.ui_candidate_manage_task_action = 'Pass'
 
             self.driver.switch_to.window(self.driver.window_handles[2])
-            time.sleep(1.5)
-
             # -------------------------------- Task validation ---------------------------------------------------------
             self.activity_task_validation()
             if self.task_validation_check == 'Pass':
@@ -35,10 +31,10 @@ class EventManageTask(change_applicant_status.ChangeApplicantStatus):
                 print('**-------->>> Task assigned to applicant successfully')
 
             self.driver.close()
-            time.sleep(1.5)
+            time.sleep(1)
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.driver.close()
-            time.sleep(1.5)
+            time.sleep(1)
             self.driver.switch_to.window(self.driver.window_handles[0])
 
         except Exception as error:
@@ -46,8 +42,8 @@ class EventManageTask(change_applicant_status.ChangeApplicantStatus):
 
     def activity_task_validation(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.event_applicant['task_candidate_name'])
-            self.applicant_with_id = self.xpath.text
+            self.web_element_text_xpath(page_elements.event_applicant['task_candidate_name'])
+            self.applicant_with_id = self.text_value
             time.sleep(1)
             if self.event_sprint_version in self.applicant_with_id:
                 self.task_validation_check = 'Pass'

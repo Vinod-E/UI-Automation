@@ -33,7 +33,6 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
         self.event_validation('event applicants')
         if self.validation_check == 'True':
             try:
-                time.sleep(2)
                 self.floating_action()
 
                 self.web_element_click_xpath(page_elements.floating_actions['View_Applicants'])
@@ -61,9 +60,7 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
 
     def applicant_get_by(self):
         try:
-            time.sleep(3)
             self.applicant_getby_details(self.event_sprint_version)
-            time.sleep(2)
             self.driver.switch_to.window(self.driver.window_handles[1])
         except Exception as error:
             api_logger.error(error)

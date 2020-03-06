@@ -23,8 +23,7 @@ class TestTaskConfig(create_event.CreateEvent):
         if self.validation_check == 'True':
 
             try:
-                self.x_path_element_webdriver_wait(page_elements.tabs['event_configuration_tab'])
-                self.xpath.click()
+                self.web_element_click_xpath(page_elements.tabs['event_configuration_tab'])
                 self.ui_event_config_tab = 'Pass'
                 # ---------------------- Task configuration ------------------------------------------------------------
                 self.task_config(page_elements.task_config['event_task_configure'],
@@ -42,40 +41,34 @@ class TestTaskConfig(create_event.CreateEvent):
                     print('**-------->>> Event Task configuration has been done')
                 else:
                     print('Event Task configuration failed <<<--------**')
-                time.sleep(2.2)
 
                 # ---------------------- Test configuration ------------------------------------------------------------
                 self.driver.refresh()
-                time.sleep(3)
-
-                self.x_path_element_webdriver_wait(page_elements.event_config['Event_test_configure'])
-                self.xpath.click()
-
                 time.sleep(1)
-                self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Job Role'))
-                self.xpath.send_keys(self.job_name_sprint_version)
-                self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
 
-                time.sleep(1)
-                self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Stage'))
-                self.xpath.send_keys(self.xl_event_test_stage)
-                self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
+                self.web_element_click_xpath(page_elements.event_config['Event_test_configure'])
 
-                time.sleep(1)
-                self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Test'))
-                self.xpath.send_keys(self.event_test_sprint_version)
-                self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
+                time.sleep(0.5)
+                self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Job Role'),
+                                                 self.job_name_sprint_version)
+                self.drop_down_selection()
 
-                time.sleep(1)
-                self.x_path_element_webdriver_wait(page_elements.event_config['test_active'])
-                self.xpath.click()
+                time.sleep(0.5)
+                self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Stage'),
+                                                 self.xl_event_test_stage)
+                self.drop_down_selection()
 
-                time.sleep(2)
-                self.x_path_element_webdriver_wait(page_elements.buttons['event_test_save'])
-                self.xpath.click()
+                self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Test'),
+                                                 self.event_test_sprint_version)
+                self.drop_down_selection()
+
+                self.web_element_click_xpath(page_elements.event_config['test_active'])
+
+                time.sleep(0.5)
+                self.web_element_click_xpath(page_elements.buttons['event_test_save'])
 
                 self.driver.refresh()
-                time.sleep(3)
+                time.sleep(1)
 
                 # ------------------ Validation ----------------------------
                 self.event_test_validation(self.event_sprint_version)
@@ -84,7 +77,6 @@ class TestTaskConfig(create_event.CreateEvent):
                     print('**-------->>> Event Test configuration has been done')
                 else:
                     print('Event Test configuration failed <<<--------**')
-                time.sleep(3)
 
             except Exception as error:
                 api_logger.error(error)
@@ -94,9 +86,8 @@ class TestTaskConfig(create_event.CreateEvent):
             for i in self.xl_activity:
                 self.activity_name = i
 
-            time.sleep(3)
-            self.x_path_element_webdriver_wait(page_elements.event_config['task_is_config'])
-            no_task_config = self.xpath.text
+            self.web_element_text_xpath(page_elements.event_config['task_is_config'])
+            no_task_config = self.text_value
             if no_task_config.strip() == self.activity_name:
                 self.task_validation = 'Pass'
                 print('**-------->>> Event task config validated and continuing with event:: {}'.format(event_name))
@@ -108,9 +99,9 @@ class TestTaskConfig(create_event.CreateEvent):
     def event_test_validation(self, event_name):
         try:
             self.driver.refresh()
-            time.sleep(3)
-            self.x_path_element_webdriver_wait(page_elements.event_config['test_is_config'])
-            no_test_config = self.xpath.text
+            time.sleep(1)
+            self.web_element_text_xpath(page_elements.event_config['test_is_config'])
+            no_test_config = self.text_value
             if no_test_config.strip() == self.event_sprint_version:
                 self.test_validation = 'Pass'
                 print('**-------->>> Event test config validated and continuing with event:: {}'.format(event_name))
