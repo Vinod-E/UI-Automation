@@ -17,59 +17,40 @@ class TaskConfig(floating_action.FloatingAction):
             self.driver.refresh()
             time.sleep(4)
 
-            self.x_path_element_webdriver_wait(configure_button)
-            self.xpath.click()
-            time.sleep(3)
+            self.web_element_click_xpath(configure_button)
 
-            self.x_path_element_webdriver_wait(page_elements.job_config['new_task_row'])
-            self.xpath.click()
-            time.sleep(2)
+            self.web_element_click_xpath(page_elements.job_config['new_task_row'])
 
-            self.x_path_element_webdriver_wait(event_or_job)
-            self.xpath.send_keys(name)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-            time.sleep(1)
+            self.web_element_send_keys_xpath(event_or_job, name)
+            self.drop_down_selection()
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].
-                                               format('Select Stage And Status'))
-            self.xpath.send_keys(assign_stage)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-            time.sleep(1)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].
+                                             format('Select Stage And Status'), assign_stage)
+            self.drop_down_selection()
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].
-                                               format('Select Positive Stage - Status'))
-            self.xpath.send_keys(positive_stage)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-            time.sleep(1)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].
+                                             format('Select Positive Stage - Status'), positive_stage)
+            self.drop_down_selection()
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].
-                                               format('Select Negative Stage - Status'))
-            self.xpath.send_keys(negative_stage)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-            time.sleep(2)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].
+                                             format('Select Negative Stage - Status'), negative_stage)
+            self.drop_down_selection()
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].
-                                               format('Select Activity'))
-            self.xpath.send_keys(activity)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-            time.sleep(3)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].
+                                             format('Select Activity'), activity)
+            self.drop_down_selection()
 
-            self.x_path_element_webdriver_wait(page_elements.job_config['Task_selection'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.job_config['Task_selection'])
 
-            self.x_path_element_webdriver_wait(page_elements.job_config['select_all_task'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.job_config['select_all_task'])
 
-            self.x_path_element_webdriver_wait(page_elements.buttons['done'])
-            self.xpath.click()
-            time.sleep(2)
+            self.web_element_click_xpath(page_elements.buttons['done'])
 
-            self.x_path_element_webdriver_wait(page_elements.buttons['job_task_config_save'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['job_task_config_save'])
 
             print('**-------->>> Task configuration done for {}'.format(name))
             self.task_configure_success = 'Pass'
-            time.sleep(3)
+            time.sleep(1.7)
 
         except Exception as config_message:
             api_logger.error(config_message)
