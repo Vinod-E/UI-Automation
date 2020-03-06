@@ -19,33 +19,30 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
         try:
             # -------------------------- Interview stage / feedback form configuration -----------------------------
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("Interview Stages"))
-            self.xpath.clear()
-            self.xpath.send_keys(interview_stage)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
+            self.driver.find_element_by_xpath(
+                page_elements.text_fields['text_field'].format("Interview Stages")).clear()
+            time.sleep(1.5)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Interview Stages"),
+                                             interview_stage)
+            self.drop_down_selection()
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("Name like."))
-            self.xpath.send_keys(template)
+            time.sleep(1)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name like."), template)
 
-            self.x_path_element_webdriver_wait(page_elements.buttons['template-search'])
-            self.xpath.click()
-
-            self.driver.execute_script("window.scrollTo(0,100);")
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.job_config['template_use'])
-            self.xpath.click()
-
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.job_config['template_comment'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.job_config['template_reject'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['template-search'])
 
             self.driver.execute_script("window.scrollTo(0,200);")
-            self.x_path_element_webdriver_wait(page_elements.buttons['template_save'])
-            self.xpath.click()
-            time.sleep(2)
+
+            time.sleep(0.5)
+            self.web_element_click_xpath(page_elements.job_config['template_use'])
+
+            self.web_element_click_xpath(page_elements.job_config['template_comment'])
+
+            self.web_element_click_xpath(page_elements.job_config['template_reject'])
+
+            self.driver.execute_script("window.scrollTo(0,300);")
+            time.sleep(0.5)
+            self.web_element_click_xpath(page_elements.buttons['template_save'])
 
             # --------------- For validation check ---------------
             self.feedback_form_config_flag = 'Pass'
@@ -59,13 +56,11 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
         self.job_validation('feedback form')
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
-                self.driver.refresh()
-                time.sleep(5)
+                time.sleep(1)
                 self.floating_action()
 
-                self.x_path_element_webdriver_wait(page_elements.floating_actions['feedback_form'])
+                self.web_element_click_xpath(page_elements.floating_actions['feedback_form'])
                 self.ui_feedback_form_action = 'Pass'
-                self.xpath.click()
                 # -------------------------- Interview stage / feedback form configuration -----------------------------
                 self.feedback_form(self.xl_interview_stage_01, self.xl_interview_template_01)
                 if self.feedback_form_config_flag == 'Pass':
@@ -81,7 +76,3 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
 
             except Exception as config_template:
                 api_logger.error(config_template)
-
-
-# ob = FeedbackForm()
-# ob.config_feedback_form()

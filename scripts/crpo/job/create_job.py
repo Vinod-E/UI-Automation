@@ -18,6 +18,7 @@ class CreateJob(job_excel.JobExcelRead):
     def create_job_role(self):
         try:
             self.job_tab()
+            time.sleep(2)
             self.web_element_click_xpath(page_elements.buttons['create'])
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name"),
                                              self.job_name_sprint_version)
@@ -51,9 +52,9 @@ class CreateJob(job_excel.JobExcelRead):
 
             self.web_element_click_xpath(page_elements.buttons['create-save'])
 
-            time.sleep(5)
-            self.driver.execute_script("window.scrollTo(0,-100);")
-            image_capture.screen_shot(self, 'Job_created')
+            self.dismiss_message()
+            self.driver.execute_script("window.scrollTo(0,-200);")
+            time.sleep(3)
 
         except Exception as create_job:
             api_logger.error(create_job)
@@ -74,6 +75,7 @@ class CreateJob(job_excel.JobExcelRead):
             api_logger.error(e1)
 
         if self.job_name_breadcumb == self.job_name_sprint_version:
+            image_capture.screen_shot(self, 'Job_created')
             self.ui_job_validation = 'Pass'
             print('**-------->>> Job Validated and continuing '
                   'with {} to created job :: {}'.format(config_name, self.job_name_breadcumb))
