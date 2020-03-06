@@ -21,7 +21,7 @@ class JobAutomation(old_feedbackform.FeedbackForm):
 
                 # --------------- Aptitude stage hopping --------------------------------
                 self.web_element_click_xpath(page_elements.job_config['aptitude_stage_hop'])
-                time.sleep(1)
+                time.sleep(0.5)
 
                 self.web_element_send_keys_xpath(page_elements.job_config['hop_stage'], self.xl_hop_a_stage)
 
@@ -29,7 +29,7 @@ class JobAutomation(old_feedbackform.FeedbackForm):
 
                 # --------------- Eligibility stage hopping --------------------------------
                 self.web_element_click_xpath(page_elements.job_config['eligibility_stage_hop'])
-                time.sleep(1)
+                time.sleep(0.5)
 
                 self.web_element_send_keys_xpath(page_elements.job_config['hop_stage'], self.xl_hop_e_stage)
 
@@ -37,7 +37,7 @@ class JobAutomation(old_feedbackform.FeedbackForm):
 
                 # --------------- Registration stage hopping --------------------------------
                 self.web_element_click_xpath(page_elements.job_config['registration_stage_hop'])
-                time.sleep(1)
+                time.sleep(0.5)
 
                 self.web_element_send_keys_xpath(page_elements.job_config['hop_stage'], self.xl_hop_r_stage)
 
@@ -45,21 +45,21 @@ class JobAutomation(old_feedbackform.FeedbackForm):
 
                 # -------------- Test Automation & EC On config ---------------------
                 self.web_element_click_xpath(page_elements.job_config['test_automation_button'])
-                time.sleep(1)
+                time.sleep(0.5)
 
                 self.web_element_click_xpath(page_elements.job_config['ec_on_button'])
-                time.sleep(1)
+                time.sleep(0.5)
 
                 self.driver.execute_script("window.scrollTo(0,200);")
 
                 # --------------- Interview stage hopping --------------------------------
                 self.web_element_click_xpath(page_elements.job_config['Hr_Interview_stage_hop'])
-                time.sleep(1)
+                time.sleep(0.5)
 
                 self.web_element_send_keys_xpath(page_elements.job_config['hop_stage'], self.xl_hop_hr_stage)
 
                 self.web_element_send_keys_xpath(page_elements.job_config['hop_status'], self.xl_hop_hr_status)
-                time.sleep(1)
+                time.sleep(0.5)
 
                 self.web_element_click_xpath(page_elements.job_config['ready_schedule_button'])
 
@@ -67,6 +67,7 @@ class JobAutomation(old_feedbackform.FeedbackForm):
                 time.sleep(1)
                 self.web_element_click_xpath(page_elements.buttons['Hopping_save_button'])
                 time.sleep(2)
+                self.dismiss_message()
 
                 print('**-------->>> Job Hopping, Automation set done')
                 self.ui_hopping_config = 'Pass'
