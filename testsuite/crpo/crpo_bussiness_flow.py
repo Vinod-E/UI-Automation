@@ -14,13 +14,13 @@ class BusinessFlow(crpo_bussiness_output.CrpoOutputFile):
         try:
             self.create_job_role()
             self.config_selection_process()
+            self.tag_interview_panel()
             self.job_ec_task_configuration()
             self.config_feedback_form()
             self.job_automation_config()
-            # self.tag_interview_panel()
-            # self.tag_requirement()
-            # self.un_tag_requirement()
-            # self.edit_job()
+            self.edit_job()
+            self.tag_requirement()
+            self.un_tag_requirement()
 
             self.job_output_report()
 
