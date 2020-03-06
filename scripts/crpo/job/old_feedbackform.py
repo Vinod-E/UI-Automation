@@ -24,7 +24,7 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
             time.sleep(1.5)
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Interview Stages"),
                                              interview_stage)
-            time.sleep(0.2)
+            time.sleep(0.4)
             self.drop_down_selection()
 
             time.sleep(1)

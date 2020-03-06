@@ -26,43 +26,32 @@ class EmbraceApp(event_manage_task.EventManageTask):
             self.more_tab()
             self.ui_more_tabs = 'Pass'
 
-            time.sleep(3)
+            time.sleep(0.5)
             self.embrace_tab()
             self.ui_embrace_module = 'Pass'
 
             self.driver.switch_to.window(self.driver.window_handles[1])
 
-            self.x_path_element_webdriver_wait(page_elements.tabs['embrace_candidate_tab'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.tabs['embrace_candidate_tab'])
             print('**-------->>> Embrace app login')
 
-            time.sleep(7)
-            self.x_path_element_webdriver_wait(page_elements.embrace['candidates_advance_search'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.embrace['candidates_advance_search'])
 
-            self.x_path_element_webdriver_wait(page_elements.embrace['candidate_text_box'])
-            self.xpath.send_keys(self.event_sprint_version)
+            self.web_element_send_keys_xpath(page_elements.embrace['candidate_text_box'],
+                                             self.event_sprint_version)
 
-            time.sleep(2.2)
-            self.x_path_element_webdriver_wait(page_elements.embrace['search_button'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.embrace['search_button'])
             self.ui_embrace_advance_search = 'Pass'
 
-            time.sleep(3.5)
-            self.x_path_element_webdriver_wait(page_elements.embrace['submit_behalf_of'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.embrace['submit_behalf_of'])
 
-            time.sleep(3)
-            self.name_element_webdriver_wait(page_elements.embrace['task_acceptance'])
-            self.name.click()
+            time.sleep(0.5)
+            self.web_element_click_name(page_elements.embrace['task_acceptance'])
 
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.embrace['submit_task'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.embrace['submit_task'])
             self.ui_submit_behalf = 'Pass'
 
-            time.sleep(1.5)
-
+            time.sleep(2)
         except Exception as error:
             api_logger.error(error)
 
@@ -85,11 +74,8 @@ class EmbraceApp(event_manage_task.EventManageTask):
 
             self.floating_action()
 
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['manage_task'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.floating_actions['manage_task'])
             self.driver.switch_to.window(self.driver.window_handles[2])
-            time.sleep(5)
 
             # ---------------- Total tasks --------------
             total = self.driver.find_element_by_xpath(page_elements.embrace['total_tasks'])

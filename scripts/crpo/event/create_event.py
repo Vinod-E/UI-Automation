@@ -2,7 +2,6 @@ import time
 import page_elements
 from datetime import datetime
 from logger_settings import api_logger
-from selenium.webdriver.common.keys import Keys
 from scripts.crpo.event import event_excel
 
 
@@ -54,7 +53,6 @@ class CreateEvent(event_excel.EventExcelRead):
 
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Event Manager"),
                                              self.xl_em)
-            time.sleep(1)
             self.drop_down_selection()
 
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("College"),
@@ -80,7 +78,6 @@ class CreateEvent(event_excel.EventExcelRead):
     def event_validation(self, config_name):
         # ------------------------------ validating the event name -------------------------------------------------
         try:
-            time.sleep(2)
             self.driver.execute_script("window.scrollTo(0,-100);")
             self.web_element_text_xpath(
                 page_elements.event_validation['get_event_name'].format(self.event_sprint_version))

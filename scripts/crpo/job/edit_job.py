@@ -26,9 +26,10 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
                 self.web_element_click_xpath(page_elements.floating_actions['job_edit'])
                 self.ui_job_edit_action = 'Pass'
 
+                time.sleep(0.5)
                 self.web_element_send_keys_xpath(page_elements.job['description_box'], self.j_description_u)
 
-                time.sleep(0.5)
+                time.sleep(1)
                 self.web_element_click_xpath(page_elements.buttons['update'])
 
                 image_capture.screen_shot(self, 'Update_Job')
@@ -44,6 +45,7 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
 
     def job_search_flow(self):
         try:
+            time.sleep(0.4)
             self.advance_search(page_elements.tabs['job_tab'])
             self.name_search(self.job_name_sprint_version, 'Job')
             if self.search == 'Pass':

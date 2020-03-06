@@ -42,31 +42,26 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
             # ---------------------------- Search and validating with cloning assessment -------------------------------
             self.assessment_search(self.xl_old_test)
             self.assessment_grid_validation(self.xl_old_test)
-            time.sleep(2)
+            time.sleep(1)
             self.assessment_getby_validation(self.xl_old_test)
 
             # ------------------------------- Clone test ---------------------------------------------------------------
-            time.sleep(2)
             self.floating_action()
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['clone_assessment'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.floating_actions['clone_assessment'])
             self.ui_clone_action = 'Pass'
 
-            time.sleep(1.3)
-            self.name_element_webdriver_wait(page_elements.advance_search['assessment_name'])
-            self.name.send_keys(self.assessment_sprint_version)
+            self.web_element_send_keys_name(page_elements.advance_search['assessment_name'],
+                                            self.assessment_sprint_version)
 
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('From'))
-            self.xpath.send_keys(self.test_from_date)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('From'),
+                                             self.test_from_date)
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('To'))
-            self.xpath.send_keys(self.test_from_date)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('To'),
+                                             self.test_from_date)
 
-            self.x_path_element_webdriver_wait(page_elements.buttons['clone/save'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['clone/save'])
+            time.sleep(1)
 
-            time.sleep(2)
             # ---------------------------- Search and validating with cloned assessment --------------------------------
             self.assessment_search(self.assessment_sprint_version)
             self.assessment_grid_validation(self.assessment_sprint_version)
@@ -85,10 +80,8 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
 
     def assessment_grid_validation(self, test_name):
         try:
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(
-                page_elements.assessment['grid_assessment_name'].format(test_name))
-            self.grid_test_name = self.xpath.text
+            self.web_element_text_xpath(page_elements.assessment['grid_assessment_name'].format(test_name))
+            self.grid_test_name = self.text_value
             if self.grid_test_name == self.xl_old_test:
                 self.ui_old_test_grid_validation = 'Pass'
                 print('**-------->>> Cloning assessment Validated after search')
@@ -96,18 +89,15 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
                 self.ui_new_test_grid_validation = 'Pass'
                 print('**-------->>> Cloned assessment Validated after search')
 
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(
-                page_elements.assessment['grid_assessment_name'].format(test_name))
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.assessment['grid_assessment_name'].format(test_name))
 
         except Exception as e:
             api_logger.error(e)
 
     def assessment_getby_validation(self, test_name):
         try:
-            self.x_path_element_webdriver_wait(page_elements.assessment_validation['assessment_name_breadcrumb'])
-            self.assessment_name_breadcumb = self.xpath.text
+            self.web_element_text_xpath(page_elements.assessment_validation['assessment_name_breadcrumb'])
+            self.assessment_name_breadcumb = self.text_value
 
             if self.assessment_name_breadcumb == self.assessment_sprint_version:
                 self.ui_new_test_getby_validation = 'Pass'
@@ -123,7 +113,3 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
 
         except Exception as e:
             api_logger.error(e)
-
-
-# ob = CloneAssessment()
-# ob.clone_assessment()
