@@ -77,10 +77,10 @@ if Object.status_of_login.strip() == 'administrator':
 
     try:
         Object.job_creation()
-        # Object.requirement_creation()
-        # Object.assessment_creation()
-        # Object.event_creation()
-        # Object.embrace_module()
+        Object.requirement_creation()
+        Object.assessment_creation()
+        Object.event_creation()
+        Object.embrace_module()
 
         Object.overall_status()
         Object.browser_close()

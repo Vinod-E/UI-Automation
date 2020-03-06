@@ -1,8 +1,8 @@
 import time
 import config
 import page_elements
+import image_capture
 from logger_settings import api_logger
-from selenium.webdriver.common.keys import Keys
 from scripts.crpo.requirement import requirement_excel
 
 
@@ -19,46 +19,36 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
         try:
 
             self.driver.refresh()
-            time.sleep(4)
+            time.sleep(2)
             self.requirement_tab()
 
-            time.sleep(3)
-            self.x_path_element_webdriver_wait(page_elements.buttons['create'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['create'])
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("Name"))
-            self.xpath.send_keys(self.requirement_sprint_version)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name"),
+                                             self.requirement_sprint_version)
 
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.requirement['job_selection_field'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.requirement['job_selection_field'])
 
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("Search"))
-            self.xpath.send_keys(self.job_sprint_version)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Search"),
+                                             self.job_sprint_version)
 
-            self.x_path_element_webdriver_wait(page_elements.requirement['particular_job_select'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.requirement['particular_job_select'])
+
+            self.web_element_click_xpath(page_elements.buttons['done'])
+
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Hiring Type"),
+                                             self.xl_hiring_track)
+            self.drop_down_selection()
+
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("College Type"),
+                                             self.xl_college_type)
+            self.drop_down_selection()
+
+            self.web_element_click_xpath(page_elements.buttons['requirement_create'])
 
             time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['done'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("Hiring Type"))
-            self.xpath.send_keys(self.xl_hiring_track)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("College Type"))
-            self.xpath.send_keys(self.xl_college_type)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-
-            time.sleep(3)
-            self.x_path_element_webdriver_wait(page_elements.buttons['requirement_create'])
-            self.xpath.click()
-
-            time.sleep(2)
             self.driver.execute_script("window.scrollTo(0,-100);")
-            self.driver.save_screenshot(config.image_config['screen_shot'].format('Requirement_created'))
+            image_capture.screen_shot(self, 'Requirement_created')
 
             # -------------------------------- Validation --------------------------------------------------------------
             self.requirement_validation('the requirement')
@@ -75,8 +65,8 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
 
         try:
             time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.requirement_validations['requirement_name_breadcumb'])
-            self.req_name_breadcumb = self.xpath.text
+            self.web_element_text_xpath(page_elements.requirement_validations['requirement_name_breadcumb'])
+            self.req_name_breadcumb = self.text_value
         except Exception as e1:
             api_logger.error(e1)
 
@@ -86,7 +76,3 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
                   'with {} to created requirement :: {}'.format(config_name, self.req_name_breadcumb))
         else:
             print('Req validation failed Or Req creation failed <<<--------**')
-
-
-# ob = CreateRequirement()
-# ob.create_requirement()
