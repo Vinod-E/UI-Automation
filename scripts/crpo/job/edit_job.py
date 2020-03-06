@@ -1,6 +1,7 @@
 import time
 import config
 import page_elements
+import image_capture
 from logger_settings import api_logger
 from scripts.crpo.job import tag_untag_requirement
 
@@ -16,27 +17,21 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
 
     def edit_job(self):
 
-        self.driver.implicitly_wait(5)
         self.job_validation('edit action')
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
                 self.floating_action()
 
                 time.sleep(1)
-                self.x_path_element_webdriver_wait(page_elements.floating_actions['job_edit'])
-                self.xpath.click()
+                self.web_element_click_xpath(page_elements.floating_actions['job_edit'])
                 self.ui_job_edit_action = 'Pass'
 
-                time.sleep(3)
-                self.x_path_element_webdriver_wait(page_elements.job['description_box'])
-                self.xpath.send_keys(self.j_description_u)
+                self.web_element_send_keys_xpath(page_elements.job['description_box'], self.j_description_u)
 
-                time.sleep(2)
-                self.x_path_element_webdriver_wait(page_elements.buttons['update'])
-                self.xpath.click()
+                time.sleep(0.5)
+                self.web_element_click_xpath(page_elements.buttons['update'])
 
-                time.sleep(3)
-                self.driver.save_screenshot(config.image_config['screen_shot'].format('Update_Job'))
+                image_capture.screen_shot(self, 'Update_Job')
 
                 # ------------------------ Validation ------------------------------------------------------------------
                 self.job_search_flow()
@@ -50,16 +45,13 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
     def job_search_flow(self):
         try:
             self.advance_search(page_elements.tabs['job_tab'])
-
             self.name_search(self.job_name_sprint_version, 'Job')
-
             if self.search == 'Pass':
                 self.ui_job_advance_search = 'Pass'
 
-            time.sleep(2)
             self.job_getby_details(self.job_name_sprint_version)
 
-            time.sleep(3)
+            time.sleep(0.5)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
@@ -67,11 +59,6 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
             if self.job_name_breadcumb == self.job_name_sprint_version:
                 print('**-------->>> Job get by name is working')
                 self.ui_job_getbyid = 'Pass'
-                time.sleep(3)
 
         except Exception as error:
             api_logger.error(error)
-
-
-# ob = EditJobRole()
-# ob.edit_job()

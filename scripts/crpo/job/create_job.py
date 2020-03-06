@@ -18,7 +18,7 @@ class CreateJob(job_excel.JobExcelRead):
     def create_job_role(self):
         try:
             self.job_tab()
-            time.sleep(2)
+            time.sleep(2.5)
             self.web_element_click_xpath(page_elements.buttons['create'])
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name"),
                                              self.job_name_sprint_version)

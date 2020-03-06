@@ -18,46 +18,33 @@ class InterviewPanel(job_automation.JobAutomation):
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
                 # --------------------------------------- Tag Interviewers----------------------------------------------
-                self.driver.refresh()
-                time.sleep(5)
                 self.floating_action()
 
-                time.sleep(3)
-                self.x_path_element_webdriver_wait(page_elements.floating_actions['tag_interviewers'])
-                self.xpath.click()
+                time.sleep(1)
+                self.web_element_click_xpath(page_elements.floating_actions['tag_interviewers'])
                 self.ui_interview_panel_action = 'Pass'
 
-                time.sleep(5)
-                self.x_path_element_webdriver_wait(page_elements.job_config['interview_panel'].format(
+                self.web_element_click_xpath(page_elements.job_config['interview_panel'].format(
                     self.tag_interviewers))
-                self.xpath.click()
 
-                time.sleep(2)
-                self.x_path_element_webdriver_wait(page_elements.job_config['add_interviewers_to_table'])
-                self.xpath.click()
+                self.web_element_click_xpath(page_elements.job_config['add_interviewers_to_table'])
 
                 time.sleep(1)
-                self.x_path_element_webdriver_wait(page_elements.buttons['save_interviewers_to_panel'])
-                self.xpath.click()
-                time.sleep(5)
+                self.web_element_click_xpath(page_elements.buttons['save_interviewers_to_panel'])
 
                 # ----------------------------- Validation -------------------------------------------------------------
-                self.x_path_element_webdriver_wait(page_elements.tabs['job_owners'])
-                self.xpath.click()
+                time.sleep(1)
+                self.web_element_click_xpath(page_elements.tabs['job_owners'])
 
-                self.x_path_element_webdriver_wait(page_elements.job_validations['owners'])
-                self.job_owners_total = self.xpath.text
+                self.web_element_text_xpath(page_elements.job_validations['owners'])
+                self.job_owners_total = self.text_value
                 if self.job_owners_total == '(Total : 3)':
                     print('**-------->>> Interviewers are added to job role')
                     self.ui_tag_interviews = 'Pass'
                     self.ui_job_owners_tab = 'Pass'
                 else:
                     print('**-------->>> Failed to tag interviewers to job role')
-                time.sleep(5)
+                time.sleep(1)
 
             except Exception as config_message:
                 api_logger.error('Tag interviewers :: ', config_message)
-
-
-# ob = InterviewPanel()
-# ob.tag_interview_panel()
