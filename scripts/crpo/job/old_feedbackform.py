@@ -24,7 +24,7 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
             time.sleep(1.5)
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Interview Stages"),
                                              interview_stage)
-            time.sleep(0.4)
+            time.sleep(1)
             self.drop_down_selection()
 
             time.sleep(1)
@@ -57,7 +57,7 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
         self.job_validation('feedback form')
         if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
-                time.sleep(1)
+                time.sleep(0.5)
                 self.floating_action()
 
                 self.web_element_click_xpath(page_elements.floating_actions['feedback_form'])

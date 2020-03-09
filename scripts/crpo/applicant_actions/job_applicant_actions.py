@@ -1,8 +1,6 @@
 import time
 import page_elements
-import test_data_inputpath
 from logger_settings import api_logger
-from selenium.webdriver.common.keys import Keys
 from scripts.crpo.applicant_actions import job_applicants
 
 
@@ -23,7 +21,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
     def job_change_applicant_status(self):
         try:
             self.driver.execute_script("window.scrollTo(0,100);")
-            time.sleep(1)
+            time.sleep(0.3)
             self.check_box()
             # --------------------------- Change Applicant Status -------------------
             self.job_applicant_status_change(self.xl_stage_a, self.xl_status_a, self.xl_comment_a)
@@ -39,7 +37,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
     def job_compose_mail(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
             self.check_box()
             # ----------------------------- Compose Mail ---------------------
             self.web_element_click_id(page_elements.applicant_actions['compose_mail'])
@@ -58,7 +55,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
     def job_untag_applicant(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
+            time.sleep(0.3)
             # ----------------------------- Untag applicants ---------------------
             self.web_element_click_id(page_elements.applicant_actions['untag_applicants'])
             self.web_element_click_xpath(page_elements.buttons['ok'])
@@ -74,7 +71,6 @@ class JobApplicantActions(job_applicants.JobApplicants):
     def job_copy_registration_link(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
             self.check_box()
             # ----------------------------- View Registration Link ----------------------------
             self.web_element_click_id(page_elements.applicant_actions['copy_registration_link'])
@@ -91,7 +87,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
     def job_manage_task(self):
         try:
             self.task_validation_check = ''
-            time.sleep(2)
+            time.sleep(0.3)
             self.job_more_actions()
             # ----------------------------- Manage Task ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
@@ -108,11 +104,11 @@ class JobApplicantActions(job_applicants.JobApplicants):
 
     def job_view_test_status(self):
         try:
-            time.sleep(2)
+            time.sleep(0.3)
             self.job_more_actions()
             # ----------------------------- Test status ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['job_test_status'])
-            time.sleep(1)
+            time.sleep(0.3)
             self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
             # -------------------- output report value ----------------
             self.ui_view_test_status_aj = 'Pass'
@@ -122,7 +118,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
     def job_generate_single_pdf(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
+            time.sleep(0.3)
             self.job_more_actions()
             # ----------------------------- Single PDF ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['job_single_pdf'])
@@ -138,7 +134,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
     def email_mobile_verification_link(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
+            time.sleep(0.2)
             self.job_more_actions()
             # ----------------------------- Single PDF ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['single_pdf'])
@@ -155,7 +151,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
     def job_admit_card(self):
         try:
             self.message_validation = ''
-            time.sleep(2)
+            time.sleep(0.3)
             self.job_more_actions()
             # ----------------------------- Change BU ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['job_send_admit_card'])
