@@ -23,15 +23,16 @@ class EmbraceApp(event_manage_task.EventManageTask):
 
     def embrace_app_to_submit_task(self):
         try:
+            time.sleep(0.5)
+            self.dismiss_message()
             self.more_tab()
             self.ui_more_tabs = 'Pass'
-
-            time.sleep(0.5)
             self.embrace_tab()
             self.ui_embrace_module = 'Pass'
 
             self.driver.switch_to.window(self.driver.window_handles[1])
 
+            time.sleep(1)
             self.web_element_click_xpath(page_elements.tabs['embrace_candidate_tab'])
             print('**-------->>> Embrace app login')
 
@@ -78,29 +79,29 @@ class EmbraceApp(event_manage_task.EventManageTask):
             self.driver.switch_to.window(self.driver.window_handles[2])
 
             # ---------------- Total tasks --------------
-            total = self.driver.find_element_by_xpath(page_elements.embrace['total_tasks'])
-            if str(self.total_tasks) in total.text:
+            self.web_element_text_xpath(page_elements.embrace['total_tasks'])
+            if str(self.total_tasks) in self.text_value:
                 self.ui_total_tasks = 'Pass'
                 self.ui_a2_assignment = 'Pass'
 
             # ---------------- Approved tasks --------------
-            approved = self.driver.find_element_by_xpath(page_elements.embrace['approved_tasks'])
-            if str(self.completed_tasks) in approved.text:
+            self.web_element_text_xpath(page_elements.embrace['approved_tasks'])
+            if str(self.completed_tasks) in self.text_value:
                 self.ui_approved_tasks = 'Pass'
 
             # ---------------- Pending tasks --------------
-            pending = self.driver.find_element_by_xpath(page_elements.embrace['pending_tasks'])
-            if str(self.pending_tasks) in pending.text:
+            self.web_element_text_xpath(page_elements.embrace['pending_tasks'])
+            if str(self.pending_tasks) in self.text_value:
                 self.ui_pending_tasks = 'Pass'
 
             # ---------------- Submitted tasks --------------
-            submitted = self.driver.find_element_by_xpath(page_elements.embrace['submitted_tasks'])
-            if str(self.submitted_tasks) in submitted.text:
+            self.web_element_text_xpath(page_elements.embrace['submitted_tasks'])
+            if str(self.submitted_tasks) in self.text_value:
                 self.ui_submitted_tasks = 'Pass'
 
             # ---------------- Rejected tasks --------------
-            rejected = self.driver.find_element_by_xpath(page_elements.embrace['rejected_tasks'])
-            if str(self.rejected_tasks) in rejected.text:
+            self.web_element_text_xpath(page_elements.embrace['rejected_tasks'])
+            if str(self.rejected_tasks) in self.text_value:
                 self.ui_rejected_tasks = 'Pass'
 
             time.sleep(1.5)

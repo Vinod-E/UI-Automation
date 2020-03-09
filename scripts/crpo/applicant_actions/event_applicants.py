@@ -32,10 +32,10 @@ class ApplicantActions(applicant_action_excel.ApplicantActionsExcelRead):
             self.event_validation('the event')
             self.floating_action()
 
-            time.sleep(1.5)
+            time.sleep(0.5)
             self.web_element_click_xpath(page_elements.floating_actions['View_Applicants'])
 
-            time.sleep(1.5)
+            time.sleep(0.5)
             # --------------------------- Applicant Advance search -----------------------------------------------------
             self.applicant_advance_search()
             self.applicant_name_search(self.event_sprint_version_a, 'Applicant grid')
@@ -56,7 +56,7 @@ class ApplicantActions(applicant_action_excel.ApplicantActionsExcelRead):
     def event_validation(self, config_name):
         # ------------------------------ validating the event name -------------------------------------------------
         try:
-            time.sleep(2)
+            time.sleep(0.5)
             self.driver.execute_script("window.scrollTo(0,-100);")
             self.web_element_text_xpath(
                 page_elements.event_validation['get_event_name'].format(self.event_sprint_version_a))

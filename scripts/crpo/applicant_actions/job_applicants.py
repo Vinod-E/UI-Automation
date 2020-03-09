@@ -25,16 +25,15 @@ class JobApplicants(event_applicant_actions.EventApplicantActions):
         try:
             self.advance_search(page_elements.tabs['job_tab'])
             self.name_search(self.event_sprint_version_a, 'Job')
-            time.sleep(2)
             self.job_getby_details(self.event_sprint_version_a)
-            time.sleep(3)
+            time.sleep(0.5)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
             self.job_validation(self.event_sprint_version_a)
 
             self.floating_action()
             self.web_element_click_xpath(page_elements.floating_actions['view_candidates'])
-            time.sleep(1)
+            time.sleep(0.5)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 

@@ -60,12 +60,12 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
                                              self.test_from_date)
 
             self.web_element_click_xpath(page_elements.buttons['clone/save'])
-            time.sleep(1)
+            time.sleep(1.5)
 
             # ---------------------------- Search and validating with cloned assessment --------------------------------
             self.assessment_search(self.assessment_sprint_version)
             self.assessment_grid_validation(self.assessment_sprint_version)
-            time.sleep(2)
+            time.sleep(1.5)
             self.assessment_getby_validation(self.assessment_sprint_version)
 
             if self.assessment_name_breadcumb == self.assessment_sprint_version:

@@ -20,17 +20,16 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
         if self.validation_check == 'True':
 
             try:
-                time.sleep(1)
+                time.sleep(0.5)
                 self.floating_action()
                 self.ui_event_floating_action = 'Pass'
-
+                time.sleep(0.5)
                 self.web_element_click_xpath(page_elements.floating_actions['event_upload_candidates'])
                 self.ui_event_upload_candidate_action = 'Pass'
 
-                upload_file = self.driver.find_element_by_xpath(page_elements.file['event_upload_file'])
-                upload_file.send_keys(self.file)
+                self.web_element_send_keys_xpath(page_elements.file['event_upload_file'], self.file)
 
-                time.sleep(2)
+                time.sleep(1)
                 self.web_element_click_xpath(page_elements.event_config['Next_Button'])
 
                 self.web_element_click_xpath(page_elements.event_config['declare_checkbox'])
@@ -62,6 +61,7 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
                 self.web_element_click_xpath(page_elements.buttons['event_upload_candidate_save'])
 
 # -------- Validation check
+                time.sleep(2)
                 self.upload_candidate_validation()
 
             except Exception as error:
@@ -71,7 +71,7 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
         try:
             self.web_element_text_xpath(page_elements.event_config['upload_candidate_count'])
 
-            if self.text_value == 'Uploaded 1':
+            if self.text_value.strip() == 'Uploaded 1':
                 self.ui_event_upload_candidate = 'Pass'
                 print('**-------->>> Candidate uploaded to event successfully')
             else:

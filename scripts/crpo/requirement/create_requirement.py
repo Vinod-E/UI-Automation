@@ -27,6 +27,7 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name"),
                                              self.requirement_sprint_version)
 
+            time.sleep(0.2)
             self.web_element_click_xpath(page_elements.requirement['job_selection_field'])
 
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Search"),

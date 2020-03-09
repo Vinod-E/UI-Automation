@@ -2,7 +2,6 @@ import time
 import page_elements
 import test_data_inputpath
 from logger_settings import api_logger
-from selenium.webdriver.common.keys import Keys
 from scripts.crpo.applicant_actions import event_applicants
 
 
@@ -35,7 +34,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def event_change_applicant_status(self):
         try:
             self.driver.execute_script("window.scrollTo(0,100);")
-            time.sleep(1)
             self.check_box()
             # --------------------------- Change Applicant Status -------------------
             self.applicant_status_change(self.xl_stage_a, self.xl_status_a, self.xl_comment_a)
@@ -51,7 +49,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def compose_mail(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
+            time.sleep(0.5)
             self.check_box()
             # ----------------------------- Compose Mail ---------------------
             self.web_element_click_id(page_elements.applicant_actions['compose_mail'])
@@ -69,11 +67,13 @@ class EventApplicantActions(event_applicants.ApplicantActions):
 
     def send_sms(self):
         try:
+            time.sleep(0.2)
             self.message_validation = ''
             # ----------------------------- Compose Mail ---------------------
             self.web_element_click_id(page_elements.applicant_actions['send_sms'])
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Select Template'),
                                              self.xl_sms_template_a)
+            time.sleep(0.5)
             self.drop_down_selection()
             self.web_element_click_xpath(page_elements.buttons['send_sms'])
             self.glowing_messages('SMS sent successfully')
@@ -90,11 +90,10 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.message_validation = ''
             # ----------------------------- Tag applicants ---------------------
             self.web_element_click_id(page_elements.applicant_actions['tag_applicants'])
-            time.sleep(1)
+            time.sleep(0.5)
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Select a JobRole'),
                                              self.event_sprint_version_a)
             self.drop_down_selection()
-            time.sleep(1)
             self.web_element_click_xpath(page_elements.grid['test_required'])
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Select Test'),
                                              self.event_sprint_version_a)
@@ -113,7 +112,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
         try:
             self.message_validation = ''
             self.check_box()
-            time.sleep(1)
+            time.sleep(0.5)
             # ----------------------------- Untag applicants ---------------------
             self.web_element_click_id(page_elements.applicant_actions['untag_applicants'])
             self.web_element_click_xpath(page_elements.buttons['ok'])
@@ -129,7 +128,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def registration_link(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
             self.more_actions()
             # ----------------------------- Registration Link ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['registration_link'])
@@ -146,7 +144,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def admit_card(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
             self.more_actions()
             # ----------------------------- Admit Card ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['send_admit_card'])
@@ -163,7 +160,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def view_registration_link(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
             self.more_actions()
             # ----------------------------- View Registration Link ----------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
@@ -180,7 +176,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def manage_task(self):
         try:
             self.task_validation_check = ''
-            time.sleep(2)
             self.more_actions()
             # ----------------------------- Manage Task ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['manage_task'])
@@ -197,11 +192,9 @@ class EventApplicantActions(event_applicants.ApplicantActions):
 
     def view_test_status(self):
         try:
-            time.sleep(2)
             self.more_actions()
             # ----------------------------- Test status ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['view_test_status'])
-            time.sleep(1)
             self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
             # -------------------- output report value ----------------
             self.ui_view_test_status_ae = 'Pass'
@@ -227,12 +220,12 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def generate_single_pdf(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
+            time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Single PDF ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['single_pdf'])
+            time.sleep(0.5)
             self.glowing_messages('Your request is being processed, please check the status in Background Task details')
-            time.sleep(2)
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -244,10 +237,11 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def generate_docket(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
+            time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Generate Docket ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['docket'])
+            time.sleep(0.5)
             self.glowing_messages('Your request is being processed, please check the status in Background Task details')
             self.dismiss_message()
 
@@ -259,11 +253,9 @@ class EventApplicantActions(event_applicants.ApplicantActions):
 
     def compare_id_card(self):
         try:
-            time.sleep(1)
             self.more_actions()
             # ----------------------------- Compare Id card ----------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['compare_id'])
-            time.sleep(1)
             self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
             # -------------------- output report value ----------------
             self.ui_compare_id_ae = 'Pass'
@@ -273,7 +265,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def upload_attachment(self):
         try:
             self.message_validation = ''
-            time.sleep(2)
+            time.sleep(1)
             self.more_actions()
             # ----------------------------- Upload attachment ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['upload_attachment'])
@@ -285,6 +277,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.message_validation = ''
             self.glowing_messages('Attachment Upload Successfully')
             self.dismiss_message()
+            time.sleep(0.5)
             self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
 
             # -------------------- output report value ----------------
@@ -297,11 +290,11 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def change_business_unit(self):
         try:
             self.message_validation = ''
-            time.sleep(1)
+            time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Change BU ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['change_bu/re_RL'])
-            time.sleep(1)
+            time.sleep(0.5)
             self.web_element_click_xpath(page_elements.buttons['create-save'])
             self.glowing_messages('Applicant updated successfully')
             self.dismiss_message()
@@ -314,27 +307,22 @@ class EventApplicantActions(event_applicants.ApplicantActions):
 
     def applicant_json(self):
         try:
-            time.sleep(1)
             self.more_actions()
             # ----------------------------- Applicant json ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['applicant_json'])
-            time.sleep(1)
             self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
             # -------------------- output report value ----------------
             self.ui_view_applicant_json_ae = 'Pass'
-            time.sleep(2)
         except Exception as e:
             api_logger.error(e)
 
     def disable_registration_link(self):
         try:
-            time.sleep(1)
+            time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Disable RL ---------------------
-            time.sleep(1)
             self.web_element_click_xpath(page_elements.applicant_actions['disable/enable_registration_link'])
 
-            time.sleep(2)
             self.more_actions()
             self.disable_link_validation()
             # -------------------- output report value ----------------
@@ -345,13 +333,11 @@ class EventApplicantActions(event_applicants.ApplicantActions):
 
     def enable_registration_link(self):
         try:
-            time.sleep(2)
+            time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Enable RL ---------------------
-            time.sleep(1)
             self.web_element_click_xpath(page_elements.applicant_actions['disable/enable_registration_link'])
 
-            time.sleep(2)
             self.more_actions()
             self.enable_link_validation('CAMPUS DETAILS')
             # -------------------- output report value ----------------
@@ -363,8 +349,9 @@ class EventApplicantActions(event_applicants.ApplicantActions):
     def re_registration_link(self):
         try:
             self.message_validation = ''
-            time.sleep(2)
+            time.sleep(0.5)
             self.applicant_name_search(self._applicant_name, 'Applicant grid')
+            time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Change BU ------------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['change_bu/re_RL'])
@@ -384,17 +371,14 @@ class EventApplicantActions(event_applicants.ApplicantActions):
 
     def fill_registration(self):
         try:
-            time.sleep(1)
             self.more_actions()
             # ----------------------------- View Registration Link ----------------------------
             self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
             self.web_element_click_xpath(page_elements.event_applicant['open_RL_new_tab'])
             self.driver.switch_to.window(self.driver.window_handles[1])
-            time.sleep(2)
             self.web_element_click_id(page_elements.microSite['yes'])
             self.web_element_click_id(page_elements.microSite['declaration'])
             self.web_element_click_id(page_elements.microSite['submit'])
-            time.sleep(3)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
             self.web_element_click_xpath(page_elements.buttons['done'])

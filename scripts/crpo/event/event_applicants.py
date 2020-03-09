@@ -49,12 +49,14 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
 
                 # -------------------- applicant validations -----------------------------------------------------------
                 self.applicant_event_validation()
+                time.sleep(0.5)
                 self.applicant_hopping_validation()
                 self.ui_candidate_details_validation = 'Pass'
 
+                time.sleep(0.5)
                 self.driver.close()
                 self.driver.switch_to.window(self.driver.window_handles[0])
-                time.sleep(2)
+                time.sleep(0.5)
             except Exception as error:
                 api_logger.error(error)
 
