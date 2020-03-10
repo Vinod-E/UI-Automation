@@ -20,7 +20,9 @@ crpo_test_data_file = {
 
     'live_interview_file': generic_input_path + 'testdata/Live_interview.xls',
 
-    'applicant_action_file': generic_input_path + 'testdata/Applicants_actions.xls'
+    'applicant_action_file': generic_input_path + 'testdata/Applicants_actions.xls',
+
+    'help_desk': generic_input_path + 'testdata/Help_desk.xls'
 }
 
 attachments = {

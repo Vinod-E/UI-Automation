@@ -33,36 +33,23 @@ class LiveInterviewSchedule(provide_feedback.ProvideFeedback):
             self.event_getby_details()
             self.event_validation('live-interview-schedule')
             self.floating_action()
-
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['live_interview'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.floating_actions['live_interview'])
 
 # ---------- Validation
+            time.sleep(1)
             self.live_screen_validation()
 
-            self.x_path_element_webdriver_wait(page_elements.buckets['select_interview_stage'].format(self.stage1_l))
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Candidate Name'))
-            self.xpath.send_keys(self.event_sprint_version_l)
-            time.sleep(0.6)
-            self.x_path_element_webdriver_wait(page_elements.buttons['live_applicant_search'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buckets['select_interview_stage'].format(self.stage1_l))
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Candidate Name'),
+                                             self.event_sprint_version_l)
+            self.web_element_click_xpath(page_elements.buttons['live_applicant_search'])
 
             time.sleep(0.6)
             self.all_check_box_unlock()
-            self.x_path_element_webdriver_wait(page_elements.buttons['live_schedule_multiple'])
-            self.xpath.click()
-
-            time.sleep(0.5)
-            self.x_path_element_webdriver_wait(page_elements.live_interview['int1_select'])
-            self.xpath.click()
-            self.x_path_element_webdriver_wait(page_elements.live_interview['int2_select'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.buttons['live_schedule'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['live_schedule_multiple'])
+            self.web_element_click_xpath(page_elements.live_interview['int1_select'])
+            self.web_element_click_xpath(page_elements.live_interview['int2_select'])
+            self.web_element_click_xpath(page_elements.buttons['live_schedule'])
 
             # -------------------- output report values ----------------
             if self.get_event_name.strip() == self.event_sprint_version_l:
@@ -84,11 +71,10 @@ class LiveInterviewSchedule(provide_feedback.ProvideFeedback):
     def event_validation(self, config_name):
         # ------------------------------ validating the event name -------------------------------------------------
         try:
-            time.sleep(2)
             self.driver.execute_script("window.scrollTo(0,-100);")
-            self.x_path_element_webdriver_wait(
+            self.web_element_text_xpath(
                 page_elements.event_validation['get_event_name'].format(self.event_sprint_version_l))
-            self.get_event_name = self.xpath.text
+            self.get_event_name = self.text_value
 
             if self.get_event_name.strip() == self.event_sprint_version_l:
                 self.event_validation_check = 'Pass'
@@ -101,9 +87,8 @@ class LiveInterviewSchedule(provide_feedback.ProvideFeedback):
 
     def live_screen_validation(self):
         try:
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.live_interview['validate'])
-            self.event_name_in_live = self.xpath.text
+            self.web_element_text_xpath(page_elements.live_interview['validate'])
+            self.event_name_in_live = self.text_value
             if self.event_sprint_version_l in self.event_name_in_live:
                 print('**-------->>> Entered into live interview schedule screen')
         except Exception as e:
