@@ -1,10 +1,12 @@
 import xlrd
+import datetime
 import test_data_inputpath
 from scripts.crpo.common import common_file
 
 
 class LiveInterviewExcelRead(common_file.CommonFile):
     def __init__(self):
+        self.start_date_time = datetime.datetime.now()
         super(LiveInterviewExcelRead, self).__init__()
 
         self.stage1_l = ''

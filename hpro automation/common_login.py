@@ -15,6 +15,8 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
         self._xl_tenant = []
         self.xl_username = []
         self.xl_password = []
+        self._xl_rpo_tenant = []
+        self.xl_rpo_password = []
 
         self.status_of_login = ""
         self.tenant_screen_text = ""
@@ -37,6 +39,10 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
                     self.xl_username.append(rows[1])
                 if rows[2]:
                     self.xl_password.append(rows[2])
+                if rows[3]:
+                    self._xl_rpo_tenant.append(rows[3])
+                if rows[4]:
+                    self.xl_rpo_password.append(rows[4])
         except Exception as file_error:
             api_logger.error(file_error)
 
@@ -65,16 +71,16 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
         except Exception as Tenant_Screen_Error:
             api_logger.error(Tenant_Screen_Error)
 
-    def crpo_login_elements(self):
+    def crpo_login_elements(self, tenant, password):
         try:
             self.name_element_webdriver_wait(page_elements.login['tenant'])
-            self.name.send_keys(self._xl_tenant)
+            self.name.send_keys(tenant)
             self.x_path_element_webdriver_wait(page_elements.login['next_button'])
             self.xpath.click()
             self.name_element_webdriver_wait(page_elements.login['username'])
             self.name.send_keys(self.xl_username)
             self.x_path_element_webdriver_wait(page_elements.login['password'])
-            self.xpath.send_keys(self.xl_password)
+            self.xpath.send_keys(password)
             self.x_path_element_webdriver_wait(page_elements.login['login_button'])
             self.xpath.click()
 
@@ -90,15 +96,15 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             # ----------------------------------------AMSIN Login---------------------------------------------------
             if self.login_server == 'amsin':
                 self.tenant_alias_screen_validation()
-                self.crpo_login_elements()
+                self.crpo_login_elements(self._xl_tenant, self.xl_password)
             # ----------------------------------------AMS Login---------------------------------------------------
             if self.login_server == 'ams':
                 self.tenant_alias_screen_validation()
-                self.crpo_login_elements()
+                self.crpo_login_elements(self._xl_tenant, self.xl_password)
             # ------------------------------------------BETA Login---------------------------------------------------
             if self.login_server == 'betaams':
                 self.tenant_alias_screen_validation()
-                self.crpo_login_elements()
+                self.crpo_login_elements(self._xl_tenant, self.xl_password)
 
         except Exception as crpo_login:
             api_logger.error(crpo_login)
@@ -123,6 +129,32 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             self.xpath.click()
         except Exception as logout_status:
             api_logger.error(logout_status)
+
+    def rpo_login(self):
+        try:
+            # ----------------------------------------AMSIN Login---------------------------------------------------
+            if self.login_server == 'amsin':
+                self.tenant_alias_screen_validation()
+                self.crpo_login_elements(self._xl_rpo_tenant, self.xl_rpo_password)
+            # ----------------------------------------AMS Login---------------------------------------------------
+            if self.login_server == 'ams':
+                self.tenant_alias_screen_validation()
+                self.crpo_login_elements(self._xl_rpo_tenant, self.xl_rpo_password)
+            # ------------------------------------------BETA Login---------------------------------------------------
+            if self.login_server == 'betaams':
+                self.tenant_alias_screen_validation()
+                self.crpo_login_elements(self._xl_rpo_tenant, self.xl_rpo_password)
+
+        except Exception as crpo_login:
+            api_logger.error(crpo_login)
+        # ---------------------------------------- Assertion for login -------------------------------------------------
+        try:
+            self.x_path_element_webdriver_wait(page_elements.login['login_success'])
+            self.status_of_login = self.xpath.text
+            assert self.status_of_login.strip() == 'administrator'
+            print("**---------------------- In main screen ------------------------**")
+        except Exception as login_status:
+            api_logger.error(login_status)
 
     def embrace_alias_screen_validation(self):
         # --------------------------- Tenant screen verification by screen shot ----------------------------------------
