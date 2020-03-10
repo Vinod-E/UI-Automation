@@ -15,30 +15,19 @@ class BehalfFeedback(live_schedule.LiveInterviewSchedule):
     def behalf_of_submission(self):
         try:
             # ----------- feedback providing
-            time.sleep(3)
-            self.x_path_element_webdriver_wait(page_elements.live_interview['down'])
-            self.xpath.click()
+            time.sleep(1.5)
+            self.web_element_click_xpath(page_elements.live_interview['down'])
 
             self.provide_feedback(page_elements.live_interview['shortlist'],
                                   self.xl_comment_l)
 
             # --------- Behalf of Submission
-            self.x_path_element_webdriver_wait(page_elements.live_interview['feedback_int1'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.live_interview['feedback_int2'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.buttons['submit_feedback'])
-            self.xpath.click()
-
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
-            self.xpath.click()
-
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.live_interview['feedback_int1'])
+            self.web_element_click_xpath(page_elements.live_interview['feedback_int2'])
+            self.web_element_click_xpath(page_elements.buttons['submit_feedback'])
+            time.sleep(0.9)
+            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
+            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
             time.sleep(5)
             self.driver.switch_to.window(self.driver.window_handles[0])
 
@@ -58,18 +47,13 @@ class BehalfFeedback(live_schedule.LiveInterviewSchedule):
         try:
             self.driver.refresh()
             time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.buckets['select_interview_stage'].format(stage))
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buckets['select_interview_stage'].format(stage))
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Candidate Name'),
+                                             self.event_sprint_version_l)
+            self.web_element_click_xpath(page_elements.buttons['live_applicant_search'])
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Candidate Name'))
-            self.xpath.send_keys(self.event_sprint_version_l)
-            time.sleep(0.6)
-            self.x_path_element_webdriver_wait(page_elements.buttons['live_applicant_search'])
-            self.xpath.click()
-            time.sleep(0.6)
-
-            self.x_path_element_webdriver_wait(page_elements.title['title'].format(status))
-            self.live_submit = self.xpath.text
+            self.web_element_text_xpath(page_elements.title['title'].format(status))
+            self.live_submit = self.text_value
             if self.live_submit == status:
                 print('**-------->>> Live provide feedback submitted successfully')
         except Exception as e:

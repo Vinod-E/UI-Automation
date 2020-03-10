@@ -41,6 +41,7 @@ tabs = {
     'job_basic_details': '//*[@ui-sref="crpo.jobRole.manageJobRole.basic"]',
     'req_configuration_tab': '//*[@ng-click="vm.goToConfiguration()"]',
     'req_duplicity_check': '//*[@ui-sref="crpo.requirements.manage.configuration.candidateDuplicity"]',
+    'req_query_config': '//*[@ui-sref="crpo.requirements.manage.configuration.queryConfiguration"]',
     'event_configuration_tab': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.configurations"]',
     'event_owner_tab': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.owners"]',
     'more_tabs': '//*[@data-placement="bottom-center"]',

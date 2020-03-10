@@ -37,46 +37,35 @@ class SubmitFeedback(submit_feedback_live_int1.SubmitFeedbackInt1):
             self.event_validation('live-interview-schedule')
             self.floating_action()
 
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['live_interview'])
-            self.xpath.click()
-
+            time.sleep(0.5)
+            self.web_element_click_xpath(page_elements.floating_actions['live_interview'])
 # ---------- Validation
+            time.sleep(1)
             self.live_screen_validation()
 
-            self.x_path_element_webdriver_wait(page_elements.buckets['select_interview_stage'].format(self.stage2_l))
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buckets['select_interview_stage'].format(self.stage2_l))
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Candidate Name'))
-            self.xpath.send_keys(self.event_sprint_version_l)
-            time.sleep(0.6)
-            self.x_path_element_webdriver_wait(page_elements.buttons['live_applicant_search'])
-            self.xpath.click()
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Candidate Name'),
+                                             self.event_sprint_version_l)
+
+            self.web_element_click_xpath(page_elements.buttons['live_applicant_search'])
 
 # ----------- feedback providing
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.live_interview['down'])
-            self.xpath.click()
+            time.sleep(0.9)
+            self.web_element_click_xpath(page_elements.live_interview['down'])
 
-            self.provide_feedback(page_elements.live_interview['shortlist'],
-                                  self.xl_comment_l)
+            self.provide_feedback(page_elements.live_interview['shortlist'], self.xl_comment_l)
 
-            self.x_path_element_webdriver_wait(page_elements.buttons['submit_feedback'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['submit_feedback'])
 
             time.sleep(1)
-            self.x_path_element_webdriver_wait(
-                page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
 
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
             time.sleep(5)
             self.driver.switch_to.window(self.driver.window_handles[0])
 
             self.live_schedule_submit_validation(self.stage2_l, 'Offer Released')
-            time.sleep(2)
 
             # -------------------- output report values ----------------
             if self.get_event_name.strip() == self.event_sprint_version_l:
