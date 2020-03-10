@@ -8,16 +8,15 @@ class Environment(object):
     def __init__(self):
 
         self.login_server = input("Server name :: ")
-        login_browser = 'chrome'
         self.sprint_version = input("Enter the current sprint version :: ")
 
         try:
-            self.driver = webdriver.Chrome(config.browser_config[login_browser])
+            self.driver = webdriver.Chrome(config.chrome)
             print("Run started at:: "+str(datetime.datetime.now()))
             print("Environment setup has been Done")
             print("**--------------------------------------------------------------**")
 
-            self.driver.implicitly_wait(10)
+            self.driver.implicitly_wait(5)
             self.driver.maximize_window()
 
         except Exception as Environment_Error:
@@ -27,5 +26,4 @@ class Environment(object):
         print("**-------------------------------------------------------------**")
         print("Run completed at:: " + str(datetime.datetime.now()))
         print("Chrome environment Destroyed")
-
         self.driver.close()
