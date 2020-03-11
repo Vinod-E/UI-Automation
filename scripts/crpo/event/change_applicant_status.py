@@ -25,6 +25,8 @@ class ChangeApplicantStatus(event_applicants.EventApplicants):
                                          self.xl_change_applicant_status,
                                          self.xl_change_status_comment)
             self.ui_change_applicant_status_action = 'Pass'
+            time.sleep(0.5)
+            self.dismiss_message()
 
             # --------------------------- Applicant common process -----------------------------------------------------
             self.applicant_get_by()

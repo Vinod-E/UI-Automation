@@ -165,3 +165,22 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
 
     def drop_down_selection(self):
         self.xpath_send_keys.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
+
+    def clear(self, element):
+        try:
+            result = False
+            attempts = 0
+            while attempts < 2:
+                try:
+                    self.driver.find_element_by_xpath(element).clear()
+
+                    result = True
+                    break
+                except Exception as error:
+                    api_logger.error(error)
+                    time.sleep(2)
+                attempts += 1
+            # print('Number of attempts = {}'.format(attempts))
+            return result
+        except Exception as error:
+            api_logger.error(error)

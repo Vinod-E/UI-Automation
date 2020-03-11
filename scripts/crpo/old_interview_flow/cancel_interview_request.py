@@ -1,7 +1,6 @@
 import time
 import page_elements
 from logger_settings import api_logger
-from selenium.webdriver.common.keys import Keys
 from scripts.crpo.old_interview_flow import cancel_interview_old
 
 
@@ -21,36 +20,33 @@ class CancelInterviewRequest(cancel_interview_old.CancelInterview):
     def cancel_interview_request(self):
         try:
             # ---------------------------- New tab to login as interviewer ---------------------------------------------
-            time.sleep(1)
+            time.sleep(0.5)
             self.crpo_logout()
             self.login('InterviewerTWO', self.xl_username_int2_o, self.xl_password_int2_o)
             # ----------------------- cancel request Process -----------------------------------------------------------
+            time.sleep(1)
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
             self.event_getby_details()
             self.event_validation('cancel request process')
             self.floating_action()
 
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['event_interviews'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.floating_actions['event_interviews'])
 
-            time.sleep(1)
+            time.sleep(0.5)
             self.check_box()
-            self.id_element_webdriver_wait(page_elements.grid_actions['cancel_interview_request'])
-            self.id.click()
+            self.web_element_click_id(page_elements.grid_actions['cancel_interview_request'])
 
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format('Reason'))
-            time.sleep(2)
-            self.xpath.send_keys(self.xl_cancel_request_reason_o)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
+            time.sleep(0.5)
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Reason'),
+                                             self.xl_cancel_request_reason_o)
+            self.drop_down_selection()
 
-            self.x_path_element_webdriver_wait(page_elements.interview['comment'])
-            self.xpath.send_keys(self.xl_cancel_request_comment_o)
-
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.buttons['cancel_request'])
-            self.xpath.click()
+            self.web_element_send_keys_xpath(page_elements.interview['comment'], self.xl_cancel_request_comment_o)
+            time.sleep(0.5)
+            self.web_element_click_xpath(page_elements.buttons['cancel_request'])
+            time.sleep(0.5)
+            self.dismiss_message()
 
             # -------------------- output report values ----------------
             self.ui_event_tab_cr = 'Pass'
