@@ -21,47 +21,38 @@ class UnlockFeedbackForm(submit_feedback_old.SubmittedFeedback):
     def unlock_feedback_form(self):
         try:
             # ---------------------------- New tab to login as Interviewer ---------------------------------------------
-            time.sleep(1)
             self.crpo_logout()
             self.login('Admin', self.xl_username, self.xl_password)
             # -------------------------------- unlock feedback form -------------------------------------------------
-            time.sleep(2.5)
+            time.sleep(2)
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
             self.event_getby_details()
             self.event_validation('unlock feedback form')
             self.floating_action()
-            time.sleep(1.5)
+            time.sleep(0.5)
 
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['event_interviews'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.floating_actions['event_interviews'])
 
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buckets['all_interviews'])
-            self.xpath.click()
-
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buckets['completed_interviews'])
-            self.xpath.click()
+            time.sleep(0.3)
+            self.web_element_click_xpath(page_elements.buckets['all_interviews'])
+            self.web_element_click_xpath(page_elements.buckets['completed_interviews'])
+            self.web_element_click_id(page_elements.grid_actions['refresh'])
 
             self.check_box()
-            self.id_element_webdriver_wait(page_elements.grid_actions['unlock_feedback'])
-            self.id.click()
+            self.web_element_click_id(page_elements.grid_actions['unlock_feedback'])
 
             self.all_check_box_unlock()
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['agree'].format("'", 'unlockFeedback', "'"))
-            self.xpath.click()
+            time.sleep(0.5)
+            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'unlockFeedback', "'"))
 
-            self.x_path_element_webdriver_wait(page_elements.interview['c_r_comment'])
-            self.xpath.send_keys(self.xl_update_feedback_comment_o)
+            self.web_element_send_keys_xpath(page_elements.interview['c_r_comment'], self.xl_update_feedback_comment_o)
 
-            self.x_path_element_webdriver_wait(page_elements.buttons['ok'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['ok'])
+            self.dismiss_message()
 
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.buttons['done'])
-            self.xpath.click()
+            time.sleep(0.5)
+            self.web_element_click_xpath(page_elements.buttons['done'])
 
             # -------------------- output report values ----------------
             self.ui_event_tab_un = 'Pass'

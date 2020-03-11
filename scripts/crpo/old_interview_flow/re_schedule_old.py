@@ -22,7 +22,7 @@ class ReSchedule(schedule_old.Schedule):
     def interview_re_schedule(self):
         try:
             # --------------------------- New tab to login as interviewer ---------------------------------------------
-            time.sleep(1)
+            time.sleep(0.5)
             self.crpo_logout()
             self.login('InterviewerONE', self.xl_username_int1_o, self.xl_password_int1_o)
 
@@ -33,22 +33,15 @@ class ReSchedule(schedule_old.Schedule):
             self.event_validation('reschedule process')
             self.floating_action()
 
-            time.sleep(1.5)
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['event_interviews'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.floating_actions['event_interviews'])
 
-            time.sleep(1)
+            time.sleep(0.5)
             self.check_box()
 
-            self.id_element_webdriver_wait(page_elements.grid_actions['reschedule'])
-            self.id.click()
-
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.interview['comments'])
-            self.xpath.send_keys(self.xl_cancel_reschedule_comment_o)
-
-            self.x_path_element_webdriver_wait(page_elements.buttons['create-save'])
-            self.xpath.click()
+            self.web_element_click_id(page_elements.grid_actions['reschedule'])
+            time.sleep(0.5)
+            self.web_element_send_keys_xpath(page_elements.interview['comments'], self.xl_cancel_reschedule_comment_o)
+            self.web_element_click_xpath(page_elements.buttons['create-save'])
 
             time.sleep(1)
             self.applicant_getby_details(self.event_sprint_version_o)

@@ -20,33 +20,29 @@ class SaveAsDraft(provide_feedback.ProvideFeedback):
     def save_as_draft_old(self):
         try:
             # ---------------------------- New tab to login as Interviewer ---------------------------------------------
-            time.sleep(1)
+            time.sleep(0.5)
             self.crpo_logout()
             self.login('InterviewerONE', self.xl_username_int1_o, self.xl_password_int1_o)
 
             # -------------------------------- Save Draft Process ------------------------------------------------------
-            time.sleep(2.5)
+            time.sleep(0.5)
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
             self.event_getby_details()
             self.event_validation('save draft process')
             self.floating_action()
-            time.sleep(1.5)
+            time.sleep(0.2)
 
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['event_interviews'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.floating_actions['event_interviews'])
 
-            time.sleep(1)
             self.check_box()
             self.provide_feedback(page_elements.interview['maybe'],
                                   self.xl_change_status_comment_o)
 
             # ------------- save draft
             self.driver.execute_script("window.scrollTo(0,100);")
-            self.x_path_element_webdriver_wait(page_elements.buttons['save_draft'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.buttons['save_draft'])
 
-            time.sleep(1)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 

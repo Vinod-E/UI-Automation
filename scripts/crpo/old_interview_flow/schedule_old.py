@@ -40,11 +40,12 @@ class Schedule(login.Login):
 
             # --------------------------- Change Applicant Status to Schedule ------------------------------------------
             self.driver.execute_script("window.scrollTo(0,100);")
-            time.sleep(3)
             self.check_box()
             self.applicant_schedule_status_change(self.xl_change_applicant_stage_o,
                                                   self.xl_change_applicant_status_o,
                                                   self.xl_change_status_comment_o)
+            self.dismiss_message()
+            time.sleep(0.2)
             if self.applicant_schedule_statuschange == 'True':
                 print('**-------->>> Interview schedule happened successfully')
 
@@ -64,7 +65,6 @@ class Schedule(login.Login):
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.current_status_validation('Scheduled')
 
-            time.sleep(2)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
@@ -74,7 +74,6 @@ class Schedule(login.Login):
     def event_validation(self, config_name):
         # ------------------------------ validating the event name -------------------------------------------------
         try:
-            time.sleep(2)
             self.driver.execute_script("window.scrollTo(0,-100);")
             self.web_element_text_xpath(
                 page_elements.event_validation['get_event_name'].format(self.event_sprint_version_o))

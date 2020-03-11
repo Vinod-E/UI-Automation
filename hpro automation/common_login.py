@@ -119,14 +119,10 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
 
     def crpo_logout(self):
         try:
-            self.x_path_element_webdriver_wait(page_elements.login['login_success'])
-            self.xpath.click()
-            time.sleep(1)
-            self.id_element_webdriver_wait(page_elements.login['logout'])
-            self.id.click()
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.login['login_back'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.login['login_success'])
+            self.web_element_click_id(page_elements.login['logout'])
+            time.sleep(0.5)
+            self.web_element_click_xpath(page_elements.login['login_back'])
         except Exception as logout_status:
             api_logger.error(logout_status)
 

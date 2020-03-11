@@ -26,7 +26,7 @@ class SubmitFeedback(submit_feedback_live_int1.SubmitFeedbackInt1):
 
         try:
             # ---------------------------- New tab to login as Interviewer ---------------------------------------------
-            time.sleep(1)
+            time.sleep(0.5)
             self.crpo_logout()
             self.login('InterviewerTWO', self.xl_int2_l, self.xl_int2_l)
 
@@ -40,7 +40,7 @@ class SubmitFeedback(submit_feedback_live_int1.SubmitFeedbackInt1):
             time.sleep(0.5)
             self.web_element_click_xpath(page_elements.floating_actions['live_interview'])
 # ---------- Validation
-            time.sleep(1)
+            time.sleep(1.5)
             self.live_screen_validation()
 
             self.web_element_click_xpath(page_elements.buckets['select_interview_stage'].format(self.stage2_l))
@@ -54,7 +54,7 @@ class SubmitFeedback(submit_feedback_live_int1.SubmitFeedbackInt1):
             time.sleep(0.9)
             self.web_element_click_xpath(page_elements.live_interview['down'])
 
-            self.provide_feedback(page_elements.live_interview['shortlist'], self.xl_comment_l)
+            self.live_provide_feedback(page_elements.live_interview['shortlist'], self.xl_comment_l)
 
             self.web_element_click_xpath(page_elements.buttons['submit_feedback'])
 

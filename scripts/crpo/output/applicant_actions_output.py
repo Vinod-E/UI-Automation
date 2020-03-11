@@ -385,7 +385,7 @@ class ApplicantActionsOutputFile(styles.FontColor, job_applicant_actions.JobAppl
             time_taken = end_date_time - self.start_date_time
             minutes = time_taken.total_seconds() / 60
 
-            self.ws.write(0, 0, 'APPLICANT ACTIONS USECASES', self.style4)
+            self.ws.write(0, 0, 'APPLICANT ACTIONS', self.style4)
             if self.Expected_success_cases == self.Actual_success_cases:
                 self.ws.write(0, 1, 'Pass', self.style5)
             else:

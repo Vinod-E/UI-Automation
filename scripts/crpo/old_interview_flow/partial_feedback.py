@@ -20,18 +20,17 @@ class PartialFeedback(save_draft_old.SaveAsDraft):
 
     def partial_feedback(self):
         try:
-            self.id_element_webdriver_wait(page_elements.grid_actions['provide_feedback'])
-            self.id.click()
+            time.sleep(1)
+            self.web_element_click_id(page_elements.grid_actions['provide_feedback'])
 
-            time.sleep(3)
+            time.sleep(1)
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.driver.execute_script("window.scrollTo(0,200);")
-            self.x_path_element_webdriver_wait(page_elements.buttons['partial_feedback'])
-            self.xpath.click()
-
-            time.sleep(2.5)
-            self.x_path_element_webdriver_wait(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
-            self.xpath.click()
+            time.sleep(1)
+            self.web_element_click_xpath(page_elements.buttons['partial_feedback'])
+            self.driver.execute_script("window.scrollTo(0,200);")
+            time.sleep(0.3)
+            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
 
             # ----------- validation
             self.draft_validation_check = 'True'
@@ -39,8 +38,8 @@ class PartialFeedback(save_draft_old.SaveAsDraft):
                 print('**-------->>> Feedback draft is saved successfully')
                 print('**-------->>> Partial feedback submitted successfully')
 
+            time.sleep(0.5)
             self.driver.switch_to.window(self.driver.window_handles[0])
-
             self.partial_bucket()
             if self.partial_bucket_validation == 'True':
                 print('**-------->>> Feedback submitted from partial bucket successfully')
@@ -60,30 +59,21 @@ class PartialFeedback(save_draft_old.SaveAsDraft):
 
     def partial_bucket(self):
         try:
-            time.sleep(6)
-            self.x_path_element_webdriver_wait(page_elements.buckets['Partial_interviews'])
-            self.xpath.click()
+            time.sleep(1)
+            self.web_element_click_xpath(page_elements.buckets['Partial_interviews'])
 
             self.check_box()
-
-            self.id_element_webdriver_wait(page_elements.grid_actions['provide_feedback'])
-            self.id.click()
-
-            time.sleep(3)
+            self.web_element_click_id(page_elements.grid_actions['provide_feedback'])
+            time.sleep(2)
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.driver.execute_script("window.scrollTo(0,200);")
-
-            self.x_path_element_webdriver_wait(page_elements.buttons['submit_feedback'])
-            self.xpath.click()
-
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
-            self.xpath.click()
-
-            time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
-            self.xpath.click()
-            time.sleep(5)
+            time.sleep(1.5)
+            self.web_element_click_xpath(page_elements.buttons['submit_feedback'])
+            self.driver.execute_script("window.scrollTo(0,200);")
+            time.sleep(0.6)
+            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
+            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
+            time.sleep(3.5)
 
             self.partial_bucket_validation = 'True'
 

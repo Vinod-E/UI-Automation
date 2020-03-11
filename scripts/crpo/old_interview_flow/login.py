@@ -10,14 +10,11 @@ class Login(interview_excel_old.OldInterviewExcelRead):
     def login(self, typeofuser, username, password):
         try:
             # --------------------------- Login as an interviewer ------------------------------------------------------
-            self.name_element_webdriver_wait(page_elements.login['username'])
-            self.name.send_keys(username)
+            self.web_element_send_keys_name(page_elements.login['username'], username)
 
-            self.x_path_element_webdriver_wait(page_elements.login['password'])
-            self.xpath.send_keys(password)
+            self.web_element_send_keys_xpath(page_elements.login['password'], password)
 
-            self.x_path_element_webdriver_wait(page_elements.login['login_button'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.login['login_button'])
             print("******************** {} Login successfully ********************".format(typeofuser))
 
         except Exception as login_error:
