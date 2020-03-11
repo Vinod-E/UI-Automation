@@ -24,7 +24,7 @@ class ValidationCheck(settings.Settings):
         self.web_element_click_xpath(page_elements.glowing_messages['dismiss'])
 
     def manage_task_validation(self, candidate_name):
-        time.sleep(1)
+        time.sleep(1.5)
         self.web_element_text_xpath(page_elements.validations['task_candidate_name'])
         if candidate_name in self.text_value:
             self.task_validation_check = 'True'

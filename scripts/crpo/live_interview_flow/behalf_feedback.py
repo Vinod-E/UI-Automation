@@ -18,8 +18,7 @@ class BehalfFeedback(live_schedule.LiveInterviewSchedule):
             time.sleep(1.5)
             self.web_element_click_xpath(page_elements.live_interview['down'])
 
-            self.provide_feedback(page_elements.live_interview['shortlist'],
-                                  self.xl_comment_l)
+            self.live_provide_feedback(page_elements.live_interview['shortlist'], self.xl_comment_l)
 
             # --------- Behalf of Submission
             self.web_element_click_xpath(page_elements.live_interview['feedback_int1'])

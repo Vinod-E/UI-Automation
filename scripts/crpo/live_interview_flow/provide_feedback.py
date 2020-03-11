@@ -8,7 +8,7 @@ class ProvideFeedback(live_interview_excel.LiveInterviewExcelRead):
     def __init__(self):
         super(ProvideFeedback, self).__init__()
 
-    def provide_feedback(self, decision, comment):
+    def live_provide_feedback(self, decision, comment):
         try:
 
             self.web_element_click_xpath(page_elements.live_interview['provide_feedback'])

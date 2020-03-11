@@ -24,7 +24,7 @@ class SubmitFeedbackInt1(behalf_feedback.BehalfFeedback):
 
         try:
             # ---------------------------- New tab to login as Interviewer ---------------------------------------------
-            time.sleep(1)
+            time.sleep(0.5)
             self.crpo_logout()
             self.login('InterviewerONE', self.xl_int1_l, self.xl_int1_l)
 
@@ -58,8 +58,7 @@ class SubmitFeedbackInt1(behalf_feedback.BehalfFeedback):
             time.sleep(1)
             self.web_element_click_xpath(page_elements.live_interview['down'])
 
-            self.provide_feedback(page_elements.live_interview['shortlist'],
-                                  self.xl_comment_l)
+            self.live_provide_feedback(page_elements.live_interview['shortlist'], self.xl_comment_l)
 
             self.web_element_click_xpath(page_elements.buttons['submit_feedback'])
 

@@ -1,5 +1,6 @@
 import xlwt
 import styles
+import datetime
 from datetime import date
 import test_data_inputpath
 from logger_settings import api_logger
@@ -781,8 +782,11 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
         try:
             failure_cases = len(self.Expected_success_cases) - len(self.Actual_success_cases)
             percentage = len(self.Actual_success_cases) * 100/len(self.Expected_success_cases)
+            end_date_time = datetime.datetime.now()
+            time_taken = end_date_time - self.start_date_time
+            minutes = time_taken.total_seconds() / 60
 
-            self.ws.write(0, 0, 'OLD INTERVIEW FLOW USECASES', self.style4)
+            self.ws.write(0, 0, 'OLD INTERVIEW FLOW', self.style4)
             if self.Expected_success_cases == self.Actual_success_cases:
                 self.ws.write(0, 1, 'Pass', self.style5)
             else:
@@ -803,6 +807,8 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
                 self.ws.write(0, 11, failure_cases, self.style6)
             self.ws.write(0, 12, 'Success %', self.style4)
             self.ws.write(0, 13, percentage, self.style5)
+            self.ws.write(0, 14, 'Time Taken (min)', self.style4)
+            self.ws.write(0, 15, minutes, self.style5)
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
 
         except Exception as error:

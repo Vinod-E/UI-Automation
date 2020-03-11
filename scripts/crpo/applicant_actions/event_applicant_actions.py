@@ -323,6 +323,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             # ----------------------------- Disable RL ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['disable/enable_registration_link'])
 
+            time.sleep(0.4)
             self.more_actions()
             self.disable_link_validation()
             # -------------------- output report value ----------------
@@ -333,11 +334,12 @@ class EventApplicantActions(event_applicants.ApplicantActions):
 
     def enable_registration_link(self):
         try:
-            time.sleep(0.5)
+            time.sleep(1.5)
             self.more_actions()
             # ----------------------------- Enable RL ---------------------
             self.web_element_click_xpath(page_elements.applicant_actions['disable/enable_registration_link'])
 
+            time.sleep(0.4)
             self.more_actions()
             self.enable_link_validation('CAMPUS DETAILS')
             # -------------------- output report value ----------------

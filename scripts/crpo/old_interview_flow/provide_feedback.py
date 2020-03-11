@@ -11,29 +11,17 @@ class ProvideFeedback(cancel_request_acceptance.CancelRequestAcceptance):
     def provide_feedback(self, decision, comment):
         try:
 
-            self.id_element_webdriver_wait(page_elements.grid_actions['provide_feedback'])
-            self.id.click()
+            self.web_element_click_id(page_elements.grid_actions['provide_feedback'])
 
-            time.sleep(3)
+            time.sleep(1)
             self.driver.switch_to.window(self.driver.window_handles[1])
 
-            self.x_path_element_webdriver_wait(decision)
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.interview['rating_1'])
-            self.xpath.send_keys('Develop')
-
-            self.x_path_element_webdriver_wait(page_elements.interview['comment_1'])
-            self.xpath.send_keys(comment)
-
-            self.x_path_element_webdriver_wait(page_elements.interview['rating_2'])
-            self.xpath.send_keys('Develop')
-
-            self.x_path_element_webdriver_wait(page_elements.interview['comment_2'])
-            self.xpath.send_keys(comment)
-
-            self.x_path_element_webdriver_wait(page_elements.interview['overall_comment'])
-            self.xpath.send_keys(comment)
+            self.web_element_click_xpath(decision)
+            self.web_element_send_keys_xpath(page_elements.interview['rating_1'], 'Develop')
+            self.web_element_send_keys_xpath(page_elements.interview['comment_1'], comment)
+            self.web_element_send_keys_xpath(page_elements.interview['rating_2'], 'Develop')
+            self.web_element_send_keys_xpath(page_elements.interview['comment_2'], comment)
+            self.web_element_send_keys_xpath(page_elements.interview['overall_comment'], comment)
 
         except Exception as error:
             api_logger.error(error)

@@ -13,10 +13,9 @@ class AdvanceSearch(common_login.CommonLogin):
 
     def advance_search(self, tab):
         try:
-
             self.web_element_click_xpath(tab)
             self.driver.execute_script("window.scrollTo(0,-100);")
-            time.sleep(2.5)
+            time.sleep(1.5)
 
             self.web_element_click_id(page_elements.advance_search['search'])
 

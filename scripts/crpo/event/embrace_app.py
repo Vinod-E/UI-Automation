@@ -24,7 +24,6 @@ class EmbraceApp(event_manage_task.EventManageTask):
     def embrace_app_to_submit_task(self):
         try:
             time.sleep(0.5)
-            self.dismiss_message()
             self.more_tab()
             self.ui_more_tabs = 'Pass'
             self.embrace_tab()
@@ -36,6 +35,7 @@ class EmbraceApp(event_manage_task.EventManageTask):
             self.web_element_click_xpath(page_elements.tabs['embrace_candidate_tab'])
             print('**-------->>> Embrace app login')
 
+            time.sleep(1)
             self.web_element_click_xpath(page_elements.embrace['candidates_advance_search'])
 
             self.web_element_send_keys_xpath(page_elements.embrace['candidate_text_box'],
@@ -52,7 +52,7 @@ class EmbraceApp(event_manage_task.EventManageTask):
             self.web_element_click_xpath(page_elements.embrace['submit_task'])
             self.ui_submit_behalf = 'Pass'
 
-            time.sleep(2)
+            time.sleep(1.5)
         except Exception as error:
             api_logger.error(error)
 
@@ -104,12 +104,12 @@ class EmbraceApp(event_manage_task.EventManageTask):
             if str(self.rejected_tasks) in self.text_value:
                 self.ui_rejected_tasks = 'Pass'
 
-            time.sleep(1.5)
+            time.sleep(1)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
-            time.sleep(3)
+            time.sleep(0.5)
 
         except Exception as error:
             api_logger.error(error)
