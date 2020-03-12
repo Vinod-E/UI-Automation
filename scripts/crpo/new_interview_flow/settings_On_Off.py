@@ -17,12 +17,12 @@ class Settings(new_interview_excel.NewInterviewExcelRead):
     def new_feedback_on(self):
         try:
             # ----- settings part
-            time.sleep(2)
+            time.sleep(1)
             self.settings(page_elements.setting_modules['interview_module'])
-            time.sleep(1.5)
+            time.sleep(1)
             self.enable_new_feedback_form(page_elements.setting_modules['On'],
                                           'Enable')
-            time.sleep(1)
+            time.sleep(0.5)
             self.dismiss_message()
             if self.enable_disable_validation == 'True':
                 self.ui_common_settings = 'Pass'
@@ -35,12 +35,14 @@ class Settings(new_interview_excel.NewInterviewExcelRead):
     def new_feedback_off(self):
         try:
             # ----- settings part
-            time.sleep(2)
+            time.sleep(1)
             self.driver.execute_script("window.scrollTo(0,-200);")
             self.settings(page_elements.setting_modules['interview_module'])
-            time.sleep(1.5)
+            time.sleep(1)
             self.enable_new_feedback_form(page_elements.setting_modules['Off'],
                                           'Disable')
+            time.sleep(0.5)
+            self.dismiss_message()
             if self.enable_disable_validation == 'True':
                 self.ui_common_settings = 'Pass'
                 self.ui_settings = 'Pass'

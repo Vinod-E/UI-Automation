@@ -1,7 +1,6 @@
 import time
 import page_elements
 from logger_settings import api_logger
-from selenium.webdriver.common.keys import Keys
 from scripts.crpo.new_interview_flow import job_search
 
 
@@ -24,30 +23,26 @@ class FeedbackConfiguration(job_search.JobSearch):
             self.job_search_new()
             self.floating_action()
 
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['feedback_form'])
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.floating_actions['feedback_form'])
             self.ui_floating_action_n = 'Pass'
             self.ui_feedback_form_action_n = 'Pass'
 
 # ---------- Configure new feedback
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("Interview Stages"))
-            self.xpath.clear()
-            self.xpath.send_keys(self.xl_stage_n)
-            self.xpath.send_keys(Keys.ARROW_DOWN, Keys.ENTER)
-
-            self.x_path_element_webdriver_wait(page_elements.text_fields['text_field'].format("Name like."))
-            self.xpath.send_keys(self.xl_new_form)
+            self.clear(page_elements.text_fields['text_field'].format("Interview Stages"))
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Interview Stages"),
+                                             self.xl_stage_n)
+            self.drop_down_selection()
 
             time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['new_template_search'].format("'", 'search', "'"))
-            self.xpath.click()
-
+            self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name like."),
+                                             self.xl_new_form)
+            self.web_element_click_xpath(page_elements.buttons['new_template_search'].format("'", 'search', "'"))
             self.driver.execute_script("window.scrollTo(0,100);")
-            time.sleep(2)
-            self.x_path_element_webdriver_wait(page_elements.buttons['use'].format("'", 'tag', "'"))
-            self.xpath.click()
+            time.sleep(0.5)
+            self.web_element_click_xpath(page_elements.buttons['use'].format("'", 'tag', "'"))
+            self.dismiss_message()
 
-            time.sleep(1)
+            time.sleep(0.5)
             self.feedback_form_validation()
 
         except Exception as error:
@@ -58,8 +53,8 @@ class FeedbackConfiguration(job_search.JobSearch):
             for i in self.xl_new_form:
                 self.form = i
             self.driver.execute_script("window.scrollTo(0,100);")
-            self.x_path_element_webdriver_wait(page_elements.title['title'].format('Name'))
-            self.configure_form = self.xpath.text
+            self.web_element_text_xpath(page_elements.title['title'].format('Name'))
+            self.configure_form = self.text_value
 
             if self.form in self.configure_form:
                 print('**-------->>> Feedback form configure to {} successfully'.format(self.xl_stage_n))

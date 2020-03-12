@@ -17,7 +17,7 @@ class JobSearch(settings_On_Off.Settings):
 
     def job_search_new(self):
         try:
-            time.sleep(5)
+            time.sleep(2)
             self.advance_search(page_elements.tabs['job_tab'])
 
             self.name_search(self.job_sprint_version_n, 'Job')
@@ -25,10 +25,9 @@ class JobSearch(settings_On_Off.Settings):
             if self.search == 'Pass':
                 self.ui_job_advance_search_n = 'Pass'
 
-            time.sleep(2)
+            time.sleep(0.5)
             self.job_getby_details(self.job_sprint_version_n)
 
-            time.sleep(3)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
@@ -45,8 +44,8 @@ class JobSearch(settings_On_Off.Settings):
 
     def job_validation(self, config_name):
         try:
-            self.x_path_element_webdriver_wait(page_elements.job_validations['job_name_breadcumb'])
-            self.job_name_breadcumb = self.xpath.text
+            self.web_element_text_xpath(page_elements.job_validations['job_name_breadcumb'])
+            self.job_name_breadcumb = self.text_value
         except Exception as e1:
             api_logger.error(e1)
 

@@ -11,14 +11,9 @@ class Settings(login.Login):
 
     def settings(self, module):
         try:
-            self.x_path_element_webdriver_wait(page_elements.login['login_success'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(page_elements.setting_modules['settings'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(module)
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.login['login_success'])
+            self.web_element_click_xpath(page_elements.setting_modules['settings'])
+            self.web_element_click_xpath(module)
 
         except Exception as setting_error:
             api_logger.error(setting_error)
@@ -26,11 +21,8 @@ class Settings(login.Login):
     def enable_new_feedback_form(self, on_or_off, enable_disable):
         try:
             self.driver.execute_script("window.scrollTo(0,200);")
-            self.x_path_element_webdriver_wait(page_elements.setting_modules['enable_new_feedback_form'])
-            self.xpath.click()
-
-            self.x_path_element_webdriver_wait(on_or_off)
-            self.xpath.click()
+            self.web_element_click_xpath(page_elements.setting_modules['enable_new_feedback_form'])
+            self.web_element_click_xpath(on_or_off)
             print('**-------->>> {} new feedback form'.format(enable_disable))
             self.enable_disable_validation = 'True'
         except Exception as interview_module_error:
