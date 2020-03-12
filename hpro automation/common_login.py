@@ -17,6 +17,8 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
         self.xl_password = []
         self._xl_rpo_tenant = []
         self.xl_rpo_password = []
+        self._xl_pofu_tenant = []
+        self.xl_pofu_password = []
 
         self.status_of_login = ""
         self.tenant_screen_text = ""
@@ -43,6 +45,10 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
                     self._xl_rpo_tenant.append(rows[3])
                 if rows[4]:
                     self.xl_rpo_password.append(rows[4])
+                if rows[5]:
+                    self._xl_pofu_tenant.append(rows[5])
+                if rows[6]:
+                    self.xl_pofu_password.append(rows[6])
         except Exception as file_error:
             api_logger.error(file_error)
 
@@ -169,13 +175,13 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
     def embrace_login_elements(self):
         try:
             self.name_element_webdriver_wait(page_elements.login['tenant'])
-            self.name.send_keys(self._xl_tenant)
+            self.name.send_keys(self._xl_pofu_tenant)
             self.x_path_element_webdriver_wait(page_elements.embrace_login['next_button'])
             self.xpath.click()
             self.name_element_webdriver_wait(page_elements.embrace_login['username'])
             self.name.send_keys(self.xl_username)
             self.name_element_webdriver_wait(page_elements.embrace_login['password'])
-            self.name.send_keys(self.xl_password)
+            self.name.send_keys(self.xl_pofu_password)
             self.x_path_element_webdriver_wait(page_elements.login['login_button'])
             self.xpath.click()
 
