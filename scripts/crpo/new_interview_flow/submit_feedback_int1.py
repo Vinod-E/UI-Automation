@@ -15,23 +15,19 @@ class SubmitFeedbackInt1(save_darft_new.DraftNew):
 
     def submit_feedback_int1(self):
         try:
-            self.id_element_webdriver_wait(page_elements.grid_actions['provide_feedback'])
-            self.id.click()
-
-            time.sleep(3)
-            self.driver.switch_to.window(self.driver.window_handles[1])
-
-            self.x_path_element_webdriver_wait(page_elements.new_interview['overall'])
-            self.xpath.send_keys('INT1')
+            self.web_element_click_id(page_elements.grid_actions['provide_feedback'])
 
             time.sleep(1)
-            self.x_path_element_webdriver_wait(page_elements.buttons['new_submit_feedback'])
-            self.xpath.click()
+            self.driver.switch_to.window(self.driver.window_handles[1])
+
+            self.web_element_send_keys_xpath(page_elements.new_interview['overall'], 'INT1')
+
+            self.web_element_click_xpath(page_elements.buttons['new_submit_feedback'])
             time.sleep(5)
 
             self.driver.switch_to.window(self.driver.window_handles[0])
             self.driver.refresh()
-            time.sleep(2)
+            time.sleep(0.5)
             self.submit_feed_validation(self.xl_int1)
 
             # -------------------- output report values ----------------
@@ -42,8 +38,8 @@ class SubmitFeedbackInt1(save_darft_new.DraftNew):
 
     def submit_feed_validation(self, interviewer):
         try:
-            self.x_path_element_webdriver_wait(page_elements.title['title'].format('Shortlisted'))
-            self.interview_status = self.xpath.text
+            self.web_element_text_xpath(page_elements.title['title'].format('Shortlisted'))
+            self.interview_status = self.text_value
             if self.interview_status == 'Shortlisted':
                 self.ui_submit_feedback_new_int1 = 'Pass'
                 print('**-------->>> Feedback submitted successfully by {}'.format(interviewer))
