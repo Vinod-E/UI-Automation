@@ -1,18 +1,14 @@
 import time
-import webdriver_functions
+import common_login
 from datetime import datetime
 import xlwt
 import xlrd
-from selenium import webdriver
-from selenium.webdriver.support.ui import Select
 
 
-class AmitTesting(webdriver_functions.WebdriverFunctions):
+class AmitTesting(common_login.CommonLogin):
     def __init__(self):
         super(AmitTesting, self).__init__()
-        self.driver = webdriver.Chrome('E:\\hirepro_automation\\UI-Automation\\drivers\\chromedriver.exe')
-        self.driver.get('https://amsin.hirepro.in/staffing/#/login/')
-        self.driver.maximize_window()
+        self.embrace_login()
 
         now = datetime.now()
         self.__current_DateTime = now.strftime("%d-%m-%Y")
@@ -38,37 +34,10 @@ class AmitTesting(webdriver_functions.WebdriverFunctions):
         print(self.sheet_name)
         self.inputFileByIndex = self.input_file.sheet_by_index(0)
 
-    def login(self):
-        tenant = self.driver.find_element_by_name('alias')
-        tenant.send_keys('pofu')
-
-        next = self.driver.find_element_by_xpath('//*[@ng-click="vm.getTenantConfiguration(vm.tenantAlias);$hide();"]')
-
-        time.sleep(5)
-        next.click()
-        time.sleep(5)
-        login = self.driver.find_element_by_name("userName")
-        login.send_keys("admin")
-        time.sleep(5)
-        next = self.driver.find_element_by_xpath('//*[@ng-click="vm.validateUserName()"]')
-        next.click()
-        time.sleep(5)
-        enter_password = self.driver.find_element_by_name("new-password")
-        enter_password.send_keys("charuk@123")
-        checkbox = self.driver.find_element_by_xpath('//*[@ng-model="vm.secureImageAccess"]')
-        checkbox.click()
-        time.sleep(5)
-        login = self.driver.find_element_by_xpath('//*[@ng-click="vm.login()"]')
-        login.click()
-        time.sleep(15)
-
     def create_form(self):
         self.web_element_click_xpath('//*[@ui-sref="pofu.activity.forms.info"]')
-        # form = self.driver.find_element_by_xpath('//*[@ui-sref="pofu.activity.forms.info"]').click()
-        # time.sleep(12)
+        self.web_element_click_xpath('//*[@ng-if="vm.isAdmin"]')
 
-        create_new_form = self.driver.find_element_by_xpath('//*[@ng-if="vm.isAdmin"]').click()
-        time.sleep(5)
         form_name = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.formType.Name"]')
         with open("E:\Create Form UI Automation\create form.txt", 'r') as f:
             a = f.readline()
@@ -76,100 +45,77 @@ class AmitTesting(webdriver_functions.WebdriverFunctions):
 
         name = self.inputFileByIndex.cell(1, 0).value
         final_name = name + str(a)
+
         print(final_name)
         a = int(a) + 1
         with open("E:\Create Form UI Automation\create form.txt", 'w') as e:
             e.write(str(a))
             e.close()
         form_name.send_keys(final_name)
-        time.sleep(5)
-        form_title = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.formType.Title"]')
-        form_title.send_keys(final_name)
-        time.sleep(5)
-        create_next = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.goToNextTab();"]')
-        create_next.click()
-        time.sleep(5)
 
-        field_type = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]')
-        field_type.click()
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.formType.Title"]', final_name)
+        self.web_element_click_xpath('//*[@data-ng-click="vm.goToNextTab();"]')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]')
 
-        select = Select(self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]'))
-        select.select_by_index(1)
-        time.sleep(3)
-        text_field = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        text_field.send_keys("candidate name")
-        time.sleep(3)
-        add_text_field = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.addFieldDetails();"]').click()
+        self.web_element_send_keys_id("cmbFieldType", 'Text')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "candidate name")
+        self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
-        select.select_by_index(2)
-        date_time = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        date_time.send_keys("date and time")
-        time.sleep(2)
-        add_date_time = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.addFieldDetails();"]').click()
+        self.web_element_send_keys_id("cmbFieldType", 'DateTime')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "date and time")
+        self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
-        select.select_by_index(3)
-        drop_down = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        drop_down.send_keys("College")
-        time.sleep(5)
-        select = Select(self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.CatalogMasterName"]'))
-        select.select_by_index(19)
-        time.sleep(8)
-        add_drop_down = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.addFieldDetails();"]').click()
+        self.web_element_send_keys_id("cmbFieldType", 'DropDown')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "College")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.CatalogMasterName"]', 'Colleges')
+        self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
-        select = Select(self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]'))
-        select.select_by_index(4)
-        radio_button = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        radio_button.send_keys("gender")
-        radio_button = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]')
-        radio_button.send_keys("male,female")
-        add_radio_button = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.addFieldDetails();"]').click()
+        self.web_element_send_keys_id("cmbFieldType", 'Radio')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "gender")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]', 'male,female')
+        self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
-        select = Select(self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]'))
-        select.select_by_index(5)
-        checkbox_field = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        checkbox_field.send_keys("country")
-        checkbox_field = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]')
-        checkbox_field.send_keys("india,pakistan")
-        add_checkbox_field = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.addFieldDetails();"]').click()
+        self.web_element_send_keys_id("cmbFieldType", 'CheckBox')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "country")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]', "india,pakistan")
+        self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
-        select = Select(self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]'))
-        select.select_by_index(6)
-        text_area_field = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        text_area_field.send_keys("address")
-        add_text_area_field = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.addFieldDetails();"]').click()
+        self.web_element_send_keys_id("cmbFieldType", 'TextArea')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "address")
+        self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
-        select = Select(self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]'))
-        select.select_by_index(8)
-        date_field = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        date_field.send_keys("birth date")
-        add_date_field = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.addFieldDetails();"]').click()
+        self.web_element_send_keys_id("cmbFieldType", 'Date')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "birth date")
+        self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
-        select = Select(self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]'))
-        select.select_by_index(9)
-        time_field = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        time_field.send_keys("current time")
-        add_time_field = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.addFieldDetails();"]').click()
-        time.sleep(5)
+        self.web_element_send_keys_id("cmbFieldType", 'Time')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "current time")
+        self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
-        select = Select(self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]'))
-        select.select_by_index(11)
-        video_field = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        video_field.send_keys("python tutorial")
-        video_field = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]')
-        video_field.send_keys("https://youtu.be/WGJJIrtnfpk")
-        add_video_field = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.addFieldDetails();"]').click()
+        self.web_element_send_keys_id("cmbFieldType", 'Video')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "python tutorial")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]', "https://youtu.be/WGJJIrtnfpk")
+        self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
-        select = Select(self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]'))
-        select.select_by_index(12)
-        link_field = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        link_field.send_keys("java tutorial")
-        link_field = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]')
-        link_field.send_keys("https://www.tutorialspoint.com/java/java_basic_syntax.htm")
-        add_link_field = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.addFieldDetails();"]').click()
+        self.web_element_send_keys_id("cmbFieldType", 'Link')
+        self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "java tutorial")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]',
+                                         "https://www.tutorialspoint.com/java/java_basic_syntax.htm")
+        self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
         # last step of create form
-        create_form = self.driver.find_element_by_xpath('//*[@data-ng-click="vm.saveForm(vm.mode);"]').click()
-        time.sleep(5)
+        self.web_element_click_xpath('//*[@data-ng-click="vm.saveForm(vm.mode);"]')
         self.driver.refresh()
         time.sleep(15)
 
@@ -211,10 +157,7 @@ class AmitTesting(webdriver_functions.WebdriverFunctions):
                 print("Element is a text field")
 
             if self.driver.find_element_by_name("date").get_attribute("placeholder") == "Date":
-                print("Element is a date field")
-
-            if self.driver.find_element_by_xpath('[@placeholder="Time"]').get_attribute("data-time-format") == "HH:mm":
-                print("Element is a time field")
+                print("Element is a date time field")
 
             if self.driver.find_element_by_name("college").get_attribute("data-ng-model") == "formControl.Value":
                 print("Element is a drop_down field")
@@ -235,14 +178,18 @@ class AmitTesting(webdriver_functions.WebdriverFunctions):
                 print("Element is a current time field")
 
             if self.driver.find_element_by_name("python").get_attribute("type") == "text":
-                print("Element is a link field")
+                print("Element is a video field")
+
+            if self.driver.find_element_by_xpath('//*[@ng-href="https://www.tutorialspoint.com'
+                                                 '/java/java_basic_syntax.htm"]').get_attribute('href') == 'https://www.tutorialspoint.com/java/java_basic_syntax.htm':
+
+                print('Element is a link field')
 
         except Exception as e:
             print(e)
 
 
 Object = AmitTesting()
-Object.login()
 Object.create_form()
 Object.output()
 Object.validation()
