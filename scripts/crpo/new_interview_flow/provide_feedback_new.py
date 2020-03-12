@@ -11,29 +11,17 @@ class ProvideFeedbackNew(schedule_new.Schedule):
     def provide_feedback_new(self, comment):
         try:
 
-            self.id_element_webdriver_wait(page_elements.grid_actions['provide_feedback'])
-            self.id.click()
+            self.web_element_click_id(page_elements.grid_actions['provide_feedback'])
 
-            time.sleep(3)
+            time.sleep(2)
             self.driver.switch_to.window(self.driver.window_handles[1])
 
-            self.x_path_element_webdriver_wait(page_elements.new_interview['rating1'])
-            self.xpath.send_keys('Excellent')
-
-            self.x_path_element_webdriver_wait(page_elements.new_interview['comment1'])
-            self.xpath.send_keys(comment)
-
-            self.x_path_element_webdriver_wait(page_elements.new_interview['rating2'])
-            self.xpath.send_keys('Good')
-
-            self.x_path_element_webdriver_wait(page_elements.new_interview['comment2'])
-            self.xpath.send_keys(comment)
-
-            self.x_path_element_webdriver_wait(page_elements.new_interview['rating3'])
-            self.xpath.send_keys('VeryGood')
-
-            self.x_path_element_webdriver_wait(page_elements.new_interview['overall'])
-            self.xpath.send_keys(comment)
+            self.web_element_send_keys_xpath(page_elements.new_interview['rating1'], 'Excellent')
+            self.web_element_send_keys_xpath(page_elements.new_interview['comment1'], comment)
+            self.web_element_send_keys_xpath(page_elements.new_interview['rating2'], 'Good')
+            self.web_element_send_keys_xpath(page_elements.new_interview['comment2'], comment)
+            self.web_element_send_keys_xpath(page_elements.new_interview['rating3'], 'VeryGood')
+            self.web_element_send_keys_xpath(page_elements.new_interview['overall'], comment)
 
         except Exception as error:
             api_logger.error(error)
