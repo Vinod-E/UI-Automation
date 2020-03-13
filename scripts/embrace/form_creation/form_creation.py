@@ -1,59 +1,22 @@
 import time
 import common_login
-from datetime import datetime
-import xlwt
+import datetime
 import xlrd
 
 
-class AmitTesting(common_login.CommonLogin):
+class FormCreation(common_login.CommonLogin):
     def __init__(self):
-        super(AmitTesting, self).__init__()
+        self.start_date_time = datetime.datetime.now()
+        super(FormCreation, self).__init__()
         self.embrace_login()
 
-        now = datetime.now()
-        self.__current_DateTime = now.strftime("%d-%m-%Y")
-        self.__style0 = xlwt.easyxf('font: name Times New Roman, color-index black, bold on')
-        self.__style1 = xlwt.easyxf('font: name Times New Roman, color-index green, bold on')
-        self.__style2 = xlwt.easyxf('font: name Times New Roman, color-index red, bold on')
-        self.wb_result = xlwt.Workbook()
-        self.ws = self.wb_result.add_sheet('create_form_ui_automation')
-        self.ws.write(0, 0, 'Status', self.__style0)
-        self.ws.write(0, 1, 'textField', self.__style0)
-        self.ws.write(0, 2, 'dateAndTime', self.__style0)
-        self.ws.write(0, 3, 'dropdownField', self.__style0)
-        self.ws.write(0, 4, 'radioButtonField', self.__style0)
-        self.ws.write(0, 5, 'checkboxField', self.__style0)
-        self.ws.write(0, 6, 'textAreaField', self.__style0)
-        self.ws.write(0, 7, 'dateField', self.__style0)
-        self.ws.write(0, 8, 'timeField', self.__style0)
-        self.ws.write(0, 9, 'videoField', self.__style0)
-        self.ws.write(0, 10, 'linkField', self.__style0)
-
-        self.input_file = xlrd.open_workbook('E:\Create Form UI Automation\Input Excel For Create Form.xls')
-        self.sheet_name = self.input_file.sheet_names()
-        print(self.sheet_name)
-        self.inputFileByIndex = self.input_file.sheet_by_index(0)
 
     def create_form(self):
         self.web_element_click_xpath('//*[@ui-sref="pofu.activity.forms.info"]')
         self.web_element_click_xpath('//*[@ng-if="vm.isAdmin"]')
 
-        form_name = self.driver.find_element_by_xpath('//*[@data-ng-model="vm.formType.Name"]')
-        with open("E:\Create Form UI Automation\create form.txt", 'r') as f:
-            a = f.readline()
-            f.close()
-
-        name = self.inputFileByIndex.cell(1, 0).value
-        final_name = name + str(a)
-
-        print(final_name)
-        a = int(a) + 1
-        with open("E:\Create Form UI Automation\create form.txt", 'w') as e:
-            e.write(str(a))
-            e.close()
-        form_name.send_keys(final_name)
-
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.formType.Title"]', final_name)
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.formType.Name"]', self.sprint_version)
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.formType.Title"]', self.sprint_version)
         self.web_element_click_xpath('//*[@data-ng-click="vm.goToNextTab();"]')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.FormControl"]')
@@ -150,46 +113,3 @@ class AmitTesting(common_login.CommonLogin):
         self.ws.write(2, 0, "Pass", self.__style1)
 
         self.wb_result.save('E:\Create Form UI Automation\Output File\CreateFormResults(' + self.__current_DateTime + ').xls')
-
-    def validation(self):
-        try:
-            if self.driver.find_element_by_name("candidate").get_attribute("type") == "text":
-                print("Element is a text field")
-
-            if self.driver.find_element_by_name("date").get_attribute("placeholder") == "Date":
-                print("Element is a date time field")
-
-            if self.driver.find_element_by_name("college").get_attribute("data-ng-model") == "formControl.Value":
-                print("Element is a drop_down field")
-
-            if self.driver.find_element_by_name("gender").get_attribute("type") == "radio":
-                print("Element is a radio field")
-
-            if self.driver.find_element_by_name("country").get_attribute("type") == "checkbox":
-                print("Element is a checkbox field")
-
-            if self.driver.find_element_by_name("address").get_attribute("data-ng-model") == "formControl.Value":
-                print("Element is a textarea field")
-
-            if self.driver.find_element_by_name("birth").get_attribute("data-ng-model") == "formControl.Value":
-                print("Element is a birthdate field")
-
-            if self.driver.find_element_by_name("current").get_attribute("data-ng-model") == "formControl.Value":
-                print("Element is a current time field")
-
-            if self.driver.find_element_by_name("python").get_attribute("type") == "text":
-                print("Element is a video field")
-
-            if self.driver.find_element_by_xpath('//*[@ng-href="https://www.tutorialspoint.com'
-                                                 '/java/java_basic_syntax.htm"]').get_attribute('href') == 'https://www.tutorialspoint.com/java/java_basic_syntax.htm':
-
-                print('Element is a link field')
-
-        except Exception as e:
-            print(e)
-
-
-Object = AmitTesting()
-Object.create_form()
-Object.output()
-Object.validation()
