@@ -77,7 +77,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
         except Exception as Tenant_Screen_Error:
             api_logger.error(Tenant_Screen_Error)
 
-    def crpo_login_elements(self, tenant, password):
+    def crpo_login_elements(self, tenant, password, app):
         try:
             self.name_element_webdriver_wait(page_elements.login['tenant'])
             self.name.send_keys(tenant)
@@ -92,7 +92,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
 
             time.sleep(3)
             print("Application Login successfully")
-            self.driver.save_screenshot(config.image_config['screen_shot'].format('CRPO_Login_Welcome_Page'))
+            self.driver.save_screenshot(config.image_config['screen_shot'].format('{}_Login_Welcome_Page').format(app))
             print("Login welcome page screen shot has been saved")
         except Exception as login_failed:
             api_logger.error(login_failed)
@@ -102,15 +102,15 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             # ----------------------------------------AMSIN Login---------------------------------------------------
             if self.login_server == 'amsin':
                 self.tenant_alias_screen_validation()
-                self.crpo_login_elements(self._xl_tenant, self.xl_password)
+                self.crpo_login_elements(self._xl_tenant, self.xl_password, 'CRPO')
             # ----------------------------------------AMS Login---------------------------------------------------
             if self.login_server == 'ams':
                 self.tenant_alias_screen_validation()
-                self.crpo_login_elements(self._xl_tenant, self.xl_password)
+                self.crpo_login_elements(self._xl_tenant, self.xl_password, 'CRPO')
             # ------------------------------------------BETA Login---------------------------------------------------
             if self.login_server == 'betaams':
                 self.tenant_alias_screen_validation()
-                self.crpo_login_elements(self._xl_tenant, self.xl_password)
+                self.crpo_login_elements(self._xl_tenant, self.xl_password, 'CRPO')
 
         except Exception as crpo_login:
             api_logger.error(crpo_login)
@@ -137,15 +137,15 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             # ----------------------------------------AMSIN Login---------------------------------------------------
             if self.login_server == 'amsin':
                 self.tenant_alias_screen_validation()
-                self.crpo_login_elements(self._xl_rpo_tenant, self.xl_rpo_password)
+                self.crpo_login_elements(self._xl_rpo_tenant, self.xl_rpo_password, 'RPO')
             # ----------------------------------------AMS Login---------------------------------------------------
             if self.login_server == 'ams':
                 self.tenant_alias_screen_validation()
-                self.crpo_login_elements(self._xl_rpo_tenant, self.xl_rpo_password)
+                self.crpo_login_elements(self._xl_rpo_tenant, self.xl_rpo_password, 'RPO')
             # ------------------------------------------BETA Login---------------------------------------------------
             if self.login_server == 'betaams':
                 self.tenant_alias_screen_validation()
-                self.crpo_login_elements(self._xl_rpo_tenant, self.xl_rpo_password)
+                self.crpo_login_elements(self._xl_rpo_tenant, self.xl_rpo_password, 'RPO')
 
         except Exception as crpo_login:
             api_logger.error(crpo_login)
@@ -187,7 +187,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
 
             time.sleep(3)
             print("Application Login successfully")
-            self.driver.save_screenshot(config.image_config['screen_shot'].format('CRPO_Login_Welcome_Page'))
+            self.driver.save_screenshot(config.image_config['screen_shot'].format('Embrace_Login_Welcome_Page'))
             print("Login welcome page screen shot has been saved")
         except Exception as login_failed:
             api_logger.error(login_failed)
