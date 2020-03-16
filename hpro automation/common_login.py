@@ -213,7 +213,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
         try:
             self.x_path_element_webdriver_wait(page_elements.embrace_login['login_success'])
             self.status_of_login = self.xpath.text
-            assert self.status_of_login.strip() == 'Administrator'
+            assert self.status_of_login.strip() == 'Admin'
             print("**---------------------- In main screen ------------------------**")
         except Exception as login_status:
             api_logger.error(login_status)
