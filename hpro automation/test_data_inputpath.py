@@ -28,7 +28,9 @@ crpo_test_data_file = {
 
     'applicant_action_file': generic_input_path + crpo_testdata + 'Applicants_actions.xls',
 
-    'help_desk': generic_input_path + crpo_testdata + 'Help_desk.xls'
+    'help_desk': generic_input_path + crpo_testdata + 'Help_desk.xls',
+
+    'create_form': generic_input_path + pofu_testdata + 'create_form.xls'
 }
 
 attachments = {
@@ -42,5 +44,5 @@ output = {
     'live_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_live.xls',
     'new_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_new.xls',
     'Applicant_action_output_report': generic_input_path + crpo_reports + 'UI_Applicant_Action_Flow.xls',
-    'form_creation_output_report': generic_input_path + rpo_reports + 'UI_form_creation_flow.xls'
+    'form_creation_output_report': generic_input_path + pofu_reports + 'UI_form_creation_flow.xls'
 }
