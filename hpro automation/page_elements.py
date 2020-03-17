@@ -202,6 +202,12 @@ buckets = {
 title = {
     'title': '//*[@title="{}"]',
 }
+multi_selection_box = {
+    'moveSelectedItemsRight': '//*[@data-ng-click="vm.moveSelectedItemsRight();"]',
+    'moveAllItemsRight': '//*[@data-ng-click="vm.moveAllItemsRight();"]',
+    'moveSelectedItemsLeft': '//*[@data-ng-click="vm.moveSelectedItemsLeft();"]',
+    'moveAllItemsLeft': '//*[@data-ng-click="vm.moveAllItemsLeft();"]',
+}
 glowing_messages = {
     'notifier': '//*[@class="growl-message ng-binding"]',
     'dismiss': '//*[@data-dismiss="alert"]'
@@ -273,6 +279,9 @@ requirement = {
     'particular_job_select': '//*[@id="mainBodyElement"]/div[3]/section/div[1]/div/div[2]/div/div/'
                              'div[2]/div/div/span/div/div/div[2]/div/button[2]',
     'requirement_getbyid': '//*[@title="{}"]',
+    'default_category': '(//span[@title="Query Category"])[{}]',
+    'user': '//*[@title="Users"]',
+    'sla': '//input[@type="number"]'
 }
 
 requirement_validations = {

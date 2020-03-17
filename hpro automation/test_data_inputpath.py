@@ -44,5 +44,6 @@ output = {
     'live_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_live.xls',
     'new_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_new.xls',
     'Applicant_action_output_report': generic_input_path + crpo_reports + 'UI_Applicant_Action_Flow.xls',
-    'form_creation_output_report': generic_input_path + pofu_reports + 'UI_form_creation_flow.xls'
+    'help_desk_output_report': generic_input_path + crpo_reports + 'UI_Help_Desk_Flow.xls',
+    'form_creation_output_report': generic_input_path + pofu_reports + 'UI_form_creation_flow.xls',
 }
