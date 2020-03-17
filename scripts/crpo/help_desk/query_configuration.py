@@ -68,8 +68,3 @@ class QueryConfig(query_excel.QueryExcelReadHelpDesk):
                   'with {} to created requirement :: {}'.format(config_name, self.req_name_breadcumb))
         else:
             print('Req validation failed Or Req creation failed <<<--------**')
-
-
-v = QueryConfig()
-v.crpo_login()
-v.query_configuration()
