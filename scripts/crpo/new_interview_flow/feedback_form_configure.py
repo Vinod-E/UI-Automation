@@ -40,6 +40,7 @@ class FeedbackConfiguration(job_search.JobSearch):
             self.driver.execute_script("window.scrollTo(0,100);")
             time.sleep(0.5)
             self.web_element_click_xpath(page_elements.buttons['use'].format("'", 'tag', "'"))
+            time.sleep(0.5)
             self.dismiss_message()
 
             time.sleep(0.5)
