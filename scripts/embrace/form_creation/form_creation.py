@@ -19,56 +19,57 @@ class FormCreation(create_form_excel.FormExcelRead):
 
         self.web_element_send_keys_id("cmbFieldType", 'Text')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "candidate name")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]',
+                                         self.xl_candidate_name_label)
         self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
         self.web_element_send_keys_id("cmbFieldType", 'DateTime')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "date and time")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', self.xl_date_time_label)
         self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
         self.web_element_send_keys_id("cmbFieldType", 'DropDown')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "College")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', self.xl_college_label)
         self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.CatalogMasterName"]', 'Colleges')
         self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
         self.web_element_send_keys_id("cmbFieldType", 'Radio')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "gender")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', self.xl_gender_label)
         self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]', 'male,female')
         self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
         self.web_element_send_keys_id("cmbFieldType", 'CheckBox')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "country")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', self.xl_country_label)
         self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]', "india,pakistan")
         self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
         self.web_element_send_keys_id("cmbFieldType", 'TextArea')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "address")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', self.xl_address_label)
         self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
         self.web_element_send_keys_id("cmbFieldType", 'Date')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "birth date")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', self.xl_birth_date_label)
         self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
         self.web_element_send_keys_id("cmbFieldType", 'Time')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "current time")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]',self.xl_current_time_label)
         self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
         self.web_element_send_keys_id("cmbFieldType", 'Video')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "python tutorial")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', self.xl_python_tutorial_label)
         self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]', "https://youtu.be/WGJJIrtnfpk")
         self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
 
         self.web_element_send_keys_id("cmbFieldType", 'Link')
         self.web_element_click_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]')
-        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', "java tutorial")
+        self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.ControlLabel"]', self.xl_java_tutorial_label)
         self.web_element_send_keys_xpath('//*[@data-ng-model="vm.fieldDetails.GroupBoxValuesText"]',
                                          "https://www.tutorialspoint.com/java/java_basic_syntax.htm")
         self.web_element_click_xpath('//*[@data-ng-click="vm.addFieldDetails();"]')
