@@ -30,6 +30,28 @@ class FormExcelRead(common_login.CommonLogin):
         self.xl_python_tutorial = []
         self.xl_java_tutorial = []
 
+        self.xl_candidate_name_label = []
+        self.xl_date_time_label = []
+        self.xl_college_label = []
+        self.xl_gender_label = []
+        self.xl_country_label = []
+        self.xl_address_label = []
+        self.xl_birth_date_label = []
+        self.xl_current_time_label = []
+        self.xl_python_tutorial_label = []
+        self.xl_java_tutorial_label = []
+
+        self.candidate_label = ''
+        self.date_time_label = ''
+        self.college_label = ''
+        self.gender_label = ''
+        self.country_label = ''
+        self.address_label = ''
+        self.birth_label = ''
+        self.current_label = ''
+        self.python_label = ''
+        self.java_label = ''
+
         # ------------- Iterate Excel sheet------------------------
         self.event_excel_read()
 
@@ -59,3 +81,53 @@ class FormExcelRead(common_login.CommonLogin):
                 self.xl_python_tutorial.append(str(rows[8]))
             if rows[9]:
                 self.xl_java_tutorial.append(str(rows[9]))
+            if rows[10]:
+                self.xl_candidate_name_label.append(rows[10])
+            if rows[11]:
+                self.xl_date_time_label.append(rows[11])
+            if rows[12]:
+                self.xl_college_label.append(str(rows[12]))
+            if rows[13]:
+                self.xl_gender_label.append(str(rows[13]))
+            if rows[14]:
+                self.xl_country_label.append(str(rows[14]))
+            if rows[15]:
+                self.xl_address_label.append(str(rows[15]))
+            if rows[16]:
+                self.xl_birth_date_label.append(str(rows[16]))
+            if rows[17]:
+                self.xl_current_time_label.append(str(rows[17]))
+            if rows[18]:
+                self.xl_python_tutorial_label.append(str(rows[18]))
+            if rows[19]:
+                self.xl_java_tutorial_label.append(str(rows[19]))
+
+        for a in self.xl_candidate_name_label:
+            self.candidate_label = a
+
+        for b in self.xl_date_time_label:
+            self.date_time_label = b
+
+        for c in self.xl_college_label:
+            self.college_label = c
+
+        for d in self.xl_gender_label:
+            self.gender_label = d
+
+        for e in self.xl_country_label:
+            self.country_label = e
+
+        for f in self.xl_address_label:
+            self.address_label = f
+
+        for g in self.xl_birth_date_label:
+            self.birth_label = g
+
+        for h in self.xl_current_time_label:
+            self.current_label = h
+
+        for x in self.xl_python_tutorial_label:
+            self.python_label = x
+
+        for y in self.xl_java_tutorial_label:
+            self.java_label = y

@@ -8,9 +8,11 @@ class FormCreationFlow(form_creation_output.FormOutputReport):
 
     def form(self):
         self.create_form()
-        self.validation()
+        self.field_validation()
+        self.create_form_field_output()
 
-        self.create_form_output()
+        self.label_validation()
+        self.create_form_label_output()
 
 
 Object = FormCreationFlow()
