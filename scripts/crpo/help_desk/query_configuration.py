@@ -15,6 +15,7 @@ class QueryConfig(query_excel.QueryExcelReadHelpDesk):
         self.ui_req_getbyid_he = []
         self.ui_req_config_tab_he = []
         self.ui_requirement_validation_he = []
+        self.ui_query_configuration = []
 
     def query_configuration(self):
         try:
@@ -27,6 +28,10 @@ class QueryConfig(query_excel.QueryExcelReadHelpDesk):
             self.ui_req_config_tab_he = 'Pass'
 
             self.web_element_click_xpath(page_elements.tabs['req_query_config'])
+# validation ------
+            self.web_element_text_xpath(page_elements.help_desk['query_header'])
+            if self.text_value == 'Query Configuration':
+                self.ui_query_configuration = 'Pass'
 
         except Exception as error:
             api_logger.error(error)

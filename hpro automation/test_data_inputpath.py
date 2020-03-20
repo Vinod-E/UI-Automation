@@ -35,7 +35,8 @@ crpo_test_data_file = {
 
 attachments = {
     'attachment': generic_input_path + crpo_testdata + 'job-description.pdf',
-    'upload_candidates': generic_input_path + crpo_testdata + 'candidateUpload.xls'
+    'upload_candidates': generic_input_path + crpo_testdata + 'candidateUpload.xls',
+    'query': generic_input_path + crpo_testdata + 'UI_Automation.jpg'
 }
 
 output = {
