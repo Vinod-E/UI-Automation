@@ -12,7 +12,8 @@ login = {
     'internet_error': '//*[@id="main-message"]/h1/span',
     'wrong_credentials': '//*[@id="mainBodyElement"]/div[1]/div/header/div[3]/div/div',
     'logout': 'crpo-settings-logout',
-    'login_back': '//*[@ng-click="vm.backToLogin()"]'
+    'login_back': '//*[@ng-click="vm.backToLogin()"]',
+    'candidate_login_success': '//*[@ng-bind="vm.candidateInfo.CandidateName"]'
 }
 embrace_login = {
     'next_button': '//*[@ng-click="vm.getTenantConfiguration(vm.tenantAlias);$hide();"]',
@@ -48,6 +49,8 @@ tabs = {
     'embrace_candidate_tab': '/html/body/div[1]/header[2]/div/div/div[2]/div/ul/li[2]/a',
     'event_tracking': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.tracking"]',
     'interview_cancel_request': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.tracking.interviewCancelRequest"]',
+    'help_desk_tab': '//*[@ui-sref="candidate.helpdesk.faq"]',
+    'raise_query_tab': '//*[@ui-sref="candidate.helpdesk.raiseQuery"]'
 }
 
 buttons = {
@@ -95,7 +98,9 @@ buttons = {
     'tag_applicant_event': '//*[@ng-click="vm.ValidateAndTagCandidatesToEvent()"]',
     'copy': '//*[@ngclipboard-success="vm.success()"]',
     'close_pop_details_window': '//*[@ng-click="$hide()"]',
-    'send': '//*[@ng-click="vm.send()"]'
+    'send': '//*[@ng-click="vm.send()"]',
+    'query_save': '//*[@ng-click="vm.actionClicked({}{}{});"]'.format("'", 'save', "'"),
+    'query_raise': '//*[@ng-click="vm.saveQuery()"]'
 }
 
 text_fields = {
@@ -279,9 +284,7 @@ requirement = {
     'particular_job_select': '//*[@id="mainBodyElement"]/div[3]/section/div[1]/div/div[2]/div/div/'
                              'div[2]/div/div/span/div/div/div[2]/div/button[2]',
     'requirement_getbyid': '//*[@title="{}"]',
-    'default_category': '(//span[@title="Query Category"])[{}]',
-    'user': '//*[@title="Users"]',
-    'sla': '//input[@type="number"]'
+
 }
 
 requirement_validations = {
@@ -407,4 +410,38 @@ new_interview = {
     'overall': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[2]/div/div/section[2]'
                '/div[2]/div/div/div/div/div[3]/auto-grow-textarea/textarea',
     'no_interviews': '//*[@data-ng-if="options.title"]'
+}
+
+help_desk = {
+    'query_header': '//*[@class="titl_styl"]',
+    'default_category': '//span[@title="Query Category"]',
+    'user': '//*[@title="Users"]',
+    'sla': '//input[@type="number"]',
+    'job_category': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/div/div[2]/ui-view/div/div[1]/div[2]/'
+                    'div[2]/div/div/div[2]/div/table/tbody/tr/td[1]/div/span/span/span[1]',
+    'job_job': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/div/div[2]/ui-view/div/div[1]/div[2]/div[2]/div/div/'
+               'div[2]/div/table/tbody/tr/td[2]/div/span/span/span[1]',
+    'job_users': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/div/div[2]/ui-view/div/div[1]/div[2]/div[2]/div/div/'
+                 'div[2]/div/table/tbody/tr/td[3]/div/span/span/span[1]',
+    'job_sla': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/div/div[2]/ui-view/div/div[1]/div[2]/div[2]/div/div/'
+               'div[2]/div/table/tbody/tr/td[4]/input',
+
+    'event_category': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/div/div[2]/ui-view/div/div[1]/div[2]/div[3]'
+                      '/div/div/div[2]/div/table/tbody/tr/td[1]/div/span/span/span[1]',
+    'event_job': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/div/div[2]/ui-view/div/div[1]/div[2]/div[3]/div/div/'
+                 'div[2]/div/table/tbody/tr/td[2]/div/span/span/span[1]',
+    'event_event': '//*[@title="Events"]',
+    'event_users': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/div/div[2]/ui-view/div/div[1]/div[2]/div[3]/div/'
+                   'div/div[2]/div/table/tbody/tr/td[4]/div/span/span/span[1]',
+    'event_sla': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/div/div[2]/ui-view/div/div[1]/div[2]/div[3]/div/div/'
+                 'div[2]/div/table/tbody/tr/td[5]/input',
+    'query_choose': '//*[@ng-change="vm.processQueries();"]',
+    'subject': 'Subject',
+    'message': '//*[@ng-model="vm.messasge"]',
+    'find': '//*[@type="search"][@placeholder="Find"]',
+    'open/inprogress/close': '//*[@ng-change="vm.getQueryAssignToMe();"]',
+    'query_close': '//*[@ng-click="vm.queryAction = {}{}{}"]'.format("'", 'closure', "'"),
+    'ok': '//*[@ng-click="vm.saveMsg(3, $hide)"]',
+    'total_records': '/html/body/div[2]/div/section/div[1]/div/div/div/div[2]/div/div[2]/'
+                     'div/div/div[1]/div/div/div/span[2]'
 }

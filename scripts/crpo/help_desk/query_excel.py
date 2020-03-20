@@ -33,8 +33,15 @@ class QueryExcelReadHelpDesk(common_file.CommonFile):
         self.xl_user_3 = []
         self.xl_sla_3 = []
         self.xl_login_3 = []
+        self.xl_password_he = []
 
         self.requirement_sprint_version = ''
+        self.category_1 = ''
+        self.category_2 = ''
+        self.category_3 = ''
+        self.user_1 = ''
+        self.user_2 = ''
+        self.user_3 = ''
 
         # ------------- Iterate Excel sheet------------------------
         self.requirement_excel_read_he()
@@ -72,10 +79,30 @@ class QueryExcelReadHelpDesk(common_file.CommonFile):
                     self.xl_sla_3.append(str(int(rows[11])))
                 if rows[12]:
                     self.xl_login_3.append(rows[12])
+                if rows[13]:
+                    self.xl_password_he.append(rows[13])
 
                 for j in self.xl_requirement_name:
                     requirement_name = j
                     self.requirement_sprint_version = requirement_name.format(self.sprint_version)
+
+                for k in self.xl_category_1:
+                    self.category_1 = k
+
+                for n in self.xl_category_2:
+                    self.category_2 = n
+
+                for m in self.xl_category_3:
+                    self.category_3 = m
+
+                for o in self.xl_user_1:
+                    self.user_1 = o
+
+                for p in self.xl_user_2:
+                    self.user_2 = p
+
+                for r in self.xl_user_3:
+                    self.user_3 = r
 
         except Exception as error:
             api_logger.error(error)
