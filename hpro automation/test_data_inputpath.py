@@ -30,6 +30,8 @@ crpo_test_data_file = {
 
     'help_desk': generic_input_path + crpo_testdata + 'Help_desk.xls',
 
+    'manage_interviewers': generic_input_path + crpo_testdata + 'Manage_interviewers.xls',
+
     'create_form': generic_input_path + pofu_testdata + 'create_form.xls'
 }
 
@@ -46,5 +48,6 @@ output = {
     'new_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_new.xls',
     'Applicant_action_output_report': generic_input_path + crpo_reports + 'UI_Applicant_Action_Flow.xls',
     'help_desk_output_report': generic_input_path + crpo_reports + 'UI_Help_Desk_Flow.xls',
+    'manage_interviewers_output_report': generic_input_path + crpo_reports + 'UI_Manage_interviewers_Flow.xls',
     'form_creation_output_report': generic_input_path + pofu_reports + 'UI_form_creation_flow.xls',
 }
