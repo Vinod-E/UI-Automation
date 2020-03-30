@@ -133,7 +133,8 @@ floating_actions = {
     'view_candidates': '//*[@title="View Applicant"]',
     'manage_task': '//*[@title="Manage Task"]',
     'event_interviews': '//*[@title="View Event Interviews"]',
-    'live_interview': '//*[@title="Live Schedule Interviews"]'
+    'live_interview': '//*[@title="Live Schedule Interviews"]',
+    'manage_interviewers': '//*[@title="Manage Interviewers"]'
 }
 grid = {
     'check_box': 'grid_items',
