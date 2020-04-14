@@ -1,7 +1,7 @@
 import time
 import page_elements
 import common_login
-from logger_settings import api_logger
+from logger_settings import ui_logger
 
 
 class AdvanceSearch(common_login.CommonLogin):
@@ -20,7 +20,7 @@ class AdvanceSearch(common_login.CommonLogin):
             self.web_element_click_id(page_elements.advance_search['search'])
 
         except Exception as search:
-            api_logger.error(search)
+            ui_logger.error(search)
 
     def applicant_advance_search(self):
         try:
@@ -29,7 +29,7 @@ class AdvanceSearch(common_login.CommonLogin):
             time.sleep(2)
             self.web_element_click_id(page_elements.advance_search['search'])
         except Exception as search:
-            api_logger.error(search)
+            ui_logger.error(search)
 
     def name_search(self, name, where_search_is_happening):
         try:
@@ -43,7 +43,7 @@ class AdvanceSearch(common_login.CommonLogin):
             self.search = 'Pass'
 
         except Exception as search:
-            api_logger.error(search)
+            ui_logger.error(search)
 
     def assessment_name_search(self, name, where_search_is_happening):
         try:
@@ -54,7 +54,7 @@ class AdvanceSearch(common_login.CommonLogin):
             self.search = 'Pass'
 
         except Exception as search:
-            api_logger.error(search)
+            ui_logger.error(search)
 
     def applicant_name_search(self, name, where_search_is_happening):
         try:
@@ -67,7 +67,7 @@ class AdvanceSearch(common_login.CommonLogin):
             self.search = 'Pass'
 
         except Exception as search:
-            api_logger.error(search)
+            ui_logger.error(search)
 
     def job_applicant_name_search(self, job_name):
 

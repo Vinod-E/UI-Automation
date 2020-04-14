@@ -1,7 +1,7 @@
 import time
 import page_elements
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.applicant_actions import event_applicants
 
 
@@ -44,7 +44,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_change_applicant_status_action_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def compose_mail(self):
         try:
@@ -63,7 +63,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_compose_mail_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def send_sms(self):
         try:
@@ -83,7 +83,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_send_sms_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def tag_applicants_to_job_test(self):
         try:
@@ -106,7 +106,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_tag_applicant_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def untag_applicant(self):
         try:
@@ -123,7 +123,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_untag_applicant_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def registration_link(self):
         try:
@@ -139,7 +139,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_send_registration_link_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def admit_card(self):
         try:
@@ -155,7 +155,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_send_admit_card_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def view_registration_link(self):
         try:
@@ -171,7 +171,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_view_registration_link_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def manage_task(self):
         try:
@@ -188,7 +188,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.task_validation_check == 'True':
                 self.ui_manage_task_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def view_test_status(self):
         try:
@@ -199,7 +199,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             # -------------------- output report value ----------------
             self.ui_view_test_status_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def download_resume(self):
         try:
@@ -215,7 +215,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_download_resume_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def generate_single_pdf(self):
         try:
@@ -232,7 +232,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_single_pdf_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def generate_docket(self):
         try:
@@ -249,7 +249,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_generate_docket_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def compare_id_card(self):
         try:
@@ -260,7 +260,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             # -------------------- output report value ----------------
             self.ui_compare_id_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def upload_attachment(self):
         try:
@@ -285,7 +285,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
                 self.ui_upload_attachment_ae = 'Pass'
 
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def change_business_unit(self):
         try:
@@ -303,7 +303,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_change_business_unit_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def applicant_json(self):
         try:
@@ -314,7 +314,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             # -------------------- output report value ----------------
             self.ui_view_applicant_json_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def disable_registration_link(self):
         try:
@@ -330,7 +330,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.disable_link_validation_check == 'True':
                 self.ui_disable_registration_link_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def enable_registration_link(self):
         try:
@@ -346,7 +346,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.enable_link_validation_check == 'True':
                 self.ui_enable_registration_link_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def re_registration_link(self):
         try:
@@ -369,7 +369,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             if self.message_validation == 'True':
                 self.ui_re_registration_link_ae = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def fill_registration(self):
         try:
@@ -385,4 +385,4 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.driver.switch_to.window(self.driver.window_handles[0])
             self.web_element_click_xpath(page_elements.buttons['done'])
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)

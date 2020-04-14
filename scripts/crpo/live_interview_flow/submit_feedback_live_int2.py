@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.live_interview_flow import submit_feedback_live_int1
 
 
@@ -86,4 +86,4 @@ class SubmitFeedback(submit_feedback_live_int1.SubmitFeedbackInt1):
                 self.live_submit_validation_int2 = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

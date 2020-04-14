@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.job import selection_process
 
 
@@ -57,4 +57,4 @@ class ECTaskconfig(selection_process.SelectionProcess):
                     self.ui_task_configure = 'Pass'
 
             except Exception as config_message:
-                api_logger.error(config_message)
+                ui_logger.error(config_message)

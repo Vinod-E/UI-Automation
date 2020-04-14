@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.help_desk import query_excel
 
 
@@ -34,7 +34,7 @@ class QueryConfig(query_excel.QueryExcelReadHelpDesk):
                 self.ui_query_configuration = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def requirement_search(self):
 
@@ -56,7 +56,7 @@ class QueryConfig(query_excel.QueryExcelReadHelpDesk):
                 self.ui_req_getbyid_he = 'Pass'
 
         except Exception as search:
-            api_logger.error(search)
+            ui_logger.error(search)
 
     def requirement_validation(self, config_name):
 
@@ -65,7 +65,7 @@ class QueryConfig(query_excel.QueryExcelReadHelpDesk):
             self.web_element_text_xpath(page_elements.requirement_validations['requirement_name_breadcumb'])
             self.req_name_breadcumb = self.text_value
         except Exception as e1:
-            api_logger.error(e1)
+            ui_logger.error(e1)
 
         if self.req_name_breadcumb == self.requirement_sprint_version:
             self.ui_requirement_validation_he = 'Pass'

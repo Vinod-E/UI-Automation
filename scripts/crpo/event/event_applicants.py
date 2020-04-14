@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.event import upload_candidates
 
 
@@ -27,7 +27,7 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
             self.event_getby_details()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
 # ------ Event applicants
         self.event_validation('event applicants')
@@ -58,14 +58,14 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
                 self.driver.switch_to.window(self.driver.window_handles[0])
                 time.sleep(0.5)
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
 
     def applicant_get_by(self):
         try:
             self.applicant_getby_details(self.event_sprint_version)
             self.driver.switch_to.window(self.driver.window_handles[1])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def applicant_event_validation(self,):
         try:
@@ -79,7 +79,7 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
             time.sleep(1)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def applicant_hopping_validation(self):
         try:
@@ -94,4 +94,4 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
             time.sleep(2)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

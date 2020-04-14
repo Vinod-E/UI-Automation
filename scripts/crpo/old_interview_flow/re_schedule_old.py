@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import schedule_old
 
 
@@ -69,4 +69,4 @@ class ReSchedule(schedule_old.Schedule):
             self.driver.switch_to.window(self.driver.window_handles[0])
 
         except Exception as reschedule:
-            api_logger.error(reschedule)
+            ui_logger.error(reschedule)

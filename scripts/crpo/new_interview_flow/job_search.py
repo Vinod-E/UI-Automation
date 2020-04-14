@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.new_interview_flow import settings_On_Off
 
 
@@ -40,14 +40,14 @@ class JobSearch(settings_On_Off.Settings):
                 time.sleep(3)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def job_validation(self, config_name):
         try:
             self.web_element_text_xpath(page_elements.job_validations['job_name_breadcumb'])
             self.job_name_breadcumb = self.text_value
         except Exception as e1:
-            api_logger.error(e1)
+            ui_logger.error(e1)
 
         if self.job_name_breadcumb == self.job_sprint_version_n:
             print('**-------->>> Job Validated and continuing '

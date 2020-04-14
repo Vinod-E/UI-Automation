@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.job import job_automation
 
 
@@ -47,4 +47,4 @@ class InterviewPanel(job_automation.JobAutomation):
                 time.sleep(1)
 
             except Exception as config_message:
-                api_logger.error('Tag interviewers :: ', config_message)
+                ui_logger.error('Tag interviewers :: ', config_message)

@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.manage_interviewers import manage_excel
 
 
@@ -38,7 +38,7 @@ class CriteriaConfig(manage_excel.ManageInterviewExcelRead):
                 self.ui_manage_interviews_action_mi = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def event_validation(self, config_name):
         # ------------------------------ validating the event name -------------------------------------------------
@@ -55,4 +55,4 @@ class CriteriaConfig(manage_excel.ManageInterviewExcelRead):
             else:
                 print('Event validation failed Or event creation failed <<<--------**')
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)

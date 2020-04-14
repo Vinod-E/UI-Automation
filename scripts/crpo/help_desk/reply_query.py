@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.help_desk import raise_query
 
 
@@ -65,7 +65,7 @@ class RaiseQuery(raise_query.RaiseQuery):
                 self.ui_query_close_1 = 'Pass'
 
         except Exception as default:
-            api_logger.error(default)
+            ui_logger.error(default)
 
     def job_config_reply(self):
         try:
@@ -103,7 +103,7 @@ class RaiseQuery(raise_query.RaiseQuery):
                 self.ui_query_close_2 = 'Pass'
 
         except Exception as job:
-            api_logger.error(job)
+            ui_logger.error(job)
 
     def event_config_reply(self):
         try:
@@ -141,4 +141,4 @@ class RaiseQuery(raise_query.RaiseQuery):
                 self.ui_query_close_3 = 'Pass'
 
         except Exception as event:
-            api_logger.error(event)
+            ui_logger.error(event)

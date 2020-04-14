@@ -1,5 +1,5 @@
 from selenium import webdriver
-from logger_settings import api_logger
+from logger_settings import ui_logger
 import config
 import datetime
 
@@ -20,7 +20,7 @@ class Environment(object):
             self.driver.maximize_window()
 
         except Exception as Environment_Error:
-            api_logger.error(Environment_Error)
+            ui_logger.error(Environment_Error)
 
     def browser_close(self):
         print("**-------------------------------------------------------------**")

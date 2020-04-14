@@ -3,7 +3,7 @@ import styles
 import datetime
 from datetime import date
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.help_desk import reply_query
 
 
@@ -113,7 +113,7 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
                 self.ws.write(10, self.admin_status_col, 'Fail', self.style3)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def candidate_raise_query_output(self):
         try:
@@ -163,7 +163,7 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
                 self.ws.write(7, self.can_status_col, 'Fail', self.style3)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def default_level_output(self):
         try:
@@ -213,7 +213,7 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
                 self.ws.write(7, self.default_status_col, 'Fail', self.style3)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def job_level_output(self):
         try:
@@ -263,7 +263,7 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
                 self.ws.write(7, self.job_status_col, 'Fail', self.style3)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def event_level_output(self):
         try:
@@ -313,7 +313,7 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
                 self.ws.write(7, self.event_status_col, 'Fail', self.style3)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def overall_status(self):
         try:
@@ -349,4 +349,4 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
             self.wb_Result.save(test_data_inputpath.output['help_desk_output_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

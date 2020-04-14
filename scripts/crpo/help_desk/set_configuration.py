@@ -1,5 +1,5 @@
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.help_desk import query_configuration
 
 
@@ -36,7 +36,7 @@ class SetConfiguration(query_configuration.QueryConfig):
                 self.dismiss_message()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def job_configuration(self):
         try:
@@ -69,7 +69,7 @@ class SetConfiguration(query_configuration.QueryConfig):
                 self.dismiss_message()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def event_configuration(self):
         try:
@@ -108,4 +108,4 @@ class SetConfiguration(query_configuration.QueryConfig):
                 self.dismiss_message()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.live_interview_flow import provide_feedback
 
 
@@ -66,7 +66,7 @@ class LiveInterviewSchedule(provide_feedback.ProvideFeedback):
                 self.ui_provide_feedback_button = 'Pass'
 
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def event_validation(self, config_name):
         # ------------------------------ validating the event name -------------------------------------------------
@@ -83,7 +83,7 @@ class LiveInterviewSchedule(provide_feedback.ProvideFeedback):
             else:
                 print('Event validation failed Or event creation failed <<<--------**')
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def live_screen_validation(self):
         try:
@@ -92,5 +92,5 @@ class LiveInterviewSchedule(provide_feedback.ProvideFeedback):
             if self.event_sprint_version_l in self.event_name_in_live:
                 print('**-------->>> Entered into live interview schedule screen')
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 

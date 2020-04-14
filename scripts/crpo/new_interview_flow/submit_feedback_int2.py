@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.new_interview_flow import submit_feedback_int1
 
 
@@ -59,7 +59,7 @@ class SubmitFeedbackInt2(submit_feedback_int1.SubmitFeedbackInt1):
             self.ui_provide_feedback_action_n_int2 = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def submit_feed_validation_int2(self):
         try:
@@ -69,4 +69,4 @@ class SubmitFeedbackInt2(submit_feedback_int1.SubmitFeedbackInt1):
                 self.ui_submit_feedback_new_int2 = 'Pass'
                 print('**-------->>> Feedback submitted successfully by interviewer2')
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

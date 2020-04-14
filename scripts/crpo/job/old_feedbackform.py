@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.job import ec_task_config
 from selenium.webdriver.common.keys import Keys
 
@@ -51,7 +51,7 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
 
             print('**-------->>> {} feedbackForm configured successfully'.format(interview_stage))
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def config_feedback_form(self):
         self.job_validation('feedback form')
@@ -76,4 +76,4 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
                     self.ui_interview_stage3 = 'Pass'
 
             except Exception as config_template:
-                api_logger.error(config_template)
+                ui_logger.error(config_template)

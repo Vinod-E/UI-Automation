@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.job import interview_panel
 
 
@@ -33,7 +33,7 @@ class JobTagToRequirement(interview_panel.InterviewPanel):
                 self.ui_tag_requirement = 'Pass'
 
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
 
     def un_tag_requirement(self):
         self.job_validation('requirement un-tag')
@@ -51,4 +51,4 @@ class JobTagToRequirement(interview_panel.InterviewPanel):
                 self.ui_un_tag_requirement = 'Pass'
 
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)

@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import cancel_interview_old
 
 
@@ -59,4 +59,4 @@ class CancelInterviewRequest(cancel_interview_old.CancelInterview):
             self.ui_cancel_request_raise = 'Pass'
 
         except Exception as cancel_request:
-            api_logger.error(cancel_request)
+            ui_logger.error(cancel_request)

@@ -1,5 +1,5 @@
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import interview_excel_old
 
 
@@ -18,4 +18,4 @@ class Login(interview_excel_old.OldInterviewExcelRead):
             print("******************** {} Login successfully ********************".format(typeofuser))
 
         except Exception as login_error:
-            api_logger.error(login_error)
+            ui_logger.error(login_error)

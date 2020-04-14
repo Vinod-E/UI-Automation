@@ -3,7 +3,7 @@ import styles
 import datetime
 from datetime import date
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.event import embrace_app
 
 
@@ -254,7 +254,7 @@ class CrpoOutputFile(styles.FontColor, embrace_app.EmbraceApp):
             self.wb_Result.save(test_data_inputpath.output['output_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def requirement_output_report(self):
         try:
@@ -320,7 +320,7 @@ class CrpoOutputFile(styles.FontColor, embrace_app.EmbraceApp):
             self.wb_Result.save(test_data_inputpath.output['output_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def assessment_output_report(self):
         try:
@@ -385,7 +385,7 @@ class CrpoOutputFile(styles.FontColor, embrace_app.EmbraceApp):
             self.wb_Result.save(test_data_inputpath.output['output_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def event_output_report(self):
         try:
@@ -587,7 +587,7 @@ class CrpoOutputFile(styles.FontColor, embrace_app.EmbraceApp):
             self.wb_Result.save(test_data_inputpath.output['output_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def task_assign_output_report(self):
         try:
@@ -674,7 +674,7 @@ class CrpoOutputFile(styles.FontColor, embrace_app.EmbraceApp):
             self.wb_Result.save(test_data_inputpath.output['output_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def overall_status(self):
         try:
@@ -710,4 +710,4 @@ class CrpoOutputFile(styles.FontColor, embrace_app.EmbraceApp):
             self.wb_Result.save(test_data_inputpath.output['output_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.live_interview_flow import live_schedule
 
 
@@ -40,7 +40,7 @@ class BehalfFeedback(live_schedule.LiveInterviewSchedule):
                 self.live_submit_validation = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def live_schedule_submit_validation(self, stage, status):
         try:
@@ -56,4 +56,4 @@ class BehalfFeedback(live_schedule.LiveInterviewSchedule):
             if self.live_submit == status:
                 print('**-------->>> Live provide feedback submitted successfully')
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)

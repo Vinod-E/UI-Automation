@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.requirement import create_requirement
 
 
@@ -44,7 +44,7 @@ class RequirementConfig(create_requirement.CreateRequirement):
             self.requirement_search()
 
         except Exception as config_message:
-            api_logger.error(config_message)
+            ui_logger.error(config_message)
 
     def requirement_search(self):
 
@@ -66,4 +66,4 @@ class RequirementConfig(create_requirement.CreateRequirement):
                 self.ui_req_getbyid = 'Pass'
 
         except Exception as search:
-            api_logger.error(search)
+            ui_logger.error(search)

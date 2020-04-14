@@ -3,7 +3,7 @@ import styles
 import datetime
 from datetime import date
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.manage_interviewers import criteria_configuration
 
 
@@ -84,7 +84,7 @@ class ManageInterviewersOutput(styles.FontColor, criteria_configuration.Criteria
             # ----------------------------------------------------------------------------------------------------------
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def overall_status(self):
         try:
@@ -120,4 +120,4 @@ class ManageInterviewersOutput(styles.FontColor, criteria_configuration.Criteria
             self.wb_Result.save(test_data_inputpath.output['manage_interviewers_output_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

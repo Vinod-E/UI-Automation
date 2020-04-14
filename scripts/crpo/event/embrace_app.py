@@ -1,7 +1,7 @@
 import time
 import datetime
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.event import event_manage_task
 
 
@@ -54,7 +54,7 @@ class EmbraceApp(event_manage_task.EventManageTask):
 
             time.sleep(1.5)
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
         self.driver.close()
         self.driver.switch_to.window(self.driver.window_handles[0])
@@ -112,4 +112,4 @@ class EmbraceApp(event_manage_task.EventManageTask):
             time.sleep(0.5)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
