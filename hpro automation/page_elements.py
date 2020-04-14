@@ -282,8 +282,6 @@ job_validations = {
 
 requirement = {
     'job_selection_field': '//*[@title="Job Roles"]',
-    'particular_job_select': '//*[@id="mainBodyElement"]/div[3]/section/div[1]/div/div[2]/div/div/'
-                             'div[2]/div/div/span/div/div/div[2]/div/button[2]',
     'requirement_getbyid': '//*[@title="{}"]',
 
 }
