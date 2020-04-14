@@ -38,7 +38,7 @@ class ChangeStatus(task_config.TaskConfig):
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_stage'], stage)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_status'], status)
             self.web_element_click_xpath(page_elements.change_applicant_status['Interviewer'])
-            self.web_element_click_xpath(page_elements.change_applicant_status['Interviewer_selection'])
+            self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
             self.web_element_click_xpath(page_elements.change_applicant_status['Interviewer_selection_done'])
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['comment'], comment)
             self.web_element_click_xpath(page_elements.buttons['status_change_button'])
