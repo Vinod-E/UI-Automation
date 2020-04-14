@@ -1,4 +1,4 @@
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.embrace.output import form_creation_output
 
 
@@ -24,7 +24,7 @@ if Object.status_of_login.strip() == 'Admin':
 
         Object.browser_close()
     except Exception as usecase:
-        api_logger.error(usecase)
+        ui_logger.error(usecase)
 else:
     try:
         Object.server_connection_error()
@@ -32,4 +32,4 @@ else:
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)

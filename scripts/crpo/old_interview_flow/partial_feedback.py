@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import save_draft_old
 
 
@@ -55,7 +55,7 @@ class PartialFeedback(save_draft_old.SaveAsDraft):
             self.driver.switch_to.window(self.driver.window_handles[0])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def partial_bucket(self):
         try:
@@ -78,4 +78,4 @@ class PartialFeedback(save_draft_old.SaveAsDraft):
             self.partial_bucket_validation = 'True'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

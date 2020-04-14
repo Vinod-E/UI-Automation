@@ -3,7 +3,7 @@ import styles
 import datetime
 from datetime import date
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.applicant_actions import job_applicant_actions
 
 
@@ -97,7 +97,7 @@ class ApplicantActionsOutputFile(styles.FontColor, job_applicant_actions.JobAppl
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['Applicant_action_output_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def admin_actions_output_report_job(self):
         try:
@@ -155,7 +155,7 @@ class ApplicantActionsOutputFile(styles.FontColor, job_applicant_actions.JobAppl
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['Applicant_action_output_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def event_applicant_actions_output_report(self):
         try:
@@ -304,7 +304,7 @@ class ApplicantActionsOutputFile(styles.FontColor, job_applicant_actions.JobAppl
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['Applicant_action_output_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def job_applicant_actions_output_report(self):
         try:
@@ -375,7 +375,7 @@ class ApplicantActionsOutputFile(styles.FontColor, job_applicant_actions.JobAppl
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['Applicant_action_output_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def overall_status(self):
         try:
@@ -411,4 +411,4 @@ class ApplicantActionsOutputFile(styles.FontColor, job_applicant_actions.JobAppl
             self.wb_Result.save(test_data_inputpath.output['Applicant_action_output_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

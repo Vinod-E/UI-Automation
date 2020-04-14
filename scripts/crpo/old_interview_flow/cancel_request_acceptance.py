@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import cancel_interview_request
 
 
@@ -59,7 +59,7 @@ class CancelRequestAcceptance(cancel_interview_request.CancelInterviewRequest):
                 self.ui_approve = 'Pass'
 
         except Exception as acceptance_error:
-            api_logger.error(acceptance_error)
+            ui_logger.error(acceptance_error)
 
     def cancel_request_validation(self):
         try:
@@ -73,4 +73,4 @@ class CancelRequestAcceptance(cancel_interview_request.CancelInterviewRequest):
                 print('**-------->>> Interview cancellation request raised :: {}'.format(self.cancel_reason))
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

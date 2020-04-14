@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.new_interview_flow import new_interview_excel
 
 
@@ -30,7 +30,7 @@ class Settings(new_interview_excel.NewInterviewExcelRead):
                 self.interview_module = 'Pass'
                 self.ui_new_feedback_enable = 'Pass'
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def new_feedback_off(self):
         try:
@@ -49,4 +49,4 @@ class Settings(new_interview_excel.NewInterviewExcelRead):
                 self.interview_module = 'Pass'
                 self.ui_new_feedback_disable = 'Pass'
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

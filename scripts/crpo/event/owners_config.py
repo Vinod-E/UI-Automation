@@ -1,5 +1,5 @@
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.event import test_task_config
 
 
@@ -31,5 +31,5 @@ class EventOwnersConfig(test_task_config.TestTaskConfig):
                 self.ui_event_owner_config = 'Pass'
 
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
                 print('Failed to configure Event Owners <<<--------**')

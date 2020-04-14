@@ -1,5 +1,5 @@
 import time
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.embrace.form_creation import form_creation
 
 
@@ -44,7 +44,7 @@ class FormValidations(form_creation.FormCreation):
                     self.label = True
                     break
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def label_validation(self):
         try:

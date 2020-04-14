@@ -3,7 +3,7 @@ import styles
 import datetime
 from datetime import date
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import decision_feedback_updation
 
 
@@ -137,7 +137,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def reschedule_output_report(self, u_col, s_col):
         try:
@@ -219,7 +219,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def cancel_output_report(self, u_col, s_col):
         try:
@@ -256,7 +256,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def cancel_request_raise_output_report(self, u_col, s_col):
         try:
@@ -321,7 +321,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def cancel_request_accept_output_report(self, u_col, s_col):
         try:
@@ -386,7 +386,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def save_draft_output_report(self, u_col, s_col):
         try:
@@ -451,7 +451,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def partial_feedback_output_report(self, u_col, s_col):
         try:
@@ -481,7 +481,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def partial_to_full_feedback_output_report(self, u_col, s_col):
         try:
@@ -511,7 +511,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def submit_feedback_output_report(self, u_col, s_col):
         try:
@@ -607,7 +607,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def unlock_feedback_output_report(self, u_col, s_col):
         try:
@@ -682,7 +682,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def update_decision_output_report(self, u_col, s_col):
         try:
@@ -729,7 +729,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def update_feedback_output_report(self, u_col, s_col):
         try:
@@ -776,7 +776,7 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def overall_status(self):
         try:
@@ -812,4 +812,4 @@ class OldInterviewOutputFile(styles.FontColor, decision_feedback_updation.Decisi
             self.wb_Result.save(test_data_inputpath.output['old_int_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

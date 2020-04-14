@@ -1,4 +1,4 @@
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.output import applicant_actions_output
 
 
@@ -40,7 +40,7 @@ class ApplicantActionFlow(applicant_actions_output.ApplicantActionsOutputFile):
             self.event_applicant_actions_output_report()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def job_applicant_actions(self):
         try:
@@ -59,7 +59,7 @@ class ApplicantActionFlow(applicant_actions_output.ApplicantActionsOutputFile):
 
             self.job_applicant_actions_output_report()
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
 
 Object = ApplicantActionFlow()
@@ -73,7 +73,7 @@ if Object.status_of_login.strip() == 'administrator':
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)
 else:
     try:
         Object.server_connection_error()
@@ -81,4 +81,4 @@ else:
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)

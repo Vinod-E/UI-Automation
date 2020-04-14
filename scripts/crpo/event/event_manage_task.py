@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.event import change_applicant_status
 
 
@@ -38,7 +38,7 @@ class EventManageTask(change_applicant_status.ChangeApplicantStatus):
             self.driver.switch_to.window(self.driver.window_handles[0])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def activity_task_validation(self):
         try:
@@ -53,4 +53,4 @@ class EventManageTask(change_applicant_status.ChangeApplicantStatus):
                 print('Wrong applicant got assigned task <<<---------**')
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

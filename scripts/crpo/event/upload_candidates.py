@@ -1,7 +1,7 @@
 import time
 import page_elements
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.event import owners_config
 
 
@@ -65,7 +65,7 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
                 self.upload_candidate_validation()
 
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
 
     def upload_candidate_validation(self):
         try:
@@ -81,4 +81,4 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
             self.driver.refresh()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

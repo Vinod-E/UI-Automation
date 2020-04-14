@@ -3,7 +3,7 @@ import styles
 import datetime
 from datetime import date
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.live_interview_flow import submit_feedback_live_int2
 
 
@@ -108,7 +108,7 @@ class LiveInterviewOutputFile(styles.FontColor, submit_feedback_live_int2.Submit
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['live_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def behalf_of_output_report(self):
         try:
@@ -144,7 +144,7 @@ class LiveInterviewOutputFile(styles.FontColor, submit_feedback_live_int2.Submit
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['live_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def submit_int1_output_report(self):
         try:
@@ -223,7 +223,7 @@ class LiveInterviewOutputFile(styles.FontColor, submit_feedback_live_int2.Submit
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['live_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def submit_int2_output_report(self):
         try:
@@ -309,7 +309,7 @@ class LiveInterviewOutputFile(styles.FontColor, submit_feedback_live_int2.Submit
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['live_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def overall_status(self):
         try:
@@ -345,4 +345,4 @@ class LiveInterviewOutputFile(styles.FontColor, submit_feedback_live_int2.Submit
             self.wb_Result.save(test_data_inputpath.output['live_int_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

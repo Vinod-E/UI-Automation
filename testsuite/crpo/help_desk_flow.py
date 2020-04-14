@@ -1,4 +1,4 @@
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.output import help_desk_output
 
 
@@ -20,7 +20,7 @@ class HelpDeskFlow(help_desk_output.HelpDeskOutput):
             self.admin_config_output()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def candidate_login(self):
         try:
@@ -29,7 +29,7 @@ class HelpDeskFlow(help_desk_output.HelpDeskOutput):
             self.candidate_raise_query_output()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def staffing_login(self):
         try:
@@ -43,7 +43,7 @@ class HelpDeskFlow(help_desk_output.HelpDeskOutput):
             self.event_level_output()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
 
 Object = HelpDeskFlow()
@@ -58,7 +58,7 @@ if Object.status_of_login.strip() == 'administrator':
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)
 else:
     try:
         Object.server_connection_error()
@@ -66,4 +66,4 @@ else:
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)

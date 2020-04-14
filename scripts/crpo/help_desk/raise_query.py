@@ -1,7 +1,7 @@
 import time
 import page_elements
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from selenium.webdriver.common.keys import Keys
 from scripts.crpo.help_desk import candidate_login
 
@@ -31,7 +31,7 @@ class RaiseQuery(candidate_login.CandidateLogin):
                 self.ui_raise_query_module = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def raise_query_elements(self, category):
         try:
@@ -45,7 +45,7 @@ class RaiseQuery(candidate_login.CandidateLogin):
             self.web_element_click_xpath(page_elements.buttons['query_raise'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def raise_query(self):
         try:
@@ -72,4 +72,4 @@ class RaiseQuery(candidate_login.CandidateLogin):
                 self.ui_event_raise_query = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

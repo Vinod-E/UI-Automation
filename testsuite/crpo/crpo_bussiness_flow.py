@@ -1,4 +1,4 @@
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.output import crpo_bussiness_output
 
 
@@ -25,7 +25,7 @@ class BusinessFlow(crpo_bussiness_output.CrpoOutputFile):
             self.job_output_report()
 
         except Exception as job_error:
-            api_logger.error(job_error)
+            ui_logger.error(job_error)
 
     def requirement_creation(self):
         try:
@@ -35,7 +35,7 @@ class BusinessFlow(crpo_bussiness_output.CrpoOutputFile):
             self.requirement_output_report()
 
         except Exception as req_error:
-            api_logger.error(req_error)
+            ui_logger.error(req_error)
 
     def assessment_creation(self):
         try:
@@ -44,7 +44,7 @@ class BusinessFlow(crpo_bussiness_output.CrpoOutputFile):
             self.assessment_output_report()
 
         except Exception as test_error:
-            api_logger.error(test_error)
+            ui_logger.error(test_error)
 
     def event_creation(self):
         try:
@@ -59,7 +59,7 @@ class BusinessFlow(crpo_bussiness_output.CrpoOutputFile):
             self.event_output_report()
 
         except Exception as event_error:
-            api_logger.error(event_error)
+            ui_logger.error(event_error)
 
     def embrace_module(self):
         try:
@@ -69,7 +69,7 @@ class BusinessFlow(crpo_bussiness_output.CrpoOutputFile):
             self.task_assign_output_report()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
 
 Object = BusinessFlow()
@@ -86,7 +86,7 @@ if Object.status_of_login.strip() == 'administrator':
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)
 
 else:
     try:
@@ -95,4 +95,4 @@ else:
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)

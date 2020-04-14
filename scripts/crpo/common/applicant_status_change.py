@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.common import task_config
 
 
@@ -26,7 +26,7 @@ class ChangeStatus(task_config.TaskConfig):
             self.applicant_statuschange = 'True'
 
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def applicant_schedule_status_change(self, stage, status, comment):
         try:
@@ -46,7 +46,7 @@ class ChangeStatus(task_config.TaskConfig):
             self.applicant_schedule_statuschange = 'True'
 
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def job_applicant_status_change(self, stage, status, comment):
         try:
@@ -63,4 +63,4 @@ class ChangeStatus(task_config.TaskConfig):
             self.applicant_statuschange = 'True'
 
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)

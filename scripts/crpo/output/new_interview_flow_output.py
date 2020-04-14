@@ -3,7 +3,7 @@ import styles
 import datetime
 from datetime import date
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.new_interview_flow import submit_feedback_int2
 
 
@@ -91,7 +91,7 @@ class NewInterviewOutputFile(styles.FontColor, submit_feedback_int2.SubmitFeedba
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['new_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def new_feedback_form_output_report(self):
         try:
@@ -156,7 +156,7 @@ class NewInterviewOutputFile(styles.FontColor, submit_feedback_int2.SubmitFeedba
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['new_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def new_form_schedule_output_report(self):
         try:
@@ -244,7 +244,7 @@ class NewInterviewOutputFile(styles.FontColor, submit_feedback_int2.SubmitFeedba
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['new_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def new_save_draft_output_report(self):
         try:
@@ -309,7 +309,7 @@ class NewInterviewOutputFile(styles.FontColor, submit_feedback_int2.SubmitFeedba
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['new_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def submit_feedback_one_output_report(self):
         try:
@@ -332,7 +332,7 @@ class NewInterviewOutputFile(styles.FontColor, submit_feedback_int2.SubmitFeedba
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['new_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def submit_feedback_two_output_report(self):
         try:
@@ -397,7 +397,7 @@ class NewInterviewOutputFile(styles.FontColor, submit_feedback_int2.SubmitFeedba
             # ----------------------------------------------------------------------------------------------------------
             self.wb_Result.save(test_data_inputpath.output['new_int_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def overall_status(self):
         try:
@@ -433,4 +433,4 @@ class NewInterviewOutputFile(styles.FontColor, submit_feedback_int2.SubmitFeedba
             self.wb_Result.save(test_data_inputpath.output['new_int_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

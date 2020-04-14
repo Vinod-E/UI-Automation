@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.live_interview_flow import behalf_feedback
 
 
@@ -85,4 +85,4 @@ class SubmitFeedbackInt1(behalf_feedback.BehalfFeedback):
                 self.ui_provide_feedback_submitted_int1 = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.common import floating_action
 from selenium.webdriver.common.keys import Keys
 
@@ -53,4 +53,4 @@ class TaskConfig(floating_action.FloatingAction):
             time.sleep(1.7)
 
         except Exception as config_message:
-            api_logger.error(config_message)
+            ui_logger.error(config_message)

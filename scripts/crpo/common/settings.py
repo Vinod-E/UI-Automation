@@ -1,5 +1,5 @@
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.common import login
 
 
@@ -16,7 +16,7 @@ class Settings(login.Login):
             self.web_element_click_xpath(module)
 
         except Exception as setting_error:
-            api_logger.error(setting_error)
+            ui_logger.error(setting_error)
 
     def enable_new_feedback_form(self, on_or_off, enable_disable):
         try:
@@ -26,4 +26,4 @@ class Settings(login.Login):
             print('**-------->>> {} new feedback form'.format(enable_disable))
             self.enable_disable_validation = 'True'
         except Exception as interview_module_error:
-            api_logger.error(interview_module_error)
+            ui_logger.error(interview_module_error)

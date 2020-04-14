@@ -1,5 +1,5 @@
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.common import advance_search
 
 
@@ -13,4 +13,4 @@ class FloatingAction(advance_search.AdvanceSearch):
             self.web_element_click_xpath(page_elements.floating_actions['floating_actions'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

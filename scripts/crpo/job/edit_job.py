@@ -2,7 +2,7 @@ import time
 import config
 import page_elements
 import image_capture
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.job import tag_untag_requirement
 
 
@@ -41,7 +41,7 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
                     self.ui_update_job = 'Pass'
 
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
 
     def job_search_flow(self):
         try:
@@ -63,4 +63,4 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
                 self.ui_job_getbyid = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

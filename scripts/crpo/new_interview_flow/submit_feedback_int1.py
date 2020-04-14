@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.new_interview_flow import save_darft_new
 
 
@@ -34,7 +34,7 @@ class SubmitFeedbackInt1(save_darft_new.DraftNew):
             self.ui_provide_feedback_action_n_int1 = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def submit_feed_validation(self, interviewer):
         try:
@@ -44,4 +44,4 @@ class SubmitFeedbackInt1(save_darft_new.DraftNew):
                 self.ui_submit_feedback_new_int1 = 'Pass'
                 print('**-------->>> Feedback submitted successfully by {}'.format(interviewer))
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
