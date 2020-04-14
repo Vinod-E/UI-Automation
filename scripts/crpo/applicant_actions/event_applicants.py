@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.applicant_actions import applicant_action_excel
 
 
@@ -51,7 +51,7 @@ class ApplicantActions(applicant_action_excel.ApplicantActionsExcelRead):
                 self.ui_applicant_advance_search_ea = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def event_validation(self, config_name):
         # ------------------------------ validating the event name -------------------------------------------------
@@ -68,4 +68,4 @@ class ApplicantActions(applicant_action_excel.ApplicantActionsExcelRead):
             else:
                 print('Event validation failed Or event creation failed <<<--------**')
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)

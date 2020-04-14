@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.new_interview_flow import feedback_form_configure
 
 
@@ -75,7 +75,7 @@ class Schedule(feedback_form_configure.FeedbackConfiguration):
             self.driver.switch_to.window(self.driver.window_handles[0])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def event_validation(self, config_name):
         # ------------------------------ validating the event name -------------------------------------------------
@@ -92,7 +92,7 @@ class Schedule(feedback_form_configure.FeedbackConfiguration):
             else:
                 print('Event validation failed Or event creation failed <<<--------**')
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def current_status_validation(self, status):
         try:
@@ -107,4 +107,4 @@ class Schedule(feedback_form_configure.FeedbackConfiguration):
             time.sleep(1)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

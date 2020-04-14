@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.applicant_actions import job_applicants
 
 
@@ -32,7 +32,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             if self.message_validation == 'True':
                 self.ui_change_applicant_status_action_aj = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def job_compose_mail(self):
         try:
@@ -50,7 +50,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             if self.message_validation == 'True':
                 self.ui_compose_mail_aj = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def job_untag_applicant(self):
         try:
@@ -66,7 +66,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             if self.message_validation == 'True':
                 self.ui_untag_applicant_aj = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def job_copy_registration_link(self):
         try:
@@ -82,7 +82,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             if self.message_validation == 'True':
                 self.ui_view_registration_link_aj = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def job_manage_task(self):
         try:
@@ -100,7 +100,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             if self.task_validation_check == 'True':
                 self.ui_manage_task_aj = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def job_view_test_status(self):
         try:
@@ -113,7 +113,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             # -------------------- output report value ----------------
             self.ui_view_test_status_aj = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def job_generate_single_pdf(self):
         try:
@@ -129,7 +129,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             if self.message_validation == 'True':
                 self.ui_single_pdf_aj = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def email_mobile_verification_link(self):
         try:
@@ -146,7 +146,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             if self.message_validation == 'True':
                 self.ui_email_mobile_aj = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def job_admit_card(self):
         try:
@@ -167,4 +167,4 @@ class JobApplicantActions(job_applicants.JobApplicants):
             if self.message_validation == 'True':
                 self.ui_send_admit_card_aj = 'Pass'
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)

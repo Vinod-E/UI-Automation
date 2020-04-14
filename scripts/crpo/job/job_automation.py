@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.job import old_feedbackform
 
 
@@ -73,4 +73,4 @@ class JobAutomation(old_feedbackform.FeedbackForm):
                 self.ui_hopping_config = 'Pass'
 
             except Exception as config_message:
-                api_logger.error(config_message)
+                ui_logger.error(config_message)

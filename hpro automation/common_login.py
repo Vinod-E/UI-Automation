@@ -1,4 +1,4 @@
-from logger_settings import api_logger
+from logger_settings import ui_logger
 import webdriver_functions
 import page_elements
 import test_data_inputpath
@@ -50,7 +50,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
                 if rows[6]:
                     self.xl_pofu_password.append(rows[6])
         except Exception as file_error:
-            api_logger.error(file_error)
+            ui_logger.error(file_error)
 
     def excel_read_based_on_server(self):
         # --------------------------------------amsin details-----------------------------------------------------------
@@ -75,7 +75,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             print("Tenant page screen shot has been saved")
 
         except Exception as Tenant_Screen_Error:
-            api_logger.error(Tenant_Screen_Error)
+            ui_logger.error(Tenant_Screen_Error)
 
     def crpo_login_elements(self, tenant, password, app):
         try:
@@ -95,7 +95,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             self.driver.save_screenshot(config.image_config['screen_shot'].format('{}_Login_Welcome_Page').format(app))
             print("Login welcome page screen shot has been saved")
         except Exception as login_failed:
-            api_logger.error(login_failed)
+            ui_logger.error(login_failed)
 
     def crpo_login(self):
         try:
@@ -113,7 +113,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
                 self.crpo_login_elements(self._xl_tenant, self.xl_password, 'CRPO')
 
         except Exception as crpo_login:
-            api_logger.error(crpo_login)
+            ui_logger.error(crpo_login)
         # ---------------------------------------- Assertion for login -------------------------------------------------
         try:
             self.x_path_element_webdriver_wait(page_elements.login['login_success'])
@@ -121,7 +121,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             assert self.status_of_login.strip() == 'administrator'
             print("**---------------------- In main screen ------------------------**")
         except Exception as login_status:
-            api_logger.error(login_status)
+            ui_logger.error(login_status)
 
     def crpo_logout(self):
         try:
@@ -130,7 +130,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             time.sleep(0.5)
             self.web_element_click_xpath(page_elements.login['login_back'])
         except Exception as logout_status:
-            api_logger.error(logout_status)
+            ui_logger.error(logout_status)
 
     def rpo_login(self):
         try:
@@ -148,7 +148,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
                 self.crpo_login_elements(self._xl_rpo_tenant, self.xl_rpo_password, 'RPO')
 
         except Exception as crpo_login:
-            api_logger.error(crpo_login)
+            ui_logger.error(crpo_login)
         # ---------------------------------------- Assertion for login -------------------------------------------------
         try:
             self.x_path_element_webdriver_wait(page_elements.login['login_success'])
@@ -156,7 +156,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             assert self.status_of_login.strip() == 'administrator'
             print("**---------------------- In main screen ------------------------**")
         except Exception as login_status:
-            api_logger.error(login_status)
+            ui_logger.error(login_status)
 
     def embrace_alias_screen_validation(self):
         # --------------------------- Tenant screen verification by screen shot ----------------------------------------
@@ -170,7 +170,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             print("Tenant page screen shot has been saved")
 
         except Exception as Tenant_Screen_Error:
-            api_logger.error(Tenant_Screen_Error)
+            ui_logger.error(Tenant_Screen_Error)
 
     def embrace_login_elements(self):
         try:
@@ -190,7 +190,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             self.driver.save_screenshot(config.image_config['screen_shot'].format('Embrace_Login_Welcome_Page'))
             print("Login welcome page screen shot has been saved")
         except Exception as login_failed:
-            api_logger.error(login_failed)
+            ui_logger.error(login_failed)
 
     def embrace_login(self):
         try:
@@ -208,7 +208,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
                 self.embrace_login_elements()
 
         except Exception as embrace_login:
-            api_logger.error(embrace_login)
+            ui_logger.error(embrace_login)
         # ---------------------------------------- Assertion for login -------------------------------------------------
         try:
             self.x_path_element_webdriver_wait(page_elements.embrace_login['login_success'])
@@ -216,7 +216,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
             assert self.status_of_login.strip() == 'Admin'
             print("**---------------------- In main screen ------------------------**")
         except Exception as login_status:
-            api_logger.error(login_status)
+            ui_logger.error(login_status)
 
     def server_connection_error(self):
         # ----------------------------------------- Server Connection error --------------------------------------------
@@ -227,9 +227,9 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
                 self.driver.save_screenshot(config.image_config['screen_shot'].format('server connection failed'))
                 print("Server connection has been lost and screen shot saved")
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
         except Exception as error1:
-            api_logger.error(error1)
+            ui_logger.error(error1)
 
     def internet_not_available(self):
         # ----------------------------------------- Internet Connection error ------------------------------------------
@@ -240,6 +240,6 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
                 self.driver.save_screenshot(config.image_config['screen_shot'].format('No Internet'))
                 print("No Internet connection and screen shot saved")
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
         except Exception as error2:
-            api_logger.error(error2)
+            ui_logger.error(error2)

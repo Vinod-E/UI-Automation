@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import re_schedule_old
 
 
@@ -50,4 +50,4 @@ class CancelInterview(re_schedule_old.ReSchedule):
             time.sleep(3)
 
         except Exception as cancel:
-            api_logger.error(cancel)
+            ui_logger.error(cancel)

@@ -1,4 +1,4 @@
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.output import old_interview_flow_output
 
 
@@ -19,7 +19,7 @@ class OldInterviewFlow(old_interview_flow_output.OldInterviewOutputFile):
             self.reschedule_output_report(2, 3)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def cancel_interviews(self):
         try:
@@ -37,7 +37,7 @@ class OldInterviewFlow(old_interview_flow_output.OldInterviewOutputFile):
             self.cancel_request_accept_output_report(10, 11)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def provide_feedback_flow(self):
         try:
@@ -56,7 +56,7 @@ class OldInterviewFlow(old_interview_flow_output.OldInterviewOutputFile):
             self.submit_feedback_output_report(6, 7)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def unlock_update_feedback(self):
         try:
@@ -69,7 +69,7 @@ class OldInterviewFlow(old_interview_flow_output.OldInterviewOutputFile):
             self.update_feedback_output_report(12, 13)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
 
 Object = OldInterviewFlow()
@@ -85,7 +85,7 @@ if Object.status_of_login.strip() == 'administrator':
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)
 else:
     try:
         Object.server_connection_error()
@@ -93,4 +93,4 @@ else:
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)

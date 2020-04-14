@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.new_interview_flow import schedule_new
 
 
@@ -24,4 +24,4 @@ class ProvideFeedbackNew(schedule_new.Schedule):
             self.web_element_send_keys_xpath(page_elements.new_interview['overall'], comment)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

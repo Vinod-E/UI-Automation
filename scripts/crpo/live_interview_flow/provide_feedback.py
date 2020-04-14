@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.live_interview_flow import live_interview_excel
 
 
@@ -24,4 +24,4 @@ class ProvideFeedback(live_interview_excel.LiveInterviewExcelRead):
             self.web_element_send_keys_xpath(page_elements.interview['overall_comment'], comment)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

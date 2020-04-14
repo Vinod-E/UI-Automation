@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import unlock_feedback
 
 
@@ -77,7 +77,7 @@ class DecisionFeedbackUpdate(unlock_feedback.UnlockFeedbackForm):
                 self.ui_update_feedback = 'Pass'
                 self.ui_feedback_validation = 'Pass'
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def decision_feedback_validation(self):
         try:
@@ -101,4 +101,4 @@ class DecisionFeedbackUpdate(unlock_feedback.UnlockFeedbackForm):
                 print('**-------->>> Feedback updated successfully')
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

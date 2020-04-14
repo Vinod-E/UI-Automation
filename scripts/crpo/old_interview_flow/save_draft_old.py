@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import provide_feedback
 
 
@@ -57,4 +57,4 @@ class SaveAsDraft(provide_feedback.ProvideFeedback):
             self.ui_save_draft = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

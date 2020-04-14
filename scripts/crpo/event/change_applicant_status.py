@@ -1,7 +1,7 @@
 import time
 import page_elements
 import image_capture
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.event import event_applicants
 
 
@@ -49,4 +49,4 @@ class ChangeApplicantStatus(event_applicants.EventApplicants):
             time.sleep(1)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

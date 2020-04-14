@@ -1,4 +1,4 @@
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.output import live_interview_flow_output
 
 
@@ -16,7 +16,7 @@ class LiveInterviewFlow(live_interview_flow_output.LiveInterviewOutputFile):
             self.live_schedule_output_report()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def schedule_behalf_of(self):
         try:
@@ -25,7 +25,7 @@ class LiveInterviewFlow(live_interview_flow_output.LiveInterviewOutputFile):
             self.behalf_of_output_report()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def submit_feedback_live(self):
         try:
@@ -37,7 +37,7 @@ class LiveInterviewFlow(live_interview_flow_output.LiveInterviewOutputFile):
             self.submit_int2_output_report()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
 
 Object = LiveInterviewFlow()
@@ -52,7 +52,7 @@ if Object.status_of_login.strip() == 'administrator':
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)
 else:
     try:
         Object.server_connection_error()
@@ -60,4 +60,4 @@ else:
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)

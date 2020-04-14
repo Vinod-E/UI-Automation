@@ -1,7 +1,7 @@
 import xlrd
 import datetime
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.common import common_file
 
 
@@ -105,4 +105,4 @@ class QueryExcelReadHelpDesk(common_file.CommonFile):
                     self.user_3 = r
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

@@ -16,12 +16,12 @@ logging_config = dict(
         },
     },
     handlers={
-        'api-logger': {'class': 'logging.handlers.RotatingFileHandler',
-                       'formatter': 'verbose',
-                       'level': logging.DEBUG,
-                       'filename': config.log_file,
-                       'maxBytes': 52428800,
-                       'backupCount': 7},
+        'ui-logger': {'class': 'logging.handlers.RotatingFileHandler',
+                      'formatter': 'verbose',
+                      'level': logging.DEBUG,
+                      'filename': config.log_file,
+                      'maxBytes': 52428800,
+                      'backupCount': 7},
         'batch-process-logger': {'class': 'logging.handlers.RotatingFileHandler',
                                  'formatter': 'verbose',
                                  'level': logging.DEBUG,
@@ -36,8 +36,8 @@ logging_config = dict(
         },
     },
     loggers={
-        'api_logger': {
-            'handlers': ['api-logger', 'console'],
+        'ui_logger': {
+            'handlers': ['ui-logger', 'console'],
             'level': logging.DEBUG
         },
         'batch_process_logger': {
@@ -49,5 +49,5 @@ logging_config = dict(
 
 dictConfig(logging_config)
 
-api_logger = logging.getLogger('api_logger')
+ui_logger = logging.getLogger('ui_logger')
 batch_process_logger = logging.getLogger('batch_process_logger')

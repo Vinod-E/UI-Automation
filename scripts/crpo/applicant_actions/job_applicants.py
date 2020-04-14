@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.applicant_actions import event_applicant_actions
 
 
@@ -56,7 +56,7 @@ class JobApplicants(event_applicant_actions.EventApplicantActions):
 
             time.sleep(3)
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def job_validation(self, job_name):
         self.web_element_text_xpath(page_elements.job_validations['job_name_breadcumb'])

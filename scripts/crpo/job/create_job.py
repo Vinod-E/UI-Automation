@@ -2,7 +2,7 @@ import time
 import page_elements
 import image_capture
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.job import job_excel
 
 
@@ -57,7 +57,7 @@ class CreateJob(job_excel.JobExcelRead):
             time.sleep(3)
 
         except Exception as create_job:
-            api_logger.error(create_job)
+            ui_logger.error(create_job)
             image_capture.screen_shot(self, 'Job')
 
         self.job_validation('the job')
@@ -72,7 +72,7 @@ class CreateJob(job_excel.JobExcelRead):
             self.web_element_text_xpath(page_elements.job_validations['job_name_breadcumb'])
             self.job_name_breadcumb = self.text_value
         except Exception as e1:
-            api_logger.error(e1)
+            ui_logger.error(e1)
 
         if self.job_name_breadcumb == self.job_name_sprint_version:
             image_capture.screen_shot(self, 'Job_created')

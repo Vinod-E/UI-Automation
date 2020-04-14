@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.event import create_event
 from selenium.webdriver.common.keys import Keys
 
@@ -79,7 +79,7 @@ class TestTaskConfig(create_event.CreateEvent):
                     print('Event Test configuration failed <<<--------**')
 
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
 
     def event_task_validation(self, event_name):
         try:
@@ -94,7 +94,7 @@ class TestTaskConfig(create_event.CreateEvent):
             else:
                 print('Event task config validation failed <<<--------**')
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def event_test_validation(self, event_name):
         try:
@@ -108,4 +108,4 @@ class TestTaskConfig(create_event.CreateEvent):
             else:
                 print('Event test config validation failed <<<--------**')
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

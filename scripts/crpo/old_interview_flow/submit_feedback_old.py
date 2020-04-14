@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import partial_feedback
 
 
@@ -72,7 +72,7 @@ class SubmittedFeedback(partial_feedback.PartialFeedback):
                 self.ui_submitted_validation = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def submitted_validation(self, status):
         try:
@@ -88,4 +88,4 @@ class SubmittedFeedback(partial_feedback.PartialFeedback):
             self.driver.switch_to.window(self.driver.window_handles[0])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

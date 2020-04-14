@@ -1,4 +1,4 @@
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.output import manage_interviewers_output
 
 
@@ -15,7 +15,7 @@ class ManageInterviewFlow(manage_interviewers_output.ManageInterviewersOutput):
             self.admin_config_output()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
 
 Object = ManageInterviewFlow()
@@ -28,7 +28,7 @@ if Object.status_of_login.strip() == 'administrator':
         # Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)
 else:
     try:
         Object.server_connection_error()
@@ -36,4 +36,4 @@ else:
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)

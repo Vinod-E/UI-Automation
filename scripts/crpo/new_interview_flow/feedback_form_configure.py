@@ -1,6 +1,6 @@
 import time
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.new_interview_flow import job_search
 
 
@@ -47,7 +47,7 @@ class FeedbackConfiguration(job_search.JobSearch):
             self.feedback_form_validation()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def feedback_form_validation(self):
         try:
@@ -62,4 +62,4 @@ class FeedbackConfiguration(job_search.JobSearch):
                 self.ui_feedback_form_search = 'Pass'
                 self.ui_feedback_form_validation = 'Pass'
         except Exception as ee:
-            api_logger.error(ee)
+            ui_logger.error(ee)

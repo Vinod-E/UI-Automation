@@ -1,4 +1,4 @@
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.output import new_interview_flow_output
 
 
@@ -20,7 +20,7 @@ class NewInterviewFlow(new_interview_flow_output.NewInterviewOutputFile):
             self.new_feedback_form_output_report()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def schedule_with_new_form(self):
         try:
@@ -29,7 +29,7 @@ class NewInterviewFlow(new_interview_flow_output.NewInterviewOutputFile):
             self.new_form_schedule_output_report()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def provide_feedback_process(self):
         try:
@@ -44,7 +44,7 @@ class NewInterviewFlow(new_interview_flow_output.NewInterviewOutputFile):
             self.submit_feedback_two_output_report()
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
 
 Object = NewInterviewFlow()
@@ -59,7 +59,7 @@ if Object.status_of_login.strip() == 'administrator':
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)
 else:
     try:
         Object.server_connection_error()
@@ -67,4 +67,4 @@ else:
         Object.browser_close()
 
     except Exception as flow_error:
-        api_logger.error(flow_error)
+        ui_logger.error(flow_error)

@@ -1,7 +1,7 @@
 import time
 import page_elements
 import image_capture
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.requirement import requirement_excel
 
 
@@ -59,7 +59,7 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
                 print('Failed to create Requirement <<<--------**')
 
         except Exception as create_req:
-            api_logger.error(create_req)
+            ui_logger.error(create_req)
 
     def requirement_validation(self, config_name):
 
@@ -68,7 +68,7 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
             self.web_element_text_xpath(page_elements.requirement_validations['requirement_name_breadcumb'])
             self.req_name_breadcumb = self.text_value
         except Exception as e1:
-            api_logger.error(e1)
+            ui_logger.error(e1)
 
         if self.req_name_breadcumb == self.requirement_sprint_version:
             self.ui_requirement_validation = 'Pass'

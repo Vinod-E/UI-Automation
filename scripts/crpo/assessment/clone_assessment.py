@@ -1,7 +1,7 @@
 import time
 import page_elements
 from datetime import datetime
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.assessment import assessment_excel
 
 
@@ -35,7 +35,7 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
                 self.ui_test_advance_search = 'Pass'
 
         except Exception as search:
-            api_logger.error(search)
+            ui_logger.error(search)
 
     def clone_assessment(self):
         try:
@@ -76,7 +76,7 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
                 time.sleep(2)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def assessment_grid_validation(self, test_name):
         try:
@@ -92,7 +92,7 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
             self.web_element_click_xpath(page_elements.assessment['grid_assessment_name'].format(test_name))
 
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)
 
     def assessment_getby_validation(self, test_name):
         try:
@@ -112,4 +112,4 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
                 print('Assessment validation/creation failed <<<--------**')
 
         except Exception as e:
-            api_logger.error(e)
+            ui_logger.error(e)

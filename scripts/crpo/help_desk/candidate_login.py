@@ -2,7 +2,7 @@ import time
 import config
 import page_elements
 import image_capture
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.help_desk import set_configuration
 
 
@@ -16,7 +16,7 @@ class CandidateLogin(set_configuration.SetConfiguration):
         try:
             self.driver.get(config.sever_config['candidate'].format(self.login_server))
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
     
     def login_of_candidate(self, username, password):
         try:
@@ -34,7 +34,7 @@ class CandidateLogin(set_configuration.SetConfiguration):
             self.candidate_login_validation()
 
         except Exception as login_failed:
-            api_logger.error(login_failed)
+            ui_logger.error(login_failed)
 
     def candidate_login_validation(self):
         try:
@@ -44,4 +44,4 @@ class CandidateLogin(set_configuration.SetConfiguration):
                 print('**-------->>> Candidate login successfully')
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

@@ -3,7 +3,7 @@ import styles
 import datetime
 from datetime import date
 import test_data_inputpath
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.embrace.form_creation import form_validation
 
 
@@ -112,7 +112,7 @@ class FormOutputReport(styles.FontColor, form_validation.FormValidations):
             # ----------------------------------------------------------------------------------------------------------
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def create_form_field_output(self):
         try:
@@ -191,7 +191,7 @@ class FormOutputReport(styles.FontColor, form_validation.FormValidations):
             # ----------------------------------------------------------------------------------------------------------
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def overall_status(self):
         try:
@@ -227,4 +227,4 @@ class FormOutputReport(styles.FontColor, form_validation.FormValidations):
             self.wb_Result.save(test_data_inputpath.output['form_creation_output_report'])
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)

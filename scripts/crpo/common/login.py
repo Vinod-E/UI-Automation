@@ -1,6 +1,6 @@
 import config
 import page_elements
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from scripts.crpo.common import check_box_selection
 
 
@@ -23,7 +23,7 @@ class Login(check_box_selection.CheckBox):
             print("******************** {} Login successfully ********************".format(typeofuser))
 
         except Exception as login_error:
-            api_logger.error(login_error)
+            ui_logger.error(login_error)
 
     def staff_login_elements(self, tenant, username, password):
         try:
@@ -32,7 +32,7 @@ class Login(check_box_selection.CheckBox):
             self.web_element_click_xpath(page_elements.login['login_button'])
 
         except Exception as login_failed:
-            api_logger.error(login_failed)
+            ui_logger.error(login_failed)
 
     def staff_login(self, username, password, login_name_validate):
         try:
@@ -50,7 +50,7 @@ class Login(check_box_selection.CheckBox):
                 self.staff_login_elements(self._xl_tenant, username, password)
 
         except Exception as embrace_login:
-            api_logger.error(embrace_login)
+            ui_logger.error(embrace_login)
         # ---------------------------------------- Assertion for login -------------------------------------------------
         try:
             self.x_path_element_webdriver_wait(page_elements.embrace_login['login_success'])
@@ -59,4 +59,4 @@ class Login(check_box_selection.CheckBox):
             self.staff_logging = 'True'
             print('Staffing login successfully with {}'.format(login_name_validate))
         except Exception as login_status:
-            api_logger.error(login_status)
+            ui_logger.error(login_status)

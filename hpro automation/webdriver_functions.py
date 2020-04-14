@@ -1,6 +1,6 @@
 import time
 import webdriver_wait
-from logger_settings import api_logger
+from logger_settings import ui_logger
 from selenium.webdriver.common.keys import Keys
 
 
@@ -21,7 +21,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 result = True
                 break
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
                 time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
@@ -38,7 +38,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 result = True
                 break
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
                 time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
@@ -55,7 +55,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 result = True
                 break
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
                 time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
@@ -72,7 +72,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 result = True
                 break
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
                 time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
@@ -89,7 +89,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 result = True
                 break
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
                 time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
@@ -106,7 +106,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 result = True
                 break
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
                 time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
@@ -123,7 +123,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 result = True
                 break
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
                 time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
@@ -140,7 +140,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 result = True
                 break
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
                 time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
@@ -157,7 +157,7 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                 result = True
                 break
             except Exception as error:
-                api_logger.error(error)
+                ui_logger.error(error)
                 time.sleep(2)
             attempts += 1
         # print('Number of attempts = {}'.format(attempts))
@@ -177,10 +177,10 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
                     result = True
                     break
                 except Exception as error:
-                    api_logger.error(error)
+                    ui_logger.error(error)
                     time.sleep(2)
                 attempts += 1
             # print('Number of attempts = {}'.format(attempts))
             return result
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
