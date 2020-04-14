@@ -42,7 +42,7 @@ class TaskConfig(floating_action.FloatingAction):
 
             self.web_element_click_xpath(page_elements.job_config['Task_selection'])
 
-            self.web_element_click_xpath(page_elements.job_config['select_all_task'])
+            self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
 
             self.web_element_click_xpath(page_elements.buttons['done'])
 

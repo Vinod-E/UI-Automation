@@ -1,5 +1,4 @@
 import time
-import config
 import page_elements
 import image_capture
 from logger_settings import api_logger
@@ -33,7 +32,7 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Search"),
                                              self.job_sprint_version)
 
-            self.web_element_click_xpath(page_elements.requirement['particular_job_select'])
+            self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
 
             self.web_element_click_xpath(page_elements.buttons['done'])
 
