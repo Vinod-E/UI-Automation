@@ -20,8 +20,14 @@ class ManageInterviewExcelRead(common_file.CommonFile):
 
         # ----------------------------------- Value initialization -----------------------------------------------------
         self.xl_event_name_mi = []
+        self.xl_skill1_mi = []
+        self.xl_skill2_mi = []
+        self.xl_user1_mi = []
+        self.xl_user2_mi = []
 
-        self.event_sprint_version_mi = []
+        self.event_sprint_version_mi = ''
+        self.skill1 = ''
+        self.skill2 = ''
 
         # ------------- Iterate Excel sheet------------------------
         self.live_interview_excel_read()
@@ -35,7 +41,21 @@ class ManageInterviewExcelRead(common_file.CommonFile):
 
             if rows[0]:
                 self.xl_event_name_mi.append(rows[0])
+            if rows[1]:
+                self.xl_skill1_mi.append(rows[1])
+            if rows[2]:
+                self.xl_skill2_mi.append(rows[2])
+            if rows[3]:
+                self.xl_user1_mi.append(rows[3])
+            if rows[4]:
+                self.xl_user2_mi.append(rows[4])
 
             for j in self.xl_event_name_mi:
                 event_name = j
                 self.event_sprint_version_mi = event_name.format(self.sprint_version)
+
+            for k in self.xl_skill1_mi:
+                self.skill1 = k
+
+            for l in self.xl_skill2_mi:
+                self.skill2 = l
