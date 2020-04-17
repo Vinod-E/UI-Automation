@@ -27,6 +27,7 @@ class Schedule(login.Login):
     def interview_schedule(self):
         try:
             # --------------------------- Advance search ---------------------------------------------------------------
+            time.sleep(1)
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
             self.event_getby_details()

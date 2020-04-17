@@ -77,6 +77,7 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
             else:
                 print('Failed to upload candidate to event <<<--------**')
 
+            time.sleep(1)
             self.web_element_click_xpath(page_elements.event_config['close_pop_details_window'])
             self.driver.refresh()
 
