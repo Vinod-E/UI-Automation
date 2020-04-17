@@ -50,7 +50,9 @@ tabs = {
     'event_tracking': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.tracking"]',
     'interview_cancel_request': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.tracking.interviewCancelRequest"]',
     'help_desk_tab': '//*[@ui-sref="candidate.helpdesk.faq"]',
-    'raise_query_tab': '//*[@ui-sref="candidate.helpdesk.raiseQuery"]'
+    'raise_query_tab': '//*[@ui-sref="candidate.helpdesk.raiseQuery"]',
+    'manage_nominations': '//*[@ui-sref="crpo.events.interviewers.nominations"]',
+    'nomination_tab': '//*[@ui-sref="crpo.nominations"]'
 }
 
 buttons = {
@@ -100,12 +102,17 @@ buttons = {
     'close_pop_details_window': '//*[@ng-click="$hide()"]',
     'send': '//*[@ng-click="vm.send()"]',
     'query_save': '//*[@ng-click="vm.actionClicked({}{}{});"]'.format("'", 'save', "'"),
-    'query_raise': '//*[@ng-click="vm.saveQuery()"]'
+    'query_raise': '//*[@ng-click="vm.saveQuery()"]',
+    'save_invite_int': '//*[@ng-click="vm.validateAndSave()"]',
+    'send_mail': '//*[@ng-click="vm.sendMailToAll()"]',
+    'confirm': 'button',
+    'clear_refresh': '//*[@ng-click="vm.refreshList()"]'
 }
 
 text_fields = {
     # ------------------------------------------ Text Fields -----------------------------------------------------------
-    'text_field': '//*[@type="text"][@placeholder="{}"]'
+    'text_field': '//*[@type="text"][@placeholder="{}"]',
+    'text_number': '//*[@type="number"][@placeholder="{}"]'
 }
 
 file = {
@@ -443,4 +450,25 @@ help_desk = {
     'ok': '//*[@ng-click="vm.saveMsg(3, $hide)"]',
     'total_records': '/html/body/div[2]/div/section/div[1]/div/div/div/div[2]/div/div[2]/'
                      'div/div/div[1]/div/div/div/span[2]'
+}
+manage_interviews = {
+    'Search_interviewers': '//*[@ng-click="criterion.searchInterviewers()"]',
+    'add_criteria': '//*[@ng-click="vm.addCriteria()"]',
+    'panel2': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/section/div[2]/'
+              'transcluded-input/div/div/div/div/div[1]/ta-dropdown/div/div/input',
+    'Search_interviewers2': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/section/div[2]/'
+                            'transcluded-input/div/div/div/div/div[3]/button',
+    'required_int': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/section/div[2]/'
+                    'transcluded-input/div/div/div[1]/div[2]/div/div[1]/input',
+    'required_nom': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/section/div[2]/'
+                    'transcluded-input/div/div/div[1]/div[2]/div/div[2]/input',
+    'header': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/section/div[1]/div[1]/div/div/h5',
+    'panel_search': '//*[@ng-model="vm.selectedSearchPanelType"]',
+    'paging': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/'
+              'section/div[2]/div[1]/div[2]/paging-control/div/div/span',
+    'skill_validate': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/section/'
+                      'accordian-row-table/table/tbody/tr[2]/td/div/div/div/p[1]',
+    'no_invitation_message': '//*[@ng-if="vm.invitations && !vm.invitations.data.length"]',
+    'actions': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/section/div[2]/div[1]/div[2]/button',
+    'approve': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/section/div[2]/div[1]/div[2]/ul/li[1]/a'
 }
