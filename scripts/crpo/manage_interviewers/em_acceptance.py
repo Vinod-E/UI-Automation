@@ -22,6 +22,7 @@ class EmAcceptance(nomination_acceptance.NominationAcceptance):
         self.ui_approve_action = ''
         self.ui_approved = ''
         self.ui_em_request_validated = ''
+        self.ui_sync_interviewers = ''
 
     def em_approve(self):
         try:
@@ -90,7 +91,7 @@ class EmAcceptance(nomination_acceptance.NominationAcceptance):
             self.web_element_click_xpath(page_elements.buttons['clear_refresh'])
             time.sleep(2)
             self.web_element_click_xpath(page_elements.grid['all'])
-            self.web_element_click_xpath(page_elements.manage_interviews['actions'])
+            self.web_element_click_xpath(page_elements.buttons['common_button'].format('Actions'))
             self.web_element_click_xpath(page_elements.manage_interviews['approve'])
 
             self.web_element_text_xpath(page_elements.title['title'].format('Approved'))
@@ -100,6 +101,14 @@ class EmAcceptance(nomination_acceptance.NominationAcceptance):
                 self.ui_approved = 'Pass'
                 self.ui_em_request_validated = 'Pass'
                 print('**-------->>> Event Manager - {}'.format(self.text_value))
+
+            time.sleep(1)
+            self.web_element_click_xpath(page_elements.title['title'].format('This will sync interviewers for'
+                                                                             ' whom you have accepted nomination with '
+                                                                             'the event owners'))
+            self.glowing_messages('Interviewers have been successfully synced to event.')
+            if self.message_validation == 'True':
+                self.ui_sync_interviewers = 'Pass'
 
         except Exception as error:
             ui_logger.error(error)

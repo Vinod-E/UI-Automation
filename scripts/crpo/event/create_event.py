@@ -31,7 +31,7 @@ class CreateEvent(event_excel.EventExcelRead):
             time.sleep(1)
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Requirement"),
                                              self.req_name_sprint_version)
-            time.sleep(0.5)
+            time.sleep(1)
             self.drop_down_selection()
 
             self.web_element_click_xpath(page_elements.event['job_field'])

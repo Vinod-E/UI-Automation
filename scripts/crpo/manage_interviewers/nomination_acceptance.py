@@ -67,6 +67,7 @@ class NominationAcceptance(manage_interviewers.ManageInterviewers):
             time.sleep(0.3)
 
             self.driver.refresh()
+            time.sleep(2)
             self.web_element_text_xpath(page_elements.manage_interviews['no_invitation_message'])
             if self.text_value == "You don't have any nomination requests":
                 self.ui_request_accepted_int1 = 'Pass'
@@ -102,6 +103,7 @@ class NominationAcceptance(manage_interviewers.ManageInterviewers):
             time.sleep(0.3)
 
             self.driver.refresh()
+            time.sleep(2)
             self.web_element_text_xpath(page_elements.manage_interviews['no_invitation_message'])
             if self.text_value == "You don't have any nomination requests":
                 self.ui_request_accepted_int2 = 'Pass'
