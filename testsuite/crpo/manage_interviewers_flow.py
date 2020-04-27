@@ -58,7 +58,7 @@ if Object.status_of_login.strip() == 'administrator':
         Object.manager_approve()
 
         Object.overall_status()
-        # Object.browser_close()
+        Object.browser_close()
 
     except Exception as flow_error:
         ui_logger.error(flow_error)

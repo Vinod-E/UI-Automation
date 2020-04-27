@@ -319,6 +319,7 @@ class ManageInterviewersOutput(styles.FontColor, em_acceptance.EmAcceptance):
             self.ws.write(13, self.em_col, 'Approve Action', self.style8)
             self.ws.write(14, self.em_col, 'Approved', self.style8)
             self.ws.write(15, self.em_col, 'Approved_Request_Validate', self.style8)
+            self.ws.write(16, self.em_col, 'SYNC Interviewers', self.style8)
 
             # ----------------------------------------------------------------------------------------------------------
             if self.ui_event_tab_em == 'Pass':
@@ -404,6 +405,12 @@ class ManageInterviewersOutput(styles.FontColor, em_acceptance.EmAcceptance):
                 self.ws.write(15, self.em_status_col, 'Pass', self.style7)
             else:
                 self.ws.write(15, self.em_status_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            if self.ui_sync_interviewers == 'Pass':
+                self.Actual_success_cases.append(self.ui_sync_interviewers)
+                self.ws.write(16, self.em_status_col, 'Pass', self.style7)
+            else:
+                self.ws.write(16, self.em_status_col, 'Fail', self.style3)
             # ----------------------------------------------------------------------------------------------------------
 
         except Exception as error:

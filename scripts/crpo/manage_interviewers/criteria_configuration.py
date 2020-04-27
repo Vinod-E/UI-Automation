@@ -83,8 +83,6 @@ class CriteriaConfig(manage_excel.ManageInterviewExcelRead):
                 self.send_mail_to_interviewers = 'Pass'
                 print('**-------->>> Nomination mail sent to interviewers successfully')
 
-            if self.nomination_validation_check == 'True':
-                print('**-------->>> Mail and configuration to invite interviewers successfully')
         except Exception as error:
             ui_logger.error(error)
 
