@@ -106,7 +106,8 @@ buttons = {
     'save_invite_int': '//*[@ng-click="vm.validateAndSave()"]',
     'send_mail': '//*[@ng-click="vm.sendMailToAll()"]',
     'confirm': 'button',
-    'clear_refresh': '//*[@ng-click="vm.refreshList()"]'
+    'clear_refresh': '//*[@ng-click="vm.refreshList()"]',
+    'common_button': "//button[text()='{}']",
 }
 
 text_fields = {
@@ -469,6 +470,5 @@ manage_interviews = {
     'skill_validate': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/section/'
                       'accordian-row-table/table/tbody/tr[2]/td/div/div/div/p[1]',
     'no_invitation_message': '//*[@ng-if="vm.invitations && !vm.invitations.data.length"]',
-    'actions': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/section/div[2]/div[1]/div[2]/button',
     'approve': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/section/div[2]/div[1]/div[2]/ul/li[1]/a'
 }

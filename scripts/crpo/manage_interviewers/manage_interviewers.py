@@ -15,7 +15,14 @@ class ManageInterviewers(criteria_configuration.CriteriaConfig):
 
     def skill1_filter(self):
         try:
+            self.driver.execute_script("window.scrollTo(0,-200);")
             self.web_element_click_xpath(page_elements.tabs['manage_nominations'])
+            time.sleep(0.5)
+
+            self.nomination_validation()
+            if self.nomination_validation_check == 'True':
+                print('**-------->>> Mail and configuration to invite interviewers successfully')
+
             time.sleep(0.5)
             self.web_element_send_keys_xpath(page_elements.manage_interviews['panel_search'], self.xl_skill1_mi)
 
