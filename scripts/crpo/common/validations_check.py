@@ -1,6 +1,6 @@
 import time
 import page_elements
-from scripts.crpo.common import settings
+from scripts.crpo.common import (settings, applicant_actions)
 
 
 class ValidationCheck(settings.Settings):
@@ -24,7 +24,7 @@ class ValidationCheck(settings.Settings):
         self.web_element_click_xpath(page_elements.glowing_messages['dismiss'])
 
     def manage_task_validation(self, candidate_name):
-        time.sleep(1.5)
+        time.sleep(2.5)
         self.web_element_text_xpath(page_elements.validations['task_candidate_name'])
         if candidate_name in self.text_value:
             self.task_validation_check = 'True'
@@ -34,7 +34,7 @@ class ValidationCheck(settings.Settings):
 
     def enable_link_validation(self, event_name):
         # ----------------------------- View Registration Link ----------------------------
-        self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
+        applicant_actions.action(self, 'View Registration Link')
         # ----------------------------- link ---------------------
         self.web_element_click_xpath(page_elements.event_applicant['open_RL_new_tab'])
         self.driver.switch_to.window(self.driver.window_handles[1])
@@ -52,7 +52,7 @@ class ValidationCheck(settings.Settings):
 
     def disable_link_validation(self):
         # ----------------------------- View Registration Link ----------------------------
-        self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
+        applicant_actions.action(self, 'View Registration Link')
         # ----------------------------- link ---------------------
         self.web_element_click_xpath(page_elements.event_applicant['open_RL_new_tab'])
         self.driver.switch_to.window(self.driver.window_handles[1])

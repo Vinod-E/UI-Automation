@@ -1,8 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
-from scripts.crpo.common import floating_action
-from selenium.webdriver.common.keys import Keys
+from scripts.crpo.common import (floating_action, button_click)
 
 
 class TaskConfig(floating_action.FloatingAction):
@@ -44,9 +43,8 @@ class TaskConfig(floating_action.FloatingAction):
 
             self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
 
-            self.web_element_click_xpath(page_elements.buttons['done'])
-
-            self.web_element_click_xpath(page_elements.buttons['job_task_config_save'])
+            button_click.all_buttons(self, 'Done')
+            button_click.button(self, 'Save')
 
             print('**-------->>> Task configuration done for {}'.format(name))
             self.task_configure_success = 'Pass'

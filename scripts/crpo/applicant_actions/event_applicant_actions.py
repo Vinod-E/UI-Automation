@@ -2,6 +2,7 @@ import time
 import page_elements
 import test_data_inputpath
 from logger_settings import ui_logger
+from scripts.crpo.common import (button_click, applicant_actions)
 from scripts.crpo.applicant_actions import event_applicants
 
 
@@ -55,7 +56,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.web_element_click_id(page_elements.applicant_actions['compose_mail'])
             self.web_element_send_keys_xpath(page_elements.event_applicant['subject'], self.xl_mail_description_a)
             self.web_element_send_keys_xpath(page_elements.event_applicant['description'], self.xl_mail_description_a)
-            self.web_element_click_xpath(page_elements.buttons['clone/save'])
+            button_click.button(self, 'send')
             self.glowing_messages('Mail will be send asynchronously')
             self.dismiss_message()
 
@@ -75,7 +76,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
                                              self.xl_sms_template_a)
             time.sleep(0.5)
             self.drop_down_selection()
-            self.web_element_click_xpath(page_elements.buttons['send_sms'])
+            button_click.button(self, 'Send')
             self.glowing_messages('SMS sent successfully')
             self.dismiss_message()
 
@@ -98,7 +99,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Select Test'),
                                              self.event_sprint_version_a)
             self.drop_down_selection()
-            self.web_element_click_xpath(page_elements.buttons['tag_applicant_event'])
+            button_click.button(self, 'Tag')
             self.glowing_messages('All Applicant(s) tagged successfully')
             self.dismiss_message()
 
@@ -115,7 +116,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(0.5)
             # ----------------------------- Untag applicants ---------------------
             self.web_element_click_id(page_elements.applicant_actions['untag_applicants'])
-            self.web_element_click_xpath(page_elements.buttons['ok'])
+            button_click.all_buttons(self, 'OK')
             self.glowing_messages('Unable to untag candidate, beacuse candidate is moved in the Event and Job')
             self.dismiss_message()
 
@@ -130,8 +131,8 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.message_validation = ''
             self.more_actions()
             # ----------------------------- Registration Link ---------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['registration_link'])
-            self.web_element_click_xpath(page_elements.buttons['ok'])
+            applicant_actions.action(self, 'Send Registration Link')
+            button_click.all_buttons(self, 'OK')
             self.glowing_messages('Registration-Link successfully sent to applicants(s)')
             self.dismiss_message()
 
@@ -146,8 +147,9 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.message_validation = ''
             self.more_actions()
             # ----------------------------- Admit Card ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['send_admit_card'])
-            self.web_element_click_xpath(page_elements.buttons['ok'])
+            applicant_actions.action(self, 'Send Admit Card')
+            button_click.button(self, 'Send')
+            button_click.all_buttons(self, 'OK')
             self.glowing_messages('Admit-Card successfully sent to applicants(s)')
             self.dismiss_message()
 
@@ -162,8 +164,8 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.message_validation = ''
             self.more_actions()
             # ----------------------------- View Registration Link ----------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
-            self.web_element_click_xpath(page_elements.buttons['copy'])
+            applicant_actions.action(self, 'View Registration Link')
+            button_click.all_buttons(self, 'COPY')
             self.glowing_messages('Registration link copied')
             self.dismiss_message()
 
@@ -178,7 +180,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.task_validation_check = ''
             self.more_actions()
             # ----------------------------- Manage Task ---------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['manage_task'])
+            applicant_actions.action(self, 'Manage Task')
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.manage_task_validation(self.event_sprint_version_a)
             self.driver.close()
@@ -194,8 +196,8 @@ class EventApplicantActions(event_applicants.ApplicantActions):
         try:
             self.more_actions()
             # ----------------------------- Test status ---------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['view_test_status'])
-            self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
+            applicant_actions.action(self, 'View Test Status')
+            button_click.button(self, 'Ok')
             # -------------------- output report value ----------------
             self.ui_view_test_status_ae = 'Pass'
         except Exception as e:
@@ -207,7 +209,8 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(1)
             self.more_actions()
             # ----------------------------- Download Resume ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['download_resume'])
+            applicant_actions.action(self, 'Download Resume(s)')
+            time.sleep(0.5)
             self.glowing_messages('Resumes Not found')
             self.dismiss_message()
 
@@ -223,7 +226,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Single PDF ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['single_pdf'])
+            applicant_actions.action(self, 'Generate Single PDF')
             time.sleep(0.5)
             self.glowing_messages('Your request is being processed, please check the status in Background Task details')
             self.dismiss_message()
@@ -240,7 +243,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Generate Docket ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['docket'])
+            applicant_actions.action(self, 'Generate Docket(s)')
             time.sleep(0.5)
             self.glowing_messages('Your request is being processed, please check the status in Background Task details')
             self.dismiss_message()
@@ -255,8 +258,8 @@ class EventApplicantActions(event_applicants.ApplicantActions):
         try:
             self.more_actions()
             # ----------------------------- Compare Id card ----------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['compare_id'])
-            self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
+            applicant_actions.action(self, 'Compare Id Card')
+            button_click.button(self, 'Close')
             # -------------------- output report value ----------------
             self.ui_compare_id_ae = 'Pass'
         except Exception as e:
@@ -268,9 +271,10 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(1)
             self.more_actions()
             # ----------------------------- Upload attachment ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['upload_attachment'])
+            applicant_actions.action(self, 'Upload Attachment')
             self.web_element_send_keys_xpath(page_elements.file['upload_file'], self.attachment)
             self.glowing_messages('File uploaded successfully')
+            time.sleep(1.5)
             self.dismiss_message()
             time.sleep(0.5)
             self.web_element_click_xpath(page_elements.buttons['create-save'])
@@ -278,7 +282,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.glowing_messages('Attachment Upload Successfully')
             self.dismiss_message()
             time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
+            button_click.button(self, 'Close')
 
             # -------------------- output report value ----------------
             if self.message_validation == 'True':
@@ -293,7 +297,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Change BU ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['change_bu/re_RL'])
+            applicant_actions.action(self, 'Change Business Unit')
             time.sleep(0.5)
             self.web_element_click_xpath(page_elements.buttons['create-save'])
             self.glowing_messages('Applicant updated successfully')
@@ -309,8 +313,8 @@ class EventApplicantActions(event_applicants.ApplicantActions):
         try:
             self.more_actions()
             # ----------------------------- Applicant json ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['applicant_json'])
-            self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
+            applicant_actions.action(self, 'View Applicant Json')
+            button_click.button(self, 'Cancel')
             # -------------------- output report value ----------------
             self.ui_view_applicant_json_ae = 'Pass'
         except Exception as e:
@@ -321,7 +325,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Disable RL ---------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['disable/enable_registration_link'])
+            applicant_actions.action(self, 'Disable Registration Link')
 
             time.sleep(0.4)
             self.more_actions()
@@ -337,8 +341,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(1.5)
             self.more_actions()
             # ----------------------------- Enable RL ---------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['disable/enable_registration_link'])
-
+            applicant_actions.action(self, 'Enable Registration Link')
             time.sleep(0.4)
             self.more_actions()
             self.enable_link_validation('CAMPUS DETAILS')
@@ -356,12 +359,12 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(0.5)
             self.more_actions()
             # ----------------------------- Change BU ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['change_bu/re_RL'])
+            applicant_actions.action(self, 'Enable Re-Registration')
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Reason'),
                                              self.xl_enable_link_a)
             self.drop_down_selection()
             self.web_element_send_keys_xpath(page_elements.event_applicant['comment'], self.xl_comment_a)
-            self.web_element_click_xpath(page_elements.buttons['send'])
+            button_click.button(self, 'Send')
             self.glowing_messages('Re-Registration has been enabled for this user')
             self.dismiss_message()
 
@@ -375,7 +378,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
         try:
             self.more_actions()
             # ----------------------------- View Registration Link ----------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
+            applicant_actions.action(self, 'View Registration Link')
             self.web_element_click_xpath(page_elements.event_applicant['open_RL_new_tab'])
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.web_element_click_id(page_elements.microSite['yes'])
@@ -383,6 +386,6 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.web_element_click_id(page_elements.microSite['submit'])
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
-            self.web_element_click_xpath(page_elements.buttons['done'])
+            button_click.all_buttons(self, 'CANCEL')
         except Exception as e:
             ui_logger.error(e)

@@ -3,6 +3,7 @@ import page_elements
 import test_data_inputpath
 from logger_settings import ui_logger
 from scripts.crpo.event import owners_config
+from scripts.crpo.common import button_click
 
 
 class EventUploadCandidates(owners_config.EventOwnersConfig):
@@ -30,17 +31,17 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
                 self.web_element_send_keys_xpath(page_elements.file['event_upload_file'], self.file)
 
                 time.sleep(1)
-                self.web_element_click_xpath(page_elements.event_config['Next_Button'])
+                button_click.button(self, 'Next')
 
                 self.web_element_click_xpath(page_elements.event_config['declare_checkbox'])
 
-                self.driver.execute_script("window.scrollTo(0,100);")
                 self.web_element_send_keys_xpath(page_elements.event_config['signature'],
                                                  'AutomationVS')
 
-                self.web_element_click_xpath(page_elements.event_config['Agree'])
+                time.sleep(0.5)
+                button_click.button(self, 'I Agree')
 
-                self.web_element_click_xpath(page_elements.event_config['edit_candidate_details'])
+                self.web_element_click_xpath(page_elements.title['title'].format('Edit'))
 
                 time.sleep(0.5)
                 self.driver.find_element_by_xpath(page_elements.event_config['upload_candidate_name']).clear()
@@ -56,12 +57,13 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
                 self.web_element_send_keys_xpath(page_elements.event_config['upload_candidate_usn'],
                                                  self.event_sprint_version)
 
+                time.sleep(0.5)
+                self.driver.execute_script("window.scrollTo(0,200);")
                 self.web_element_click_xpath(page_elements.event_config['details_save'])
-
-                self.web_element_click_xpath(page_elements.buttons['event_upload_candidate_save'])
+                time.sleep(0.5)
+                button_click.button(self, 'Save')
 
 # -------- Validation check
-                time.sleep(2)
                 self.upload_candidate_validation()
 
             except Exception as error:
@@ -69,6 +71,7 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
 
     def upload_candidate_validation(self):
         try:
+            time.sleep(3)
             self.web_element_text_xpath(page_elements.event_config['upload_candidate_count'])
 
             if self.text_value.strip() == 'Uploaded 1':

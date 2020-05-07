@@ -2,6 +2,7 @@ import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.job import job_automation
+from scripts.crpo.common import button_click
 
 
 class InterviewPanel(job_automation.JobAutomation):
@@ -30,7 +31,7 @@ class InterviewPanel(job_automation.JobAutomation):
                 self.web_element_click_xpath(page_elements.job_config['add_interviewers_to_table'])
 
                 time.sleep(1)
-                self.web_element_click_xpath(page_elements.buttons['save_interviewers_to_panel'])
+                button_click.button(self, 'Save')
 
                 # ----------------------------- Validation -------------------------------------------------------------
                 time.sleep(1)

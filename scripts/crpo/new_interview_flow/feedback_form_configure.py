@@ -2,6 +2,7 @@ import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.new_interview_flow import job_search
+from scripts.crpo.common import button_click
 
 
 class FeedbackConfiguration(job_search.JobSearch):
@@ -39,7 +40,7 @@ class FeedbackConfiguration(job_search.JobSearch):
             self.web_element_click_xpath(page_elements.buttons['new_template_search'].format("'", 'search', "'"))
             self.driver.execute_script("window.scrollTo(0,100);")
             time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.buttons['use'].format("'", 'tag', "'"))
+            button_click.all_buttons(self, 'Use')
             # time.sleep(0.5)
             # self.dismiss_message()
 

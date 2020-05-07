@@ -2,6 +2,7 @@ import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.job import selection_process
+from scripts.crpo.common import button_click
 
 
 class ECTaskconfig(selection_process.SelectionProcess):
@@ -41,7 +42,7 @@ class ECTaskconfig(selection_process.SelectionProcess):
                     page_elements.job_config['ec_negative_status'], self.xl_negative_status)
                 self.drop_down_selection()
 
-                self.web_element_click_xpath(page_elements.buttons['job_ec_save'])
+                button_click.button(self, 'Save')
                 print('**-------->>> Eligibility configuration done')
                 self.ui_ec_configure = 'Pass'
 

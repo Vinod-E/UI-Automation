@@ -2,6 +2,7 @@ import time
 import page_elements
 from scripts.crpo.job import create_job
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 
 
 class SelectionProcess(create_job.CreateJob):
@@ -32,7 +33,7 @@ class SelectionProcess(create_job.CreateJob):
 
                 time.sleep(0.5)
                 self.driver.execute_script("window.scrollTo(0,200);")
-                self.web_element_click_xpath(page_elements.buttons['sp-save'])
+                button_click.button(self, 'Save')
 
                 self.selection_process_created = 'Pass'
 
@@ -58,6 +59,7 @@ class SelectionProcess(create_job.CreateJob):
 
                 time.sleep(1)
                 self.driver.execute_script("window.scrollTo(0,100);")
-                self.web_element_click_xpath(page_elements.buttons['sp-save'])
+                button_click.button(self, 'Save')
+
             except Exception as config_message:
                 ui_logger.error(config_message)

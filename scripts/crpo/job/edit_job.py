@@ -1,9 +1,9 @@
 import time
-import config
 import page_elements
 import image_capture
 from logger_settings import ui_logger
 from scripts.crpo.job import tag_untag_requirement
+from scripts.crpo.common import button_click
 
 
 class EditJobRole(tag_untag_requirement.JobTagToRequirement):
@@ -30,7 +30,7 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
                 self.web_element_send_keys_xpath(page_elements.job['description_box'], self.j_description_u)
 
                 time.sleep(1)
-                self.web_element_click_xpath(page_elements.buttons['update'])
+                button_click.button(self, 'Update')
 
                 image_capture.screen_shot(self, 'Update_Job')
 

@@ -2,6 +2,7 @@ import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.old_interview_flow import schedule_old
+from scripts.crpo.common import button_click
 
 
 class ReSchedule(schedule_old.Schedule):
@@ -41,7 +42,7 @@ class ReSchedule(schedule_old.Schedule):
             self.web_element_click_id(page_elements.grid_actions['reschedule'])
             time.sleep(0.5)
             self.web_element_send_keys_xpath(page_elements.interview['comments'], self.xl_cancel_reschedule_comment_o)
-            self.web_element_click_xpath(page_elements.buttons['create-save'])
+            button_click.button(self, 'Reschedule')
 
             time.sleep(1)
             self.applicant_getby_details(self.event_sprint_version_o)
