@@ -2,6 +2,7 @@ import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.job import interview_panel
+from scripts.crpo.common import button_click
 
 
 class JobTagToRequirement(interview_panel.InterviewPanel):
@@ -28,7 +29,7 @@ class JobTagToRequirement(interview_panel.InterviewPanel):
                                                  self.xl_tag_req)
                 self.drop_down_selection()
 
-                self.web_element_click_xpath(page_elements.buttons['job_requirement_tag'])
+                button_click.button(self, 'Tag')
                 print('**-------->>> Job tag to requirement successfully')
                 self.ui_tag_requirement = 'Pass'
 
@@ -46,7 +47,7 @@ class JobTagToRequirement(interview_panel.InterviewPanel):
                 self.web_element_click_xpath(page_elements.floating_actions['un-tag_requirement'])
                 self.ui_un_tag_requirement_action = 'Pass'
 
-                self.web_element_click_xpath(page_elements.buttons['ok'])
+                button_click.all_buttons(self, 'OK')
                 print('**-------->>> Job un-tag to requirement successfully')
                 self.ui_un_tag_requirement = 'Pass'
 

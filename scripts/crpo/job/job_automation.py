@@ -2,6 +2,7 @@ import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.job import old_feedbackform
+from scripts.crpo.common import button_click
 
 
 class JobAutomation(old_feedbackform.FeedbackForm):
@@ -65,7 +66,7 @@ class JobAutomation(old_feedbackform.FeedbackForm):
 
                 self.driver.execute_script("window.scrollTo(0,-200);")
                 time.sleep(1)
-                self.web_element_click_xpath(page_elements.buttons['Hopping_save_button'])
+                button_click.button(self, 'Save')
                 time.sleep(2)
                 self.dismiss_message()
 

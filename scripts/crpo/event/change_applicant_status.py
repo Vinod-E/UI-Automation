@@ -1,6 +1,5 @@
 import time
 import page_elements
-import image_capture
 from logger_settings import ui_logger
 from scripts.crpo.event import event_applicants
 

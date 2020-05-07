@@ -3,6 +3,7 @@ import page_elements
 import image_capture
 from logger_settings import ui_logger
 from scripts.crpo.requirement import requirement_excel
+from scripts.crpo.common import button_click
 
 
 class CreateRequirement(requirement_excel.RequirementExcelRead):
@@ -34,7 +35,7 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
 
             self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
 
-            self.web_element_click_xpath(page_elements.buttons['done'])
+            button_click.all_buttons(self, 'Done')
 
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Hiring Type"),
                                              self.xl_hiring_track)
@@ -44,7 +45,7 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
                                              self.xl_college_type)
             self.drop_down_selection()
 
-            self.web_element_click_xpath(page_elements.buttons['requirement_create'])
+            button_click.button(self, ' Create')
 
             time.sleep(1)
             self.driver.execute_script("window.scrollTo(0,-100);")

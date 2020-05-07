@@ -1,6 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
+from scripts.crpo.common import (button_click, applicant_actions)
 from scripts.crpo.applicant_actions import job_applicants
 
 
@@ -42,7 +43,8 @@ class JobApplicantActions(job_applicants.JobApplicants):
             self.web_element_click_id(page_elements.applicant_actions['compose_mail'])
             self.web_element_send_keys_xpath(page_elements.event_applicant['subject'], self.xl_mail_description_a)
             self.web_element_send_keys_xpath(page_elements.event_applicant['description'], self.xl_mail_description_a)
-            self.web_element_click_xpath(page_elements.buttons['clone/save'])
+            button_click.button(self, 'send')
+            time.sleep(1.5)
             self.glowing_messages('Mail will be send asynchronously')
             self.dismiss_message()
 
@@ -58,7 +60,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             time.sleep(0.3)
             # ----------------------------- Untag applicants ---------------------
             self.web_element_click_id(page_elements.applicant_actions['untag_applicants'])
-            self.web_element_click_xpath(page_elements.buttons['ok'])
+            button_click.all_buttons(self, 'OK')
             self.glowing_messages('Unable to untag candidate, beacuse candidate is moved in the Event and Job')
             self.dismiss_message()
 
@@ -74,7 +76,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             self.check_box()
             # ----------------------------- View Registration Link ----------------------------
             self.web_element_click_id(page_elements.applicant_actions['copy_registration_link'])
-            self.web_element_click_xpath(page_elements.buttons['copy'])
+            button_click.all_buttons(self, 'COPY')
             self.glowing_messages('Registration link copied')
             self.dismiss_message()
 
@@ -90,7 +92,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             time.sleep(0.3)
             self.job_more_actions()
             # ----------------------------- Manage Task ---------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['view_registration_link'])
+            applicant_actions.action(self, 'Manage Task')
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.manage_task_validation(self._applicant_name)
             self.driver.close()
@@ -107,9 +109,9 @@ class JobApplicantActions(job_applicants.JobApplicants):
             time.sleep(0.3)
             self.job_more_actions()
             # ----------------------------- Test status ---------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['job_test_status'])
+            applicant_actions.action(self, 'View Test Status')
             time.sleep(0.3)
-            self.web_element_click_xpath(page_elements.buttons['close_pop_details_window'])
+            button_click.button(self, 'Ok')
             # -------------------- output report value ----------------
             self.ui_view_test_status_aj = 'Pass'
         except Exception as e:
@@ -121,7 +123,7 @@ class JobApplicantActions(job_applicants.JobApplicants):
             time.sleep(0.3)
             self.job_more_actions()
             # ----------------------------- Single PDF ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['job_single_pdf'])
+            applicant_actions.action(self, 'Generate Single PDF')
             self.glowing_messages('Your request is being processed, please check the status in Background Task details')
             self.dismiss_message()
 
@@ -137,8 +139,8 @@ class JobApplicantActions(job_applicants.JobApplicants):
             time.sleep(0.2)
             self.job_more_actions()
             # ----------------------------- Single PDF ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['single_pdf'])
-            self.web_element_click_xpath(page_elements.buttons['ok'])
+            applicant_actions.action(self, 'Send Email-Mobile Verification Link')
+            button_click.all_buttons(self, 'OK')
             self.glowing_messages('Email Sent Successfully')
             self.dismiss_message()
 
@@ -154,12 +156,13 @@ class JobApplicantActions(job_applicants.JobApplicants):
             time.sleep(0.3)
             self.job_more_actions()
             # ----------------------------- Change BU ------------------------------
-            self.web_element_click_xpath(page_elements.applicant_actions['job_send_admit_card'])
+            applicant_actions.action(self, 'Send Admit Card')
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Reason'),
                                              self.xl_reason_admit_card_a)
             self.drop_down_selection()
             self.web_element_send_keys_xpath(page_elements.event_applicant['comment'], self.xl_comment_a)
-            self.web_element_click_xpath(page_elements.buttons['send'])
+            button_click.button(self, 'Preview and Send')
+            button_click.button(self, 'Send')
             self.glowing_messages('Admit-Card successfully sent to applicants(s)')
             self.dismiss_message()
 

@@ -1,8 +1,8 @@
 import time
-import datetime
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.event import event_manage_task
+from scripts.crpo.common import button_click
 
 
 class EmbraceApp(event_manage_task.EventManageTask):
@@ -41,7 +41,8 @@ class EmbraceApp(event_manage_task.EventManageTask):
             self.web_element_send_keys_xpath(page_elements.embrace['candidate_text_box'],
                                              self.event_sprint_version)
 
-            self.web_element_click_xpath(page_elements.embrace['search_button'])
+            # self.web_element_click_xpath(page_elements.embrace['search_button'])
+            button_click.button(self, ' Search')
             self.ui_embrace_advance_search = 'Pass'
 
             self.web_element_click_xpath(page_elements.embrace['submit_behalf_of'])

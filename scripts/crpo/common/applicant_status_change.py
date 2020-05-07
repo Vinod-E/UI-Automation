@@ -1,7 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
-from scripts.crpo.common import task_config
+from scripts.crpo.common import (button_click, task_config)
 
 
 class ChangeStatus(task_config.TaskConfig):
@@ -21,7 +21,8 @@ class ChangeStatus(task_config.TaskConfig):
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_stage'], stage)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_status'], status)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['comment'], comment)
-            self.web_element_click_xpath(page_elements.buttons['status_change_button'])
+            time.sleep(0.5)
+            button_click.button(self, 'Change')
 
             self.applicant_statuschange = 'True'
 
@@ -41,7 +42,8 @@ class ChangeStatus(task_config.TaskConfig):
             self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
             self.web_element_click_xpath(page_elements.change_applicant_status['Interviewer_selection_done'])
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['comment'], comment)
-            self.web_element_click_xpath(page_elements.buttons['status_change_button'])
+            time.sleep(4)
+            button_click.button(self, 'Change')
 
             self.applicant_schedule_statuschange = 'True'
 
@@ -58,7 +60,8 @@ class ChangeStatus(task_config.TaskConfig):
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_stage'], stage)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_status'], status)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['comment'], comment)
-            self.web_element_click_xpath(page_elements.buttons['status_change_button'])
+            time.sleep(0.5)
+            button_click.button(self, 'Change')
 
             self.applicant_statuschange = 'True'
 

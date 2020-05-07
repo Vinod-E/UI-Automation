@@ -1,6 +1,7 @@
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.event import test_task_config
+from scripts.crpo.common import button_click
 
 
 class EventOwnersConfig(test_task_config.TestTaskConfig):
@@ -19,13 +20,13 @@ class EventOwnersConfig(test_task_config.TestTaskConfig):
                 self.web_element_click_xpath(page_elements.tabs['event_owner_tab'])
                 self.ui_event_owners_tab = 'Pass'
 
-                self.web_element_click_xpath(page_elements.event_config['event_owner_edit'])
+                button_click.button(self, 'Edit')
                 self.ui_owner_edit_action = 'Pass'
 
-                self.web_element_click_xpath(page_elements.event_config['event_interviewer_add'])
+                self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
 
                 self.driver.execute_script("window.scrollTo(0,200);")
-                self.web_element_click_xpath(page_elements.buttons['update_event_owners'])
+                button_click.button(self, 'Update')
 
                 print('**-------->>> Event Owners has been added')
                 self.ui_event_owner_config = 'Pass'

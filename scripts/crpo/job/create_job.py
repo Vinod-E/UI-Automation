@@ -4,6 +4,7 @@ import image_capture
 import test_data_inputpath
 from logger_settings import ui_logger
 from scripts.crpo.job import job_excel
+from scripts.crpo.common import button_click
 
 
 class CreateJob(job_excel.JobExcelRead):
@@ -50,7 +51,7 @@ class CreateJob(job_excel.JobExcelRead):
             self.web_element_send_keys_xpath(page_elements.job['female_diversity'],
                                              self.xl_female_diversity)
 
-            self.web_element_click_xpath(page_elements.buttons['create-save'])
+            button_click.button(self, 'Create')
 
             self.dismiss_message()
             self.driver.execute_script("window.scrollTo(0,-200);")

@@ -3,6 +3,7 @@ import page_elements
 from datetime import datetime
 from logger_settings import ui_logger
 from scripts.crpo.event import event_excel
+from scripts.crpo.common import button_click
 
 
 class CreateEvent(event_excel.EventExcelRead):
@@ -40,7 +41,7 @@ class CreateEvent(event_excel.EventExcelRead):
                                              self.job_name_sprint_version)
 
             self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
-            self.web_element_click_xpath(page_elements.buttons['done'])
+            button_click.all_buttons(self, 'Done')
 
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Slot"),
                                              self.xl_slot)
@@ -63,7 +64,7 @@ class CreateEvent(event_excel.EventExcelRead):
             self.web_element_click_xpath(page_elements.event['ec_enable'])
 
             self.driver.execute_script("window.scrollTo(0,100);")
-            self.web_element_click_xpath(page_elements.buttons['event_create'])
+            button_click.button(self, 'Create')
 
             # ------------------------------- Validating event ---------------------------------------------------------
             self.event_validation('the event')
