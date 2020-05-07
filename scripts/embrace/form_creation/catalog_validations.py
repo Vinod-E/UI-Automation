@@ -1,5 +1,5 @@
 from scripts.embrace.form_creation import form_validation
-from logger_settings import api_logger
+from logger_settings import ui_logger
 
 class CatalogValidations(form_validation.FormValidations):
     def __init__(self):
@@ -28,7 +28,7 @@ class CatalogValidations(form_validation.FormValidations):
             #         break
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def college_catalog_validations(self):
         try:
@@ -46,5 +46,5 @@ class CatalogValidations(form_validation.FormValidations):
                 self.ui_college_dropdown_four = 'Pass'
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 

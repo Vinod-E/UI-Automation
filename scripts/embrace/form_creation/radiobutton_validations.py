@@ -1,5 +1,5 @@
 from scripts.embrace.form_creation import checkbox_validations
-from logger_settings import api_logger
+from logger_settings import ui_logger
 
 class RadiobuttonValidations(checkbox_validations.CheckboxValidations):
     def __init__(self):
@@ -25,4 +25,4 @@ class RadiobuttonValidations(checkbox_validations.CheckboxValidations):
             self.list_of_radiobutton = ', '.join(self.radiobutton_value)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
