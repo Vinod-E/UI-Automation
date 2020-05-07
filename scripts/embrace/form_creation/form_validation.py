@@ -62,7 +62,7 @@ class FormValidations(form_creation.FormCreation):
                     self.group = True
                     break
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def label_validation(self):
         try:
@@ -173,8 +173,6 @@ class FormValidations(form_creation.FormCreation):
                 print('Element is a link field')
                 if self.xl_java_tutorial == ['Link_Field']:
                     self.ui_java_tutorial = 'Pass'
-
-
 
         except Exception as e:
             print(e)

@@ -1,5 +1,5 @@
 import time
-from logger_settings import api_logger
+from logger_settings import ui_logger
 import xlrd
 from scripts.embrace.form_creation import create_form_excel
 
@@ -14,7 +14,7 @@ class FormCreation(create_form_excel.FormExcelRead):
             self.web_element_send_keys_xpath('//*[@ng-model="vm.groupName"]', group_name)
             self.web_element_click_xpath('//*[@ng-click="vm.addGroupName();$hide()"]')
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def create_form(self):
         self.web_element_click_xpath('//*[@ui-sref="pofu.activity.forms.info"]')

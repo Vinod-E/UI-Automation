@@ -3,13 +3,8 @@ import styles
 import datetime
 from datetime import date
 import test_data_inputpath
-<<<<<<< HEAD
-from logger_settings import api_logger
 from scripts.embrace.form_creation import radiobutton_validations
-=======
 from logger_settings import ui_logger
-from scripts.embrace.form_creation import form_validation
->>>>>>> upstream/master
 
 
 class FormOutputReport(styles.FontColor, radiobutton_validations.RadiobuttonValidations):
@@ -129,7 +124,6 @@ class FormOutputReport(styles.FontColor, radiobutton_validations.RadiobuttonVali
             self.wb_Result.save(test_data_inputpath.output['form_creation_output_report'])
             # ----------------------------------------------------------------------------------------------------------
 
-
         except Exception as error:
             ui_logger.error(error)
 
@@ -233,7 +227,7 @@ class FormOutputReport(styles.FontColor, radiobutton_validations.RadiobuttonVali
                 self.ws.write(3, self.form_group_validate_col, 'Fail', self.style3)
             self.wb_Result.save(test_data_inputpath.output['form_creation_output_report'])
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def create_form_dropdown_output(self):
         try:
@@ -270,7 +264,7 @@ class FormOutputReport(styles.FontColor, radiobutton_validations.RadiobuttonVali
             #     self.ws.write(5, self.college_validation_col, 'Fail', self.style3)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def create_form_checkbox_output(self):
         try:
@@ -292,7 +286,7 @@ class FormOutputReport(styles.FontColor, radiobutton_validations.RadiobuttonVali
             #     self.ws.write(3, self.checkbox_status_col, 'Fail', self.style3)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def create_form_radiobutton_output(self):
         try:
@@ -314,7 +308,7 @@ class FormOutputReport(styles.FontColor, radiobutton_validations.RadiobuttonVali
             #     self.ws.write(3, self.radiobutton_status_col, 'Fail', self.style3)
 
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
     def overall_status(self):
         try:
