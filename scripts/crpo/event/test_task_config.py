@@ -2,7 +2,7 @@ import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.event import create_event
-from selenium.webdriver.common.keys import Keys
+from scripts.crpo.common import button_click
 
 
 class TestTaskConfig(create_event.CreateEvent):
@@ -65,7 +65,7 @@ class TestTaskConfig(create_event.CreateEvent):
                 self.web_element_click_xpath(page_elements.event_config['test_active'])
 
                 time.sleep(0.5)
-                self.web_element_click_xpath(page_elements.buttons['event_test_save'])
+                button_click.button(self, 'Save')
 
                 self.driver.refresh()
                 time.sleep(1)

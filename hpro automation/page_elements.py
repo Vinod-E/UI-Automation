@@ -60,32 +60,12 @@ buttons = {
     'create': '//*[@ng-click="vm.create();"]',
     'update': '//*[@ng-click="vm.update();"]',
     'create-save': '//*[@ng-click="vm.save();"]',
-    'send_sms': '//*[@ng-click="vm.sendSms()"]',
-    'sp-save': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/button[2]',
     'template-search': '//*[@ng-click="vm.service.templates.search();"]',
-    'template_save': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/'
-                     'div/div[2]/div/div/div[2]/div/div/button[2]',
     'new_template_search': '//*[@ng-click="vm.actionClicked({}{}{})"]',
-    'use': '//*[@ng-click="data.actionClicked({}{}{},292)"]',
-    'job_ec_save': '//*[@ng-click="vm.saveEcConfig();"]',
     'job_ec_close': '//*[@ng-click="vm.cancel();"]',
     'done': '//*[@ng-click="$hide();"]',
-    'job_task_config_save': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/div/button[2]',
-    'Hopping_save_button': '//*[@ng-click="vm.saveApplicantAutomationConfig();"]',
-    'save_interviewers_to_panel': '//*[@ng-click="vm.saveInterviewDetailForJobRole()"]',
-    'job_requirement_tag': '//*[@ng-click="vm.tagJobRoleToRequirement(data.jobRoleId);"]',
     'ok': '//*[@ng-click="data.result=true;$hide();"]',
-    'search': '//*[@ng-click="vm.apply();$hide();"]',
-    'requirement_create': '//*[@ng-if="!vm.data.requirementId"]',
-    'dont_allow': '//*[@id="mainBodyElement"]/div[3]/div/div/div[3]/div/'
-                  'div[2]/ui-view/div/div[1]/div/div[2]/div/label[2]',
-    'clone/save': '//*[@type="submit"]',
-    'event_create': '//*[@id="mainBodyElement"]/div[3]/section/div/div/div[3]/div/button[2]',
-    'event_test_save': '//*[@ng-click="vm.tagTestToEvent()"]',
-    'update_event_owners': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div[2]/section/div[2]/div/'
-                           'create-update-event-owners/div/div[2]/div/button[2]',
-    'event_upload_candidate_save': '//*[@data-ng-click="vm.consolidateCandidateInfo();"]',
-    'status_change_button': '//*[@ng-click="vm.changeCandidateStatus()"]',
+    # 'search': '//*[@ng-click="vm.apply();$hide();"]',
     'cancel_confirm': '//*[@ng-click="vm.cancelInterview();"]',
     'cancel_request': '//*[@ng-click="vm.cancelInterviewReq();"]',
     'save_draft': '//*[@ng-click="vm.saveDraft();"]',
@@ -98,9 +78,8 @@ buttons = {
     'new_save_draft': '//*[@ng-if="vm.data.configs.isDraftAllowed"]',
     'new_submit_feedback': '//*[@ng-if="vm.data.configs.isSubmitAllowed"]',
     'tag_applicant_event': '//*[@ng-click="vm.ValidateAndTagCandidatesToEvent()"]',
-    'copy': '//*[@ngclipboard-success="vm.success()"]',
     'close_pop_details_window': '//*[@ng-click="$hide()"]',
-    'send': '//*[@ng-click="vm.send()"]',
+    # 'send': '//*[@ng-click="vm.send()"]',
     'query_save': '//*[@ng-click="vm.actionClicked({}{}{});"]'.format("'", 'save', "'"),
     'query_raise': '//*[@ng-click="vm.saveQuery()"]',
     'save_invite_int': '//*[@ng-click="vm.validateAndSave()"]',
@@ -108,6 +87,7 @@ buttons = {
     'confirm': 'button',
     'clear_refresh': '//*[@ng-click="vm.refreshList()"]',
     'common_button': "//button[text()='{}']",
+    'all_buttons': "//*[text()='{}']",
 }
 
 text_fields = {
@@ -159,32 +139,16 @@ grid_actions = {
     'refresh': 'cardlist-view-refresh'
 }
 applicant_actions = {
+    'actions': "//div[text()='{}']",
     'more_actions': '//*[@id="req-list-view"]/tr/td[2]/span[3]',
     'job_more_actions': '//*[@id="req-list-view"]/tr/td[2]/span[4]/a',
-    'job_test_status': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[1]/div/div[2]',
-    'job_download_resume': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[9]/div/div[2]',
-    'job_single_pdf': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[11]/div/div[2]',
-    'job_send_admit_card': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[5]/div/div[2]',
     'Change_applicant_status': 'cardlist-view-Change-Applicant Status',
     'job_Change_applicant_status': 'cardlist-view-Change-Applicant(s) Status',
     'compose_mail': 'cardlist-view-Compose-Mail',
     'send_sms': 'cardlist-view-Send-SMS',
     'tag_applicants': 'cardlist-view-Tag-Applicant(s) to Job/Test',
     'untag_applicants': 'cardlist-view-Untag-Applicant(s)',
-    'registration_link': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[6]/div/div[2]',
-    'send_admit_card': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[7]/div/div[2]',
-    'view_registration_link': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[8]/div/div[2]',
     'copy_registration_link': 'cardlist-view-Copy-Registration Link',
-    'manage_task': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[13]/div/div[2]',
-    'view_test_status': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[14]/div/div[2]',
-    'download_resume': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[15]/div/div[2]',
-    'single_pdf': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[16]/div/div[2]',
-    'docket': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[17]/div/div[2]',
-    'compare_id': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[18]/div/div[2]',
-    'upload_attachment': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[19]/div/div[2]',
-    'change_bu/re_RL': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[20]/div/div[2]',
-    'applicant_json': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[21]/div/div[2]',
-    'disable/enable_registration_link': '//*[@id="req-list-view"]/tr/td[2]/div/div[3]/div[22]/div/div[2]',
 }
 advance_search = {
     'search': 'cardlist-view-filter',
@@ -250,8 +214,6 @@ job = {
 }
 
 job_config = {
-    'template_use': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]/div/div/'
-                    'interview-templates-search/div/accordian-row-table/table/tbody/tr[1]/td[4]/span/div/div/span[1]',
     'template_comment': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]/div/'
                         'div/div[1]/div[2]/div/table/tbody/tr[2]/td[2]/div/label[1]',
     'template_reject': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[4]/div/div/div[2]/div/div/div[1]/div[2]/'
@@ -328,13 +290,8 @@ event_config = {
                       'td[4]/span/span',
     'test_is_config': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div[2]/section/div[2]/div/section/div[1]/'
                       'div/div/div/div[2]/accordian-row-table/table/tbody/tr/td[3]/span/span',
-    'event_owner_edit': '//*[@ui-sref="crpo.events.manageEvent.eventDetails.manageOwners"]',
-    'event_interviewer_add': '//*[@data-ng-click="vm.moveAllItemsRight();"]',
-    'Next_Button': '//*[@data-ng-click="vm.gotoNextState()"]',
     'declare_checkbox': '//*[@type="checkbox"][@ng-model="vm.isAgreement"]',
     'signature': '//*[@type="text"][@ng-model="vm.signature"]',
-    'Agree': '//*[@type="button"][@data-ng-click="$hide();vm.isAgreement=true;"]',
-    'edit_candidate_details': '//*[@title="Edit"]',
     'upload_candidate_name': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[1]/div/input',
     'upload_candidate_usn': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[9]/div/input',
     'upload_candidate_email': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[3]/div/input',

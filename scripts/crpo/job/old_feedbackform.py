@@ -2,7 +2,7 @@ import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.job import ec_task_config
-from selenium.webdriver.common.keys import Keys
+from scripts.crpo.common import button_click
 
 
 class FeedbackForm(ec_task_config.ECTaskconfig):
@@ -35,7 +35,7 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
             self.driver.execute_script("window.scrollTo(0,200);")
 
             time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.job_config['template_use'])
+            button_click.all_buttons(self, 'Use')
 
             self.web_element_click_xpath(page_elements.job_config['template_comment'])
 
@@ -43,7 +43,7 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
 
             self.driver.execute_script("window.scrollTo(0,300);")
             time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.buttons['template_save'])
+            button_click.button(self, 'Save')
 
             # --------------- For validation check ---------------
             self.feedback_form_config_flag = 'Pass'

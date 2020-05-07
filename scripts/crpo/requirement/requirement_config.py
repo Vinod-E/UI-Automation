@@ -2,6 +2,7 @@ import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.requirement import create_requirement
+from scripts.crpo.common import button_click
 
 
 class RequirementConfig(create_requirement.CreateRequirement):
@@ -27,13 +28,13 @@ class RequirementConfig(create_requirement.CreateRequirement):
             self.web_element_click_xpath(page_elements.tabs['req_duplicity_check'])
             self.ui_req_duplicity_tab = 'Pass'
 
-            self.web_element_text_xpath(page_elements.buttons['dont_allow'])
             time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.buttons['dont_allow'])
+            button_click.all_buttons(self, ' Dont Allow')
 
             # ----------------------------------- Validation -----------------------------------------------------------
+            self.web_element_text_xpath(page_elements.buttons['all_buttons'].format(' Dont Allow'))
             self.dont_allow = self.text_value
-            if self.dont_allow == 'Dont Allow':
+            if self.dont_allow.strip() == 'Dont Allow':
                 print('**-------->>> Duplicity check configured')
                 self.ui_req_duplicity = 'Pass'
             else:

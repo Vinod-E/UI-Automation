@@ -2,6 +2,7 @@ import time
 import page_elements
 import common_login
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 
 
 class AdvanceSearch(common_login.CommonLogin):
@@ -38,7 +39,8 @@ class AdvanceSearch(common_login.CommonLogin):
 
             self.driver.execute_script("window.scrollTo(0,100);")
             time.sleep(2)
-            self.web_element_click_xpath(page_elements.buttons['search'])
+            button_click.button(self, 'Search')
+            # self.web_element_click_xpath(page_elements.buttons['search'])
             print('**-------->>> {} advance search is working'.format(where_search_is_happening))
             self.search = 'Pass'
 
@@ -49,7 +51,8 @@ class AdvanceSearch(common_login.CommonLogin):
         try:
 
             self.web_element_send_keys_name(page_elements.advance_search['assessment_name'], name)
-            self.web_element_click_xpath(page_elements.buttons['search'])
+            button_click.button(self, 'Search')
+            # self.web_element_click_xpath(page_elements.buttons['search'])
             print('**-------->>> {} advance search is working'.format(where_search_is_happening))
             self.search = 'Pass'
 
@@ -62,7 +65,8 @@ class AdvanceSearch(common_login.CommonLogin):
             self.driver.find_element_by_name(page_elements.advance_search['a_name']).clear()
             self.web_element_send_keys_name(page_elements.advance_search['a_name'], name)
 
-            self.web_element_click_xpath(page_elements.buttons['search'])
+            button_click.button(self, 'Search')
+            # self.web_element_click_xpath(page_elements.buttons['search'])
             print('**-------->>> {} advance search is working'.format(where_search_is_happening))
             self.search = 'Pass'
 
@@ -73,6 +77,7 @@ class AdvanceSearch(common_login.CommonLogin):
 
         self.web_element_send_keys_name(page_elements.advance_search['job_applicant_name'], job_name)
         time.sleep(1.5)
-        self.web_element_click_xpath(page_elements.buttons['search'])
+        button_click.button(self, 'Search')
+        # self.web_element_click_xpath(page_elements.buttons['search'])
         print('**-------->>> {} advance search is working'.format(job_name))
         self.job_search = 'True'

@@ -3,6 +3,7 @@ import page_elements
 from datetime import datetime
 from logger_settings import ui_logger
 from scripts.crpo.assessment import assessment_excel
+from scripts.crpo.common import button_click
 
 
 class CloneAssessment(assessment_excel.AssessmentExcelRead):
@@ -59,7 +60,7 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('To'),
                                              self.test_from_date)
 
-            self.web_element_click_xpath(page_elements.buttons['clone/save'])
+            button_click.button(self, 'Clone')
             time.sleep(1.5)
 
             # ---------------------------- Search and validating with cloned assessment --------------------------------
