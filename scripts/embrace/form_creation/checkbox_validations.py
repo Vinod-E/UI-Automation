@@ -1,12 +1,11 @@
 from scripts.embrace.form_creation import catalog_validations
-from logger_settings import api_logger
+from logger_settings import ui_logger
 
 class CheckboxValidations(catalog_validations.CatalogValidations):
     def __init__(self):
         super(CheckboxValidations, self).__init__()
         self.ui_checkbox = ''
         self.checkbox_value = []
-
 
     def checkbox_validation(self):
         try:
@@ -25,7 +24,6 @@ class CheckboxValidations(catalog_validations.CatalogValidations):
                 self.ui_checkbox = 'Pass'
             self.list_of_checkbox = ', '.join(self.checkbox_value)
 
-
         except Exception as error:
-            api_logger.error(error)
+            ui_logger.error(error)
 
