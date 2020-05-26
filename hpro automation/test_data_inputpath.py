@@ -26,6 +26,8 @@ crpo_test_data_file = {
 
     'live_interview_file': generic_input_path + crpo_testdata + 'Live_interview.xls',
 
+    'quick_interview_file': generic_input_path + crpo_testdata + 'Quick_Interview.xls',
+
     'applicant_action_file': generic_input_path + crpo_testdata + 'Applicants_actions.xls',
 
     'help_desk': generic_input_path + crpo_testdata + 'Help_desk.xls',
@@ -46,6 +48,7 @@ output = {
     'old_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_old.xls',
     'live_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_live.xls',
     'new_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_new.xls',
+    'quick_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_quick.xls',
     'Applicant_action_output_report': generic_input_path + crpo_reports + 'UI_Applicant_Action_Flow.xls',
     'help_desk_output_report': generic_input_path + crpo_reports + 'UI_Help_Desk_Flow.xls',
     'manage_interviewers_output_report': generic_input_path + crpo_reports + 'UI_Manage_interviewers_Flow.xls',
