@@ -62,6 +62,7 @@ buttons = {
     'create-save': '//*[@ng-click="vm.save();"]',
     'template-search': '//*[@ng-click="vm.service.templates.search();"]',
     'new_template_search': '//*[@ng-click="vm.actionClicked({}{}{})"]',
+    'quick_schedule': '//*[@ng-click="vm.actionClicked({}{}{});"]',
     'job_ec_close': '//*[@ng-click="vm.cancel();"]',
     'done': '//*[@ng-click="$hide();"]',
     'ok': '//*[@ng-click="data.result=true;$hide();"]',
@@ -93,7 +94,8 @@ buttons = {
 text_fields = {
     # ------------------------------------------ Text Fields -----------------------------------------------------------
     'text_field': '//*[@type="text"][@placeholder="{}"]',
-    'text_number': '//*[@type="number"][@placeholder="{}"]'
+    'text_number': '//*[@type="number"][@placeholder="{}"]',
+    'place_holder': '//*[@placeholder="{}"]'
 }
 
 file = {
@@ -332,6 +334,7 @@ interview = {
     'c_r_comment': '//*[@ng-model="data.comments"]',
     'maybe': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
     'shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
+    'Quick_shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[2]',
     'rating_1': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'
                 'accordian-row-table/table/tbody/tr[2]/td/div/div[1]/select',
     'rating_2': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/'

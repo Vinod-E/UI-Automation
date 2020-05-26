@@ -17,3 +17,11 @@ def all_buttons(self, button_name):
             web_element_click_xpath(self, page_elements.buttons['all_buttons'].format(button_name))
     except Exception as error:
         ui_logger(error)
+
+
+def more_button(self):
+    try:
+        webdriver_functions.WebdriverFunctions.\
+            web_element_click_xpath(self, page_elements.applicant_actions['more_actions'])
+    except Exception as error:
+        ui_logger(error)
