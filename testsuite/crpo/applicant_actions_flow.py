@@ -19,9 +19,9 @@ class ApplicantActionFlow(applicant_actions_output.ApplicantActionsOutputFile):
             self.send_sms()
             self.tag_applicants_to_job_test()
             self.untag_applicant()
-            self.registration_link()
+            # self.registration_link()
             self.admit_card()
-            self.view_registration_link()
+            # self.view_registration_link()
             self.manage_task()
             self.view_test_status()
             self.download_resume()
@@ -34,7 +34,7 @@ class ApplicantActionFlow(applicant_actions_output.ApplicantActionsOutputFile):
             self.disable_registration_link()
             self.enable_registration_link()
 
-            self.fill_registration()
+            # self.fill_registration()
             self.re_registration_link()
 
             self.event_applicant_actions_output_report()

@@ -9,6 +9,7 @@ class LiveInterviewExcelRead(common_file.CommonFile):
         self.start_date_time = datetime.datetime.now()
         super(LiveInterviewExcelRead, self).__init__()
 
+        self.is_behalf_int = 1
         self.stage1_l = ''
         self.stage2_l = ''
 
@@ -28,6 +29,8 @@ class LiveInterviewExcelRead(common_file.CommonFile):
         self.xl_comment_l = []
         self.xl_int1_l = []
         self.xl_int2_l = []
+        self.xl_int1_name = []
+        self.xl_int2_name = []
 
         self.event_sprint_version_l = []
 
@@ -53,6 +56,10 @@ class LiveInterviewExcelRead(common_file.CommonFile):
                 self.xl_int1_l.append(str(rows[4]))
             if rows[5]:
                 self.xl_int2_l.append(str(rows[5]))
+            if rows[6]:
+                self.xl_int1_name.append(str(rows[6]))
+            if rows[7]:
+                self.xl_int2_name.append(str(rows[7]))
 
             for j in self.xl_event_name_l:
                 event_name = j

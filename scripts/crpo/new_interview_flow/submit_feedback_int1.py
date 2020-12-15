@@ -1,6 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 from scripts.crpo.new_interview_flow import save_darft_new
 
 
@@ -17,12 +18,14 @@ class SubmitFeedbackInt1(save_darft_new.DraftNew):
         try:
             self.web_element_click_id(page_elements.grid_actions['provide_feedback'])
 
-            time.sleep(1)
+            time.sleep(5)
             self.driver.switch_to.window(self.driver.window_handles[1])
+            self.driver.execute_script("window.scrollTo(0,-200);")
 
             self.web_element_send_keys_xpath(page_elements.new_interview['overall'], 'INT1')
 
-            self.web_element_click_xpath(page_elements.buttons['new_submit_feedback'])
+            button_click.button(self, 'Submit Feedback')
+            button_click.button(self, 'Agree and Submit')
             time.sleep(5)
 
             self.driver.switch_to.window(self.driver.window_handles[0])

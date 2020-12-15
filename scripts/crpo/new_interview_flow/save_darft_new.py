@@ -1,6 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 from scripts.crpo.new_interview_flow import provide_feedback_new
 
 
@@ -28,18 +29,18 @@ class DraftNew(provide_feedback_new.ProvideFeedbackNew):
             time.sleep(1)
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.job_sprint_version_n, 'Event')
-            self.event_getby_details()
+            self.event_getby_name()
             self.event_validation('save draft process')
-            self.floating_action()
+            self.actions_dropdown()
             time.sleep(0.5)
+            self.floating_action('event_interviews')
 
-            self.web_element_click_xpath(page_elements.floating_actions['event_interviews'])
             self.check_box()
             self.provide_feedback_new(self.xl_comment_n)
 
             # ------------- save draft
             self.driver.execute_script("window.scrollTo(0,100);")
-            self.web_element_click_xpath(page_elements.buttons['new_save_draft'])
+            button_click.button(self, 'Save as Draft')
 
             time.sleep(1)
             self.driver.close()

@@ -30,22 +30,22 @@ class ReSchedule(schedule_old.Schedule):
             # ----------------------- Reschedule Process --------------------------------------------------------------
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
-            self.event_getby_details()
+            self.event_getby_name()
             self.event_validation('reschedule process')
-            self.floating_action()
-
-            self.web_element_click_xpath(page_elements.floating_actions['event_interviews'])
+            self.actions_dropdown()
+            self.floating_action('event_interviews')
 
             time.sleep(0.5)
             self.check_box()
 
             self.web_element_click_id(page_elements.grid_actions['reschedule'])
-            time.sleep(0.5)
+            time.sleep(3)
             self.web_element_send_keys_xpath(page_elements.interview['comments'], self.xl_cancel_reschedule_comment_o)
+            time.sleep(1)
             button_click.button(self, 'Reschedule')
 
             time.sleep(1)
-            self.applicant_getby_details(self.event_sprint_version_o)
+            self.applicant_getby_name(self.event_sprint_version_o)
             self.driver.switch_to.window(self.driver.window_handles[1])
 
             # ------- Validation check -----------------------

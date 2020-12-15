@@ -1,7 +1,7 @@
-from scripts.embrace.form_creation import checkbox_validations
+from scripts.embrace.form_creation import screening_rule_creation
 from logger_settings import ui_logger
 
-class RadiobuttonValidations(checkbox_validations.CheckboxValidations):
+class RadiobuttonValidations(screening_rule_creation.screening_rule_input):
     def __init__(self):
         super(RadiobuttonValidations, self).__init__()
         self.ui_radiobutton = ''

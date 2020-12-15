@@ -17,8 +17,8 @@ class CreateEvent(event_excel.EventExcelRead):
         self.validation_check = ''
         self.get_event_name = []
 
-        self.ui_create_event = []
-        self.event_validation_check = []
+        self.ui_create_event = ''
+        self.event_validation_check = ''
 
     def create_event(self):
         try:
@@ -29,10 +29,10 @@ class CreateEvent(event_excel.EventExcelRead):
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name"),
                                              self.event_sprint_version)
 
-            time.sleep(1)
+            time.sleep(4)
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Requirement"),
                                              self.req_name_sprint_version)
-            time.sleep(1)
+            time.sleep(1.5)
             self.drop_down_selection()
 
             self.web_element_click_xpath(page_elements.event['job_field'])
@@ -53,6 +53,9 @@ class CreateEvent(event_excel.EventExcelRead):
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("To"),
                                              self.event_date)
 
+            self.web_element_send_keys_xpath(page_elements.text_fields['place_holder'].format("Reporting Date"),
+                                             self.event_date)
+
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Event Manager"),
                                              self.xl_em)
             self.drop_down_selection()
@@ -67,30 +70,17 @@ class CreateEvent(event_excel.EventExcelRead):
             button_click.button(self, 'Create')
 
             # ------------------------------- Validating event ---------------------------------------------------------
-            self.event_validation('the event')
-            if self.validation_check == 'True':
+            self.driver.execute_script("window.scrollTo(0,-100);")
+            self.getby_details_screen(self.event_sprint_version)
+            if self.header_name.strip() == self.event_sprint_version:
+                print('**-------->>> Event Validated and continuing '
+                      'with created event :: {}'.format(self.event_sprint_version))
                 print('**-------->>> Event created successfully')
                 self.ui_create_event = 'Pass'
+                self.event_validation_check = 'Pass'
             else:
                 print('Failed to create event <<<--------**')
+                print('Event validation failed Or event creation failed <<<--------**')
 
         except Exception as error:
             ui_logger.error(error)
-
-    def event_validation(self, config_name):
-        # ------------------------------ validating the event name -------------------------------------------------
-        try:
-            self.driver.execute_script("window.scrollTo(0,-100);")
-            self.web_element_text_xpath(
-                page_elements.event_validation['get_event_name'].format(self.event_sprint_version))
-            self.get_event_name = self.text_value
-
-            if self.get_event_name.strip() == self.event_sprint_version:
-                self.validation_check = 'True'
-                self.event_validation_check = 'Pass'
-                print('**-------->>> Event Validated and continuing '
-                      'with {} to created event :: {}'.format(config_name, self.get_event_name.strip()))
-            else:
-                print('Event validation failed Or event creation failed <<<--------**')
-        except Exception as e:
-            ui_logger.error(e)

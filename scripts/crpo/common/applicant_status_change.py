@@ -17,8 +17,9 @@ class ChangeStatus(task_config.TaskConfig):
             self.driver.execute_script("window.scrollTo(0,200);")
 
             self.web_element_click_id(page_elements.applicant_actions['Change_applicant_status'])
-            time.sleep(3)
+            time.sleep(5)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_stage'], stage)
+            time.sleep(1)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_status'], status)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['comment'], comment)
             time.sleep(0.5)
@@ -35,7 +36,7 @@ class ChangeStatus(task_config.TaskConfig):
             self.driver.execute_script("window.scrollTo(0,-100);")
 
             self.web_element_click_id(page_elements.applicant_actions['Change_applicant_status'])
-            time.sleep(3)
+            time.sleep(6)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_stage'], stage)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_status'], status)
             self.web_element_click_xpath(page_elements.change_applicant_status['Interviewer'])
@@ -56,9 +57,11 @@ class ChangeStatus(task_config.TaskConfig):
             self.driver.execute_script("window.scrollTo(0,200);")
 
             self.web_element_click_id(page_elements.applicant_actions['job_Change_applicant_status'])
-            time.sleep(3)
+            time.sleep(1)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_stage'], stage)
+            time.sleep(1)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['change_status'], status)
+            time.sleep(1)
             self.web_element_send_keys_xpath(page_elements.change_applicant_status['comment'], comment)
             time.sleep(0.5)
             button_click.button(self, 'Change')

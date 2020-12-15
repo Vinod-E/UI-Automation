@@ -1,6 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 from scripts.crpo.old_interview_flow import unlock_feedback
 
 
@@ -30,15 +31,15 @@ class DecisionFeedbackUpdate(unlock_feedback.UnlockFeedbackForm):
             self.crpo_logout()
             self.login('InterviewerONE', self.xl_username_int1_o, self.xl_password_int1_o)
             # -------------------------------- unlock feedback form -------------------------------------------------
+            time.sleep(4)
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
-            self.event_getby_details()
+            self.event_getby_name()
             self.event_validation('unlock feedback form')
-            self.floating_action()
+            self.actions_dropdown()
+            self.floating_action('event_interviews')
             time.sleep(0.5)
 
-            self.web_element_click_xpath(page_elements.floating_actions['event_interviews'])
-            time.sleep(0.3)
             self.web_element_click_xpath(page_elements.buckets['completed_interviews'])
             self.web_element_click_id(page_elements.grid_actions['refresh'])
 
@@ -48,11 +49,11 @@ class DecisionFeedbackUpdate(unlock_feedback.UnlockFeedbackForm):
 
             # ------ Submitted
             time.sleep(1)
-            self.web_element_click_xpath(page_elements.buttons['submit_feedback'])
+            button_click.all_buttons(self, 'Update Feedback')
             self.driver.execute_script("window.scrollTo(0,200);")
             time.sleep(0.7)
-            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
-            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
+            button_click.all_buttons(self, 'Agree and Submit')
+            button_click.all_buttons(self, 'Agree and Submit')
             time.sleep(5)
             self.driver.switch_to.window(self.driver.window_handles[0])
 

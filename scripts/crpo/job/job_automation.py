@@ -13,11 +13,13 @@ class JobAutomation(old_feedbackform.FeedbackForm):
         self.ui_job_automation_tab = []
 
     def job_automation_config(self):
-        self.job_validation('Automation Config')
-        if self.job_name_breadcumb == self.job_name_sprint_version:
+        self.getby_details_screen(self.job_name_sprint_version)
+        if self.header_name.strip() == self.job_name_sprint_version:
+            print('**-------->>> Job automations are configuring to job:: {}'.format(self.job_name_sprint_version))
+
             try:
                 time.sleep(2)
-                self.web_element_click_xpath(page_elements.tabs['job_automation_tab'])
+                self.sub_tab('job_automation_tab')
                 self.ui_job_automation_tab = 'Pass'
 
                 # --------------- Aptitude stage hopping --------------------------------
@@ -64,7 +66,7 @@ class JobAutomation(old_feedbackform.FeedbackForm):
 
                 self.web_element_click_xpath(page_elements.job_config['ready_schedule_button'])
 
-                self.driver.execute_script("window.scrollTo(0,-200);")
+                self.driver.execute_script("window.scrollTo(0,200);")
                 time.sleep(1)
                 button_click.button(self, 'Save')
                 time.sleep(2)

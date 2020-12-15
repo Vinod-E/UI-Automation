@@ -1,6 +1,7 @@
 import time
 import page_elements
-from scripts.crpo.common import (settings, applicant_actions)
+from logger_settings import ui_logger
+from scripts.crpo.common import (settings, applicant_actions, button_click)
 
 
 class ValidationCheck(settings.Settings):
@@ -11,6 +12,7 @@ class ValidationCheck(settings.Settings):
         self.task_validation_check = ''
         self.enable_link_validation_check = ''
         self.disable_link_validation_check = ''
+        self.event_validation_check = ''
 
     def glowing_messages(self, message):
         self.web_element_text_xpath(page_elements.glowing_messages['notifier'])
@@ -47,7 +49,7 @@ class ValidationCheck(settings.Settings):
             print('Something else is wrong with the link <<<---------**')
         self.driver.close()
         self.driver.switch_to.window(self.driver.window_handles[0])
-        self.web_element_click_xpath(page_elements.buttons['done'])
+        button_click.all_buttons(self, 'CANCEL')
         time.sleep(2)
 
     def disable_link_validation(self):
@@ -65,5 +67,23 @@ class ValidationCheck(settings.Settings):
             print('Something else is wrong with the link <<<---------**')
         self.driver.close()
         self.driver.switch_to.window(self.driver.window_handles[0])
-        self.web_element_click_xpath(page_elements.buttons['done'])
+        button_click.all_buttons(self, 'CANCEL')
         time.sleep(2)
+
+    def event_validation(self, config_name, event_name):
+        # ------------------------------ validating the event name -------------------------------------------------
+        try:
+            self.driver.execute_script("window.scrollTo(0,-100);")
+            self.web_element_text_xpath(
+                page_elements.event_validation['get_event_name'].format(event_name))
+            get_event_name = self.text_value
+
+            if get_event_name.strip() == event_name:
+                self.event_validation_check = 'True'
+                print('**-------->>> Event Validated and continuing '
+                      'with {} to created event :: {}'.format(config_name, get_event_name.strip()))
+            else:
+                print('Event validation failed Or event creation failed <<<--------**')
+        except Exception as e:
+            ui_logger.error(e)
+

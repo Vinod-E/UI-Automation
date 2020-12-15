@@ -7,6 +7,7 @@ class CheckboxValidations(catalog_validations.CatalogValidations):
         self.ui_checkbox = ''
         self.checkbox_value = []
 
+
     def checkbox_validation(self):
         try:
             self.web_element_text_xpath('/html/body/div[2]/div/section/div/div/div/div/div/div/div[2]/div[1]/div[4]/div[2]/div/div[2]'
@@ -23,6 +24,7 @@ class CheckboxValidations(catalog_validations.CatalogValidations):
                 print('checkbox is pakistan')
                 self.ui_checkbox = 'Pass'
             self.list_of_checkbox = ', '.join(self.checkbox_value)
+
 
         except Exception as error:
             ui_logger.error(error)

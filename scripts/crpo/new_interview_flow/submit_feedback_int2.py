@@ -1,6 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 from scripts.crpo.new_interview_flow import submit_feedback_int1
 
 
@@ -30,19 +31,18 @@ class SubmitFeedbackInt2(submit_feedback_int1.SubmitFeedbackInt1):
             time.sleep(1)
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.job_sprint_version_n, 'Event')
-            self.event_getby_details()
+            self.event_getby_name()
             self.event_validation('submit feedback process by int2')
-            self.floating_action()
+            self.actions_dropdown()
             time.sleep(0.5)
-
-            self.x_path_element_webdriver_wait(page_elements.floating_actions['event_interviews'])
-            self.xpath.click()
+            self.floating_action('event_interviews')
 
             # ------------- submit feedback
             self.check_box()
             self.provide_feedback_new(self.xl_comment_n)
 
-            self.web_element_click_xpath(page_elements.buttons['new_submit_feedback'])
+            button_click.button(self, 'Submit Feedback')
+            button_click.button(self, 'Agree and Submit')
             time.sleep(5)
 
             self.driver.switch_to.window(self.driver.window_handles[0])

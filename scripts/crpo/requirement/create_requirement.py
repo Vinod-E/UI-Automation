@@ -10,29 +10,26 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
     def __init__(self):
         super(CreateRequirement, self).__init__()
 
-        self.ui_create_requirement = []
-        self.ui_requirement_validation = []
+        self.ui_create_requirement = ''
+        self.ui_requirement_validation = ''
         self.req_name_breadcumb = ""
 
     def create_requirement(self):
-
         try:
-
             self.driver.refresh()
             time.sleep(2)
             self.requirement_tab()
 
             self.web_element_click_xpath(page_elements.buttons['create'])
-
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name"),
                                              self.requirement_sprint_version)
-
             time.sleep(0.2)
             self.web_element_click_xpath(page_elements.requirement['job_selection_field'])
 
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Search"),
                                              self.job_sprint_version)
 
+            time.sleep(2)
             self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
 
             button_click.all_buttons(self, 'Done')
@@ -52,28 +49,15 @@ class CreateRequirement(requirement_excel.RequirementExcelRead):
             image_capture.screen_shot(self, 'Requirement_created')
 
             # -------------------------------- Validation --------------------------------------------------------------
-            self.requirement_validation('the requirement')
-            if self.req_name_breadcumb == self.requirement_sprint_version:
+            self.getby_details_screen(self.requirement_sprint_version)
+            if self.header_name.strip() == self.requirement_sprint_version:
                 print('**-------->>> Requirement created successfully ')
+                print('**-------->>> Req Validated and continuing '
+                      'with the created requirement :: {}'.format(self.requirement_sprint_version))
                 self.ui_create_requirement = 'Pass'
+                self.ui_requirement_validation = 'Pass'
             else:
                 print('Failed to create Requirement <<<--------**')
 
         except Exception as create_req:
             ui_logger.error(create_req)
-
-    def requirement_validation(self, config_name):
-
-        try:
-            time.sleep(1)
-            self.web_element_text_xpath(page_elements.requirement_validations['requirement_name_breadcumb'])
-            self.req_name_breadcumb = self.text_value
-        except Exception as e1:
-            ui_logger.error(e1)
-
-        if self.req_name_breadcumb == self.requirement_sprint_version:
-            self.ui_requirement_validation = 'Pass'
-            print('**-------->>> Req Validated and continuing '
-                  'with {} to created requirement :: {}'.format(config_name, self.req_name_breadcumb))
-        else:
-            print('Req validation failed Or Req creation failed <<<--------**')

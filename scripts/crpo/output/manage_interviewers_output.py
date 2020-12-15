@@ -94,6 +94,7 @@ class ManageInterviewersOutput(styles.FontColor, em_acceptance.EmAcceptance):
             else:
                 self.ws.write(7, self.admin_status_col, 'Fail', self.style3)
             # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['manage_interviewers_output_report'])
 
         except Exception as error:
             ui_logger.error(error)
@@ -131,6 +132,7 @@ class ManageInterviewersOutput(styles.FontColor, em_acceptance.EmAcceptance):
             else:
                 self.ws.write(5, self.invite_int_status_col, 'Fail', self.style3)
             # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['manage_interviewers_output_report'])
 
         except Exception as error:
             ui_logger.error(error)
@@ -168,6 +170,7 @@ class ManageInterviewersOutput(styles.FontColor, em_acceptance.EmAcceptance):
             else:
                 self.ws.write(5, self.manage_int_status_col, 'Fail', self.style3)
             # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['manage_interviewers_output_report'])
 
         except Exception as error:
             ui_logger.error(error)
@@ -233,6 +236,7 @@ class ManageInterviewersOutput(styles.FontColor, em_acceptance.EmAcceptance):
             else:
                 self.ws.write(9, self.acceptance_int1_status_col, 'Fail', self.style3)
             # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['manage_interviewers_output_report'])
 
         except Exception as error:
             ui_logger.error(error)
@@ -298,7 +302,7 @@ class ManageInterviewersOutput(styles.FontColor, em_acceptance.EmAcceptance):
             else:
                 self.ws.write(9, self.acceptance_int2_status_col, 'Fail', self.style3)
             # ----------------------------------------------------------------------------------------------------------
-
+            self.wb_Result.save(test_data_inputpath.output['manage_interviewers_output_report'])
         except Exception as error:
             ui_logger.error(error)
 
@@ -412,7 +416,7 @@ class ManageInterviewersOutput(styles.FontColor, em_acceptance.EmAcceptance):
             else:
                 self.ws.write(16, self.em_status_col, 'Fail', self.style3)
             # ----------------------------------------------------------------------------------------------------------
-
+            self.wb_Result.save(test_data_inputpath.output['manage_interviewers_output_report'])
         except Exception as error:
             ui_logger.error(error)
 

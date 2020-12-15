@@ -1,6 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 from scripts.crpo.manage_interviewers import nomination_acceptance
 
 
@@ -31,13 +32,18 @@ class EmAcceptance(nomination_acceptance.NominationAcceptance):
 
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_mi, 'Event')
-            self.event_getby_details()
-            self.event_validation('Manage Interviewers')
-            self.floating_action()
-            self.web_element_click_xpath(page_elements.floating_actions['manage_interviewers'])
+            self.event_getby_name()
+            self.driver.execute_script("window.scrollTo(0,-200);")
+            self.getby_details_screen(self.event_sprint_version_mi)
+            if self.header_name.strip() == self.event_sprint_version_mi:
+                print('**-------->>> Event Validated and continuing '
+                      'with {} created event :: {}'.format('Manage Interviewers', self.event_sprint_version_mi))
+
+            self.actions_dropdown()
+            self.floating_action('manage_interviewers')
 
             # -------------------- output report values ----------------
-            if self.get_event_name.strip() == self.event_sprint_version_mi:
+            if self.header_name.strip() == self.event_sprint_version_mi:
                 self.ui_event_tab_em = 'Pass'
                 self.ui_advance_search_em = 'Pass'
                 self.ui_event_details_em = 'Pass'
@@ -91,8 +97,8 @@ class EmAcceptance(nomination_acceptance.NominationAcceptance):
             self.web_element_click_xpath(page_elements.buttons['clear_refresh'])
             time.sleep(2)
             self.web_element_click_xpath(page_elements.grid['all'])
-            self.web_element_click_xpath(page_elements.buttons['common_button'].format('Actions'))
-            self.web_element_click_xpath(page_elements.manage_interviews['approve'])
+            button_click.button(self, 'Actions')
+            button_click.all_buttons(self, 'Approve')
 
             self.web_element_text_xpath(page_elements.title['title'].format('Approved'))
             if self.text_value == 'Approved':

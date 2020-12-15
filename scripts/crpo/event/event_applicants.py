@@ -24,18 +24,20 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
             self.name_search(self.event_sprint_version, 'Event')
             self.ui_event_advance_search = 'Pass'
 
-            self.event_getby_details()
+            self.event_getby_name()
 
         except Exception as error:
             ui_logger.error(error)
 
 # ------ Event applicants
-        self.event_validation('event applicants')
-        if self.validation_check == 'True':
+        self.getby_details_screen(self.event_sprint_version)
+        self.driver.execute_script("window.scrollTo(0,-200);")
+        if self.header_name.strip() == self.event_sprint_version:
+            print('**-------->>> Event Validated and continuing '
+                  'with event applicants to created event :: {}'.format(self.event_sprint_version))
             try:
-                self.floating_action()
-
-                self.web_element_click_xpath(page_elements.floating_actions['View_Applicants'])
+                self.actions_dropdown()
+                self.floating_action('View_Applicants')
                 self.ui_event_applicants_action = 'Pass'
 
                 # --------------------------- Applicant Advance search -------------------------------------------------
@@ -44,6 +46,7 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
                 self.ui_applicant_advance_search = 'Pass'
 
                 # --------------------------- Applicant Grid ------------------------------------------------------
+                self.driver.execute_script("window.scrollTo(0,-200);")
                 self.applicant_get_by()
                 self.ui_applicant_getby = 'Pass'
 
@@ -62,7 +65,7 @@ class EventApplicants(upload_candidates.EventUploadCandidates):
 
     def applicant_get_by(self):
         try:
-            self.applicant_getby_details(self.event_sprint_version)
+            self.applicant_getby_name(self.event_sprint_version)
             self.driver.switch_to.window(self.driver.window_handles[1])
         except Exception as error:
             ui_logger.error(error)

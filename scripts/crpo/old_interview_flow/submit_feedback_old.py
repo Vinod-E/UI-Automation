@@ -1,6 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 from scripts.crpo.old_interview_flow import partial_feedback
 
 
@@ -31,24 +32,22 @@ class SubmittedFeedback(partial_feedback.PartialFeedback):
             # -------------------------------- Submit feedback Process -------------------------------------------------
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
-            self.event_getby_details()
-            self.event_validation('submit feedback process')
-            self.floating_action()
+            self.event_getby_name()
+            self.event_validation('submit feedback process', self.event_sprint_version_o)
+            self.actions_dropdown()
+            self.floating_action('event_interviews')
             time.sleep(0.5)
 
-            self.web_element_click_xpath(page_elements.floating_actions['event_interviews'])
-
-            time.sleep(0.5)
             self.check_box()
             self.provide_feedback(page_elements.interview['maybe'], self.xl_change_status_comment_o)
 
             # ------ Submitted
             time.sleep(1)
-            self.web_element_click_xpath(page_elements.buttons['submit_feedback'])
+            button_click.all_buttons(self, 'Submit Feedback')
             self.driver.execute_script("window.scrollTo(0,200);")
             time.sleep(0.3)
-            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
-            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
+            button_click.all_buttons(self, 'Agree and Submit')
+            button_click.all_buttons(self, 'Agree and Submit')
             time.sleep(5)
             self.driver.switch_to.window(self.driver.window_handles[0])
 
@@ -79,7 +78,7 @@ class SubmittedFeedback(partial_feedback.PartialFeedback):
             time.sleep(0.5)
             self.web_element_click_xpath(page_elements.buckets['completed_interviews'])
 
-            self.applicant_getby_details(self.event_sprint_version_o)
+            self.applicant_getby_name(self.event_sprint_version_o)
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.current_status_validation(status)
 

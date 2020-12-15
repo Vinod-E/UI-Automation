@@ -28,12 +28,12 @@ class ApplicantActions(applicant_action_excel.ApplicantActionsExcelRead):
         try:
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_a, 'Event')
-            self.event_getby_details()
-            self.event_validation('the event')
-            self.floating_action()
-
+            self.event_getby_name()
+            self.getby_details_screen(self.event_sprint_version_a)
+            self.driver.execute_script("window.scrollTo(0,-200);")
+            self.actions_dropdown()
             time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.floating_actions['View_Applicants'])
+            self.floating_action('View_Applicants')
 
             time.sleep(0.5)
             # --------------------------- Applicant Advance search -----------------------------------------------------
@@ -41,7 +41,8 @@ class ApplicantActions(applicant_action_excel.ApplicantActionsExcelRead):
             self.applicant_name_search(self.event_sprint_version_a, 'Applicant grid')
 
             # -------------------- output report values ----------------
-            if self.validation_check == 'True':
+            if self.header_name.strip() == self.event_sprint_version_a:
+                print('**-------->>> Event get by name is working')
                 self.ui_event_tab_ea = 'Pass'
                 self.ui_advance_search_ea = 'Pass'
                 self.ui_event_details_ea = 'Pass'
@@ -52,20 +53,3 @@ class ApplicantActions(applicant_action_excel.ApplicantActionsExcelRead):
 
         except Exception as error:
             ui_logger.error(error)
-
-    def event_validation(self, config_name):
-        # ------------------------------ validating the event name -------------------------------------------------
-        try:
-            time.sleep(0.5)
-            self.driver.execute_script("window.scrollTo(0,-100);")
-            self.web_element_text_xpath(
-                page_elements.event_validation['get_event_name'].format(self.event_sprint_version_a))
-            if self.text_value.strip() == self.event_sprint_version_a:
-                self.validation_check = 'True'
-                self.ui_event_validation_check = 'Pass'
-                print('**-------->>> Event Validated and continuing '
-                      'with {} to created event :: {}'.format(config_name, self.text_value.strip()))
-            else:
-                print('Event validation failed Or event creation failed <<<--------**')
-        except Exception as e:
-            ui_logger.error(e)

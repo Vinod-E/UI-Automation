@@ -1,6 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 from scripts.crpo.manage_interviewers import manage_interviewers
 
 
@@ -33,8 +34,11 @@ class NominationAcceptance(manage_interviewers.ManageInterviewers):
 
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_mi, 'Event')
-            self.event_getby_details()
-            self.event_validation('Manage Interviewers')
+            self.event_getby_name()
+            self.getby_details_screen(self.event_sprint_version_mi)
+            if self.header_name.strip() == self.event_sprint_version_mi:
+                print('**-------->>> Event Validated and continuing '
+                      'with {} created event :: {}'.format('Interviewer in', self.event_sprint_version_mi))
 
         except Exception as error:
             ui_logger.error(error)
@@ -42,8 +46,9 @@ class NominationAcceptance(manage_interviewers.ManageInterviewers):
     def nomination_int1(self):
         try:
             self.interviewer_acceptance(self.xl_user1_mi, self.xl_user1_mi)
+            time.sleep(1)
             # -------------------- output report values ----------------
-            if self.get_event_name.strip() == self.event_sprint_version_mi:
+            if self.header_name.strip() == self.event_sprint_version_mi:
                 self.ui_event_tab_mi_int1 = 'Pass'
                 self.ui_advance_search_mi_int1 = 'Pass'
                 self.ui_event_details_mi_int1 = 'Pass'
@@ -62,8 +67,8 @@ class NominationAcceptance(manage_interviewers.ManageInterviewers):
             self.web_element_text_xpath(page_elements.manage_interviews['skill_validate'])
             if self.skill1 in self.text_value:
                 self.ui_skill_request_int1 = 'Pass'
-            self.web_element_click_name(page_elements.buttons['confirm'])
-            self.web_element_click_xpath(page_elements.buttons['ok'])
+            button_click.button(self, 'Confirm')
+            button_click.all_buttons(self, 'OK')
             time.sleep(0.3)
 
             self.driver.refresh()
@@ -78,8 +83,9 @@ class NominationAcceptance(manage_interviewers.ManageInterviewers):
     def nomination_int2(self):
         try:
             self.interviewer_acceptance(self.xl_user2_mi, self.xl_user2_mi)
+            time.sleep(1)
             # -------------------- output report values ----------------
-            if self.get_event_name.strip() == self.event_sprint_version_mi:
+            if self.header_name.strip() == self.event_sprint_version_mi:
                 self.ui_event_tab_mi_int2 = 'Pass'
                 self.ui_advance_search_mi_int2 = 'Pass'
                 self.ui_event_details_mi_int2 = 'Pass'
@@ -98,8 +104,8 @@ class NominationAcceptance(manage_interviewers.ManageInterviewers):
             self.web_element_text_xpath(page_elements.manage_interviews['skill_validate'])
             if self.skill2 in self.text_value:
                 self.ui_skill_request_int2 = 'Pass'
-            self.web_element_click_name(page_elements.buttons['confirm'])
-            self.web_element_click_xpath(page_elements.buttons['ok'])
+            button_click.button(self, 'Confirm')
+            button_click.all_buttons(self, 'OK')
             time.sleep(0.3)
 
             self.driver.refresh()
