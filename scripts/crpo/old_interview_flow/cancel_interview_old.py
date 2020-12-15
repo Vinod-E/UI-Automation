@@ -1,6 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 from scripts.crpo.old_interview_flow import re_schedule_old
 
 
@@ -15,20 +16,19 @@ class CancelInterview(re_schedule_old.ReSchedule):
 
     def cancel_interview(self):
         try:
-            time.sleep(0.5)
+            time.sleep(1.5)
             self.check_box()
-
             self.web_element_click_id(page_elements.grid_actions['cancel_interview'])
             self.web_element_send_keys_xpath(page_elements.interview['comment'], self.xl_cancel_request_comment_o)
-            time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.buttons['cancel_confirm'])
+            time.sleep(2)
+            button_click.button(self, 'Confirm')
 
             # ------- Validation check -----------------------
             time.sleep(0.5)
             self.web_element_click_xpath(page_elements.buckets['cancel_interviews'])
             self.web_element_click_id(page_elements.grid_actions['refresh'])
 
-            self.applicant_getby_details(self.event_sprint_version_o)
+            self.applicant_getby_name(self.event_sprint_version_o)
             self.driver.switch_to.window(self.driver.window_handles[1])
 
             self.current_status_validation('Cancelled')

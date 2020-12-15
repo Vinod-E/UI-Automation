@@ -31,12 +31,11 @@ class Schedule(feedback_form_configure.FeedbackConfiguration):
             self.driver.execute_script("window.scrollTo(0,-100);")
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.job_sprint_version_n, 'Event')
-            self.event_getby_details()
-            self.event_validation('interview-schedule')
-            self.floating_action()
-
+            self.event_getby_name()
+            self.event_validation('interview-schedule', self.get_event_name.strip())
+            self.actions_dropdown()
             time.sleep(0.3)
-            self.web_element_click_xpath(page_elements.floating_actions['View_Applicants'])
+            self.floating_action('View_Applicants')
 
             time.sleep(1)
             # --------------------------- Applicant Advance search -----------------------------------------------------
@@ -65,7 +64,7 @@ class Schedule(feedback_form_configure.FeedbackConfiguration):
                 self.ui_change_applicant_status_n = 'Pass'
 
             time.sleep(1)
-            self.applicant_getby_details(self.job_sprint_version_n)
+            self.applicant_getby_name(self.job_sprint_version_n)
             self.ui_candidate_getby_n = 'Pass'
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.current_status_validation('Scheduled')
@@ -76,23 +75,6 @@ class Schedule(feedback_form_configure.FeedbackConfiguration):
 
         except Exception as error:
             ui_logger.error(error)
-
-    def event_validation(self, config_name):
-        # ------------------------------ validating the event name -------------------------------------------------
-        try:
-            self.driver.execute_script("window.scrollTo(0,-100);")
-            self.web_element_text_xpath(
-                page_elements.event_validation['get_event_name'].format(self.job_sprint_version_n))
-            self.get_event_name = self.text_value
-
-            if self.get_event_name.strip() == self.job_sprint_version_n:
-                self.event_validation_check = 'Pass'
-                print('**-------->>> Event Validated and continuing '
-                      'with {} to created event :: {}'.format(config_name, self.get_event_name.strip()))
-            else:
-                print('Event validation failed Or event creation failed <<<--------**')
-        except Exception as e:
-            ui_logger.error(e)
 
     def current_status_validation(self, status):
         try:

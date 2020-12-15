@@ -17,7 +17,7 @@ class ChangeApplicantStatus(event_applicants.EventApplicants):
     def event_change_applicant_status(self):
         try:
             self.driver.execute_script("window.scrollTo(0,100);")
-            time.sleep(1)
+            time.sleep(2)
             self.check_box()
             # --------------------------- Change Applicant Status -------------------
             self.applicant_status_change(self.xl_change_applicant_stage,

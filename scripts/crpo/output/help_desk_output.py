@@ -111,6 +111,8 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
                 self.ws.write(10, self.admin_status_col, 'Pass', self.style7)
             else:
                 self.ws.write(10, self.admin_status_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['help_desk_output_report'])
 
         except Exception as error:
             ui_logger.error(error)
@@ -161,6 +163,8 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
                 self.ws.write(7, self.can_status_col, 'Pass', self.style7)
             else:
                 self.ws.write(7, self.can_status_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['help_desk_output_report'])
 
         except Exception as error:
             ui_logger.error(error)
@@ -211,6 +215,8 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
                 self.ws.write(7, self.default_status_col, 'Pass', self.style7)
             else:
                 self.ws.write(7, self.default_status_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['help_desk_output_report'])
 
         except Exception as error:
             ui_logger.error(error)
@@ -261,6 +267,8 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
                 self.ws.write(7, self.job_status_col, 'Pass', self.style7)
             else:
                 self.ws.write(7, self.job_status_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['help_desk_output_report'])
 
         except Exception as error:
             ui_logger.error(error)
@@ -311,6 +319,8 @@ class HelpDeskOutput(styles.FontColor, reply_query.RaiseQuery):
                 self.ws.write(7, self.event_status_col, 'Pass', self.style7)
             else:
                 self.ws.write(7, self.event_status_col, 'Fail', self.style3)
+            # ----------------------------------------------------------------------------------------------------------
+            self.wb_Result.save(test_data_inputpath.output['help_desk_output_report'])
 
         except Exception as error:
             ui_logger.error(error)

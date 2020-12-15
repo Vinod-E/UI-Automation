@@ -32,12 +32,10 @@ class QuickEventSearch(quick_interview_excel.QuickInterviewExcelRead):
             self.driver.execute_script("window.scrollTo(0,-100);")
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_q, 'Event')
-            self.event_getby_details()
+            self.event_getby_name()
             self.event_validation('Quick-interview-schedule')
-            self.floating_action()
-
-            time.sleep(0.3)
-            self.web_element_click_xpath(page_elements.floating_actions['View_Applicants'])
+            self.actions_dropdown()
+            self.floating_action('View_Applicants')
 
             time.sleep(1)
             # --------------------------- Applicant Advance search -----------------------------------------------------
@@ -75,12 +73,11 @@ class QuickEventSearch(quick_interview_excel.QuickInterviewExcelRead):
             self.drop_down_selection()
             self.web_element_send_keys_xpath(
                 page_elements.text_fields['place_holder'].format('Your Comments'), self.xl_comment_q)
-            self.web_element_click_xpath(
-                page_elements.buttons['quick_schedule'].format("'", "scheduleInterview", "'"))
+            button_click.click_button(self, "'", "scheduleInterview", "'")
             self.dismiss_message()
 
             time.sleep(1)
-            self.applicant_getby_details(self.event_sprint_version_q)
+            self.applicant_getby_name(self.event_sprint_version_q)
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.current_status_validation('Scheduled')
 

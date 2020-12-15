@@ -4,6 +4,7 @@ import test_data_inputpath
 from logger_settings import ui_logger
 from selenium.webdriver.common.keys import Keys
 from scripts.crpo.help_desk import candidate_login
+from scripts.crpo.common import button_click
 
 
 class RaiseQuery(candidate_login.CandidateLogin):
@@ -23,9 +24,8 @@ class RaiseQuery(candidate_login.CandidateLogin):
     def help_desk_tab(self):
         try:
             if self.candidate_login_success == 'True':
-                self.web_element_click_xpath(page_elements.tabs['help_desk_tab'])
-                self.web_element_click_xpath(page_elements.tabs['raise_query_tab'])
-
+                self.help_tab()
+                self.sub_tab('raise_query_tab')
                 self.ui_candidate_login_success = 'Pass'
                 self.ui_help_desk_module = 'Pass'
                 self.ui_raise_query_module = 'Pass'
@@ -42,7 +42,7 @@ class RaiseQuery(candidate_login.CandidateLogin):
             self.web_element_send_keys_xpath(page_elements.help_desk['message'], category)
             self.web_element_send_keys_xpath(page_elements.file['upload_file'], self.file)
             time.sleep(1)
-            self.web_element_click_xpath(page_elements.buttons['query_raise'])
+            button_click.button(self, 'Raise Query')
 
         except Exception as error:
             ui_logger.error(error)

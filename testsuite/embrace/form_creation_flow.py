@@ -27,12 +27,19 @@ class FormCreationFlow(form_creation_output.FormOutputReport):
         self.radiobutton_validation()
         self.create_form_radiobutton_output()
 
+    def screening_rule1(self):
+        self.screening_rule_creation()
+        self.screening_rule_verification()
+        self.screening_rule_output()
+
+
 
 Object = FormCreationFlow()
 Object.embrace_login()
 if Object.status_of_login.strip() == 'Admin':
     try:
         Object.form()
+        Object.screening_rule1()
         Object.overall_status()
         Object.browser_close()
     except Exception as usecase:

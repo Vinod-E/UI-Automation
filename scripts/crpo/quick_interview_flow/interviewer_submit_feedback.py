@@ -1,7 +1,6 @@
 import time
 import page_elements
 from logger_settings import ui_logger
-from scripts.crpo.common import button_click
 from scripts.crpo.quick_interview_flow import submit_feedback
 
 
@@ -41,9 +40,10 @@ class InterviewFeedbackSubmit(submit_feedback.ProvideFeedback):
             # -------------------------------- Submit feedback Process -------------------------------------------------
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_q, 'Event')
-            self.event_getby_details()
+            self.event_getby_name()
             self.event_validation('submit feedback process')
-            self.floating_action()
+            self.actions_dropdown()
+            self.floating_action('event_interviews')
             time.sleep(0.5)
             if self.event_validation_check == 'True':
                 # -------------------- output report values ----------------
@@ -53,8 +53,6 @@ class InterviewFeedbackSubmit(submit_feedback.ProvideFeedback):
                 self.ui_event_validation_q_int1 = 'Pass'
                 self.ui_floating_action_q_int1 = 'Pass'
                 self.ui_event_interviews_action_q_int1 = 'Pass'
-
-            self.web_element_click_xpath(page_elements.floating_actions['event_interviews'])
 
             time.sleep(0.5)
             self.check_box()
@@ -73,13 +71,10 @@ class InterviewFeedbackSubmit(submit_feedback.ProvideFeedback):
             # -------------------------------- Submit feedback Process -------------------------------------------------
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_q, 'Event')
-            self.event_getby_details()
+            self.event_getby_name()
             self.event_validation('submit feedback process')
-            self.floating_action()
-            time.sleep(0.5)
-
-            self.web_element_click_xpath(page_elements.floating_actions['event_interviews'])
-
+            self.actions_dropdown()
+            self.floating_action('event_interviews')
             time.sleep(0.5)
             self.check_box()
             self.provide_feedback(page_elements.interview['Quick_shortlist'], self.xl_comment_q)
@@ -112,7 +107,7 @@ class InterviewFeedbackSubmit(submit_feedback.ProvideFeedback):
             time.sleep(0.5)
             self.web_element_click_xpath(page_elements.buckets['completed_interviews'])
 
-            self.applicant_getby_details(self.event_sprint_version_q)
+            self.applicant_getby_name(self.event_sprint_version_q)
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.current_status_validation(status)
 

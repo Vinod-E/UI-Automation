@@ -33,14 +33,17 @@ class SubmitFeedback(submit_feedback_live_int1.SubmitFeedbackInt1):
             # -------------------------------- Submit feedback Process -------------------------------------------------
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_l, 'Event')
-            self.event_getby_details()
-            self.event_validation('live-interview-schedule')
-            self.floating_action()
+            self.event_getby_name()
+            self.driver.execute_script("window.scrollTo(0,-200);")
+            self.getby_details_screen(self.event_sprint_version_l)
+            if self.header_name.strip() == self.event_sprint_version_l:
+                print('**-------->>> Event Validated and continuing '
+                      'with {} created event :: {}'.format('live-interview-schedule', self.event_sprint_version_l))
+            self.actions_dropdown()
+            self.floating_action('live_interview')
 
-            time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.floating_actions['live_interview'])
 # ---------- Validation
-            time.sleep(1.5)
+            time.sleep(6)
             self.live_screen_validation()
 
             self.web_element_click_xpath(page_elements.buckets['select_interview_stage'].format(self.stage2_l))
@@ -54,21 +57,13 @@ class SubmitFeedback(submit_feedback_live_int1.SubmitFeedbackInt1):
             time.sleep(0.9)
             self.web_element_click_xpath(page_elements.live_interview['down'])
 
+            self.is_behalf_int = 0
             self.live_provide_feedback(page_elements.live_interview['shortlist'], self.xl_comment_l)
-
-            self.web_element_click_xpath(page_elements.buttons['submit_feedback'])
-
-            time.sleep(1)
-            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
-
-            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
-            time.sleep(5)
-            self.driver.switch_to.window(self.driver.window_handles[0])
 
             self.live_schedule_submit_validation(self.stage2_l, 'Offer Released')
 
             # -------------------- output report values ----------------
-            if self.get_event_name.strip() == self.event_sprint_version_l:
+            if self.header_name.strip() == self.event_sprint_version_l:
                 self.ui_event_tab_int2 = 'Pass'
                 self.ui_advance_search_int2 = 'Pass'
                 self.ui_event_details_int2 = 'Pass'

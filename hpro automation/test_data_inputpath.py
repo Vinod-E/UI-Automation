@@ -11,30 +11,21 @@ pofu_reports = 'reports' + config.slash + 'embrace' + config.slash
 
 crpo_test_data_file = {
     'login_credentials': generic_input_path + 'testdata' + config.slash + 'Login_Details.xls',
-
     'create_job': generic_input_path + crpo_testdata + 'Job_details.xls',
-
     'create_requirement': generic_input_path + crpo_testdata + 'requirement_details.xls',
-
     'clone_test': generic_input_path + crpo_testdata + 'test_details.xls',
-
     'create_event': generic_input_path + crpo_testdata + 'event_details.xls',
-
     'old_interview_file': generic_input_path + crpo_testdata + 'Old_interview.xls',
-
     'new_interview_file': generic_input_path + crpo_testdata + 'New_interview.xls',
-
     'live_interview_file': generic_input_path + crpo_testdata + 'Live_interview.xls',
-
     'quick_interview_file': generic_input_path + crpo_testdata + 'Quick_Interview.xls',
-
+    'mass_interview_file': generic_input_path + crpo_testdata + 'Mass_Interview.xls',
     'applicant_action_file': generic_input_path + crpo_testdata + 'Applicants_actions.xls',
-
     'help_desk': generic_input_path + crpo_testdata + 'Help_desk.xls',
-
     'manage_interviewers': generic_input_path + crpo_testdata + 'Manage_interviewers.xls',
 
-    'create_form': generic_input_path + pofu_testdata + 'create_form.xls'
+    'create_form': generic_input_path + pofu_testdata + 'create_form.xls',
+    'create_screening_rule': generic_input_path + pofu_testdata + 'create_screening_rule.xls'
 }
 
 attachments = {

@@ -17,6 +17,7 @@ class FormValidations(form_creation.FormCreation):
         self.ui_current_time = []
         self.ui_python_tutorial = []
         self.ui_java_tutorial = []
+        self.ui_resume = []
 
         self.ui_candidate_name_label = []
         self.ui_date_time_label = []
@@ -28,8 +29,10 @@ class FormValidations(form_creation.FormCreation):
         self.ui_current_time_label = []
         self.ui_python_tutorial_label = []
         self.ui_java_tutorial_label = []
+        self.ui_resume_label = []
         self.ui_group_one_name = []
         self.ui_group_two_name = []
+
 
         self.label = ''
         self.group = ''
@@ -116,6 +119,11 @@ class FormValidations(form_creation.FormCreation):
                 self.ui_java_tutorial_label = 'Pass'
                 print("Element is a java tutorial label")
 
+            self.finding_element(self.resume_label)
+            if self.label:
+                self.ui_resume_label = 'Pass'
+                print("Element is a resume label")
+
         except Exception as e:
             print(e)
 
@@ -173,6 +181,13 @@ class FormValidations(form_creation.FormCreation):
                 print('Element is a link field')
                 if self.xl_java_tutorial == ['Link_Field']:
                     self.ui_java_tutorial = 'Pass'
+
+            if self.driver.find_element_by_xpath('//*[@ng-model="formControl.file"]').get_attribute("ng-model") == "formControl.file":
+                print("Element is a attachment field")
+                if self.xl_attachment == ['Attachment_Field']:
+                    self.ui_attachment = 'Pass'
+
+
 
         except Exception as e:
             print(e)

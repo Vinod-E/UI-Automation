@@ -42,13 +42,14 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
         try:
             # ---------------------------- Search and validating with cloning assessment -------------------------------
             self.assessment_search(self.xl_old_test)
+
             self.assessment_grid_validation(self.xl_old_test)
             time.sleep(1)
             self.assessment_getby_validation(self.xl_old_test)
 
             # ------------------------------- Clone test ---------------------------------------------------------------
-            self.floating_action()
-            self.web_element_click_xpath(page_elements.floating_actions['clone_assessment'])
+            self.actions_dropdown()
+            self.floating_action('clone_assessment')
             self.ui_clone_action = 'Pass'
 
             self.web_element_send_keys_name(page_elements.advance_search['assessment_name'],
@@ -69,7 +70,7 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
             time.sleep(1.5)
             self.assessment_getby_validation(self.assessment_sprint_version)
 
-            if self.assessment_name_breadcumb == self.assessment_sprint_version:
+            if self.header_name.strip() == self.assessment_sprint_version:
                 self.ui_assessment_clone = 'Pass'
                 print('**-------->>> Assessment cloned successfully')
             else:
@@ -97,18 +98,17 @@ class CloneAssessment(assessment_excel.AssessmentExcelRead):
 
     def assessment_getby_validation(self, test_name):
         try:
-            self.web_element_text_xpath(page_elements.assessment_validation['assessment_name_breadcrumb'])
-            self.assessment_name_breadcumb = self.text_value
+            self.getby_details_screen(test_name)
 
-            if self.assessment_name_breadcumb == self.assessment_sprint_version:
+            if self.header_name.strip() == self.assessment_sprint_version:
                 self.ui_new_test_getby_validation = 'Pass'
                 print('**-------->>> assessment Validated and continuing '
-                      'with {} to cloned assessment :: {}'.format(test_name, self.assessment_name_breadcumb))
+                      'with {} to cloned assessment :: {}'.format(test_name, self.header_name))
 
-            elif self.assessment_name_breadcumb == self.xl_old_test:
+            elif self.header_name.strip() == self.xl_old_test:
                 self.ui_old_test_getby_validation = 'Pass'
                 print('**-------->>> assessment Validated and continuing '
-                      'with {} to exist assessment :: {}'.format(test_name, self.assessment_name_breadcumb))
+                      'with {} to exist assessment :: {}'.format(test_name, self.header_name))
             else:
                 print('Assessment validation/creation failed <<<--------**')
 

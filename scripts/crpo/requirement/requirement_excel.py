@@ -11,7 +11,7 @@ class RequirementExcelRead(edit_job.EditJobRole):
         workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_requirement'])
         if self.login_server == 'betaams':
             self.req_sheet1 = workbook.sheet_by_index(1)
-        if self.login_server == 'ams':
+        if self.login_server == 'ams' or self.login_server == 'indiaams':
             self.req_sheet1 = workbook.sheet_by_index(1)
         if self.login_server == 'amsin':
             self.req_sheet1 = workbook.sheet_by_index(0)

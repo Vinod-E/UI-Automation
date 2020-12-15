@@ -15,20 +15,19 @@ class JobTagToRequirement(interview_panel.InterviewPanel):
         self.ui_un_tag_requirement = []
 
     def tag_requirement(self):
-        self.job_validation('requirement tag')
+        self.getby_details_screen(self.job_name_sprint_version)
         self.driver.refresh()
         time.sleep(2)
-        if self.job_name_breadcumb == self.job_name_sprint_version:
+        if self.header_name.strip() == self.job_name_sprint_version:
+            print('**-------->>> Tagging requirement to job:: {}'.format(self.job_name_sprint_version))
             try:
-                self.floating_action()
-
-                self.web_element_click_xpath(page_elements.floating_actions['tag_requirement'])
+                self.actions_dropdown()
+                self.floating_action('tag_requirement')
                 self.ui_tag_requirement_action = 'Pass'
 
                 self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Requirements'),
                                                  self.xl_tag_req)
                 self.drop_down_selection()
-
                 button_click.button(self, 'Tag')
                 print('**-------->>> Job tag to requirement successfully')
                 self.ui_tag_requirement = 'Pass'
@@ -37,14 +36,14 @@ class JobTagToRequirement(interview_panel.InterviewPanel):
                 ui_logger.error(error)
 
     def un_tag_requirement(self):
-        self.job_validation('requirement un-tag')
-        if self.job_name_breadcumb == self.job_name_sprint_version:
+        self.getby_details_screen(self.job_name_sprint_version)
+        if self.header_name.strip() == self.job_name_sprint_version:
+            print('**-------->>> Un-Tagging requirement to job:: {}'.format(self.job_name_sprint_version))
             try:
                 self.driver.refresh()
                 time.sleep(2)
-                self.floating_action()
-
-                self.web_element_click_xpath(page_elements.floating_actions['un-tag_requirement'])
+                self.actions_dropdown()
+                self.floating_action('un-tag_requirement')
                 self.ui_un_tag_requirement_action = 'Pass'
 
                 button_click.all_buttons(self, 'OK')

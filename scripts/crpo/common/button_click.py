@@ -19,6 +19,15 @@ def all_buttons(self, button_name):
         ui_logger(error)
 
 
+def click_button(self, comma, button_name, commas):
+    try:
+        webdriver_functions.WebdriverFunctions.\
+            web_element_click_xpath(self, page_elements.buttons['click_button'].
+                                    format(comma, button_name, commas))
+    except Exception as error:
+        ui_logger(error)
+
+
 def more_button(self):
     try:
         webdriver_functions.WebdriverFunctions.\

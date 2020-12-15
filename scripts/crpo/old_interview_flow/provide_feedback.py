@@ -11,9 +11,10 @@ class ProvideFeedback(cancel_request_acceptance.CancelRequestAcceptance):
     def provide_feedback(self, decision, comment):
         try:
 
+            time.sleep(2)
             self.web_element_click_id(page_elements.grid_actions['provide_feedback'])
 
-            time.sleep(1)
+            time.sleep(5)
             self.driver.switch_to.window(self.driver.window_handles[1])
 
             self.web_element_click_xpath(decision)

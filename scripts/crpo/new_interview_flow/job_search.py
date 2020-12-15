@@ -26,12 +26,12 @@ class JobSearch(settings_On_Off.Settings):
                 self.ui_job_advance_search_n = 'Pass'
 
             time.sleep(0.5)
-            self.job_getby_details(self.job_sprint_version_n)
+            self.job_getby_name(self.job_sprint_version_n)
 
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
-            self.job_validation('getbyid')
+            self.job_validation(self.job_sprint_version_n)
             if self.job_name_breadcumb == self.job_sprint_version_n:
                 print('**-------->>> Job get by name is working')
                 self.ui_job_tab = 'Pass'
@@ -44,7 +44,7 @@ class JobSearch(settings_On_Off.Settings):
 
     def job_validation(self, config_name):
         try:
-            self.web_element_text_xpath(page_elements.job_validations['job_name_breadcumb'])
+            self.web_element_text_xpath(page_elements.getby_details['getbyid'].format(config_name))
             self.job_name_breadcumb = self.text_value
         except Exception as e1:
             ui_logger.error(e1)

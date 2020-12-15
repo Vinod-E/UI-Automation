@@ -9,17 +9,17 @@ class EmbraceApp(event_manage_task.EventManageTask):
     def __init__(self):
         super(EmbraceApp, self).__init__()
 
-        self.ui_more_tabs = []
-        self.ui_embrace_module = []
-        self.ui_embrace_advance_search = []
-        self.ui_submit_behalf = []
-        self.ui_call_back_activity = []
-        self.ui_a2_assignment = []
-        self.ui_total_tasks = []
-        self.ui_approved_tasks = []
-        self.ui_pending_tasks = []
-        self.ui_submitted_tasks = []
-        self.ui_rejected_tasks = []
+        self.ui_more_tabs = ''
+        self.ui_embrace_module = ''
+        self.ui_embrace_advance_search = ''
+        self.ui_submit_behalf = ''
+        self.ui_call_back_activity = ''
+        self.ui_a2_assignment = ''
+        self.ui_total_tasks = ''
+        self.ui_approved_tasks = ''
+        self.ui_pending_tasks = ''
+        self.ui_submitted_tasks = ''
+        self.ui_rejected_tasks = ''
 
     def embrace_app_to_submit_task(self):
         try:
@@ -41,7 +41,6 @@ class EmbraceApp(event_manage_task.EventManageTask):
             self.web_element_send_keys_xpath(page_elements.embrace['candidate_text_box'],
                                              self.event_sprint_version)
 
-            # self.web_element_click_xpath(page_elements.embrace['search_button'])
             button_click.button(self, ' Search')
             self.ui_embrace_advance_search = 'Pass'
 
@@ -74,9 +73,8 @@ class EmbraceApp(event_manage_task.EventManageTask):
             else:
                 print('*Failed Activity call Back <<<----------**')
 
-            self.floating_action()
-
-            self.web_element_click_xpath(page_elements.floating_actions['manage_task'])
+            self.web_element_click_xpath('//*[@class="fa fa-angle-right"]')
+            self.web_element_click_xpath('//*[@title="Manage Task"]')
             self.driver.switch_to.window(self.driver.window_handles[2])
 
             # ---------------- Total tasks --------------

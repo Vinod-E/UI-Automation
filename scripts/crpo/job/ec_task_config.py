@@ -14,10 +14,13 @@ class ECTaskconfig(selection_process.SelectionProcess):
         self.ui_job_configure_tab = []
 
     def job_ec_task_configuration(self):
-        self.job_validation('Job EC configuration')
-        if self.job_name_breadcumb == self.job_name_sprint_version:
+        time.sleep(2)
+        self.driver.execute_script("window.scrollTo(0,-200);")
+        self.getby_details_screen(self.job_name_sprint_version)
+        if self.header_name.strip() == self.job_name_sprint_version:
+            print('**-------->>> Job EC and Task configuring to job:: {}'.format(self.job_name_sprint_version))
             try:
-                self.web_element_click_xpath(page_elements.tabs['job_configuration_tab'])
+                self.sub_tab('job_configuration_tab')
                 self.ui_job_configure_tab = 'Pass'
 
                 self.web_element_click_xpath(page_elements.job_config['ec_configure'])
@@ -42,12 +45,13 @@ class ECTaskconfig(selection_process.SelectionProcess):
                     page_elements.job_config['ec_negative_status'], self.xl_negative_status)
                 self.drop_down_selection()
 
+                time.sleep(0.5)
                 button_click.button(self, 'Save')
                 print('**-------->>> Eligibility configuration done')
                 self.ui_ec_configure = 'Pass'
 
                 # ---------------------- Task configuration ------------------------------------------------------------
-                self.task_config(page_elements.task_config['job_task_configure'],
+                self.task_config(page_elements.job_config['task_configure'],
                                  page_elements.text_fields['text_field'].format('Select Event'),
                                  self.job_name_sprint_version,
                                  self.xl_assign_stage_status,

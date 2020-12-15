@@ -2,6 +2,7 @@ import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.help_desk import query_excel
+from scripts.crpo.common import button_click
 
 
 class QueryConfig(query_excel.QueryExcelReadHelpDesk):
@@ -10,66 +11,50 @@ class QueryConfig(query_excel.QueryExcelReadHelpDesk):
 
         self.req_name_breadcumb = ''
 
-        self.ui_req_tab_he = []
-        self.ui_req_advance_search_he = []
-        self.ui_req_getbyid_he = []
-        self.ui_req_config_tab_he = []
-        self.ui_requirement_validation_he = []
-        self.ui_query_configuration = []
+        self.ui_req_tab_he = ''
+        self.ui_req_advance_search_he = ''
+        self.ui_req_getbyid_he = ''
+        self.ui_req_config_tab_he = ''
+        self.ui_requirement_validation_he = ''
+        self.ui_query_configuration = ''
 
     def query_configuration(self):
         try:
             self.requirement_tab()
             self.requirement_search()
 
-            time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.tabs['req_configuration_tab'])
+            time.sleep(1)
+            self.sub_tab('req_configuration_tab')
             self.ui_req_tab_he = 'Pass'
             self.ui_req_config_tab_he = 'Pass'
 
-            self.web_element_click_xpath(page_elements.tabs['req_query_config'])
+            self.sub_tab('req_query_config')
 # validation ------
-            self.web_element_text_xpath(page_elements.help_desk['query_header'])
-            if self.text_value == 'Query Configuration':
+            self.web_element_text_xpath(page_elements.buttons['all_buttons'].format('Default Level Configuration'))
+            if self.text_value == 'Default Level Configuration':
                 self.ui_query_configuration = 'Pass'
 
         except Exception as error:
             ui_logger.error(error)
 
     def requirement_search(self):
-
         try:
             self.advance_search(page_elements.tabs['requirement_tab'])
-
             self.name_search(self.requirement_sprint_version, 'requirement')
 
             if self.search == 'Pass':
                 self.ui_req_advance_search_he = 'Pass'
 
             time.sleep(1)
-            self.requirement_getby_details(self.requirement_sprint_version)
+            self.requirement_getby_name(self.requirement_sprint_version)
 
-            time.sleep(1)
-            self.requirement_validation('getbyid')
-            if self.req_name_breadcumb == self.requirement_sprint_version:
+            time.sleep(1.5)
+            self.driver.execute_script("window.scrollTo(0,-200);")
+            self.getby_details_screen(self.requirement_sprint_version)
+            if self.header_name.strip() == self.requirement_sprint_version:
                 print('**-------->>> Requirement get by name is working')
                 self.ui_req_getbyid_he = 'Pass'
+                self.ui_requirement_validation_he = 'Pass'
 
         except Exception as search:
             ui_logger.error(search)
-
-    def requirement_validation(self, config_name):
-
-        try:
-            time.sleep(1)
-            self.web_element_text_xpath(page_elements.requirement_validations['requirement_name_breadcumb'])
-            self.req_name_breadcumb = self.text_value
-        except Exception as e1:
-            ui_logger.error(e1)
-
-        if self.req_name_breadcumb == self.requirement_sprint_version:
-            self.ui_requirement_validation_he = 'Pass'
-            print('**-------->>> Req Validated and continuing '
-                  'with {} to created requirement :: {}'.format(config_name, self.req_name_breadcumb))
-        else:
-            print('Req validation failed Or Req creation failed <<<--------**')
