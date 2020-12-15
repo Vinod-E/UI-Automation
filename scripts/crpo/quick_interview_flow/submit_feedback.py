@@ -1,6 +1,7 @@
 import time
 import page_elements
 from logger_settings import ui_logger
+from scripts.crpo.common import button_click
 from scripts.crpo.quick_interview_flow import event_search
 
 
@@ -13,7 +14,7 @@ class ProvideFeedback(event_search.QuickEventSearch):
 
             self.web_element_click_id(page_elements.grid_actions['provide_feedback'])
 
-            time.sleep(2)
+            time.sleep(5)
             self.driver.switch_to.window(self.driver.window_handles[1])
 
             self.web_element_click_xpath(decision)
@@ -25,11 +26,11 @@ class ProvideFeedback(event_search.QuickEventSearch):
 
         # ------ Submitted
             time.sleep(1)
-            self.web_element_click_xpath(page_elements.buttons['submit_feedback'])
+            button_click.all_buttons(self, 'Submit Feedback')
             self.driver.execute_script("window.scrollTo(0,200);")
             time.sleep(0.3)
-            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
-            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
+            button_click.all_buttons(self, 'Agree and Submit')
+            button_click.all_buttons(self, 'Agree and Submit')
             time.sleep(5)
             self.driver.switch_to.window(self.driver.window_handles[0])
 

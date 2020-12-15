@@ -16,27 +16,26 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
         self.ui_job_edit_action = []
 
     def edit_job(self):
+        self.driver.execute_script("window.scrollTo(0,-200);")
+        self.getby_details_screen(self.job_name_sprint_version)
+        if self.header_name.strip() == self.job_name_sprint_version:
+            print('**-------->>> Edit job functionality to job:: {}'.format(self.job_name_sprint_version))
 
-        self.job_validation('edit action')
-        if self.job_name_breadcumb == self.job_name_sprint_version:
             try:
-                self.floating_action()
-
-                time.sleep(1)
-                self.web_element_click_xpath(page_elements.floating_actions['job_edit'])
+                self.actions_dropdown()
+                time.sleep(0.5)
+                self.floating_action('job_edit')
                 self.ui_job_edit_action = 'Pass'
 
-                time.sleep(0.5)
                 self.web_element_send_keys_xpath(page_elements.job['description_box'], self.j_description_u)
-
-                time.sleep(1)
+                time.sleep(2)
                 button_click.button(self, 'Update')
 
                 image_capture.screen_shot(self, 'Update_Job')
 
                 # ------------------------ Validation ------------------------------------------------------------------
                 self.job_search_flow()
-                if self.job_name_breadcumb == self.job_name_sprint_version:
+                if self.header_name.strip() == self.job_name_sprint_version:
                     print('**-------->>> Job Edit/update successfully')
                     self.ui_update_job = 'Pass'
 
@@ -51,14 +50,14 @@ class EditJobRole(tag_untag_requirement.JobTagToRequirement):
             if self.search == 'Pass':
                 self.ui_job_advance_search = 'Pass'
 
-            self.job_getby_details(self.job_name_sprint_version)
+            self.job_getby_name(self.job_name_sprint_version)
 
             time.sleep(0.5)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 
-            self.job_validation('getbyid')
-            if self.job_name_breadcumb == self.job_name_sprint_version:
+            self.getby_details_screen(self.job_name_sprint_version)
+            if self.header_name.strip() == self.job_name_sprint_version:
                 print('**-------->>> Job get by name is working')
                 self.ui_job_getbyid = 'Pass'
 

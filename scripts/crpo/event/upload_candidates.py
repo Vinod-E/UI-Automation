@@ -10,30 +10,31 @@ class EventUploadCandidates(owners_config.EventOwnersConfig):
     def __init__(self):
         super(EventUploadCandidates, self).__init__()
 
-        self.ui_event_floating_action = []
-        self.ui_event_upload_candidate_action = []
-        self.ui_event_upload_candidate = []
+        self.ui_event_floating_action = ''
+        self.ui_event_upload_candidate_action = ''
+        self.ui_event_upload_candidate = ''
 
         self.file = test_data_inputpath.attachments['upload_candidates']
 
     def upload_candidates_to_event(self, email_id):
-        self.event_validation('upload candidates')
-        if self.validation_check == 'True':
-
+        self.getby_details_screen(self.event_sprint_version)
+        if self.header_name.strip() == self.event_sprint_version:
+            print('**-------->>> Event Validated and continuing '
+                  'with upload candidates to created event :: {}'.format(self.event_sprint_version))
             try:
+                self.driver.execute_script("window.scrollTo(0,-200);")
                 time.sleep(0.5)
-                self.floating_action()
+                self.actions_dropdown()
                 self.ui_event_floating_action = 'Pass'
                 time.sleep(0.5)
-                self.web_element_click_xpath(page_elements.floating_actions['event_upload_candidates'])
+                self.floating_action('event_upload_candidates')
                 self.ui_event_upload_candidate_action = 'Pass'
 
                 self.web_element_send_keys_xpath(page_elements.file['event_upload_file'], self.file)
 
-                time.sleep(1)
+                time.sleep(2)
                 button_click.button(self, 'Next')
-
-                self.web_element_click_xpath(page_elements.event_config['declare_checkbox'])
+                button_click.all_buttons(self, 'I Declare')
 
                 self.web_element_send_keys_xpath(page_elements.event_config['signature'],
                                                  'AutomationVS')

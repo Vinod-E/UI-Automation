@@ -18,17 +18,8 @@ class BehalfFeedback(live_schedule.LiveInterviewSchedule):
             time.sleep(1.5)
             self.web_element_click_xpath(page_elements.live_interview['down'])
 
+            time.sleep(1.5)
             self.live_provide_feedback(page_elements.live_interview['shortlist'], self.xl_comment_l)
-
-            # --------- Behalf of Submission
-            self.web_element_click_xpath(page_elements.live_interview['feedback_int1'])
-            self.web_element_click_xpath(page_elements.live_interview['feedback_int2'])
-            self.web_element_click_xpath(page_elements.buttons['submit_feedback'])
-            time.sleep(0.9)
-            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'submitWithouChange', "'"))
-            self.web_element_click_xpath(page_elements.buttons['agree'].format("'", 'agreeToChange', "'"))
-            time.sleep(5)
-            self.driver.switch_to.window(self.driver.window_handles[0])
 
             # ------- validation
             self.live_schedule_submit_validation(self.stage1_l, 'Shortlisted')

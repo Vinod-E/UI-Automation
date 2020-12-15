@@ -60,7 +60,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
         if self.login_server == 'betaams':
             self.excel_read_loop(1)
         # ----------------------------------------ams details-----------------------------------------------------------
-        if self.login_server == 'ams':
+        if self.login_server == 'ams' or self.login_server == 'indiaams':
             self.excel_read_loop(1)
 
     def tenant_alias_screen_validation(self):
@@ -104,7 +104,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
                 self.tenant_alias_screen_validation()
                 self.crpo_login_elements(self._xl_tenant, self.xl_password, 'CRPO')
             # ----------------------------------------AMS Login---------------------------------------------------
-            if self.login_server == 'ams':
+            if self.login_server == 'ams' or self.login_server == 'indiaams':
                 self.tenant_alias_screen_validation()
                 self.crpo_login_elements(self._xl_tenant, self.xl_password, 'CRPO')
             # ------------------------------------------BETA Login---------------------------------------------------

@@ -18,6 +18,14 @@ class FormExcelRead(common_login.CommonLogin):
         if self.login_server == 'amsin':
             self.form_sheet1 = workbook.sheet_by_index(1)
 
+        workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_screening_rule'])
+        if self.login_server == 'betaams':
+            self.form_sheet2 = workbook.sheet_by_index(1)
+        if self.login_server == 'ams':
+            self.form_sheet2 = workbook.sheet_by_index(1)
+        if self.login_server == 'amsin':
+            self.form_sheet2 = workbook.sheet_by_index(0)
+
         # --------------- Value initialization ----------------
         self.xl_candidate_name = []
         self.xl_date_time = []
@@ -29,6 +37,7 @@ class FormExcelRead(common_login.CommonLogin):
         self.xl_current_time = []
         self.xl_python_tutorial = []
         self.xl_java_tutorial = []
+        self.xl_attachment = []
 
         self.xl_candidate_name_label = []
         self.xl_date_time_label = []
@@ -40,6 +49,7 @@ class FormExcelRead(common_login.CommonLogin):
         self.xl_current_time_label = []
         self.xl_python_tutorial_label = []
         self.xl_java_tutorial_label = []
+        self.xl_resume_label = []
 
         self.xl_group_one = []
         self.xl_group_two = []
@@ -48,9 +58,25 @@ class FormExcelRead(common_login.CommonLogin):
         self.xl_checkbox = []
         self.xl_radiobutton = []
 
-
-
-
+        #screening rule excel headers
+        self.xl_Title = []
+        self.xl_CandidateNameRule = []
+        self.xl_CandidateName = []
+        self.xl_College = []
+        self.xl_Gender = []
+        self.xl_Country = []
+        self.xl_AddressRule = []
+        self.xl_Address = []
+        self.xl_CollegeId = []
+        self.xl_Title2 = []
+        self.xl_CandidateNameRule2 = []
+        self.xl_CandidateName2 = []
+        self.xl_College2 = []
+        self.xl_Gender2 = []
+        self.xl_Country2 = []
+        self.xl_AddressRule2 = []
+        self.xl_Address2 = []
+        self.xl_CollegeId2 = []
 
         self.candidate_label = ''
         self.date_time_label = ''
@@ -62,6 +88,8 @@ class FormExcelRead(common_login.CommonLogin):
         self.current_label = ''
         self.python_label = ''
         self.java_label = ''
+        self.resume_label = ''
+
 
         self.group_one = ''
         self.group_two = ''
@@ -70,12 +98,11 @@ class FormExcelRead(common_login.CommonLogin):
         self.checkbox_two = ''
         self.radiobutton_one = ''
         self.radiobutton_two = ''
-
-
-
+        self.attachment = ''
 
         # ------------- Iterate Excel sheet------------------------
         self.event_excel_read()
+        self.event_excel_read1()
 
     def event_excel_read(self):
         # --------------------------------------candidate details-------------------------------------------------------
@@ -133,6 +160,105 @@ class FormExcelRead(common_login.CommonLogin):
                 self.xl_checkbox.append(str(rows[23]))
             if rows[24]:
                 self.xl_radiobutton.append(str(rows[24]))
+            if rows[25]:
+                self.xl_attachment.append(str(rows[25]))
+            if rows[26]:
+                self.xl_resume_label.append(str(rows[26]))
+
+    def event_excel_read1(self):
+        # --------------------------------------candidate details-------------------------------------------------------
+        for i in range(1, self.form_sheet2.nrows):
+            number = i
+            rows = self.form_sheet2.row_values(number)
+            if not rows[0]:
+                self.xl_Title.append(None)
+            else:
+                self.xl_Title.append(rows[0])
+
+            if not rows[1]:
+                self.xl_CandidateName.append(None)
+            else:
+                self.xl_CandidateName.append(rows[1])
+
+            if not rows[2]:
+                self.xl_CandidateNameRule.append(None)
+            else:
+                self.xl_CandidateNameRule.append(rows[2])
+
+            if not rows[3]:
+                self.xl_College.append(None)
+            else:
+                self.xl_College.append(rows[3])
+
+            if not rows[4]:
+                self.xl_Gender.append(None)
+            else:
+                self.xl_Gender.append(rows[4])
+
+            if not rows[5]:
+                self.xl_Country.append(None)
+            else:
+                self.xl_Country.append(rows[5])
+
+            if not rows[6]:
+                self.xl_Address.append(None)
+            else:
+                self.xl_Address.append(rows[6])
+
+            if not rows[7]:
+                self.xl_AddressRule.append(None)
+            else:
+                self.xl_AddressRule.append(rows[7])
+
+            if not rows[8]:
+                self.xl_CollegeId.append(None)
+            else:
+                self.xl_CollegeId.append(int(rows[8]))
+
+            if not rows[9]:
+                self.xl_Title2.append(None)
+            else:
+                self.xl_Title2.append(rows[9])
+
+            if not rows[10]:
+                self.xl_CandidateName2.append(None)
+            else:
+                self.xl_CandidateName2.append(rows[10])
+
+            if not rows[11]:
+                self.xl_CandidateNameRule2.append(None)
+            else:
+                self.xl_CandidateNameRule2.append(rows[11])
+
+            if not rows[12]:
+                self.xl_College2.append(None)
+            else:
+                self.xl_College2.append(rows[12])
+
+            if not rows[13]:
+                self.xl_Gender2.append(None)
+            else:
+                self.xl_Gender2.append(rows[13])
+
+            if not rows[14]:
+                self.xl_Country2.append(None)
+            else:
+                self.xl_Country2.append(rows[14])
+
+            if not rows[15]:
+                self.xl_Address2.append(None)
+            else:
+                self.xl_Address2.append(rows[15])
+
+            if not rows[16]:
+                self.xl_AddressRule2.append(None)
+            else:
+                self.xl_AddressRule2.append(rows[16])
+
+            if not rows[17]:
+                self.xl_CollegeId2.append(None)
+            else:
+                self.xl_CollegeId2.append(int(rows[17]))
 
 
 
@@ -171,5 +297,11 @@ class FormExcelRead(common_login.CommonLogin):
 
         for za in self.xl_group_two:
             self.group_two = za
+
+        for zb in self.xl_attachment:
+            self.attachment = zb
+
+        for zb in self.xl_resume_label:
+            self.resume_label = zb
 
 

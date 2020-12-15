@@ -54,13 +54,14 @@ class FeedbackForm(ec_task_config.ECTaskconfig):
             ui_logger.error(error)
 
     def config_feedback_form(self):
-        self.job_validation('feedback form')
-        if self.job_name_breadcumb == self.job_name_sprint_version:
+        self.getby_details_screen(self.job_name_sprint_version)
+        if self.header_name.strip() == self.job_name_sprint_version:
+            print('**-------->>> Old feedback form configuring to job:: {}'.format(self.job_name_sprint_version))
+
             try:
                 time.sleep(0.5)
-                self.floating_action()
-
-                self.web_element_click_xpath(page_elements.floating_actions['feedback_form'])
+                self.actions_dropdown()
+                self.floating_action('feedback_form')
                 self.ui_feedback_form_action = 'Pass'
                 # -------------------------- Interview stage / feedback form configuration -----------------------------
                 self.feedback_form(self.xl_interview_stage_01, self.xl_interview_template_01)

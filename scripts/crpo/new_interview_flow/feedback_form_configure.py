@@ -22,9 +22,9 @@ class FeedbackConfiguration(job_search.JobSearch):
 
             # --------- job process
             self.job_search_new()
-            self.floating_action()
+            self.actions_dropdown()
+            self.floating_action('feedback_form')
 
-            self.web_element_click_xpath(page_elements.floating_actions['feedback_form'])
             self.ui_floating_action_n = 'Pass'
             self.ui_feedback_form_action_n = 'Pass'
 
@@ -37,7 +37,8 @@ class FeedbackConfiguration(job_search.JobSearch):
             time.sleep(1)
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name like."),
                                              self.xl_new_form)
-            self.web_element_click_xpath(page_elements.buttons['new_template_search'].format("'", 'search', "'"))
+            time.sleep(1)
+            self.web_element_click_xpath(page_elements.buttons['button_click'].format("'", 'search', "'"))
             self.driver.execute_script("window.scrollTo(0,100);")
             time.sleep(0.5)
             button_click.all_buttons(self, 'Use')

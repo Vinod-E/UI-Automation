@@ -10,17 +10,19 @@ class EventManageTask(change_applicant_status.ChangeApplicantStatus):
 
         self.applicant_with_id = ''
 
-        self.ui_candidate_floating_action = []
-        self.ui_candidate_manage_task_action = []
+        self.ui_candidate_floating_action = ''
+        self.ui_candidate_manage_task_action = ''
         self.task_validation_check = []
-        self.ui_task_candidate_name = []
+        self.ui_task_candidate_name = ''
 
     def manage_task_event(self):
         try:
-            self.floating_action()
+            # self.actions_dropdown()
+            self.web_element_click_xpath('//*[@class="fa fa-angle-right"]')
             self.ui_candidate_floating_action = 'Pass'
 
-            self.web_element_click_xpath(page_elements.floating_actions['manage_task'])
+            # self.floating_action('manage_task')
+            self.web_element_click_xpath('//*[@title="Manage Task"]')
             self.ui_candidate_manage_task_action = 'Pass'
 
             self.driver.switch_to.window(self.driver.window_handles[2])

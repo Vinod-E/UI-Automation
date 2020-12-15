@@ -46,5 +46,5 @@ class CatalogValidations(form_validation.FormValidations):
                 self.ui_college_dropdown_four = 'Pass'
 
         except Exception as error:
-            ui_logger.error(error)
+            api_logger.error(error)
 

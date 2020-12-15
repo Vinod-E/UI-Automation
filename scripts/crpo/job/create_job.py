@@ -11,20 +11,19 @@ class CreateJob(job_excel.JobExcelRead):
     def __init__(self):
         super(CreateJob, self).__init__()
 
-        self.job_file = test_data_inputpath.attachments['attachment']
-        self.job_name_breadcumb = ""
-        self.ui_job_created = []
-        self.ui_job_validation = []
+        self.job_desc_file = test_data_inputpath.attachments['attachment']
+        self.ui_job_created = ''
+        self.ui_job_validation = ''
 
     def create_job_role(self):
         try:
             self.job_tab()
-            time.sleep(2.5)
+            time.sleep(2)
             self.web_element_click_xpath(page_elements.buttons['create'])
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Name"),
                                              self.job_name_sprint_version)
             self.web_element_send_keys_xpath(page_elements.file['upload_file'],
-                                             self.job_file)
+                                             self.job_desc_file)
             self.web_element_send_keys_xpath(page_elements.job['description_box'],
                                              self.xl_job_desc)
             self.web_element_send_keys_xpath(page_elements.job['location'],
@@ -61,24 +60,14 @@ class CreateJob(job_excel.JobExcelRead):
             ui_logger.error(create_job)
             image_capture.screen_shot(self, 'Job')
 
-        self.job_validation('the job')
-        if self.job_name_breadcumb == self.job_name_sprint_version:
-            self.ui_job_created = 'Pass'
-            print('**-------->>> Job Created successfully')
-        else:
-            print('**-------->>> Job Created Failed')
-
-    def job_validation(self, config_name):
-        try:
-            self.web_element_text_xpath(page_elements.job_validations['job_name_breadcumb'])
-            self.job_name_breadcumb = self.text_value
-        except Exception as e1:
-            ui_logger.error(e1)
-
-        if self.job_name_breadcumb == self.job_name_sprint_version:
+# --------- Create job validation check
+        self.getby_details_screen(self.job_name_sprint_version)
+        if self.header_name == self.job_name_sprint_version:
             image_capture.screen_shot(self, 'Job_created')
             self.ui_job_validation = 'Pass'
+            self.ui_job_created = 'Pass'
+            print('**-------->>> Job Created successfully')
             print('**-------->>> Job Validated and continuing '
-                  'with {} to created job :: {}'.format(config_name, self.job_name_breadcumb))
+                  'with the created job :: {}'.format(self.header_name))
         else:
-            print('Job validation failed Or Job creation failed <<<--------**')
+            print('Job creation failed Or Job validation failed<<<--------**')

@@ -11,22 +11,23 @@ class TestTaskConfig(create_event.CreateEvent):
 
         self.activity_name = ''
 
-        self.ui_event_config_tab = []
-        self.ui_event_task_config = []
-        self.task_validation = []
-        self.ui_event_test_config = []
+        self.ui_event_config_tab = ''
+        self.ui_event_task_config = ''
+        self.task_validation = ''
+        self.ui_event_test_config = ''
         self.test_validation = []
 
     def event_test_task_configure(self):
 
-        self.event_validation('task and test configuration')
-        if self.validation_check == 'True':
-
+        self.getby_details_screen(self.event_sprint_version)
+        if self.header_name.strip() == self.event_sprint_version:
+            print('**-------->>> Event Validated and continuing '
+                  'with task and test configuration to created event :: {}'.format(self.event_sprint_version))
             try:
-                self.web_element_click_xpath(page_elements.tabs['event_configuration_tab'])
+                self.sub_tab('event_configuration_tab')
                 self.ui_event_config_tab = 'Pass'
                 # ---------------------- Task configuration ------------------------------------------------------------
-                self.task_config(page_elements.task_config['event_task_configure'],
+                self.task_config(page_elements.event_config['event_task_configure'],
                                  page_elements.text_fields['text_field'].format('Select Job Role'),
                                  self.event_sprint_version,
                                  self.xl_stage_status,
@@ -44,16 +45,16 @@ class TestTaskConfig(create_event.CreateEvent):
 
                 # ---------------------- Test configuration ------------------------------------------------------------
                 self.driver.refresh()
-                time.sleep(1)
+                time.sleep(3)
 
-                self.web_element_click_xpath(page_elements.event_config['Event_test_configure'])
+                self.web_element_click_xpath(page_elements.event_config['event_test_configure'])
 
                 time.sleep(0.5)
                 self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Job Role'),
                                                  self.job_name_sprint_version)
                 self.drop_down_selection()
 
-                time.sleep(0.5)
+                time.sleep(1)
                 self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Stage'),
                                                  self.xl_event_test_stage)
                 self.drop_down_selection()

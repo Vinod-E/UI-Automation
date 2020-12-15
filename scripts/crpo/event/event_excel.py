@@ -11,7 +11,7 @@ class EventExcelRead(clone_assessment.CloneAssessment):
         workbook = xlrd.open_workbook(test_data_inputpath.crpo_test_data_file['create_event'])
         if self.login_server == 'betaams':
             self.event_sheet1 = workbook.sheet_by_index(0)
-        if self.login_server == 'ams':
+        if self.login_server == 'ams' or self.login_server == 'indiaams':
             self.event_sheet1 = workbook.sheet_by_index(0)
         if self.login_server == 'amsin':
             self.event_sheet1 = workbook.sheet_by_index(1)

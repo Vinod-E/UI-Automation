@@ -9,21 +9,22 @@ class SelectionProcess(create_job.CreateJob):
     def __init__(self):
         super(SelectionProcess, self).__init__()
 
-        self.ui_job_floating_action = []
-        self.selection_process_created = []
-        self.ui_selection_process_action = []
+        self.ui_job_floating_action = ''
+        self.selection_process_created = ''
+        self.ui_selection_process_action = ''
 
     def config_selection_process(self):
         # ---------------------------------- From Job details screen ---------------------------------------------------
-        self.job_validation('selection process')
-        if self.job_name_breadcumb == self.job_name_sprint_version:
-
+        self.getby_details_screen(self.job_name_sprint_version)
+        if self.header_name == self.job_name_sprint_version:
+            print('**-------->>> Selection process configuring to job:: {}'.format(self.job_name_sprint_version))
             try:
                 # ------------------------------------ Selection Process -----------------------------------------------
-                self.floating_action()
+                time.sleep(0.5)
+                self.driver.execute_script("window.scrollTo(0,-200);")
+                self.actions_dropdown()
+                self.floating_action('selection_process')
                 self.ui_job_floating_action = 'Pass'
-
-                self.web_element_click_xpath(page_elements.floating_actions['selection_process'])
                 self.ui_selection_process_action = 'Pass'
 
                 time.sleep(2)
@@ -34,6 +35,7 @@ class SelectionProcess(create_job.CreateJob):
                 time.sleep(0.5)
                 self.driver.execute_script("window.scrollTo(0,200);")
                 button_click.button(self, 'Save')
+                self.dismiss_message()
 
                 self.selection_process_created = 'Pass'
 
@@ -47,10 +49,9 @@ class SelectionProcess(create_job.CreateJob):
                 # ------------------------------------ Selection Process -----------------------------------------------
                 self.driver.refresh()
                 self.driver.implicitly_wait(3)
-                self.floating_action()
+                self.actions_dropdown()
+                self.floating_action('selection_process')
                 self.ui_job_floating_action = 'Pass'
-
-                self.web_element_click_xpath(page_elements.floating_actions['selection_process'])
                 self.ui_selection_process_action = 'Pass'
 
                 self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format("Selection Process"),
@@ -60,6 +61,7 @@ class SelectionProcess(create_job.CreateJob):
                 time.sleep(1)
                 self.driver.execute_script("window.scrollTo(0,100);")
                 button_click.button(self, 'Save')
+                self.dismiss_message()
 
             except Exception as config_message:
                 ui_logger.error(config_message)

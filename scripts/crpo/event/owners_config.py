@@ -1,3 +1,4 @@
+import time
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.event import test_task_config
@@ -8,16 +9,17 @@ class EventOwnersConfig(test_task_config.TestTaskConfig):
     def __init__(self):
         super(EventOwnersConfig, self).__init__()
 
-        self.ui_event_owners_tab = []
-        self.ui_owner_edit_action = []
-        self.ui_event_owner_config = []
+        self.ui_event_owners_tab = ''
+        self.ui_owner_edit_action = ''
+        self.ui_event_owner_config = ''
 
     def event_owner_configure(self):
-        self.event_validation('Owners config')
-        if self.validation_check == 'True':
-
+        self.getby_details_screen(self.event_sprint_version)
+        if self.header_name.strip() == self.event_sprint_version:
+            print('**-------->>> Event Validated and continuing '
+                  'with owner configuration to created event :: {}'.format(self.event_sprint_version))
             try:
-                self.web_element_click_xpath(page_elements.tabs['event_owner_tab'])
+                self.sub_tab('event_owner_tab')
                 self.ui_event_owners_tab = 'Pass'
 
                 button_click.button(self, 'Edit')
@@ -30,6 +32,7 @@ class EventOwnersConfig(test_task_config.TestTaskConfig):
 
                 print('**-------->>> Event Owners has been added')
                 self.ui_event_owner_config = 'Pass'
+                time.sleep(1)
 
             except Exception as error:
                 ui_logger.error(error)

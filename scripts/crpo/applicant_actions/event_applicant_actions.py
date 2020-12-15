@@ -72,9 +72,9 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.message_validation = ''
             # ----------------------------- Compose Mail ---------------------
             self.web_element_click_id(page_elements.applicant_actions['send_sms'])
+            time.sleep(1.5)
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Select Template'),
                                              self.xl_sms_template_a)
-            time.sleep(0.5)
             self.drop_down_selection()
             button_click.button(self, 'Send')
             self.glowing_messages('SMS sent successfully')
@@ -91,7 +91,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             self.message_validation = ''
             # ----------------------------- Tag applicants ---------------------
             self.web_element_click_id(page_elements.applicant_actions['tag_applicants'])
-            time.sleep(0.5)
+            time.sleep(2)
             self.web_element_send_keys_xpath(page_elements.text_fields['text_field'].format('Select a JobRole'),
                                              self.event_sprint_version_a)
             self.drop_down_selection()
@@ -209,9 +209,10 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             time.sleep(1)
             self.more_actions()
             # ----------------------------- Download Resume ------------------------------
-            applicant_actions.action(self, 'Download Resume(s)')
+            applicant_actions.action(self, 'Download Applicant Resume')
             time.sleep(0.5)
-            self.glowing_messages('Resumes Not found')
+            button_click.all_buttons(self, 'OK')
+            self.glowing_messages('Resume will be download in background')
             self.dismiss_message()
 
             # -------------------- output report value ----------------
@@ -262,6 +263,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             button_click.button(self, 'Close')
             # -------------------- output report value ----------------
             self.ui_compare_id_ae = 'Pass'
+            print('Message/UI notifier validated - Compare Id verified')
         except Exception as e:
             ui_logger.error(e)
 
@@ -273,12 +275,14 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             # ----------------------------- Upload attachment ------------------------------
             applicant_actions.action(self, 'Upload Attachment')
             self.web_element_send_keys_xpath(page_elements.file['upload_file'], self.attachment)
+            time.sleep(1)
             self.glowing_messages('File uploaded successfully')
             time.sleep(1.5)
             self.dismiss_message()
             time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.buttons['create-save'])
+            self.web_element_click_xpath(page_elements.buttons['save'])
             self.message_validation = ''
+            time.sleep(1)
             self.glowing_messages('Attachment Upload Successfully')
             self.dismiss_message()
             time.sleep(0.5)
@@ -299,7 +303,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             # ----------------------------- Change BU ------------------------------
             applicant_actions.action(self, 'Change Business Unit')
             time.sleep(0.5)
-            self.web_element_click_xpath(page_elements.buttons['create-save'])
+            self.web_element_click_xpath(page_elements.buttons['save'])
             self.glowing_messages('Applicant updated successfully')
             self.dismiss_message()
 
@@ -317,6 +321,7 @@ class EventApplicantActions(event_applicants.ApplicantActions):
             button_click.button(self, 'Cancel')
             # -------------------- output report value ----------------
             self.ui_view_applicant_json_ae = 'Pass'
+            print('Message/UI notifier validated - Applicant Json verified')
         except Exception as e:
             ui_logger.error(e)
 
