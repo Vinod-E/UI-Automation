@@ -13,6 +13,7 @@ class ValidationCheck(settings.Settings):
         self.enable_link_validation_check = ''
         self.disable_link_validation_check = ''
         self.event_validation_check = ''
+        self.applicant_current_status = ''
 
     def glowing_messages(self, message):
         self.web_element_text_xpath(page_elements.glowing_messages['notifier'])
@@ -86,4 +87,17 @@ class ValidationCheck(settings.Settings):
                 print('Event validation failed Or event creation failed <<<--------**')
         except Exception as e:
             ui_logger.error(e)
+
+    def applicant_current_status_validation(self, status):
+        try:
+            self.web_element_text_xpath(page_elements.event_applicant['applicant_validation'].format(status))
+            self.applicant_current_status = self.text_value
+            if self.applicant_current_status.strip() == status:
+                print('**-------->>> Applicant stage - status '
+                      'movement happened in event :: {}'.format(self.applicant_current_status))
+            else:
+                print('Failed to change applicant status <<<---------**')
+
+        except Exception as error:
+            ui_logger.error(error)
 

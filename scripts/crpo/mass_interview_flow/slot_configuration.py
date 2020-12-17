@@ -1,5 +1,6 @@
 import time
 import page_elements
+from datetime import datetime
 from logger_settings import ui_logger
 from scripts.crpo.common import button_click
 from scripts.crpo.mass_interview_flow import change_applicant_status
@@ -10,17 +11,18 @@ class SlotManagement(change_applicant_status.MassChangeAppStatus):
         self.time = input('slot time (ex:- 10:10 AM) ::')
         super(SlotManagement, self).__init__()
 
-        self.ui_event_tab_m = ''
-        self.ui_advance_search_m = ''
-        self.ui_event_details_m = ''
-        self.ui_event_validation_m = ''
-        self.ui_floating_action_m = ''
+        now = datetime.now()
+        self.current_date = now.strftime("%d/%m/%Y")
+
+        self.ui_event_tab_m_1 = ''
+        self.ui_advance_search_m_1 = ''
+        self.ui_event_details_m_1 = ''
+        self.ui_event_validation_m_1 = ''
+        self.ui_floating_action_m_1 = ''
         self.ui_slot_config_action_m = ''
 
     def event_search(self):
         try:
-            # --------------------------- change applicant status ------------------------------------------------------
-            self.applicant_status()
             # --------------------------- Advance search ---------------------------------------------------------------
             time.sleep(0.5)
             self.driver.execute_script("window.scrollTo(0,-100);")
@@ -35,11 +37,11 @@ class SlotManagement(change_applicant_status.MassChangeAppStatus):
                 print('**-------->>> Landed into slot configuration screen successfully')
 
                 # -------------------- output report values ----------------
-                self.ui_event_tab_m = 'Pass'
-                self.ui_advance_search_m = 'Pass'
-                self.ui_event_details_m = 'Pass'
-                self.ui_event_validation_m = 'Pass'
-                self.ui_floating_action_m = 'Pass'
+                self.ui_event_tab_m_1 = 'Pass'
+                self.ui_advance_search_m_1 = 'Pass'
+                self.ui_event_details_m_1 = 'Pass'
+                self.ui_event_validation_m_1 = 'Pass'
+                self.ui_floating_action_m_1 = 'Pass'
                 self.ui_slot_config_action_m = 'Pass'
 
         except Exception as e:
@@ -59,9 +61,14 @@ class SlotManagement(change_applicant_status.MassChangeAppStatus):
             button_click.button(self, 'Go')
             print('**-------->>> Number of slots configured successfully')
 
-            self.web_element_send_keys_xpath(page_elements.text_fields['place_holder'].format('From Time'), self.time)
+            time.sleep(0.9)
+            self.web_element_send_keys_xpath(page_elements.text_fields['place_holder'].format('From Date'),
+                                             self.current_date)
             self.web_element_send_keys_xpath(page_elements.text_fields['text_number'].
                                              format('Count'), str(self.xl_size_m))
+            self.clear(page_elements.text_fields['place_holder'].format('From Time'))
+            self.web_element_send_keys_xpath(page_elements.text_fields['place_holder'].format('From Time'),
+                                             self.time)
             print('**-------->>> Date/Time/Size entered in the fields')
             time.sleep(1)
             self.web_element_click_xpath(page_elements.title['tooltip'].format("'"'Assign slots'"'"))

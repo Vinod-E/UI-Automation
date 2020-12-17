@@ -6,6 +6,7 @@ from scripts.crpo.common import common_file
 
 class MassExcelRead(common_file.CommonFile):
     def __init__(self):
+        self.start_date_time = datetime.datetime.now()
         super(MassExcelRead, self).__init__()
 
         # ---------------------------------- file reader index ---------------------------------------------------------
@@ -24,9 +25,14 @@ class MassExcelRead(common_file.CommonFile):
         self.xl_status_m = []
         self.xl_comment_m = []
         self.xl_int1_name = []
+        self.xl_int1_user = []
         self.xl_int1_pwd = []
+        self.xl_int2_name = []
+        self.xl_int2_user = []
+        self.xl_int2_pwd = []
 
-        self.event_sprint_version_m = []
+        self.event_sprint_version_m = ''
+        self.interviewer_1_name = ''
 
         # ------------- Iterate Excel sheet------------------------
         self.mass_interview_excel_read()
@@ -51,8 +57,15 @@ class MassExcelRead(common_file.CommonFile):
             if rows[5]:
                 self.xl_int1_name.append(rows[5])
             if rows[6]:
-                self.xl_int1_pwd.append(rows[6])
+                self.xl_int1_user.append(rows[6])
+            if rows[7]:
+                self.xl_int1_pwd.append(rows[7])
+            if rows[8]:
+                self.xl_int2_name.append(rows[8])
 
             for j in self.xl_event_name_m:
                 event_name = j
                 self.event_sprint_version_m = event_name.format(self.sprint_version)
+
+            for k in self.xl_int1_name:
+                self.interviewer_1_name = k

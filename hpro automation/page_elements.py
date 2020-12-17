@@ -348,7 +348,11 @@ mass_interview = {
     'room_name': '//*[@id="mainBodyElement"]/div[3]/div/div[3]/div/'
                  'ui-view/div/div/div[1]/div/div[3]/div/table/tbody/tr/td[2]/b',
     'Interview_Status': '//*[@id="mainBodyElement"]/div[3]/div/div[3]/div/ui-view'
-                        '/div/div[5]/div/table/tbody/tr/td[7]/div'
+                        '/div/div[5]/div/table/tbody/tr/td[7]/div',
+    'interviewer_name': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div/div[1]/div/div/p[1]',
+    'lobby_cid': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div/div[2]/div/div/div/div/div/div/p[3]/span[2]',
+    'overall_comment': '//*[@ng-model="vm.overallComment"]',
+    'message': '//*[@ng-bind-html="vm.data.message"]'
 }
 
 help_desk = {
