@@ -11,6 +11,12 @@ class CreateRoom(candidate_login_page.CandidatePage):
         self.room_info = ''
         self.candidate_interview_status = ''
 
+        self.ui_create_room_action_m = ''
+        self.ui_room_created_m = ''
+        self.ui_active_room_action_m = ''
+        self.ui_room_activate_m = ''
+        self.ui_room_validation_m = ''
+
     def create_room(self):
         try:
             self.driver.execute_script("window.scrollTo(0,-200);")
@@ -24,12 +30,14 @@ class CreateRoom(candidate_login_page.CandidatePage):
                 page_elements.text_fields['text_field'].format('Room Name'), self.event_sprint_version_m)
 
             self.web_element_click_xpath(page_elements.title['title'].format('Select Interviewers'))
-            self.web_element_send_keys_xpath(page_elements.title['title'].format('Type here to search'), 'wer')
+            self.web_element_send_keys_xpath(
+                page_elements.title['title'].format('Type here to search'), self.xl_int1_name)
             self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
             button_click.all_buttons(self, 'Done')
 
             self.web_element_click_xpath(page_elements.title['title'].format('Select Participants'))
-            self.web_element_send_keys_xpath(page_elements.title['title'].format('Type here to search'), 'wer1')
+            self.web_element_send_keys_xpath(
+                page_elements.title['title'].format('Type here to search'), self.xl_int2_name)
             self.web_element_click_xpath(page_elements.multi_selection_box['moveAllItemsRight'])
             button_click.all_buttons(self, 'Done')
             print('**-------->>> Details are filled to create ROOM')
@@ -56,6 +64,11 @@ class CreateRoom(candidate_login_page.CandidatePage):
             if self.event_sprint_version_m in self.room_info.strip():
                 print('**-------->>> Room created successfully')
                 print('**-------->>> Room activated successfully')
+                self.ui_create_room_action_m = 'Pass'
+                self.ui_room_created_m = 'Pass'
+                self.ui_active_room_action_m = 'Pass'
+                self.ui_room_activate_m = 'Pass'
+                self.ui_room_validation_m = 'Pass'
 
         except Exception as error:
             ui_logger.error(error)

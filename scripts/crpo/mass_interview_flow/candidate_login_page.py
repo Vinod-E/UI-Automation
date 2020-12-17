@@ -30,7 +30,7 @@ class CandidatePage(slot_configuration.SlotManagement):
                 page_elements.text_fields['text_field'].format('Enter Candidate Id'), self.candidate_id_m)
             time.sleep(0.5)
             button_click.button(self, 'Enter the room')
-            time.sleep(2)
+            time.sleep(4)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
 

@@ -40,6 +40,7 @@ output = {
     'live_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_live.xls',
     'new_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_new.xls',
     'quick_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_quick.xls',
+    'mass_int_report': generic_input_path + crpo_reports + 'UI_Interview_Flow_mass.xls',
     'Applicant_action_output_report': generic_input_path + crpo_reports + 'UI_Applicant_Action_Flow.xls',
     'help_desk_output_report': generic_input_path + crpo_reports + 'UI_Help_Desk_Flow.xls',
     'manage_interviewers_output_report': generic_input_path + crpo_reports + 'UI_Manage_interviewers_Flow.xls',

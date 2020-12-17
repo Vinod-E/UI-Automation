@@ -11,14 +11,25 @@ class MassChangeAppStatus(mass_excel.MassExcelRead):
         self.applicant_current_status = ''
         self.candidate_id_m = ''
 
-        self.ui_change_applicant_status_action = ''
+        self.ui_event_tab_m = ''
+        self.ui_advance_search_m = ''
+        self.ui_event_details_m = ''
+        self.ui_event_validation_m = ''
+        self.ui_floating_action_m = ''
+        self.ui_event_applicant_action_m = ''
+        self.ui_event_applicant_grid_m = ''
+
+        self.ui_applicant_search_action_m = ''
+        self.ui_applicant_name_search_m = ''
+        self.ui_change_applicant_status_action_m = ''
         self.ui_candidate_getby_m = ''
-        self.ui_applicant_current_status_n = ''
+        self.ui_applicant_current_status_m = ''
+        self.ui_candidate_id_copied_m = ''
 
     def applicant_status(self):
         try:
             # --------------------------- Advance search ---------------------------------------------------------------
-            time.sleep(0.5)
+            time.sleep(2)
             self.driver.execute_script("window.scrollTo(0,-100);")
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_m, 'Event')
@@ -27,8 +38,16 @@ class MassChangeAppStatus(mass_excel.MassExcelRead):
             self.actions_dropdown()
             self.floating_action('View_Applicants')
 
+            # -------------------- output report values ----------------
             if self.event_validation_check == 'True':
                 print('**-------->>> Landed into applicants screen successfully')
+                self.ui_event_tab_m = 'Pass'
+                self.ui_advance_search_m = 'Pass'
+                self.ui_event_details_m = 'Pass'
+                self.ui_event_validation_m = 'Pass'
+                self.ui_floating_action_m = 'Pass'
+                self.ui_event_applicant_action_m = 'Pass'
+                self.ui_event_applicant_grid_m = 'Pass'
             time.sleep(1)
             # --------------------------- Applicant Advance search -----------------------------------------------------
             self.applicant_advance_search()
@@ -41,16 +60,23 @@ class MassChangeAppStatus(mass_excel.MassExcelRead):
             self.applicant_status_change(self.xl_stage_m,
                                          self.xl_status_m,
                                          self.xl_comment_m)
-            self.ui_change_applicant_status_action = 'Pass'
             time.sleep(0.5)
             self.dismiss_message()
 
             # --------------------------- Applicant common process -----------------------------------------------------
             time.sleep(1)
             self.applicant_getby_name(self.event_sprint_version_m)
-            self.ui_candidate_getby_m = 'Pass'
             self.driver.switch_to.window(self.driver.window_handles[1])
             self.current_status_validation('Awaited')
+
+            # -------------------- output report values ----------------
+            if self.applicant_current_status.strip() == 'Awaited':
+                self.ui_applicant_search_action_m = 'Pass'
+                self.ui_applicant_name_search_m = 'Pass'
+                self.ui_change_applicant_status_action_m = 'Pass'
+                self.ui_candidate_getby_m = 'Pass'
+                self.ui_applicant_current_status_m = 'Pass'
+                self.ui_candidate_id_copied_m = 'Pass'
 
             time.sleep(1)
             self.driver.close()
@@ -64,7 +90,6 @@ class MassChangeAppStatus(mass_excel.MassExcelRead):
             self.web_element_text_xpath(page_elements.event_applicant['applicant_validation'].format(status))
             self.applicant_current_status = self.text_value
             if self.applicant_current_status.strip() == status:
-                self.ui_applicant_current_status_n = 'Pass'
                 print('**-------->>> Applicant stage - status '
                       'movement happened in event :: {}'.format(self.applicant_current_status))
             else:
