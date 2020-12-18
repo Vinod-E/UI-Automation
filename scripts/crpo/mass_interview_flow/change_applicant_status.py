@@ -67,10 +67,10 @@ class MassChangeAppStatus(mass_excel.MassExcelRead):
             time.sleep(1)
             self.applicant_getby_name(self.event_sprint_version_m)
             self.driver.switch_to.window(self.driver.window_handles[1])
-            self.current_status_validation('Awaited')
+            self.current_status_validation(self.xl_awaited[0])
 
             # -------------------- output report values ----------------
-            if self.applicant_current_status.strip() == 'Awaited':
+            if self.applicant_current_status.strip() == self.xl_awaited[0]:
                 self.ui_applicant_search_action_m = 'Pass'
                 self.ui_applicant_name_search_m = 'Pass'
                 self.ui_change_applicant_status_action_m = 'Pass'

@@ -15,12 +15,12 @@ class BusinessFlow(crpo_bussiness_output.CrpoOutputFile):
             self.create_job_role()
             self.config_selection_process()
             self.tag_interview_panel()
-            # self.job_ec_task_configuration()
+            self.job_ec_task_configuration()
             self.config_feedback_form()
-            # self.job_automation_config()
-            # self.edit_job()
-            # self.tag_requirement()
-            # self.un_tag_requirement()
+            self.job_automation_config()
+            self.edit_job()
+            self.tag_requirement()
+            self.un_tag_requirement()
 
             self.job_output_report()
 
@@ -49,12 +49,12 @@ class BusinessFlow(crpo_bussiness_output.CrpoOutputFile):
     def event_creation(self):
         try:
             self.create_event()
-            # self.event_test_task_configure()
+            self.event_test_task_configure()
             self.event_owner_configure()
             self.upload_candidates_to_event(self.New_email_id)
-            # self.event_applicants()
-            # self.event_change_applicant_status()
-            # self.manage_task_event()
+            self.event_applicants()
+            self.event_change_applicant_status()
+            self.manage_task_event()
 
             self.event_output_report()
 
@@ -78,7 +78,7 @@ if Object.status_of_login.strip() == 'administrator':
     try:
         Object.job_creation()
         Object.requirement_creation()
-        # Object.assessment_creation()
+        Object.assessment_creation()
         Object.event_creation()
         Object.embrace_module()
 
