@@ -30,10 +30,10 @@ class ManageCandidate(create_room.CreateRoom):
     def manage_candidate(self):
         try:
             button_click.all_buttons(self, 'Manage Candidates')
-            self.manage_candidate_validation('To Be Queued')
+            self.manage_candidate_validation(self.xl_to_be_Queued[0])
 
             # -------------------- output report values ----------------
-            if self.candidate_interview_status == 'To Be Queued':
+            if self.candidate_interview_status == self.xl_to_be_Queued[0]:
                 self.ui_configure_slot_tab_m = 'Pass'
                 self.ui_stage_search_m = 'Pass'
                 self.ui_slot_creation_m = 'Pass'
@@ -68,7 +68,7 @@ class ManageCandidate(create_room.CreateRoom):
             time.sleep(0.5)
             button_click.all_buttons(self, 'OK')
             time.sleep(1)
-            self.manage_candidate_validation('Interview Pending')
+            self.manage_candidate_validation(self.xl_interview_pending[0])
 
         except Exception as error:
             ui_logger.error(error)

@@ -52,7 +52,7 @@ class MassFeedback(select_candidate.SelectCandidate):
             button_click.all_buttons(self, 'View Profile')
             time.sleep(1)
             self.driver.switch_to.window(self.driver.window_handles[1])
-            self.applicant_current_status_validation('Shortlisted')
+            self.applicant_current_status_validation(self.xl_shortlist_m[0])
             time.sleep(2)
             self.driver.close()
             self.driver.switch_to.window(self.driver.window_handles[0])
@@ -71,7 +71,7 @@ class MassFeedback(select_candidate.SelectCandidate):
         try:
             self.web_element_text_xpath(page_elements.mass_interview['message'])
             self.message_m = self.text_value
-            if self.message_m.strip() == 'There are no candidates in the queue for interview.':
+            if self.message_m.strip() == self.xl_message_m[0]:
                 self.ui_provide_feedback_action_m = 'Pass'
                 self.ui_p_f_screen_validate = 'Pass'
                 self.ui_decision_select = 'Pass'
