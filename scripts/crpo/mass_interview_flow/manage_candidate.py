@@ -1,4 +1,5 @@
 import time
+from selenium.webdriver.common.by import By
 import page_elements
 from logger_settings import ui_logger
 from scripts.crpo.common import button_click
@@ -27,13 +28,18 @@ class ManageCandidate(create_room.CreateRoom):
         self.ui_tag_room_m = ''
         self.candidate_interview_status_t_m = ''
 
+        self.ui_tagged_room = ''
+        self.ui_unassigned_room_action = ''
+        self.ui_unassigned_room = ''
+        self.ui_validation_check_unassigned = ''
+
     def manage_candidate(self):
         try:
             button_click.all_buttons(self, 'Manage Candidates')
             self.manage_candidate_validation(self.xl_to_be_Queued[0])
 
             # -------------------- output report values ----------------
-            if self.candidate_interview_status == self.xl_to_be_Queued[0]:
+            if self.candidate_interview_status == self.xl_interview_pending[0]:
                 self.ui_configure_slot_tab_m = 'Pass'
                 self.ui_stage_search_m = 'Pass'
                 self.ui_slot_creation_m = 'Pass'
@@ -45,13 +51,28 @@ class ManageCandidate(create_room.CreateRoom):
                 self.ui_open_lobby_link_m = 'Pass'
                 self.ui_candidate_id_enter_m = 'Pass'
                 self.ui_enter_room_action_m = 'Pass'
-            if self.candidate_interview_status == 'Interview Pending':
                 self.ui_entered_candidate_login_m = 'Pass'
                 self.ui_assign_room_action_m = 'Pass'
                 self.ui_tag_room_m = 'Pass'
                 self.candidate_interview_status_m = 'Pass'
                 self.candidate_interview_status_t_m = 'Pass'
 
+        except Exception as error:
+            ui_logger.error(error)
+
+    def untag_candidate_to_room(self):
+        try:
+            self.web_element_click_xpath(page_elements.title['tooltip'].format("'Unassign Room'"))
+            time.sleep(3)
+            button_click.all_buttons(self, 'OK')
+            time.sleep(0.2)
+            button_click.all_buttons(self, 'OK')
+            if self.check_exists_element(By.XPATH, page_elements.title['tooltip'].format("'Assign Room'")):
+                print('**-------->>> Unassigned to room successfully')
+                self.ui_tagged_room = 'Pass'
+                self.ui_unassigned_room = 'Pass'
+                self.ui_unassigned_room_action = 'Pass'
+                self.ui_validation_check_unassigned = 'Pass'
         except Exception as error:
             ui_logger.error(error)
 

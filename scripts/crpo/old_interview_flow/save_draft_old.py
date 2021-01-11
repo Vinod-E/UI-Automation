@@ -29,7 +29,7 @@ class SaveAsDraft(provide_feedback.ProvideFeedback):
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
             self.event_getby_name()
-            self.event_validation('save draft process')
+            self.event_validation('save draft process', self.event_sprint_version_o)
             self.actions_dropdown()
             self.floating_action('event_interviews')
             time.sleep(0.5)

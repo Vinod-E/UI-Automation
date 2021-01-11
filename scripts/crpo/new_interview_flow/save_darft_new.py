@@ -30,7 +30,7 @@ class DraftNew(provide_feedback_new.ProvideFeedbackNew):
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.job_sprint_version_n, 'Event')
             self.event_getby_name()
-            self.event_validation('save draft process')
+            self.event_validation('save draft process', self.job_sprint_version_n)
             self.actions_dropdown()
             time.sleep(0.5)
             self.floating_action('event_interviews')

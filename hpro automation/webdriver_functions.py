@@ -10,6 +10,23 @@ class WebdriverFunctions(webdriver_wait.WebDriverElementWait):
         self.text_value = ''
         self.xpath_send_keys = ''
 
+    def web_element(self, by_locator, element):
+        result = False
+        attempts = 0
+        while attempts < 10:
+            try:
+                xpath_text = self.driver.find_element(by_locator, element)
+                self.text_value = xpath_text.text
+
+                result = True
+                break
+            except Exception as error:
+                ui_logger.error(error)
+                time.sleep(2)
+            attempts += 1
+        # print('Number of attempts = {}'.format(attempts))
+        return result
+
     def web_element_text_xpath(self, web_element):
         result = False
         attempts = 0

@@ -68,15 +68,19 @@ class MassExcelRead(common_file.CommonFile):
             if rows[8]:
                 self.xl_int2_name.append(rows[8])
             if rows[9]:
-                self.xl_to_be_Queued.append(rows[9])
+                self.xl_int2_user.append(rows[9])
             if rows[10]:
-                self.xl_interview_pending.append(rows[10])
+                self.xl_int2_pwd.append(rows[10])
             if rows[11]:
-                self.xl_awaited.append(rows[11])
+                self.xl_to_be_Queued.append(rows[11])
             if rows[12]:
-                self.xl_shortlist_m.append(rows[12])
+                self.xl_interview_pending.append(rows[12])
             if rows[13]:
-                self.xl_message_m.append(rows[13])
+                self.xl_awaited.append(rows[13])
+            if rows[14]:
+                self.xl_shortlist_m.append(rows[14])
+            if rows[15]:
+                self.xl_message_m.append(rows[15])
 
             for j in self.xl_event_name_m:
                 event_name = j
