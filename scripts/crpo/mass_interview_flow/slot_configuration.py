@@ -21,6 +21,15 @@ class SlotManagement(change_applicant_status.MassChangeAppStatus):
         self.ui_floating_action_m_1 = ''
         self.ui_slot_config_action_m = ''
 
+        self.ui_event_config_tab = ''
+        self.ui_auto_assign_on = ''
+        self.ui_chat_config = ''
+        self.ui_select_user = ''
+        self.ui_save_config = ''
+
+        self.ui_candidate_login_link_copied = ''
+        self.candidate_login_link = ''
+
     def event_search(self):
         try:
             # --------------------------- Advance search ---------------------------------------------------------------
@@ -78,6 +87,67 @@ class SlotManagement(change_applicant_status.MassChangeAppStatus):
             time.sleep(0.5)
             button_click.all_buttons(self, 'OK')
             print('**-------->>> Communicate the slot mail to candidate successfully')
+
+        except Exception as e:
+            ui_logger.error(e)
+
+    def c_login_link(self):
+        try:
+            self.web_element_send_keys_xpath(
+                page_elements.text_fields['text_field'].format('Candidate Id(s) (Eg: 1234, 2312,...)'),
+                self.candidate_id_m)
+            button_click.button(self, ' Search')
+            self.web_element_click_xpath(page_elements.title['title'].format('View Interview Lobby Link'))
+            time.sleep(0.5)
+
+            self.driver.find_element_by_tag_name('h4').click()
+            list = self.driver.find_elements_by_tag_name('a')
+            for i in list:
+                if i.get_attribute('href') is not None:
+                    if self.candidate_id_m in i.get_attribute('href'):
+                        self.candidate_login_link = i.get_attribute('href')
+                        print(self.candidate_login_link)
+                        self.ui_candidate_login_link_copied = 'Pass'
+
+            time.sleep(2)
+            self.driver.refresh()
+            time.sleep(5)
+
+        except Exception as e:
+            ui_logger.error(e)
+
+    def slot_auto_assign(self):
+        try:
+            self.sub_tab('event_configuration_tab')
+
+            self.driver.execute_script("window.scrollTo(0,-300);")
+            time.sleep(3)
+            self.loop_list('label.btn', 'On')
+            time.sleep(2)
+            self.web_element_click_xpath(page_elements.title['title'].format('Current Status'))
+
+            self.loop_list('option.ellipsis_text', 'admin')
+            self.web_element_click_xpath(page_elements.multi_selection_box['moveSelectedItemsRight'])
+            button_click.all_buttons(self, 'Done')
+            time.sleep(2)
+            button_click.button(self, 'save')
+
+            self.ui_event_config_tab = 'Pass'
+            self.ui_auto_assign_on = 'Pass'
+            self.ui_chat_config = 'Pass'
+            self.ui_select_user = 'Pass'
+            self.ui_save_config = 'Pass'
+
+        except Exception as e:
+            ui_logger.error(e)
+
+    def loop_list(self, element, value):
+        try:
+            list = self.driver.find_elements_by_css_selector(element)
+            for i in list:
+                if value in i.text.strip():
+                    i.click()
+                    break
 
         except Exception as e:
             ui_logger.error(e)

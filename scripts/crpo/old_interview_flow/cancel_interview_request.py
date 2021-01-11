@@ -29,7 +29,7 @@ class CancelInterviewRequest(cancel_interview_old.CancelInterview):
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
             self.event_getby_name()
-            self.event_validation('cancel request process')
+            self.event_validation('cancel request process', self.event_sprint_version_o)
             self.actions_dropdown()
             self.floating_action('event_interviews')
 

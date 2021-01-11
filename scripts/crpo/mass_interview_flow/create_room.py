@@ -15,6 +15,7 @@ class CreateRoom(candidate_login_page.CandidatePage):
         self.ui_room_created_m = ''
         self.ui_active_room_action_m = ''
         self.ui_room_activate_m = ''
+        self.ui_auto_enable = ''
         self.ui_room_validation_m = ''
 
     def create_room(self):
@@ -68,6 +69,7 @@ class CreateRoom(candidate_login_page.CandidatePage):
                 self.ui_room_created_m = 'Pass'
                 self.ui_active_room_action_m = 'Pass'
                 self.ui_room_activate_m = 'Pass'
+                self.ui_auto_enable = 'Pass'
                 self.ui_room_validation_m = 'Pass'
 
         except Exception as error:

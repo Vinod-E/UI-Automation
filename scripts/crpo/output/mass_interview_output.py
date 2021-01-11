@@ -12,7 +12,7 @@ class MassInterviewOutputFile(styles.FontColor, provide_mass_feedback.MassFeedba
     def __init__(self):
 
         self.date_now = str(date.today())
-        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 62)))
+        self.Expected_success_cases = list(map(lambda x: 'Pass', range(0, 88)))
         self.Actual_success_cases = []
 
         super(MassInterviewOutputFile, self).__init__()
@@ -27,28 +27,48 @@ class MassInterviewOutputFile(styles.FontColor, provide_mass_feedback.MassFeedba
         self.size = self.rowsize
         self.c_sc_col = 0
         self.c_st_col = 1
-        self.sc_sc_col = 2
-        self.sc_st_col = 3
-        self.r_sc_col = 4
-        self.r_st_col = 5
-        self.int_sc_col = 6
-        self.int_st_col = 7
-        self.l_sc_col = 8
-        self.l_st_col = 9
-        self.p_sc_col = 10
-        self.p_st_col = 11
-# ------------- Headers_set
+        self.aa_sc_col = 2
+        self.aa_st_col = 3
+        self.sc_sc_col = 4
+        self.sc_st_col = 5
+        self.rc_sc_col = 6
+        self.rc_st_col = 7
+        self.au_sc_col = 8
+        self.au_st_col = 9
+        self.cl_sc = 10
+        self.cl_st = 11
+        self.int_sc_col = 0
+        self.int_st_col = 1
+        self.l_sc_col = 2
+        self.l_st_col = 3
+        self.p_sc_col = 4
+        self.p_st_col = 5
+        self.s2_sc_col = 6
+        self.s2_st_col = 7
+# ------------- Headers_set_1
         index = 0
-        excelheaders = ['Candidate status', 'Status', 'Slot configuration', 'Status', 'Room Creation',
-                        'Status', 'Interviewer_1', 'Status', 'Lobby', 'Status', 'Provide Feedback',
-                        'Status']
+        excelheaders = ['Candidate status (Recruiter)', 'Status', 'RoomAutoAssignConfig (Recruiter)', 'Status',
+                        'Slot configuration (Recruiter)', 'Status', 'Room Creation (Recruiter)', 'Status',
+                        'Tag/Untag Room (Recruiter)', 'Status', 'Candidate_login', 'Status']
         for headers in excelheaders:
-            if headers in ['Candidate status', 'Status', 'Slot configuration', 'Status', 'Room Creation',
-                           'Status', 'Interviewer_1', 'Status', 'Lobby', 'Status', 'Provide Feedback',
-                           'Status']:
+            if headers in ['Candidate status (Recruiter)', 'Slot configuration (Recruiter)',
+                           'RoomAutoAssignConfig (Recruiter)', 'Room Creation (Recruiter)',
+                           'Tag/Untag Room (Recruiter)', 'Candidate_login', 'Status']:
                 self.ws.write(1, index, headers, self.style0)
             else:
                 self.ws.write(1, index, headers, self.style1)
+            index += 1
+# ------------- Headers_set_2
+        index = 0
+        excelheaders = ['Interviewer_1', 'Status', 'STAGE1 Lobby (Interviewer)', 'Status',
+                        'Provide Feedback (Interviewer)', 'Status', 'STAGE2 Lobby (Interviewer)',
+                        'Status']
+        for headers in excelheaders:
+            if headers in ['Interviewer_1', 'STAGE1 Lobby (Interviewer)', 'Provide Feedback (Interviewer)',
+                           'STAGE2 Lobby (Interviewer)', 'Status']:
+                self.ws.write(18, index, headers, self.style0)
+            else:
+                self.ws.write(18, index, headers, self.style1)
             index += 1
 
     def candidate_status_output_report(self):
@@ -105,11 +125,7 @@ class MassInterviewOutputFile(styles.FontColor, provide_mass_feedback.MassFeedba
             self.ws.write(13, self.sc_sc_col, 'Communicate Slot', self.style8)
             self.ws.write(14, self.sc_sc_col, 'Search Slot Candidate', self.style8)
             self.ws.write(15, self.sc_sc_col, 'View Candidate link action', self.style8)
-            self.ws.write(16, self.sc_sc_col, 'Open candidate link', self.style8)
-            self.ws.write(17, self.sc_sc_col, 'Candidate Id to Entry', self.style8)
-            self.ws.write(18, self.sc_sc_col, 'Enter button', self.style8)
-            self.ws.write(19, self.sc_sc_col, 'Candidate Lobby Entry', self.style8)
-            self.ws.write(20, self.sc_sc_col, 'Interview status - To Be Queued', self.style8)
+            self.ws.write(16, self.sc_sc_col, 'Candidate login link copied', self.style8)
 
             # ----------------------------------------------------------------------------------------------------------
             self.__common_result_pass(2, self.ui_event_tab_m_1, self.sc_st_col)
@@ -126,11 +142,62 @@ class MassInterviewOutputFile(styles.FontColor, provide_mass_feedback.MassFeedba
             self.__common_result_pass(13, self.ui_communicate_slot_m, self.sc_st_col)
             self.__common_result_pass(14, self.ui_search_slot_applicant_m, self.sc_st_col)
             self.__common_result_pass(15, self.ui_interview_lobby_action_m, self.sc_st_col)
-            self.__common_result_pass(16, self.ui_open_lobby_link_m, self.sc_st_col)
-            self.__common_result_pass(17, self.ui_candidate_id_enter_m, self.sc_st_col)
-            self.__common_result_pass(18, self.ui_enter_room_action_m, self.sc_st_col)
-            self.__common_result_pass(19, self.ui_entered_candidate_login_m, self.sc_st_col)
-            self.__common_result_pass(20, self.candidate_interview_status_m, self.sc_st_col)
+            self.__common_result_pass(16, self.ui_candidate_login_link_copied, self.sc_st_col)
+
+            self.wb_Result.save(test_data_inputpath.output['mass_int_report'])
+
+        except Exception as error:
+            ui_logger.error(error)
+
+    def auto_assign_room_report(self):
+        try:
+            # ------------------------------ Writing Output Data -------------------------------------------------------
+            self.ws.write(2, self.aa_sc_col, 'Configuration Tab', self.style8)
+            self.ws.write(3, self.aa_sc_col, 'Auto Assign ON/OFF', self.style8)
+            self.ws.write(4, self.aa_sc_col, 'Chat Config', self.style8)
+            self.ws.write(5, self.aa_sc_col, 'Select User', self.style8)
+            self.ws.write(6, self.aa_sc_col, 'Save Config', self.style8)
+
+            # ----------------------------------------------------------------------------------------------------------
+            self.__common_result_pass(2, self.ui_event_config_tab, self.aa_st_col)
+            self.__common_result_pass(3, self.ui_auto_assign_on, self.aa_st_col)
+            self.__common_result_pass(4, self.ui_chat_config, self.aa_st_col)
+            self.__common_result_pass(5, self.ui_select_user, self.aa_st_col)
+            self.__common_result_pass(6, self.ui_save_config, self.aa_st_col)
+
+            self.wb_Result.save(test_data_inputpath.output['mass_int_report'])
+
+        except Exception as error:
+            ui_logger.error(error)
+
+    def candidate_login_report(self):
+        try:
+            self.ws.write(2, self.cl_sc, 'Open candidate link', self.style8)
+            self.ws.write(3, self.cl_sc, 'Candidate Id to Entry', self.style8)
+            self.ws.write(4, self.cl_sc, 'Enter button', self.style8)
+            self.ws.write(5, self.cl_sc, 'Candidate Lobby Entry', self.style8)
+            self.ws.write(6, self.cl_sc, self.ui_c_message_1, self.style8)
+            self.ws.write(7, self.cl_sc, 'Interview status - To Be Queued', self.style8)
+            self.ws.write(8, self.cl_sc, self.ui_c_message_2, self.style8)
+            self.ws.write(9, self.cl_sc, 'Interview status - Interview Pending', self.style8)
+            self.ws.write(10, self.cl_sc, self.ui_c_message_3, self.style8)
+            self.ws.write(11, self.cl_sc, 'Interview status - Invited to Interview', self.style8)
+            self.ws.write(12, self.cl_sc, self.ui_c_message_4, self.style8)
+            self.ws.write(13, self.cl_sc, 'Interview status - Interview Completed', self.style8)
+            # ----------------------------------------------------------------------------------------------------------
+
+            self.__common_result_pass(2, self.ui_open_lobby_link_m, self.cl_st)
+            self.__common_result_pass(3, self.ui_candidate_id_enter_m, self.cl_st)
+            self.__common_result_pass(4, self.ui_enter_room_action_m, self.cl_st)
+            self.__common_result_pass(5, self.ui_entered_candidate_login_m, self.cl_st)
+            self.__common_result_pass(6, self.ui_c_msg1, self.cl_st)
+            self.__common_result_pass(7, self.candidate_interview_status_m, self.cl_st)
+            self.__common_result_pass(8, self.ui_c_msg2, self.cl_st)
+            self.__common_result_pass(9, self.candidate_interview_status_m, self.cl_st)
+            self.__common_result_pass(10, self.ui_c_msg3, self.cl_st)
+            self.__common_result_pass(11, self.ui_select_candidate_m, self.cl_st)
+            self.__common_result_pass(12, self.ui_c_msg4, self.cl_st)
+            self.__common_result_pass(13, self.ui_interview_finish_button, self.cl_st)
 
             self.wb_Result.save(test_data_inputpath.output['mass_int_report'])
 
@@ -140,51 +207,72 @@ class MassInterviewOutputFile(styles.FontColor, provide_mass_feedback.MassFeedba
     def room_output_report(self):
         try:
             # ------------------------------ Writing Output Data -------------------------------------------------------
-            self.ws.write(2, self.r_sc_col, 'Create Room button', self.style8)
-            self.ws.write(3, self.r_sc_col, 'Room Creation', self.style8)
-            self.ws.write(4, self.r_sc_col, 'Room Activate Action', self.style8)
-            self.ws.write(5, self.r_sc_col, 'Room Activate', self.style8)
-            self.ws.write(6, self.r_sc_col, 'Validate Created Room', self.style8)
-            self.ws.write(7, self.r_sc_col, 'Assign Room Action', self.style8)
-            self.ws.write(8, self.r_sc_col, 'Assign Room to Candidate', self.style8)
-            self.ws.write(9, self.r_sc_col, 'Interview status - Interview Pending', self.style8)
+            self.ws.write(2, self.rc_sc_col, 'Create Room button', self.style8)
+            self.ws.write(3, self.rc_sc_col, 'Room Creation', self.style8)
+            self.ws.write(4, self.rc_sc_col, 'Room Activate Action', self.style8)
+            self.ws.write(5, self.rc_sc_col, 'Room Activate', self.style8)
+            self.ws.write(6, self.rc_sc_col, 'Validate Created Room', self.style8)
+            self.ws.write(7, self.rc_sc_col, 'Auto Room action ON', self.style8)
+            self.ws.write(8, self.rc_sc_col, 'Interview status - Interview Pending', self.style8)
 
             # ----------------------------------------------------------------------------------------------------------
-            self.__common_result_pass(2, self.ui_create_room_action_m, self.r_st_col)
-            self.__common_result_pass(3, self.ui_room_created_m, self.r_st_col)
-            self.__common_result_pass(4, self.ui_active_room_action_m, self.r_st_col)
-            self.__common_result_pass(5, self.ui_room_activate_m, self.r_st_col)
-            self.__common_result_pass(6, self.ui_room_validation_m, self.r_st_col)
-            self.__common_result_pass(7, self.ui_assign_room_action_m, self.r_st_col)
-            self.__common_result_pass(8, self.ui_tag_room_m, self.r_st_col)
-            self.__common_result_pass(9, self.candidate_interview_status_t_m, self.r_st_col)
+            self.__common_result_pass(2, self.ui_create_room_action_m, self.rc_st_col)
+            self.__common_result_pass(3, self.ui_room_created_m, self.rc_st_col)
+            self.__common_result_pass(4, self.ui_active_room_action_m, self.rc_st_col)
+            self.__common_result_pass(5, self.ui_room_activate_m, self.rc_st_col)
+            self.__common_result_pass(6, self.ui_room_validation_m, self.rc_st_col)
+            self.__common_result_pass(7, self.ui_auto_enable, self.rc_st_col)
+            self.__common_result_pass(8, self.candidate_interview_status_t_m, self.rc_st_col)
 
             self.wb_Result.save(test_data_inputpath.output['mass_int_report'])
 
         except Exception as error:
             ui_logger.error(error)
 
+    def assigned_unassigned_room_report(self):
+        try:
+            self.ws.write(2, self.au_sc_col, 'Validation Auto Tagged', self.style8)
+            self.ws.write(3, self.au_sc_col, 'Un Assign Room Action', self.style8)
+            self.ws.write(4, self.au_sc_col, 'Un Assign form Room', self.style8)
+            self.ws.write(5, self.au_sc_col, 'Un Assign form Room', self.style8)
+            self.ws.write(6, self.au_sc_col, 'Assign Room Action', self.style8)
+            self.ws.write(7, self.au_sc_col, 'Assign Room to Candidate', self.style8)
+            self.ws.write(8, self.au_sc_col, 'Interview status - Interview Pending', self.style8)
+
+            # ----------------------------------------------------------------------------------------------------------
+            self.__common_result_pass(2, self.ui_tagged_room, self.au_st_col)
+            self.__common_result_pass(3, self.ui_unassigned_room, self.au_st_col)
+            self.__common_result_pass(4, self.ui_unassigned_room_action, self.au_st_col)
+            self.__common_result_pass(5, self.ui_validation_check_unassigned, self.au_st_col)
+            self.__common_result_pass(6, self.ui_assign_room_action_m, self.au_st_col)
+            self.__common_result_pass(7, self.ui_tag_room_m, self.au_st_col)
+            self.__common_result_pass(8, self.candidate_interview_status_t_m, self.au_st_col)
+
+            self.wb_Result.save(test_data_inputpath.output['mass_int_report'])
+        except Exception as error:
+            ui_logger.error(error)
+
     def interviewer_login_output_report(self):
         try:
             # ------------------------------ Writing Output Data -------------------------------------------------------
-            self.ws.write(2, self.int_sc_col, 'Interview Login', self.style8)
-            self.ws.write(3, self.int_sc_col, 'Event Tab', self.style8)
-            self.ws.write(4, self.int_sc_col, 'Advance search', self.style8)
-            self.ws.write(5, self.int_sc_col, 'Event details', self.style8)
-            self.ws.write(6, self.int_sc_col, 'Event Validation', self.style8)
-            self.ws.write(7, self.int_sc_col, 'Floating actions', self.style8)
-            self.ws.write(8, self.int_sc_col, 'View Interview Panel', self.style8)
-            self.ws.write(9, self.int_sc_col, 'Validate Lobby screen', self.style8)
+            self.ws.write(19, self.int_sc_col, 'Interview Login', self.style8)
+            self.ws.write(20, self.int_sc_col, 'Event Tab', self.style8)
+            self.ws.write(21, self.int_sc_col, 'Advance search', self.style8)
+            self.ws.write(22, self.int_sc_col, 'Event details', self.style8)
+            self.ws.write(23, self.int_sc_col, 'Event Validation', self.style8)
+            self.ws.write(24, self.int_sc_col, 'Floating actions', self.style8)
+            self.ws.write(25, self.int_sc_col, 'View Interview Panel', self.style8)
+            self.ws.write(26, self.int_sc_col, 'Validate Lobby screen', self.style8)
 
             # ----------------------------------------------------------------------------------------------------------
-            self.__common_result_pass(2, self.ui_int1_login_m, self.int_st_col)
-            self.__common_result_pass(3, self.ui_event_tab_m_2, self.int_st_col)
-            self.__common_result_pass(4, self.ui_advance_search_m_2, self.int_st_col)
-            self.__common_result_pass(5, self.ui_event_details_m_2, self.int_st_col)
-            self.__common_result_pass(6, self.ui_event_validation_m_3, self.int_st_col)
-            self.__common_result_pass(7, self.ui_floating_action_m_4, self.int_st_col)
-            self.__common_result_pass(8, self.ui_view_interview_panel_action_m, self.int_st_col)
-            self.__common_result_pass(9, self.int1_panel_validation_m, self.int_st_col)
+            self.__common_result_pass(19, self.ui_int1_login_m, self.int_st_col)
+            self.__common_result_pass(20, self.ui_event_tab_m_2, self.int_st_col)
+            self.__common_result_pass(21, self.ui_advance_search_m_2, self.int_st_col)
+            self.__common_result_pass(22, self.ui_event_details_m_2, self.int_st_col)
+            self.__common_result_pass(23, self.ui_event_validation_m_3, self.int_st_col)
+            self.__common_result_pass(24, self.ui_floating_action_m_4, self.int_st_col)
+            self.__common_result_pass(25, self.ui_view_interview_panel_action_m, self.int_st_col)
+            self.__common_result_pass(26, self.int1_panel_validation_m, self.int_st_col)
 
             self.wb_Result.save(test_data_inputpath.output['mass_int_report'])
 
@@ -194,16 +282,18 @@ class MassInterviewOutputFile(styles.FontColor, provide_mass_feedback.MassFeedba
     def lobby_output_report(self):
         try:
             # ------------------------------ Writing Output Data -------------------------------------------------------
-            self.ws.write(2, self.l_sc_col, 'Next candidate', self.style8)
-            self.ws.write(3, self.l_sc_col, 'Validate Candidate', self.style8)
-            self.ws.write(4, self.l_sc_col, 'Invite Candidate to Video call', self.style8)
-            self.ws.write(5, self.l_sc_col, 'Candidate Video link Opened', self.style8)
+            self.ws.write(19, self.l_sc_col, 'Next candidate', self.style8)
+            self.ws.write(20, self.l_sc_col, 'Validate Candidate', self.style8)
+            self.ws.write(21, self.l_sc_col, 'Invite Candidate to Video call', self.style8)
+            self.ws.write(22, self.l_sc_col, 'Candidate Video link Opened', self.style8)
+            self.ws.write(23, self.l_sc_col, 'Validate VideoProctor Page', self.style8)
 
             # ----------------------------------------------------------------------------------------------------------
-            self.__common_result_pass(2, self.ui_select_candidate_action_m, self.l_st_col)
-            self.__common_result_pass(3, self.ui_select_candidate_m, self.l_st_col)
-            self.__common_result_pass(4, self.ui_invite_candidate_action, self.l_st_col)
-            self.__common_result_pass(5, self.ui_invited_candidate_to_VC, self.l_st_col)
+            self.__common_result_pass(19, self.ui_select_candidate_action_m, self.l_st_col)
+            self.__common_result_pass(20, self.ui_select_candidate_m, self.l_st_col)
+            self.__common_result_pass(21, self.ui_invite_candidate_action, self.l_st_col)
+            self.__common_result_pass(22, self.ui_invited_candidate_to_VC, self.l_st_col)
+            self.__common_result_pass(23, self.ui_validate_video_proctor_page, self.l_st_col)
 
             self.wb_Result.save(test_data_inputpath.output['mass_int_report'])
 
@@ -213,28 +303,50 @@ class MassInterviewOutputFile(styles.FontColor, provide_mass_feedback.MassFeedba
     def mass_feedback_output_report(self):
         try:
             # ------------------------------ Writing Output Data -------------------------------------------------------
-            self.ws.write(2, self.p_sc_col, 'Provide Feedback Button', self.style8)
-            self.ws.write(3, self.p_sc_col, 'Feedback screen validation', self.style8)
-            self.ws.write(4, self.p_sc_col, 'Decision select', self.style8)
-            self.ws.write(5, self.p_sc_col, 'Submit Feedback', self.style8)
-            self.ws.write(6, self.p_sc_col, 'View Profile Button', self.style8)
-            self.ws.write(7, self.p_sc_col, 'Profile Screen Validate', self.style8)
-            self.ws.write(8, self.p_sc_col, 'Candidate status', self.style8)
-            self.ws.write(9, self.p_sc_col, 'Interview Finished Button', self.style8)
-            self.ws.write(10, self.p_sc_col, 'Finished Interview', self.style8)
-            self.ws.write(11, self.p_sc_col, 'Validate Next candidate select', self.style8)
+            self.ws.write(19, self.p_sc_col, 'Provide Feedback Button', self.style8)
+            self.ws.write(20, self.p_sc_col, 'Feedback screen validation', self.style8)
+            self.ws.write(21, self.p_sc_col, 'Decision select', self.style8)
+            self.ws.write(22, self.p_sc_col, 'Submit Feedback', self.style8)
+            self.ws.write(23, self.p_sc_col, 'View Profile Button', self.style8)
+            self.ws.write(24, self.p_sc_col, 'Profile Screen Validate', self.style8)
+            self.ws.write(25, self.p_sc_col, 'Candidate status', self.style8)
+            self.ws.write(26, self.p_sc_col, 'Interview Finished Button', self.style8)
+            self.ws.write(27, self.p_sc_col, 'Finished Interview', self.style8)
+            self.ws.write(28, self.p_sc_col, 'Validate Next candidate select', self.style8)
 
             # ----------------------------------------------------------------------------------------------------------
-            self.__common_result_pass(2, self.ui_provide_feedback_action_m, self.p_st_col)
-            self.__common_result_pass(3, self.ui_p_f_screen_validate, self.p_st_col)
-            self.__common_result_pass(4, self.ui_decision_select, self.p_st_col)
-            self.__common_result_pass(5, self.ui_p_f_submit_button, self.p_st_col)
-            self.__common_result_pass(6, self.ui_p_f_submitted, self.p_st_col)
-            self.__common_result_pass(7, self.ui_view_profile_action, self.p_st_col)
-            self.__common_result_pass(8, self.ui_profile_screen_validate, self.p_st_col)
-            self.__common_result_pass(9, self.ui_interview_finish_button, self.p_st_col)
-            self.__common_result_pass(10, self.ui_finished_interview, self.p_st_col)
-            self.__common_result_pass(11, self.ui_next_candidate_screen_validate, self.p_st_col)
+            self.__common_result_pass(19, self.ui_provide_feedback_action_m, self.p_st_col)
+            self.__common_result_pass(20, self.ui_p_f_screen_validate, self.p_st_col)
+            self.__common_result_pass(21, self.ui_decision_select, self.p_st_col)
+            self.__common_result_pass(22, self.ui_p_f_submit_button, self.p_st_col)
+            self.__common_result_pass(23, self.ui_p_f_submitted, self.p_st_col)
+            self.__common_result_pass(24, self.ui_view_profile_action, self.p_st_col)
+            self.__common_result_pass(25, self.ui_profile_screen_validate, self.p_st_col)
+            self.__common_result_pass(26, self.ui_interview_finish_button, self.p_st_col)
+            self.__common_result_pass(27, self.ui_finished_interview, self.p_st_col)
+            self.__common_result_pass(28, self.ui_next_candidate_screen_validate, self.p_st_col)
+
+            self.wb_Result.save(test_data_inputpath.output['mass_int_report'])
+
+        except Exception as error:
+            ui_logger.error(error)
+
+    def stage_2_output_report(self):
+        try:
+            # ------------------------------ Writing Output Data -------------------------------------------------------
+            self.ws.write(19, self.s2_sc_col, 'Next candidate', self.style8)
+            self.ws.write(20, self.s2_sc_col, 'Validate Candidate', self.style8)
+            self.ws.write(21, self.s2_sc_col, 'Invite Candidate to Video call', self.style8)
+            self.ws.write(22, self.s2_sc_col, 'Provide Feedback Button', self.style8)
+            self.ws.write(23, self.s2_sc_col, 'Finished Interview', self.style8)
+            self.ws.write(24, self.s2_sc_col, 'Validate Next candidate select', self.style8)
+            # ----------------------------------------------------------------------------------------------------------
+            self.__common_result_pass(19, self.ui_select_candidate_action_m, self.s2_st_col)
+            self.__common_result_pass(20, self.ui_select_candidate_m, self.s2_st_col)
+            self.__common_result_pass(21, self.ui_invite_candidate_action, self.s2_st_col)
+            self.__common_result_pass(22, self.ui_provide_feedback_action_m, self.s2_st_col)
+            self.__common_result_pass(23, self.ui_finished_interview, self.s2_st_col)
+            self.__common_result_pass(24, self.ui_next_candidate_screen_validate, self.s2_st_col)
 
             self.wb_Result.save(test_data_inputpath.output['mass_int_report'])
 
