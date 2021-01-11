@@ -31,7 +31,7 @@ class CancelRequestAcceptance(cancel_interview_request.CancelInterviewRequest):
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
             self.event_getby_name()
-            self.event_validation('cancel request acceptance process')
+            self.event_validation('cancel request acceptance process', self.event_sprint_version_o)
 
             self.web_element_click_xpath(page_elements.tabs['event_tracking'])
             button_click.all_buttons(self, 'Interview Cancel Request')

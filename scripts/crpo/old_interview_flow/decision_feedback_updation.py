@@ -35,7 +35,7 @@ class DecisionFeedbackUpdate(unlock_feedback.UnlockFeedbackForm):
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.event_sprint_version_o, 'Event')
             self.event_getby_name()
-            self.event_validation('unlock feedback form')
+            self.event_validation('unlock feedback form', self.event_sprint_version_o)
             self.actions_dropdown()
             self.floating_action('event_interviews')
             time.sleep(0.5)

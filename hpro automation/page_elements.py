@@ -351,8 +351,13 @@ mass_interview = {
                         '/div/div[5]/div/table/tbody/tr/td[7]/div',
     'interviewer_name': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div/div[1]/div/div/p[1]',
     'lobby_cid': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div/div[2]/div/div/div/div/div/div/p[3]/span[2]',
-    'overall_comment': '//*[@ng-model="vm.overallComment"]',
-    'message': '//*[@ng-bind-html="vm.data.message"]'
+    'message': '//span[@ng-if="vm.data.message"]',
+    'candidate_msg1': '/html/body/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div/div/div/div/div[2]/div[1]/p[1]',
+    'candidate_msg2': '/html/body/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[1]/p[1]',
+    'candidate_msg3': '/html/body/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[1]/p[1]',
+    'candidate_msg4': '/html/body/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div/p[1]',
+    'declare': '//input[@type="checkbox"]',
+    'finish_interview': '//*[@id="mainBodyElement"]/div[6]/div/div/div/div[2]/div[1]/button'
 }
 
 help_desk = {
