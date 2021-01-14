@@ -106,7 +106,7 @@ class SlotManagement(change_applicant_status.MassChangeAppStatus):
                 if i.get_attribute('href') is not None:
                     if self.candidate_id_m in i.get_attribute('href'):
                         self.candidate_login_link = i.get_attribute('href')
-                        # print(self.candidate_login_link)
+                        print(self.candidate_login_link)
                         self.ui_candidate_login_link_copied = 'Pass'
 
             time.sleep(2)
