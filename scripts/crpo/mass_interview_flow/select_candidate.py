@@ -36,7 +36,7 @@ class SelectCandidate(Interview_login.InterviewLogin):
             self.lobby_cid = self.text_value
 
             if self.lobby_cid.strip() == str(self.candidate_id_m):
-                print('**-------->>> Select Candidate is proper as per the flow')
+                print('**--------->>> Select Candidate is proper as per the flow')
                 self.ui_select_candidate_action_m = 'Pass'
                 self.ui_select_candidate_m = 'Pass'
 
