@@ -32,7 +32,7 @@ class SubmitFeedbackInt2(submit_feedback_int1.SubmitFeedbackInt1):
             self.advance_search(page_elements.tabs['event_tab'])
             self.name_search(self.job_sprint_version_n, 'Event')
             self.event_getby_name()
-            self.event_validation('submit feedback process by int2', self.job_sprint_version_n)
+            self.event_validation('submit feedback process by int2')
             self.actions_dropdown()
             time.sleep(0.5)
             self.floating_action('event_interviews')
