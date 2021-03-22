@@ -1,8 +1,7 @@
 login = {
     # ------------------------------------------Login details-----------------------------------------------------------
-    'tenant_alias_page': '//*[@id="mainBodyElement"]/div[6]/div/div/div[1]/h4',
+    'tenant_alias_page': '//*[@id="mainBodyElement"]/div[7]/div/div/div[1]/h4',
     'tenant': "alias",
-    'next_button': '//*[@id="mainBodyElement"]/div[6]/div/div/form/div[2]/button',
     'username': "loginName",
     'password': '//*[@type="password"]',
     'login_button': '//*[@ng-click="vm.login()"]',
@@ -215,8 +214,8 @@ job_config = {
     'template_reject': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div[2]/ui-view'
                        '/div/div/div[2]/div/div/div[1]/div/div/table/tbody/tr[3]/td[2]/div/label[1]',
 
-    'hop_stage': '//*[@id="mainBodyElement"]/div[5]/div[2]/select[1]',
-    'hop_status': '//*[@id="mainBodyElement"]/div[5]/div[2]/select[2]',
+    'hop_stage': '//*[@id="mainBodyElement"]/div[6]/div[2]/select[1]',
+    'hop_status': '//*[@id="mainBodyElement"]/div[6]/div[2]/select[2]',
     'registration_stage_hop': '//*[@title="Set stage and status to hop to"][@data-content="72277"]',
     'aptitude_stage_hop': '//*[@title="Set stage and status to hop to"][@data-content="72355"]',
     'eligibility_stage_hop': '//*[@title="Set stage and status to hop to"][@data-content="72343"]',
@@ -254,17 +253,17 @@ event_config = {
     'task_is_config': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div[2]/ui-view/div[2]/div/div[1]/div/div[2]/'
                       'view-task-configurations/div/div[1]/div/table/tbody/tr/td[5]',
     'event_test_configure': '//*[@ng-click="vm.actionClicked({}{}{})"]'.format("'", 'configure', "'"),
-    'test_active': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/div[2]/div/div[5]/div/label[1]',
+    'test_active': '//*[@id="mainBodyElement"]/div[7]/div/div/div[2]/div[2]/div/div[5]/div/label[1]',
 
     'test_is_config': '//*[@id="mainBodyElement"]/div[3]/div/div[2]/div[2]/ui-view'
                       '/div[1]/div/div[2]/table/tbody/tr/td[4]',
     'declare_checkbox': '//*[@type="checkbox"][@ng-model="vm.isAgreement"]',
     'signature': '//*[@type="text"][@ng-model="vm.signature"]',
-    'upload_candidate_name': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[1]/div/input',
-    'upload_candidate_usn': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[9]/div/input',
-    'upload_candidate_email': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/form/div[3]/div/input',
-    'details_save': '//*[@id="mainBodyElement"]/div[6]/div/div/div[3]/button[2]',
-    'upload_candidate_count': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/div[2]/div[2]',
+    'upload_candidate_name': '//*[@id="mainBodyElement"]/div[7]/div/div/div[2]/form/div[1]/div/input',
+    'upload_candidate_usn': '//*[@id="mainBodyElement"]/div[7]/div/div/div[2]/form/div[9]/div/input',
+    'upload_candidate_email': '//*[@id="mainBodyElement"]/div[7]/div/div/div[2]/form/div[3]/div/input',
+    'details_save': '//*[@id="mainBodyElement"]/div[7]/div/div/div[3]/button[2]',
+    'upload_candidate_count': '//*[@id="mainBodyElement"]/div[7]/div/div/div[2]/div[2]/div[2]',
     'close_pop_details_window': '//*[@type="button"][@ng-click="$hide()"]',
     'click_on_event': '//*[@title="Click to view full details"]',
 }
@@ -319,8 +318,8 @@ interview = {
 }
 live_interview = {
     'validate': '//*[@class="col-sm-8 ellipsis_text ng-binding"]',
-    'int1_select': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/inline-multi-select/label[1]/input',
-    'int2_select': '//*[@id="mainBodyElement"]/div[6]/div/div/div[2]/inline-multi-select/label[2]/input',
+    'int1_select': '//*[@id="mainBodyElement"]/div[7]/div/div/div[2]/inline-multi-select/label[1]/input',
+    'int2_select': '//*[@id="mainBodyElement"]/div[7]/div/div/div[2]/inline-multi-select/label[2]/input',
     'provide_feedback': '//*[@ng-click="data.onGiveFeedbackClick(rowKey);"]',
     'down': '//*[@class="fa fa-chevron-down"]',
     'shortlist': '//*[@id="mainBodyElement"]/div[3]/div/div[1]/div[3]/div/div[2]/div/label[1]',
@@ -357,7 +356,7 @@ mass_interview = {
     'candidate_msg3': '/html/body/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div[1]/p[1]',
     'candidate_msg4': '/html/body/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div/div/div/div[2]/div/p[1]',
     'declare': '//input[@type="checkbox"]',
-    'finish_interview': '//*[@id="mainBodyElement"]/div[6]/div/div/div/div[2]/div[1]/button'
+    'finish_interview': '//*[@id="mainBodyElement"]/div[7]/div/div/div/div[2]/div[1]/button'
 }
 
 help_desk = {
