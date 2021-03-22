@@ -81,7 +81,7 @@ class CommonLogin(webdriver_functions.WebdriverFunctions):
         try:
             self.name_element_webdriver_wait(page_elements.login['tenant'])
             self.name.send_keys(tenant)
-            self.x_path_element_webdriver_wait(page_elements.login['next_button'])
+            self.x_path_element_webdriver_wait(page_elements.buttons['common_button'].format('Next'))
             self.xpath.click()
             self.name_element_webdriver_wait(page_elements.login['username'])
             self.name.send_keys(self.xl_username)

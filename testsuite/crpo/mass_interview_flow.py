@@ -49,14 +49,14 @@ class MassInterviewFlow(mass_interview_output.MassInterviewOutputFile):
         self.mass_feedback_output_report()
 
     def stage_2_flow(self):
-        self.select_candidate()
-        self.invite_video_interview()
-        self.mass_feedback()
-        self.candidate_feedback_status()
-        self.finish_interview()
+        # self.select_candidate()
+        # self.invite_video_interview()
+        # self.mass_feedback()
+        # self.candidate_feedback_status()
+        # self.finish_interview()
 
         self.candidate_login_report()
-        self.stage_2_output_report()
+        # self.stage_2_output_report()
 
 
 Object = MassInterviewFlow()
